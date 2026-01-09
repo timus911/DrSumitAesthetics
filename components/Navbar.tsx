@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Scissors, Activity, Zap } from 'lucide-react';
+import { Menu, X, Scissors, Activity, Zap, MessageCircle } from 'lucide-react';
 import { BRAND } from '../constants.ts';
 
 const Navbar: React.FC = () => {
@@ -57,11 +57,11 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-2 bg-black/80 backdrop-blur-xl border-b border-white/5' : 'py-8'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${(scrolled || isOpen) ? 'py-2 bg-black/80 backdrop-blur-xl border-b border-white/5' : 'py-8'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center gap-8">
         <Link to="/" className="flex flex-col group shrink-0">
           <div className="flex flex-col">
-            <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap">Sumit Singh</span>
+            <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap">Dr. Sumit Singh</span>
             <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap -mt-1">Gautam</span>
           </div>
           <span className="text-[8px] md:text-[9px] tracking-[0.4em] text-gray-500 mt-1 uppercase font-bold whitespace-nowrap border-t border-white/5 pt-1">Plastic & Aesthetic Mastery</span>
@@ -93,22 +93,32 @@ const Navbar: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white shrink-0 relative z-[60]">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        {/* Mobile Actions */}
+        <div className="flex items-center gap-4 lg:hidden relative z-[60]">
+          {/* Mobile Request Consultation Icon */}
+          <Link to="/contact" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#357ABD] text-white shadow-lg shadow-blue-500/20 active:scale-95 transition-transform hover:bg-[#2A659E]">
+            <MessageCircle size={20} className="-mr-0.5 mt-0.5" />
+          </Link>
+
+          {/* Mobile Toggle */}
+          <button onClick={() => setIsOpen(!isOpen)} className="text-white shrink-0">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
+      {/* Mobile Menu */}
+      {/* Mobile Menu Portal */}
       {createPortal(
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="fixed inset-0 bg-black/95 backdrop-blur-md z-[45] flex flex-col items-center justify-center space-y-10 lg:hidden"
-              onClick={() => setIsOpen(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[45] bg-black/40 flex flex-col items-center justify-start pt-32 pb-32 space-y-8 lg:hidden overflow-y-auto"
+              style={{ backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
             >
               {navLinks.map((link) => (
                 <Link
@@ -133,7 +143,7 @@ const Navbar: React.FC = () => {
         </AnimatePresence>,
         document.body
       )}
-    </nav>
+    </nav >
   );
 };
 

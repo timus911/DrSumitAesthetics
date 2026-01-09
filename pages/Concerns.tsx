@@ -30,9 +30,9 @@ const Concerns: React.FC = () => {
                     className="max-w-4xl mb-24 space-y-8"
                 >
                     <span className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold">Anatomical Focus</span>
-                    <h1 className="text-5xl md:text-8xl font-serif leading-none">Find Your Concern</h1>
+                    <h1 className="text-5xl md:text-8xl font-serif leading-none">What Brings You Here</h1>
                     <p className="text-gray-400 text-xl md:text-2xl font-light leading-relaxed max-w-3xl">
-                        Navigate our specialized procedures by anatomical region to find the precise solution for your aesthetic or reconstructive needs.
+                        Navigate our specialized procedures by anatomical region to find the precise solution for your aesthetic needs.
                     </p>
                 </motion.div>
 

@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
                   href={CONTACT.googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-500 text-xs leading-relaxed font-light uppercase tracking-wider hover:text-[#5DA9E9] transition-colors"
+                  className="text-gray-300 text-[10px] tracking-widest font-bold uppercase hover:text-[#5DA9E9] transition-colors"
                 >
                   {CONTACT.location}
                 </a>
@@ -78,10 +78,10 @@ const Footer: React.FC = () => {
               <li className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <Phone size={14} className="text-[#5DA9E9] shrink-0" />
-                  <span className="text-[9px] uppercase tracking-widest text-[#5DA9E9] font-bold">Consultation Support</span>
+                  <span className="text-[10px] uppercase tracking-widest text-gray-300 font-bold">Consultation Support</span>
                 </div>
                 <div className="flex items-center space-x-4 pl-7">
-                  <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-400 text-xs tracking-widest font-bold hover:text-[#5DA9E9] transition-colors">{CONTACT.counselorPhone}</a>
+                  <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#5DA9E9] transition-colors">{CONTACT.counselorPhone}</a>
                   <a
                     href={`https://wa.me/${CONTACT.counselorPhone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
@@ -92,20 +92,20 @@ const Footer: React.FC = () => {
                   </a>
                 </div>
               </li>
-              <li className="space-y-4 opacity-70">
+              <li className="space-y-4">
                 <div className="flex items-center space-x-4">
-                  <Phone size={14} className="text-gray-600 shrink-0" />
-                  <span className="text-[9px] uppercase tracking-widest text-gray-500 font-bold">Clinical Enquiries</span>
+                  <Phone size={14} className="text-[#5DA9E9] shrink-0" />
+                  <span className="text-[10px] uppercase tracking-widest text-gray-300 font-bold">Clinical Enquiries</span>
                 </div>
                 <div className="flex items-center space-x-4 pl-7">
-                  <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-600 text-[10px] tracking-widest font-bold hover:text-[#5DA9E9] transition-colors">{CONTACT.phone}</a>
+                  <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#5DA9E9] transition-colors">{CONTACT.phone}</a>
                   <a
                     href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-green-500/30 hover:text-green-400 transition-colors"
+                    className="text-green-500/50 hover:text-green-400 transition-colors"
                   >
-                    <MessageCircle size={12} />
+                    <MessageCircle size={14} />
                   </a>
                 </div>
               </li>

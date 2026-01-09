@@ -141,9 +141,9 @@ const About: React.FC = () => {
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <GraduationCap className="text-[#4A90E2]" size={24} />
-                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Triple Board Trained</span>
+                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Board Certified</span>
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed">Triple-certified background ensuring a comprehensive surgical perspective on form and function.</p>
+                <p className="text-gray-500 text-sm leading-relaxed">Board-certified background ensuring a comprehensive surgical perspective on form and function.</p>
               </div>
             </motion.div>
           </div>
