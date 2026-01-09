@@ -4,6 +4,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, CheckCircle, Info, Image as ImageIcon, Crosshair, ChevronDown, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PROCEDURES, ASSETS } from '../constants.ts';
+import SEO from '../components/SEO.tsx';
 
 const ExpandableSection: React.FC<{ title: string; shortLines: string[]; longLines?: string[] }> = ({ title, shortLines, longLines = [] }) => {
   const [open, setOpen] = useState(false);
@@ -47,6 +48,7 @@ const ProcedureDetail: React.FC = () => {
   if (!procedure) {
     return (
       <div className="h-screen flex items-center justify-center text-center">
+        <SEO title="Procedure Not Found" />
         <div className="space-y-6">
           <h2 className="text-4xl font-serif mb-6 text-white">Procedure Not Found</h2>
           <button onClick={() => navigate(-1)} className="text-[#4A90E2] uppercase tracking-widest text-xs border-b border-[#4A90E2] pb-1 font-bold">Go Back</button>
@@ -122,6 +124,12 @@ const ProcedureDetail: React.FC = () => {
 
   return (
     <div className="pt-52 pb-32">
+      <SEO
+        title={procedure.title}
+        description={procedure.description || procedure.longDescription}
+        image={procedure.image}
+        url={`/procedure/${procedure.id}`}
+      />
       <div className="container mx-auto px-6">
         <div className="mb-12">
           <button onClick={() => navigate(-1)} className="flex items-center space-x-3 text-gray-500 hover:text-[#4A90E2] transition-colors group uppercase tracking-widest text-[10px] font-bold">

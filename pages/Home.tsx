@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Microscope, Waves, Crosshair } from 'lucide-react';
 import { BRAND, COLORS, ASSETS } from '../constants.ts';
+import SEO from '../components/SEO.tsx';
 
 const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,6 +24,11 @@ const Home: React.FC = () => {
 
   return (
     <div ref={containerRef} className="w-full">
+      <SEO
+        title="Best Plastic Surgeon in Chandigarh | Aesthetic & Reconstructive"
+        description="Dr. Sumit Singh Gautam is a Triple Board Certified Plastic Surgeon in Chandigarh specializing in HD Liposuction, Rhinoplasty, Facelifts, and Hair Transplants."
+        keywords="plastic surgeon chandigarh, cosmetic surgeon chandigarh, dr sumit singh gautam, best plastic surgeon, aesthetic surgery, reconstructive surgery"
+      />
       {/* Hero Section */}
       <section className="relative h-[110vh] flex items-center justify-center overflow-hidden">
         <motion.div

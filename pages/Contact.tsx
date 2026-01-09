@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { CONTACT } from '../constants.ts';
+import SEO from '../components/SEO.tsx';
 
 const Contact: React.FC = () => {
   const [isQrLightboxOpen, setIsQrLightboxOpen] = React.useState(false);
@@ -34,6 +35,11 @@ const Contact: React.FC = () => {
 
   return (
     <div className="pt-52 pb-32">
+      <SEO
+        title="Contact Dr. Sumit Aesthetics | Book Consultation in Chandigarh"
+        description="Schedule a private consultation with Dr. Sumit Singh Gautam. Located at Healing Hospital, Chandigarh. WhatsApp and Phone support available."
+        url="/contact"
+      />
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <motion.div

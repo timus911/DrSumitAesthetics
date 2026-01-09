@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring, useTransform, Variants, AnimatePrese
 import { Award, GraduationCap, Globe, Box, Scissors, Brush, Instagram } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { BRAND, ASSETS } from '../constants.ts';
+import SEO from '../components/SEO.tsx';
 
 // Gallery images array
 const galleryImages = [
@@ -89,6 +90,11 @@ const About: React.FC = () => {
 
   return (
     <div className="pt-60 pb-32 overflow-hidden relative">
+      <SEO
+        title="About Dr. Sumit Singh Gautam | Board Certified Plastic Surgeon"
+        description="Learn about Dr. Sumit Singh Gautam's artistic background, triple board certification, and philosophy of bridging surgical science with fine art."
+        url="/about"
+      />
       {/* Background Image with Overlay - Top Section Only */}
       <div className="absolute top-0 left-0 w-full h-[120vh] z-0 pointer-events-none">
         <img

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { PROCEDURES, Procedure, COLORS } from '../constants.ts';
 import { ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO.tsx';
 
 interface CategoryPageProps {
   type: Procedure['parentCategory'];
@@ -28,6 +29,11 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
 
   return (
     <div className="pt-52 pb-32">
+      <SEO
+        title={`${titles[type]} | Dr. Sumit Aesthetics`}
+        description={descriptions[type]}
+        url={`/${type}`}
+      />
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
