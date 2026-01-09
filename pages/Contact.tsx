@@ -51,12 +51,13 @@ const Contact: React.FC = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 text-[#D4AF37]">
                   <Phone size={18} />
-                  <span className="text-xs uppercase tracking-widest font-bold">Direct Line</span>
+                  <span className="text-xs uppercase tracking-widest font-bold">Consultation Support</span>
                 </div>
+                <p className="text-[10px] text-gray-500 uppercase tracking-wider font-light mb-1">Guidance, questions, and appointment planning</p>
                 <div className="flex items-center space-x-4">
-                  <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-500 text-sm font-light hover:text-[#D4AF37] transition-colors">{CONTACT.phone}</a>
+                  <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-400 text-sm font-light hover:text-[#D4AF37] transition-colors">{CONTACT.counselorPhone}</a>
                   <a
-                    href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}`}
+                    href={`https://wa.me/${CONTACT.counselorPhone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-500/70 hover:text-green-400 transition-colors"
@@ -67,21 +68,22 @@ const Contact: React.FC = () => {
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 text-[#D4AF37]">
-                  <Phone size={18} />
-                  <span className="text-xs uppercase tracking-widest font-bold">Counsellor</span>
+              <div className="space-y-4 pt-4 border-t border-white/5 opacity-80">
+                <div className="flex items-center space-x-3 text-gray-400">
+                  <Phone size={16} />
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Clinical Enquiries</span>
                 </div>
+                <p className="text-[10px] text-gray-600 uppercase tracking-wider font-light mb-1">Medical-related questions</p>
                 <div className="flex items-center space-x-4">
-                  <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-500 text-sm font-light hover:text-[#D4AF37] transition-colors">{CONTACT.counselorPhone}</a>
+                  <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-500 text-xs font-light hover:text-[#D4AF37] transition-colors">{CONTACT.phone}</a>
                   <a
-                    href={`https://wa.me/${CONTACT.counselorPhone.replace(/[^0-9]/g, '')}`}
+                    href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-green-500/70 hover:text-green-400 transition-colors"
+                    className="text-green-500/50 hover:text-green-400 transition-colors"
                     title="Chat on WhatsApp"
                   >
-                    <MessageCircle size={18} />
+                    <MessageCircle size={14} />
                   </a>
                 </div>
               </div>
