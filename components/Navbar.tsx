@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Scissors, Activity, Zap } from 'lucide-react';
@@ -93,49 +94,45 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white shrink-0">
+        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden text-white shrink-0 relative z-[60]">
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 bg-black/95 backdrop-blur-md z-40 flex flex-col items-center justify-center space-y-10 lg:hidden"
-            onClick={() => setIsOpen(false)}
-          >
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-2xl font-bold uppercase tracking-[0.2em] text-white hover:text-[#5DA9E9]"
-                onClick={() => setIsOpen(false)}
-              >
-                {/* We stop propagation here so the container click doesn't double-fire, though nav will close anyway due to Link navigation usually. 
-                    However, standard practice for 'click backdrop to close' is usually this. 
-                    But wait, the user wants 'click empty area' to close. 
-                    The internal links also need to close the menu. 
-                    So letting it propagate or explicitly calling setIsOpen(false) on links is fine.
-                    I'll keep the explicit setIsOpen(false) on links to be safe and consistent with previous code.
-                */}
-                {link.name}
-              </Link>
-            ))}
-
-            <Link
-              to="/contact"
+      {createPortal(
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="fixed inset-0 bg-black/95 backdrop-blur-md z-[45] flex flex-col items-center justify-center space-y-10 lg:hidden"
               onClick={() => setIsOpen(false)}
-              className="mt-4 px-12 py-4 bg-[#5DA9E9] text-black text-xs uppercase tracking-[0.3em] font-bold"
             >
-              Request a consultation
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-2xl font-bold uppercase tracking-[0.2em] text-white hover:text-[#5DA9E9]"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              <Link
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-4 px-12 py-4 bg-[#5DA9E9] text-black text-xs uppercase tracking-[0.3em] font-bold"
+              >
+                Request a consultation
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </nav>
   );
 };
