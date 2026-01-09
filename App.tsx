@@ -1,0 +1,61 @@
+
+import React, { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Navbar from './components/Navbar.tsx';
+import Footer from './components/Footer.tsx';
+import FloatingBackground from './components/FloatingBackground.tsx';
+import Home from './pages/Home.tsx';
+import About from './pages/About.tsx';
+import CategoryPage from './pages/CategoryPage.tsx';
+import Gallery from './pages/Gallery.tsx';
+import PatientJourney from './pages/PatientJourney.tsx';
+import InternationalPatients from './pages/InternationalPatients.tsx';
+import Contact from './pages/Contact.tsx';
+import ProcedureDetail from './pages/ProcedureDetail.tsx';
+import Concerns from './pages/Concerns.tsx';
+import ConcernDetail from './pages/ConcernDetail.tsx';
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <ScrollToTop />
+      <div className="relative min-h-screen bg-black text-white selection:bg-gold-500/30 overflow-hidden">
+        <FloatingBackground />
+        <Navbar />
+
+        <main className="relative z-10">
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/aesthetic" element={<CategoryPage type="aesthetic" />} />
+              <Route path="/reconstructive" element={<CategoryPage type="reconstructive" />} />
+              <Route path="/non-surgical" element={<CategoryPage type="non-surgical" />} />
+              <Route path="/vascular" element={<CategoryPage type="vascular" />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/patient-journey" element={<PatientJourney />} />
+              <Route path="/international" element={<InternationalPatients />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/procedure/:id" element={<ProcedureDetail />} />
+              <Route path="/concerns" element={<Concerns />} />
+              <Route path="/concerns/:region" element={<ConcernDetail />} />
+            </Routes>
+          </AnimatePresence>
+        </main>
+
+        <Footer />
+      </div>
+    </Router>
+  );
+};
+
+export default App;
