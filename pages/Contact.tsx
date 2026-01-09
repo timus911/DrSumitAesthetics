@@ -134,7 +134,7 @@ const Contact: React.FC = () => {
                     className="group relative block w-48 h-48 glass p-3 border border-white/10 hover:border-[#D4AF37]/50 transition-all duration-500 shadow-2xl overflow-hidden"
                   >
                     <img
-                      src="/contact-qr.png"
+                      src={`${import.meta.env.BASE_URL}contact-qr.png`}
                       alt="Contact QR Code"
                       className="w-full h-full object-cover filter brightness-90 group-hover:brightness-100 transition-all duration-500"
                     />
@@ -241,13 +241,13 @@ const Contact: React.FC = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <a
-                  href="/dr-sumit.vcf"
+                  href={`${import.meta.env.BASE_URL}dr-sumit.vcf`}
                   download="Dr_Sumit_Singh_Gautam.vcf"
                   className="group block relative w-full h-full overflow-hidden"
                   title="Click to Download vCard"
                 >
                   <img
-                    src="/contact-qr.png"
+                    src={`${import.meta.env.BASE_URL}contact-qr.png`}
                     alt="Dr. Sumit Contact QR"
                     className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-700"
                   />

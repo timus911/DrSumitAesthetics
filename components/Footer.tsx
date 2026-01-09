@@ -150,13 +150,13 @@ const Footer: React.FC = () => {
                 onClick={(e) => e.stopPropagation()}
               >
                 <a
-                  href="/dr-sumit.vcf"
+                  href={`${import.meta.env.BASE_URL}dr-sumit.vcf`}
                   download="Dr_Sumit_Singh_Gautam.vcf"
                   className="group block relative w-full h-full overflow-hidden"
                   title="Click to Download vCard"
                 >
                   <img
-                    src="/contact-qr.png"
+                    src={`${import.meta.env.BASE_URL}contact-qr.png`}
                     alt="Dr. Sumit Contact QR"
                     className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-700"
                   />
