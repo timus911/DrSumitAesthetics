@@ -7,23 +7,23 @@ import { BRAND, ASSETS } from '../constants.ts';
 
 // Gallery images array
 const galleryImages = [
-  { src: '/gallery-1.jpg', title: 'Axillary Breast' },
-  { src: '/gallery-2.jpg', title: 'Breast Augmentation with Implant' },
-  { src: '/gallery-3.jpg', title: 'Breast Augmentation with Implant' },
-  { src: '/gallery-4.jpg', title: 'Axillary Breast' },
-  { src: '/gallery-5.jpg', title: 'Breast Reduction' },
-  { src: '/gallery-6.jpg', title: 'Keloid Excision' },
-  { src: '/gallery-7.jpg', title: 'Ear Lobe Repair' },
-  { src: '/gallery-8.jpg', title: 'Gynecomastia' },
-  { src: '/gallery-9.png', title: 'Gynecomastia' },
-  { src: '/gallery-10.jpg', title: 'Hair Transplant' },
-  { src: '/gallery-11.png', title: 'Lip Fat Grafting' },
-  { src: '/gallery-12.png', title: 'Mole Excision' },
-  { src: '/gallery-13.png', title: 'Lipo-Sculpting' },
-  { src: '/gallery-14.png', title: 'Tummy Tuck' },
-  { src: '/gallery-15.jpg', title: 'Ear Reshaping' },
-  { src: '/gallery-16.jpg', title: 'Xanthelasma Excision' },
-  { src: '/gallery-17.jpg', title: 'Tummy Tuck' }
+  { src: `${import.meta.env.BASE_URL}gallery-1.jpg`, title: 'Axillary Breast' },
+  { src: `${import.meta.env.BASE_URL}gallery-2.jpg`, title: 'Breast Augmentation with Implant' },
+  { src: `${import.meta.env.BASE_URL}gallery-3.jpg`, title: 'Breast Augmentation with Implant' },
+  { src: `${import.meta.env.BASE_URL}gallery-4.jpg`, title: 'Axillary Breast' },
+  { src: `${import.meta.env.BASE_URL}gallery-5.jpg`, title: 'Breast Reduction' },
+  { src: `${import.meta.env.BASE_URL}gallery-6.jpg`, title: 'Keloid Excision' },
+  { src: `${import.meta.env.BASE_URL}gallery-7.jpg`, title: 'Ear Lobe Repair' },
+  { src: `${import.meta.env.BASE_URL}gallery-8.jpg`, title: 'Gynecomastia' },
+  { src: `${import.meta.env.BASE_URL}gallery-9.png`, title: 'Gynecomastia' },
+  { src: `${import.meta.env.BASE_URL}gallery-10.jpg`, title: 'Hair Transplant' },
+  { src: `${import.meta.env.BASE_URL}gallery-11.png`, title: 'Lip Fat Grafting' },
+  { src: `${import.meta.env.BASE_URL}gallery-12.png`, title: 'Mole Excision' },
+  { src: `${import.meta.env.BASE_URL}gallery-13.png`, title: 'Lipo-Sculpting' },
+  { src: `${import.meta.env.BASE_URL}gallery-14.png`, title: 'Tummy Tuck' },
+  { src: `${import.meta.env.BASE_URL}gallery-15.jpg`, title: 'Ear Reshaping' },
+  { src: `${import.meta.env.BASE_URL}gallery-16.jpg`, title: 'Xanthelasma Excision' },
+  { src: `${import.meta.env.BASE_URL}gallery-17.jpg`, title: 'Tummy Tuck' }
 ];
 
 const About: React.FC = () => {
@@ -160,7 +160,7 @@ const About: React.FC = () => {
             >
               {/* Photo 1: Portrait */}
               <img
-                src="/dr-sumit-profile.png"
+                src={`${import.meta.env.BASE_URL}dr-sumit-profile.png`}
                 alt="Dr. Sumit Professional Portrait"
                 className="w-full h-full object-contain drop-shadow-2xl filter brightness-110 contrast-110"
               />
