@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
                 key={link.path}
                 to={link.path}
                 className="text-2xl font-bold uppercase tracking-[0.2em] text-white hover:text-[#5DA9E9]"
-                onClick={(e) => e.stopPropagation()}
+                onClick={() => setIsOpen(false)}
               >
                 {/* We stop propagation here so the container click doesn't double-fire, though nav will close anyway due to Link navigation usually. 
                     However, standard practice for 'click backdrop to close' is usually this. 
