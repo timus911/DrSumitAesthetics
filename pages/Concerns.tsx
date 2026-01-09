@@ -6,18 +6,18 @@ import { ArrowRight } from 'lucide-react';
 import { ASSETS } from '../constants.ts';
 
 const CONCERN_ZONES = [
-    { id: 'Face', title: 'Face', image: '/facelift-aesthetic.jpg' },
-    { id: 'Nose', title: 'Nose', image: '/rhinoplasty-aesthetic.jpg' },
-    { id: 'Eyes', title: 'Eyes', image: '/blepharoplasty-aesthetic.jpg' },
-    { id: 'Ears', title: 'Ears', image: '/otoplasty-aesthetic.png' },
-    { id: 'Lips', title: 'Lips', image: '/lip-lift-aesthetic.jpg' },
-    { id: 'Neck', title: 'Neck', image: '/neck-lift-aesthetic.png' },
-    { id: 'Breasts', title: 'Breasts', image: '/breast-augmentation-aesthetic.png' },
-    { id: 'Abdomen', title: 'Abdomen', image: '/tummy-tuck-aesthetic.jpg' },
-    { id: 'Body', title: 'Body', image: '/body-contouring-aesthetic.png' },
-    { id: 'Buttock', title: 'Buttock', image: '/buttock-lift-aesthetic.jpg' },
-    { id: 'Thighs', title: 'Thighs', image: '/thighs-concerns.jpg' }, // HD Lipo often targets thighs
-    { id: 'Arms', title: 'Arms', image: '/arms-concerns.jpg' },
+    { id: 'Face', title: 'Face', image: `${import.meta.env.BASE_URL}facelift-aesthetic.jpg` },
+    { id: 'Nose', title: 'Nose', image: `${import.meta.env.BASE_URL}rhinoplasty-aesthetic.jpg` },
+    { id: 'Eyes', title: 'Eyes', image: `${import.meta.env.BASE_URL}blepharoplasty-aesthetic.jpg` },
+    { id: 'Ears', title: 'Ears', image: `${import.meta.env.BASE_URL}otoplasty-aesthetic.png` },
+    { id: 'Lips', title: 'Lips', image: `${import.meta.env.BASE_URL}lip-lift-aesthetic.jpg` },
+    { id: 'Neck', title: 'Neck', image: `${import.meta.env.BASE_URL}neck-lift-aesthetic.png` },
+    { id: 'Breasts', title: 'Breasts', image: `${import.meta.env.BASE_URL}breast-augmentation-aesthetic.png` },
+    { id: 'Abdomen', title: 'Abdomen', image: `${import.meta.env.BASE_URL}tummy-tuck-aesthetic.jpg` },
+    { id: 'Body', title: 'Body', image: `${import.meta.env.BASE_URL}body-contouring-aesthetic.png` },
+    { id: 'Buttock', title: 'Buttock', image: `${import.meta.env.BASE_URL}buttock-lift-aesthetic.jpg` },
+    { id: 'Thighs', title: 'Thighs', image: `${import.meta.env.BASE_URL}thighs-concerns.jpg` }, // HD Lipo often targets thighs
+    { id: 'Arms', title: 'Arms', image: `${import.meta.env.BASE_URL}arms-concerns.jpg` },
 ];
 
 const Concerns: React.FC = () => {
