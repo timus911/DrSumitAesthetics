@@ -1,3 +1,4 @@
+const BASE = import.meta.env.BASE_URL;
 
 export const BRAND = {
   name: "Dr. Sumit Singh Gautam",
@@ -47,7 +48,7 @@ export const COLORS = {
 /**
  * ASSETS mapping to the user-provided files (photo1.jpg - photo6.jpg)
  */
-export const ASSETS = {
+const RAW_ASSETS = {
   portraitProfessional: "dr-sumit-portrait.jpg",
   heroAction: "photo3.jpg",
   surgeryProfile: "artistic-anatomy.jpg",
@@ -95,7 +96,7 @@ export type Procedure = {
   gallery?: string[];
 };
 
-export const PROCEDURES: Procedure[] = [
+const RAW_PROCEDURES: Procedure[] = [
   // AESTHETIC - BODY
   {
     id: "tummy-tuck",
@@ -661,3 +662,21 @@ export const PROCEDURES: Procedure[] = [
     regions: ["Body", "Thighs"]
   }
 ];
+// Helper to fix paths
+const fixPath = (path?: string) => {
+  if (!path) return undefined;
+  if (path.startsWith('http')) return path;
+  // Combine base with path, ensuring no double slash if path starts with /
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${BASE}${cleanPath}`;
+};
+
+export const ASSETS = Object.fromEntries(
+  Object.entries(RAW_ASSETS).map(([k, v]) => [k, fixPath(v) || v])
+) as typeof RAW_ASSETS;
+
+export const PROCEDURES = RAW_PROCEDURES.map(p => ({
+  ...p,
+  image: fixPath(p.image),
+  gallery: p.gallery?.map(g => fixPath(g)!)
+}));

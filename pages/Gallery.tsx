@@ -5,23 +5,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const galleryImages = [
-  { src: '/gallery-1.jpg', title: 'Axillary Breast', category: 'Breast Surgery' },
-  { src: '/gallery-2.jpg', title: 'Breast Augmentation with Implant', category: 'Breast Surgery' },
-  { src: '/gallery-3.jpg', title: 'Breast Augmentation with Implant', category: 'Breast Surgery' },
-  { src: '/gallery-4.jpg', title: 'Axillary Breast', category: 'Breast Surgery' },
-  { src: '/gallery-5.jpg', title: 'Breast Reduction', category: 'Breast Surgery' },
-  { src: '/gallery-6.jpg', title: 'Keloid Excision', category: 'Reconstructive Surgery' },
-  { src: '/gallery-7.jpg', title: 'Ear Lobe Repair', category: 'Reconstructive Surgery' },
-  { src: '/gallery-8.jpg', title: 'Gynecomastia', category: 'Body Contouring' },
-  { src: '/gallery-9.png', title: 'Gynecomastia', category: 'Body Contouring' },
-  { src: '/gallery-10.jpg', title: 'Hair Transplant', category: 'Hair Restoration' },
-  { src: '/gallery-11.png', title: 'Lip Fat Grafting', category: 'Facial Aesthetics' },
-  { src: '/gallery-12.png', title: 'Mole Excision', category: 'Reconstructive Surgery' },
-  { src: '/gallery-13.png', title: 'Lipo-Sculpting', category: 'Body Contouring' },
-  { src: '/gallery-14.png', title: 'Tummy Tuck', category: 'Body Contouring' },
-  { src: '/gallery-15.jpg', title: 'Ear Reshaping', category: 'Reconstructive Surgery' },
-  { src: '/gallery-16.jpg', title: 'Xanthelasma Excision', category: 'Facial Aesthetics' },
-  { src: '/gallery-17.jpg', title: 'Tummy Tuck', category: 'Body Contouring' }
+  { src: `${import.meta.env.BASE_URL}gallery-1.jpg`, title: 'Axillary Breast', category: 'Breast Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-2.jpg`, title: 'Breast Augmentation with Implant', category: 'Breast Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-3.jpg`, title: 'Breast Augmentation with Implant', category: 'Breast Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-4.jpg`, title: 'Axillary Breast', category: 'Breast Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-5.jpg`, title: 'Breast Reduction', category: 'Breast Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-6.jpg`, title: 'Keloid Excision', category: 'Reconstructive Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-7.jpg`, title: 'Ear Lobe Repair', category: 'Reconstructive Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-8.jpg`, title: 'Gynecomastia', category: 'Body Contouring' },
+  { src: `${import.meta.env.BASE_URL}gallery-9.png`, title: 'Gynecomastia', category: 'Body Contouring' },
+  { src: `${import.meta.env.BASE_URL}gallery-10.jpg`, title: 'Hair Transplant', category: 'Hair Restoration' },
+  { src: `${import.meta.env.BASE_URL}gallery-11.png`, title: 'Lip Fat Grafting', category: 'Facial Aesthetics' },
+  { src: `${import.meta.env.BASE_URL}gallery-12.png`, title: 'Mole Excision', category: 'Reconstructive Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-13.png`, title: 'Lipo-Sculpting', category: 'Body Contouring' },
+  { src: `${import.meta.env.BASE_URL}gallery-14.png`, title: 'Tummy Tuck', category: 'Body Contouring' },
+  { src: `${import.meta.env.BASE_URL}gallery-15.jpg`, title: 'Ear Reshaping', category: 'Reconstructive Surgery' },
+  { src: `${import.meta.env.BASE_URL}gallery-16.jpg`, title: 'Xanthelasma Excision', category: 'Facial Aesthetics' },
+  { src: `${import.meta.env.BASE_URL}gallery-17.jpg`, title: 'Tummy Tuck', category: 'Body Contouring' }
 ];
 
 const Gallery: React.FC = () => {
