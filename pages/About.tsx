@@ -143,15 +143,19 @@ const About: React.FC = () => {
         url="/about"
       />
       {/* Background Image with Overlay - Top Section Only */}
+      {/* Background Image with Overlay - Top Section Only */}
       <div className="absolute top-0 left-0 w-full h-[120vh] z-0 pointer-events-none">
         <img
           src={ASSETS.aboutBackground}
           alt="Surgical Artistry Background"
           className="w-full h-full object-cover opacity-60"
         />
-        {/* Gradient mask to fade into bottom dark theme - Fade lower 1/4th completely into black */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/30 via-[#0a0a0a]/80 via-80% to-[#0a0a0a]" />
-        <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
+        {/* Layer 1: General darkening for text readability throughout */}
+        <div className="absolute inset-0 bg-black/30" />
+
+        {/* Layer 2: Strong gradient mask to completely fade lower section into solid black */}
+        {/* This ensures content below overlaps with a solid background, not the image */}
+        <div className="absolute bottom-0 left-0 w-full h-[35vh] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a] to-transparent z-10" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
