@@ -38,6 +38,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
           className="max-w-4xl mb-24 space-y-8"
         >
           <span className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold">Clinical Domain</span>
@@ -63,7 +64,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
                   whileHover={{ opacity: 0.5 }}
                   whileInView={{ opacity: 0.5 }}
                   viewport={{ once: false, amount: 0.8 }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.4 }}
                 >
                   <img
                     src={proc.image || `https://picsum.photos/800/1000?${proc.id}-after`}

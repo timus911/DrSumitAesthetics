@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import Lenis from 'lenis';
 import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import FloatingBackground from './components/FloatingBackground.tsx';
@@ -15,6 +16,7 @@ import Contact from './pages/Contact.tsx';
 import ProcedureDetail from './pages/ProcedureDetail.tsx';
 import Concerns from './pages/Concerns.tsx';
 import ConcernDetail from './pages/ConcernDetail.tsx';
+import Reviews from './pages/Reviews.tsx';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -25,6 +27,30 @@ const ScrollToTop = () => {
 };
 
 const App: React.FC = () => {
+  useEffect(() => {
+    // Initialize Lenis for smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.5,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard easing
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <Router>
       <ScrollToTop />
@@ -42,6 +68,7 @@ const App: React.FC = () => {
               <Route path="/non-surgical" element={<CategoryPage type="non-surgical" />} />
               <Route path="/vascular" element={<CategoryPage type="vascular" />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="/reviews" element={<Reviews />} />
               <Route path="/patient-journey" element={<PatientJourney />} />
               <Route path="/international" element={<InternationalPatients />} />
               <Route path="/contact" element={<Contact />} />

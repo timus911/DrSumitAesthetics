@@ -53,6 +53,7 @@ const Navbar: React.FC = () => {
     { name: 'Reconstructive', path: '/reconstructive', icon: <Activity size={14} /> },
     { name: 'Non-Surgical', path: '/non-surgical', icon: <Zap size={14} /> },
     { name: 'Gallery', path: '/gallery' },
+    { name: 'Reviews', path: '/reviews' },
     { name: 'About', path: '/about' },
   ];
 
@@ -68,7 +69,7 @@ const Navbar: React.FC = () => {
         </Link>
 
         {/* Desktop Menu - with horizontal scroll support */}
-        <div ref={navRef} className="hidden lg:flex items-center overflow-x-auto no-scrollbar scroll-smooth py-4">
+        <div ref={navRef} className="hidden min-[1600px]:flex items-center overflow-x-auto no-scrollbar scroll-smooth py-4">
           <div className="flex items-center space-x-10 min-w-max">
             {navLinks.map((link) => {
               const isConcerns = link.name === 'Concerns';
@@ -94,7 +95,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Actions */}
-        <div className="flex items-center gap-4 lg:hidden relative z-[60]">
+        <div className="flex items-center gap-4 min-[1600px]:hidden relative z-[60]">
           {/* Mobile Request Consultation Icon */}
           <Link to="/contact" className="w-10 h-10 flex items-center justify-center rounded-full bg-[#357ABD] text-white shadow-lg shadow-blue-500/20 active:scale-95 transition-transform hover:bg-[#2A659E]">
             <MessageCircle size={20} className="-mr-0.5 mt-0.5" />
@@ -117,7 +118,7 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[45] bg-black/40 flex flex-col items-center justify-start pt-32 pb-32 space-y-8 lg:hidden overflow-y-auto"
+              className="fixed inset-0 z-[45] bg-black/40 flex flex-col items-center justify-start pt-32 pb-32 space-y-8 min-[1600px]:hidden overflow-y-auto"
               style={{ backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)' }}
             >
               {navLinks.map((link) => (

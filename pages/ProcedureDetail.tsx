@@ -343,7 +343,7 @@ const ProcedureDetail: React.FC = () => {
           <motion.section
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="mt-40 border-t border-white/5 pt-32"
           >
@@ -451,7 +451,7 @@ const ProcedureDetail: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.4 }}
+                      transition={{ duration: 0.3 }}
                       src={sortedGallery[lightboxIndex]}
                       alt="Clinical Result"
                       className="max-w-full max-h-[80vh] object-contain shadow-2xl"

@@ -76,8 +76,8 @@ const About: React.FC = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.1
+        staggerChildren: 0.05,
+        delayChildren: 0.05
       }
     }
   };
@@ -85,7 +85,7 @@ const About: React.FC = () => {
   // Explicitly type as Variants to ensure 'ease' property is recognized as valid Easing type
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
 
   return (
@@ -176,7 +176,7 @@ const About: React.FC = () => {
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1, duration: 1 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
               className="absolute -bottom-16 -left-16 glass p-12 max-w-sm space-y-6 border border-blue-500/30 backdrop-blur-3xl shadow-2xl"
             >
               <p className="text-gray-200 italic text-lg leading-relaxed font-light">"Surgical mastery is the ethical application of science to restore and refine the natural human form."</p>
@@ -259,6 +259,39 @@ const About: React.FC = () => {
           </motion.div>
         </section>
 
+        {/* Personal Moments Section */}
+        <section className="mt-80 border-t border-white/5 pt-32">
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="space-y-24"
+          >
+            <motion.div variants={fadeInUp} className="text-center space-y-6">
+              <span className="text-[#4A90E2] text-[11px] tracking-[0.6em] uppercase font-black text-blue-400">Behind the Scrubs</span>
+              <h2 className="text-5xl md:text-7xl font-serif text-white">Moments in Medicine</h2>
+            </motion.div>
+
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 min-h-[800px] p-4">
+              {[1, 2, 3, 4, 5].map((num) => (
+                <motion.div
+                  key={num}
+                  variants={fadeInUp}
+                  className="break-inside-avoid relative group overflow-hidden rounded-sm border border-white/5"
+                >
+                  <img
+                    src={`${import.meta.env.BASE_URL}personal/personal-${num}.jpg`}
+                    alt={`Dr. Sumit Personal Moment ${num}`}
+                    className="w-full h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none" />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
         {/* Academic Section */}
         <section className="mt-80">
           <motion.div
@@ -292,7 +325,7 @@ const About: React.FC = () => {
         <motion.section
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="mt-60 glass p-20 lg:p-32 relative overflow-hidden border border-blue-500/10 shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
         >
@@ -310,7 +343,7 @@ const About: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5, duration: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
               viewport={{ once: true }}
               className="pt-12 flex flex-col items-start gap-6 group cursor-zoom-in"
               onClick={() => setIsLightboxOpen(true)}
