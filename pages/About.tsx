@@ -274,7 +274,7 @@ const About: React.FC = () => {
             </motion.div>
 
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 min-h-[800px] p-4">
-              {[1, 2, 3, 4, 5].map((num) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
                 <motion.div
                   key={num}
                   variants={fadeInUp}
