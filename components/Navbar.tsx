@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
             <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap">Dr. Sumit Singh</span>
             <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap -mt-1">Gautam</span>
           </div>
-          <span className="text-[8px] md:text-[9px] tracking-[0.4em] text-gray-500 mt-1 uppercase font-bold whitespace-nowrap border-t border-white/5 pt-1">Plastic & Aesthetic Mastery</span>
+          <span className="text-[8px] md:text-[9px] tracking-[0.4em] text-gray-500 mt-1 uppercase font-bold whitespace-nowrap border-t border-white/5 pt-1">Plastic & Aesthetic Surgeon</span>
         </Link>
 
         {/* Desktop Menu - with horizontal scroll support */}

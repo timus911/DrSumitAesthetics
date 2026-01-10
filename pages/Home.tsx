@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Microscope, Waves, Crosshair } from 'lucide-react';
 import { BRAND, COLORS, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
+import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -12,6 +13,9 @@ const Home: React.FC = () => {
     target: containerRef,
     offset: ["start start", "end end"]
   });
+
+  const philosophyImageRef = useRef<HTMLDivElement>(null);
+  const isPhilosophyFocused = useMobileCenterFocus(philosophyImageRef);
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
@@ -65,7 +69,7 @@ const Home: React.FC = () => {
 
             <h1 className="text-7xl md:text-[10rem] font-serif leading-none tracking-tighter text-white">
               Surgical <br />
-              <span className="text-[#4A90E2]">Artistry</span>
+              <span className="text-[#4A90E2]">Mastery</span>
             </h1>
 
             <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-xl tracking-wide font-light leading-relaxed">
@@ -110,7 +114,9 @@ const Home: React.FC = () => {
               className="relative aspect-[4/5] overflow-hidden glass rounded-sm group shadow-[0_40px_100px_rgba(0,0,0,0.8)] border border-white/5"
             >
               {/* Photo 4: Surgical profile */}
-              <img src={ASSETS.surgeryProfile} alt="Surgical Profile" className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[2s]" />
+              <div ref={philosophyImageRef} className="w-full h-full">
+                <img src={ASSETS.surgeryProfile} alt="Surgical Profile" className={`w-full h-full object-cover transition-all duration-[2s] ${isPhilosophyFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105`} />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               <div className="absolute bottom-12 left-12 space-y-4">
                 <div className="h-0.5 w-12 bg-[#4A90E2]" />

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Star, Quote, ChevronRight, User } from 'lucide-react';
 import { ASSETS, BRAND } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
+import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 // Placeholder data - User to replace with actual screenshot paths
 // Generate array of 147 review images (review0001.jpg, etc.)
@@ -93,6 +94,31 @@ const HAPPY_PATIENTS = [
     // Example format: { id: 1, src: `${import.meta.env.BASE_URL}reviews/patient-1.jpg`, caption: "Rhinoplasty Result" }
 ];
 
+const PatientThumbnail = ({ patient, onClick, variants }: { patient: any, onClick: () => void, variants: any }) => {
+    const ref = React.useRef<HTMLDivElement>(null);
+    const isFocused = useMobileCenterFocus(ref);
+
+    return (
+        <motion.div
+            ref={ref}
+            variants={variants}
+            className="group cursor-pointer"
+            onClick={onClick}
+        >
+            <div className="aspect-[3/4] overflow-hidden rounded-xl relative glass border border-white/5">
+                <img
+                    src={patient.src}
+                    alt={patient.caption}
+                    className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white text-xs uppercase tracking-widest font-bold">{patient.caption}</span>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
+
 const Reviews: React.FC = () => {
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -112,6 +138,8 @@ const Reviews: React.FC = () => {
     };
 
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [isScrolling, setIsScrolling] = useState(false);
+    const scrollTimeout = React.useRef<NodeJS.Timeout | null>(null);
     const scrollContainerRef = React.useRef<HTMLDivElement>(null);
 
     const handleScroll = () => {
@@ -120,6 +148,10 @@ const Reviews: React.FC = () => {
             const maxScroll = scrollWidth - clientWidth;
             const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
             setScrollProgress(progress);
+
+            setIsScrolling(true);
+            if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
+            scrollTimeout.current = setTimeout(() => setIsScrolling(false), 150);
         }
     };
 
@@ -222,21 +254,34 @@ const Reviews: React.FC = () => {
                 {GOOGLE_REVIEWS.length > 0 ? (
                     <div className="relative">
                         {/* Navigation Arrows */}
-                        <button
+                        {/* Navigation Arrows */}
+                        <motion.button
                             onClick={() => scroll('left')}
-                            className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/50 hover:bg-blue-600 text-white rounded-full backdrop-blur-md border border-white/10 transition-all -translate-x-4 md:-translate-x-6 shadow-2xl ${scrollProgress > 0.01 ? 'opacity-100 translate-x-0' : 'opacity-100 translate-x-0'}`}
+                            animate={{
+                                filter: isScrolling ? "blur(4px)" : "blur(0px)",
+                                opacity: isScrolling ? 0.3 : (scrollProgress > 0.01 ? 1 : 0),
+                                x: scrollProgress > 0.01 ? 0 : -20
+                            }}
+                            className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/20 text-white rounded-full backdrop-blur-md border border-white/10 transition-colors shadow-2xl`}
+                            style={{ WebkitTapHighlightColor: 'transparent' }}
                             aria-label="Scroll left"
                         >
                             <ChevronRight className="rotate-180" size={24} />
-                        </button>
+                        </motion.button>
 
-                        <button
+                        <motion.button
                             onClick={() => scroll('right')}
-                            className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/50 hover:bg-blue-600 text-white rounded-full backdrop-blur-md border border-white/10 transition-all translate-x-4 md:translate-x-6 shadow-2xl ${scrollProgress < 0.99 ? 'opacity-100 translate-x-0' : 'opacity-100 translate-x-0'}`}
+                            animate={{
+                                filter: isScrolling ? "blur(4px)" : "blur(0px)",
+                                opacity: isScrolling ? 0.3 : (scrollProgress < 0.99 ? 1 : 0),
+                                x: scrollProgress < 0.99 ? 0 : 20
+                            }}
+                            className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/20 text-white rounded-full backdrop-blur-md border border-white/10 transition-colors shadow-2xl`}
+                            style={{ WebkitTapHighlightColor: 'transparent' }}
                             aria-label="Scroll right"
                         >
                             <ChevronRight size={24} />
-                        </button>
+                        </motion.button>
 
                         {/* Horizontal Scroll Container */}
                         <div
@@ -301,23 +346,12 @@ const Reviews: React.FC = () => {
                         className="grid grid-cols-2 md:grid-cols-4 gap-6"
                     >
                         {HAPPY_PATIENTS.map((patient) => (
-                            <motion.div
+                            <PatientThumbnail
                                 key={patient.id}
-                                variants={itemVariants}
-                                className="group cursor-pointer"
+                                patient={patient}
                                 onClick={() => setSelectedImage(patient.src)}
-                            >
-                                <div className="aspect-[3/4] overflow-hidden rounded-xl relative glass border border-white/5">
-                                    <img
-                                        src={patient.src}
-                                        alt={patient.caption}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                        <span className="text-white text-xs uppercase tracking-widest font-bold">{patient.caption}</span>
-                                    </div>
-                                </div>
-                            </motion.div>
+                                variants={itemVariants}
+                            />
                         ))}
                     </motion.div>
                 ) : (
