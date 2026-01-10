@@ -204,7 +204,7 @@ const Reviews: React.FC = () => {
             </div>
 
             {/* Google Reviews Section */}
-            <section className="mb-32 relative group/section">
+            <section className="mb-32 relative group/section container mx-auto">
                 <div className="flex items-center justify-between mb-12">
                     <div className="flex items-center gap-4">
                         <div className="p-3 glass rounded-full text-yellow-500">
