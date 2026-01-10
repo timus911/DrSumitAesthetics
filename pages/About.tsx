@@ -200,7 +200,7 @@ const About: React.FC = () => {
                 <h2 className="text-5xl md:text-8xl font-serif text-white leading-tight">The Visualist <br /><span className="text-blue-500">Mentality</span></h2>
               </motion.div>
 
-              <motion.p variants={fadeInUp} className="text-gray-400 text-2xl leading-relaxed font-light">
+              <motion.p variants={fadeInUp} className="text-gray-400 text-xl leading-relaxed font-light">
                 {BRAND.artisticBackground.description}
               </motion.p>
 
@@ -312,10 +312,10 @@ const About: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
           >
             {BRAND.education.map((item, idx) => (
-              <motion.div key={idx} variants={fadeInUp} className="glass p-6 space-y-8 relative overflow-hidden group border border-white/5 transition-all hover:bg-blue-900/10 shadow-2xl">
+              <motion.div key={idx} variants={fadeInUp} className="glass p-4 space-y-3 relative overflow-hidden group border border-white/5 transition-all hover:bg-blue-900/10 shadow-2xl">
                 <div className="absolute top-0 left-0 w-1.5 h-0 bg-[#4A90E2] group-hover:h-full transition-all duration-700" />
-                <Award size={36} className="text-[#4A90E2]/40 group-hover:text-[#4A90E2] transition-colors" />
-                <p className="text-white text-lg font-sans font-light tracking-wider uppercase">{item}</p>
+                <Award size={28} className="text-[#4A90E2]/40 group-hover:text-[#4A90E2] transition-colors" />
+                <p className="text-white text-sm font-sans font-light tracking-wider uppercase">{item}</p>
               </motion.div>
             ))}
           </motion.div>

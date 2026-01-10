@@ -133,7 +133,7 @@ const Home: React.FC = () => {
                 <h2 className="text-6xl md:text-8xl font-serif leading-[1.1]">Form & <br /> Function</h2>
               </div>
 
-              <p className="text-gray-400 leading-relaxed text-2xl font-light">
+              <p className="text-gray-400 leading-relaxed text-xl font-light">
                 Every procedure is approached as a living sculpture. By combining the principles of 3D modeling and fine art with advanced surgical techniques, we achieve results that are naturally balanced and artistically refined.
               </p>
 
