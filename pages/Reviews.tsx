@@ -111,6 +111,49 @@ const Reviews: React.FC = () => {
         show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
     };
 
+    const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            const scrollAmount = clientWidth * 0.8; // Scroll 80% of view
+
+            // Loop logic for navigation buttons
+            if (direction === 'left' && scrollLeft <= 10) {
+                scrollContainerRef.current.scrollTo({ left: scrollWidth, behavior: 'smooth' });
+            } else if (direction === 'right' && scrollLeft + clientWidth >= scrollWidth - 10) {
+                scrollContainerRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                scrollContainerRef.current.scrollBy({
+                    left: direction === 'left' ? -scrollAmount : scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+
+    // Horizontal scroll with mouse wheel
+    React.useEffect(() => {
+        const container = scrollContainerRef.current;
+        if (!container) return;
+
+        const handleWheel = (evt: WheelEvent) => {
+            if (evt.deltaY !== 0) {
+                // If scrolling vertically, scroll horizontally instead
+                // unless shift key is pressed (native horizontal scroll)
+                // We prevent default to lock the page vertical scroll while over the section
+                evt.preventDefault();
+                container.scrollLeft += evt.deltaY;
+            }
+        };
+
+        container.addEventListener('wheel', handleWheel, { passive: false });
+
+        return () => {
+            container.removeEventListener('wheel', handleWheel);
+        };
+    }, []);
+
     return (
         <div className="pt-40 min-h-screen bg-black relative overflow-hidden">
             <SEO
@@ -141,7 +184,7 @@ const Reviews: React.FC = () => {
                 </motion.div>
 
                 {/* Google Reviews Section */}
-                <section className="mb-32">
+                <section className="mb-32 relative group/section">
                     <div className="flex items-center gap-4 mb-12">
                         <div className="p-3 glass rounded-full text-yellow-500">
                             <Star fill="currentColor" size={24} />
@@ -150,43 +193,52 @@ const Reviews: React.FC = () => {
                     </div>
 
                     {GOOGLE_REVIEWS.length > 0 ? (
-                        <motion.div
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                            className="relative"
-                        >
+                        <div className="relative">
+                            {/* Navigation Arrows */}
+                            <button
+                                onClick={() => scroll('left')}
+                                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/50 hover:bg-black/80 text-white rounded-full backdrop-blur-md border border-white/10 opacity-0 group-hover/section:opacity-100 transition-opacity -translate-x-4 md:-translate-x-8"
+                                aria-label="Scroll left"
+                            >
+                                <ChevronRight className="rotate-180" size={24} />
+                            </button>
+
+                            <button
+                                onClick={() => scroll('right')}
+                                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/50 hover:bg-black/80 text-white rounded-full backdrop-blur-md border border-white/10 opacity-0 group-hover/section:opacity-100 transition-opacity translate-x-4 md:translate-x-8"
+                                aria-label="Scroll right"
+                            >
+                                <ChevronRight size={24} />
+                            </button>
+
                             {/* Horizontal Scroll Container */}
                             <div
-                                className="flex overflow-x-auto gap-8 pb-12 snap-x snap-mandatory scrollbar-thin scrollbar-track-white/5 scrollbar-thumb-blue-500/50"
+                                ref={scrollContainerRef}
+                                className="flex overflow-x-auto gap-12 pb-12 snap-x snap-mandatory scrollbar-none items-start"
                                 data-lenis-prevent
+                                style={{ scrollBehavior: 'smooth' }}
                             >
                                 {GOOGLE_REVIEWS.map((review) => (
                                     <motion.div
                                         key={review.id}
-                                        variants={itemVariants}
-                                        className="flex-none w-[350px] md:w-[450px] snap-center"
+                                        initial={{ opacity: 0, scale: 0.9 }}
+                                        whileInView={{ opacity: 1, scale: 1 }}
+                                        viewport={{ once: true, margin: "100px" }}
+                                        className="flex-none w-[300px] md:w-[350px] snap-start"
                                     >
-                                        <div className="glass p-4 rounded-xl border border-white/5 h-full flex flex-col">
-                                            <div className="relative rounded-lg overflow-hidden bg-white/5">
-                                                <img
-                                                    src={review.src}
-                                                    alt={review.alt}
-                                                    loading="lazy"
-                                                    className="w-full h-auto object-contain"
-                                                />
-                                            </div>
+                                        <div className="group relative">
+                                            {/* Removed glass/border container as requested */}
+                                            <img
+                                                src={review.src}
+                                                alt={review.alt}
+                                                loading="lazy"
+                                                className="w-full h-auto object-contain rounded-lg shadow-2xl shadow-black/50"
+                                            />
                                         </div>
                                     </motion.div>
                                 ))}
                             </div>
-
-                            {/* Scroll Indicator Hint */}
-                            <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 hidden lg:flex flex-col items-center gap-2 opacity-50">
-                                <ChevronRight className="animate-pulse text-blue-400" size={32} />
-                            </div>
-                        </motion.div>
+                        </div>
                     ) : (
                         <div className="glass p-12 text-center rounded-2xl border border-dashed border-white/10">
                             <Quote className="mx-auto text-gray-600 mb-4" size={48} />
