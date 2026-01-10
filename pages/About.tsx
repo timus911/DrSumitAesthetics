@@ -150,12 +150,12 @@ const About: React.FC = () => {
           alt="Surgical Artistry Background"
           className="w-full h-full object-cover opacity-60"
         />
-        {/* Layer 1: General darkening for text readability throughout */}
-        <div className="absolute inset-0 bg-black/30" />
+        {/* Layer 1: General darkening */}
+        <div className="absolute inset-0 bg-black/40" />
 
-        {/* Layer 2: Strong gradient mask to completely fade lower section into solid black */}
-        {/* This ensures content below overlaps with a solid background, not the image */}
-        <div className="absolute bottom-0 left-0 w-full h-[35vh] bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a] to-transparent z-10" />
+        {/* Layer 2: Aggressive fade to solid black at the bottom */}
+        {/* We use a linear gradient that starts transparent at the top and becomes SOLID BLACK at 60% down */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black via-60%" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
