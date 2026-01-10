@@ -154,9 +154,9 @@ const About: React.FC = () => {
         {/* Layer 1: General darkening */}
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Layer 2: Seamless fade to solid black */}
-        {/* Using a tall gradient from the bottom up to ensure the lower portion is 100% black #000000 */}
-        <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-black via-black to-transparent" />
+        {/* Layer 2: Smoother fade to solid black */}
+        {/* Extended height to 80vh with a softer midpoint to create a gradual, non-abrupt transition */}
+        <div className="absolute bottom-0 left-0 w-full h-[80vh] bg-gradient-to-t from-black via-black/80 to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
