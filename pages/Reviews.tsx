@@ -111,7 +111,26 @@ const Reviews: React.FC = () => {
         show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
     };
 
+    const [scrollProgress, setScrollProgress] = useState(0);
     const scrollContainerRef = React.useRef<HTMLDivElement>(null);
+
+    const handleScroll = () => {
+        if (scrollContainerRef.current) {
+            const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+            const maxScroll = scrollWidth - clientWidth;
+            const progress = maxScroll > 0 ? scrollLeft / maxScroll : 0;
+            setScrollProgress(progress);
+        }
+    };
+
+    React.useEffect(() => {
+        const container = scrollContainerRef.current;
+        if (container) {
+            container.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initial check
+            return () => container.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
 
     const scroll = (direction: 'left' | 'right') => {
         if (scrollContainerRef.current) {
