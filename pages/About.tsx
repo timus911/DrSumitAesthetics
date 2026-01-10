@@ -97,7 +97,7 @@ const About: React.FC = () => {
     return (
       <motion.img
         ref={ref}
-        variants={fadeInUp}
+        // Removed variants={fadeInUp} to prevent re-triggering animation on hover which causes flickering
         src={image.src}
         className={`rounded-sm shadow-lg cursor-pointer transition-all duration-500 ${isHovered || isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'}`}
         alt={image.title}
@@ -105,6 +105,29 @@ const About: React.FC = () => {
         onMouseLeave={() => setHoveredImageIndex(null)}
         onClick={() => handleGalleryImageClick(idx)}
       />
+    );
+  };
+
+  const MomentThumbnail = ({ num }: { num: number }) => {
+    const ref = React.useRef<HTMLDivElement>(null);
+    const isFocused = useMobileCenterFocus(ref);
+
+    return (
+      <motion.div
+        ref={ref}
+        variants={{
+          hidden: { opacity: 0, y: 40 },
+          show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+        }}
+        className="break-inside-avoid relative group overflow-hidden rounded-sm border border-white/5"
+      >
+        <img
+          src={`${import.meta.env.BASE_URL}personal/personal-${num}.jpg`}
+          alt={`Dr. Sumit Personal Moment ${num}`}
+          className={`w-full h-auto object-contain transition-all duration-1000 scale-100 group-hover:scale-105 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none" />
+      </motion.div>
     );
   };
 
@@ -295,18 +318,7 @@ const About: React.FC = () => {
 
             <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 min-h-[800px] p-4">
               {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                <motion.div
-                  key={num}
-                  variants={fadeInUp}
-                  className="break-inside-avoid relative group overflow-hidden rounded-sm border border-white/5"
-                >
-                  <img
-                    src={`${import.meta.env.BASE_URL}personal/personal-${num}.jpg`}
-                    alt={`Dr. Sumit Personal Moment ${num}`}
-                    className="w-full h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-1000 scale-100 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none" />
-                </motion.div>
+                <MomentThumbnail key={num} num={num} />
               ))}
             </div>
           </motion.div>
