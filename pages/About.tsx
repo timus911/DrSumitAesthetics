@@ -115,16 +115,17 @@ const About: React.FC = () => {
     return (
       <motion.div
         ref={ref}
-        variants={{
-          hidden: { opacity: 0, y: 40 },
-          show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
-        }}
-        className="break-inside-avoid relative group overflow-hidden rounded-sm border border-white/5"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="break-inside-avoid relative group overflow-hidden rounded-sm border border-white/5 bg-white/5" // Added bg-white/5 as fallback
       >
         <img
           src={`${import.meta.env.BASE_URL}personal/personal-${num}.jpg`}
           alt={`Dr. Sumit Personal Moment ${num}`}
-          className={`w-full h-auto object-contain transition-all duration-1000 scale-100 group-hover:scale-105 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
+          // Use grayscale-0 by default on larger screens via md:grayscale
+          className={`w-full h-auto object-contain transition-all duration-1000 scale-100 group-hover:scale-105 ${isFocused ? 'grayscale-0' : 'grayscale md:grayscale'} md:group-hover:grayscale-0`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 pointer-events-none" />
       </motion.div>
@@ -148,8 +149,9 @@ const About: React.FC = () => {
           alt="Surgical Artistry Background"
           className="w-full h-full object-cover opacity-60"
         />
-        {/* Gradient mask to fade into bottom dark theme - Made stronger for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/30 via-[#0a0a0a]/90 to-[#0a0a0a]" />
+        {/* Gradient mask to fade into bottom dark theme - Fade lower 1/4th completely into black */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/30 via-[#0a0a0a]/80 via-80% to-[#0a0a0a]" />
+        <div className="absolute bottom-0 left-0 w-full h-1/4 bg-gradient-to-t from-[#0a0a0a] to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">

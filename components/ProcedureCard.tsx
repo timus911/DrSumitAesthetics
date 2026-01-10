@@ -52,10 +52,6 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0 }) => {
                     <p className={`text-gray-300 text-sm flex-grow leading-relaxed font-light transition-colors ${isFocused ? 'text-white' : ''} group-hover:text-white`}>
                         {proc.description}
                     </p>
-                    <div className={`flex items-center space-x-3 text-[10px] uppercase tracking-widest text-white/40 transition-colors pt-8 border-t border-white/10 ${isFocused ? 'text-white' : ''} group-hover:text-white`}>
-                        <span className="font-bold">Explore Mastery</span>
-                        <ArrowRight size={14} className={`transition-transform duration-500 text-[#5DA9E9] ${isFocused ? 'translate-x-3' : ''} group-hover:translate-x-3`} />
-                    </div>
                 </div>
             </Link>
         </motion.div>
