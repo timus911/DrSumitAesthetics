@@ -112,7 +112,7 @@ const About: React.FC = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
         >
           <div className="space-y-12">
             <motion.div variants={fadeInUp} className="space-y-8">
@@ -136,7 +136,7 @@ const About: React.FC = () => {
               </p>
             </motion.div>
 
-            <motion.div variants={fadeInUp} className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-48">
+            <motion.div variants={fadeInUp} className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-16">
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <Brush className="text-[#4A90E2]" size={24} />
@@ -186,7 +186,7 @@ const About: React.FC = () => {
         </motion.div>
 
         {/* Artistic Section */}
-        <section className="mt-80 pt-48 border-t border-white/5">
+        <section className="mt-32 pt-16 border-t border-white/5">
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -260,7 +260,7 @@ const About: React.FC = () => {
         </section>
 
         {/* Personal Moments Section */}
-        <section className="mt-80 border-t border-white/5 pt-32">
+        <section className="mt-32 border-t border-white/5 pt-16">
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -293,7 +293,7 @@ const About: React.FC = () => {
         </section>
 
         {/* Academic Section */}
-        <section className="mt-80">
+        <section className="mt-32">
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -312,7 +312,7 @@ const About: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
           >
             {BRAND.education.map((item, idx) => (
-              <motion.div key={idx} variants={fadeInUp} className="glass p-12 space-y-8 relative overflow-hidden group border border-white/5 transition-all hover:bg-blue-900/10 shadow-2xl">
+              <motion.div key={idx} variants={fadeInUp} className="glass p-6 space-y-8 relative overflow-hidden group border border-white/5 transition-all hover:bg-blue-900/10 shadow-2xl">
                 <div className="absolute top-0 left-0 w-1.5 h-0 bg-[#4A90E2] group-hover:h-full transition-all duration-700" />
                 <Award size={36} className="text-[#4A90E2]/40 group-hover:text-[#4A90E2] transition-colors" />
                 <p className="text-white text-lg font-sans font-light tracking-wider uppercase">{item}</p>
@@ -327,7 +327,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-60 glass p-20 lg:p-32 relative overflow-hidden border border-blue-500/10 shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
+          className="mt-32 glass p-6 lg:p-32 relative overflow-hidden border border-blue-500/10 shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
         >
           <div className="absolute top-0 right-0 p-24 opacity-[0.03] select-none pointer-events-none">
             <Brush size={600} className="text-[#4A90E2]" />
@@ -335,7 +335,7 @@ const About: React.FC = () => {
           <div className="max-w-4xl space-y-12 relative z-10">
             <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black text-blue-400">The Artist's Eye</span>
             <h2 className="text-4xl md:text-7xl font-serif text-white leading-[1.1]">Sculpting the <br />Human Canvas</h2>
-            <p className="text-gray-400 text-2xl md:text-3xl leading-relaxed font-light">
+            <p className="text-gray-400 text-lg md:text-2xl leading-relaxed font-light">
               "To me, surgery is sculpting in a living medium. Every incision is a brushstroke, every suture a line of definition. I do not just operate; I curate the natural beauty that resides within the patient, bringing it to the surface with the gentle precision of an artist."
             </p>
 

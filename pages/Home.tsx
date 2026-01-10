@@ -38,12 +38,12 @@ const Home: React.FC = () => {
           {/* Surgical operation background with balanced fade overlay */}
           <img
             src={ASSETS.surgeryHeroBackground}
-            className="w-full h-full object-cover opacity-60"
+            className="w-full h-full object-cover opacity-80"
             alt="Dr. Sumit Surgical Excellence"
           />
           {/* Balanced black fade overlay for visible yet professional background */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black/85" />
-          <div className="absolute inset-0 bg-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80" />
+          <div className="absolute inset-0 bg-black/40" />
         </motion.div>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="space-y-12 mt-32"
+            className="space-y-12 mt-24"
           >
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -98,10 +98,10 @@ const Home: React.FC = () => {
       {/* Philosophy Section */}
       <motion.section
         style={{ y: philosophyYEnter }}
-        className="py-60 relative z-20"
+        className="py-32 relative z-20"
       >
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -80 }}
               whileInView={{ opacity: 1, x: 0 }}
