@@ -144,7 +144,8 @@ const About: React.FC = () => {
       />
       {/* Background Image with Overlay - Top Section Only */}
       {/* Background Image with Overlay - Top Section Only */}
-      <div className="absolute top-0 left-0 w-full h-[120vh] z-0 pointer-events-none">
+      {/* Background Image with Overlay - Top Section Only */}
+      <div className="absolute top-0 left-0 w-full h-[100vh] z-0 pointer-events-none">
         <img
           src={ASSETS.aboutBackground}
           alt="Surgical Artistry Background"
@@ -153,9 +154,9 @@ const About: React.FC = () => {
         {/* Layer 1: General darkening */}
         <div className="absolute inset-0 bg-black/40" />
 
-        {/* Layer 2: Aggressive fade to solid black at the bottom */}
-        {/* We use a linear gradient that starts transparent at the top and becomes SOLID BLACK at 60% down */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/80 to-black via-60%" />
+        {/* Layer 2: Seamless fade to solid black */}
+        {/* Using a tall gradient from the bottom up to ensure the lower portion is 100% black #000000 */}
+        <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-black via-black to-transparent" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
