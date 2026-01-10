@@ -182,140 +182,167 @@ const Reviews: React.FC = () => {
                         The greatest measure of our success is the satisfaction and confidence of our patients.
                     </p>
                 </motion.div>
+            </div>
 
-                {/* Google Reviews Section */}
-                <section className="mb-32 relative group/section">
-                    <div className="flex items-center gap-4 mb-12">
+            {/* Google Reviews Section */}
+            <section className="mb-32 relative group/section">
+                <div className="flex items-center justify-between mb-12">
+                    <div className="flex items-center gap-4">
                         <div className="p-3 glass rounded-full text-yellow-500">
                             <Star fill="currentColor" size={24} />
                         </div>
                         <h2 className="text-3xl font-serif text-white">Google Reviews</h2>
                     </div>
-
-                    {GOOGLE_REVIEWS.length > 0 ? (
-                        <div className="relative">
-                            {/* Navigation Arrows */}
-                            <button
-                                onClick={() => scroll('left')}
-                                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/50 hover:bg-black/80 text-white rounded-full backdrop-blur-md border border-white/10 opacity-0 group-hover/section:opacity-100 transition-opacity -translate-x-4 md:-translate-x-8"
-                                aria-label="Scroll left"
-                            >
-                                <ChevronRight className="rotate-180" size={24} />
-                            </button>
-
-                            <button
-                                onClick={() => scroll('right')}
-                                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-3 bg-black/50 hover:bg-black/80 text-white rounded-full backdrop-blur-md border border-white/10 opacity-0 group-hover/section:opacity-100 transition-opacity translate-x-4 md:translate-x-8"
-                                aria-label="Scroll right"
-                            >
-                                <ChevronRight size={24} />
-                            </button>
-
-                            {/* Horizontal Scroll Container */}
-                            <div
-                                ref={scrollContainerRef}
-                                className="flex overflow-x-auto gap-12 pb-12 snap-x snap-mandatory scrollbar-none items-start"
-                                data-lenis-prevent
-                                style={{ scrollBehavior: 'smooth' }}
-                            >
-                                {GOOGLE_REVIEWS.map((review) => (
-                                    <motion.div
-                                        key={review.id}
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true, margin: "100px" }}
-                                        className="flex-none w-[300px] md:w-[350px] snap-start"
-                                    >
-                                        <div className="group relative">
-                                            {/* Removed glass/border container as requested */}
-                                            <img
-                                                src={review.src}
-                                                alt={review.alt}
-                                                loading="lazy"
-                                                className="w-full h-auto object-contain rounded-lg shadow-2xl shadow-black/50"
-                                            />
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
-                    ) : (
-                        <div className="glass p-12 text-center rounded-2xl border border-dashed border-white/10">
-                            <Quote className="mx-auto text-gray-600 mb-4" size={48} />
-                            <p className="text-gray-400 italic">"Google review screenshots will appear here soon."</p>
-                        </div>
-                    )}
-                </section>
-
-                {/* Separator */}
-                <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-24" />
-                <section>
-                    <div className="flex items-center gap-4 mb-12">
-                        <div className="p-3 glass rounded-full text-blue-400">
-                            <User size={24} />
-                        </div>
-                        <h2 className="text-3xl font-serif text-white">Our Happy Patients</h2>
+                    {/* Desktop Hint */}
+                    <div className="hidden md:flex items-center gap-2 text-white/30 text-xs font-mono uppercase tracking-widest">
+                        <span className="animate-pulse">Scroll / Drag to Explore</span>
+                        <ChevronRight size={14} />
                     </div>
+                </div>
 
-                    {HAPPY_PATIENTS.length > 0 ? (
-                        <motion.div
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                            className="grid grid-cols-2 md:grid-cols-4 gap-6"
+                {GOOGLE_REVIEWS.length > 0 ? (
+                    <div className="relative">
+                        {/* Left Gradient Mask */}
+                        <div
+                            className={`absolute left-0 top-0 bottom-12 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none transition-opacity duration-300 ${scrollProgress > 0.01 ? 'opacity-100' : 'opacity-0'}`}
+                        />
+
+                        {/* Right Gradient Mask */}
+                        <div
+                            className={`absolute right-0 top-0 bottom-12 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none transition-opacity duration-300 ${scrollProgress < 0.99 ? 'opacity-100' : 'opacity-0'}`}
+                        />
+
+                        {/* Navigation Arrows */}
+                        <button
+                            onClick={() => scroll('left')}
+                            className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/50 hover:bg-blue-600 text-white rounded-full backdrop-blur-md border border-white/10 transition-all -translate-x-4 md:-translate-x-6 shadow-2xl ${scrollProgress > 0.01 ? 'opacity-100 translate-x-0' : 'opacity-0 pointer-events-none'}`}
+                            aria-label="Scroll left"
                         >
-                            {HAPPY_PATIENTS.map((patient) => (
+                            <ChevronRight className="rotate-180" size={24} />
+                        </button>
+
+                        <button
+                            onClick={() => scroll('right')}
+                            className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/50 hover:bg-blue-600 text-white rounded-full backdrop-blur-md border border-white/10 transition-all translate-x-4 md:translate-x-6 shadow-2xl ${scrollProgress < 0.99 ? 'opacity-100 translate-x-0' : 'opacity-0 pointer-events-none'}`}
+                            aria-label="Scroll right"
+                        >
+                            <ChevronRight size={24} />
+                        </button>
+
+                        {/* Horizontal Scroll Container */}
+                        <div
+                            ref={scrollContainerRef}
+                            className="flex overflow-x-auto gap-8 pb-12 cursor-grab active:cursor-grabbing snap-x snap-mandatory scrollbar-none items-start"
+                            data-lenis-prevent
+                            style={{ scrollBehavior: 'smooth' }}
+                        >
+                            {GOOGLE_REVIEWS.map((review) => (
                                 <motion.div
-                                    key={patient.id}
-                                    variants={itemVariants}
-                                    className="group cursor-pointer"
-                                    onClick={() => setSelectedImage(patient.src)}
+                                    key={review.id}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true, margin: "50px" }}
+                                    className="flex-none w-[300px] md:w-[400px] snap-center"
                                 >
-                                    <div className="aspect-[3/4] overflow-hidden rounded-xl relative glass border border-white/5">
+                                    <div className="group relative select-none">
                                         <img
-                                            src={patient.src}
-                                            alt={patient.caption}
-                                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                            src={review.src}
+                                            alt={review.alt}
+                                            loading="lazy"
+                                            draggable={false}
+                                            className="w-full h-auto object-contain rounded-lg shadow-2xl shadow-black/50"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                            <span className="text-white text-xs uppercase tracking-widest font-bold">{patient.caption}</span>
-                                        </div>
                                     </div>
                                 </motion.div>
                             ))}
-                        </motion.div>
-                    ) : (
-                        <div className="glass p-12 text-center rounded-2xl border border-dashed border-white/10">
-                            <User className="mx-auto text-gray-600 mb-4" size={48} />
-                            <p className="text-gray-400 italic">"Patient photos gallery coming soon."</p>
                         </div>
-                    )}
-                </section>
-            </div>
 
-            {/* Lightbox */}
-            <AnimatePresence>
-                {selectedImage && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-zoom-out items-center"
-                        onClick={() => setSelectedImage(null)}
-                    >
-                        <motion.img
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            src={selectedImage}
-                            alt="Full view"
-                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-                        />
-                    </motion.div>
+                        {/* Progress Bar */}
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/5 rounded-full overflow-hidden mt-4">
+                            <motion.div
+                                className="h-full bg-blue-500"
+                                style={{ width: `${(scrollProgress * 100)}%` }}
+                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                            />
+                        </div>
+                    </div>
+                ) : (
+                    <div className="glass p-12 text-center rounded-2xl border border-dashed border-white/10">
+                        <Quote className="mx-auto text-gray-600 mb-4" size={48} />
+                        <p className="text-gray-400 italic">"Google review screenshots will appear here soon."</p>
+                    </div>
                 )}
-            </AnimatePresence>
+            </section>
+
+            {/* Separator */}
+            <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-24" />
+            <section>
+                <div className="flex items-center gap-4 mb-12">
+                    <div className="p-3 glass rounded-full text-blue-400">
+                        <User size={24} />
+                    </div>
+                    <h2 className="text-3xl font-serif text-white">Our Happy Patients</h2>
+                </div>
+
+                {HAPPY_PATIENTS.length > 0 ? (
+                    <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="grid grid-cols-2 md:grid-cols-4 gap-6"
+                    >
+                        {HAPPY_PATIENTS.map((patient) => (
+                            <motion.div
+                                key={patient.id}
+                                variants={itemVariants}
+                                className="group cursor-pointer"
+                                onClick={() => setSelectedImage(patient.src)}
+                            >
+                                <div className="aspect-[3/4] overflow-hidden rounded-xl relative glass border border-white/5">
+                                    <img
+                                        src={patient.src}
+                                        alt={patient.caption}
+                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                        <span className="text-white text-xs uppercase tracking-widest font-bold">{patient.caption}</span>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                ) : (
+                    <div className="glass p-12 text-center rounded-2xl border border-dashed border-white/10">
+                        <User className="mx-auto text-gray-600 mb-4" size={48} />
+                        <p className="text-gray-400 italic">"Patient photos gallery coming soon."</p>
+                    </div>
+                )}
+            </section>
         </div>
+
+            {/* Lightbox */ }
+    <AnimatePresence>
+        {selectedImage && (
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-zoom-out items-center"
+                onClick={() => setSelectedImage(null)}
+            >
+                <motion.img
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.9, opacity: 0 }}
+                    src={selectedImage}
+                    alt="Full view"
+                    className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                />
+            </motion.div>
+        )}
+    </AnimatePresence>
+        </div >
     );
 };
 
