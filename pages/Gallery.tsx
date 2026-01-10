@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const galleryImages = [
   { src: `${import.meta.env.BASE_URL}gallery-1.jpg`, title: 'Axillary Breast', category: 'Breast Surgery' },
@@ -23,6 +24,36 @@ const galleryImages = [
   { src: `${import.meta.env.BASE_URL}gallery-16.jpg`, title: 'Xanthelasma Excision', category: 'Facial Aesthetics' },
   { src: `${import.meta.env.BASE_URL}gallery-17.jpg`, title: 'Tummy Tuck', category: 'Body Contouring' }
 ];
+
+const GalleryCard = ({ image, idx, onClick }: any) => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const isFocused = useMobileCenterFocus(ref);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.02 }}
+      className="group relative glass rounded-sm overflow-hidden aspect-[4/5] cursor-pointer"
+      onClick={onClick}
+    >
+      <img
+        src={image.src}
+        className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-70'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110`}
+        alt={image.title}
+      />
+      <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 ${isFocused ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100`}>
+        <div className="absolute bottom-8 left-8 right-8">
+          <h4 className="text-white font-serif text-xl mb-2">{image.title}</h4>
+          <p className="text-[#D4AF37] text-xs uppercase tracking-widest">{image.category}</p>
+        </div>
+      </div>
+      <div className="absolute bottom-6 right-6 text-white/20 font-serif text-4xl">0{idx + 1}</div>
+    </motion.div>
+  );
+};
 
 const Gallery: React.FC = () => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -97,25 +128,12 @@ const Gallery: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {galleryImages.map((image, idx) => (
-            <motion.div
+            <GalleryCard
               key={idx}
-              whileHover={{ scale: 1.02 }}
-              className="group relative glass rounded-sm overflow-hidden aspect-[4/5] cursor-pointer"
+              image={image}
+              idx={idx}
               onClick={() => openLightbox(idx)}
-            >
-              <img
-                src={image.src}
-                className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-                alt={image.title}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <div className="absolute bottom-8 left-8 right-8">
-                  <h4 className="text-white font-serif text-xl mb-2">{image.title}</h4>
-                  <p className="text-[#D4AF37] text-xs uppercase tracking-widest">{image.category}</p>
-                </div>
-              </div>
-              <div className="absolute bottom-6 right-6 text-white/20 font-serif text-4xl">0{idx + 1}</div>
-            </motion.div>
+            />
           ))}
         </div>
 
