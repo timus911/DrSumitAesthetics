@@ -11,6 +11,7 @@ import SEO from '../components/SEO.tsx';
 // Actually, better to just generate numbers 1 to 147 and let the UI handle the path.
 
 const GOOGLE_REVIEWS = [
+    { id: 39, src: `${import.meta.env.BASE_URL}reviews/Review1411.png`, alt: "Patient Review 39" },
     { id: 1, src: `${import.meta.env.BASE_URL}reviews/Review0847.png`, alt: "Patient Review 1" },
     { id: 2, src: `${import.meta.env.BASE_URL}reviews/Review0857.png`, alt: "Patient Review 2" },
     { id: 3, src: `${import.meta.env.BASE_URL}reviews/Review0913.png`, alt: "Patient Review 3" },
@@ -49,7 +50,6 @@ const GOOGLE_REVIEWS = [
     { id: 36, src: `${import.meta.env.BASE_URL}reviews/Review1342.png`, alt: "Patient Review 36" },
     { id: 37, src: `${import.meta.env.BASE_URL}reviews/Review1349.png`, alt: "Patient Review 37" },
     { id: 38, src: `${import.meta.env.BASE_URL}reviews/Review1401.png`, alt: "Patient Review 38" },
-    { id: 39, src: `${import.meta.env.BASE_URL}reviews/Review1411.png`, alt: "Patient Review 39" },
     { id: 40, src: `${import.meta.env.BASE_URL}reviews/Review1429.png`, alt: "Patient Review 40" },
     { id: 41, src: `${import.meta.env.BASE_URL}reviews/Review1436.png`, alt: "Patient Review 41" },
     { id: 42, src: `${import.meta.env.BASE_URL}reviews/Review1447.png`, alt: "Patient Review 42" },
@@ -221,20 +221,10 @@ const Reviews: React.FC = () => {
 
                 {GOOGLE_REVIEWS.length > 0 ? (
                     <div className="relative">
-                        {/* Left Gradient Mask */}
-                        <div
-                            className={`absolute left-0 top-0 bottom-12 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none transition-opacity duration-300 ${scrollProgress > 0.01 ? 'opacity-100' : 'opacity-0'}`}
-                        />
-
-                        {/* Right Gradient Mask */}
-                        <div
-                            className={`absolute right-0 top-0 bottom-12 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none transition-opacity duration-300 ${scrollProgress < 0.99 ? 'opacity-100' : 'opacity-0'}`}
-                        />
-
                         {/* Navigation Arrows */}
                         <button
                             onClick={() => scroll('left')}
-                            className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/50 hover:bg-blue-600 text-white rounded-full backdrop-blur-md border border-white/10 transition-all -translate-x-4 md:-translate-x-6 shadow-2xl ${scrollProgress > 0.01 ? 'opacity-100 translate-x-0' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/50 hover:bg-blue-600 text-white rounded-full backdrop-blur-md border border-white/10 transition-all -translate-x-4 md:-translate-x-6 shadow-2xl ${scrollProgress > 0.01 ? 'opacity-100 translate-x-0' : 'opacity-100 translate-x-0'}`}
                             aria-label="Scroll left"
                         >
                             <ChevronRight className="rotate-180" size={24} />
@@ -242,7 +232,7 @@ const Reviews: React.FC = () => {
 
                         <button
                             onClick={() => scroll('right')}
-                            className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/50 hover:bg-blue-600 text-white rounded-full backdrop-blur-md border border-white/10 transition-all translate-x-4 md:translate-x-6 shadow-2xl ${scrollProgress < 0.99 ? 'opacity-100 translate-x-0' : 'opacity-0 pointer-events-none'}`}
+                            className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-4 bg-black/50 hover:bg-blue-600 text-white rounded-full backdrop-blur-md border border-white/10 transition-all translate-x-4 md:translate-x-6 shadow-2xl ${scrollProgress < 0.99 ? 'opacity-100 translate-x-0' : 'opacity-100 translate-x-0'}`}
                             aria-label="Scroll right"
                         >
                             <ChevronRight size={24} />
@@ -253,7 +243,6 @@ const Reviews: React.FC = () => {
                             ref={scrollContainerRef}
                             className="flex overflow-x-auto gap-8 pb-12 cursor-grab active:cursor-grabbing snap-x snap-mandatory scrollbar-none items-start"
                             data-lenis-prevent
-                            style={{ scrollBehavior: 'smooth' }}
                         >
                             {GOOGLE_REVIEWS.map((review) => (
                                 <motion.div
@@ -279,7 +268,7 @@ const Reviews: React.FC = () => {
                         {/* Progress Bar */}
                         <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/5 rounded-full overflow-hidden mt-4">
                             <motion.div
-                                className="h-full bg-blue-500"
+                                className="h-full bg-white/50"
                                 style={{ width: `${(scrollProgress * 100)}%` }}
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                             />
