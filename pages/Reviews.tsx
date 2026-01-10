@@ -319,30 +319,29 @@ const Reviews: React.FC = () => {
                     </div>
                 )}
             </section>
-        </div>
 
-            {/* Lightbox */ }
-    <AnimatePresence>
-        {selectedImage && (
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-zoom-out items-center"
-                onClick={() => setSelectedImage(null)}
-            >
-                <motion.img
-                    initial={{ scale: 0.9, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.9, opacity: 0 }}
-                    src={selectedImage}
-                    alt="Full view"
-                    className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
-                />
-            </motion.div>
-        )}
-    </AnimatePresence>
-        </div >
+            {/* Lightbox */}
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-zoom-out items-center"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <motion.img
+                            initial={{ scale: 0.9, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.9, opacity: 0 }}
+                            src={selectedImage}
+                            alt="Full view"
+                            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 };
 
