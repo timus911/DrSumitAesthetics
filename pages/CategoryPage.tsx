@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { PROCEDURES, Procedure, COLORS } from '../constants.ts';
 import { ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO.tsx';
+import ProcedureCard from '../components/ProcedureCard.tsx';
 
 interface CategoryPageProps {
   type: Procedure['parentCategory'];
@@ -49,51 +50,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProcedures.length > 0 ? (
             filteredProcedures.map((proc, idx) => (
-              <motion.div
-                key={proc.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: idx * 0.05 }}
-                className="group relative h-full overflow-hidden rounded-sm glass border border-white/5"
-              >
-                {/* Background "After" Result Image */}
-                <motion.div
-                  className="absolute inset-0 z-0 overflow-hidden"
-                  initial={{ opacity: 0.2 }}
-                  whileHover={{ opacity: 0.5 }}
-                  whileInView={{ opacity: 0.5 }}
-                  viewport={{ once: false, amount: 0.8 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <img
-                    src={proc.image || `https://picsum.photos/800/1000?${proc.id}-after`}
-                    alt={proc.title}
-                    className="w-full h-full object-cover grayscale brightness-75 transition-transform duration-1000 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/90" />
-                </motion.div>
-
-                <Link to={`/procedure/${proc.id}`} className="relative z-10 block h-full p-12 border-b-2 border-transparent hover:border-[#5DA9E9] transition-all duration-700">
-                  <div className="space-y-8 flex flex-col h-full">
-                    <div className="space-y-4">
-                      <div className="text-[#5DA9E9] text-[10px] tracking-[0.3em] uppercase font-bold opacity-80 group-hover:opacity-100 transition-opacity">
-                        {proc.category}
-                      </div>
-                      <h3 className="text-2xl md:text-3xl font-serif text-white group-hover:text-[#5DA9E9] transition-colors duration-500 leading-tight">
-                        {proc.title}
-                      </h3>
-                    </div>
-                    <p className="text-gray-300 text-sm flex-grow leading-relaxed font-light group-hover:text-white transition-colors">
-                      {proc.description}
-                    </p>
-                    <div className="flex items-center space-x-3 text-[10px] uppercase tracking-widest text-white/40 group-hover:text-white pt-8 border-t border-white/10">
-                      <span className="font-bold">Explore Mastery</span>
-                      <ArrowRight size={14} className="group-hover:translate-x-3 transition-transform duration-500 text-[#5DA9E9]" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+              <ProcedureCard key={proc.id} proc={proc} index={idx} />
             ))
           ) : (
             <div className="col-span-full py-32 text-center glass border border-white/5">

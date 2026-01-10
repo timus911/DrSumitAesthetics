@@ -5,6 +5,7 @@ import { Award, GraduationCap, Globe, Box, Scissors, Brush, Instagram } from 'lu
 import { useNavigate } from 'react-router-dom';
 import { BRAND, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
+import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 // Gallery images array
 const galleryImages = [
@@ -87,6 +88,28 @@ const About: React.FC = () => {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
   };
+
+  const AboutThumbnail = ({ image, idx, hoveredImageIndex, setHoveredImageIndex, handleGalleryImageClick }: any) => {
+    const ref = React.useRef<HTMLImageElement>(null);
+    const isFocused = useMobileCenterFocus(ref);
+    const isHovered = hoveredImageIndex === idx;
+
+    return (
+      <motion.img
+        ref={ref}
+        variants={fadeInUp}
+        src={image.src}
+        className={`rounded-sm shadow-lg cursor-pointer transition-all duration-500 ${isHovered || isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'}`}
+        alt={image.title}
+        onMouseEnter={() => setHoveredImageIndex(idx)}
+        onMouseLeave={() => setHoveredImageIndex(null)}
+        onClick={() => handleGalleryImageClick(idx)}
+      />
+    );
+  };
+
+  const paintingRef = React.useRef<HTMLDivElement>(null);
+  const isPaintingFocused = useMobileCenterFocus(paintingRef);
 
   return (
     <div className="pt-60 pb-32 overflow-hidden relative">
@@ -241,16 +264,13 @@ const About: React.FC = () => {
               >
                 {/* Real Gallery Images with Individual Hover Effects */}
                 {shuffledImages.map((image, idx) => (
-                  <motion.img
+                  <AboutThumbnail
                     key={idx}
-                    variants={fadeInUp}
-                    src={image.src}
-                    className={`opacity-60 rounded-sm shadow-lg cursor-pointer transition-all duration-500 ${hoveredImageIndex === idx ? 'grayscale-0 hover:opacity-100' : 'grayscale'
-                      }`}
-                    alt={image.title}
-                    onMouseEnter={() => setHoveredImageIndex(idx)}
-                    onMouseLeave={() => setHoveredImageIndex(null)}
-                    onClick={() => handleGalleryImageClick(idx)}
+                    image={image}
+                    idx={idx}
+                    hoveredImageIndex={hoveredImageIndex}
+                    setHoveredImageIndex={setHoveredImageIndex}
+                    handleGalleryImageClick={handleGalleryImageClick}
                   />
                 ))}
               </motion.div>
@@ -348,11 +368,11 @@ const About: React.FC = () => {
               className="pt-12 flex flex-col items-start gap-6 group cursor-zoom-in"
               onClick={() => setIsLightboxOpen(true)}
             >
-              <div className="relative w-64 md:w-80 aspect-square glass p-2 border border-white/10 shadow-2xl rotate-[-2deg] group-hover:rotate-0 transition-all duration-700 overflow-hidden">
+              <div ref={paintingRef} className="relative w-64 md:w-80 aspect-square glass p-2 border border-white/10 shadow-2xl rotate-[-2deg] group-hover:rotate-0 transition-all duration-700 overflow-hidden">
                 <img
                   src={ASSETS.verpaelePainting}
                   alt="Watercolor of Dr. Verpaele"
-                  className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                  className={`w-full h-full object-cover transition-all duration-1000 ${isPaintingFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-70'} group-hover:grayscale-0 group-hover:opacity-100`}
                 />
               </div>
               <div className="flex items-center gap-4 pl-2 opacity-40 group-hover:opacity-80 transition-opacity">

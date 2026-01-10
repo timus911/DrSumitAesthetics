@@ -5,6 +5,33 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, CheckCircle, Info, Image as ImageIcon, Crosshair, ChevronDown, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PROCEDURES, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
+import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
+
+const GalleryThumbnail = ({ img, onClick }: { img: string, onClick: () => void }) => {
+  const ref = React.useRef<HTMLDivElement>(null);
+  const isFocused = useMobileCenterFocus(ref);
+
+  return (
+    <motion.div
+      ref={ref}
+      whileHover={{ y: -10 }}
+      className="group relative glass overflow-hidden rounded-sm cursor-pointer shadow-2xl border border-white/5 w-full md:w-[calc(50%-3rem)] lg:w-[calc(33.333%-4rem)] max-w-[450px]"
+      onClick={onClick}
+    >
+      <img
+        src={img}
+        alt="Clinical result"
+        className={`w-full h-auto transition-all duration-700 block ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'} group-hover:grayscale-0 group-hover:opacity-100`}
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+      <div className={`absolute bottom-6 left-6 transition-all translate-y-4 group-hover:translate-y-0 ${isFocused ? 'opacity-100 translate-y-0' : 'opacity-0'} group-hover:opacity-100`}>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-[#4A90E2] font-extrabold flex items-center gap-2">
+          <ImageIcon size={14} /> View Transformation
+        </span>
+      </div>
+    </motion.div>
+  );
+};
 
 const ExpandableSection: React.FC<{ title: string; shortLines: string[]; longLines?: string[] }> = ({ title, shortLines, longLines = [] }) => {
   const [open, setOpen] = useState(false);
@@ -73,6 +100,9 @@ const ProcedureDetail: React.FC = () => {
   const d = procedure.details || defaultDetails;
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [orientations, setOrientations] = useState<Record<string, 'h' | 'v'>>({});
+
+  const mainImageRef = React.useRef<HTMLDivElement>(null);
+  const isMainImageFocused = useMobileCenterFocus(mainImageRef);
 
   const galleryImages = procedure.gallery || [];
 
@@ -295,8 +325,8 @@ const ProcedureDetail: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             className="space-y-12 lg:sticky lg:top-32"
           >
-            <div className="aspect-video glass rounded-sm overflow-hidden relative shadow-2xl border border-white/5 group">
-              <img src={procedure.image || ASSETS.surgeryTheater} alt={procedure.title} className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-90 transition-all duration-1000" />
+            <div ref={mainImageRef} className="aspect-video glass rounded-sm overflow-hidden relative shadow-2xl border border-white/5 group">
+              <img src={procedure.image || ASSETS.surgeryTheater} alt={procedure.title} className={`w-full h-full object-cover transition-all duration-1000 ${isMainImageFocused ? 'grayscale-0 opacity-90' : 'opacity-60 grayscale'} group-hover:grayscale-0 group-hover:opacity-90`} />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
             </div>
 
@@ -360,24 +390,7 @@ const ProcedureDetail: React.FC = () => {
                   {horizontalImages.map((img) => {
                     const fullIdx = sortedGallery.indexOf(img);
                     return (
-                      <motion.div
-                        key={img}
-                        whileHover={{ y: -10 }}
-                        className="group relative glass overflow-hidden rounded-sm cursor-pointer shadow-2xl border border-white/5 w-full md:w-[calc(50%-3rem)] lg:w-[calc(33.333%-4rem)] max-w-[450px]"
-                        onClick={() => setLightboxIndex(fullIdx)}
-                      >
-                        <img
-                          src={img}
-                          alt={`${procedure.title} result`}
-                          className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 block"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
-                          <span className="text-[10px] uppercase tracking-[0.3em] text-[#4A90E2] font-extrabold flex items-center gap-2">
-                            <ImageIcon size={14} /> View Transformation
-                          </span>
-                        </div>
-                      </motion.div>
+                      <GalleryThumbnail key={img} img={img} onClick={() => setLightboxIndex(fullIdx)} />
                     );
                   })}
                 </div>
@@ -389,24 +402,7 @@ const ProcedureDetail: React.FC = () => {
                   {verticalImages.map((img) => {
                     const fullIdx = sortedGallery.indexOf(img);
                     return (
-                      <motion.div
-                        key={img}
-                        whileHover={{ y: -10 }}
-                        className="group relative glass overflow-hidden rounded-sm cursor-pointer shadow-2xl border border-white/5 w-full md:w-[calc(50%-3rem)] lg:w-[calc(33.333%-4rem)] max-w-[450px]"
-                        onClick={() => setLightboxIndex(fullIdx)}
-                      >
-                        <img
-                          src={img}
-                          alt={`${procedure.title} result`}
-                          className="w-full h-auto grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100 block"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                        <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-all translate-y-4 group-hover:translate-y-0">
-                          <span className="text-[10px] uppercase tracking-[0.3em] text-[#4A90E2] font-extrabold flex items-center gap-2">
-                            <ImageIcon size={14} /> View Transformation
-                          </span>
-                        </div>
-                      </motion.div>
+                      <GalleryThumbnail key={img} img={img} onClick={() => setLightboxIndex(fullIdx)} />
                     );
                   })}
                 </div>
