@@ -69,7 +69,13 @@ const SEO: React.FC<SEOProps> = ({
             {/* Primary Meta Tags */}
             <title>{siteTitle}</title>
             <meta name="description" content={metaDescription} />
-            <meta name="keywords" content={keywords || "plastic surgery, cosmetic surgery, chandigarh, dr sumit singh gautam, liposuction, abdominoplasty, rhinoplasty, aesthetic surgeon"} />
+            <meta name="keywords" content={keywords || "best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india, aesthetic surgery, hair transplant chandigarh, tummy tuck india, breast implant surgeon"} />
+
+            {/* Local SEO / Geo Tags */}
+            <meta name="geo.region" content="IN-CH" />
+            <meta name="geo.placename" content="Chandigarh" />
+            <meta name="geo.position" content="30.7276;76.7667" />
+            <meta name="ICBM" content="30.7276, 76.7667" />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />
