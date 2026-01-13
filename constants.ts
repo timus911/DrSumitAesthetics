@@ -23,7 +23,7 @@ export const CONTACT = {
   phone: "+91 82198 16265",
   counselorPhone: "+91 85263 43434",
   email: "sumit.sgautam@gmail.com",
-  location: "Dr. Sumit Aesthetics Healing Hospital, SCO 18-19, Sector 34-A, Chandigarh, 160022",
+  location: "Dr. Sumit Aesthetics > Healing Hospital, SCO 18-19, Sector 34-A, Chandigarh, 160022",
 
   googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Healing+Hospital+Sector+34+Chandigarh",
   hours: {
@@ -334,7 +334,26 @@ Results are visible immediately. You will need to avoid sitting directly on the 
     description: "Minimal Access Cranial Suspension for vertical rejuvenation.",
     longDescription: "A specialized Belgium-refined technique that lifts deep facial tissues vertically, avoiding the horizontal 'pulled' look of traditional facelifts.",
     image: "/facelift-aesthetic.jpg", // User-provided aesthetic image
-    regions: ["Face"]
+    regions: ["Face"],
+    seoContent: `
+### MACS Facelift in Chandigarh: The Vertical Anti-Aging Revolution
+
+**Minimal Access Cranial Suspension (MACS) Lift: The "Belgium Technique"**
+
+Traditional facelifts often pulled the skin horizontally, leading to an unnatural, "wind-blown" appearance. The MACS Lift, refined by masters in Belgium, is a revolutionary technique that lifts the facial tissues **vertically**—counteracting gravity directly.
+
+**Why Choose a MACS Lift?**
+*   **Natural Results:** By lifting vertically, we restore your features to where they were 10 years ago, rather than stretching them sideways.
+*   **Short Scar:** The incision is limited to the front of the ear, avoiding the hairline behind the ear entirely. This means you can wear your hair up with confidence.
+*   **Safety:** The procedure is less invasive than a deep-plane facelift, offering a powerful rejuvenation with a significantly safer profile.
+
+#### Targeting the "Jowls" & Neck
+This procedure is specifically designed to obliterate the "jowls" (sagging jawline) and tighten the upper neck, restoring a crisp, youthful V-shape to the face.
+
+#### Recovery Timeline
+*   **Downtime:** Most patients are "socially presentable" with makeup within 10-14 days.
+*   **Longevity:** While aging continues, the clock is turned back effectively by 10-15 years.
+    `
   },
   {
     id: "neck-lift-chandigarh",
@@ -639,7 +658,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
 
   // MALE
   {
-    id: "gynecomastia-chandigarh",
+    id: "gynecomastia-surgery-chandigarh",
     title: "Gynecomastia (Male Breast Reduction)",
     category: "Male",
     parentCategory: "aesthetic",

@@ -32,7 +32,6 @@ const Home: React.FC = () => {
   return (
     <div ref={containerRef} className="w-full">
       <SEO
-        title="Best Plastic Surgeon in Chandigarh | Aesthetic & Reconstructive"
         description="Dr. Sumit Singh Gautam is a Triple Board Certified Plastic Surgeon in Chandigarh specializing in HD Liposuction, Rhinoplasty, Facelifts, and Hair Transplants."
         keywords="plastic surgeon chandigarh, cosmetic surgeon chandigarh, dr sumit singh gautam, best plastic surgeon, aesthetic surgery, reconstructive surgery"
       />

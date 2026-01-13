@@ -17,18 +17,36 @@ const Footer: React.FC = () => {
               <span className="text-2xl font-serif tracking-[0.2em] text-white">{BRAND.name}</span>
               <span className="text-[9px] tracking-[0.4em] text-[#5DA9E9] font-bold uppercase mt-1">BOARD CERTIFIED PLASTIC SURGEON</span>
             </Link>
-            <p className="text-gray-500 text-sm leading-relaxed font-light">
-              International surgical expertise focusing on structural harmony and ethical patient care. Blending the precision of surgery with the vision of art.
-            </p>
-            <div className="flex space-x-6">
-              <a
-                href="https://www.instagram.com/dr.sumitsgautam/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-[#5DA9E9] cursor-pointer transition-colors"
-              >
-                <Instagram size={20} />
-              </a>
+            <div className="space-y-4">
+              <p className="text-gray-500 text-sm leading-relaxed font-light">
+                International surgical expertise.
+                <br /><br />
+                <a href="https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/" target="_blank" rel="noopener noreferrer" className="text-[#5DA9E9] font-bold hover:underline">
+                  Lead Consultant at Healing Hospital, Sector 34, Chandigarh
+                </a>
+              </p>
+
+              <div className="space-y-2 border-t border-white/5 pt-4">
+                <a
+                  href="https://www.instagram.com/plasticandaestheticcenter/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-500 hover:text-[#E1306C] transition-colors group"
+                >
+                  <Instagram size={14} className="group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Official Healing Hospital Page</span>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/dr.sumitsgautam/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-gray-500 hover:text-[#E1306C] transition-colors group"
+                >
+                  <Instagram size={14} className="group-hover:scale-110 transition-transform" />
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Dr. Sumit's Surgical Portfolio</span>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -81,7 +99,7 @@ const Footer: React.FC = () => {
                   <span className="text-[10px] uppercase tracking-widest text-gray-300 font-bold">Consultation Support</span>
                 </div>
                 <div className="flex items-center space-x-4 pl-7">
-                  <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#5DA9E9] transition-colors">{CONTACT.counselorPhone}</a>
+                  <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#5DA9E9] transition-colors">Phone: {CONTACT.counselorPhone}</a>
                   <a
                     href={`https://wa.me/${CONTACT.counselorPhone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
