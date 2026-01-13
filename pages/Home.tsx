@@ -7,6 +7,9 @@ import { BRAND, COLORS, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
+import MedicalAuthority from '../components/MedicalAuthority.tsx';
+import TrustSection from '../components/TrustSection.tsx';
+
 const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -168,6 +171,10 @@ const Home: React.FC = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* Trust & Authority Signals */}
+      <MedicalAuthority />
+      <TrustSection />
     </div>
   );
 };

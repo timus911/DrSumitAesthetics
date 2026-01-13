@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="text-gray-300 text-[10px] tracking-widest font-bold uppercase hover:text-[#5DA9E9] transition-colors"
                 >
-                  {CONTACT.location}
+                  {CONTACT.location} <span className="block text-[8px] opacity-70 mt-1">Near Picaddly Square Mall</span>
                 </a>
               </li>
               <li className="space-y-4">

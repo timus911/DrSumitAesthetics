@@ -183,6 +183,70 @@ const ProcedureDetail: React.FC = () => {
 
             <div className="prose prose-invert max-w-none text-gray-400 text-lg font-light leading-relaxed space-y-6">
               <p>{procedure.longDescription}</p>
+
+              {/* Rich SEO Content Rendering */}
+              {procedure.seoContent && (
+                <div className="mt-12 space-y-6 pt-12 border-t border-white/5">
+                  {procedure.seoContent.split('\n').map((line, i) => {
+                    const trimmed = line.trim();
+                    if (!trimmed) return <br key={i} className="hidden" />; // Skip empty lines visually but keep key structure
+
+                    if (trimmed.startsWith('### ')) {
+                      return <h3 key={i} className="text-2xl font-serif text-white pt-6 pb-2">{trimmed.replace('### ', '')}</h3>;
+                    }
+                    if (trimmed.startsWith('#### ')) {
+                      return <h4 key={i} className="text-xl font-serif text-[#4A90E2] pt-4">{trimmed.replace('#### ', '')}</h4>;
+                    }
+                    if (trimmed.startsWith('**')) {
+                      // Convert **Heading:** to a proper styled sub-heading
+                      return (
+                        <h5 key={i} className="text-[#D4AF37] text-sm font-bold uppercase tracking-widest pt-4 pb-1 border-b border-white/5 inline-block">
+                          {trimmed.replace(/\*\*/g, '')}
+                        </h5>
+                      );
+                    }
+                    if (trimmed.startsWith('* ')) {
+                      const listText = trimmed.replace('* ', '');
+                      const parts = listText.split(/(\*\*.*?\*\*)/g);
+                      return (
+                        <div key={i} className="flex items-start space-x-3 ml-4">
+                          <div className="w-1.5 h-1.5 rounded-full bg-[#4A90E2] mt-2.5 shrink-0" />
+                          <span className="text-gray-400">
+                            {parts.map((part, index) => {
+                              if (part.startsWith('**') && part.endsWith('**')) {
+                                return <strong key={index} className="text-white font-bold">{part.slice(2, -2)}</strong>;
+                              }
+                              return part;
+                            })}
+                          </span>
+                        </div>
+                      );
+                    }
+                    // Handle inline links locally if needed, for now stripping standard markdown link syntax for simplicity or rendering text
+                    const linkMatch = trimmed.match(/\[(.*?)\]\((.*?)\)/);
+                    if (linkMatch) {
+                      return (
+                        <Link key={i} to={linkMatch[2]} className="text-[#4A90E2] hover:underline font-bold inline-block mt-2">
+                          {linkMatch[1]}
+                        </Link>
+                      );
+                    }
+
+                    // Handle inline bolding **text**
+                    const parts = trimmed.split(/(\*\*.*?\*\*)/g);
+                    return (
+                      <p key={i} className="text-gray-400">
+                        {parts.map((part, index) => {
+                          if (part.startsWith('**') && part.endsWith('**')) {
+                            return <strong key={index} className="text-white font-bold">{part.slice(2, -2)}</strong>;
+                          }
+                          return part;
+                        })}
+                      </p>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {procedure.id === 'fat-grafting' && (
@@ -240,57 +304,57 @@ const ProcedureDetail: React.FC = () => {
               <div className="space-y-12 pt-16 border-t border-white/5">
                 <ExpandableSection
                   title={`Who needs a ${procedure.title}?`}
-                  shortLines={[d.whoNeeds?.[0] || '']}
-                  longLines={d.whoNeeds?.slice(1)}
+                  shortLines={[]}
+                  longLines={d.whoNeeds}
                 />
 
                 <ExpandableSection
                   title="Ideal Candidate Profile"
-                  shortLines={[d.candidates?.[0] || '']}
-                  longLines={d.candidates?.slice(1)}
+                  shortLines={[]}
+                  longLines={d.candidates}
                 />
 
                 <ExpandableSection
                   title="Clinical Assessment"
-                  shortLines={[d.assessment?.[0] || '']}
-                  longLines={d.assessment?.slice(1)}
+                  shortLines={[]}
+                  longLines={d.assessment}
                 />
 
                 <ExpandableSection
                   title="Immediate Functionality"
-                  shortLines={[d.functional?.[0] || '']}
-                  longLines={d.functional?.slice(1)}
+                  shortLines={[]}
+                  longLines={d.functional}
                 />
 
                 <ExpandableSection
                   title="Return to Professional Life"
-                  shortLines={[d.backToWork?.[0] || '']}
-                  longLines={d.backToWork?.slice(1)}
+                  shortLines={[]}
+                  longLines={d.backToWork}
                 />
 
                 <ExpandableSection
                   title="Recommended Healing Window"
-                  shortLines={[d.holidays?.[0] || '']}
-                  longLines={d.holidays?.slice(1)}
+                  shortLines={[]}
+                  longLines={d.holidays}
                 />
 
                 <ExpandableSection
                   title="Final Aesthetic Maturation"
-                  shortLines={[d.results?.[0] || '']}
-                  longLines={d.results?.slice(1)}
+                  shortLines={[]}
+                  longLines={d.results}
                 />
 
                 <ExpandableSection
                   title="Optimization Protocol"
-                  shortLines={[d.recoveryTips?.[0] || '']}
-                  longLines={d.recoveryTips?.slice(1)}
+                  shortLines={[]}
+                  longLines={d.recoveryTips}
                 />
 
                 {d.customFaq && (
                   <ExpandableSection
                     title={d.customFaq.question}
-                    shortLines={[d.customFaq.answer[0]]}
-                    longLines={d.customFaq.answer.slice(1)}
+                    shortLines={[]}
+                    longLines={d.customFaq.answer}
                   />
                 )}
 

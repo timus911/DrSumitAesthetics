@@ -26,12 +26,20 @@ const SEO: React.FC<SEOProps> = ({
     // Structured Data for Local Business / Physician
     const schemaData = {
         "@context": "https://schema.org",
-        "@type": "Physician",
-        "name": BRAND.name,
+        "@type": "MedicalBusiness",
+        "name": "Dr. Sumit Aesthetics",
+        "alternateName": "Dr. Sumit Singh Gautam - Plastic Surgeon",
         "image": image,
         "@id": siteUrl,
         "url": siteUrl,
         "telephone": CONTACT.phone,
+        "priceRange": "$$",
+        "medicalSpecialty": ["PlasticSurgery", "CosmeticSurgery"],
+        "parentOrganization": {
+            "@type": "MedicalOrganization",
+            "name": "Healing Hospital",
+            "address": "Sector 34 A, Chandigarh"
+        },
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Healing Hospital, Sector 34 A",
@@ -42,7 +50,7 @@ const SEO: React.FC<SEOProps> = ({
         },
         "geo": {
             "@type": "GeoCoordinates",
-            "latitude": 30.7276, // Approximate coords for Sec 34 Chandigarh
+            "latitude": 30.7276,
             "longitude": 76.7667
         },
         "openingHoursSpecification": {
@@ -58,9 +66,15 @@ const SEO: React.FC<SEOProps> = ({
             "opens": "09:00",
             "closes": "17:00"
         },
+        "department": {
+            "@type": "Physician",
+            "name": BRAND.name,
+            "medicalSpecialty": "Plastic Surgery"
+        },
         "sameAs": [
             CONTACT.social.instagram,
-            CONTACT.social.linkedin
+            CONTACT.social.linkedin,
+            "https://www.facebook.com/drsumitsinghgautam"
         ]
     };
 

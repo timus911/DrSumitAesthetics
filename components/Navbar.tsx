@@ -60,10 +60,10 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${(scrolled || isOpen) ? 'py-2 bg-black/80 backdrop-blur-xl border-b border-white/5' : 'py-8'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center gap-8">
-        <Link to="/" className="flex flex-col group shrink-0">
+        <Link to="/" className="flex flex-col group shrink-1 min-w-0 mr-2">
           <div className="flex flex-col">
-            <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap">Dr. Sumit Singh</span>
-            <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap -mt-1">Gautam</span>
+            <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap overflow-hidden text-ellipsis">Dr. Sumit Singh</span>
+            <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#5DA9E9] transition-colors whitespace-nowrap overflow-hidden text-ellipsis -mt-1">Gautam</span>
           </div>
           <span className="text-[8px] md:text-[9px] tracking-[0.4em] text-gray-500 mt-1 uppercase font-bold whitespace-nowrap border-t border-white/5 pt-1">Plastic & Aesthetic Surgeon</span>
         </Link>
