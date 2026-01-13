@@ -356,7 +356,25 @@ This procedure is performed strictly under general anesthesia at Healing Hospita
 
 #### Result Timeline
 Results are visible immediately. You will need to avoid sitting directly on the area for 2 weeks to allow for optimal healing.
-`},{id:"facelift-chandigarh",title:"Facelift (MACS Lift)",category:"Face",parentCategory:"aesthetic",description:"Minimal Access Cranial Suspension for vertical rejuvenation.",longDescription:"A specialized Belgium-refined technique that lifts deep facial tissues vertically, avoiding the horizontal 'pulled' look of traditional facelifts.",image:"/facelift-aesthetic.jpg",regions:["Face"]},{id:"neck-lift-chandigarh",title:"Neck Lift (Deep Plane)",category:"Face",parentCategory:"aesthetic",description:"Structural sharpening of the jawline and neck angle.",longDescription:"Addressing the deep platysma and fat layers to resolve neck laxity and redefine a sharp, youthful submental profile.",image:"/neck-lift-aesthetic.png",regions:["Neck","Face"],seoContent:`
+`},{id:"facelift-chandigarh",title:"Facelift (MACS Lift)",category:"Face",parentCategory:"aesthetic",description:"Minimal Access Cranial Suspension for vertical rejuvenation.",longDescription:"A specialized Belgium-refined technique that lifts deep facial tissues vertically, avoiding the horizontal 'pulled' look of traditional facelifts.",image:"/facelift-aesthetic.jpg",regions:["Face"],seoContent:`
+### MACS Facelift in Chandigarh: The Vertical Anti-Aging Revolution
+
+**Minimal Access Cranial Suspension (MACS) Lift: The "Belgium Technique"**
+
+Traditional facelifts often pulled the skin horizontally, leading to an unnatural, "wind-blown" appearance. The MACS Lift, refined by masters in Belgium, is a revolutionary technique that lifts the facial tissues **vertically**—counteracting gravity directly.
+
+**Why Choose a MACS Lift?**
+*   **Natural Results:** By lifting vertically, we restore your features to where they were 10 years ago, rather than stretching them sideways.
+*   **Short Scar:** The incision is limited to the front of the ear, avoiding the hairline behind the ear entirely. This means you can wear your hair up with confidence.
+*   **Safety:** The procedure is less invasive than a deep-plane facelift, offering a powerful rejuvenation with a significantly safer profile.
+
+#### Targeting the "Jowls" & Neck
+This procedure is specifically designed to obliterate the "jowls" (sagging jawline) and tighten the upper neck, restoring a crisp, youthful V-shape to the face.
+
+#### Recovery Timeline
+*   **Downtime:** Most patients are "socially presentable" with makeup within 10-14 days.
+*   **Longevity:** While aging continues, the clock is turned back effectively by 10-15 years.
+    `},{id:"neck-lift-chandigarh",title:"Neck Lift (Deep Plane)",category:"Face",parentCategory:"aesthetic",description:"Structural sharpening of the jawline and neck angle.",longDescription:"Addressing the deep platysma and fat layers to resolve neck laxity and redefine a sharp, youthful submental profile.",image:"/neck-lift-aesthetic.png",regions:["Neck","Face"],seoContent:`
 ### Neck Lift in Chandigarh: Define Your Jawline
 **Deep Plane Neck Contouring for a Sharp Profile**
 
