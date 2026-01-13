@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
                   <span className="text-[10px] uppercase tracking-widest text-gray-300 font-bold">Clinical Enquiries</span>
                 </div>
                 <div className="flex items-center space-x-4 pl-7">
-                  <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#5DA9E9] transition-colors">{CONTACT.phone}</a>
+                  <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#5DA9E9] transition-colors">Phone: {CONTACT.phone}</a>
                   <a
                     href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}`}
                     target="_blank"

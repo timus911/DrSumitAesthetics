@@ -5,25 +5,23 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
-const galleryImages = [
-  { src: `${import.meta.env.BASE_URL}gallery-1.jpg`, title: 'Axillary Breast', category: 'Breast Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-2.jpg`, title: 'Breast Augmentation with Implant', category: 'Breast Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-3.jpg`, title: 'Breast Augmentation with Implant', category: 'Breast Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-4.jpg`, title: 'Axillary Breast', category: 'Breast Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-5.jpg`, title: 'Breast Reduction', category: 'Breast Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-6.jpg`, title: 'Keloid Excision', category: 'Reconstructive Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-7.jpg`, title: 'Ear Lobe Repair', category: 'Reconstructive Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-8.jpg`, title: 'Gynecomastia', category: 'Body Contouring' },
-  { src: `${import.meta.env.BASE_URL}gallery-9.png`, title: 'Gynecomastia', category: 'Body Contouring' },
-  { src: `${import.meta.env.BASE_URL}gallery-10.jpg`, title: 'Hair Transplant', category: 'Hair Restoration' },
-  { src: `${import.meta.env.BASE_URL}gallery-11.png`, title: 'Lip Fat Grafting', category: 'Facial Aesthetics' },
-  { src: `${import.meta.env.BASE_URL}gallery-12.png`, title: 'Mole Excision', category: 'Reconstructive Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-13.png`, title: 'Lipo-Sculpting', category: 'Body Contouring' },
-  { src: `${import.meta.env.BASE_URL}gallery-14.png`, title: 'Tummy Tuck', category: 'Body Contouring' },
-  { src: `${import.meta.env.BASE_URL}gallery-15.jpg`, title: 'Ear Reshaping', category: 'Reconstructive Surgery' },
-  { src: `${import.meta.env.BASE_URL}gallery-16.jpg`, title: 'Xanthelasma Excision', category: 'Facial Aesthetics' },
-  { src: `${import.meta.env.BASE_URL}gallery-17.jpg`, title: 'Tummy Tuck', category: 'Body Contouring' }
-];
+import { PROCEDURES } from '../constants.ts';
+
+// Dynamically generate and deduplicate gallery images from all procedures
+const galleryImages = Array.from(
+  new Map(
+    PROCEDURES
+      .filter(p => p.gallery && p.gallery.length > 0)
+      .flatMap(p =>
+        p.gallery!.map(imgSrc => ({
+          src: imgSrc,
+          title: p.title,
+          category: p.category
+        }))
+      )
+      .map(item => [item.src, item]) // Map entry [src, item] for deduplication by src
+  ).values()
+);
 
 const GalleryCard = ({ image, idx, onClick }: any) => {
   const ref = React.useRef<HTMLDivElement>(null);

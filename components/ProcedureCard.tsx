@@ -39,7 +39,7 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0 }) => {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/90" />
             </motion.div>
 
-            <Link to={`/procedure/${proc.id}`} className="relative z-10 block h-full p-12 border-b-2 border-transparent hover:border-[#5DA9E9] transition-all duration-700">
+            <Link to={`/${proc.id}`} className="relative z-10 block h-full p-12 border-b-2 border-transparent hover:border-[#5DA9E9] transition-all duration-700">
                 <div className="space-y-8 flex flex-col h-full">
                     <div className="space-y-4">
                         <div className={`text-[#5DA9E9] text-[10px] tracking-[0.3em] uppercase font-bold transition-opacity ${isFocused ? 'opacity-100' : 'opacity-80'} group-hover:opacity-100`}>

@@ -226,57 +226,79 @@ const Contact: React.FC = () => {
         </div>
       </div>
 
+      {/* Google Map Embed */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-32 w-full max-w-4xl mx-auto h-[400px] md:h-[500px] glass border border-white/5 p-2 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700"
+      >
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.826767562095!2d76.7663243762691!3d30.72661897458737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0d1e3d3001%3A0xc3af7707e777607!2sHealing%20Hospital!5e0!3m2!1sen!2sin!4v1715690000000!5m2!1sen!2sin"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Healing Hospital Location"
+        />
+      </motion.div>
+
+
       {/* QR Lightbox Portal */}
-      {createPortal(
-        <AnimatePresence>
-          {isQrLightboxOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[20000] flex items-center justify-center bg-black/95 backdrop-blur-2xl px-6"
-              onClick={() => setIsQrLightboxOpen(false)}
-            >
-              <div className="absolute top-10 left-10 text-white/20 text-[10px] uppercase tracking-[0.5em] font-bold pointer-events-none">
-                Digital Business Card
-              </div>
-
+      {
+        createPortal(
+          <AnimatePresence>
+            {isQrLightboxOpen && (
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                className="relative max-w-lg w-full aspect-square glass p-8 border border-white/10 shadow-[0_100px_200px_rgba(0,0,0,1)]"
-                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 z-[20000] flex items-center justify-center bg-black/95 backdrop-blur-2xl px-6"
+                onClick={() => setIsQrLightboxOpen(false)}
               >
-                <a
-                  href={`${import.meta.env.BASE_URL}dr-sumit.vcf`}
-                  download="Dr_Sumit_Singh_Gautam.vcf"
-                  className="group block relative w-full h-full overflow-hidden"
-                  title="Click to Download vCard"
-                >
-                  <img
-                    src={`${import.meta.env.BASE_URL}contact-qr.png`}
-                    alt="Dr. Sumit Contact QR"
-                    className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-[#D4AF37]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div className="glass px-6 py-3 border border-white/20">
-                      <span className="text-[10px] uppercase tracking-widest text-white font-bold">Click to Download vCard</span>
-                    </div>
-                  </div>
-                </a>
-
-                {/* Close Hint */}
-                <div className="absolute -bottom-12 left-0 right-0 text-center text-white/30 text-[10px] uppercase tracking-[0.4em]">
-                  Tap anywhere outside to close
+                <div className="absolute top-10 left-10 text-white/20 text-[10px] uppercase tracking-[0.5em] font-bold pointer-events-none">
+                  Digital Business Card
                 </div>
+
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  className="relative max-w-lg w-full aspect-square glass p-8 border border-white/10 shadow-[0_100px_200px_rgba(0,0,0,1)]"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <a
+                    href={`${import.meta.env.BASE_URL}dr-sumit.vcf`}
+                    download="Dr_Sumit_Singh_Gautam.vcf"
+                    className="group block relative w-full h-full overflow-hidden"
+                    title="Click to Download vCard"
+                  >
+                    <img
+                      src={`${import.meta.env.BASE_URL}contact-qr.png`}
+                      alt="Dr. Sumit Contact QR"
+                      className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-[#D4AF37]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <div className="glass px-6 py-3 border border-white/20">
+                        <span className="text-[10px] uppercase tracking-widest text-white font-bold">Click to Download vCard</span>
+                      </div>
+                    </div>
+                  </a>
+
+                  {/* Close Hint */}
+                  <div className="absolute -bottom-12 left-0 right-0 text-center text-white/30 text-[10px] uppercase tracking-[0.4em]">
+                    Tap anywhere outside to close
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>,
-        document.body
-      )}
-    </div>
+            )}
+          </AnimatePresence>,
+          document.body
+        )
+      }
+    </div >
   );
 };
 

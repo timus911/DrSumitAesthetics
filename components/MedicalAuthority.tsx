@@ -76,17 +76,21 @@ const MedicalAuthority: React.FC = () => {
                         className="relative flex justify-center items-end"
                     >
                         <div className="relative group w-full max-w-md">
-                            <img
+                            <motion.img
                                 src={`${import.meta.env.BASE_URL}dr-sumit-transparent.png`}
                                 alt="Dr. Sumit Singh Gautam - Board Certified Plastic Surgeon Chandigarh"
-                                className="w-full h-auto object-contain drop-shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-1000 relative z-10"
+                                className="w-full h-auto object-contain drop-shadow-2xl relative z-10"
+                                initial={{ scale: 1 }}
+                                whileInView={{ scale: 1.05 }}
+                                whileHover={{ scale: 1.1 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
                             />
                             {/* Bottom fade mask to hide cut-off */}
-                            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black via-black/80 to-transparent z-20" />
+                            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black via-black/90 to-transparent z-20" />
 
-                            {/* Restored Quote Overlay */}
-                            <div className="absolute bottom-6 left-0 right-0 z-30 px-6">
-                                <div className="glass p-6 border-l-2 border-[#D4AF37] backdrop-blur-xl bg-black/40">
+                            {/* Restored Quote Overlay - Warning: Negative bottom might overlap footer if not careful, but section has padding */}
+                            <div className="absolute -bottom-10 left-0 right-0 z-30 px-6">
+                                <div className="glass p-6 border-l-2 border-[#D4AF37] backdrop-blur-xl bg-black/60 shadow-2xl">
                                     <p className="text-gray-300 text-sm italic font-light">"The goal is not to change who you are, but to reveal the version of you that has been hidden by time or genetics."</p>
                                     <p className="text-[#D4AF37] text-[10px] uppercase tracking-widest font-bold mt-4">— Dr. Sumit Singh Gautam</p>
                                 </div>

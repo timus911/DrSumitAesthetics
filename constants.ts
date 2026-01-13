@@ -23,8 +23,8 @@ export const CONTACT = {
   phone: "+91 82198 16265",
   counselorPhone: "+91 85263 43434",
   email: "sumit.sgautam@gmail.com",
-  location: "Healing Hospital, Sector 34 A, Chandigarh",
-  location: "Healing Hospital, Sector 34 A, Chandigarh",
+  location: "Dr. Sumit Aesthetics Healing Hospital, SCO 18-19, Sector 34-A, Chandigarh, 160022",
+
   googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Healing+Hospital+Sector+34+Chandigarh",
   hours: {
     weekdays: "Mon - Sat 9:00am - 5:00pm",
@@ -101,7 +101,7 @@ export type Procedure = {
 const RAW_PROCEDURES: Procedure[] = [
   // AESTHETIC - BODY
   {
-    id: "tummy-tuck",
+    id: "tummy-tuck-chandigarh",
     title: "Tummy Tuck (Abdominoplasty)",
     category: "Body",
     parentCategory: "aesthetic",
@@ -150,7 +150,7 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
     gallery: ["/tummy-tuck-result-1.png", "/tummy-tuck-result-2.jpg"]
   },
   {
-    id: "hd-liposuction",
+    id: "hd-liposuction-chandigarh",
     title: "High Definition Liposuction",
     category: "Body",
     parentCategory: "aesthetic",
@@ -173,16 +173,7 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
       results: ["Initial results are often 'wow' at 4 weeks.", "Final etching becomes crisp at 3 months as minor swelling disappears."],
       recoveryTips: ["Lymphatic drainage massage is highly recommended to smooth out results.", "Constant compression for 4 weeks ensures the skin adheres perfectly to the new muscular form."]
     },
-    details: {
-      whoNeeds: ["Individuals with good muscle tone who have stubborn pockets of fat masking their definition.", "Athletic patients looking for that final 'etched' appearance of the obliques and abdominals."],
-      candidates: ["Patients with high skin elasticity (needed for the skin to shrink-wrap over the new contours).", "Those near their target weight but lacking visible muscle definition."],
-      assessment: ["A detailed 'pinch test' mapping of fat distribution.", "Evaluation of underlying muscle groups to determine the 'etching' lines."],
-      functional: ["Walking is encouraged immediately to minimize stiffness.", "Bruising and mild soreness are managed easily with standard care."],
-      backToWork: ["Most patients return to office roles within 5-7 days.", "Strenuous gym activity usually resumes at 3-4 weeks."],
-      holidays: ["One week of focused recovery is usually sufficient.", "This is a faster recovery than standard body lifting procedures."],
-      results: ["Initial results are often 'wow' at 4 weeks.", "Final etching becomes crisp at 3 months as minor swelling disappears."],
-      recoveryTips: ["Lymphatic drainage massage is highly recommended to smooth out results.", "Constant compression for 4 weeks ensures the skin adheres perfectly to the new muscular form."]
-    },
+
     regions: ["Abdomen", "Body", "Thighs", "Arms", "Buttock"],
     seoContent: `
 ### High Definition Liposuction in Chandigarh: The Art of Athletic Sculpting
@@ -209,10 +200,20 @@ The investment for HD Liposuction varies based on the number of areas treated (e
 *   **Garments:** A specialized compression suit is worn for 4-6 weeks to ensure the skin adheres to the new muscular contours.
 
 [View our Before and After Gallery](/gallery) to see the transformative results of our "Tricity" patients.
-    `
+    `,
+    gallery: [
+      "/axillary-breast-reduction-result.png",
+      "/body-contouring-result-1.jpg",
+      "/body-contouring-result-2.png",
+      "/body-contouring-result-3.jpg",
+      "/body-contouring-result-4.jpg",
+      "/body-contouring-result-5.png",
+      "/tummy-tuck-result-1.png",
+      "/tummy-tuck-result-2.jpg"
+    ]
   },
   {
-    id: "body-contouring",
+    id: "body-contouring-chandigarh",
     title: "Body Contouring",
     category: "Body",
     parentCategory: "aesthetic",
@@ -249,7 +250,7 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
 `
   },
   {
-    id: "fat-grafting",
+    id: "fat-grafting-chandigarh",
     title: "Fat Grafting",
     category: "Body",
     parentCategory: "aesthetic",
@@ -298,7 +299,7 @@ Unlike synthetic fillers which dissolve in 12 months, transplanted fat that surv
 `
   },
   {
-    id: "buttock-lift",
+    id: "buttock-lift-chandigarh",
     title: "Buttock Lift",
     category: "Body",
     parentCategory: "aesthetic",
@@ -326,7 +327,7 @@ Results are visible immediately. You will need to avoid sitting directly on the 
 
   // AESTHETIC - FACE
   {
-    id: "facelift-macs",
+    id: "facelift-chandigarh",
     title: "Facelift (MACS Lift)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -336,7 +337,7 @@ Results are visible immediately. You will need to avoid sitting directly on the 
     regions: ["Face"]
   },
   {
-    id: "neck-lift",
+    id: "neck-lift-chandigarh",
     title: "Neck Lift (Deep Plane)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -361,7 +362,7 @@ You will wear a supportive chin strap for 1 week. Bruising typically resolves in
 `
   },
   {
-    id: "lip-lift-reduction",
+    id: "lip-lift-chandigarh",
     title: "Lip Lift / Lip Reduction",
     category: "Face",
     parentCategory: "aesthetic",
@@ -383,7 +384,7 @@ For clients with genetically overly prominent lips, we perform precision reducti
 `
   },
   {
-    id: "hair-transplant",
+    id: "hair-transplant-chandigarh",
     title: "Hair Transplant",
     category: "Face",
     parentCategory: "aesthetic",
@@ -418,7 +419,7 @@ Visit our **Before and After Gallery** to witness the life-changing density our 
     `
   },
   {
-    id: "blepharoplasty",
+    id: "blepharoplasty-chandigarh",
     title: "Blepharoplasty (Eye Bags)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -461,7 +462,7 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
 `
   },
   {
-    id: "rhinoplasty",
+    id: "rhinoplasty-chandigarh",
     title: "Rhinoplasty (Nose Job)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -513,7 +514,7 @@ Explore our **Before and After Gallery** to see how we have refined profiles acr
     `
   },
   {
-    id: "otoplasty",
+    id: "otoplasty-chandigarh",
     title: "Ear Reshaping (Otoplasty)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -542,7 +543,7 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
 
   // BREAST
   {
-    id: "breast-augmentation",
+    id: "breast-augmentation-chandigarh",
     title: "Breast Augmentation",
     category: "Breast",
     parentCategory: "aesthetic",
@@ -586,7 +587,7 @@ Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4
 `
   },
   {
-    id: "breast-reduction",
+    id: "breast-reduction-chandigarh",
     title: "Breast Reduction",
     category: "Breast",
     parentCategory: "aesthetic",
@@ -613,19 +614,32 @@ The cost varies by size and complexity but includes all hospital and anesthesia 
 `
   },
   {
-    id: "breast-lift",
+    id: "breast-lift-chandigarh",
     title: "Breast Lift (Mastopexy)",
     category: "Breast",
     parentCategory: "aesthetic",
     description: "Restoring elevation and firmness.",
     longDescription: "Raising and reshaping sagging breasts by removing excess skin and tightening surrounding tissue.",
     image: "/breast-lift-aesthetic.jpg", // User-provided aesthetic image
+    seoContent: `
+### Breast Lift (Mastopexy) in Chandigarh: defy Gravity
+**Restoring Youthful Position & Firmness**
+
+Pregnancy, breastfeeding, and gravity can cause breasts to sag (ptosis). A Breast Lift raises the nipple-areola complex and removes excess skin to reshape the breast mound.
+
+**Do I need Implants?**
+*   **Lift Only:** If you have enough volume but just need reshaping.
+*   **Lift + Implant:** If you want upper breast fullness along with the lift.
+
+#### Recovery
+Similar to reduction, mobility is good immediately, but high-impact activities are restricted for 4 weeks.
+`,
     regions: ["Breasts"]
   },
 
   // MALE
   {
-    id: "gynecomastia",
+    id: "gynecomastia-chandigarh",
     title: "Gynecomastia (Male Breast Reduction)",
     category: "Male",
     parentCategory: "aesthetic",
@@ -681,29 +695,48 @@ See our **Before and After Gallery** for examples of restored masculine contours
 
   // INTIMATE
   {
-    id: "vaginoplasty",
+    id: "vaginoplasty-chandigarh",
     title: "Vaginoplasty",
     category: "Intimate",
     parentCategory: "aesthetic",
     description: "Vaginal rejuvenation and tightening.",
     longDescription: "Restoring muscular tone and vaginal integrity for functional and aesthetic restoration.",
     image: "/vaginoplasty-aesthetic.png", // User-provided aesthetic image
-    regions: ["Body"]
+    regions: ["Body"],
+    seoContent: `
+### Vaginoplasty in Chandigarh: Intimate Wellness
+**Vaginal Tightening & Rejuvenation**
+
+Childbirth and aging can stretch vaginal muscles, affecting sensation and confidence. Vaginoplasty tightens the vaginal canal and repairs the perineum.
+
+**Benefits:**
+*   Improved sexual gratification.
+*   Restored pelvic floor strength.
+`
   },
   {
-    id: "labiaplasty",
+    id: "labiaplasty-chandigarh",
     title: "Labiaplasty",
     category: "Intimate",
     parentCategory: "aesthetic",
     description: "Reshaping and refinement of the labia.",
     longDescription: "Reducing excess labial tissue for comfort, confidence, and aesthetic improvement.",
     image: "/labiaplasty-aesthetic.jpg", // User-provided aesthetic image
-    regions: ["Body"]
+    regions: ["Body"],
+    seoContent: `
+### Labiaplasty in Chandigarh: Comfort & Aesthetics
+**Correcting Hypertrophy for Daily Comfort**
+
+Enlarged labia minora can cause discomfort during exercise, cycling, or intercourse. Labiaplasty trims the excess tissue to create a neat, streamlined appearance.
+
+**Procedure:**
+It is a 45-minute procedure performed under local anesthesia or sedation. Recovery is quick (3-4 days).
+`
   },
 
   // AESTHETIC - SCAR REVISION (Moved here)
   {
-    id: "scar-revision",
+    id: "scar-revision-chandigarh",
     title: "Scar Revision",
     category: "Aesthetic",
     parentCategory: "aesthetic",
@@ -730,7 +763,7 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
 
   // NON-SURGICAL
   {
-    id: "botox",
+    id: "botox-chandigarh",
     title: "Botox & Neuromodulators",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -770,7 +803,7 @@ We use only authentic Allergan Botox or Dysport, opened in front of you. Results
 `
   },
   {
-    id: "microneedling",
+    id: "microneedling-chandigarh",
     title: "Microneedling",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -971,27 +1004,42 @@ Surgery is only half the battle. Our dedicated physiotherapy protocol ensures yo
     regions: ["Arms", "Thighs"]
   },
   {
-    id: "hand-foot-fractures",
+    id: "hand-surgery-chandigarh",
     title: "Fractures of Hand & Foot",
     category: "Reconstructive",
     parentCategory: "reconstructive",
     description: "Refining the skeletal integrity of digits and limbs.",
     longDescription: "Specialized fixation of the small bones of the hand and foot to preserve range of motion.",
     image: "/hand-fracture-reconstructive.png",
-    regions: ["Arms", "Thighs"]
+    regions: ["Arms", "Thighs"],
+    seoContent: `
+### Hand & Foot Fracture Fixation in Chandigarh
+**Restoring Small Bone Architecture**
+
+Metacarpal (hand) and Metatarsal (foot) fractures require precise alignment to preserve grip strength and walking mechanics. We use low-profile titanium mini-plates to ensure rigid fixation, allowing for early physiotherapy.
+`
   },
   {
-    id: "hand-deformities",
+    id: "hand-deformity-chandigarh",
     title: "Hand Deformities",
     category: "Reconstructive",
     parentCategory: "reconstructive",
     description: "Correcting congenital and acquired conditions.",
     longDescription: "Surgical intervention for conditions like syndactyly or Dupuytren's contracture.",
     image: "/hand-deformity-reconstructive.png",
-    regions: ["Arms"]
+    regions: ["Arms"],
+    seoContent: `
+### Hand Deformity Correction in Chandigarh
+**Syndactyly, Polydactyly & Contractures**
+
+We treat congenital anomalies like fused fingers (Syndactyly) or extra digits (Polydactyly), as well as acquired conditions like Dupuytren's Contracture.
+
+**Timing:**
+For children, separation of fused fingers is ideally done before school age (1-2 years) to prevent developmental delay.
+`
   },
   {
-    id: "cleft-lip-palate",
+    id: "cleft-lip-chandigarh",
     title: "Cleft Lip & Palate Repair",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -1014,7 +1062,7 @@ We focus on rebuilding the lip muscle loop to ensure normal movement and a symme
 `
   },
   {
-    id: "burns-contracture",
+    id: "burn-surgery-chandigarh",
     title: "Burns & Contracture Release",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -1033,17 +1081,23 @@ We also manage fresh burns with advanced dressings and early grafting to minimiz
     regions: ["Body", "Face", "Arms", "Thighs"]
   },
   {
-    id: "pressure-sores",
+    id: "bed-sore-surgery-chandigarh",
     title: "Pressure Sores / Bed Sores",
     category: "Reconstructive",
     parentCategory: "reconstructive",
     description: "Complex wound care and flap coverage.",
     longDescription: "Using healthy tissue flaps to close deep, non-healing pressure ulcers.",
     image: "/pressure-sores-reconstructive.jpg",
-    regions: ["Body", "Buttock"]
+    regions: ["Body", "Buttock"],
+    seoContent: `
+### Pressure Sore (Bed Sore) Surgery in Chandigarh
+**Flap Reconstruction for Chronic Ulcers**
+
+For bedridden patients, pressure sores (decubitus ulcers) can reach the bone. Debridement alone is often insufficient. We perform **Rotation or Advancement Flaps** to bring healthy, vascularized muscle and skin over the wound to ensure permanent healing.
+`
   },
   {
-    id: "diabetic-foot",
+    id: "diabetic-foot-chandigarh",
     title: "Diabetic Foot",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -1064,22 +1118,34 @@ Our goal is always to save the foot and maintain your mobility.
 
   // VASCULAR
   {
-    id: "varicose-veins",
+    id: "varicose-veins-chandigarh",
     title: "Varicose Veins",
     category: "Vascular",
     parentCategory: "vascular",
     description: "Treatment of venous insufficiency.",
     longDescription: "Surgical and minimally invasive management of swollen veins for health and aesthetics.",
-    regions: ["Thighs", "Body"]
+    regions: ["Thighs", "Body"],
+    seoContent: `
+### Varicose Veins Treatment in Chandigarh
+**Endovenous Laser & Surgical Management**
+
+Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. We offer a comprehensive assessment using Color Doppler to plan the right intervention—whether laser ablation (EVLA) or surgical stripping.
+`
   },
   {
-    id: "ultrasound-vascular",
+    id: "vascular-surgery-chandigarh",
     title: "Ultrasound-Guided Vascular Procedures",
     category: "Vascular",
     parentCategory: "vascular",
     description: "Precision-guided vascular treatments.",
     longDescription: "Using real-time ultrasound to ensure the highest accuracy in venous interventions.",
-    regions: ["Body", "Thighs"]
+    regions: ["Body", "Thighs"],
+    seoContent: `
+### Vascular Access & Ultrasound Guidance
+**AV Fistula Creation for Dialysis**
+
+We specialize in creating robust Arteriovenous (AV) Fistulas for renal failure patients requiring long-term dialysis. Microsurgical precision ensures high flow rates and longevity of the fistula.
+`
   }
 ];
 // Helper to fix paths

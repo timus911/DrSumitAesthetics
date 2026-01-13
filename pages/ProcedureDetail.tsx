@@ -56,7 +56,7 @@ const ExpandableSection: React.FC<{ title: string; shortLines: string[]; longLin
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
               key={i}
-              className="text-gray-500 text-sm italic leading-relaxed pt-2 border-t border-white/5"
+              className="text-gray-500 text-sm italic leading-relaxed pt-2"
             >
               {line}
             </motion.p>

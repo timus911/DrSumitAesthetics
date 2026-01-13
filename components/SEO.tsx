@@ -19,17 +19,17 @@ const SEO: React.FC<SEOProps> = ({
     url,
     type = 'website'
 }) => {
-    const siteTitle = `${title ? `${title} | ` : ''}${BRAND.name} - ${BRAND.specialty}`;
+    const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Best Plastic Surgeon in Chandigarh | Dr. Sumit Aesthetics | Sector 34";
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
-    const siteUrl = url ? `https://drsumitaesthetics.com${url}` : 'https://drsumitaesthetics.com'; // Placeholder domain
+    const siteUrl = url ? `https://drsumitaesthetics.com${url}` : 'https://drsumitaesthetics.com';
 
-    // Structured Data for Local Business / Physician
+    // Parse address from constants or hardcode for Schema precision
     const schemaData = {
         "@context": "https://schema.org",
         "@type": "MedicalBusiness",
         "name": "Dr. Sumit Aesthetics",
         "alternateName": "Dr. Sumit Singh Gautam - Plastic Surgeon",
-        "image": image,
+        "image": image.startsWith('http') ? image : `https://drsumitaesthetics.com${image}`,
         "@id": siteUrl,
         "url": siteUrl,
         "telephone": CONTACT.phone,
@@ -38,11 +38,11 @@ const SEO: React.FC<SEOProps> = ({
         "parentOrganization": {
             "@type": "MedicalOrganization",
             "name": "Healing Hospital",
-            "address": "Sector 34 A, Chandigarh"
+            "address": "SCO 18-19, Sector 34-A, Chandigarh"
         },
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Healing Hospital, Sector 34 A",
+            "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A", // Exact match to user request
             "addressLocality": "Chandigarh",
             "addressRegion": "Chandigarh",
             "postalCode": "160022",

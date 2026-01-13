@@ -75,6 +75,7 @@ const App: React.FC = () => {
               <Route path="/procedure/:id" element={<ProcedureDetail />} />
               <Route path="/concerns" element={<Concerns />} />
               <Route path="/concerns/:region" element={<ConcernDetail />} />
+              <Route path="/:id" element={<ProcedureDetail />} />
             </Routes>
           </AnimatePresence>
         </main>
