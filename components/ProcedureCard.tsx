@@ -1,16 +1,16 @@
-
 import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 interface ProcedureCardProps {
     proc: any;
     index?: number;
+    hint?: string;
+    hideDescription?: boolean;
 }
 
-const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0 }) => {
+const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0, hint, hideDescription = false }) => {
     const ref = useRef<HTMLDivElement>(null);
     const isFocused = useMobileCenterFocus(ref);
 
@@ -39,8 +39,27 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0 }) => {
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/90" />
             </motion.div>
 
-            <Link to={`/${proc.id}`} className="relative z-10 block h-full p-12 border-b-2 border-transparent hover:border-[#5DA9E9] transition-all duration-700">
-                <div className="space-y-8 flex flex-col h-full">
+            {/* Contextual Hint Overlay - Blurred Header */}
+            {hint && (
+                <div className="absolute top-0 left-0 right-0 z-20 flex items-center justify-center min-h-[85px]">
+                    <div
+                        className="absolute inset-0 backdrop-blur-md bg-black/50"
+                        style={{
+                            maskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)',
+                            WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)'
+                        }}
+                    />
+                    <p className="relative z-10 text-gray-500 font-sans text-xs font-medium text-center leading-relaxed max-w-[90%] p-4">
+                        {hint}
+                    </p>
+                </div>
+            )}
+
+            <Link
+                to={`/${proc.id}`}
+                className={`relative z-10 block h-full border-b-2 border-transparent hover:border-[#5DA9E9] transition-all duration-700 ${hint ? 'pt-24 pb-12 px-12' : 'p-12'}`}
+            >
+                <div className="space-y-8 flex flex-col h-full justify-end md:justify-start">
                     <div className="space-y-4">
                         <div className={`text-[#5DA9E9] text-[10px] tracking-[0.3em] uppercase font-bold transition-opacity ${isFocused ? 'opacity-100' : 'opacity-80'} group-hover:opacity-100`}>
                             {proc.category}
@@ -49,9 +68,11 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0 }) => {
                             {proc.title}
                         </h3>
                     </div>
-                    <p className={`text-gray-300 text-sm flex-grow leading-relaxed font-light transition-colors ${isFocused ? 'text-white' : ''} group-hover:text-white`}>
-                        {proc.description}
-                    </p>
+                    {!hideDescription && (
+                        <p className={`text-gray-300 text-sm flex-grow leading-relaxed font-light transition-colors ${isFocused ? 'text-white' : ''} group-hover:text-white`}>
+                            {proc.description}
+                        </p>
+                    )}
                 </div>
             </Link>
         </motion.div>

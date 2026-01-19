@@ -17,11 +17,15 @@ import ProcedureDetail from './pages/ProcedureDetail.tsx';
 import Concerns from './pages/Concerns.tsx';
 import ConcernDetail from './pages/ConcernDetail.tsx';
 import Reviews from './pages/Reviews.tsx';
+import CostsAndFinancing from './pages/CostsAndFinancing.tsx';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
+    if ((window as any).lenis) {
+      (window as any).lenis.scrollTo(0, { immediate: true });
+    }
   }, [pathname]);
   return null;
 };
@@ -39,6 +43,8 @@ const App: React.FC = () => {
       touchMultiplier: 2,
     });
 
+    (window as any).lenis = lenis;
+
     function raf(time: number) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -47,6 +53,7 @@ const App: React.FC = () => {
     requestAnimationFrame(raf);
 
     return () => {
+      (window as any).lenis = null;
       lenis.destroy();
     };
   }, []);
@@ -71,6 +78,7 @@ const App: React.FC = () => {
               <Route path="/reviews" element={<Reviews />} />
               <Route path="/patient-journey" element={<PatientJourney />} />
               <Route path="/international" element={<InternationalPatients />} />
+              <Route path="/plastic-surgery-cost-chandigarh" element={<CostsAndFinancing />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/procedure/:id" element={<ProcedureDetail />} />
               <Route path="/concerns" element={<Concerns />} />

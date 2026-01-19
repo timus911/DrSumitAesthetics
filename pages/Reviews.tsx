@@ -214,7 +214,7 @@ const Reviews: React.FC = () => {
             />
 
             {/* Decorative Background Elements */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#4A90E2]/10 rounded-full blur-3xl pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-purple-900/5 rounded-full blur-3xl pointer-events-none" />
 
             <div className="container mx-auto px-6 relative z-10 pb-32">
@@ -227,7 +227,7 @@ const Reviews: React.FC = () => {
                 >
                     <span className="text-[#4A90E2] text-xs tracking-[0.6em] uppercase font-black">Testimonials</span>
                     <h1 className="text-5xl md:text-7xl font-serif text-white tracking-tight">
-                        Patient <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Stories</span>
+                        Patient <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4A90E2] to-purple-400">Stories</span>
                     </h1>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed font-light">
                         The greatest measure of our success is the satisfaction and confidence of our patients.
@@ -331,7 +331,7 @@ const Reviews: React.FC = () => {
             <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-24" />
             <section>
                 <div className="flex items-center gap-4 mb-12">
-                    <div className="p-3 glass rounded-full text-blue-400">
+                    <div className="p-3 glass rounded-full text-[#4A90E2]">
                         <User size={24} />
                     </div>
                     <h2 className="text-3xl font-serif text-white">Our Happy Patients</h2>

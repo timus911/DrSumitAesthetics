@@ -170,7 +170,7 @@ const About: React.FC = () => {
         >
           <div className="space-y-12">
             <motion.div variants={fadeInUp} className="space-y-8">
-              <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black text-blue-400">Board Certified Plastic and Aesthetic Surgeon</span>
+              <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black">Board Certified Plastic and Aesthetic Surgeon</span>
               <h1 className="text-6xl md:text-9xl font-serif leading-[0.9] text-white tracking-tighter">{BRAND.name}</h1>
               <p className="text-[#4A90E2] tracking-[0.5em] uppercase text-[12px] font-bold">{BRAND.specialty}</p>
             </motion.div>
@@ -231,10 +231,10 @@ const About: React.FC = () => {
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="absolute -bottom-16 -left-16 glass p-12 max-w-sm space-y-6 border border-blue-500/30 backdrop-blur-3xl shadow-2xl"
+              className="absolute -bottom-16 -left-16 glass p-12 max-w-sm space-y-6 border border-[#4A90E2]/30 backdrop-blur-3xl shadow-2xl"
             >
               <p className="text-gray-200 italic text-lg leading-relaxed font-light">"Surgical mastery is the ethical application of science to restore and refine the natural human form."</p>
-              <p className="text-[#4A90E2] text-[11px] uppercase tracking-[0.5em] font-black text-blue-400">— {BRAND.shortName}</p>
+              <p className="text-[#4A90E2] text-[11px] uppercase tracking-[0.5em] font-black">— {BRAND.shortName}</p>
             </motion.div>
           </motion.div>
         </motion.div>
@@ -250,8 +250,8 @@ const About: React.FC = () => {
           >
             <div className="order-1 lg:order-2 space-y-16">
               <motion.div variants={fadeInUp} className="space-y-6">
-                <span className="text-[#4A90E2] text-[11px] tracking-[0.6em] uppercase font-black text-blue-400">Multidisciplinary Vision</span>
-                <h2 className="text-5xl md:text-8xl font-serif text-white leading-tight">The Visualist <br /><span className="text-blue-500">Mentality</span></h2>
+                <span className="text-[#4A90E2] text-[11px] tracking-[0.6em] uppercase font-black">Multidisciplinary Vision</span>
+                <h2 className="text-5xl md:text-8xl font-serif text-white leading-tight">The Visualist <br /><span className="text-[#4A90E2]">Mentality</span></h2>
               </motion.div>
 
               <motion.p variants={fadeInUp} className="text-gray-400 text-xl leading-relaxed font-light">
@@ -260,11 +260,11 @@ const About: React.FC = () => {
 
               <motion.div variants={fadeInUp}>
                 <a href="https://www.instagram.com/snackasketch/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center space-x-3 text-xs tracking-[0.2em] font-sans font-medium text-[#4A90E2] hover:text-white transition-colors group">
-                  <div className="p-2 border border-blue-500/30 rounded-full group-hover:bg-blue-500/10 transition-colors">
+                  <div className="p-2 border border-[#4A90E2]/30 rounded-full group-hover:bg-[#4A90E2]/10 transition-colors">
                     <Instagram size={16} />
                   </div>
                   <span>@snackasketch</span>
-                  <span className="text-[10px] text-gray-500 tracking-wider group-hover:text-blue-200 transition-colors opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transform duration-300">The Artistic Side</span>
+                  <span className="text-[10px] text-gray-500 tracking-wider group-hover:text-[#4A90E2] transition-colors opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transform duration-300">The Artistic Side</span>
                 </a>
               </motion.div>
 
@@ -275,7 +275,7 @@ const About: React.FC = () => {
                   { icon: <Scissors className="text-[#4A90E2]" size={28} />, title: "Sculpture", desc: "Developing the tactile awareness and hand-eye coordination required for micro-surgery." }
                 ].map((item, idx) => (
                   <motion.div key={idx} variants={fadeInUp} className="flex items-start space-x-8 group">
-                    <div className="w-16 h-16 glass flex items-center justify-center shrink-0 border border-blue-500/20 group-hover:border-blue-400 transition-colors shadow-2xl">
+                    <div className="w-16 h-16 glass flex items-center justify-center shrink-0 border border-[#4A90E2]/20 group-hover:border-[#4A90E2] transition-colors shadow-2xl">
                       {item.icon}
                     </div>
                     <div className="space-y-2 pt-1">
@@ -287,7 +287,7 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            <div className="order-2 lg:order-1 relative h-[700px] overflow-hidden rounded-sm glass border border-blue-500/10 shadow-2xl">
+            <div className="order-2 lg:order-1 relative h-[700px] overflow-hidden rounded-sm glass border border-[#4A90E2]/10 shadow-2xl">
               <motion.div
                 animate={{ y: [0, -300, 0] }}
                 transition={{ duration: 40, repeat: Infinity, ease: "linear" as const }}
@@ -320,7 +320,7 @@ const About: React.FC = () => {
             className="space-y-24"
           >
             <motion.div variants={fadeInUp} className="text-center space-y-6">
-              <span className="text-[#4A90E2] text-[11px] tracking-[0.6em] uppercase font-black text-blue-400">Behind the Scrubs</span>
+              <span className="text-[#4A90E2] text-[11px] tracking-[0.6em] uppercase font-black">Behind the Scrubs</span>
               <h2 className="text-5xl md:text-7xl font-serif text-white">Moments in Medicine</h2>
             </motion.div>
 
@@ -341,7 +341,7 @@ const About: React.FC = () => {
             variants={staggerContainer}
             className="text-center mb-32 space-y-6"
           >
-            <span className="text-[#4A90E2] text-[11px] tracking-[0.6em] uppercase font-black text-blue-400">Institutional Merit</span>
+            <span className="text-[#4A90E2] text-[11px] tracking-[0.6em] uppercase font-black">Institutional Merit</span>
             <h2 className="text-5xl md:text-7xl font-serif text-white">Academic Path</h2>
           </motion.div>
           <motion.div
@@ -352,7 +352,7 @@ const About: React.FC = () => {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
           >
             {BRAND.education.map((item, idx) => (
-              <motion.div key={idx} variants={fadeInUp} className="glass p-4 space-y-3 relative overflow-hidden group border border-white/5 transition-all hover:bg-blue-900/10 shadow-2xl">
+              <motion.div key={idx} variants={fadeInUp} className="glass p-4 space-y-3 relative overflow-hidden group border border-white/5 transition-all hover:bg-[#4A90E2]/10 shadow-2xl">
                 <div className="absolute top-0 left-0 w-1.5 h-0 bg-[#4A90E2] group-hover:h-full transition-all duration-700" />
                 <Award size={28} className="text-[#4A90E2]/40 group-hover:text-[#4A90E2] transition-colors" />
                 <p className="text-white text-sm font-sans font-light tracking-wider uppercase">{item}</p>
@@ -367,13 +367,13 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mt-32 glass p-6 lg:p-32 relative overflow-hidden border border-blue-500/10 shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
+          className="mt-32 glass p-6 lg:p-32 relative overflow-hidden border border-[#4A90E2]/10 shadow-[0_50px_100px_rgba(0,0,0,0.5)]"
         >
           <div className="absolute top-0 right-0 p-24 opacity-[0.03] select-none pointer-events-none">
             <Brush size={600} className="text-[#4A90E2]" />
           </div>
           <div className="max-w-4xl space-y-12 relative z-10">
-            <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black text-blue-400">The Artist's Eye</span>
+            <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black">The Artist's Eye</span>
             <h2 className="text-4xl md:text-7xl font-serif text-white leading-[1.1]">Sculpting the <br />Human Canvas</h2>
             <p className="text-gray-400 text-lg md:text-2xl leading-relaxed font-light">
               "To me, surgery is sculpting in a living medium. Every incision is a brushstroke, every suture a line of definition. I do not just operate; I curate the natural beauty that resides within the patient, bringing it to the surface with the gentle precision of an artist."

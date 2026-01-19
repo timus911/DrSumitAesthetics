@@ -6,8 +6,7 @@ const TrustSection: React.FC = () => {
     const associations = [
         { name: "APSI", full: "Association of Plastic Surgeons of India" },
         { name: "IAAPS", full: "Indian Association of Aesthetic Plastic Surgeons" },
-        { name: "ISAPS", full: "International Society of Aesthetic Plastic Surgery" },
-        { name: "RBSPS", full: "Royal Belgian Society of Plastic Surgery" }
+        { name: "ISAPS", full: "International Society of Aesthetic Plastic Surgery" }
     ];
 
     return (
@@ -27,7 +26,7 @@ const TrustSection: React.FC = () => {
                             transition={{ delay: i * 0.1 }}
                             className="group cursor-default"
                         >
-                            <div className="border border-white/10 px-6 py-4 rounded-sm hover:border-[#5DA9E9]/30 transition-colors bg-white/5">
+                            <div className="border border-white/10 px-6 py-4 rounded-sm hover:border-[#4A90E2]/30 transition-colors bg-white/5">
                                 <h4 className="text-2xl font-serif text-gray-400 group-hover:text-white transition-colors">{assoc.name}</h4>
                                 <span className="hidden absolute bg-black border border-white/10 text-xs text-gray-300 p-2 -mt-16 -ml-16 w-48 rounded shadow-xl group-hover:block z-50">
                                     {assoc.full}

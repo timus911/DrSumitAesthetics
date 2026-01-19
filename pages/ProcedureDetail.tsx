@@ -7,7 +7,7 @@ import { PROCEDURES, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
-const GalleryThumbnail = ({ img, onClick }: { img: string, onClick: () => void }) => {
+const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img, onClick }) => {
   const ref = React.useRef<HTMLDivElement>(null);
   const isFocused = useMobileCenterFocus(ref);
 
@@ -38,13 +38,13 @@ const ExpandableSection: React.FC<{ title: string; shortLines: string[]; longLin
   return (
     <div className="space-y-4 border-l border-white/5 pl-8 relative group">
       {/* Visual Indicator */}
-      <div className="absolute left-[-1.5px] top-1 w-[3px] h-4 bg-blue-500/20 group-hover:bg-[#4A90E2] transition-all duration-500" />
+      <div className="absolute left-[-1.5px] top-1 w-[3px] h-4 bg-[#4A90E2]/20 group-hover:bg-[#4A90E2] transition-all duration-500" />
 
       <button
         onClick={() => setOpen(!open)}
         className="text-left w-full space-y-3"
       >
-        <h3 className="text-[#4A90E2] text-[11px] uppercase font-extrabold tracking-[0.3em] group-hover:text-blue-300 transition-colors">
+        <h3 className="text-[#4A90E2] text-sm md:text-base font-bold uppercase tracking-widest group-hover:text-[#4A90E2] transition-colors">
           {title}
         </h3>
         <div className="space-y-2">
@@ -261,7 +261,7 @@ const ProcedureDetail: React.FC = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                   <div className="space-y-8 glass p-10 border-l border-white/5">
-                    <h3 className="text-xl font-serif text-white border-b border-white/5 pb-4 text-blue-300">Facial Fat Grafting</h3>
+                    <h3 className="text-xl font-serif text-white border-b border-white/5 pb-4 text-[#4A90E2]">Facial Fat Grafting</h3>
                     <p className="text-gray-400 text-sm leading-relaxed">Requires a higher degree of refinement, as the tissues are delicate and changes are immediately visible.</p>
                     <div className="space-y-6">
                       <div className="space-y-2">
@@ -281,7 +281,7 @@ const ProcedureDetail: React.FC = () => {
 
                   <div className="space-y-8 glass p-10 border-l border-white/5 flex flex-col justify-between">
                     <div className="space-y-8">
-                      <h3 className="text-xl font-serif text-white border-b border-white/5 pb-4 text-blue-300">Body Fat Grafting</h3>
+                      <h3 className="text-xl font-serif text-white border-b border-white/5 pb-4 text-[#4A90E2]">Body Fat Grafting</h3>
                       <p className="text-gray-400 text-sm leading-relaxed">Focuses primarily on volume restoration and contour enhancement, where durability and integration are key.</p>
                       <div className="space-y-2">
                         <h4 className="text-xs uppercase tracking-widest text-[#4A90E2] font-bold">Microfat (Body)</h4>
@@ -371,10 +371,10 @@ const ProcedureDetail: React.FC = () => {
 
             {procedure.subSections && (
               <div className="space-y-8 pt-16 border-t border-white/5">
-                <h3 className="text-white uppercase tracking-widest text-[10px] font-extrabold text-blue-300">Technical Modalities</h3>
+                <h3 className="text-white uppercase tracking-widest text-[10px] font-extrabold text-[#4A90E2]">Technical Modalities</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {procedure.subSections.map((sub, i) => (
-                    <div key={i} className="flex items-center space-x-4 glass p-6 border-l-4 border-blue-500/30 group hover:border-blue-500 transition-all shadow-lg shadow-blue-500/5">
+                    <div key={i} className="flex items-center space-x-4 glass p-6 border-l-4 border-[#4A90E2]/30 group hover:border-[#4A90E2] transition-all shadow-lg shadow-[#4A90E2]/5">
                       <CheckCircle size={18} className="text-[#4A90E2]" />
                       <span className="text-xs uppercase tracking-widest text-white font-bold">{sub}</span>
                     </div>
@@ -394,7 +394,7 @@ const ProcedureDetail: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
             </div>
 
-            <div className="glass p-12 space-y-12 border border-blue-500/10 shadow-2xl backdrop-blur-3xl">
+            <div className="glass p-12 space-y-12 border border-[#4A90E2]/10 shadow-2xl backdrop-blur-3xl">
               <div className="pt-0 border-b border-white/5 pb-8">
                 <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-6">Discuss your transformation</p>
                 <Link to="/contact" className="w-full text-center px-8 py-4 bg-[#4A90E2] text-white font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all inline-block shadow-lg">
@@ -410,6 +410,7 @@ const ProcedureDetail: React.FC = () => {
                     { label: "Anesthesia Mode", val: procedure.brief?.anesthesia || "General / Deep Sedation" },
                     { label: "Clinical Recovery", val: procedure.brief?.recovery || "10 - 14 Days" },
                     { label: "Refinement Window", val: procedure.brief?.refinement || "Matures at 6 - 9 months" },
+                    ...(procedure.priceRange ? [{ label: "Estimated Cost", val: procedure.priceRange }] : []),
                     ...(procedure.brief?.technique ? [{ label: "Technique", val: procedure.brief.technique }] : []),
                   ].map((stat, i) => (
                     <div key={i} className="flex justify-between border-b border-white/5 pb-4 group">
@@ -420,9 +421,9 @@ const ProcedureDetail: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-blue-500/5 border border-blue-500/20 p-8 flex items-start space-x-5 shadow-inner">
+              <div className="bg-[#4A90E2]/5 border border-[#4A90E2]/20 p-8 flex items-start space-x-5 shadow-inner">
                 <Info size={20} className="text-[#4A90E2] mt-1 shrink-0" />
-                <p className="text-[11px] text-blue-200/50 leading-relaxed font-light uppercase tracking-wider">
+                <p className="text-[11px] text-[#4A90E2]/50 leading-relaxed font-light uppercase tracking-wider">
                   Surgical results are contingent upon individual anatomical dynamics. A comprehensive pre-operative examination is required to finalize operative strategies.
                 </p>
               </div>
@@ -442,7 +443,7 @@ const ProcedureDetail: React.FC = () => {
             className="mt-40 border-t border-white/5 pt-32"
           >
             <div className="text-center mb-24 space-y-6">
-              <div className="inline-block px-5 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full shadow-lg shadow-blue-500/5">
+              <div className="inline-block px-5 py-2 bg-[#4A90E2]/10 border border-[#4A90E2]/20 rounded-full shadow-lg shadow-[#4A90E2]/5">
                 <span className="text-[#4A90E2] text-[10px] tracking-[0.4em] uppercase font-bold">Clinical Masterclass</span>
               </div>
             </div>
@@ -475,7 +476,7 @@ const ProcedureDetail: React.FC = () => {
               {/* Pending Load Group */}
               {pendingImages.length > 0 && pendingImages.length === galleryImages.length && (
                 <div className="flex justify-center py-20">
-                  <div className="w-8 h-8 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
+                  <div className="w-8 h-8 border-2 border-[#4A90E2]/20 border-t-[#4A90E2] rounded-full animate-spin" />
                 </div>
               )}
             </div>
@@ -528,7 +529,7 @@ const ProcedureDetail: React.FC = () => {
               document.body
             )}
 
-            <div className="mt-32 p-16 glass border border-blue-500/10 text-center shadow-inner">
+            <div className="mt-32 p-16 glass border border-[#4A90E2]/10 text-center shadow-inner">
               <p className="text-[11px] text-gray-500 italic leading-loose max-w-4xl mx-auto uppercase tracking-widest font-light">
                 * Note: To preserve patient dignity and ensure the highest clinical standards, specific anatomical outcome data is restricted to secure, in-person clinical review. The imagery provided is illustrative of the surgical mastery and expected anatomical response.
               </p>

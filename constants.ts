@@ -95,6 +95,8 @@ export type Procedure = {
   };
   regions?: string[];
   gallery?: string[];
+  priceRange?: string; // New field for Cost & Financing page
+  costFactors?: string; // Key factors influencing cost
   seoContent?: string; // Rich SEO content for specific procedure pages
 };
 
@@ -129,7 +131,7 @@ const RAW_PROCEDURES: Procedure[] = [
 ### Tummy Tuck (Abdominoplasty) in Chandigarh: Restore Your Core
 **Reclaim Your Pre-Pregnancy or Pre-Weight Loss Figure at Healing Hospital**
 
-A Tummy Tuck is more than just skin removal; it is a restoration of your abdominal core. Dr. Sumit Singh Gautam specializes in **Lipo-Abdominoplasty**, a modern technique that combines liposuction with skin tightening for superior contouring.
+A Tummy Tuck is more than just skin removal; it is a restoration of the abdominal core. Dr. Sumit Singh Gautam specializes in **Lipo-Abdominoplasty**, a modern technique that combines liposuction with skin tightening for superior contouring.
 
 **Who is it for?**
 It is the gold standard for mothers with "Diastasis Recti" (muscle separation) or massive weight loss patients with hanging skin folds.
@@ -147,10 +149,12 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
 *   **Walk Tall:** You will walk bent over for a few days to protect the repair.
 *   **Return to Life:** Desk work in 14 days; gym in 6 weeks.
 `,
+    priceRange: "₹1,50,000 - ₹2,50,000",
+    costFactors: "Mini vs Full Tummy Tuck, Muscle Repair complexity, Liposuction extent",
     gallery: ["/tummy-tuck-result-1.png", "/tummy-tuck-result-2.jpg"]
   },
   {
-    id: "hd-liposuction-chandigarh",
+    id: "liposuction-chandigarh",
     title: "High Definition Liposuction",
     category: "Body",
     parentCategory: "aesthetic",
@@ -176,31 +180,34 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
 
     regions: ["Abdomen", "Body", "Thighs", "Arms", "Buttock"],
     seoContent: `
-### High Definition Liposuction in Chandigarh: The Art of Athletic Sculpting
+### Best Liposuction in Chandigarh: The Art of Athletic Sculpting
 
 **Achieve a Chiseled, Athletic Physique with Dr. Sumit Singh Gautam at Healing Hospital, Sector 34**
 
 High Definition (HD) Liposuction is not merely fat removal; it is an architectural reshaping of the human form. Unlike traditional liposuction, which focuses on debulking, HD Liposuction creates shadows and highlights to mimic the underlying musculature of an athlete.
 
-**Why Choose Dr. Sumit for HD Liposuction?**
-As a **Board Certified Plastic Surgeon**, Dr. Sumit combines his artistic background in sculpture with advanced surgical techniques to deliver results that look natural and powerful.
+#### Medical Deep Dive: Power-Assisted 4D Sculpting
+Dr. Sumit employs **Power-Assisted Liposuction (PAL)** technology. This advanced method uses rapid vibrations to gently dislodge fat cells while preserving nerves, blood vessels, and connective tissue.
+*   **The "High-Def" effect:** PAL allowing for precise sculpting close to the muscle, creating valid shadows and highlights.
+*   **Fellowship Precision:** Trained in Belgium, Dr. Sumit brings a European sensibility to body contouring—avoiding the "over-etched" or fake look often seen in aggressive surgeries. He sculpts the *Linea Semilunaris* and *Linea Alba* to create a natural "six-pack" shadow that respects your native anatomy.
 
-#### The Procedure: Etching Your Ideal Form
-The procedure involves the precise removal of superficial and deep fat layers to reveal the "six-pack" (rectus abdominis), obliques, and serratus muscles.
-*   **Precision:** Ultrasound-assisted technologies (like VASER) are often employed to liquefy fat before removal, preserving blood vessels and nerves.
-*   **Safety:** Performed at **Healing Hospital**, a fully accredited facility in Chandigarh, ensuring the highest safety standards.
+#### Local Context: Recovery in Chandigarh
+Recovery in Chandigarh's climate is manageable, but we recommend avoiding the peak summer heat for surgery if you are sensitive to compression garments.
+*   **Hospital Proximity:** Our location in Sector 34 (Healing Hospital) puts us at the heart of the city, easily accessible from Mohali and Panchkula.
+*   **Post-Op Care:** We provide specific "Chandigarh Recovery Kits" including breathable compression gear suited for our weather.
 
-#### Cost of HD Liposuction in Chandigarh
-The investment for HD Liposuction varies based on the number of areas treated (e.g., abdomen, flanks, back).
-*   **Transparency:** We provide a detailed breakdown during your consultation, covering anesthesia, hospital fees, and post-op garments.
-*   **Value:** We prioritize safety and long-term results over short-term discounts.
-
-#### Recovery & Aftercare
-*   **Recovery Time:** Most patients return to desk work within 5-7 days.
-*   **Garments:** A specialized compression suit is worn for 4-6 weeks to ensure the skin adheres to the new muscular contours.
+#### Local FAQs: Indian Patient Specifics
+*   **Q: Will the fat come back?**
+    *   A: Fat cells removed are gone permanently. However, if you gain weight, remaining cells can expand.
+*   **Q: Is the procedure painful?**
+    *   A: It is significantly less painful than traditional mechanical liposuction. Most Indian patients manage well with basic oral analgesics for 3-4 days.
+*   **Q: What is the cost in Chandigarh?**
+    *   A: Costs vary by zones (e.g., abdomen + flanks vs full body). We offer transparent packages including hospital stay.
 
 [View our Before and After Gallery](/gallery) to see the transformative results of our "Tricity" patients.
     `,
+    priceRange: "₹80,000 - ₹2,00,000",
+    costFactors: "Number of zones (e.g., Abdomen, Flanks, Back), 360 Lipo vs Spot Lipo",
     gallery: [
       "/axillary-breast-reduction-result.png",
       "/body-contouring-result-1.jpg",
@@ -247,7 +254,9 @@ Body contouring involves long incisions. Dr. Sumit's "Visualist" technique ensur
 
 #### Recovery
 Every procedure varies, but generally, expect 2-3 weeks of recovery before returning to a sedentary job. Compression garments are essential for 6 weeks.
-`
+`,
+    priceRange: "₹60,000 - ₹2,00,000",
+    costFactors: "Extent of skin removal, Combination of upper/lower body lift, Hospital stay duration"
   },
   {
     id: "fat-grafting-chandigarh",
@@ -296,7 +305,9 @@ Dr. Sumit uses **Nanofat**—emulsified fat rich in stem cells—to treat skin q
 
 #### Longevity
 Unlike synthetic fillers which dissolve in 12 months, transplanted fat that survives (typically 60-70%) is permanent. It ages naturally with you.
-`
+`,
+    priceRange: "₹40,000 - ₹1,20,000",
+    costFactors: "Volume required (Face vs Breast/Buttock), Nanofat vs Microfat processing"
   },
   {
     id: "buttock-lift-chandigarh",
@@ -322,7 +333,9 @@ This procedure is performed strictly under general anesthesia at Healing Hospita
 
 #### Result Timeline
 Results are visible immediately. You will need to avoid sitting directly on the area for 2 weeks to allow for optimal healing.
-`
+`,
+    priceRange: "₹1,50,000 - ₹3,00,000",
+    costFactors: "Implant needs vs Brazilia Butt Lift (BBL), Liposuction volume harvested"
   },
 
   // AESTHETIC - FACE
@@ -353,7 +366,9 @@ This procedure is specifically designed to obliterate the "jowls" (sagging jawli
 #### Recovery Timeline
 *   **Downtime:** Most patients are "socially presentable" with makeup within 10-14 days.
 *   **Longevity:** While aging continues, the clock is turned back effectively by 10-15 years.
-    `
+    `,
+    priceRange: "₹1,50,000 - ₹3,00,000",
+    costFactors: "Deep Plane vs SMAS Plication, Neck involvement, Anesthesia time"
   },
   {
     id: "neck-lift-chandigarh",
@@ -378,7 +393,9 @@ In isolated neck lifts, the incision is often hidden entirely under the chin or 
 
 #### Recovery
 You will wear a supportive chin strap for 1 week. Bruising typically resolves in 10-12 days.
-`
+`,
+    priceRange: "₹1,20,000 - ₹3,00,000",
+    costFactors: "Isolated Neck Lift vs Combined Facelift, Platysmaplasty complexity, Liposuction needs"
   },
   {
     id: "lip-lift-chandigarh",
@@ -400,7 +417,9 @@ The incision is hidden perfectly in the shadow of the base of the nose. It is vi
 
 #### Lip Reduction
 For clients with genetically overly prominent lips, we perform precision reduction to balance facial harmony, often preserving the natural shape while reducing volume.
-`
+`,
+    priceRange: "₹45,000 - ₹80,000",
+    costFactors: "Procedure type (Lift vs Reduction), Local anesthesia vs Sedation"
   },
   {
     id: "hair-transplant-chandigarh",
@@ -412,30 +431,38 @@ For clients with genetically overly prominent lips, we perform precision reducti
     image: "/hair-transplant-aesthetic.jpg", // User-provided aesthetic image
     regions: ["Face"],
     seoContent: `
-### Hair Transplant in Chandigarh: Restoring Confidence Permanently
+### Best Hair Transplant in Chandigarh: Restoring Confidence Permanently
 
 **Advanced FUE & DHT Techniques for Natural Hair Restoration**
 
 Hair loss can significantly impact self-esteem. Dr. Sumit Singh Gautam offers state-of-the-art Hair Transplant services in Chandigarh, utilizing advanced Follicular Unit Extraction (FUE) and Direct Hair Transplantation (DHT) methods to ensure maximum graft survival and density.
 
-**The "Visualist" Approach to Hairlines**
-Designing a hairline is art. It requires understanding facial proportions, age-appropriate recession, and natural directionality. Dr. Sumit, your **Board Certified** expert, designs hairlines that frame your face perfectly, distinguishing a good transplant from a great one.
+#### Medical Deep Dive: The Visualist Approach to Hairlines
+Designing a hairline is art. It requires understanding facial proportions, age-appropriate recession, and natural directionality.
+*   **Technique (FUE/DHT):** We utilize <0.8mm punches to minimize donor scarring. The DHT method involves simultaneous extraction and implantation, reducing the time follicles spend outside the body (ischemia time) and boosting survival rates closer to 100%.
+*   **Surgeon-Led:** Dr. Sumit is personally involved in the slit creation (channeling) phase, determining the angle and density. This prevents the "doll head" look or unnatural straight lines often seen in technician-run clinics.
+
+#### Local Context: Chandigarians & Hair
+Given the water quality and environmental factors in the Tricity, we often see specific patterns of hair loss.
+*   **Water Hardness:** We advise patients on post-transplant washing protocols using filtered water to prevent calcification on the new grafts.
+*   **Follow-up:** Being in Sector 34, we offer easy ongoing PRP sessions to maintain native hair density.
+
+#### Local FAQs
+*   **Q: Can I wear a turban/helmet?**
+    *   A: Loose caps can be worn after 3 days. Helmets and turbans should be avoided for 3-4 weeks to avoid traction on the new grafts.
+*   **Q: Cost per graft in Chandigarh?**
+    *   A: We value per-graft viability. Our packages are comprehensive.
+*   **Q: Is it painful?**
+    *   A: After the initial local anesthesia ring block, the procedure is virtually painless. You can watch Netflix on your phone.
 
 #### Why Choose Us for Hair Transplant in Chandigarh?
 1.  **Surgeon-Led Procedure:** Unlike many clinics where technicians do the work, Dr. Sumit is personally involved in the planning and slit creation phases.
-2.  **Healing Hospital Audit:** We operate within a hospital environment, ensuring sterility and emergency readiness—standards often missing in small clinics.
+2.  **Healing Hospital Audit:** We operate within a hospital environment, ensuring sterility and emergency readiness.
 
-#### Cost of Hair Transplant in Chandigarh
-The cost is determined by the number of grafts required to achieve your desired density.
-*   **Consultation:** A thorough scalp analysis determines your donor availability and recipient area needs.
-*   **Value:** We focus on "per-graft" viability, ensuring you get the most out of every extracted follicle.
-
-#### Recovery Time
-*   **Downtime:** Minimal. Tiny scabs form and fall off within 7-10 days.
-*   **Growth:** New hair growth begins at 3-4 months, with full density achieved by 12 months.
-
-Visit our **Before and After Gallery** to witness the life-changing density our patients enjoy.
-    `
+[View our Before and After Gallery](/gallery) to see the life-changing density our patients enjoy.
+    `,
+    priceRange: "₹60,000 - ₹1,50,000",
+    costFactors: "Number of Grafts (FUE), Hairline Design complexity"
   },
   {
     id: "blepharoplasty-chandigarh",
@@ -478,10 +505,12 @@ The eyes are the first place to show aging. Hooded upper lids can make you look 
 
 #### Recovery
 It is a quick recovery procedure. Sutures are removed on Day 5. Most patients return to work in 7-10 days.
-`
+`,
+    priceRange: "₹60,000 - ₹1,20,000",
+    costFactors: "Upper vs Lower Lids, Skin only vs Fat Excision, Canthopexy requirement"
   },
   {
-    id: "rhinoplasty-chandigarh",
+    id: "rhinoplasty-nose-job-chandigarh",
     title: "Rhinoplasty (Nose Job)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -506,31 +535,39 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
     },
     regions: ["Nose", "Face"],
     seoContent: `
-### Rhinoplasty in Chandigarh: Harmonizing Your Profile
+### Best Rhinoplasty in Chandigarh: Harmonizing Your Profile
 
 **Expert Nose Reshaping (Nose Job) by Dr. Sumit Singh Gautam**
 
 Rhinoplasty is widely considered the most complex of all cosmetic surgeries. It sits at the exact intersection of form and function. A beautiful nose must also breathe perfectly. In Sector 34, Chandigarh, Dr. Sumit performs both Open and Closed Rhinoplasty to correct structural deformities, dorsal humps, and bulbous tips.
 
-**Board Certified Precision**
-Your nose is the central feature of your face. Even a millimeter of change can alter your entire appearance. Dr. Sumit's deep understanding of facial aesthetics ensures your new nose complements your chin, forehead, and cheeks.
+#### Medical Deep Dive: Structural Preservation
+Dr. Sumit champions **Preservation Rhinoplasty** where possible.
+*   **Concept:** Instead of breaking the nasal bridge to lower a hump, we remove cartilage from underneath (dorsal preservation), keeping the natural smooth lines of your nose intact.
+*   **Fellowship Training:** His European training emphasized "finesse" work—producing noses that look like you were born with them, not "operated on."
+
+#### Local Context: Breathing in Northern India
+Allergies and dust in North India can complicate nasal recovery.
+*   **Functional Focus:** We aggressively treat hypertrophied turbinates (which block breathing) during the cosmetic surgery.
+*   **Post-Op:** We do NOT use heavy, painful nasal packing. We use modern internal splints that allow you to breathe immediately after surgery.
+
+#### Local FAQs
+*   **Q: Will it change my voice?**
+    *   A: No, aesthetic rhinoplasty does not affect the vocal chords. It may briefly sound "nasal" due to swelling but resolves quickly.
+*   **Q: How much does a Nose Job cost in Chandigarh?**
+    *   A: It varies between primary (first time) and revision (corrective) surgeries.
+*   **Q: Can I wear glasses?**
+    *   A: You must avoid heavy glasses resting on the bridge for 4-6 weeks. We recommend contact lenses or taping glasses to the forehead.
 
 #### Functional & Cosmetic Correction
 We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
 *   **Deviated Septum:** Correcting internal blockages.
 *   **Cosmetic:** Refining the bridge, tip, and alar base.
 
-#### Cost of Rhinoplasty in Chandigarh
-Rhinoplasty costs depend on the complexity (Primary vs. Revision) and the technique required.
-*   **Hospital Safety:** General anesthesia is administered by senior anesthesiologists at Healing Hospital.
-
-#### Recovery Time
-*   **Splint Removal:** The external splint is removed after 7 days, revealing your new profile.
-*   **Social Activity:** Most bruising fades by day 10.
-*   **Final Results:** While immediate improvement is obvious, subtle refinement of the tip continues for up to a year.
-
-Explore our **Before and After Gallery** to see how we have refined profiles across the Tricity.
-    `
+[VIew our Gallery](/gallery)
+    `,
+    priceRange: "₹1,20,000 - ₹2,50,000",
+    costFactors: "Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, Rib Graft requirement"
   },
   {
     id: "otoplasty-chandigarh",
@@ -557,7 +594,9 @@ Performed under Local Anesthesia for adults and General Anesthesia for children.
 
 #### Recovery
 A head bandage is worn for 3-5 days. Results are permanent and immediate.
-`
+`,
+    priceRange: "₹45,000 - ₹80,000",
+    costFactors: "Unilateral vs Bilateral correction, Local vs General Anesthesia"
   },
 
   // BREAST
@@ -603,7 +642,9 @@ We use a **"No-Touch" Technique** with Keller Funnels to insert implants, minimi
 
 #### Recovery
 Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4 weeks.
-`
+`,
+    priceRange: "₹1,30,000 - ₹2,50,000",
+    costFactors: "Implant Brand (Motiva/Silimed), Implant Type (PU coated vs Nanotexture), Fat Transfer combination"
   },
   {
     id: "breast-reduction-chandigarh",
@@ -630,7 +671,9 @@ Dr. Sumit generally uses the **Superomedial Pedicle** technique, which preserves
 
 #### Cost
 The cost varies by size and complexity but includes all hospital and anesthesia fees.
-`
+`,
+    priceRange: "₹1,60,000 - ₹2,80,000",
+    costFactors: "Breast size (Gigantomastia requires more time), Liposuction needs for lateral chest"
   },
   {
     id: "breast-lift-chandigarh",
@@ -653,7 +696,9 @@ Pregnancy, breastfeeding, and gravity can cause breasts to sag (ptosis). A Breas
 #### Recovery
 Similar to reduction, mobility is good immediately, but high-impact activities are restricted for 4 weeks.
 `,
-    regions: ["Breasts"]
+    regions: ["Breasts"],
+    priceRange: "₹1,50,000 - ₹2,50,000",
+    costFactors: "Grade of Ptosis (Sagging), Implant requirement for volume, Skin quality"
   },
 
   // MALE
@@ -688,16 +733,26 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
 
 **Effective Treatment for Male Breast Enlargement (Man Boobs)**
 
-Gynecomastia is a common condition affecting men of all ages, often causing significant embarrassment. It is characterized by the overdevelopment of breast tissue (gland) and/or excess fat. Diet and exercise often fail to resolve true glandular gynecomastia.
+Gynecomastia is a common condition affecting men of all ages, often causing significant embarrassment. It is characterized by the overdevelopment of breast tissue (gland) and/or excess fat.
 
-**The Surgical Solution**
-Dr. Sumit Singh Gautam employs a "Stealth Incision" technique.
-1.  **Liposuction:** To remove fatty tissue and contour the chest wall.
-2.  **Gland Excision:** Direct removal of the firm glandular disk through a tiny Areolar incision.
+#### Medical Deep Dive: The Stealth Approach
+Dr. Sumit employs a "Stealth Incision" technique.
+*   **Dual-Modality:** We combine **Power-Assisted Liposuction** (for fatty tissue) with **Direct Glandular Excision** (for the hard lump).
+*   **Puffy Nipple Correction:** Simply removing fat is often not enough. Removing the glandular disc behind the areola is critical to preventing the "puffy" look from returning.
+*   **Minimally Invasive:** The incision is barely 3-4mm, hidden at the border of the areola (Periareolar).
 
-#### Why Dr. Sumit?
-*   **Board Certified Plastic Surgeon:** Expertise in hiding scars and preventing "crater" deformities.
-*   **Sector 34 Location:** Conveniently located at Healing Hospital for all Tricity residents.
+#### Local Context: The "T-Shirt" Confidence
+In Chandigarh's gym-centric culture, this is our #1 requested male procedure.
+*   **Discreet:** We handle male patients with high privacy protocols at Healing Hospital.
+*   **Same Day:** It is a Day Care procedure. You come in the morning and engage in light walking by evening.
+
+#### Local FAQs
+*   **Q: Can I go to the gym?**
+    *   A: Legs/Cardio after 1 week. Chest/Arms after 4 weeks.
+*   **Q: Is it hormonal?**
+    *   A: Often idiopathic (unknown cause), but we rule out hormonal imbalances before surgery.
+*   **Q: How much does Grade 3 Gynecomastia cost?**
+    *   A: Higher grades require more time and skin work, thus slight variance in cost.
 
 #### Cost of Gynecomastia Surgery in Chandigarh
 The procedure is an investment in regained confidence. Costs include OT charges, anesthesia, and post-op care.
@@ -709,7 +764,9 @@ The procedure is an investment in regained confidence. Costs include OT charges,
 *   **Results:** Visible immediately, with final skin tightening over 3 months.
 
 See our **Before and After Gallery** for examples of restored masculine contours.
-    `
+    `,
+    priceRange: "₹65,000 - ₹1,10,000",
+    costFactors: "Grade 1-3 vs Grade 4, Excess skin excision needs, Lipo extent"
   },
 
   // INTIMATE
@@ -731,7 +788,9 @@ Childbirth and aging can stretch vaginal muscles, affecting sensation and confid
 **Benefits:**
 *   Improved sexual gratification.
 *   Restored pelvic floor strength.
-`
+`,
+    priceRange: "₹80,000 - ₹1,50,000",
+    costFactors: "Muscle tightening extent, Perineoplasty requirement, Mucosal excess"
   },
   {
     id: "labiaplasty-chandigarh",
@@ -750,7 +809,9 @@ Enlarged labia minora can cause discomfort during exercise, cycling, or intercou
 
 **Procedure:**
 It is a 45-minute procedure performed under local anesthesia or sedation. Recovery is quick (3-4 days).
-`
+`,
+    priceRange: "₹50,000 - ₹90,000",
+    costFactors: "Unilateral vs Bilateral, Clitoral hood reduction needs, Edge refinement technique"
   },
 
   // AESTHETIC - SCAR REVISION (Moved here)
@@ -777,7 +838,9 @@ Scars from accidents, previous surgeries, or burns can be stigmatizing. While no
 
 #### Keloids
 We have a specialized protocol for Keloids, combining surgical removal with immediate steroid injections to prevent recurrence.
-`
+`,
+    priceRange: "₹20,000 - ₹80,000",
+    costFactors: "Scar length and width, Z-plasty complexity, Laser sessions required"
   },
 
   // NON-SURGICAL
@@ -806,6 +869,8 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
       recoveryTips: ["Keep upright for 4 hours; avoid strenuous exercise for 24 hours."]
     },
     regions: ["Face", "Eyes", "Neck"],
+    priceRange: "₹12,000 - ₹25,000",
+    costFactors: "Number of Units, Area(s) treated (Forehead, Crow's feet, Masseter)",
     seoContent: `
 ### Botox in Chandigarh: The Art of Subtlety
 **Erase Lines, Keep Your Expressions**
@@ -855,7 +920,7 @@ Microneedling creates thousands of microscopic channels in the skin, triggering 
 **Why Choose It?**
 *   **Acne Scars:** Reduces the depth of boxcar and rolling scars.
 *   **Pores:** Tightens enlarged pores.
-*   **Rejuvenation:** Combined with PRP (Vampire Facial) for maximum glow.
+*   **Stem Cell Therapy:** We combine Microneedling with **NANOFAT**. Unlike simple PRP, Nanofat is rich in Adipose-Derived Stem Cells (ADSCs) that essentially "re-program" the skin, offering superior rejuvenation and scar remodelling.
 
 #### Downtime
 Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
@@ -869,6 +934,7 @@ Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
     description: "Advanced skin resurfacing for clarity and tone.",
     longDescription: "Carefully calibrated chemical solutions to exfoliate the skin's outer layers, addressing uneven pigmentation and refining texture.",
     image: "/chemical-peel-non-surgical.png",
+    costFactors: "Type of Peel (Glycolic/TCA/Yellow), Number of sessions, Face/Body area",
     seoContent: `
 ### Chemical Peels in Chandigarh: Reveal New Skin
 **Customized Medical Grade Peels**
@@ -909,6 +975,7 @@ Medical supervision ensures no risk of burns or hyperpigmentation.
     description: "Restoring volume and sculpting anatomical contours.",
     longDescription: "Utilizing premium hyaluronic acid to restore mid-face volume, refine the jawline, and enhance lip definition with artistic precision and anatomical harmony.",
     image: "/injectables-non-surgical.jpg",
+    costFactors: "Volume used (Number of syringes), Product type (Voluma/Volift), Area complexity",
     brief: {
       operationTime: "30 - 45 Minutes",
       anesthesia: "Topical Cream / Local Anesthetic",

@@ -21,7 +21,7 @@ const MedicalAuthority: React.FC = () => {
                                 Medical Authority
                             </span>
                             <h2 className="text-4xl md:text-6xl font-serif text-white leading-tight">
-                                Combining Safety <br /> with <span className="text-[#5DA9E9] italic opacity-80">Surgical Artistry</span>
+                                Combining Safety <br /> with <span className="text-[#4A90E2] italic opacity-80">Surgical Artistry</span>
                             </h2>
                             <p className="text-gray-400 text-lg font-light leading-relaxed max-w-xl">
                                 Dr. Sumit Singh Gautam is a <strong className="text-white">Board Certified Plastic Surgeon</strong> committed to the highest standards of safety, ethics, and transparency.
@@ -57,9 +57,9 @@ const MedicalAuthority: React.FC = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: i * 0.1 }}
-                                    className="space-y-4 p-6 glass border border-white/5 hover:border-[#5DA9E9]/30 transition-all group"
+                                    className="space-y-4 p-6 glass border border-white/5 hover:border-[#4A90E2]/30 transition-all group"
                                 >
-                                    <div className="text-[#5DA9E9] group-hover:scale-110 transition-transform duration-500">
+                                    <div className="text-[#4A90E2] group-hover:scale-110 transition-transform duration-500">
                                         {item.icon}
                                     </div>
                                     <h3 className="text-white text-sm font-bold uppercase tracking-wider">{item.title}</h3>

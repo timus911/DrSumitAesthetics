@@ -64,7 +64,7 @@ const Home: React.FC = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.5 }}
-              className="inline-block px-8 py-3 border border-[#4A90E2]/40 bg-[#4A90E2]/10 rounded-full backdrop-blur-2xl shadow-2xl shadow-blue-500/10"
+              className="inline-block px-8 py-3 border border-[#4A90E2]/40 bg-[#4A90E2]/10 rounded-full backdrop-blur-2xl shadow-2xl shadow-[#4A90E2]/10"
             >
               <span className="text-[#4A90E2] text-[10px] tracking-[0.6em] uppercase font-bold">Artistry · Precision · Sculpture</span>
             </motion.div>
@@ -147,14 +147,14 @@ const Home: React.FC = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-20">
                 <div className="space-y-8 group">
-                  <div className="w-16 h-16 glass flex items-center justify-center rounded-full border border-blue-500/20 shadow-2xl group-hover:border-blue-400 transition-colors">
+                  <div className="w-16 h-16 glass flex items-center justify-center rounded-full border border-[#4A90E2]/20 shadow-2xl group-hover:border-[#4A90E2] transition-colors">
                     <Microscope size={28} className="text-[#4A90E2]" />
                   </div>
                   <h4 className="text-[12px] uppercase tracking-[0.4em] font-extrabold text-white">Microsurgical Technique</h4>
                   <p className="text-gray-500 text-sm leading-relaxed">Precision restoration of neural and vascular pathways under high-optic magnification protocols.</p>
                 </div>
                 <div className="space-y-8 group">
-                  <div className="w-16 h-16 glass flex items-center justify-center rounded-full border border-blue-500/20 shadow-2xl group-hover:border-blue-400 transition-colors">
+                  <div className="w-16 h-16 glass flex items-center justify-center rounded-full border border-[#4A90E2]/20 shadow-2xl group-hover:border-[#4A90E2] transition-colors">
                     <ShieldCheck size={28} className="text-[#4A90E2]" />
                   </div>
                   <h4 className="text-[12px] uppercase tracking-[0.4em] font-extrabold text-white">Artistic Vision</h4>
@@ -163,7 +163,7 @@ const Home: React.FC = () => {
               </div>
 
               <Link to="/about" className="inline-flex items-center space-x-8 mt-16 group">
-                <span className="px-12 py-5 border border-white/10 group-hover:border-[#4A90E2] group-hover:bg-blue-900/10 transition-all text-[11px] uppercase tracking-[0.5em] font-bold text-gray-300">Biographical Brief</span>
+                <span className="px-12 py-5 border border-white/10 group-hover:border-[#4A90E2] group-hover:bg-[#4A90E2]/10 transition-all text-[11px] uppercase tracking-[0.5em] font-bold text-gray-300">Biographical Brief</span>
                 <ArrowRight size={18} className="text-gray-600 group-hover:text-[#4A90E2] group-hover:translate-x-6 transition-all duration-500" />
               </Link>
             </motion.div>
