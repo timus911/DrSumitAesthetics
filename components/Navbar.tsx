@@ -52,7 +52,6 @@ const Navbar: React.FC = () => {
     { name: 'Non-Surgical', path: '/non-surgical', icon: <Zap size={14} /> },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Reviews', path: '/reviews' },
-    { name: 'Costs & Financing', path: '/plastic-surgery-cost-chandigarh' },
     { name: 'About', path: '/about' },
   ];
 

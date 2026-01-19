@@ -358,6 +358,12 @@ const ProcedureDetail: React.FC = () => {
                   />
                 )}
 
+                <ExpandableSection
+                  title="What determines the cost of procedure?"
+                  shortLines={[]}
+                  longLines={procedure.costFactors ? procedure.costFactors.split(',') : ["Complexity-dependent sizing & time"]}
+                />
+
                 <div className="pt-8">
                   <p className="text-gray-400 text-sm italic mb-12">Every anatomy is unique. During your consultation, we'll map out a timeline tailored specifically to your body's healing response.</p>
                   {(procedure.parentCategory === 'aesthetic' || procedure.parentCategory === 'non-surgical') && (
@@ -410,7 +416,6 @@ const ProcedureDetail: React.FC = () => {
                     { label: "Anesthesia Mode", val: procedure.brief?.anesthesia || "General / Deep Sedation" },
                     { label: "Clinical Recovery", val: procedure.brief?.recovery || "10 - 14 Days" },
                     { label: "Refinement Window", val: procedure.brief?.refinement || "Matures at 6 - 9 months" },
-                    ...(procedure.priceRange ? [{ label: "Estimated Cost", val: procedure.priceRange }] : []),
                     ...(procedure.brief?.technique ? [{ label: "Technique", val: procedure.brief.technique }] : []),
                   ].map((stat, i) => (
                     <div key={i} className="flex justify-between border-b border-white/5 pb-4 group">
