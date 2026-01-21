@@ -183,25 +183,64 @@ const Reviews: React.FC = () => {
         }
     };
 
-    // Horizontal scroll with mouse wheel
+    // Smooth Horizontal Scroll with Momentum
     React.useEffect(() => {
         const container = scrollContainerRef.current;
         if (!container) return;
 
+        let currentScroll = container.scrollLeft;
+        let targetScroll = container.scrollLeft;
+        let isAnimating = false;
+        let animationFrameId: number;
+
+        const lerp = (start: number, end: number, factor: number) => start + (end - start) * factor;
+
+        const updateScroll = () => {
+            if (Math.abs(targetScroll - currentScroll) > 0.5) {
+                currentScroll = lerp(currentScroll, targetScroll, 0.08); // Factor 0.08 for smooth inertia
+                container.scrollLeft = currentScroll;
+                animationFrameId = requestAnimationFrame(updateScroll);
+                isAnimating = true;
+            } else {
+                isAnimating = false;
+                currentScroll = targetScroll; // Snap to target when close
+            }
+        };
+
         const handleWheel = (evt: WheelEvent) => {
             if (evt.deltaY !== 0) {
-                // If scrolling vertically, scroll horizontally instead
-                // unless shift key is pressed (native horizontal scroll)
-                // We prevent default to lock the page vertical scroll while over the section
                 evt.preventDefault();
-                container.scrollLeft += evt.deltaY;
+
+                // Add delta to target
+                targetScroll += evt.deltaY;
+
+                // Clamp target to bounds
+                const maxScroll = container.scrollWidth - container.clientWidth;
+                targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+
+                if (!isAnimating) {
+                    updateScroll();
+                }
+            }
+        };
+
+        // Initialize scroll positions
+        const handleScroll = () => {
+            // Update tracked positions if user scrolls by other means (drag/touch)
+            if (!isAnimating) {
+                currentScroll = container.scrollLeft;
+                targetScroll = container.scrollLeft;
             }
         };
 
         container.addEventListener('wheel', handleWheel, { passive: false });
+        // We need to listen to native scroll to sync our vars when the user drags scrollbar or touch-scrolls
+        container.addEventListener('scroll', handleScroll);
 
         return () => {
             container.removeEventListener('wheel', handleWheel);
+            container.removeEventListener('scroll', handleScroll);
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
         };
     }, []);
 
@@ -286,7 +325,8 @@ const Reviews: React.FC = () => {
                         {/* Horizontal Scroll Container */}
                         <div
                             ref={scrollContainerRef}
-                            className="flex overflow-x-auto gap-8 pb-12 cursor-grab active:cursor-grabbing snap-x snap-mandatory scrollbar-none items-start"
+                            className="flex overflow-x-auto gap-8 pb-12 cursor-grab active:cursor-grabbing scrollbar-none items-start"
+                            style={{ scrollBehavior: 'auto' }}
                             data-lenis-prevent
                         >
                             {GOOGLE_REVIEWS.map((review) => (
@@ -295,7 +335,7 @@ const Reviews: React.FC = () => {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true, margin: "50px" }}
-                                    className="flex-none w-[300px] md:w-[400px] snap-center"
+                                    className="flex-none w-[300px] md:w-[400px]"
                                 >
                                     <div className="group relative select-none">
                                         <img
