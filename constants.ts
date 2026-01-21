@@ -23,7 +23,7 @@ export const CONTACT = {
   phone: "+91 82198 16265",
   counselorPhone: "+91 85263 43434",
   email: "sumit.sgautam@gmail.com",
-  location: "Dr. Sumit Aesthetics > Healing Hospital, SCO 18-19, Sector 34-A, Chandigarh, 160022",
+  location: "Healing Hospital, SCO 18-19, Sector 34-A, Chandigarh, 160022",
 
   googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Healing+Hospital+Sector+34+Chandigarh",
   hours: {
