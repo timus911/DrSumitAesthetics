@@ -139,12 +139,12 @@ const Contact: React.FC = () => {
                 <div className="flex items-start">
                   <button
                     onClick={() => setIsQrLightboxOpen(true)}
-                    className="group relative block w-48 h-48 glass p-3 border border-white/10 hover:border-[#D4AF37]/50 transition-all duration-500 shadow-2xl overflow-hidden"
+                    className="group relative block w-48 h-48 glass p-3 border border-white/10 hover:border-[#D4AF37]/50 transition-all duration-300 shadow-2xl overflow-hidden"
                   >
                     <img
                       src={`${import.meta.env.BASE_URL}contact-qr.png`}
                       alt="Contact QR Code"
-                      className="w-full h-full object-cover filter brightness-90 group-hover:brightness-100 transition-all duration-500"
+                      className="w-full h-full object-cover filter brightness-90 group-hover:brightness-100 transition-all duration-300"
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-500 backdrop-blur-[2px]">
                       <span className="text-[10px] uppercase tracking-widest text-white font-bold">Expand QR Code</span>
@@ -231,7 +231,7 @@ const Contact: React.FC = () => {
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mt-32 w-full max-w-4xl mx-auto h-[400px] md:h-[500px] glass border border-white/5 p-2 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-700"
+        className="mt-32 w-full max-w-4xl mx-auto h-[400px] md:h-[500px] glass border border-white/5 p-2 rounded-sm overflow-hidden grayscale hover:grayscale-0 transition-all duration-300"
       >
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.826767562095!2d76.7663243762691!3d30.72661897458737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fed0d1e3d3001%3A0xc3af7707e777607!2sHealing%20Hospital!5e0!3m2!1sen!2sin!4v1715690000000!5m2!1sen!2sin"
@@ -278,7 +278,7 @@ const Contact: React.FC = () => {
                     <img
                       src={`${import.meta.env.BASE_URL}contact-qr.png`}
                       alt="Dr. Sumit Contact QR"
-                      className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-700"
+                      className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-[#D4AF37]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <div className="glass px-6 py-3 border border-white/20">

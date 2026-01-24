@@ -39,11 +39,11 @@ const GalleryCard = ({ image, idx, onClick }: any) => {
     >
       <img
         src={image.src}
-        className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-70'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110`}
+        className={`w-full h-full object-cover transition-all duration-300 ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-70'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110`}
         // SEO: Adding location context to alt tags
         alt={`${image.title} in Chandigarh - Dr. Sumit Aesthetics`}
       />
-      <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-500 ${isFocused ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100`}>
+      <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 ${isFocused ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100`}>
         <div className="absolute bottom-8 left-8 right-8">
           <h4 className="text-white font-serif text-xl mb-2">{image.title}</h4>
           <p className="text-[#D4AF37] text-xs uppercase tracking-widest">{image.category}</p>

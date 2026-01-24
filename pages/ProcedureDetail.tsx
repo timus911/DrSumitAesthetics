@@ -25,7 +25,7 @@ const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img,
       <img
         src={img}
         alt="Clinical result"
-        className={`w-full h-auto transition-all duration-700 block ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'} group-hover:grayscale-0 group-hover:opacity-100`}
+        className={`w-full h-auto transition-all duration-300 block ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'} group-hover:grayscale-0 group-hover:opacity-100`}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className={`absolute bottom-6 left-6 transition-all translate-y-4 group-hover:translate-y-0 ${isFocused ? 'opacity-100 translate-y-0' : 'opacity-0'} group-hover:opacity-100`}>
@@ -42,7 +42,7 @@ const ExpandableSection: React.FC<{ title: string; shortLines: string[]; longLin
   return (
     <div className="space-y-4 border-l border-white/5 pl-8 relative group">
       {/* Visual Indicator */}
-      <div className="absolute left-[-1.5px] top-1 w-[3px] h-4 bg-[#4A90E2]/20 group-hover:bg-[#4A90E2] transition-all duration-500" />
+      <div className="absolute left-[-1.5px] top-1 w-[3px] h-4 bg-[#4A90E2]/20 group-hover:bg-[#4A90E2] transition-all duration-300" />
 
       <button
         onClick={() => setOpen(!open)}
@@ -400,7 +400,7 @@ const ProcedureDetail: React.FC = () => {
             className="space-y-12 lg:sticky lg:top-32"
           >
             <div ref={mainImageRef} className="aspect-video glass rounded-sm overflow-hidden relative shadow-2xl border border-white/5 group">
-              <img src={procedure.image || ASSETS.surgeryTheater} alt={procedure.title} className={`w-full h-full object-cover transition-all duration-1000 ${isMainImageFocused ? 'grayscale-0 opacity-90' : 'opacity-60 grayscale'} group-hover:grayscale-0 group-hover:opacity-90`} />
+              <img src={procedure.image || ASSETS.surgeryTheater} alt={procedure.title} className={`w-full h-full object-cover transition-all duration-500 ${isMainImageFocused ? 'grayscale-0 opacity-90' : 'opacity-60 grayscale'} group-hover:grayscale-0 group-hover:opacity-90`} />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
             </div>
 

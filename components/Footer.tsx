@@ -176,7 +176,7 @@ const Footer: React.FC = () => {
                   <img
                     src={`${import.meta.env.BASE_URL}contact-qr.png`}
                     alt="Dr. Sumit Contact QR"
-                    className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-[#4A90E2]/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div className="glass px-6 py-3 border border-white/20">

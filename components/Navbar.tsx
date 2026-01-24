@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${(scrolled || isOpen) ? 'py-2 bg-black/80 backdrop-blur-xl border-b border-white/5' : 'py-8'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${(scrolled || isOpen) ? 'py-2 bg-black/80 backdrop-blur-xl border-b border-white/5' : 'py-8'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center gap-8">
 
         {/* LEFT: Static Logo */}
@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
                   key={link.path}
                   to={link.path}
                   className={`text-[9px] uppercase font-bold transition-all whitespace-nowrap
-                    ${isConcerns ? 'tracking-[0.35em] duration-700 px-5 rounded-sm hover:bg-white/5' : 'tracking-[0.3em]'} 
+                    ${isConcerns ? 'tracking-[0.35em] duration-300 px-5 rounded-sm hover:bg-white/5' : 'tracking-[0.3em]'} 
                     ${isActive ? 'text-[#4A90E2]' : (isConcerns ? 'text-stone-400 hover:text-stone-300' : 'text-gray-400 hover:text-[#4A90E2]')}
                   `}
                 >

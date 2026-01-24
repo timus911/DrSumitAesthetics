@@ -109,7 +109,7 @@ const PatientThumbnail = ({ patient, onClick, variants }: { patient: any, onClic
                 <img
                     src={patient.src}
                     alt={patient.caption}
-                    className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
+                    className={`w-full h-full object-cover transition-all duration-300 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <span className="text-white text-xs uppercase tracking-widest font-bold">{patient.caption}</span>
@@ -261,7 +261,7 @@ const Reviews: React.FC = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
+                    transition={{ duration: 0.4 }}
                     className="text-center mb-24 space-y-6"
                 >
                     <span className="text-[#4A90E2] text-xs tracking-[0.6em] uppercase font-black">Testimonials</span>

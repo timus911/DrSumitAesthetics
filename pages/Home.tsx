@@ -57,7 +57,7 @@ const Home: React.FC = () => {
             style={{ opacity: heroOpacity, y: textYMastery }}
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="space-y-12 mt-24"
           >
             <motion.div
@@ -111,13 +111,13 @@ const Home: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, x: -80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
               className="relative aspect-[4/5] overflow-hidden glass rounded-sm group shadow-[0_40px_100px_rgba(0,0,0,0.8)] border border-white/5"
             >
               {/* Photo 4: Surgical profile */}
               <div ref={philosophyImageRef} className="w-full h-full">
-                <img src={ASSETS.surgeryProfile} alt="Surgical Profile" className={`w-full h-full object-cover transition-all duration-[2s] ${isPhilosophyFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105`} />
+                <img src={ASSETS.surgeryProfile} alt="Surgical Profile" className={`w-full h-full object-cover transition-all duration-700 ${isPhilosophyFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105`} />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               <div className="absolute bottom-12 left-12 space-y-4">
@@ -130,7 +130,7 @@ const Home: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, x: 80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
               className="space-y-20"
             >

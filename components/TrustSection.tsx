@@ -16,7 +16,7 @@ const TrustSection: React.FC = () => {
                     Member of Prestigious Global Societies
                 </p>
 
-                <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+                <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all duration-300">
                     {associations.map((assoc, i) => (
                         <motion.div
                             key={i}

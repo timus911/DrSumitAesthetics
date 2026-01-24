@@ -59,7 +59,7 @@ const MedicalAuthority: React.FC = () => {
                                     transition={{ delay: i * 0.1 }}
                                     className="space-y-4 p-6 glass border border-white/5 hover:border-[#4A90E2]/30 transition-all group"
                                 >
-                                    <div className="text-[#4A90E2] group-hover:scale-110 transition-transform duration-500">
+                                    <div className="text-[#4A90E2] group-hover:scale-110 transition-transform duration-200">
                                         {item.icon}
                                     </div>
                                     <h3 className="text-white text-sm font-bold uppercase tracking-wider">{item.title}</h3>
@@ -83,7 +83,7 @@ const MedicalAuthority: React.FC = () => {
                                 initial={{ scale: 1 }}
                                 whileInView={{ scale: 1.05 }}
                                 whileHover={{ scale: 1.1 }}
-                                transition={{ duration: 0.8, ease: "easeOut" }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
                             />
                             {/* Bottom fade mask to hide cut-off */}
                             <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black via-black/90 to-transparent z-20" />

@@ -29,12 +29,12 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0, hint, hi
                 initial={{ opacity: 0.2 }}
                 whileHover={{ opacity: 0.5 }}
                 animate={{ opacity: isFocused ? 0.5 : 0.2 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.3 }}
             >
                 <img
                     src={proc.image || `https://picsum.photos/800/1000?${proc.id}-after`}
                     alt={proc.title}
-                    className={`w-full h-full object-cover grayscale brightness-75 transition-transform duration-1000 group-hover:scale-110 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
+                    className={`w-full h-full object-cover grayscale brightness-75 transition-transform duration-500 group-hover:scale-110 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/20 to-black/90" />
             </motion.div>
@@ -57,14 +57,14 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0, hint, hi
 
             <Link
                 to={`/${proc.id}`}
-                className={`relative z-10 block h-full border-b-2 border-transparent hover:border-[#5DA9E9] transition-all duration-700 ${hint ? 'pt-24 pb-12 px-12' : 'p-12'}`}
+                className={`relative z-10 block h-full border-b-2 border-transparent hover:border-[#5DA9E9] transition-all duration-300 ${hint ? 'pt-24 pb-12 px-12' : 'p-12'}`}
             >
                 <div className="space-y-8 flex flex-col h-full justify-end md:justify-start">
                     <div className="space-y-4">
                         <div className={`text-[#5DA9E9] text-[10px] tracking-[0.3em] uppercase font-bold transition-opacity ${isFocused ? 'opacity-100' : 'opacity-80'} group-hover:opacity-100`}>
                             {proc.category}
                         </div>
-                        <h3 className={`text-2xl md:text-3xl font-serif text-white transition-colors duration-500 leading-tight ${isFocused ? 'text-[#5DA9E9]' : ''} group-hover:text-[#5DA9E9]`}>
+                        <h3 className={`text-2xl md:text-3xl font-serif text-white transition-colors duration-200 leading-tight ${isFocused ? 'text-[#5DA9E9]' : ''} group-hover:text-[#5DA9E9]`}>
                             {proc.title}
                         </h3>
                     </div>

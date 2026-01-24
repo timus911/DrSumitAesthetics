@@ -45,19 +45,19 @@ const ConcernCard = ({ zone, idx }: { zone: any, idx: number }) => {
                     <img
                         src={zone.image}
                         alt={zone.title}
-                        className={`w-full h-full object-cover transition-all duration-700 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
+                        className={`w-full h-full object-cover transition-all duration-300 ${isFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                 </motion.div>
 
                 <div className="absolute bottom-0 left-0 w-full p-8 z-10">
                     <div className="space-y-4">
-                        <h3 className={`text-2xl font-serif text-white transition-colors duration-500 ${isFocused ? 'text-[#5DA9E9]' : ''} group-hover:text-[#5DA9E9]`}>
+                        <h3 className={`text-2xl font-serif text-white transition-colors duration-200 ${isFocused ? 'text-[#5DA9E9]' : ''} group-hover:text-[#5DA9E9]`}>
                             {zone.title}
                         </h3>
                         <div className={`flex items-center space-x-3 text-[10px] uppercase tracking-widest text-white/40 transition-colors ${isFocused ? 'text-white' : ''} group-hover:text-white`}>
                             <span className="font-bold">View Procedures</span>
-                            <ArrowRight size={14} className={`transition-transform duration-500 text-[#5DA9E9] ${isFocused ? 'translate-x-2' : ''} group-hover:translate-x-2`} />
+                            <ArrowRight size={14} className={`transition-transform duration-200 text-[#5DA9E9] ${isFocused ? 'translate-x-2' : ''} group-hover:translate-x-2`} />
                         </div>
                     </div>
                 </div>
