@@ -39,7 +39,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           className="max-w-4xl mb-24 space-y-8"
         >
           <span className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold">Clinical Domain</span>

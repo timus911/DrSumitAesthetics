@@ -17,10 +17,10 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0, hint, hi
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ delay: index * 0.05 }}
+            transition={{ duration: 0.2 }}
             className="group relative h-full overflow-hidden rounded-sm glass border border-white/5"
         >
             {/* Background "After" Result Image */}

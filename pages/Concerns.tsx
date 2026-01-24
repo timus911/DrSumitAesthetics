@@ -28,10 +28,10 @@ const ConcernCard = ({ zone, idx }: { zone: any, idx: number }) => {
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ delay: idx * 0.05 }}
+            transition={{ duration: 0.2 }}
             className="group relative h-[400px] overflow-hidden rounded-sm glass border border-white/5 cursor-pointer"
         >
             <Link to={`/concerns/${zone.id}`} className="block h-full w-full">
@@ -73,7 +73,7 @@ const Concerns: React.FC = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.2 }}
                     className="max-w-4xl mb-24 space-y-8"
                 >
                     <span className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold">Anatomical Focus</span>

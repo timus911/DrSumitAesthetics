@@ -127,14 +127,14 @@ const Reviews: React.FC = () => {
         show: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.05
+                duration: 0.2
             }
         }
     };
 
     const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+        hidden: { opacity: 0, scale: 0.95 },
+        show: { opacity: 1, scale: 1, transition: { duration: 0.2, ease: "easeOut" } }
     };
 
     const [scrollProgress, setScrollProgress] = useState(0);
@@ -334,7 +334,8 @@ const Reviews: React.FC = () => {
                                     key={review.id}
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
-                                    viewport={{ once: true, margin: "50px" }}
+                                    viewport={{ once: true, margin: "-50px" }}
+                                    transition={{ duration: 0.2 }}
                                     className="flex-none w-[300px] md:w-[400px]"
                                 >
                                     <div className="group relative select-none">

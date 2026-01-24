@@ -63,7 +63,7 @@ const Home: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ delay: 0.1, duration: 0.2 }}
               className="inline-block px-8 py-3 border border-[#4A90E2]/40 bg-[#4A90E2]/10 rounded-full backdrop-blur-2xl shadow-2xl shadow-[#4A90E2]/10"
             >
               <span className="text-[#4A90E2] text-[10px] tracking-[0.6em] uppercase font-bold">Artistry · Precision · Sculpture</span>
@@ -130,8 +130,8 @@ const Home: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, x: 80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
               className="space-y-20"
             >
               <div className="space-y-8">

@@ -86,7 +86,7 @@ const About: React.FC = () => {
   // Explicitly type as Variants to ensure 'ease' property is recognized as valid Easing type
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+    show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } }
   };
 
   const AboutThumbnail = ({ image, idx, hoveredImageIndex, setHoveredImageIndex, handleGalleryImageClick }: any) => {
@@ -118,7 +118,7 @@ const About: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        transition={{ duration: 0.2 }}
         className="break-inside-avoid relative group overflow-hidden rounded-sm border border-white/5 bg-white/5" // Added bg-white/5 as fallback
       >
         <img
@@ -244,7 +244,7 @@ const About: React.FC = () => {
           <motion.div
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, margin: "100px" }}
             variants={staggerContainer}
             className="grid grid-cols-1 lg:grid-cols-2 gap-32 items-center"
           >

@@ -14,6 +14,10 @@ const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img,
   return (
     <motion.div
       ref={ref}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.2 }}
       whileHover={{ y: -10 }}
       className="group relative glass overflow-hidden rounded-sm cursor-pointer shadow-2xl border border-white/5 w-full md:w-[calc(50%-3rem)] lg:w-[calc(33.333%-4rem)] max-w-[450px]"
       onClick={onClick}
@@ -443,8 +447,8 @@ const ProcedureDetail: React.FC = () => {
           <motion.section
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.3 }}
+            viewport={{ once: true, margin: "-50px" }}
             className="mt-40 border-t border-white/5 pt-32"
           >
             <div className="text-center mb-24 space-y-6">
@@ -517,7 +521,7 @@ const ProcedureDetail: React.FC = () => {
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.2 }}
                       src={sortedGallery[lightboxIndex]}
                       alt="Clinical Result"
                       className="max-w-full max-h-[80vh] object-contain shadow-2xl"
