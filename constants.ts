@@ -151,7 +151,7 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
 `,
     priceRange: "₹1,50,000 - ₹2,50,000",
     costFactors: "Mini vs Full Tummy Tuck, Muscle Repair complexity, Liposuction extent",
-    gallery: ["/tummy-tuck-result-1.png", "/tummy-tuck-result-2.jpg"]
+    gallery: ["/tummy-tuck-result-1.png", "/tummy-tuck-result-2.jpg", "/tummy-tuck-nrf.png", "/tummy-tuck-nrll.png", "/tummy-tuck-nrro.png"]
   },
   {
     id: "liposuction-chandigarh",
@@ -216,7 +216,10 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
       "/body-contouring-result-4.jpg",
       "/body-contouring-result-5.png",
       "/tummy-tuck-result-1.png",
-      "/tummy-tuck-result-2.jpg"
+      "/tummy-tuck-result-2.jpg",
+      "/tummy-tuck-nrf.png",
+      "/tummy-tuck-nrll.png",
+      "/tummy-tuck-nrro.png"
     ]
   },
   {
@@ -236,7 +239,10 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
       "/body-contouring-result-4.jpg",
       "/body-contouring-result-5.png",
       "/tummy-tuck-result-1.png",
-      "/tummy-tuck-result-2.jpg"
+      "/tummy-tuck-result-2.jpg",
+      "/tummy-tuck-nrf.png",
+      "/tummy-tuck-nrll.png",
+      "/tummy-tuck-nrro.png"
     ],
     seoContent: `
 ### Body Contouring in Chandigarh: The Complete Transformation
