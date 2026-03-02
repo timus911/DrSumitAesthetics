@@ -120,6 +120,12 @@ const ProcedureDetail: React.FC = () => {
           [src]: img.width >= img.height ? 'h' : 'v'
         }));
       };
+      img.onerror = () => {
+        setOrientations(prev => ({
+          ...prev,
+          [src]: 'h'
+        }));
+      };
     });
   }, [galleryImages]);
 
@@ -483,7 +489,7 @@ const ProcedureDetail: React.FC = () => {
               )}
 
               {/* Pending Load Group */}
-              {pendingImages.length > 0 && pendingImages.length === galleryImages.length && (
+              {pendingImages.length > 0 && (
                 <div className="flex justify-center py-20">
                   <div className="w-8 h-8 border-2 border-[#4A90E2]/20 border-t-[#4A90E2] rounded-full animate-spin" />
                 </div>
