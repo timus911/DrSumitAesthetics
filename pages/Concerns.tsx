@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { ASSETS } from '../constants.ts';
+import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const CONCERN_ZONES = [
@@ -21,7 +22,7 @@ const CONCERN_ZONES = [
     { id: 'Arms', title: 'Arms', image: `${import.meta.env.BASE_URL}arms-concerns.jpg` },
 ];
 
-const ConcernCard = ({ zone, idx }: { zone: any, idx: number }) => {
+const ConcernCard = ({ zone, idx }: { zone: any, idx: number, key?: string }) => {
     const ref = React.useRef<HTMLDivElement>(null);
     const isFocused = useMobileCenterFocus(ref);
 
@@ -69,6 +70,11 @@ const ConcernCard = ({ zone, idx }: { zone: any, idx: number }) => {
 const Concerns: React.FC = () => {
     return (
         <div className="pt-52 pb-32">
+            <SEO
+                title="Aesthetics by Concern | Dr. Sumit Aesthetics"
+                description="Explore cosmetic plastic surgery procedures categorized by the area of concern, including Face, Nose, Breast, Body, & Thighs."
+                url="/concerns"
+            />
             <div className="container mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

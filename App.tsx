@@ -1,6 +1,5 @@
-
 import React, { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar.tsx';
@@ -18,6 +17,7 @@ import Concerns from './pages/Concerns.tsx';
 import ConcernDetail from './pages/ConcernDetail.tsx';
 import Reviews from './pages/Reviews.tsx';
 import CostsAndFinancing from './pages/CostsAndFinancing.tsx';
+import SurgiSetPrivacy from './pages/SurgiSetPrivacy.tsx';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -28,6 +28,44 @@ const ScrollToTop = () => {
     }
   }, [pathname]);
   return null;
+};
+
+const AppLayout: React.FC = () => {
+  const location = useLocation();
+  const isStandalone = location.pathname === '/surgiset-privacy';
+
+  return (
+    <div className="relative min-h-screen bg-black text-white selection:bg-gold-500/30 overflow-hidden">
+      {!isStandalone && <FloatingBackground />}
+      {!isStandalone && <Navbar />}
+
+      <main className="relative z-10">
+        <AnimatePresence mode="wait">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/aesthetic" element={<CategoryPage type="aesthetic" />} />
+            <Route path="/reconstructive" element={<CategoryPage type="reconstructive" />} />
+            <Route path="/non-surgical" element={<CategoryPage type="non-surgical" />} />
+            <Route path="/vascular" element={<CategoryPage type="vascular" />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/reviews" element={<Reviews />} />
+            <Route path="/patient-journey" element={<PatientJourney />} />
+            <Route path="/international" element={<InternationalPatients />} />
+            <Route path="/plastic-surgery-cost-chandigarh" element={<CostsAndFinancing />} />
+            <Route path="/surgiset-privacy" element={<SurgiSetPrivacy />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/procedure/:id" element={<ProcedureDetail />} />
+            <Route path="/concerns" element={<Concerns />} />
+            <Route path="/concerns/:region" element={<ConcernDetail />} />
+            <Route path="/:id" element={<ProcedureDetail />} />
+          </Routes>
+        </AnimatePresence>
+      </main>
+
+      {!isStandalone && <Footer />}
+    </div>
+  );
 };
 
 const App: React.FC = () => {
@@ -61,35 +99,7 @@ const App: React.FC = () => {
   return (
     <Router>
       <ScrollToTop />
-      <div className="relative min-h-screen bg-black text-white selection:bg-gold-500/30 overflow-hidden">
-        <FloatingBackground />
-        <Navbar />
-
-        <main className="relative z-10">
-          <AnimatePresence mode="wait">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/aesthetic" element={<CategoryPage type="aesthetic" />} />
-              <Route path="/reconstructive" element={<CategoryPage type="reconstructive" />} />
-              <Route path="/non-surgical" element={<CategoryPage type="non-surgical" />} />
-              <Route path="/vascular" element={<CategoryPage type="vascular" />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/patient-journey" element={<PatientJourney />} />
-              <Route path="/international" element={<InternationalPatients />} />
-              <Route path="/plastic-surgery-cost-chandigarh" element={<CostsAndFinancing />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/procedure/:id" element={<ProcedureDetail />} />
-              <Route path="/concerns" element={<Concerns />} />
-              <Route path="/concerns/:region" element={<ConcernDetail />} />
-              <Route path="/:id" element={<ProcedureDetail />} />
-            </Routes>
-          </AnimatePresence>
-        </main>
-
-        <Footer />
-      </div>
+      <AppLayout />
     </Router>
   );
 };

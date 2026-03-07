@@ -9,6 +9,8 @@ interface SEOProps {
     image?: string;
     url?: string;
     type?: 'website' | 'article' | 'profile';
+    schemaType?: 'MedicalBusiness' | 'Physician' | 'MedicalProcedure';
+    procedureName?: string;
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -17,7 +19,9 @@ const SEO: React.FC<SEOProps> = ({
     keywords,
     image = '/dr-sumit-portrait.jpg', // Default image
     url,
-    type = 'website'
+    type = 'website',
+    schemaType = 'MedicalBusiness',
+    procedureName
 }) => {
     const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34";
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
@@ -25,43 +29,45 @@ const SEO: React.FC<SEOProps> = ({
 
     // Parse address from constants or hardcode for Schema precision
     // Structured Data for Local Business / Physician
-    const schemaData = {
+    const baseSchema = {
         "@context": "https://schema.org",
-        "@type": "MedicalBusiness",
-        "name": "Dr. Sumit Aesthetics",
-        "image": "https://www.drsumitaesthetics.com/logo.png",
-        "@id": "https://www.drsumitaesthetics.com",
-        "url": "https://www.drsumitaesthetics.com",
-        "telephone": "+918219816265",
-        "priceRange": "$$$",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
-            "addressLocality": "Chandigarh",
-            "postalCode": "160022",
-            "addressCountry": "IN"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 30.7225,
-            "longitude": 76.7681
-        },
-        "openingHoursSpecification": {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-            ],
-            "opens": "09:00",
-            "closes": "17:00"
-        },
-        "sameAs": [
-            "https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/"
-        ]
+        "@type": schemaType,
+        "name": procedureName || "Dr. Sumit Aesthetics",
+        "image": "https://www.drsumitaesthetics.com/dr-sumit-portrait.jpg",
+        "@id": siteUrl,
+        "url": siteUrl,
+        ...(schemaType !== 'MedicalProcedure' && {
+            "telephone": "+918219816265",
+            "priceRange": "$$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
+                "addressLocality": "Chandigarh",
+                "postalCode": "160022",
+                "addressCountry": "IN"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 30.7225,
+                "longitude": 76.7681
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "opens": "09:00",
+                "closes": "17:00"
+            },
+            "sameAs": [
+                "https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/"
+            ]
+        })
     };
 
     return (
@@ -96,7 +102,7 @@ const SEO: React.FC<SEOProps> = ({
 
             {/* Schema.org Structured Data */}
             <script type="application/ld+json">
-                {JSON.stringify(schemaData)}
+                {JSON.stringify(baseSchema)}
             </script>
         </Helmet>
     );

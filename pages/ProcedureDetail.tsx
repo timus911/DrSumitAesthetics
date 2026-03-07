@@ -169,6 +169,8 @@ const ProcedureDetail: React.FC = () => {
         description={procedure.description || procedure.longDescription}
         image={procedure.image}
         url={`/procedure/${procedure.id}`}
+        schemaType="MedicalProcedure"
+        procedureName={procedure.title}
       />
       <div className="container mx-auto px-6">
         <div className="mb-12">

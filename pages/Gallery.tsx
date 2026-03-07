@@ -7,7 +7,10 @@ import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 import { PROCEDURES } from '../constants.ts';
 
-// Dynamically generate and deduplicate gallery images from all procedures
+import SEO from '../components/SEO.tsx';
+
+// dynamically generate ...
+
 const galleryImages = Array.from(
   new Map(
     PROCEDURES
@@ -116,6 +119,11 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="pt-52 pb-32">
+      <SEO
+        title="Surgical Outcomes & Gallery | Dr. Sumit Aesthetics"
+        description="View real patient transformations and surgical outcomes by Dr. Sumit Singh Gautam in Chandigarh."
+        url="/gallery"
+      />
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-20 space-y-6">
           <span className="text-[#D4AF37] text-[10px] tracking-widest uppercase">The Outcomes</span>

@@ -1,16 +1,43 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
+import Sitemap from 'vite-plugin-sitemap';
 
+// https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
+
+  const routes = [
+    '/',
+    '/about',
+    '/aesthetic',
+    '/reconstructive',
+    '/non-surgical',
+    '/vascular',
+    '/gallery',
+    '/reviews',
+    '/patient-journey',
+    '/international',
+    '/plastic-surgery-cost-chandigarh',
+    '/surgiset-privacy',
+    '/contact',
+    '/concerns',
+    '/liposuction-chandigarh'
+  ];
+
   return {
     base: '/',
     server: {
       port: 3000,
       host: '0.0.0.0',
     },
-    plugins: [react()],
+    plugins: [
+      react(),
+      Sitemap({
+        hostname: 'https://drsumitaesthetics.com',
+        dynamicRoutes: routes,
+      })
+    ],
     define: {
       'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY)
