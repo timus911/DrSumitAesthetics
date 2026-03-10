@@ -2533,7 +2533,7 @@ A Tummy Tuck addresses the structural issues that liposuction cannot fix. It is 
 
 ### Can You Have Both?
 Absolutely. In fact, combining both procedures—often called Lipo-Abdominoplasty—is extremely common. Dr. Sumit Frequently uses High-Definition (HD) Liposuction to sculpt the waistline and flanks, followed by a Tummy Tuck to remove the excess skin and tighten the core, resulting in a dramatically transformed silhouette.`,
-    image: "/blog-lipo-vs-tummy-tuck.png",
+    image: "/tummy-tuck-aesthetic.jpg",
     date: "March 15, 2025"
   }  ,
   {
@@ -2561,7 +2561,7 @@ To ensure lifelong results from your liposuction procedure:
 1. **Maintain a Stable Weight:** Adopt a consistent, healthy diet.
 2. **Stay Active:** Regular cardiovascular and strength-training exercises.
 3. **Follow Post-Op Care:** Wearing your compression garments as directed ensures the skin retracts smoothly over your new contour.`,
-    image: "/blog-permanence.png",
+    image: "/body-contouring-aesthetic.png",
     date: "April 2, 2025"
   }  ,
   {
@@ -2595,7 +2595,7 @@ Combining these procedures offers significant advantages:
 *   **Single Recovery Period:** You only go through anesthesia and the initial healing phase once, minimizing total downtime away from your family.
 *   **Cost Efficiency:** Consolidating operating room and anesthesia fees is more cost-effective than staging multiple surgeries.
 *   **Comprehensive Results:** Addressing all areas of concern simultaneously provides a more dramatic and harmonious transformation.`,
-    image: "/blog-mommy-makeover.png",
+    image: "/tummy-tuck-aesthetic.jpg",
     date: "April 18, 2025"
   }  ,
   {
@@ -2622,7 +2622,7 @@ HD Liposuction is not a weight-loss procedure. The best candidates are:
 
 ### The Results
 The outcome is a highly sculpted physique. For men, this often means a defined "six-pack" and prominent chest contour. For women, it typically involves a subtle "eleven" line on the abdomen, a tapered waist, and athletic, toned flanks.`,
-    image: "/blog-hd-lipo.png",
+    image: "/hd-lipo-aesthetic.jpg",
     date: "May 5, 2025"
   }  ,
   {
@@ -2650,7 +2650,7 @@ Rhinoplasty (a nose job) is one of the most transformative facial surgeries, but
 
 ### 1 Year Post-Op
 *   **The Final Result:** By the one-year mark, all subtle swelling has dissipated, the tissues have settled, and you are seeing the final, permanent result of your rhinoplasty. For some patients with thicker skin or complex revision surgeries, full tip refinement can take up to 18-24 months.`,
-    image: "/blog-rhinoplasty-recovery.png",
+    image: "/rhinoplasty-aesthetic.jpg",
     date: "May 20, 2025"
   }  ,
   {
@@ -2681,7 +2681,7 @@ The internal nasal valves and breathing structures are inherently protected beca
 
 ### Is it Right for You?
 While it is the preferred technique for many primary (first-time) rhinoplasties, especially for reducing a dorsal hump, it requires a highly skilled surgeon. Dr. Sumit utilizes these modern preservation techniques to deliver aesthetic refinement without compromising structural integrity.`,
-    image: "/blog-preservation-rhino.png",
+    image: "/rhinoplasty-aesthetic.jpg",
     date: "June 4, 2025"
   }  ,
   {
@@ -2706,7 +2706,7 @@ As we age, the skin of the upper eyelid loses elasticity and begins to drape dow
 
 ### The Recovery
 Blepharoplasty is often performed under local anesthesia with sedation and is an outpatient procedure. Recovery is relatively swift. While bruising and swelling peak in the first few days, most patients feel comfortable returning to work and socializing within 7 to 10 days. The incisions heal remarkably well, blending invisibly into the natural contours of the eye.`,
-    image: "/blog-eyelid-surgery.png",
+    image: "/blepharoplasty-aesthetic.jpg",
     date: "June 20, 2025"
   }  ,
   {
@@ -2737,7 +2737,7 @@ For severe sagging, deep jowls, and significant neck laxity—typically seen in 
 
 ### Which is Right for You?
 If your primary concern is slight drooping around your mouth and jawline, a Mini Facelift might be the perfect "refresher." If you are frustrated by heavy jowls and loose skin under your chin and neck, a Traditional Facelift will provide the definitive contouring you desire.`,
-    image: "/blog-facelift-options.png",
+    image: "/facelift-aesthetic.jpg",
     date: "July 5, 2025"
   }  ,
   {
@@ -2770,7 +2770,7 @@ Male breast reduction is typically performed on an outpatient basis.
 *   **Return to Gym:** Lower body cardio can resume in about 2 weeks. Heavy upper body weightlifting (chest presses, pushups) should be avoided for 4 to 6 weeks.
 
 The results are immediate and, barring significant future steroid use or massive weight gain, they are permanent.`,
-    image: "/blog-gynecomastia.png",
+    image: "/gynecomastia-aesthetic.jpg",
     date: "July 20, 2025"
   }  ,
   {
@@ -2810,7 +2810,7 @@ This procedure involves performing gentle liposuction on an area of excess fat (
 
 ### The Verdict
 If you desire a significant increase in size, upper breast fullness, and a highly predictable result, **implants** are the way to go. If you are looking for a subtle, natural, one-cup-size enhancement and want to slim down your waist simultaneously, **fat transfer** is an excellent, natural alternative.`,
-    image: "/blog-breast-aug-options.png",
+    image: "/breast-augmentation-aesthetic.png",
     date: "August 5, 2025"
   }  ,
   {
@@ -2840,7 +2840,7 @@ This is a critical phase of aesthetic healing.
 
 ### Scar Management
 Scars are an inevitable trade-off of breast reduction, but they are designed to be hidden under standard bras and swimsuits. After the incisions are fully closed (around 3-4 weeks), you will begin a scar massage protocol and utilize silicone sheeting or gels to help the scars fade from red to a faint, flat white line over the course of 12-18 months.`,
-    image: "/blog-breast-reduction.png",
+    image: "/breast-reduction-aesthetic.jpg",
     date: "August 20, 2025"
   }  ,
   {
@@ -2878,7 +2878,7 @@ Dermal fillers (like Juvederm and Restylane) are gel-like substances (most commo
 
 ### The Ultimate Combination
 For comprehensive, non-surgical facial rejuvenation, these two treatments are frequently used together—often referred to as a "Liquid Facelift." Botox is used in the upper face to smooth expression lines, while fillers are used in the mid and lower face to restore youthful volume and contour.`,
-    image: "/blog-botox-vs-fillers.png",
+    image: "/botox-procedure.jpg",
     date: "September 5, 2025"
   }  ,
   {
@@ -2909,7 +2909,7 @@ Preventative Botox is administered in very small, subtle doses ("Baby Botox") du
 *   **Financial Efficiency:** Preventing a deep fold with neurotoxins is ultimately less invasive and frequently cheaper over time than requiring deep dermal fillers, laser skin resurfacing, or surgical facelifts to fix the fold later in life.
 
 If you are starting to notice makeup settling into a faint line on your forehead by the end of the day, that line is entering the static phase. That is the ideal time to explore prejuvenation.`,
-    image: "/blog-prejuvenation.png",
+    image: "/injectables-non-surgical.jpg",
     date: "September 22, 2025"
   }  ,
   {
@@ -2945,7 +2945,7 @@ To get the most mileage out of your investment:
 *   Protect your skin from UV damage, which rapidly degrades the skin's natural collagen and hyaluronic acid.
 *   Stay hydrated; HA binds to water to maintain its plumpness.
 *   Keep up with maintenance. It requires less filler to "touch up" an area at 9 months than it does to completely start from scratch at 18 months.`,
-    image: "/blog-filler-longevity.png",
+    image: "/fat-grafting-aesthetic.jpg",
     date: "October 8, 2025"
   }  ,
   {
@@ -2980,7 +2980,7 @@ Do not leave the consultation room without asking these fundamental questions:
     Ensure it is taking place in an accredited hospital or surgical facility equipped to handle emergencies, such as Healing Hospital.
 
 A high-quality consultation is a two-way interview. Dr. Sumit prioritizes patient education, ensuring you have a clear, realistic, and safe surgical plan tailored exclusively to you.`,
-    image: "/blog-consultation-prep.png",
+    image: "/dr-sumit-portrait.jpg",
     date: "October 22, 2025"
   }
 ];
