@@ -30,37 +30,32 @@ const BlogList: React.FC = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: idx * 0.1 }}
                             viewport={{ once: true }}
-                            className="group glass border border-white/5 rounded-sm overflow-hidden flex flex-col hover:border-[#4A90E2]/30 transition-colors"
+                            className="group glass border border-white/5 rounded-sm overflow-hidden hover:border-[#4A90E2]/30 transition-colors"
                         >
-                            <div className="aspect-video overflow-hidden">
-                                <img
-                                    src={post.image}
-                                    alt={post.title}
-                                    className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
-                                    loading="lazy"
-                                    width={600}
-                                    height={400}
-                                />
-                            </div>
-                            <div className="p-8 flex-grow flex flex-col">
-                                <div className="flex items-center space-x-2 text-gray-500 text-[10px] uppercase tracking-widest mb-4">
-                                    <Calendar size={12} />
-                                    <span>{post.date}</span>
+                            <Link to={`/blog/${post.id}`} className="flex flex-col h-full w-full cursor-pointer">
+                                <div className="aspect-video overflow-hidden">
+                                    <img
+                                        src={post.image}
+                                        alt={post.title}
+                                        className="w-full h-full object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105"
+                                        loading="lazy"
+                                        width={600}
+                                        height={400}
+                                    />
                                 </div>
-                                <h3 className="text-2xl font-serif text-white mb-4 group-hover:text-[#4A90E2] transition-colors line-clamp-2">
-                                    {post.title}
-                                </h3>
-                                <p className="text-gray-400 text-sm leading-relaxed mb-8 line-clamp-3 ext-light flex-grow">
-                                    {post.excerpt}
-                                </p>
-                                <Link
-                                    to={`/blog/${post.id}`}
-                                    className="mt-auto inline-flex items-center space-x-2 text-[10px] uppercase tracking-[0.3em] font-bold text-white group-hover:text-[#4A90E2] transition-colors"
-                                >
-                                    <span>Read Article</span>
-                                    <ArrowRight size={14} className="group-hover:translate-x-2 transition-transform" />
-                                </Link>
-                            </div>
+                                <div className="p-8 flex-grow flex flex-col">
+                                    <div className="flex items-center space-x-2 text-gray-500 text-[10px] uppercase tracking-widest mb-4">
+                                        <Calendar size={12} />
+                                        <span>{post.date}</span>
+                                    </div>
+                                    <h3 className="text-2xl font-serif text-white mb-4 group-hover:text-[#4A90E2] transition-colors line-clamp-2">
+                                        {post.title}
+                                    </h3>
+                                    <p className="text-gray-400 text-sm leading-relaxed mb-0 line-clamp-3 font-light">
+                                        {post.excerpt}
+                                    </p>
+                                </div>
+                            </Link>
                         </motion.div>
                     ))}
                 </div>
