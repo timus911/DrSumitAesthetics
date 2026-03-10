@@ -9,66 +9,95 @@ interface SEOProps {
     image?: string;
     url?: string;
     type?: 'website' | 'article' | 'profile';
-    schemaType?: 'MedicalBusiness' | 'Physician' | 'MedicalProcedure';
+    schemaType?: 'MedicalBusiness' | 'Physician' | 'MedicalProcedure' | 'Article';
     procedureName?: string;
+    articleDate?: string;
 }
 
 const SEO: React.FC<SEOProps> = ({
     title,
     description,
     keywords,
-    image = '/dr-sumit-portrait.jpg', // Default image
+    image = '/dr-sumit-portrait.jpg',
     url,
     type = 'website',
     schemaType = 'MedicalBusiness',
-    procedureName
+    procedureName,
+    articleDate
 }) => {
     const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34";
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
     const siteUrl = url ? `https://drsumitaesthetics.com${url}` : 'https://drsumitaesthetics.com';
 
-    // Parse address from constants or hardcode for Schema precision
-    // Structured Data for Local Business / Physician
-    const baseSchema = {
-        "@context": "https://schema.org",
-        "@type": schemaType,
-        "name": procedureName || "Dr. Sumit Aesthetics",
-        "image": "https://www.drsumitaesthetics.com/dr-sumit-portrait.jpg",
-        "@id": siteUrl,
-        "url": siteUrl,
-        ...(schemaType !== 'MedicalProcedure' && {
-            "telephone": "+918219816265",
-            "priceRange": "$$$",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
-                "addressLocality": "Chandigarh",
-                "postalCode": "160022",
-                "addressCountry": "IN"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 30.7225,
-                "longitude": 76.7681
-            },
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
-                ],
-                "opens": "09:00",
-                "closes": "17:00"
-            },
-            "sameAs": [
-                "https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/"
-            ]
-        })
+    const buildSchema = () => {
+        if (schemaType === 'Article') {
+            return {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": procedureName || title || "Dr. Sumit Aesthetics",
+                "image": image ? `https://drsumitaesthetics.com${image}` : "https://drsumitaesthetics.com/dr-sumit-portrait.jpg",
+                "url": siteUrl,
+                "datePublished": articleDate || new Date().toISOString(),
+                "author": {
+                    "@type": "Person",
+                    "name": "Dr. Sumit Singh Gautam",
+                    "url": "https://drsumitaesthetics.com/about"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Dr. Sumit Aesthetics",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://drsumitaesthetics.com/dr-sumit-portrait.jpg"
+                    }
+                },
+                "description": metaDescription
+            };
+        }
+
+        return {
+            "@context": "https://schema.org",
+            "@type": schemaType,
+            "name": procedureName || "Dr. Sumit Aesthetics",
+            "image": "https://www.drsumitaesthetics.com/dr-sumit-portrait.jpg",
+            "@id": siteUrl,
+            "url": siteUrl,
+            ...(schemaType !== 'MedicalProcedure' && {
+                "telephone": "+918219816265",
+                "priceRange": "$$$",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
+                    "addressLocality": "Chandigarh",
+                    "postalCode": "160022",
+                    "addressCountry": "IN"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 30.7225,
+                    "longitude": 76.7681
+                },
+                "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        "Monday",
+                        "Tuesday",
+                        "Wednesday",
+                        "Thursday",
+                        "Friday",
+                        "Saturday"
+                    ],
+                    "opens": "09:00",
+                    "closes": "17:00"
+                },
+                "sameAs": [
+                    "https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/"
+                ]
+            })
+        };
     };
+
+    const baseSchema = buildSchema();
 
     return (
         <Helmet>

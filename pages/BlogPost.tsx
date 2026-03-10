@@ -30,6 +30,9 @@ const BlogPost: React.FC = () => {
                 url={`/blog/${post.id}`}
                 image={post.image}
                 schemaType="Article"
+                type="article"
+                procedureName={post.title}
+                articleDate={post.date}
             />
 
             <div className="container mx-auto px-6 max-w-4xl">
