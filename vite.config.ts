@@ -8,7 +8,6 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, '.', '');
 
   const routes = [
-    '/',
     '/about',
     '/aesthetic',
     '/reconstructive',
@@ -22,7 +21,9 @@ export default defineConfig(({ mode }) => {
     '/surgiset-privacy',
     '/contact',
     '/concerns',
-    '/liposuction-chandigarh'
+    '/liposuction-chandigarh',
+    '/blog',
+    '/blog/what-to-expect-from-liposuction-recovery'
   ];
 
   return {
@@ -36,6 +37,7 @@ export default defineConfig(({ mode }) => {
       Sitemap({
         hostname: 'https://drsumitaesthetics.com',
         dynamicRoutes: routes,
+        exclude: ['/googleaa9a783d11c03575'],
       })
     ],
     define: {

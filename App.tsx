@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar.tsx';
@@ -62,6 +62,7 @@ const AppLayout: React.FC = () => {
             <Route path="/concerns/:region" element={<ConcernDetail />} />
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/services" element={<Navigate to="/aesthetic" replace />} />
             <Route path="/:id" element={<ProcedureDetail />} />
           </Routes>
         </AnimatePresence>
