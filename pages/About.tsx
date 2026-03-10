@@ -139,7 +139,7 @@ const About: React.FC = () => {
     <div className="pt-60 pb-32 overflow-hidden relative">
       <SEO
         title="About Dr. Sumit Singh Gautam | Board Certified Plastic Surgeon"
-        description="Learn about Dr. Sumit Singh Gautam's artistic background, triple board certification, and philosophy of bridging surgical science with fine art."
+        description="Learn about Dr. Sumit Singh Gautam's artistic background, board certification, and philosophy of bridging surgical science with fine art."
         url="/about"
       />
       {/* Background Image with Overlay - Top Section Only */}
