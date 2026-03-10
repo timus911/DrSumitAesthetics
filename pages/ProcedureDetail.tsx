@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, CheckCircle, Info, Image as ImageIcon, Crosshair, ChevronDown, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PROCEDURES, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
+import Breadcrumbs from '../components/Breadcrumbs.tsx';
+import FAQ from '../components/FAQ.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img, onClick }) => {
@@ -26,6 +28,9 @@ const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img,
         src={img}
         alt="Clinical result"
         className={`w-full h-auto transition-all duration-300 block ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'} group-hover:grayscale-0 group-hover:opacity-100`}
+        loading="lazy"
+        width={800}
+        height={600}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
       <div className={`absolute bottom-6 left-6 transition-all translate-y-4 group-hover:translate-y-0 ${isFocused ? 'opacity-100 translate-y-0' : 'opacity-0'} group-hover:opacity-100`}>
@@ -37,39 +42,6 @@ const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img,
   );
 };
 
-const ExpandableSection: React.FC<{ title: string; shortLines: string[]; longLines?: string[] }> = ({ title, shortLines, longLines = [] }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="space-y-4 border-l border-white/5 pl-8 relative group">
-      {/* Visual Indicator */}
-      <div className="absolute left-[-1.5px] top-1 w-[3px] h-4 bg-[#4A90E2]/20 group-hover:bg-[#4A90E2] transition-all duration-300" />
-
-      <button
-        onClick={() => setOpen(!open)}
-        className="text-left w-full space-y-3"
-      >
-        <h3 className="text-[#4A90E2] text-sm md:text-base font-bold uppercase tracking-widest group-hover:text-[#4A90E2] transition-colors">
-          {title}
-        </h3>
-        <div className="space-y-2">
-          {shortLines.map((line, i) => (
-            <p key={i} className="text-gray-400 text-sm leading-relaxed font-light">{line}</p>
-          ))}
-          {open && longLines.map((line, i) => (
-            <motion.p
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              key={i}
-              className="text-gray-500 text-sm italic leading-relaxed pt-2"
-            >
-              {line}
-            </motion.p>
-          ))}
-        </div>
-      </button>
-    </div>
-  );
-};
 
 const ProcedureDetail: React.FC = () => {
   const { id } = useParams();
@@ -88,20 +60,8 @@ const ProcedureDetail: React.FC = () => {
     );
   }
 
-  // Fallback defaults if tailored details aren't provided in constants
-  const defaultDetails = {
-    whoNeeds: ["Patients seeking structural refinement and aesthetic harmony.", "Those whose concerns align with the procedure's specific corrective capabilities."],
-    candidates: ["Generally healthy individuals with realistic goals.", "Non-smokers or those committed to a pre-surgical pause."],
-    assessment: ["Anatomical structure and skin quality.", "Relevant medical history and lifestyle factors."],
-    functional: ["Most patients are able to move around comfortably at home the same day.", "Daily activities are limited initially, but independence returns progressively."],
-    backToWork: ["Typically 1–2 weeks for office-based roles.", "Physical independence is regained quickly."],
-    holidays: ["A 10–14 day window is usually ideal.", "This allows for the most critical phase of healing to occur at home."],
-    results: ["Initial refinement is visible as early as 2 weeks.", "Final results settle beautifully over 3–6 months."],
-    recoveryTips: ["Follow the personalized post-op nutrition and hydration plan.", "Gentle movement and specialized compression as advised."],
-    customFaq: undefined as { question: string; answer: string[] } | undefined
-  };
 
-  const d = procedure.details || defaultDetails;
+
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [orientations, setOrientations] = useState<Record<string, 'h' | 'v'>>({});
 
@@ -173,7 +133,13 @@ const ProcedureDetail: React.FC = () => {
         procedureName={procedure.title}
       />
       <div className="container mx-auto px-6">
-        <div className="mb-12">
+        <Breadcrumbs
+          items={[
+            { name: procedure.parentCategory, path: `/${procedure.parentCategory}` },
+            { name: procedure.title, path: `/procedure/${procedure.id}` }
+          ]}
+        />
+        <div className="mb-12 mt-8">
           <button onClick={() => navigate(-1)} className="flex items-center space-x-3 text-gray-500 hover:text-[#4A90E2] transition-colors group uppercase tracking-widest text-[10px] font-bold">
             <ArrowLeft size={14} className="group-hover:-translate-x-2 transition-transform" />
             <span>Clinical Domain</span>
@@ -311,81 +277,6 @@ const ProcedureDetail: React.FC = () => {
               </div>
             )}
 
-            {/* Structured Reassurance Sections - Hidden for Reconstructive as requested */}
-            {procedure.parentCategory !== 'reconstructive' && (
-              <div className="space-y-12 pt-16 border-t border-white/5">
-                <ExpandableSection
-                  title={`Who needs a ${procedure.title}?`}
-                  shortLines={[]}
-                  longLines={d.whoNeeds}
-                />
-
-                <ExpandableSection
-                  title="Ideal Candidate Profile"
-                  shortLines={[]}
-                  longLines={d.candidates}
-                />
-
-                <ExpandableSection
-                  title="Clinical Assessment"
-                  shortLines={[]}
-                  longLines={d.assessment}
-                />
-
-                <ExpandableSection
-                  title="Immediate Functionality"
-                  shortLines={[]}
-                  longLines={d.functional}
-                />
-
-                <ExpandableSection
-                  title="Return to Professional Life"
-                  shortLines={[]}
-                  longLines={d.backToWork}
-                />
-
-                <ExpandableSection
-                  title="Recommended Healing Window"
-                  shortLines={[]}
-                  longLines={d.holidays}
-                />
-
-                <ExpandableSection
-                  title="Final Aesthetic Maturation"
-                  shortLines={[]}
-                  longLines={d.results}
-                />
-
-                <ExpandableSection
-                  title="Optimization Protocol"
-                  shortLines={[]}
-                  longLines={d.recoveryTips}
-                />
-
-                {d.customFaq && (
-                  <ExpandableSection
-                    title={d.customFaq.question}
-                    shortLines={[]}
-                    longLines={d.customFaq.answer}
-                  />
-                )}
-
-                <ExpandableSection
-                  title="What determines the cost of procedure?"
-                  shortLines={[]}
-                  longLines={procedure.costFactors ? procedure.costFactors.split(',') : ["Complexity-dependent sizing & time"]}
-                />
-
-                <div className="pt-8">
-                  <p className="text-gray-400 text-sm italic mb-12">Every anatomy is unique. During your consultation, we'll map out a timeline tailored specifically to your body's healing response.</p>
-                  {(procedure.parentCategory === 'aesthetic' || procedure.parentCategory === 'non-surgical') && (
-                    <Link to="/contact" className="text-[10px] uppercase tracking-[0.4em] text-gray-400 hover:text-[#4A90E2] transition-colors font-bold group flex items-center gap-2">
-                      If this resonates, let's talk <span className="group-hover:translate-x-2 transition-transform">→</span>
-                    </Link>
-                  )}
-                </div>
-              </div>
-            )}
 
             {procedure.subSections && (
               <div className="space-y-8 pt-16 border-t border-white/5">
@@ -400,6 +291,10 @@ const ProcedureDetail: React.FC = () => {
                 </div>
               </div>
             )}
+
+            {procedure.faqs && procedure.faqs.length > 0 && (
+              <FAQ items={procedure.faqs} />
+            )}
           </motion.div>
 
           <motion.div
@@ -408,7 +303,14 @@ const ProcedureDetail: React.FC = () => {
             className="space-y-12 lg:sticky lg:top-32"
           >
             <div ref={mainImageRef} className="aspect-video glass rounded-sm overflow-hidden relative shadow-2xl border border-white/5 group">
-              <img src={procedure.image || ASSETS.surgeryTheater} alt={procedure.title} className={`w-full h-full object-cover transition-all duration-500 ${isMainImageFocused ? 'grayscale-0 opacity-90' : 'opacity-60 grayscale'} group-hover:grayscale-0 group-hover:opacity-90`} />
+              <img
+                src={procedure.image || ASSETS.surgeryTheater}
+                alt={procedure.title}
+                className={`w-full h-full object-cover transition-all duration-500 ${isMainImageFocused ? 'grayscale-0 opacity-90' : 'opacity-60 grayscale'} group-hover:grayscale-0 group-hover:opacity-90`}
+                loading="eager"
+                width={1200}
+                height={800}
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
             </div>
 

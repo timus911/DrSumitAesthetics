@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link, useParams } from 'react-router-dom';
 import { PROCEDURES } from '../constants.ts';
 import ProcedureCard from '../components/ProcedureCard.tsx';
+import Breadcrumbs from '../components/Breadcrumbs.tsx';
 
 // Default hints for all procedures to ensure no gaps
 const DEFAULT_HINTS: Record<string, string> = {
@@ -78,10 +79,16 @@ const ConcernDetail: React.FC = () => {
     return (
         <div className="pt-52 pb-32">
             <div className="container mx-auto px-6">
+                <Breadcrumbs
+                    items={[
+                        { name: 'Concerns', path: '/concerns' },
+                        { name: region || 'Unknown', path: `/concerns/${region}` }
+                    ]}
+                />
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="max-w-4xl mb-24 space-y-8"
+                    className="max-w-4xl mb-24 space-y-8 mt-8"
                 >
                     <span className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold">Region Focus</span>
                     <h1 className="text-5xl md:text-8xl font-serif leading-none text-white">{region}</h1>

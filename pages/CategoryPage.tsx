@@ -6,6 +6,7 @@ import { PROCEDURES, Procedure, COLORS } from '../constants.ts';
 import { ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO.tsx';
 import ProcedureCard from '../components/ProcedureCard.tsx';
+import Breadcrumbs from '../components/Breadcrumbs.tsx';
 
 interface CategoryPageProps {
   type: Procedure['parentCategory'];
@@ -36,11 +37,16 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
         url={`/${type}`}
       />
       <div className="container mx-auto px-6">
+        <Breadcrumbs
+          items={[
+            { name: titles[type], path: `/${type}` }
+          ]}
+        />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
-          className="max-w-4xl mb-24 space-y-8"
+          className="max-w-4xl mb-24 space-y-8 mt-8"
         >
           <span className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold">Clinical Domain</span>
           <h1 className="text-5xl md:text-8xl font-serif leading-none">{titles[type]}</h1>

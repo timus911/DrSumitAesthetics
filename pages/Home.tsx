@@ -46,6 +46,9 @@ const Home: React.FC = () => {
             src={ASSETS.surgeryHeroBackground}
             className="w-full h-full object-cover opacity-80"
             alt="Dr. Sumit Surgical Excellence"
+            loading="eager"
+            width={1920}
+            height={1080}
           />
           {/* Balanced black fade overlay for visible yet professional background */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80" />
@@ -117,7 +120,14 @@ const Home: React.FC = () => {
             >
               {/* Photo 4: Surgical profile */}
               <div ref={philosophyImageRef} className="w-full h-full">
-                <img src={ASSETS.surgeryProfile} alt="Surgical Profile" className={`w-full h-full object-cover transition-all duration-700 ${isPhilosophyFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105`} />
+                <img
+                  src={ASSETS.surgeryProfile}
+                  alt="Surgical Profile"
+                  className={`w-full h-full object-cover transition-all duration-700 ${isPhilosophyFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105`}
+                  loading="lazy"
+                  width={800}
+                  height={1000}
+                />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
               <div className="absolute bottom-12 left-12 space-y-4">

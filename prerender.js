@@ -19,7 +19,9 @@ const routes = [
     '/surgiset-privacy',
     '/contact',
     '/concerns',
-    '/liposuction-chandigarh'
+    '/liposuction-chandigarh',
+    '/blog',
+    '/blog/what-to-expect-from-liposuction-recovery'
 ];
 
 async function prerender() {

@@ -45,7 +45,14 @@ const InternationalPatients: React.FC = () => {
           </motion.div>
 
           <div className="relative glass p-1 rounded-sm overflow-hidden aspect-[4/5]">
-            <img src="https://picsum.photos/1000/1200?travel" className="w-full h-full object-cover opacity-40 grayscale" />
+            <img
+              src="https://picsum.photos/1000/1200?travel"
+              className="w-full h-full object-cover opacity-40 grayscale"
+              alt="International Travel Concierge"
+              loading="lazy"
+              width={1000}
+              height={1200}
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
             <div className="absolute top-10 right-10 flex flex-col items-end space-y-4">
               <div className="flex items-center space-x-2 glass px-4 py-2">

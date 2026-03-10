@@ -43,7 +43,14 @@ const PatientJourney: React.FC = () => {
                 </div>
 
                 <div className="lg:w-5/12 aspect-video overflow-hidden rounded-sm glass mt-8 lg:mt-0">
-                  <img src={`https://picsum.photos/800/500?journey-${idx}`} className="w-full h-full object-cover opacity-20 grayscale" alt={step.title} />
+                  <img
+                    src={`https://picsum.photos/800/500?journey-${idx}`}
+                    className="w-full h-full object-cover opacity-20 grayscale"
+                    alt={step.title}
+                    loading="lazy"
+                    width={800}
+                    height={500}
+                  />
                 </div>
               </motion.div>
             ))}

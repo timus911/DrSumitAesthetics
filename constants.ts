@@ -98,6 +98,7 @@ export type Procedure = {
   priceRange?: string; // New field for Cost & Financing page
   costFactors?: string; // Key factors influencing cost
   seoContent?: string; // Rich SEO content for specific procedure pages
+  faqs?: { question: string; answer: string[] }[]; // People Also Ask Data
 };
 
 const RAW_PROCEDURES: Procedure[] = [
@@ -151,7 +152,72 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
 `,
     priceRange: "₹1,50,000 - ₹2,50,000",
     costFactors: "Mini vs Full Tummy Tuck, Muscle Repair complexity, Liposuction extent",
-    gallery: ["/tummy-tuck-result-1.png", "/tummy-tuck-result-2.jpg", "/tummy-tuck-nrf.png", "/tummy-tuck-nrll.png", "/tummy-tuck-nrro.png"]
+    gallery: ["/tummy-tuck-result-1.png", "/tummy-tuck-result-2.jpg", "/tummy-tuck-nrf.png", "/tummy-tuck-nrll.png", "/tummy-tuck-nrro.png"],
+    faqs: [
+      {
+        question: "Who needs a Tummy Tuck?",
+        answer: [
+          "Patients with lingering skin laxity after significant weight loss or pregnancy.",
+          "Individuals seeking to repair stomach muscle separation (diastasis recti)."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for abdominoplasty?",
+        answer: [
+          "Ideally non-smokers with a stable weight for at least six months.",
+          "Those with realistic expectations about surgical scarring, which is placed low and discreetly."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "We evaluate your abdominal wall integrity and skin elasticity.",
+          "Assessment of internal fat versus subcutaneous fat to determine if Liposuction should be combined."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after a tummy tuck?",
+        answer: [
+          "You will be mobile and walking (though slightly hunched) within 24 hours.",
+          "Light independence for basic personal care is expected by day 3."
+        ]
+      },
+      {
+        question: "When can I return to work after a tummy tuck?",
+        answer: [
+          "Desk jobs typically require 2 weeks of recovery.",
+          "Physically demanding work may require 4-6 weeks for full clearance."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "Plan for a 14-day 'quiet window' to allow primary healing.",
+          "Rest is essential during this phase to minimize swelling and optimize scar quality."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Initial contour improvement is visible immediately despite swelling.",
+          "The final refined shape settles as tissues soften over 6 to 12 months."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Wear your compression garment religiously as it acts as your 'internal skin'.",
+          "Hydration and high-protein nutrition are key to tissue repair."
+        ]
+      },
+      {
+        question: "What determines the cost of a tummy tuck?",
+        answer: [
+          "Whether a Mini-Tummy Tuck or Full Abdominoplasty is required.",
+          "Muscle Repair complexity, Liposuction extent, hospital stay (typically 2 days), anesthesia, and follow-up care are all included."
+        ]
+      }
+    ]
   },
   {
     id: "liposuction-chandigarh",
@@ -196,14 +262,6 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
 *   **Hospital Proximity:** Our location in Sector 34 (Healing Hospital) puts us at the heart of the city, easily accessible from Mohali and Panchkula.
 *   **Post-Op Care:** We provide specific "Chandigarh Recovery Kits" including breathable compression gear suited for our weather.
 
-#### Local FAQs: Indian Patient Specifics
-*   **Q: Will the fat come back?**
-    *   A: Fat cells removed are gone permanently. However, if you gain weight, remaining cells can expand.
-*   **Q: Is the procedure painful?**
-    *   A: It is significantly less painful than traditional mechanical liposuction. Most Indian patients manage well with basic oral analgesics for 3-4 days.
-*   **Q: What is the cost in Chandigarh?**
-    *   A: Costs vary by zones (e.g., abdomen + flanks vs full body). We offer transparent packages including hospital stay.
-
 [View our Before and After Gallery](/gallery) to see the transformative results of our "Tricity" patients.
     `,
     priceRange: "₹80,000 - ₹2,00,000",
@@ -220,6 +278,91 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
       "/tummy-tuck-nrf.png",
       "/tummy-tuck-nrll.png",
       "/tummy-tuck-nrro.png"
+    ],
+    faqs: [
+      {
+        question: "Who needs HD Liposuction?",
+        answer: [
+          "Individuals with good muscle tone who have stubborn pockets of fat masking their definition.",
+          "Athletic patients looking for that final 'etched' appearance of the obliques and abdominals."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for liposuction?",
+        answer: [
+          "Patients with high skin elasticity (needed for the skin to shrink-wrap over the new contours).",
+          "Those near their target weight but lacking visible muscle definition."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "A detailed 'pinch test' mapping of fat distribution.",
+          "Evaluation of underlying muscle groups to determine the 'etching' lines."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after liposuction?",
+        answer: [
+          "Walking is encouraged immediately to minimize stiffness.",
+          "Bruising and mild soreness are managed easily with standard care."
+        ]
+      },
+      {
+        question: "When can I return to work after liposuction?",
+        answer: [
+          "Most patients return to office roles within 5-7 days.",
+          "Strenuous gym activity usually resumes at 3-4 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "One week of focused recovery is usually sufficient.",
+          "This is a faster recovery than standard body lifting procedures."
+        ]
+      },
+      {
+        question: "How long does it take to see the final results?",
+        answer: [
+          "Initial results are often 'wow' at 4 weeks.",
+          "Final etching becomes crisp at 3 months as minor swelling disappears."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Lymphatic drainage massage is highly recommended to smooth out results.",
+          "Constant compression for 4 weeks ensures the skin adheres perfectly to the new muscular form."
+        ]
+      },
+      {
+        question: "What determines the cost of liposuction?",
+        answer: [
+          "Number of zones treated (e.g., Abdomen, Flanks, Back), whether it's 360 Lipo vs Spot Lipo.",
+          "Costs vary by zones. We offer transparent packages including hospital stay."
+        ]
+      },
+      {
+        question: "Is liposuction a weight-loss surgery?",
+        answer: [
+          "No. Liposuction is a body contouring procedure, not a weight loss solution. While fat cells are permanently removed, the total weight lost is typically between 2 to 5 kilograms.",
+          "It is best suited for individuals near their ideal body weight who have stubborn pockets of fat that do not respond to diet or exercise."
+        ]
+      },
+      {
+        question: "Will the fat come back after surgery?",
+        answer: [
+          "The fat cells removed during liposuction are permanently gone. However, if you consume excess calories, the remaining fat cells in the body (both in the treated and untreated areas) can still expand.",
+          "Maintaining a stable weight through a healthy diet and lifestyle is essential to preserve your sculpted results."
+        ]
+      },
+      {
+        question: "Is the procedure painful?",
+        answer: [
+          "It is significantly less painful than traditional mechanical liposuction. Most patients manage well with basic oral analgesics for 3-4 days."
+        ]
+      }
     ]
   },
   {
@@ -262,7 +405,42 @@ Body contouring involves long incisions. Dr. Sumit's "Visualist" technique ensur
 Every procedure varies, but generally, expect 2-3 weeks of recovery before returning to a sedentary job. Compression garments are essential for 6 weeks.
 `,
     priceRange: "₹60,000 - ₹2,00,000",
-    costFactors: "Extent of skin removal, Combination of upper/lower body lift, Hospital stay duration"
+    costFactors: "Extent of skin removal, Combination of upper/lower body lift, Hospital stay duration",
+    faqs: [
+      {
+        question: "What is body contouring surgery?",
+        answer: [
+          "Body contouring is a collection of procedures aimed at removing loose, excess skin and fat following significant weight loss, pregnancy, or aging.",
+          "It can include arm lifts (brachioplasty), thigh lifts, and lower body lifts (360-degree skin removal)."
+        ]
+      },
+      {
+        question: "Am I a good candidate for body contouring?",
+        answer: [
+          "Ideal candidates have achieved a stable weight for at least 6 months and have excess skin that does not respond to exercise.",
+          "Non-smokers with realistic expectations about scarring and recovery are best suited."
+        ]
+      },
+      {
+        question: "What is the recovery like after body contouring?",
+        answer: [
+          "Expect 2-3 weeks of recovery before returning to a sedentary job.",
+          "Compression garments are essential for 6 weeks. Full activity typically resumes at 6-8 weeks."
+        ]
+      },
+      {
+        question: "Will there be visible scars?",
+        answer: [
+          "Body contouring involves long incisions, but Dr. Sumit's 'Visualist' technique ensures scars are placed in natural shadows or clothing lines to minimize visibility."
+        ]
+      },
+      {
+        question: "What determines the cost of body contouring?",
+        answer: [
+          "Extent of skin removal, combination of upper/lower body lift, and hospital stay duration."
+        ]
+      }
+    ]
   },
   {
     id: "fat-grafting-chandigarh",
@@ -313,7 +491,78 @@ Dr. Sumit uses **Nanofat**—emulsified fat rich in stem cells—to treat skin q
 Unlike synthetic fillers which dissolve in 12 months, transplanted fat that survives (typically 60-70%) is permanent. It ages naturally with you.
 `,
     priceRange: "₹40,000 - ₹1,20,000",
-    costFactors: "Volume required (Face vs Breast/Buttock), Nanofat vs Microfat processing"
+    costFactors: "Volume required (Face vs Breast/Buttock), Nanofat vs Microfat processing",
+    faqs: [
+      {
+        question: "Who needs Fat Grafting?",
+        answer: [
+          "Patients seeking to restore volume lost to aging or weight loss.",
+          "Individuals looking for a natural alternative to synthetic fillers."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for fat transfer?",
+        answer: [
+          "Patients with sufficient donor fat in areas like the flanks or abdomen.",
+          "Nonsmokers who understand that a percentage of fat is naturally reabsorbed before stabilizing."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Evaluation of donor site fat quality and recipient zone skin laxity.",
+          "Detailed mapping of volume deficits to ensure a balanced, symmetric restoration."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after fat grafting?",
+        answer: [
+          "Mild swelling and bruising at both donor and recipient sites for 5-7 days.",
+          "Normal walking and light activities are encouraged within 48 hours."
+        ]
+      },
+      {
+        question: "When can I return to work after fat grafting?",
+        answer: [
+          "Typically 7-10 days for most professional roles.",
+          "Physical impact activities should be paused for 3-4 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "10 days of 'quiet time' helps optimize the survival of the grafted fat.",
+          "Rest and avoiding pressure on the grafted areas are critical during this window."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Initial volume settles over 3 months as 'permanent' fat integration occurs.",
+          "Final soft, natural contours are reached as tissues fully soften by 6 months."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Avoid direct pressure on the treated areas (sleep elevated for face, special cushions for body).",
+          "Maintain a stable weight to ensure the long-term integrity of the results."
+        ]
+      },
+      {
+        question: "Is fat grafting performed the same way on the face and body?",
+        answer: [
+          "No. Facial tissues and body tissues behave very differently. Facial fat grafting often requires more refined techniques for precision and skin quality, while body fat grafting focuses on stable volume and contour.",
+          "The technique is selected based on the area treated and the desired outcome."
+        ]
+      },
+      {
+        question: "What determines the cost of fat grafting?",
+        answer: [
+          "Volume required (Face vs Breast/Buttock), and the type of processing (Nanofat vs Microfat)."
+        ]
+      }
+    ]
   },
   {
     id: "buttock-lift-chandigarh",
@@ -341,7 +590,36 @@ This procedure is performed strictly under general anesthesia at Healing Hospita
 Results are visible immediately. You will need to avoid sitting directly on the area for 2 weeks to allow for optimal healing.
 `,
     priceRange: "₹1,50,000 - ₹3,00,000",
-    costFactors: "Implant needs vs Brazilia Butt Lift (BBL), Liposuction volume harvested"
+    costFactors: "Implant needs vs Brazilia Butt Lift (BBL), Liposuction volume harvested",
+    faqs: [
+      {
+        question: "What is a buttock lift?",
+        answer: [
+          "A buttock lift removes excess skin from the upper buttock/lower back region and lifts the tissue to improve shape and tone.",
+          "It can also include auto-augmentation using your own tissue flaps to add volume without implants."
+        ]
+      },
+      {
+        question: "What is the difference between a buttock lift and a BBL?",
+        answer: [
+          "A buttock lift focuses on removing excess skin and lifting, while a Brazilian Butt Lift (BBL) involves fat transfer to add volume.",
+          "Dr. Sumit prioritizes safety above extreme volume, ensuring natural, proportional results."
+        ]
+      },
+      {
+        question: "What is the recovery like?",
+        answer: [
+          "Results are visible immediately. You will need to avoid sitting directly on the area for 2 weeks.",
+          "Full recovery takes 4-6 weeks; compression garments help with healing."
+        ]
+      },
+      {
+        question: "What determines the cost of a buttock lift?",
+        answer: [
+          "Whether implants are needed vs a BBL approach, and the liposuction volume harvested."
+        ]
+      }
+    ]
   },
 
   // AESTHETIC - FACE
@@ -374,7 +652,43 @@ This procedure is specifically designed to obliterate the "jowls" (sagging jawli
 *   **Longevity:** While aging continues, the clock is turned back effectively by 10-15 years.
     `,
     priceRange: "₹1,50,000 - ₹3,00,000",
-    costFactors: "Deep Plane vs SMAS Plication, Neck involvement, Anesthesia time"
+    costFactors: "Deep Plane vs SMAS Plication, Neck involvement, Anesthesia time",
+    faqs: [
+      {
+        question: "What is a MACS Lift facelift?",
+        answer: [
+          "The MACS Lift (Minimal Access Cranial Suspension) is a refined technique from Belgium that lifts facial tissues vertically—counteracting gravity directly.",
+          "Unlike traditional facelifts that pull skin horizontally, the MACS Lift restores features to a natural, youthful position."
+        ]
+      },
+      {
+        question: "How long do facelift results last?",
+        answer: [
+          "While aging continues, the clock is effectively turned back by 10-15 years.",
+          "Most patients are 'socially presentable' with makeup within 10-14 days."
+        ]
+      },
+      {
+        question: "Will a facelift leave visible scars?",
+        answer: [
+          "The incision is limited to the front of the ear, avoiding the hairline behind the ear entirely.",
+          "This means you can wear your hair up with confidence."
+        ]
+      },
+      {
+        question: "Is a facelift safe?",
+        answer: [
+          "The MACS procedure is less invasive than a deep-plane facelift, offering powerful rejuvenation with a significantly safer profile.",
+          "It is performed under controlled conditions at Healing Hospital."
+        ]
+      },
+      {
+        question: "What determines the cost of a facelift?",
+        answer: [
+          "Deep Plane vs SMAS Plication, neck involvement, and anesthesia time."
+        ]
+      }
+    ]
   },
   {
     id: "neck-lift-chandigarh",
@@ -401,7 +715,35 @@ In isolated neck lifts, the incision is often hidden entirely under the chin or 
 You will wear a supportive chin strap for 1 week. Bruising typically resolves in 10-12 days.
 `,
     priceRange: "₹1,20,000 - ₹3,00,000",
-    costFactors: "Isolated Neck Lift vs Combined Facelift, Platysmaplasty complexity, Liposuction needs"
+    costFactors: "Isolated Neck Lift vs Combined Facelift, Platysmaplasty complexity, Liposuction needs",
+    faqs: [
+      {
+        question: "What is a deep plane neck lift?",
+        answer: [
+          "A deep plane neck lift addresses the 'Turkey Neck' by tightening the Platysma muscle and removing sub-mental fat.",
+          "It restores a crisp, youthful cervico-mental angle (jaw-neck angle)."
+        ]
+      },
+      {
+        question: "Will there be visible scars from a neck lift?",
+        answer: [
+          "In isolated neck lifts, the incision is often hidden entirely under the chin or behind the ears."
+        ]
+      },
+      {
+        question: "What is the recovery like after a neck lift?",
+        answer: [
+          "You will wear a supportive chin strap for 1 week.",
+          "Bruising typically resolves in 10-12 days."
+        ]
+      },
+      {
+        question: "What determines the cost of a neck lift?",
+        answer: [
+          "Isolated Neck Lift vs Combined Facelift, Platysmaplasty complexity, and Liposuction needs."
+        ]
+      }
+    ]
   },
   {
     id: "lip-lift-chandigarh",
@@ -425,7 +767,36 @@ The incision is hidden perfectly in the shadow of the base of the nose. It is vi
 For clients with genetically overly prominent lips, we perform precision reduction to balance facial harmony, often preserving the natural shape while reducing volume.
 `,
     priceRange: "₹45,000 - ₹80,000",
-    costFactors: "Procedure type (Lift vs Reduction), Local anesthesia vs Sedation"
+    costFactors: "Procedure type (Lift vs Reduction), Local anesthesia vs Sedation",
+    faqs: [
+      {
+        question: "What is a lip lift?",
+        answer: [
+          "A Lip Lift shortens the distance between the nose and the upper lip (philtrum), rolling the red part of the lip outward for a naturally fuller look without fillers.",
+          "The 'Bullhorn' technique hides the incision in the shadow of the base of the nose."
+        ]
+      },
+      {
+        question: "What is the difference between a lip lift and lip fillers?",
+        answer: [
+          "A lip lift is a permanent surgical solution that shortens the philtrum and shows more of the upper lip.",
+          "Fillers add volume temporarily (9-18 months). A lip lift addresses structural proportion."
+        ]
+      },
+      {
+        question: "What is lip reduction?",
+        answer: [
+          "For clients with genetically overly prominent lips, we perform precision reduction to balance facial harmony.",
+          "The natural shape is preserved while reducing volume."
+        ]
+      },
+      {
+        question: "What determines the cost?",
+        answer: [
+          "Procedure type (Lift vs Reduction) and whether local anesthesia or sedation is used."
+        ]
+      }
+    ]
   },
   {
     id: "hair-transplant-chandigarh",
@@ -453,14 +824,6 @@ Given the water quality and environmental factors in the Tricity, we often see s
 *   **Water Hardness:** We advise patients on post-transplant washing protocols using filtered water to prevent calcification on the new grafts.
 *   **Follow-up:** Being in Sector 34, we offer easy ongoing PRP sessions to maintain native hair density.
 
-#### Local FAQs
-*   **Q: Can I wear a turban/helmet?**
-    *   A: Loose caps can be worn after 3 days. Helmets and turbans should be avoided for 3-4 weeks to avoid traction on the new grafts.
-*   **Q: Cost per graft in Chandigarh?**
-    *   A: We value per-graft viability. Our packages are comprehensive.
-*   **Q: Is it painful?**
-    *   A: After the initial local anesthesia ring block, the procedure is virtually painless. You can watch Netflix on your phone.
-
 #### Why Choose Us for Hair Transplant in Chandigarh?
 1.  **Surgeon-Led Procedure:** Unlike many clinics where technicians do the work, Dr. Sumit is personally involved in the planning and slit creation phases.
 2.  **Healing Hospital Audit:** We operate within a hospital environment, ensuring sterility and emergency readiness.
@@ -468,7 +831,43 @@ Given the water quality and environmental factors in the Tricity, we often see s
 [View our Before and After Gallery](/gallery) to see the life-changing density our patients enjoy.
     `,
     priceRange: "₹60,000 - ₹1,50,000",
-    costFactors: "Number of Grafts (FUE), Hairline Design complexity"
+    costFactors: "Number of Grafts (FUE), Hairline Design complexity",
+    faqs: [
+      {
+        question: "How long does a hair transplant take to grow?",
+        answer: [
+          "Hair transplant growth is a gradual process. The newly transplanted hairs typically shed within the first 2-4 weeks (this is normal).",
+          "New growth begins around month 3-4. At 6 months, you'll see about 50% of the result, and full density is achieved between 12 to 18 months."
+        ]
+      },
+      {
+        question: "Is a hair transplant painful?",
+        answer: [
+          "The only uncomfortable part of the procedure is the initial administration of local anesthesia (the ring block). Once the scalp is numb, the procedure itself is virtually painless.",
+          "Many patients comfortably watch movies on their phones or sleep during the extraction and implantation phases."
+        ]
+      },
+      {
+        question: "Will people know I had a hair transplant?",
+        answer: [
+          "Initially, there will be scabbing and redness for about 7-10 days. Once the scabs fall off, the scalp may look slightly pink.",
+          "With Dr. Sumit's focus on natural hairline design—using single-hair follicles at the very front and avoiding straight 'doll-head' lines—the final result will look completely natural and undetectable."
+        ]
+      },
+      {
+        question: "Can I wear a turban or helmet after a hair transplant?",
+        answer: [
+          "Loose caps can be worn after 3 days. Helmets and turbans should be avoided for 3-4 weeks to avoid traction on the new grafts."
+        ]
+      },
+      {
+        question: "What determines the cost of a hair transplant?",
+        answer: [
+          "We value per-graft viability. Our packages are comprehensive and include the procedure, hospital environment, and follow-up PRP sessions.",
+          "Number of Grafts (FUE) and Hairline Design complexity are the primary factors."
+        ]
+      }
+    ]
   },
   {
     id: "blepharoplasty-chandigarh",
@@ -513,7 +912,71 @@ The eyes are the first place to show aging. Hooded upper lids can make you look 
 It is a quick recovery procedure. Sutures are removed on Day 5. Most patients return to work in 7-10 days.
 `,
     priceRange: "₹60,000 - ₹1,20,000",
-    costFactors: "Upper vs Lower Lids, Skin only vs Fat Excision, Canthopexy requirement"
+    costFactors: "Upper vs Lower Lids, Skin only vs Fat Excision, Canthopexy requirement",
+    faqs: [
+      {
+        question: "Who needs Blepharoplasty?",
+        answer: [
+          "Individuals with heavy upper lids or pronounced under-eye bags.",
+          "Patients who feel they look 'tired' even when well-rested."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for eyelid surgery?",
+        answer: [
+          "Good overall health with no serious eye conditions like glaucoma.",
+          "Non-smokers who understand that the goal is refinement, not a 'surprised' look."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Evaluation of skin laxity, fat prolapse, and muscle tone around the eyes.",
+          "Check for dry eye syndrome and vision health."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after blepharoplasty?",
+        answer: [
+          "Vision remains clear, but initial swelling and bruising last about 5-7 days.",
+          "You'll be fully mobile immediately, though reading and screens should be limited for 48 hours."
+        ]
+      },
+      {
+        question: "When can I return to work after eyelid surgery?",
+        answer: [
+          "Patients typically return to work by day 7-10 with light makeup.",
+          "Public social events are best planned after 2 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "A 7-day 'home recovery' is recommended.",
+          "Iced compresses are your best friend during this first week."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "The 'bright-eyed' look is evident within 2-3 weeks.",
+          "Scar lines fade almost into invisibility over 2-4 months."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Keep your head elevated while sleeping for the first 5 days.",
+          "Protect your eyes from sun and wind with dark sunglasses."
+        ]
+      },
+      {
+        question: "What determines the cost of blepharoplasty?",
+        answer: [
+          "Upper vs Lower Lids, Skin only vs Fat Excision, and Canthopexy requirement."
+        ]
+      }
+    ]
   },
   {
     id: "rhinoplasty-nose-job-chandigarh",
@@ -557,23 +1020,106 @@ Allergies and dust in North India can complicate nasal recovery.
 *   **Functional Focus:** We aggressively treat hypertrophied turbinates (which block breathing) during the cosmetic surgery.
 *   **Post-Op:** We do NOT use heavy, painful nasal packing. We use modern internal splints that allow you to breathe immediately after surgery.
 
-#### Local FAQs
-*   **Q: Will it change my voice?**
-    *   A: No, aesthetic rhinoplasty does not affect the vocal chords. It may briefly sound "nasal" due to swelling but resolves quickly.
-*   **Q: How much does a Nose Job cost in Chandigarh?**
-    *   A: It varies between primary (first time) and revision (corrective) surgeries.
-*   **Q: Can I wear glasses?**
-    *   A: You must avoid heavy glasses resting on the bridge for 4-6 weeks. We recommend contact lenses or taping glasses to the forehead.
-
 #### Functional & Cosmetic Correction
 We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
 *   **Deviated Septum:** Correcting internal blockages.
 *   **Cosmetic:** Refining the bridge, tip, and alar base.
 
-[VIew our Gallery](/gallery)
+[View our Gallery](/gallery)
     `,
     priceRange: "₹1,20,000 - ₹2,50,000",
-    costFactors: "Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, Rib Graft requirement"
+    costFactors: "Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, Rib Graft requirement",
+    faqs: [
+      {
+        question: "Who needs a Rhinoplasty?",
+        answer: [
+          "Patients seeking to refine a nasal hump, tip width, or overall projection.",
+          "Those needing functional correction for breathing issues (Septoplasty)."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for a nose job?",
+        answer: [
+          "Patients whose facial growth is complete.",
+          "Individuals seeking internal and external nasal harmony."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "3D visualization of the proposed new profile.",
+          "Internal examination of the septum and turbinates for airflow optimization."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after rhinoplasty?",
+        answer: [
+          "Breathing may be congested for the first few days due to internal swelling.",
+          "Most 'splints' are removed by day 7."
+        ]
+      },
+      {
+        question: "When can I return to work after a nose job?",
+        answer: [
+          "Typically 7-10 days as bruising under eyes resolves.",
+          "Heavy contact sports must be avoided for 6 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "10 days off is ideal for a stress-free recovery.",
+          "Avoid heavy glasses resting on the nasal bridge for 4 weeks."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "The new profile is visible immediately after splint removal.",
+          "The final refinement of the tip matures over 12 months as fine swelling resolves."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Avoid blowing your nose for at least 2 weeks.",
+          "Use saline sprays as prescribed to keep internal passages clear."
+        ]
+      },
+      {
+        question: "What determines the cost of rhinoplasty?",
+        answer: [
+          "It varies between primary (first time) and revision (corrective) surgeries.",
+          "Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, and Rib Graft requirement are the main factors."
+        ]
+      },
+      {
+        question: "Does a nose job affect breathing?",
+        answer: [
+          "When performed correctly, rhinoplasty should maintain or improve breathing. Dr. Sumit prioritizes functional harmony alongside aesthetics, often combining Aesthetic Rhinoplasty with Septoplasty.",
+          "If you have an existing deviated septum or enlarged turbinates, these are corrected during the procedure to ensure optimal airflow."
+        ]
+      },
+      {
+        question: "What is Preservation Rhinoplasty?",
+        answer: [
+          "Traditional rhinoplasty often involves breaking the nasal bridge to remove a hump. Preservation Rhinoplasty is an advanced technique where cartilage and bone are removed from underneath the bridge (subdorsal).",
+          "This allows the bridge to simply 'drop' down, preserving the natural smooth lines of your native nose and leading to a more natural, less 'operated' look."
+        ]
+      },
+      {
+        question: "Will a nose job change my voice?",
+        answer: [
+          "No, aesthetic rhinoplasty does not affect the vocal chords. It may briefly sound 'nasal' due to swelling but resolves quickly."
+        ]
+      },
+      {
+        question: "Can I wear glasses after rhinoplasty?",
+        answer: [
+          "You must avoid heavy glasses resting on the bridge for 4-6 weeks. We recommend contact lenses or taping glasses to the forehead."
+        ]
+      }
+    ]
   },
   {
     id: "otoplasty-chandigarh",
@@ -602,7 +1148,35 @@ Performed under Local Anesthesia for adults and General Anesthesia for children.
 A head bandage is worn for 3-5 days. Results are permanent and immediate.
 `,
     priceRange: "₹45,000 - ₹80,000",
-    costFactors: "Unilateral vs Bilateral correction, Local vs General Anesthesia"
+    costFactors: "Unilateral vs Bilateral correction, Local vs General Anesthesia",
+    faqs: [
+      {
+        question: "What is otoplasty?",
+        answer: [
+          "Otoplasty (Ear Pinning) reshapes the ear cartilage to bring prominent ears closer to the head and create a natural-looking anti-helical fold."
+        ]
+      },
+      {
+        question: "At what age can otoplasty be performed?",
+        answer: [
+          "For children, it can be done after age 6 when ear growth is near complete.",
+          "For adults, it can be done at any age."
+        ]
+      },
+      {
+        question: "What is the recovery like after ear reshaping?",
+        answer: [
+          "A head bandage is worn for 3-5 days. Results are permanent and immediate.",
+          "The scar is hidden completely behind the ear."
+        ]
+      },
+      {
+        question: "What determines the cost of otoplasty?",
+        answer: [
+          "Unilateral vs Bilateral correction and Local vs General Anesthesia."
+        ]
+      }
+    ]
   },
 
   // BREAST
@@ -632,7 +1206,12 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
       recoveryTips: ["The surgical support bra is mandatory for the first 6 weeks.", "Manual massage may be recommended depending on the implant type."]
     },
     regions: ["Breasts"],
-    gallery: ["/breast-augmentation-result-1.jpg", "/breast-augmentation-result-2.jpg"],
+    gallery: [
+      "/breast-augmentation-result-1.jpg",
+      "/breast-augmentation-result-2.jpg",
+      "/breast-augmentation-result-3.jpg",
+      "/breast-augmentation-result-4.jpg"
+    ],
     seoContent: `
 ### Breast Augmentation in Chandigarh: Enhance Your Silhouette
 **Premium Implants (Motiva / Mentor) & Fat Transfer**
@@ -650,7 +1229,71 @@ We use a **"No-Touch" Technique** with Keller Funnels to insert implants, minimi
 Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4 weeks.
 `,
     priceRange: "₹1,30,000 - ₹2,50,000",
-    costFactors: "Implant Brand (Motiva/Silimed), Implant Type (PU coated vs Nanotexture), Fat Transfer combination"
+    costFactors: "Implant Brand (Motiva/Silimed), Implant Type (PU coated vs Nanotexture), Fat Transfer combination",
+    faqs: [
+      {
+        question: "Who needs Breast Augmentation?",
+        answer: [
+          "Women seeking to restore volume lost after nursing or weight changes.",
+          "Individuals desiring better symmetry and a more balanced silhouette."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for breast augmentation?",
+        answer: [
+          "Stable breast health and realistic expectations about implant size.",
+          "Understanding the difference between a 'lift' and simple 'augmentation'."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Detailed measurements of chest width and existing breast tissue.",
+          "Discussion of implant profile (High vs Moderate) and placement (Under vs Over muscle)."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after breast augmentation?",
+        answer: [
+          "Arms will feel heavy and chest tight for the first 48-72 hours.",
+          "Walking is essential from day one to aid circulation."
+        ]
+      },
+      {
+        question: "When can I return to work after breast augmentation?",
+        answer: [
+          "Desk jobs can resume in 5-7 days.",
+          "Strenuous upper body lifting is restricted for 4-6 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "One full week of 'rebound time' is sufficient.",
+          "Plan for extra help at home if you have small children."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Shape is visible immediately, though 'drop and fluff' takes 6-12 weeks.",
+          "Implants settle into a natural position progressively."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "The surgical support bra is mandatory for the first 6 weeks.",
+          "Manual massage may be recommended depending on the implant type."
+        ]
+      },
+      {
+        question: "What determines the cost of breast augmentation?",
+        answer: [
+          "Implant Brand (Motiva/Silimed), Implant Type (PU coated vs Nanotexture), and Fat Transfer combination."
+        ]
+      }
+    ]
   },
   {
     id: "breast-reduction-chandigarh",
@@ -679,7 +1322,35 @@ Dr. Sumit generally uses the **Superomedial Pedicle** technique, which preserves
 The cost varies by size and complexity but includes all hospital and anesthesia fees.
 `,
     priceRange: "₹1,60,000 - ₹2,80,000",
-    costFactors: "Breast size (Gigantomastia requires more time), Liposuction needs for lateral chest"
+    costFactors: "Breast size (Gigantomastia requires more time), Liposuction needs for lateral chest",
+    faqs: [
+      {
+        question: "What is breast reduction surgery?",
+        answer: [
+          "Breast reduction removes excess glandular tissue, fat, and skin to create a lighter, more proportionate breast size.",
+          "It alleviates chronic neck pain, shoulder grooving, and rashes caused by excessively large breasts."
+        ]
+      },
+      {
+        question: "Will I be able to breastfeed after breast reduction?",
+        answer: [
+          "Dr. Sumit uses the Superomedial Pedicle technique, which preserves nipple sensation and allows for breastfeeding in many cases."
+        ]
+      },
+      {
+        question: "What are the results of breast reduction?",
+        answer: [
+          "Immediate physical relief from shoulder strain.",
+          "Lighter, perkier breasts that fit better in clothing."
+        ]
+      },
+      {
+        question: "What determines the cost of breast reduction?",
+        answer: [
+          "Breast size (Gigantomastia requires more time) and Liposuction needs for the lateral chest."
+        ]
+      }
+    ]
   },
   {
     id: "breast-lift-chandigarh",
@@ -704,7 +1375,35 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
 `,
     regions: ["Breasts"],
     priceRange: "₹1,50,000 - ₹2,50,000",
-    costFactors: "Grade of Ptosis (Sagging), Implant requirement for volume, Skin quality"
+    costFactors: "Grade of Ptosis (Sagging), Implant requirement for volume, Skin quality",
+    faqs: [
+      {
+        question: "What is a breast lift (mastopexy)?",
+        answer: [
+          "A breast lift raises the nipple-areola complex and removes excess skin to reshape the breast mound.",
+          "Pregnancy, breastfeeding, and gravity can cause breasts to sag (ptosis)."
+        ]
+      },
+      {
+        question: "Do I need implants with a breast lift?",
+        answer: [
+          "Lift Only: If you have enough volume but just need reshaping.",
+          "Lift + Implant: If you want upper breast fullness along with the lift."
+        ]
+      },
+      {
+        question: "What is the recovery like after a breast lift?",
+        answer: [
+          "Similar to reduction, mobility is good immediately, but high-impact activities are restricted for 4 weeks."
+        ]
+      },
+      {
+        question: "What determines the cost of a breast lift?",
+        answer: [
+          "Grade of Ptosis (Sagging), Implant requirement for volume, and Skin quality."
+        ]
+      }
+    ]
   },
 
   // MALE
@@ -752,14 +1451,6 @@ In Chandigarh's gym-centric culture, this is our #1 requested male procedure.
 *   **Discreet:** We handle male patients with high privacy protocols at Healing Hospital.
 *   **Same Day:** It is a Day Care procedure. You come in the morning and engage in light walking by evening.
 
-#### Local FAQs
-*   **Q: Can I go to the gym?**
-    *   A: Legs/Cardio after 1 week. Chest/Arms after 4 weeks.
-*   **Q: Is it hormonal?**
-    *   A: Often idiopathic (unknown cause), but we rule out hormonal imbalances before surgery.
-*   **Q: How much does Grade 3 Gynecomastia cost?**
-    *   A: Higher grades require more time and skin work, thus slight variance in cost.
-
 #### Cost of Gynecomastia Surgery in Chandigarh
 The procedure is an investment in regained confidence. Costs include OT charges, anesthesia, and post-op care.
 *   **Affordable Quality:** We offer competitive pricing without compromising on the hospital hygiene and safety standards.
@@ -772,7 +1463,84 @@ The procedure is an investment in regained confidence. Costs include OT charges,
 See our **Before and After Gallery** for examples of restored masculine contours.
     `,
     priceRange: "₹65,000 - ₹1,10,000",
-    costFactors: "Grade 1-3 vs Grade 4, Excess skin excision needs, Lipo extent"
+    costFactors: "Grade 1-3 vs Grade 4, Excess skin excision needs, Lipo extent",
+    faqs: [
+      {
+        question: "Who needs gynecomastia surgery?",
+        answer: [
+          "Men with enlarged breast tissue that does not respond to diet or exercise.",
+          "Individuals seeking to resolve the 'puffy nipple' appearance."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for gynecomastia surgery?",
+        answer: [
+          "Men at a stable weight whose hormones have been evaluated.",
+          "Those seeking a permanent solution to glandular overdevelopment."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Ultrasound may be used to determine the ratio of fat to glandular tissue.",
+          "Testing to ensure no underlying medical causes for the enlargement."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after gynecomastia surgery?",
+        answer: [
+          "Soreness is similar to a heavy chest workout.",
+          "Most patients are back to light movements within 48 hours."
+        ]
+      },
+      {
+        question: "When can I return to work after gynecomastia surgery?",
+        answer: [
+          "Typically 3-5 days for office work.",
+          "Gym activity (especially chest press) is restricted for 4 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "A 5-day break is usually all that is required.",
+          "Recovery is relatively rapid compared to larger body procedures."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "The chest looks flatter and more masculine immediately.",
+          "Final contour refinement occurs as skin tightens over 3 months."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "The compression vest is vital to flatten the area and prevent fluid buildup.",
+          "Lymphatic massage helps ensure a smooth, bump-free result."
+        ]
+      },
+      {
+        question: "When can I go to the gym after gynecomastia surgery?",
+        answer: [
+          "Legs and Cardio after 1 week. Chest and Arms after 4 weeks."
+        ]
+      },
+      {
+        question: "Is gynecomastia hormonal?",
+        answer: [
+          "Often idiopathic (unknown cause), but we rule out hormonal imbalances before surgery."
+        ]
+      },
+      {
+        question: "What determines the cost of gynecomastia surgery?",
+        answer: [
+          "Grade 1-3 vs Grade 4, Excess skin excision needs, and Lipo extent.",
+          "Higher grades require more time and skin work, thus slight variance in cost. Costs include OT charges, anesthesia, and post-op care."
+        ]
+      }
+    ]
   },
 
   // INTIMATE
@@ -796,7 +1564,28 @@ Childbirth and aging can stretch vaginal muscles, affecting sensation and confid
 *   Restored pelvic floor strength.
 `,
     priceRange: "₹80,000 - ₹1,50,000",
-    costFactors: "Muscle tightening extent, Perineoplasty requirement, Mucosal excess"
+    costFactors: "Muscle tightening extent, Perineoplasty requirement, Mucosal excess",
+    faqs: [
+      {
+        question: "What is vaginoplasty?",
+        answer: [
+          "Vaginoplasty tightens the vaginal canal and repairs the perineum, restoring muscular tone and vaginal integrity."
+        ]
+      },
+      {
+        question: "What are the benefits of vaginoplasty?",
+        answer: [
+          "Improved sexual gratification.",
+          "Restored pelvic floor strength."
+        ]
+      },
+      {
+        question: "What determines the cost of vaginoplasty?",
+        answer: [
+          "Muscle tightening extent, Perineoplasty requirement, and Mucosal excess."
+        ]
+      }
+    ]
   },
   {
     id: "labiaplasty-chandigarh",
@@ -817,7 +1606,29 @@ Enlarged labia minora can cause discomfort during exercise, cycling, or intercou
 It is a 45-minute procedure performed under local anesthesia or sedation. Recovery is quick (3-4 days).
 `,
     priceRange: "₹50,000 - ₹90,000",
-    costFactors: "Unilateral vs Bilateral, Clitoral hood reduction needs, Edge refinement technique"
+    costFactors: "Unilateral vs Bilateral, Clitoral hood reduction needs, Edge refinement technique",
+    faqs: [
+      {
+        question: "What is labiaplasty?",
+        answer: [
+          "Labiaplasty trims excess labial tissue to create a neat, streamlined appearance.",
+          "Enlarged labia minora can cause discomfort during exercise, cycling, or intercourse."
+        ]
+      },
+      {
+        question: "What is the recovery like after labiaplasty?",
+        answer: [
+          "It is a 45-minute procedure performed under local anesthesia or sedation.",
+          "Recovery is quick (3-4 days)."
+        ]
+      },
+      {
+        question: "What determines the cost of labiaplasty?",
+        answer: [
+          "Unilateral vs Bilateral, Clitoral hood reduction needs, and Edge refinement technique."
+        ]
+      }
+    ]
   },
 
   // AESTHETIC - SCAR REVISION (Moved here)
@@ -846,7 +1657,36 @@ Scars from accidents, previous surgeries, or burns can be stigmatizing. While no
 We have a specialized protocol for Keloids, combining surgical removal with immediate steroid injections to prevent recurrence.
 `,
     priceRange: "₹20,000 - ₹80,000",
-    costFactors: "Scar length and width, Z-plasty complexity, Laser sessions required"
+    costFactors: "Scar length and width, Z-plasty complexity, Laser sessions required",
+    faqs: [
+      {
+        question: "Can scars be completely removed?",
+        answer: [
+          "No scar can be removed completely, but 'Revision' can make them significantly less visible.",
+          "We combine surgical, fat grafting, and laser techniques for the best results."
+        ]
+      },
+      {
+        question: "What approaches are used for scar revision?",
+        answer: [
+          "Surgical Excision: Removing a wide/bad scar and closing it with fine plastic surgery techniques (Geometric Broken Line Closure / Z-plasty).",
+          "Fat Grafting: To improve the color and texture of depressed scars.",
+          "Laser/Microneedling: For surface texture blending."
+        ]
+      },
+      {
+        question: "How are keloids treated?",
+        answer: [
+          "We have a specialized protocol for Keloids, combining surgical removal with immediate steroid injections to prevent recurrence."
+        ]
+      },
+      {
+        question: "What determines the cost of scar revision?",
+        answer: [
+          "Scar length and width, Z-plasty complexity, and Laser sessions required."
+        ]
+      }
+    ]
   },
 
   // NON-SURGICAL
@@ -891,6 +1731,53 @@ Botox (Botulinum Toxin) is the world's most popular non-surgical treatment. In t
 #### Safety
 We use only authentic Allergan Botox or Dysport, opened in front of you. Results last 3-4 months.
 `
+    ,
+    faqs: [
+      {
+        question: "Who needs Botox?",
+        answer: [
+          "Patients seeking to soften dynamic expression lines.",
+          "Individuals looking for a preventative approach to deep wrinkle formation."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for Botox?",
+        answer: [
+          "Healthy adults with realistic expectations of softening rather than freezing expression."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Evaluation of muscle strength and skin elasticity during active expression."
+        ]
+      },
+      {
+        question: "Is there any downtime after Botox?",
+        answer: [
+          "No downtime; you can return to social activities immediately.",
+          "Instant return to work; no physical signs visible usually within 30 minutes."
+        ]
+      },
+      {
+        question: "How long do Botox results last?",
+        answer: [
+          "Results soften at 3-5 days, peak at 14 days, and last 3-4 months."
+        ]
+      },
+      {
+        question: "What should I do after a Botox treatment?",
+        answer: [
+          "Keep upright for 4 hours; avoid strenuous exercise for 24 hours."
+        ]
+      },
+      {
+        question: "What determines the cost of Botox?",
+        answer: [
+          "Number of Units and Area(s) treated (Forehead, Crow's feet, Masseter)."
+        ]
+      }
+    ]
   },
   {
     id: "microneedling-chandigarh",
@@ -931,6 +1818,58 @@ Microneedling creates thousands of microscopic channels in the skin, triggering 
 #### Downtime
 Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
 `
+    ,
+    faqs: [
+      {
+        question: "Who needs Microneedling?",
+        answer: [
+          "Individuals with acne scars, fine lines, or uneven skin texture.",
+          "Patients seeking to improve overall skin brightness and health."
+        ]
+      },
+      {
+        question: "Am I a good candidate for microneedling?",
+        answer: [
+          "Nearly all skin types and tones.",
+          "Individuals without active skin infections or severe inflammation."
+        ]
+      },
+      {
+        question: "What does the assessment involve?",
+        answer: [
+          "Analysis of skin thickness and depth of scarring/pigmentation.",
+          "Setting expectations for a series of treatments."
+        ]
+      },
+      {
+        question: "What is the recovery like after microneedling?",
+        answer: [
+          "Skin will look like a mild sunburn for 24-48 hours.",
+          "Normal activity resumes immediately."
+        ]
+      },
+      {
+        question: "When can I return to work after microneedling?",
+        answer: [
+          "Typically next day as redness subsides.",
+          "Avoid direct sun exposure for 1 week."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Initial glow is visible in 1 week.",
+          "Collagen remodelling shows real structural improvement after 3 treatments."
+        ]
+      },
+      {
+        question: "What should I do after microneedling?",
+        answer: [
+          "Use a high-quality hyaluronic acid serum during the first 24 hours.",
+          "Strict sun protection is non-negotiable post-treatment."
+        ]
+      }
+    ]
   },
   {
     id: "chemical-peeling",
@@ -971,7 +1910,64 @@ Medical supervision ensures no risk of burns or hyperpigmentation.
       results: ["Fresh, clearer skin is fully revealed within 10-14 days.", "Significant reduction in pigmentation and finer pores."],
       recoveryTips: ["Do not pick at the peeling skin; let it fall off naturally.", "Only use the specialized post-procedure kit provided by our team."]
     },
-    regions: ["Face"]
+    regions: ["Face"],
+    faqs: [
+      {
+        question: "Who needs a Chemical Peel?",
+        answer: [
+          "Patients with sun damage, melasma, or surface-level age spots.",
+          "Anyone seeking to 'reset' their skin's clarity and smoothness."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for a chemical peel?",
+        answer: [
+          "Varies by peel depth; customized to your specific skin tone.",
+          "Commitment to strict post-peel sun avoidance is essential."
+        ]
+      },
+      {
+        question: "What does the assessment involve?",
+        answer: [
+          "Skin classification and history of pigmentation issues.",
+          "Preparation of skin with a pre-peel home care regimen."
+        ]
+      },
+      {
+        question: "What is the recovery like after a chemical peel?",
+        answer: [
+          "Tightness and some peeling of the skin is expected.",
+          "Moisturization is critical during the peeling process."
+        ]
+      },
+      {
+        question: "When can I return to work after a chemical peel?",
+        answer: [
+          "Typically 3-5 days depending on the depth of the peel.",
+          "Social downtime varies; light peels have no downtime."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Fresh, clearer skin is fully revealed within 10-14 days.",
+          "Significant reduction in pigmentation and finer pores."
+        ]
+      },
+      {
+        question: "What should I do after a chemical peel?",
+        answer: [
+          "Do not pick at the peeling skin; let it fall off naturally.",
+          "Only use the specialized post-procedure kit provided by our team."
+        ]
+      },
+      {
+        question: "What determines the cost of a chemical peel?",
+        answer: [
+          "Type of Peel (Glycolic/TCA/Yellow), Number of sessions, and Face/Body area."
+        ]
+      }
+    ]
   },
   {
     id: "dermal-fillers",
@@ -1014,6 +2010,54 @@ Aging is essentially loss of volume (fat and bone). Hyaluronic Acid (HA) fillers
 #### Longevity
 Depending on the product (Juvederm/Restylane) and area, results last 9-18 months.
 `
+    ,
+    faqs: [
+      {
+        question: "Who needs Dermal Fillers?",
+        answer: [
+          "Individuals with volume loss in the cheeks, temples, or under-eyes.",
+          "Patients seeking non-surgical refinement of the nose or jawline."
+        ]
+      },
+      {
+        question: "Am I a good candidate for fillers?",
+        answer: [
+          "Healthy patients looking for immediate structural or volume improvement."
+        ]
+      },
+      {
+        question: "What does the assessment involve?",
+        answer: [
+          "3D facial analysis to restore proportions rather than just filling lines."
+        ]
+      },
+      {
+        question: "What is the recovery like after fillers?",
+        answer: [
+          "Mild swelling or bruising may occur; social activity remains possible.",
+          "Typically next day as minor swelling stabilizes."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Immediate volume restoration; final integration into tissues at 2 weeks."
+        ]
+      },
+      {
+        question: "What should I do after filler treatment?",
+        answer: [
+          "Cold compresses help reduce initial swelling; avoid high heat for 24 hours.",
+          "Plan for a 2-day 'buffer' before major social events to ensure any bruising resolves."
+        ]
+      },
+      {
+        question: "What determines the cost of dermal fillers?",
+        answer: [
+          "Volume used (Number of syringes), Product type (Voluma/Volift), and Area complexity."
+        ]
+      }
+    ]
   },
 
   // RECONSTRUCTIVE
@@ -1037,6 +2081,24 @@ Microvascular surgery involves joining blood vessels and nerves as thin as a hai
 *   Reconstucting faces after cancer surgery.
 *   Restoring severed fingers (Replantation).
 `
+    ,
+    faqs: [
+      {
+        question: "What is microvascular surgery?",
+        answer: [
+          "Microvascular surgery involves joining blood vessels and nerves as thin as a hair under high-magnification microscopes.",
+          "It allows us to perform free flaps—transplanting tissue from one part of the body to another to cover complex wounds."
+        ]
+      },
+      {
+        question: "When is microvascular surgery needed?",
+        answer: [
+          "Saving crushed limbs.",
+          "Reconstructing faces after cancer surgery.",
+          "Restoring severed fingers (Replantation)."
+        ]
+      }
+    ]
   },
   {
     id: "traumatic-reconstruction",
@@ -1055,7 +2117,22 @@ Accidents can leave devastating physical and psychological scars. Our Reconstruc
 **Goal:**
 Our priority is "Function First, Aesthetics Always." We aim to restore your body to its pre-injury state with minimal scarring.
 `,
-    regions: ["Body", "Face", "Arms", "Thighs"]
+    regions: ["Body", "Face", "Arms", "Thighs"],
+    faqs: [
+      {
+        question: "What types of trauma injuries do you treat?",
+        answer: [
+          "We treat maxillo-facial injuries, soft tissue loss, and compound fractures.",
+          "Our priority is 'Function First, Aesthetics Always.'"
+        ]
+      },
+      {
+        question: "Is emergency reconstruction available?",
+        answer: [
+          "Yes. Our Reconstructive unit at Healing Hospital works 24/7 to handle trauma cases."
+        ]
+      }
+    ]
   },
   {
     id: "facial-fracture-surgery",
@@ -1075,6 +2152,22 @@ Fractures of the jaw (mandible), cheek (zygoma), or eye socket (orbit) require p
 **Why a Plastic Surgeon?**
 We access these fractures through "hidden" incisions (inside the mouth or eyelid) to ensure no visible scarring on your face.
 `
+    ,
+    faqs: [
+      {
+        question: "Why should a plastic surgeon fix my facial fracture?",
+        answer: [
+          "We access fractures through 'hidden' incisions (inside the mouth or eyelid) to ensure no visible scarring on your face."
+        ]
+      },
+      {
+        question: "What can happen if facial fractures are not treated?",
+        answer: [
+          "Malignment can lead to double vision or bite issues.",
+          "Precise fixation with titanium plates is needed to restore anatomical alignment."
+        ]
+      }
+    ]
   },
   {
     id: "nerve-vessel-tendon-repair",
@@ -1093,7 +2186,22 @@ Cut tendons or nerves in the hand can lead to permanent paralysis if not repaire
 **Rehabilitation:**
 Surgery is only half the battle. Our dedicated physiotherapy protocol ensures your hand returns to full strength and mobility.
 `,
-    regions: ["Arms", "Thighs"]
+    regions: ["Arms", "Thighs"],
+    faqs: [
+      {
+        question: "What happens if a cut tendon or nerve is not repaired?",
+        answer: [
+          "Cut tendons or nerves in the hand can lead to permanent paralysis if not repaired immediately.",
+          "We use microsurgical sutures to reconnect these vital structures."
+        ]
+      },
+      {
+        question: "Is rehabilitation needed after nerve/tendon repair?",
+        answer: [
+          "Surgery is only half the battle. Our dedicated physiotherapy protocol ensures your hand returns to full strength and mobility."
+        ]
+      }
+    ]
   },
   {
     id: "hand-surgery-chandigarh",
@@ -1110,6 +2218,16 @@ Surgery is only half the battle. Our dedicated physiotherapy protocol ensures yo
 
 Metacarpal (hand) and Metatarsal (foot) fractures require precise alignment to preserve grip strength and walking mechanics. We use low-profile titanium mini-plates to ensure rigid fixation, allowing for early physiotherapy.
 `
+    ,
+    faqs: [
+      {
+        question: "Why are hand and foot fractures treated by a plastic surgeon?",
+        answer: [
+          "Metacarpal (hand) and Metatarsal (foot) fractures require precise alignment to preserve grip strength and walking mechanics.",
+          "We use low-profile titanium mini-plates to ensure rigid fixation, allowing for early physiotherapy."
+        ]
+      }
+    ]
   },
   {
     id: "hand-deformity-chandigarh",
@@ -1129,6 +2247,21 @@ We treat congenital anomalies like fused fingers (Syndactyly) or extra digits (P
 **Timing:**
 For children, separation of fused fingers is ideally done before school age (1-2 years) to prevent developmental delay.
 `
+    ,
+    faqs: [
+      {
+        question: "What hand deformities can be corrected?",
+        answer: [
+          "Congenital anomalies like fused fingers (Syndactyly) or extra digits (Polydactyly), as well as acquired conditions like Dupuytren's Contracture."
+        ]
+      },
+      {
+        question: "When should children have deformity correction surgery?",
+        answer: [
+          "For children, separation of fused fingers is ideally done before school age (1-2 years) to prevent developmental delay."
+        ]
+      }
+    ]
   },
   {
     id: "cleft-lip-chandigarh",
@@ -1152,6 +2285,22 @@ Cleft Lip is one of the most common birth defects. Dr. Sumit is passionate about
 **Technique:**
 We focus on rebuilding the lip muscle loop to ensure normal movement and a symmetrical pout.
 `
+    ,
+    faqs: [
+      {
+        question: "When should cleft lip and palate be repaired?",
+        answer: [
+          "Cleft Lip: Repaired at 3-6 months of age.",
+          "Cleft Palate: Repaired at 9-12 months (before speech develops)."
+        ]
+      },
+      {
+        question: "What technique is used for cleft repair?",
+        answer: [
+          "We focus on rebuilding the lip muscle loop to ensure normal movement and a symmetrical pout."
+        ]
+      }
+    ]
   },
   {
     id: "burn-surgery-chandigarh",
@@ -1170,7 +2319,22 @@ Burns can lead to contractures—tight scars that restrict joint movement. We sp
 **Acute Burns:**
 We also manage fresh burns with advanced dressings and early grafting to minimize scarring from the start.
 `,
-    regions: ["Body", "Face", "Arms", "Thighs"]
+    regions: ["Body", "Face", "Arms", "Thighs"],
+    faqs: [
+      {
+        question: "What are burn contractures?",
+        answer: [
+          "Burns can lead to contractures—tight scars that restrict joint movement.",
+          "We specialize in releasing these using Z-plasties and skin grafts to restore range of motion."
+        ]
+      },
+      {
+        question: "Do you treat fresh burns?",
+        answer: [
+          "Yes. We manage fresh burns with advanced dressings and early grafting to minimize scarring from the start."
+        ]
+      }
+    ]
   },
   {
     id: "bed-sore-surgery-chandigarh",
@@ -1187,6 +2351,15 @@ We also manage fresh burns with advanced dressings and early grafting to minimiz
 
 For bedridden patients, pressure sores (decubitus ulcers) can reach the bone. Debridement alone is often insufficient. We perform **Rotation or Advancement Flaps** to bring healthy, vascularized muscle and skin over the wound to ensure permanent healing.
 `
+    ,
+    faqs: [
+      {
+        question: "How are pressure sores treated?",
+        answer: [
+          "Debridement alone is often insufficient for severe pressure sores. We perform Rotation or Advancement Flaps to bring healthy, vascularized muscle and skin over the wound for permanent healing."
+        ]
+      }
+    ]
   },
   {
     id: "diabetic-foot-chandigarh",
@@ -1205,7 +2378,15 @@ Non-healing diabetic ulcers often put limbs at risk. We work as a team with endo
 **Limb Salvage:**
 Our goal is always to save the foot and maintain your mobility.
 `,
-    regions: ["Thighs", "Body"]
+    regions: ["Thighs", "Body"],
+    faqs: [
+      {
+        question: "Can diabetic foot ulcers be healed without amputation?",
+        answer: [
+          "Our goal is always limb salvage. We work as a team with endocrinologists and vascular surgeons to improve blood flow and cover wounds with hardy flaps."
+        ]
+      }
+    ]
   },
 
   // VASCULAR
@@ -1223,6 +2404,21 @@ Our goal is always to save the foot and maintain your mobility.
 
 Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. We offer a comprehensive assessment using Color Doppler to plan the right intervention—whether laser ablation (EVLA) or surgical stripping.
 `
+    ,
+    faqs: [
+      {
+        question: "What are varicose veins?",
+        answer: [
+          "Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers."
+        ]
+      },
+      {
+        question: "How are varicose veins treated?",
+        answer: [
+          "We offer comprehensive assessment using Color Doppler and plan the right intervention—whether laser ablation (EVLA) or surgical stripping."
+        ]
+      }
+    ]
   },
   {
     id: "vascular-surgery-chandigarh",
@@ -1238,6 +2434,21 @@ Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. 
 
 We specialize in creating robust Arteriovenous (AV) Fistulas for renal failure patients requiring long-term dialysis. Microsurgical precision ensures high flow rates and longevity of the fistula.
 `
+    ,
+    faqs: [
+      {
+        question: "What is an AV fistula?",
+        answer: [
+          "An Arteriovenous (AV) Fistula is a connection between an artery and vein, created for renal failure patients requiring long-term dialysis."
+        ]
+      },
+      {
+        question: "Why choose microsurgery for AV fistula creation?",
+        answer: [
+          "Microsurgical precision ensures high flow rates and longevity of the fistula."
+        ]
+      }
+    ]
   }
 ];
 // Helper to fix paths
@@ -1258,3 +2469,45 @@ export const PROCEDURES = RAW_PROCEDURES.map(p => ({
   image: fixPath(p.image),
   gallery: p.gallery?.map(g => fixPath(g)!)
 }));
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  date: string;
+}
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: "what-to-expect-from-liposuction-recovery",
+    title: "What to expect from liposuction recovery",
+    excerpt: "A comprehensive guide to the healing process after High Definition Liposuction, including timelines and tips for optimal contouring.",
+    content: `## The Journey to Your New Contour
+
+Liposuction is transformative, but the results you see on the operating table take time to fully mature. Understanding the recovery timeline is crucial for peace of mind.
+
+### Week 1: The Swelling Phase
+Most patients return home the same day. You will experience significant swelling and some bruising. 
+* Wear your prescribed compression garment 24/7.
+* Stay hydrated to flush out remaining tumescent fluid.
+* Short walks are encouraged to prevent deep vein thrombosis (DVT).
+
+### Week 2-4: The Transition
+Swelling starts to rapidly decline around day 14. 
+* You may return to desk work.
+* Bruising typically resolves completely.
+* **Lymphatic massage** is highly beneficial during this phase to prevent fluid pockets and smooth the tissue.
+
+### Month 2-3: The Reveal
+This is when the 'wow' factor begins.
+* You can resume intense exercise.
+* The "shrink wrap" effect of your skin conforming to the new muscular contour becomes highly visible.
+
+## Long-term Maintenance
+Liposuction permanently removes fat cells in the treated area. However, it is not a free pass to ignore diet. Weight gain can cause remaining fat cells—both in treated and untreated areas—to expand. Maintain an active lifestyle to preserve your newly sculpted silhouette.`,
+    image: "/blog-liposuction-recovery.png",
+    date: "August 15, 2024"
+  }
+];
