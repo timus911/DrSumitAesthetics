@@ -63,8 +63,10 @@ async function prerender() {
         if (fs.existsSync('dist/index.html')) {
             let baseHtml = fs.readFileSync('dist/index.html', 'utf8');
             baseHtml = baseHtml.replace('<div id="root"></div>', `<div id="root">${rootContent}</div>`);
+            
             // Add static title based on route purely for SSG bot crawling
-            baseHtml = baseHtml.replace('<title>Dr. Sumit Aesthetics</title>', `<title>Dr. Sumit Aesthetics - ${route}</title>`);
+            baseHtml = baseHtml.replace(/<title>.*?<\/title>/, `<title>Dr. Sumit Aesthetics - ${route}</title>`);
+            
             fs.writeFileSync(filePath, baseHtml);
         } else {
             // Fallback if built dist/index.html isn't there
