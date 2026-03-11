@@ -1210,7 +1210,9 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
       "/breast-augmentation-result-1.jpg",
       "/breast-augmentation-result-2.jpg",
       "/breast-augmentation-result-3.jpg",
-      "/breast-augmentation-result-4.jpg"
+      "/breast-augmentation-result-4.jpg",
+      "/breast-augmentation-result-5.webp",
+      "/breast-augmentation-result-6.webp"
     ],
     seoContent: `
 ### Breast Augmentation in Chandigarh: Enhance Your Silhouette
