@@ -28,6 +28,7 @@ const SEO: React.FC<SEOProps> = ({
     const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34";
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
     const siteUrl = url ? `https://drsumitaesthetics.com${url}` : 'https://drsumitaesthetics.com';
+    const absoluteImage = image.startsWith('http') ? image : `https://drsumitaesthetics.com${image.startsWith('/') ? '' : '/'}${image}`;
 
     const buildSchema = () => {
         if (schemaType === 'Article') {
@@ -35,7 +36,7 @@ const SEO: React.FC<SEOProps> = ({
                 "@context": "https://schema.org",
                 "@type": "Article",
                 "headline": procedureName || title || "Dr. Sumit Aesthetics",
-                "image": image ? `https://drsumitaesthetics.com${image}` : "https://drsumitaesthetics.com/dr-sumit-portrait.jpg",
+                "image": absoluteImage,
                 "url": siteUrl,
                 "datePublished": articleDate || new Date().toISOString(),
                 "author": {
@@ -48,7 +49,7 @@ const SEO: React.FC<SEOProps> = ({
                     "name": "Dr. Sumit Aesthetics",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://drsumitaesthetics.com/dr-sumit-portrait.jpg"
+                        "url": "https://drsumitaesthetics.com/dr-sumit-profile.png"
                     }
                 },
                 "description": metaDescription
@@ -59,9 +60,10 @@ const SEO: React.FC<SEOProps> = ({
             "@context": "https://schema.org",
             "@type": schemaType,
             "name": procedureName || "Dr. Sumit Aesthetics",
-            "image": "https://www.drsumitaesthetics.com/dr-sumit-portrait.jpg",
+            "image": absoluteImage,
             "@id": siteUrl,
             "url": siteUrl,
+            "logo": "https://drsumitaesthetics.com/dr-sumit-profile.png",
             ...(schemaType !== 'MedicalProcedure' && {
                 "telephone": "+918219816265",
                 "priceRange": "$$$",
@@ -117,14 +119,14 @@ const SEO: React.FC<SEOProps> = ({
             <meta property="og:url" content={siteUrl} />
             <meta property="og:title" content={siteTitle} />
             <meta property="og:description" content={metaDescription} />
-            <meta property="og:image" content={image} />
+            <meta property="og:image" content={absoluteImage} />
 
             {/* Twitter */}
             <meta property="twitter:card" content="summary_large_image" />
             <meta property="twitter:url" content={siteUrl} />
             <meta property="twitter:title" content={siteTitle} />
             <meta property="twitter:description" content={metaDescription} />
-            <meta property="twitter:image" content={image} />
+            <meta property="twitter:image" content={absoluteImage} />
 
             {/* Canonical */}
             <link rel="canonical" href={siteUrl} />
