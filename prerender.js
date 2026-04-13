@@ -60,12 +60,44 @@ async function prerender() {
         // We'll scrape the #root innerHTML and inject it.
         const rootContent = await page.evaluate(() => document.getElementById('root')?.innerHTML || '');
 
+        // Extract dynamically injected SEO head tags from Helmet
+        const headContent = await page.evaluate(() => {
+            let tags = '';
+            const query = [
+                'title',
+                'meta[name="description"]',
+                'meta[name="keywords"]',
+                'meta[property^="og:"]',
+                'meta[property^="twitter:"]',
+                'link[rel="canonical"]',
+                'script[type="application/ld+json"]',
+                'meta[name^="geo."]',
+                'meta[name="ICBM"]'
+            ];
+            query.forEach(q => {
+                document.querySelectorAll(q).forEach(el => {
+                    // Only grab elements that have data-rh attribute (Helmet injections)
+                    // or are title/script blocks to be safe, but helmet adds data-rh to standard meta.
+                    tags += '\t\t' + el.outerHTML + '\n';
+                });
+            });
+            // Let's ensure we are getting unique tags to prevent massive duplication if queried multiple times
+            // but since page evaluates after route loads, we just get current snapshot.
+            return tags;
+        });
+
         if (fs.existsSync('dist/index.html')) {
             let baseHtml = fs.readFileSync('dist/index.html', 'utf8');
             baseHtml = baseHtml.replace('<div id="root"></div>', `<div id="root">${rootContent}</div>`);
             
-            // Add static title based on route purely for SSG bot crawling
-            baseHtml = baseHtml.replace(/<title>.*?<\/title>/, `<title>Dr. Sumit Aesthetics - ${route}</title>`);
+            // Note: because Helmet injects <title> and everything, we can just replace existing static ones.
+            // But doing regex deletion across lines is risky, so we just remove the static title 
+            // and inject our new block right before </head>
+            baseHtml = baseHtml.replace(/<title>.*?<\/title>/s, '');
+            baseHtml = baseHtml.replace(/<meta name="description".*?>/s, '');
+            baseHtml = baseHtml.replace(/<meta name="keywords".*?>/s, '');
+            
+            baseHtml = baseHtml.replace('</head>', `\n${headContent}\n</head>`);
             
             fs.writeFileSync(filePath, baseHtml);
         } else {

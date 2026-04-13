@@ -72,10 +72,11 @@ const Home: React.FC = () => {
               <span className="text-[#4A90E2] text-[10px] tracking-[0.6em] uppercase font-bold">Artistry · Precision · Sculpture</span>
             </motion.div>
 
-            <h1 className="text-7xl md:text-[10rem] font-serif leading-none tracking-tighter text-white">
+            <h1 className="sr-only">Board Certified Plastic Surgeon in Chandigarh | Dr. Sumit Aesthetics</h1>
+            <div aria-hidden="true" className="text-7xl md:text-[10rem] font-serif leading-none tracking-tighter text-white">
               Surgical <br />
               <span className="text-[#4A90E2]">Mastery</span>
-            </h1>
+            </div>
 
             <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-xl tracking-wide font-light leading-relaxed">
               Dr. Sumit Singh Gautam fuses fine art mastery with surgical precision to redefine aesthetic surgery. A sculptor's eye ensuring anatomical harmony.
