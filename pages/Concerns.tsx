@@ -8,18 +8,18 @@ import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const CONCERN_ZONES = [
-    { id: 'Face', title: 'Face', image: `${import.meta.env.BASE_URL}facelift-aesthetic.jpg` },
-    { id: 'Nose', title: 'Nose', image: `${import.meta.env.BASE_URL}rhinoplasty-aesthetic.jpg` },
-    { id: 'Eyes', title: 'Eyes', image: `${import.meta.env.BASE_URL}blepharoplasty-aesthetic.jpg` },
-    { id: 'Ears', title: 'Ears', image: `${import.meta.env.BASE_URL}otoplasty-aesthetic.png` },
-    { id: 'Lips', title: 'Lips', image: `${import.meta.env.BASE_URL}lip-lift-aesthetic.jpg` },
-    { id: 'Neck', title: 'Neck', image: `${import.meta.env.BASE_URL}neck-lift-aesthetic.png` },
-    { id: 'Breasts', title: 'Breasts', image: `${import.meta.env.BASE_URL}breast-augmentation-aesthetic.png` },
-    { id: 'Abdomen', title: 'Abdomen', image: `${import.meta.env.BASE_URL}tummy-tuck-aesthetic.jpg` },
-    { id: 'Body', title: 'Body', image: `${import.meta.env.BASE_URL}body-contouring-aesthetic.png` },
-    { id: 'Buttock', title: 'Buttock', image: `${import.meta.env.BASE_URL}buttock-lift-aesthetic.jpg` },
-    { id: 'Thighs', title: 'Thighs', image: `${import.meta.env.BASE_URL}thighs-concerns.jpg` }, // HD Lipo often targets thighs
-    { id: 'Arms', title: 'Arms', image: `${import.meta.env.BASE_URL}arms-concerns.jpg` },
+    { id: 'Face', title: 'Face', image: `${import.meta.env.BASE_URL}facelift-aesthetic.webp` },
+    { id: 'Nose', title: 'Nose', image: `${import.meta.env.BASE_URL}rhinoplasty-aesthetic.webp` },
+    { id: 'Eyes', title: 'Eyes', image: `${import.meta.env.BASE_URL}blepharoplasty-aesthetic.webp` },
+    { id: 'Ears', title: 'Ears', image: `${import.meta.env.BASE_URL}otoplasty-aesthetic.webp` },
+    { id: 'Lips', title: 'Lips', image: `${import.meta.env.BASE_URL}lip-lift-aesthetic.webp` },
+    { id: 'Neck', title: 'Neck', image: `${import.meta.env.BASE_URL}neck-lift-aesthetic.webp` },
+    { id: 'Breasts', title: 'Breasts', image: `${import.meta.env.BASE_URL}breast-augmentation-aesthetic.webp` },
+    { id: 'Abdomen', title: 'Abdomen', image: `${import.meta.env.BASE_URL}tummy-tuck-aesthetic.webp` },
+    { id: 'Body', title: 'Body', image: `${import.meta.env.BASE_URL}body-contouring-aesthetic.webp` },
+    { id: 'Buttock', title: 'Buttock', image: `${import.meta.env.BASE_URL}buttock-lift-aesthetic.webp` },
+    { id: 'Thighs', title: 'Thighs', image: `${import.meta.env.BASE_URL}thighs-concerns.webp` }, // HD Lipo often targets thighs
+    { id: 'Arms', title: 'Arms', image: `${import.meta.env.BASE_URL}arms-concerns.webp` },
 ];
 
 const ConcernCard = ({ zone, idx }: { zone: any, idx: number, key?: string }) => {

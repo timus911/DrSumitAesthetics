@@ -77,7 +77,7 @@ const MedicalAuthority: React.FC = () => {
                     >
                         <div className="relative group w-full max-w-md">
                             <motion.img
-                                src={`${import.meta.env.BASE_URL}dr-sumit-transparent.png`}
+                                src={`${import.meta.env.BASE_URL}dr-sumit-transparent.webp`}
                                 alt="Dr. Sumit Singh Gautam - Board Certified Plastic Surgeon Chandigarh"
                                 className="w-full h-auto object-contain drop-shadow-2xl relative z-10"
                                 initial={{ scale: 1 }}

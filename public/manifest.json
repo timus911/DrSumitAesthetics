@@ -3,9 +3,9 @@
     "name": "Dr. Sumit | Advanced Plastic & Aesthetic Surgery",
     "icons": [
         {
-            "src": "/favicon.png",
-            "sizes": "1024x1024",
-            "type": "image/png"
+            "src": "/favicon.webp",
+            "sizes": "192x192",
+            "type": "image/webp"
         }
     ],
     "start_url": ".",

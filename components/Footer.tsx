@@ -179,7 +179,7 @@ const Footer: React.FC = () => {
                   title="Click to Download vCard"
                 >
                   <img
-                    src={`${import.meta.env.BASE_URL}contact-qr.png`}
+                    src={`${import.meta.env.BASE_URL}contact-qr.webp`}
                     alt="Dr. Sumit Contact QR"
                     className="w-full h-full object-contain filter group-hover:scale-105 transition-transform duration-300"
                   />
