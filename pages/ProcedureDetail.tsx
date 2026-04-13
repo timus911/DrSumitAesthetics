@@ -26,7 +26,7 @@ const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img,
     >
       <img
         src={img}
-        alt="Clinical result"
+        alt={`Clinical transformer gallery - ${img.split('/').pop()?.split('.')[0]} surgical outcome by Dr. Sumit Singh Gautam in Chandigarh`}
         className={`w-full h-auto transition-all duration-300 block ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'} group-hover:grayscale-0 group-hover:opacity-100`}
         loading="lazy"
         width={800}
@@ -126,7 +126,7 @@ const ProcedureDetail: React.FC = () => {
     <div className="pt-52 pb-32">
       <SEO
         title={procedure.title}
-        description={procedure.description || procedure.longDescription}
+        description={procedure.description || procedure.longDescription?.slice(0, 160)}
         image={procedure.image}
         url={`/procedure/${procedure.id}`}
         schemaType="MedicalProcedure"

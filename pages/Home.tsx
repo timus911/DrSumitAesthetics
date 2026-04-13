@@ -45,7 +45,7 @@ const Home: React.FC = () => {
           <img
             src={ASSETS.surgeryHeroBackground}
             className="w-full h-full object-cover opacity-80"
-            alt="Dr. Sumit Surgical Excellence"
+            alt="Board-certified plastic and aesthetic surgery excellence by Dr. Sumit Singh Gautam in Chandigarh"
             loading="eager"
             fetchPriority="high"
             width={1920}
