@@ -99,17 +99,18 @@ const Navbar: React.FC = () => {
             to="/contact"
             className="hidden min-[1600px]:flex w-10 h-10 items-center justify-center rounded-full bg-[#4A90E2] text-white shadow-lg shadow-[#4A90E2]/20 active:scale-95 transition-transform hover:bg-[#357ABD]"
             title="Request Consultation"
+            aria-label="Request Consultation"
           >
             <MessageCircle size={20} className="-mr-0.5 mt-0.5" />
           </Link>
 
           {/* Mobile Request Consultation Icon */}
-          <Link to="/contact" className="min-[1600px]:hidden w-10 h-10 flex items-center justify-center rounded-full bg-[#4A90E2] text-white shadow-lg shadow-[#4A90E2]/20 active:scale-95 transition-transform hover:bg-[#357ABD]">
+          <Link to="/contact" aria-label="Request Consultation" className="min-[1600px]:hidden w-10 h-10 flex items-center justify-center rounded-full bg-[#4A90E2] text-white shadow-lg shadow-[#4A90E2]/20 active:scale-95 transition-transform hover:bg-[#357ABD]">
             <MessageCircle size={20} className="-mr-0.5 mt-0.5" />
           </Link>
 
           {/* Mobile Toggle */}
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white shrink-0 min-[1600px]:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close Menu" : "Open Menu"} className="text-white shrink-0 min-[1600px]:hidden">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>

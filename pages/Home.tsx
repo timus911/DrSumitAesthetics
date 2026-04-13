@@ -47,6 +47,7 @@ const Home: React.FC = () => {
             className="w-full h-full object-cover opacity-80"
             alt="Dr. Sumit Surgical Excellence"
             loading="eager"
+            fetchPriority="high"
             width={1920}
             height={1080}
           />

@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
               <span className="text-[9px] tracking-[0.4em] text-[#4A90E2] font-bold uppercase mt-1">BOARD CERTIFIED PLASTIC SURGEON</span>
             </Link>
             <div className="space-y-4">
-              <p className="text-gray-500 text-sm leading-relaxed font-light">
+              <p className="text-gray-300 text-sm leading-relaxed font-light">
                 International surgical expertise.
                 <br /><br />
                 <a href="https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/" target="_blank" rel="noopener noreferrer" className="text-[#4A90E2] font-bold hover:underline">
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
                   href="https://www.instagram.com/plasticandaestheticcenter/?hl=en"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 text-gray-500 hover:text-[#E1306C] transition-colors group"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-[#E1306C] transition-colors group"
                 >
                   <Instagram size={14} className="group-hover:scale-110 transition-transform" />
                   <span className="text-[10px] uppercase tracking-widest font-bold">Official Healing Hospital Page</span>
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
                   href="https://www.instagram.com/dr.sumitsgautam/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 text-gray-500 hover:text-[#E1306C] transition-colors group"
+                  className="flex items-center space-x-2 text-gray-300 hover:text-[#E1306C] transition-colors group"
                 >
                   <Instagram size={14} className="group-hover:scale-110 transition-transform" />
                   <span className="text-[10px] uppercase tracking-widest font-bold">Dr. Sumit's Surgical Portfolio</span>
@@ -53,21 +53,21 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-white font-bold mb-10">Clinical Domains</h4>
             <ul className="space-y-5">
-              <li><Link to="/aesthetic" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Aesthetic Procedures</Link></li>
-              <li><Link to="/reconstructive" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Reconstructive Surgery</Link></li>
-              <li><Link to="/non-surgical" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Non-Surgical Aesthetics</Link></li>
-              <li><Link to="/patient-journey" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Patient Journey</Link></li>
-              <li><Link to="/blog" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Clinical Journal</Link></li>
+              <li><Link to="/aesthetic" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Aesthetic Procedures</Link></li>
+              <li><Link to="/reconstructive" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Reconstructive Surgery</Link></li>
+              <li><Link to="/non-surgical" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Non-Surgical Aesthetics</Link></li>
+              <li><Link to="/patient-journey" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Patient Journey</Link></li>
+              <li><Link to="/blog" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Clinical Journal</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-white font-bold mb-10">Institutional</h4>
             <ul className="space-y-5">
-              <li><Link to="/about" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">About Dr. Sumit</Link></li>
-              <li><Link to="/international" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">International Concierge</Link></li>
-              <li><Link to="/gallery" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Results Gallery</Link></li>
-              <li><Link to="/contact" className="text-gray-500 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Book Consultation</Link></li>
+              <li><Link to="/about" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">About Dr. Sumit</Link></li>
+              <li><Link to="/international" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">International Concierge</Link></li>
+              <li><Link to="/gallery" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Results Gallery</Link></li>
+              <li><Link to="/contact" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Book Consultation</Link></li>
             </ul>
           </div>
 
@@ -78,8 +78,9 @@ const Footer: React.FC = () => {
                 onClick={() => setIsQrOpen(true)}
                 className="p-2 glass border border-white/5 hover:border-[#4A90E2]/50 transition-all group"
                 title="Scan Contact QR"
+                aria-label="Toggle Contact QR Code"
               >
-                <QrCode size={12} className="text-gray-600 group-hover:text-[#4A90E2] transition-colors" />
+                <QrCode size={12} className="text-gray-400 group-hover:text-[#4A90E2] transition-colors" />
               </button>
             </div>
             <ul className="space-y-6">
@@ -100,12 +101,13 @@ const Footer: React.FC = () => {
                   <span className="text-[10px] uppercase tracking-widest text-gray-300 font-bold">Consultation Support</span>
                 </div>
                 <div className="flex items-center space-x-4 pl-7">
-                  <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#4A90E2] transition-colors">Phone: {CONTACT.counselorPhone}</a>
+                  <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-300 text-xs tracking-widest font-bold uppercase hover:text-[#4A90E2] transition-colors">Phone: {CONTACT.counselorPhone}</a>
                   <a
                     href={`https://wa.me/${CONTACT.counselorPhone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-500/50 hover:text-green-400 transition-colors"
+                    aria-label="Chat with Consultation Support on WhatsApp"
                   >
                     <MessageCircle size={14} />
                   </a>
@@ -117,12 +119,13 @@ const Footer: React.FC = () => {
                   <span className="text-[10px] uppercase tracking-widest text-gray-300 font-bold">Clinical Enquiries</span>
                 </div>
                 <div className="flex items-center space-x-4 pl-7">
-                  <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#4A90E2] transition-colors">Phone: {CONTACT.phone}</a>
+                  <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-300 text-xs tracking-widest font-bold uppercase hover:text-[#4A90E2] transition-colors">Phone: {CONTACT.phone}</a>
                   <a
                     href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-500/50 hover:text-green-400 transition-colors"
+                    aria-label="Chat with Clinical Enquiries on WhatsApp"
                   >
                     <MessageCircle size={14} />
                   </a>
@@ -130,7 +133,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center space-x-4">
                 <Mail size={18} className="text-[#4A90E2] shrink-0" />
-                <a href={`mailto:${CONTACT.email}`} className="text-gray-500 text-xs tracking-widest font-bold uppercase hover:text-[#4A90E2] transition-colors">{CONTACT.email}</a>
+                <a href={`mailto:${CONTACT.email}`} className="text-gray-300 text-xs tracking-widest font-bold uppercase hover:text-[#4A90E2] transition-colors">{CONTACT.email}</a>
               </li>
             </ul>
           </div>

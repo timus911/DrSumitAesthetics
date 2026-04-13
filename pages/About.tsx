@@ -9,23 +9,23 @@ import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 // Gallery images array
 const galleryImages = [
-  { src: `${import.meta.env.BASE_URL}gallery-1.jpg`, title: 'Axillary Breast' },
-  { src: `${import.meta.env.BASE_URL}gallery-2.jpg`, title: 'Breast Augmentation with Implant' },
-  { src: `${import.meta.env.BASE_URL}gallery-3.jpg`, title: 'Breast Augmentation with Implant' },
-  { src: `${import.meta.env.BASE_URL}gallery-4.jpg`, title: 'Axillary Breast' },
-  { src: `${import.meta.env.BASE_URL}gallery-5.jpg`, title: 'Breast Reduction' },
-  { src: `${import.meta.env.BASE_URL}gallery-6.jpg`, title: 'Keloid Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-7.jpg`, title: 'Ear Lobe Repair' },
-  { src: `${import.meta.env.BASE_URL}gallery-8.jpg`, title: 'Gynecomastia' },
-  { src: `${import.meta.env.BASE_URL}gallery-9.png`, title: 'Gynecomastia' },
-  { src: `${import.meta.env.BASE_URL}gallery-10.jpg`, title: 'Hair Transplant' },
-  { src: `${import.meta.env.BASE_URL}gallery-11.png`, title: 'Lip Fat Grafting' },
-  { src: `${import.meta.env.BASE_URL}gallery-12.png`, title: 'Mole Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-13.png`, title: 'Lipo-Sculpting' },
-  { src: `${import.meta.env.BASE_URL}gallery-14.png`, title: 'Tummy Tuck' },
-  { src: `${import.meta.env.BASE_URL}gallery-15.jpg`, title: 'Ear Reshaping' },
-  { src: `${import.meta.env.BASE_URL}gallery-16.jpg`, title: 'Xanthelasma Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-17.jpg`, title: 'Tummy Tuck' }
+  { src: `${import.meta.env.BASE_URL}gallery-1.webp`, title: 'Axillary Breast' },
+  { src: `${import.meta.env.BASE_URL}gallery-2.webp`, title: 'Breast Augmentation with Implant' },
+  { src: `${import.meta.env.BASE_URL}gallery-3.webp`, title: 'Breast Augmentation with Implant' },
+  { src: `${import.meta.env.BASE_URL}gallery-4.webp`, title: 'Axillary Breast' },
+  { src: `${import.meta.env.BASE_URL}gallery-5.webp`, title: 'Breast Reduction' },
+  { src: `${import.meta.env.BASE_URL}gallery-6.webp`, title: 'Keloid Excision' },
+  { src: `${import.meta.env.BASE_URL}gallery-7.webp`, title: 'Ear Lobe Repair' },
+  { src: `${import.meta.env.BASE_URL}gallery-8.webp`, title: 'Gynecomastia' },
+  { src: `${import.meta.env.BASE_URL}gallery-9.webp`, title: 'Gynecomastia' },
+  { src: `${import.meta.env.BASE_URL}gallery-10.webp`, title: 'Hair Transplant' },
+  { src: `${import.meta.env.BASE_URL}gallery-11.webp`, title: 'Lip Fat Grafting' },
+  { src: `${import.meta.env.BASE_URL}gallery-12.webp`, title: 'Mole Excision' },
+  { src: `${import.meta.env.BASE_URL}gallery-13.webp`, title: 'Lipo-Sculpting' },
+  { src: `${import.meta.env.BASE_URL}gallery-14.webp`, title: 'Tummy Tuck' },
+  { src: `${import.meta.env.BASE_URL}gallery-15.webp`, title: 'Ear Reshaping' },
+  { src: `${import.meta.env.BASE_URL}gallery-16.webp`, title: 'Xanthelasma Excision' },
+  { src: `${import.meta.env.BASE_URL}gallery-17.webp`, title: 'Tummy Tuck' }
 ];
 
 const About: React.FC = () => {
@@ -122,7 +122,7 @@ const About: React.FC = () => {
         className="break-inside-avoid relative group overflow-hidden rounded-sm border border-white/5 bg-white/5" // Added bg-white/5 as fallback
       >
         <img
-          src={`${import.meta.env.BASE_URL}personal/personal-${num}.jpg`}
+          src={`${import.meta.env.BASE_URL}personal/personal-${num}.webp`}
           alt={`Dr. Sumit Personal Moment ${num}`}
           // Use grayscale-0 by default on larger screens via md:grayscale
           className={`w-full h-auto object-contain transition-all duration-1000 scale-100 group-hover:scale-105 ${isFocused ? 'grayscale-0' : 'grayscale md:grayscale'} md:group-hover:grayscale-0`}
@@ -220,7 +220,7 @@ const About: React.FC = () => {
             >
               {/* Photo 1: Portrait */}
               <img
-                src={`${import.meta.env.BASE_URL}dr-sumit-profile.png`}
+                src={`${import.meta.env.BASE_URL}dr-sumit-profile.webp`}
                 alt="Dr. Sumit Professional Portrait"
                 className="w-full h-full object-contain drop-shadow-2xl filter brightness-110 contrast-110"
               />

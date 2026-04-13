@@ -47,19 +47,19 @@ export const COLORS = {
 };
 
 /**
- * ASSETS mapping to the user-provided files (photo1.jpg - photo6.jpg)
+ * ASSETS mapping to the user-provided files (photo1.webp - photo6.webp)
  */
 const RAW_ASSETS = {
-  portraitProfessional: "dr-sumit-portrait.jpg",
-  heroAction: "photo3.jpg",
-  surgeryProfile: "artistic-anatomy.jpg",
-  clinicalInteraction: "photo5.jpg",
-  surgeryTheater: "photo6.jpg",
-  surgeryHeroBackground: "/surgical-excellence.jpg", // Main screen surgical operation background
-  aboutBackground: "about-bg.png",
+  portraitProfessional: "dr-sumit-portrait.webp",
+  heroAction: "photo3.webp",
+  surgeryProfile: "artistic-anatomy.webp",
+  clinicalInteraction: "photo5.webp",
+  surgeryTheater: "photo6.webp",
+  surgeryHeroBackground: "/surgical-excellence.webp", // Main screen surgical operation background
+  aboutBackground: "about-bg.webp",
   // Fallbacks for other visual elements
   anatomicalPlaceholder: "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=2000&auto=format&fit=crop",
-  verpaelePainting: "verpaele-painting.jpg",
+  verpaelePainting: "verpaele-painting.webp",
   abstractMedical: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2000&auto=format&fit=crop"
 };
 
@@ -110,7 +110,7 @@ const RAW_PROCEDURES: Procedure[] = [
     parentCategory: "aesthetic",
     description: "Refining the abdominal wall and contour through structural restoration.",
     longDescription: "Abdominoplasty removes excess skin and fat and restores weakened or separated muscles to create an abdominal profile that is smoother and firmer.",
-    image: "/tummy-tuck-aesthetic.jpg",
+    image: "/tummy-tuck-aesthetic.webp",
     brief: {
       operationTime: "3 - 5 Hours",
       anesthesia: "General Anaesthesia",
@@ -152,7 +152,7 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
 `,
     priceRange: "₹1,50,000 - ₹2,50,000",
     costFactors: "Mini vs Full Tummy Tuck, Muscle Repair complexity, Liposuction extent",
-    gallery: ["/tummy-tuck-result-1.png", "/tummy-tuck-result-2.jpg", "/tummy-tuck-nrf.png", "/tummy-tuck-nrll.png", "/tummy-tuck-nrro.png"],
+    gallery: ["/tummy-tuck-result-1.webp", "/tummy-tuck-result-2.webp", "/tummy-tuck-nrf.webp", "/tummy-tuck-nrll.webp", "/tummy-tuck-nrro.webp"],
     faqs: [
       {
         question: "Who needs a Tummy Tuck?",
@@ -226,7 +226,7 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
     parentCategory: "aesthetic",
     description: "Precision sculpting to reveal underlying muscular definition.",
     longDescription: "HD Liposuction goes beyond traditional fat removal, meticulously sculpting around muscle groups to highlight natural athletic definition.",
-    image: "/hd-lipo-aesthetic.jpg",
+    image: "/hd-lipo-aesthetic.webp",
     brief: {
       operationTime: "2 - 4 Hours",
       anesthesia: "General / Deep Sedation",
@@ -267,17 +267,17 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
     priceRange: "₹80,000 - ₹2,00,000",
     costFactors: "Number of zones (e.g., Abdomen, Flanks, Back), 360 Lipo vs Spot Lipo",
     gallery: [
-      "/axillary-breast-reduction-result.png",
-      "/body-contouring-result-1.jpg",
-      "/body-contouring-result-2.png",
-      "/body-contouring-result-3.jpg",
-      "/body-contouring-result-4.jpg",
-      "/body-contouring-result-5.png",
-      "/tummy-tuck-result-1.png",
-      "/tummy-tuck-result-2.jpg",
-      "/tummy-tuck-nrf.png",
-      "/tummy-tuck-nrll.png",
-      "/tummy-tuck-nrro.png"
+      "/axillary-breast-reduction-result.webp",
+      "/body-contouring-result-1.webp",
+      "/body-contouring-result-2.webp",
+      "/body-contouring-result-3.webp",
+      "/body-contouring-result-4.webp",
+      "/body-contouring-result-5.webp",
+      "/tummy-tuck-result-1.webp",
+      "/tummy-tuck-result-2.webp",
+      "/tummy-tuck-nrf.webp",
+      "/tummy-tuck-nrll.webp",
+      "/tummy-tuck-nrro.webp"
     ],
     faqs: [
       {
@@ -372,20 +372,20 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
     parentCategory: "aesthetic",
     description: "Comprehensive reshaping of the torso and limbs.",
     longDescription: "A collection of procedures aimed at eliminating loose skin and excess fat following weight loss or aging to harmonize the silhouette.",
-    image: "/body-contouring-aesthetic.png", // User-provided aesthetic image
+    image: "/body-contouring-aesthetic.webp", // User-provided aesthetic image
     regions: ["Body", "Abdomen", "Thighs", "Arms", "Buttock"],
     gallery: [
-      "/axillary-breast-reduction-result.png",
-      "/body-contouring-result-1.jpg",
-      "/body-contouring-result-2.png",
-      "/body-contouring-result-3.jpg",
-      "/body-contouring-result-4.jpg",
-      "/body-contouring-result-5.png",
-      "/tummy-tuck-result-1.png",
-      "/tummy-tuck-result-2.jpg",
-      "/tummy-tuck-nrf.png",
-      "/tummy-tuck-nrll.png",
-      "/tummy-tuck-nrro.png"
+      "/axillary-breast-reduction-result.webp",
+      "/body-contouring-result-1.webp",
+      "/body-contouring-result-2.webp",
+      "/body-contouring-result-3.webp",
+      "/body-contouring-result-4.webp",
+      "/body-contouring-result-5.webp",
+      "/tummy-tuck-result-1.webp",
+      "/tummy-tuck-result-2.webp",
+      "/tummy-tuck-nrf.webp",
+      "/tummy-tuck-nrll.webp",
+      "/tummy-tuck-nrro.webp"
     ],
     seoContent: `
 ### Body Contouring in Chandigarh: The Complete Transformation
@@ -449,7 +449,7 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
     parentCategory: "aesthetic",
     description: "Using autologous tissue for volume restoration.",
     longDescription: "Fat grafting is the meticulous process of harvesting your own fat cell—typically from the abdomen or thighs—and precisely re-integrating them into areas requiring volume, contour, or skin rejuvenation. It is the ultimate bio-compatible filler, offering permanent results that age naturally with you.",
-    image: "/fat-grafting-aesthetic.jpg", // User-provided aesthetic image
+    image: "/fat-grafting-aesthetic.webp", // User-provided aesthetic image
     brief: {
       operationTime: "2 - 4 Hours",
       anesthesia: "General / Deep Sedation",
@@ -472,7 +472,7 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
       }
     },
     regions: ["Face", "Nose", "Eyes", "Ears", "Lips", "Neck", "Breasts", "Body", "Buttock"],
-    gallery: ["/scar-revision-fat-grafted.jpg", "/fat-grafting-result-1.jpg", "/fat-grafting-result-2.jpg", "/fat-grafting-result-3.png"],
+    gallery: ["/scar-revision-fat-grafted.webp", "/fat-grafting-result-1.webp", "/fat-grafting-result-2.webp", "/fat-grafting-result-3.webp"],
     seoContent: `
 ### Fat Grafting in Chandigarh: The Natural Filler
 **Restore Volume & Youth with Your Own Tissue**
@@ -571,7 +571,7 @@ Unlike synthetic fillers which dissolve in 12 months, transplanted fat that surv
     parentCategory: "aesthetic",
     description: "Elevation and tightening of the posterior contour.",
     longDescription: "Removing excess skin and lifting the remaining tissue to improve the tone and shape of the buttocks.",
-    image: "/buttock-lift-aesthetic.jpg", // User-provided aesthetic image
+    image: "/buttock-lift-aesthetic.webp", // User-provided aesthetic image
     regions: ["Buttock", "Body"],
     seoContent: `
 ### Buttock Lift in Chandigarh: Shape & Lift
@@ -630,7 +630,7 @@ Results are visible immediately. You will need to avoid sitting directly on the 
     parentCategory: "aesthetic",
     description: "Minimal Access Cranial Suspension for vertical rejuvenation.",
     longDescription: "A specialized Belgium-refined technique that lifts deep facial tissues vertically, avoiding the horizontal 'pulled' look of traditional facelifts.",
-    image: "/facelift-aesthetic.jpg", // User-provided aesthetic image
+    image: "/facelift-aesthetic.webp", // User-provided aesthetic image
     regions: ["Face"],
     seoContent: `
 ### MACS Facelift in Chandigarh: The Vertical Anti-Aging Revolution
@@ -697,7 +697,7 @@ This procedure is specifically designed to obliterate the "jowls" (sagging jawli
     parentCategory: "aesthetic",
     description: "Structural sharpening of the jawline and neck angle.",
     longDescription: "Addressing the deep platysma and fat layers to resolve neck laxity and redefine a sharp, youthful submental profile.",
-    image: "/neck-lift-aesthetic.png", // User-provided aesthetic image
+    image: "/neck-lift-aesthetic.webp", // User-provided aesthetic image
     regions: ["Neck", "Face"],
     seoContent: `
 ### Neck Lift in Chandigarh: Define Your Jawline
@@ -752,7 +752,7 @@ You will wear a supportive chin strap for 1 week. Bruising typically resolves in
     parentCategory: "aesthetic",
     description: "Refining lip proportions and philtrum height.",
     longDescription: "Shortening the space between the nose and lip or reducing excess volume to achieve balanced facial ratios.",
-    image: "/lip-lift-aesthetic.jpg", // User-provided aesthetic image
+    image: "/lip-lift-aesthetic.webp", // User-provided aesthetic image
     regions: ["Lips", "Face"],
     seoContent: `
 ### Lip Lift in Chandigarh: Sensual Balance
@@ -805,7 +805,7 @@ For clients with genetically overly prominent lips, we perform precision reducti
     parentCategory: "aesthetic",
     description: "Restoring density and hairline naturally.",
     longDescription: "Advanced follicular unit extraction and placement for permanent hair restoration with microscopic precision.",
-    image: "/hair-transplant-aesthetic.jpg", // User-provided aesthetic image
+    image: "/hair-transplant-aesthetic.webp", // User-provided aesthetic image
     regions: ["Face"],
     seoContent: `
 ### Best Hair Transplant in Chandigarh: Restoring Confidence Permanently
@@ -876,7 +876,7 @@ Given the water quality and environmental factors in the Tricity, we often see s
     parentCategory: "aesthetic",
     description: "Revitalizing the orbital region through lid refinement.",
     longDescription: "Correcting puffy eye bags and drooping lids to restore a bright, awake, and energetic facial expression.",
-    image: "/blepharoplasty-aesthetic.jpg",
+    image: "/blepharoplasty-aesthetic.webp",
     brief: {
       operationTime: "1.5 - 2.5 Hours",
       anesthesia: "General / Local + Sedation",
@@ -985,7 +985,7 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
     parentCategory: "aesthetic",
     description: "Refining nasal structure for harmony and function.",
     longDescription: "Reshaping the nose to fit the face while maintaining or improving respiratory airflow.",
-    image: "/rhinoplasty-aesthetic.jpg",
+    image: "/rhinoplasty-aesthetic.webp",
     brief: {
       operationTime: "2.5 - 4 Hours",
       anesthesia: "General Anaesthesia",
@@ -1128,9 +1128,9 @@ We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
     parentCategory: "aesthetic",
     description: "Correction of ear prominence and symmetry.",
     longDescription: "Pinned-back or reshaped ears to improve position and appearance, often performed to resolve congenital concerns.",
-    image: "/otoplasty-aesthetic.png", // User-provided aesthetic image
+    image: "/otoplasty-aesthetic.webp", // User-provided aesthetic image
     regions: ["Ears", "Face"],
-    gallery: ["/otoplasty-result-1.jpg", "/otoplasty-result-2.jpg", "/otoplasty-result-3.png", "/otoplasty-result-4.png", "/otoplasty-result-5.jpg"],
+    gallery: ["/otoplasty-result-1.webp", "/otoplasty-result-2.webp", "/otoplasty-result-3.webp", "/otoplasty-result-4.webp", "/otoplasty-result-5.webp"],
     seoContent: `
 ### Otoplasty in Chandigarh: Ear Reshaping
 **Correcting Prominent Ears for Children and Adults**
@@ -1188,7 +1188,7 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
     description: "Enhancing volume with Fat or Premium Implants.",
     longDescription: "Customized volume enhancement tailored to the patient's anatomy, utilizing either fat transfer or silicone implants.",
     subSections: ["With Fat", "With Implants"],
-    image: "/breast-augmentation-aesthetic.png",
+    image: "/breast-augmentation-aesthetic.webp",
     brief: {
       operationTime: "1.5 - 2.5 Hours",
       anesthesia: "General Anaesthesia",
@@ -1207,10 +1207,10 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
     },
     regions: ["Breasts"],
     gallery: [
-      "/breast-augmentation-result-1.jpg",
-      "/breast-augmentation-result-2.jpg",
-      "/breast-augmentation-result-3.jpg",
-      "/breast-augmentation-result-4.jpg",
+      "/breast-augmentation-result-1.webp",
+      "/breast-augmentation-result-2.webp",
+      "/breast-augmentation-result-3.webp",
+      "/breast-augmentation-result-4.webp",
       "/breast-augmentation-result-5.webp",
       "/breast-augmentation-result-6.webp"
     ],
@@ -1304,9 +1304,9 @@ Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4
     parentCategory: "aesthetic",
     description: "Alleviating discomfort while reshaping the profile.",
     longDescription: "Reduction of excess glandular tissue and skin to create a lighter, more proportionate breast size.",
-    image: "/breast-reduction-aesthetic.jpg", // User-provided aesthetic image
+    image: "/breast-reduction-aesthetic.webp", // User-provided aesthetic image
     regions: ["Breasts"],
-    gallery: ["/breast-reduction-result-1.jpg", "/axillary-breast-reduction-result.png"],
+    gallery: ["/breast-reduction-result-1.webp", "/axillary-breast-reduction-result.webp"],
     seoContent: `
 ### Breast Reduction in Chandigarh: Relief & Proportion
 **Alleviating Back Pain & Restoring Confidence**
@@ -1361,7 +1361,7 @@ The cost varies by size and complexity but includes all hospital and anesthesia 
     parentCategory: "aesthetic",
     description: "Restoring elevation and firmness.",
     longDescription: "Raising and reshaping sagging breasts by removing excess skin and tightening surrounding tissue.",
-    image: "/breast-lift-aesthetic.jpg", // User-provided aesthetic image
+    image: "/breast-lift-aesthetic.webp", // User-provided aesthetic image
     seoContent: `
 ### Breast Lift (Mastopexy) in Chandigarh: defy Gravity
 **Restoring Youthful Position & Firmness**
@@ -1416,7 +1416,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
     parentCategory: "aesthetic",
     description: "Correcting overdeveloped male breast tissue.",
     longDescription: "Surgical removal of glandular tissue or fat to restore a flat, masculine chest contour.",
-    image: "/gynecomastia-aesthetic.jpg",
+    image: "/gynecomastia-aesthetic.webp",
     brief: {
       operationTime: "1.5 - 2 Hours",
       anesthesia: "General / Deep Sedation",
@@ -1434,7 +1434,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
       recoveryTips: ["The compression vest is vital to flatten the area and prevent fluid buildup.", "Lymphatic massage helps ensure a smooth, bump-free result."]
     },
     regions: ["Breasts", "Body"],
-    gallery: ["/body-contouring-result-1.jpg", "/body-contouring-result-2.png"],
+    gallery: ["/body-contouring-result-1.webp", "/body-contouring-result-2.webp"],
     seoContent: `
 ### Gynecomastia Surgery in Chandigarh: Masculine Chest Contouring
 
@@ -1553,7 +1553,7 @@ See our **Before and After Gallery** for examples of restored masculine contours
     parentCategory: "aesthetic",
     description: "Vaginal rejuvenation and tightening.",
     longDescription: "Restoring muscular tone and vaginal integrity for functional and aesthetic restoration.",
-    image: "/vaginoplasty-aesthetic.png", // User-provided aesthetic image
+    image: "/vaginoplasty-aesthetic.webp", // User-provided aesthetic image
     regions: ["Body"],
     seoContent: `
 ### Vaginoplasty in Chandigarh: Intimate Wellness
@@ -1596,7 +1596,7 @@ Childbirth and aging can stretch vaginal muscles, affecting sensation and confid
     parentCategory: "aesthetic",
     description: "Reshaping and refinement of the labia.",
     longDescription: "Reducing excess labial tissue for comfort, confidence, and aesthetic improvement.",
-    image: "/labiaplasty-aesthetic.jpg", // User-provided aesthetic image
+    image: "/labiaplasty-aesthetic.webp", // User-provided aesthetic image
     regions: ["Body"],
     seoContent: `
 ### Labiaplasty in Chandigarh: Comfort & Aesthetics
@@ -1641,9 +1641,9 @@ It is a 45-minute procedure performed under local anesthesia or sedation. Recove
     parentCategory: "aesthetic",
     description: "Improving the appearance of surgical or traumatic scars.",
     longDescription: "Surgical and non-surgical techniques to minimize scar visibility and blend them with surrounding skin, restoring confidence through refined texture.",
-    image: "/scar-revision-aesthetic.png", // User-provided aesthetic image
+    image: "/scar-revision-aesthetic.webp", // User-provided aesthetic image
     regions: ["Body", "Face", "Arms", "Thighs"],
-    gallery: ["/scar-revision-fat-grafted.jpg", "/keloid-excision-result.jpg", "/scar-revision-result-2.jpg"],
+    gallery: ["/scar-revision-fat-grafted.webp", "/keloid-excision-result.webp", "/scar-revision-result-2.webp"],
     seoContent: `
 ### Scar Revision in Chandigarh: Erasing Trauma
 **Surgical & Laser Solutions for Scars**
@@ -1699,7 +1699,7 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
     parentCategory: "non-surgical",
     description: "Smoothing dynamic wrinkles for a refreshed expression.",
     longDescription: "Precision application of neuromodulators to soften forehead lines, crow's feet, and frown lines while maintaining natural facial animation.",
-    image: "/botox-procedure.jpg",
+    image: "/botox-procedure.webp",
     brief: {
       operationTime: "15 - 30 Minutes",
       anesthesia: "None / Topical Cooling",
@@ -1788,7 +1788,7 @@ We use only authentic Allergan Botox or Dysport, opened in front of you. Results
     parentCategory: "non-surgical",
     description: "Collagen induction therapy for skin rejuvenation.",
     longDescription: "Utilizing medical-grade microneedling to stimulate the body's natural healing response, improving skin texture and reducing fine lines.",
-    image: "/microneedling-non-surgical.png",
+    image: "/microneedling-non-surgical.webp",
     brief: {
       operationTime: "45 - 60 Minutes",
       anesthesia: "Local Anaesthesia (Topical Cream)",
@@ -1880,7 +1880,7 @@ Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
     parentCategory: "non-surgical",
     description: "Advanced skin resurfacing for clarity and tone.",
     longDescription: "Carefully calibrated chemical solutions to exfoliate the skin's outer layers, addressing uneven pigmentation and refining texture.",
-    image: "/chemical-peel-non-surgical.png",
+    image: "/chemical-peel-non-surgical.webp",
     costFactors: "Type of Peel (Glycolic/TCA/Yellow), Number of sessions, Face/Body area",
     seoContent: `
 ### Chemical Peels in Chandigarh: Reveal New Skin
@@ -1978,7 +1978,7 @@ Medical supervision ensures no risk of burns or hyperpigmentation.
     parentCategory: "non-surgical",
     description: "Restoring volume and sculpting anatomical contours.",
     longDescription: "Utilizing premium hyaluronic acid to restore mid-face volume, refine the jawline, and enhance lip definition with artistic precision and anatomical harmony.",
-    image: "/injectables-non-surgical.jpg",
+    image: "/injectables-non-surgical.webp",
     costFactors: "Volume used (Number of syringes), Product type (Voluma/Volift), Area complexity",
     brief: {
       operationTime: "30 - 45 Minutes",
@@ -2070,7 +2070,7 @@ Depending on the product (Juvederm/Restylane) and area, results last 9-18 months
     parentCategory: "reconstructive",
     description: "Microsurgical reconnection of vessels and nerves.",
     longDescription: "Critical restoration of blood flow and nerve function using high-magnification surgical techniques.",
-    image: "/microvascular-reconstructive.png",
+    image: "/microvascular-reconstructive.webp",
     regions: ["Body", "Arms", "Thighs"],
     seoContent: `
 ### Microvascular Surgery in Chandigarh: Saving Limbs
@@ -2109,7 +2109,7 @@ Microvascular surgery involves joining blood vessels and nerves as thin as a hai
     parentCategory: "reconstructive",
     description: "Restoring form and function after major injury.",
     longDescription: "Complex surgical pathways to rebuild tissue and function following severe physical trauma.",
-    image: "/traumatic-reconstructive.png",
+    image: "/traumatic-reconstructive.webp",
     seoContent: `
 ### Trauma Reconstruction in Chandigarh
 **Restoring Form After Accident or Injury**
@@ -2143,7 +2143,7 @@ Our priority is "Function First, Aesthetics Always." We aim to restore your body
     parentCategory: "reconstructive",
     description: "Stabilization of the facial skeleton.",
     longDescription: "Correcting fractures of the jaw, nose, and orbital bones to restore anatomical alignment.",
-    image: "/facial-fracture-reconstructive.png",
+    image: "/facial-fracture-reconstructive.webp",
     regions: ["Face", "Nose", "Eyes"],
     seoContent: `
 ### Facial Fracture Surgery in Chandigarh
@@ -2178,7 +2178,7 @@ We access these fractures through "hidden" incisions (inside the mouth or eyelid
     parentCategory: "reconstructive",
     description: "Immediate and delayed restoration of extremities.",
     longDescription: "Precise repair of essential structural components to restore function to hands and limbs.",
-    image: "/nerve-repair-reconstructive.png",
+    image: "/nerve-repair-reconstructive.webp",
     seoContent: `
 ### Nerve & Tendon Repair in Chandigarh
 **Restoring Hand Function**
@@ -2212,7 +2212,7 @@ Surgery is only half the battle. Our dedicated physiotherapy protocol ensures yo
     parentCategory: "reconstructive",
     description: "Refining the skeletal integrity of digits and limbs.",
     longDescription: "Specialized fixation of the small bones of the hand and foot to preserve range of motion.",
-    image: "/hand-fracture-reconstructive.png",
+    image: "/hand-fracture-reconstructive.webp",
     regions: ["Arms", "Thighs"],
     seoContent: `
 ### Hand & Foot Fracture Fixation in Chandigarh
@@ -2238,7 +2238,7 @@ Metacarpal (hand) and Metatarsal (foot) fractures require precise alignment to p
     parentCategory: "reconstructive",
     description: "Correcting congenital and acquired conditions.",
     longDescription: "Surgical intervention for conditions like syndactyly or Dupuytren's contracture.",
-    image: "/hand-deformity-reconstructive.png",
+    image: "/hand-deformity-reconstructive.webp",
     regions: ["Arms"],
     seoContent: `
 ### Hand Deformity Correction in Chandigarh
@@ -2272,7 +2272,7 @@ For children, separation of fused fingers is ideally done before school age (1-2
     parentCategory: "reconstructive",
     description: "Pediatric and adult cleft correction.",
     longDescription: "Restoring facial appearance and speech functionality through specialized cleft pathways.",
-    image: "/cleft-lip-reconstructive.png",
+    image: "/cleft-lip-reconstructive.webp",
     regions: ["Face", "Lips"],
     seoContent: `
 ### Cleft Lip & Palate Surgery in Chandigarh
@@ -2311,7 +2311,7 @@ We focus on rebuilding the lip muscle loop to ensure normal movement and a symme
     parentCategory: "reconstructive",
     description: "Restoring mobility after burn injuries.",
     longDescription: "Release of tight scar tissue and skin grafting to restore full joint flexibility.",
-    image: "/burns-contracture-reconstructive.png",
+    image: "/burns-contracture-reconstructive.webp",
     seoContent: `
 ### Burn Reconstruction in Chandigarh
 **Post-Burn Deformity Correction**
@@ -2345,7 +2345,7 @@ We also manage fresh burns with advanced dressings and early grafting to minimiz
     parentCategory: "reconstructive",
     description: "Complex wound care and flap coverage.",
     longDescription: "Using healthy tissue flaps to close deep, non-healing pressure ulcers.",
-    image: "/pressure-sores-reconstructive.jpg",
+    image: "/pressure-sores-reconstructive.webp",
     regions: ["Body", "Buttock"],
     seoContent: `
 ### Pressure Sore (Bed Sore) Surgery in Chandigarh
@@ -2370,7 +2370,7 @@ For bedridden patients, pressure sores (decubitus ulcers) can reach the bone. De
     parentCategory: "reconstructive",
     description: "Limb salvage and chronic wound management.",
     longDescription: "Surgical intervention to heal diabetic ulcers and prevent amputation.",
-    image: "/diabetic-foot-reconstructive.jpg",
+    image: "/diabetic-foot-reconstructive.webp",
     seoContent: `
 ### Diabetic Foot Management in Chandigarh
 **Preventing Amputation through Reconstruction**
@@ -2509,7 +2509,7 @@ This is when the 'wow' factor begins.
 
 ## Long-term Maintenance
 Liposuction permanently removes fat cells in the treated area. However, it is not a free pass to ignore diet. Weight gain can cause remaining fat cells—both in treated and untreated areas—to expand. Maintain an active lifestyle to preserve your newly sculpted silhouette.`,
-    image: "/blog-liposuction-recovery.png",
+    image: "/blog-liposuction-recovery.webp",
     date: "August 15, 2024"
   }
   ,
@@ -2535,7 +2535,7 @@ A Tummy Tuck addresses the structural issues that liposuction cannot fix. It is 
 
 ### Can You Have Both?
 Absolutely. In fact, combining both procedures—often called Lipo-Abdominoplasty—is extremely common. Dr. Sumit Frequently uses High-Definition (HD) Liposuction to sculpt the waistline and flanks, followed by a Tummy Tuck to remove the excess skin and tighten the core, resulting in a dramatically transformed silhouette.`,
-    image: "/tummy-tuck-aesthetic.jpg",
+    image: "/tummy-tuck-aesthetic.webp",
     date: "March 15, 2025"
   }  ,
   {
@@ -2563,7 +2563,7 @@ To ensure lifelong results from your liposuction procedure:
 1. **Maintain a Stable Weight:** Adopt a consistent, healthy diet.
 2. **Stay Active:** Regular cardiovascular and strength-training exercises.
 3. **Follow Post-Op Care:** Wearing your compression garments as directed ensures the skin retracts smoothly over your new contour.`,
-    image: "/body-contouring-aesthetic.png",
+    image: "/body-contouring-aesthetic.webp",
     date: "April 2, 2025"
   }  ,
   {
@@ -2597,7 +2597,7 @@ Combining these procedures offers significant advantages:
 *   **Single Recovery Period:** You only go through anesthesia and the initial healing phase once, minimizing total downtime away from your family.
 *   **Cost Efficiency:** Consolidating operating room and anesthesia fees is more cost-effective than staging multiple surgeries.
 *   **Comprehensive Results:** Addressing all areas of concern simultaneously provides a more dramatic and harmonious transformation.`,
-    image: "/tummy-tuck-aesthetic.jpg",
+    image: "/tummy-tuck-aesthetic.webp",
     date: "April 18, 2025"
   }  ,
   {
@@ -2624,7 +2624,7 @@ HD Liposuction is not a weight-loss procedure. The best candidates are:
 
 ### The Results
 The outcome is a highly sculpted physique. For men, this often means a defined "six-pack" and prominent chest contour. For women, it typically involves a subtle "eleven" line on the abdomen, a tapered waist, and athletic, toned flanks.`,
-    image: "/hd-lipo-aesthetic.jpg",
+    image: "/hd-lipo-aesthetic.webp",
     date: "May 5, 2025"
   }  ,
   {
@@ -2652,7 +2652,7 @@ Rhinoplasty (a nose job) is one of the most transformative facial surgeries, but
 
 ### 1 Year Post-Op
 *   **The Final Result:** By the one-year mark, all subtle swelling has dissipated, the tissues have settled, and you are seeing the final, permanent result of your rhinoplasty. For some patients with thicker skin or complex revision surgeries, full tip refinement can take up to 18-24 months.`,
-    image: "/rhinoplasty-aesthetic.jpg",
+    image: "/rhinoplasty-aesthetic.webp",
     date: "May 20, 2025"
   }  ,
   {
@@ -2683,7 +2683,7 @@ The internal nasal valves and breathing structures are inherently protected beca
 
 ### Is it Right for You?
 While it is the preferred technique for many primary (first-time) rhinoplasties, especially for reducing a dorsal hump, it requires a highly skilled surgeon. Dr. Sumit utilizes these modern preservation techniques to deliver aesthetic refinement without compromising structural integrity.`,
-    image: "/rhinoplasty-aesthetic.jpg",
+    image: "/rhinoplasty-aesthetic.webp",
     date: "June 4, 2025"
   }  ,
   {
@@ -2708,7 +2708,7 @@ As we age, the skin of the upper eyelid loses elasticity and begins to drape dow
 
 ### The Recovery
 Blepharoplasty is often performed under local anesthesia with sedation and is an outpatient procedure. Recovery is relatively swift. While bruising and swelling peak in the first few days, most patients feel comfortable returning to work and socializing within 7 to 10 days. The incisions heal remarkably well, blending invisibly into the natural contours of the eye.`,
-    image: "/blepharoplasty-aesthetic.jpg",
+    image: "/blepharoplasty-aesthetic.webp",
     date: "June 20, 2025"
   }  ,
   {
@@ -2739,7 +2739,7 @@ For severe sagging, deep jowls, and significant neck laxity—typically seen in 
 
 ### Which is Right for You?
 If your primary concern is slight drooping around your mouth and jawline, a Mini Facelift might be the perfect "refresher." If you are frustrated by heavy jowls and loose skin under your chin and neck, a Traditional Facelift will provide the definitive contouring you desire.`,
-    image: "/facelift-aesthetic.jpg",
+    image: "/facelift-aesthetic.webp",
     date: "July 5, 2025"
   }  ,
   {
@@ -2772,7 +2772,7 @@ Male breast reduction is typically performed on an outpatient basis.
 *   **Return to Gym:** Lower body cardio can resume in about 2 weeks. Heavy upper body weightlifting (chest presses, pushups) should be avoided for 4 to 6 weeks.
 
 The results are immediate and, barring significant future steroid use or massive weight gain, they are permanent.`,
-    image: "/gynecomastia-aesthetic.jpg",
+    image: "/gynecomastia-aesthetic.webp",
     date: "July 20, 2025"
   }  ,
   {
@@ -2812,7 +2812,7 @@ This procedure involves performing gentle liposuction on an area of excess fat (
 
 ### The Verdict
 If you desire a significant increase in size, upper breast fullness, and a highly predictable result, **implants** are the way to go. If you are looking for a subtle, natural, one-cup-size enhancement and want to slim down your waist simultaneously, **fat transfer** is an excellent, natural alternative.`,
-    image: "/breast-augmentation-aesthetic.png",
+    image: "/breast-augmentation-aesthetic.webp",
     date: "August 5, 2025"
   }  ,
   {
@@ -2842,7 +2842,7 @@ This is a critical phase of aesthetic healing.
 
 ### Scar Management
 Scars are an inevitable trade-off of breast reduction, but they are designed to be hidden under standard bras and swimsuits. After the incisions are fully closed (around 3-4 weeks), you will begin a scar massage protocol and utilize silicone sheeting or gels to help the scars fade from red to a faint, flat white line over the course of 12-18 months.`,
-    image: "/breast-reduction-aesthetic.jpg",
+    image: "/breast-reduction-aesthetic.webp",
     date: "August 20, 2025"
   }  ,
   {
@@ -2880,7 +2880,7 @@ Dermal fillers (like Juvederm and Restylane) are gel-like substances (most commo
 
 ### The Ultimate Combination
 For comprehensive, non-surgical facial rejuvenation, these two treatments are frequently used together—often referred to as a "Liquid Facelift." Botox is used in the upper face to smooth expression lines, while fillers are used in the mid and lower face to restore youthful volume and contour.`,
-    image: "/botox-procedure.jpg",
+    image: "/botox-procedure.webp",
     date: "September 5, 2025"
   }  ,
   {
@@ -2911,7 +2911,7 @@ Preventative Botox is administered in very small, subtle doses ("Baby Botox") du
 *   **Financial Efficiency:** Preventing a deep fold with neurotoxins is ultimately less invasive and frequently cheaper over time than requiring deep dermal fillers, laser skin resurfacing, or surgical facelifts to fix the fold later in life.
 
 If you are starting to notice makeup settling into a faint line on your forehead by the end of the day, that line is entering the static phase. That is the ideal time to explore prejuvenation.`,
-    image: "/injectables-non-surgical.jpg",
+    image: "/injectables-non-surgical.webp",
     date: "September 22, 2025"
   }  ,
   {
@@ -2947,7 +2947,7 @@ To get the most mileage out of your investment:
 *   Protect your skin from UV damage, which rapidly degrades the skin's natural collagen and hyaluronic acid.
 *   Stay hydrated; HA binds to water to maintain its plumpness.
 *   Keep up with maintenance. It requires less filler to "touch up" an area at 9 months than it does to completely start from scratch at 18 months.`,
-    image: "/fat-grafting-aesthetic.jpg",
+    image: "/fat-grafting-aesthetic.webp",
     date: "October 8, 2025"
   }  ,
   {
@@ -2982,7 +2982,7 @@ Do not leave the consultation room without asking these fundamental questions:
     Ensure it is taking place in an accredited hospital or surgical facility equipped to handle emergencies, such as Healing Hospital.
 
 A high-quality consultation is a two-way interview. Dr. Sumit prioritizes patient education, ensuring you have a clear, realistic, and safe surgical plan tailored exclusively to you.`,
-    image: "/dr-sumit-portrait.jpg",
+    image: "/dr-sumit-portrait.webp",
     date: "October 22, 2025"
   }
 ];

@@ -77,13 +77,13 @@ const App: React.FC = () => {
   useEffect(() => {
     // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
-      duration: 0.5,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // standard easing
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.5,
-      touchMultiplier: 2,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
     });
 
     (window as any).lenis = lenis;
