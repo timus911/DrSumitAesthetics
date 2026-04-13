@@ -122,3 +122,4 @@ const FloatingBackground: React.FC = () => {
 };
 
 export default FloatingBackground;
+

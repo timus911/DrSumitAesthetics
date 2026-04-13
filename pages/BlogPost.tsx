@@ -44,7 +44,7 @@ const BlogPost: React.FC = () => {
                 />
 
                 <div className="mb-12 mt-8">
-                    <Link to="/blog" className="inline-flex items-center space-x-3 text-gray-500 hover:text-[#4A90E2] transition-colors group uppercase tracking-widest text-[10px] font-bold">
+                    <Link to="/blog" className="inline-flex items-center space-x-3 text-gray-300 hover:text-[#4A90E2] transition-colors group uppercase tracking-widest text-[10px] font-bold">
                         <ArrowLeft size={14} className="group-hover:-translate-x-2 transition-transform" />
                         <span>Back to Journal</span>
                     </Link>
@@ -58,7 +58,7 @@ const BlogPost: React.FC = () => {
                     <header className="space-y-8 border-b border-white/5 pb-12">
                         <h1 className="text-4xl md:text-6xl font-serif text-white leading-tight">{post.title}</h1>
 
-                        <div className="flex flex-wrap items-center gap-6 text-[10px] uppercase tracking-widest text-gray-500 font-bold">
+                        <div className="flex flex-wrap items-center gap-6 text-[10px] uppercase tracking-widest text-gray-300 font-bold">
                             <div className="flex items-center gap-2">
                                 <Calendar size={14} className="text-[#4A90E2]" />
                                 <span>{post.date}</span>
@@ -139,3 +139,4 @@ const BlogPost: React.FC = () => {
 };
 
 export default BlogPost;
+

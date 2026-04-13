@@ -12,7 +12,7 @@ const TrustSection: React.FC = () => {
     return (
         <section className="py-24 border-t border-white/5 bg-neutral-950">
             <div className="container mx-auto px-6 text-center">
-                <p className="text-gray-600 text-[10px] uppercase tracking-[0.4em] font-bold mb-12">
+                <p className="text-gray-400 text-[10px] uppercase tracking-[0.4em] font-bold mb-12">
                     Member of Prestigious Global Societies
                 </p>
 
@@ -41,3 +41,4 @@ const TrustSection: React.FC = () => {
 };
 
 export default TrustSection;
+

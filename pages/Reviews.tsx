@@ -362,7 +362,7 @@ const Reviews: React.FC = () => {
                     </div>
                 ) : (
                     <div className="glass p-12 text-center rounded-2xl border border-dashed border-white/10">
-                        <Quote className="mx-auto text-gray-600 mb-4" size={48} />
+                        <Quote className="mx-auto text-gray-400 mb-4" size={48} />
                         <p className="text-gray-400 italic">"Google review screenshots will appear here soon."</p>
                     </div>
                 )}
@@ -397,7 +397,7 @@ const Reviews: React.FC = () => {
                     </motion.div>
                 ) : (
                     <div className="glass p-12 text-center rounded-2xl border border-dashed border-white/10">
-                        <User className="mx-auto text-gray-600 mb-4" size={48} />
+                        <User className="mx-auto text-gray-400 mb-4" size={48} />
                         <p className="text-gray-400 italic">"Patient photos gallery coming soon."</p>
                     </div>
                 )}
@@ -429,3 +429,4 @@ const Reviews: React.FC = () => {
 };
 
 export default Reviews;
+

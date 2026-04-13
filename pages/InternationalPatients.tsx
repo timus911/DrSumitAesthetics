@@ -29,7 +29,7 @@ const InternationalPatients: React.FC = () => {
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-white uppercase tracking-widest text-xs font-bold">Virtual Consultation</h4>
-                  <p className="text-gray-500 text-sm">Initial assessment via high-definition video call to discuss suitability and travel timelines.</p>
+                  <p className="text-gray-300 text-sm">Initial assessment via high-definition video call to discuss suitability and travel timelines.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-6">
@@ -38,7 +38,7 @@ const InternationalPatients: React.FC = () => {
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-white uppercase tracking-widest text-xs font-bold">Concierge Recovery</h4>
-                  <p className="text-gray-500 text-sm">Partnerships with premium luxury hotels for comfortable post-operative care.</p>
+                  <p className="text-gray-300 text-sm">Partnerships with premium luxury hotels for comfortable post-operative care.</p>
                 </div>
               </div>
             </div>
@@ -72,3 +72,4 @@ const InternationalPatients: React.FC = () => {
 };
 
 export default InternationalPatients;
+

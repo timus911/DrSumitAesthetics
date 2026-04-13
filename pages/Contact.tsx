@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
                   <Phone size={18} />
                   <span className="text-xs uppercase tracking-widest font-bold">Consultation Support</span>
                 </div>
-                <p className="text-[10px] text-gray-500 uppercase tracking-wider font-light mb-1">Guidance, questions, and appointment planning</p>
+                <p className="text-[10px] text-gray-300 uppercase tracking-wider font-light mb-1">Guidance, questions, and appointment planning</p>
                 <div className="flex items-center space-x-4">
                   <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-400 text-sm font-light hover:text-[#D4AF37] transition-colors">{CONTACT.counselorPhone}</a>
                   <a
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
                   <Phone size={18} />
                   <span className="text-xs uppercase tracking-widest font-bold">Clinical Enquiries</span>
                 </div>
-                <p className="text-[10px] text-gray-500 uppercase tracking-wider font-light mb-1">Medical-related questions</p>
+                <p className="text-[10px] text-gray-300 uppercase tracking-wider font-light mb-1">Medical-related questions</p>
                 <div className="flex items-center space-x-4">
                   <a href={`tel:${CONTACT.phone.replace(/\s/g, '')}`} className="text-gray-400 text-sm font-light hover:text-[#D4AF37] transition-colors">{CONTACT.phone}</a>
                   <a
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                   <Mail size={18} />
                   <span className="text-xs uppercase tracking-widest font-bold">Email Inquiries</span>
                 </div>
-                <a href={`mailto:${CONTACT.email}`} className="block text-gray-500 text-sm font-light hover:text-[#D4AF37] transition-colors">{CONTACT.email}</a>
+                <a href={`mailto:${CONTACT.email}`} className="block text-gray-300 text-sm font-light hover:text-[#D4AF37] transition-colors">{CONTACT.email}</a>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 text-[#D4AF37]">
@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
                   href={CONTACT.googleMapsLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-gray-500 text-sm font-light leading-relaxed hover:text-[#D4AF37] transition-colors"
+                  className="block text-gray-300 text-sm font-light leading-relaxed hover:text-[#D4AF37] transition-colors"
                 >
                   {CONTACT.location}
                 </a>
@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
                   <Clock size={18} />
                   <span className="text-xs uppercase tracking-widest font-bold">Clinic Hours</span>
                 </div>
-                <p className="text-gray-500 text-sm font-light">{CONTACT.hours.weekdays}</p>
+                <p className="text-gray-300 text-sm font-light">{CONTACT.hours.weekdays}</p>
               </div>
             </div>
 
@@ -134,7 +134,7 @@ const Contact: React.FC = () => {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-[10px] uppercase tracking-[0.4em] text-[#D4AF37] font-bold mb-2">Digital Contact Card</h3>
-                  <p className="text-gray-500 text-xs font-light">Scan or click the QR code to instantly add Dr. Sumit to your contacts.</p>
+                  <p className="text-gray-300 text-xs font-light">Scan or click the QR code to instantly add Dr. Sumit to your contacts.</p>
                 </div>
                 <div className="flex items-start">
                   <button
@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
           >
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest text-gray-500">Name</label>
+                <label className="text-[10px] uppercase tracking-widest text-gray-300">Name</label>
                 <input
                   type="text"
                   value={formData.name}
@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-gray-500">Email Address</label>
+                  <label className="text-[10px] uppercase tracking-widest text-gray-300">Email Address</label>
                   <input
                     type="email"
                     value={formData.email}
@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-[10px] uppercase tracking-widest text-gray-500">Mobile Number</label>
+                  <label className="text-[10px] uppercase tracking-widest text-gray-300">Mobile Number</label>
                   <input
                     type="tel"
                     value={formData.mobile}
@@ -193,7 +193,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest text-gray-500">Interest / Procedure / Concern</label>
+                <label className="text-[10px] uppercase tracking-widest text-gray-300">Interest / Procedure / Concern</label>
                 <input
                   type="text"
                   value={formData.interest}
@@ -204,7 +204,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-[10px] uppercase tracking-widest text-gray-500">Message</label>
+                <label className="text-[10px] uppercase tracking-widest text-gray-300">Message</label>
                 <textarea
                   rows={5}
                   value={formData.message}

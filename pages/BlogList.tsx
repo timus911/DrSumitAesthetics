@@ -44,7 +44,7 @@ const BlogList: React.FC = () => {
                                     />
                                 </div>
                                 <div className="p-8 flex-grow flex flex-col">
-                                    <div className="flex items-center space-x-2 text-gray-500 text-[10px] uppercase tracking-widest mb-4">
+                                    <div className="flex items-center space-x-2 text-gray-300 text-[10px] uppercase tracking-widest mb-4">
                                         <Calendar size={12} />
                                         <span>{post.date}</span>
                                     </div>
@@ -65,3 +65,4 @@ const BlogList: React.FC = () => {
 };
 
 export default BlogList;
+

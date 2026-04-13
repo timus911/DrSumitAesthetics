@@ -49,7 +49,7 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0, hint, hi
                             WebkitMaskImage: 'linear-gradient(to bottom, black 60%, transparent 100%)'
                         }}
                     />
-                    <p className="relative z-10 text-gray-500 font-sans text-xs font-medium text-center leading-relaxed max-w-[90%] p-4">
+                    <p className="relative z-10 text-gray-300 font-sans text-xs font-medium text-center leading-relaxed max-w-[90%] p-4">
                         {hint}
                     </p>
                 </div>
@@ -80,3 +80,4 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0, hint, hi
 };
 
 export default ProcedureCard;
+

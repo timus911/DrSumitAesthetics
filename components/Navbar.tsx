@@ -66,7 +66,7 @@ const Navbar: React.FC = () => {
             <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#4A90E2] transition-colors whitespace-nowrap overflow-hidden text-ellipsis">Dr. Sumit Singh</span>
             <span className="text-lg md:text-xl font-serif tracking-[0.2em] text-white leading-tight uppercase group-hover:text-[#4A90E2] transition-colors whitespace-nowrap overflow-hidden text-ellipsis -mt-1">Gautam</span>
           </div>
-          <span className="text-[8px] md:text-[9px] tracking-[0.4em] text-gray-500 mt-1 uppercase font-bold whitespace-nowrap border-t border-white/5 pt-1">Plastic & Aesthetic Surgeon</span>
+          <span className="text-[8px] md:text-[9px] tracking-[0.4em] text-gray-300 mt-1 uppercase font-bold whitespace-nowrap border-t border-white/5 pt-1">Plastic & Aesthetic Surgeon</span>
         </Link>
 
         {/* MIDDLE: Scrollable Menu (Desktop Only) */}
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
           </Link>
 
           {/* Mobile Toggle */}
-          <button onClick={() => setIsOpen(!isOpen)} aria-label={isOpen ? "Close Menu" : "Open Menu"} className="text-white shrink-0 min-[1600px]:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Navigation Menu" className="text-white shrink-0 min-[1600px]:hidden">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -155,3 +155,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

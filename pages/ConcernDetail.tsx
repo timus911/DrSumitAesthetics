@@ -110,7 +110,7 @@ const ConcernDetail: React.FC = () => {
                         })
                     ) : (
                         <div className="col-span-full py-32 text-center glass border border-white/5">
-                            <p className="text-gray-500 uppercase tracking-[0.4em] text-xs">No specific procedures listed for this region yet.</p>
+                            <p className="text-gray-300 uppercase tracking-[0.4em] text-xs">No specific procedures listed for this region yet.</p>
                             <Link to="/contact" className="inline-block mt-8 text-[#5DA9E9] text-xs uppercase tracking-widest hover:text-white transition-colors">
                                 Contact for specific inquiry
                             </Link>
@@ -123,3 +123,4 @@ const ConcernDetail: React.FC = () => {
 };
 
 export default ConcernDetail;
+

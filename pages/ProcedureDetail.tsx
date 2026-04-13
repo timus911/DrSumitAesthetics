@@ -140,7 +140,7 @@ const ProcedureDetail: React.FC = () => {
           ]}
         />
         <div className="mb-12 mt-8">
-          <button onClick={() => navigate(-1)} className="flex items-center space-x-3 text-gray-500 hover:text-[#4A90E2] transition-colors group uppercase tracking-widest text-[10px] font-bold">
+          <button onClick={() => navigate(-1)} className="flex items-center space-x-3 text-gray-300 hover:text-[#4A90E2] transition-colors group uppercase tracking-widest text-[10px] font-bold">
             <ArrowLeft size={14} className="group-hover:-translate-x-2 transition-transform" />
             <span>Clinical Domain</span>
           </button>
@@ -244,15 +244,15 @@ const ProcedureDetail: React.FC = () => {
                     <div className="space-y-6">
                       <div className="space-y-2">
                         <h4 className="text-xs uppercase tracking-widest text-[#4A90E2] font-bold">Microfat (Face)</h4>
-                        <p className="text-gray-500 text-xs">Used for structural volume in cheeks, temples, or under-eye region.</p>
+                        <p className="text-gray-300 text-xs">Used for structural volume in cheeks, temples, or under-eye region.</p>
                       </div>
                       <div className="space-y-2">
                         <h4 className="text-xs uppercase tracking-widest text-[#4A90E2] font-bold">Nanofat</h4>
-                        <p className="text-gray-500 text-xs">For skin quality, texture, and fine lines in eyelids or perioral region.</p>
+                        <p className="text-gray-300 text-xs">For skin quality, texture, and fine lines in eyelids or perioral region.</p>
                       </div>
                       <div className="space-y-2">
                         <h4 className="text-xs uppercase tracking-widest text-[#4A90E2] font-bold">SNIF</h4>
-                        <p className="text-gray-500 text-xs">Sharp Needle Intradermal placement for precise dermal refinement.</p>
+                        <p className="text-gray-300 text-xs">Sharp Needle Intradermal placement for precise dermal refinement.</p>
                       </div>
                     </div>
                   </div>
@@ -263,11 +263,11 @@ const ProcedureDetail: React.FC = () => {
                       <p className="text-gray-400 text-sm leading-relaxed">Focuses primarily on volume restoration and contour enhancement, where durability and integration are key.</p>
                       <div className="space-y-2">
                         <h4 className="text-xs uppercase tracking-widest text-[#4A90E2] font-bold">Microfat (Body)</h4>
-                        <p className="text-gray-500 text-xs">Stable fat transfer suited to thicker tissues like breasts and buttocks.</p>
+                        <p className="text-gray-300 text-xs">Stable fat transfer suited to thicker tissues like breasts and buttocks.</p>
                       </div>
                     </div>
                     <div className="pt-8 border-t border-white/5">
-                      <p className="text-gray-500 text-[10px] uppercase tracking-widest italic leading-relaxed">
+                      <p className="text-gray-300 text-[10px] uppercase tracking-widest italic leading-relaxed">
                         Technique choice depends on your anatomy and skin quality, determined during consultation.
                       </p>
                     </div>
@@ -333,7 +333,7 @@ const ProcedureDetail: React.FC = () => {
                     ...(procedure.brief?.technique ? [{ label: "Technique", val: procedure.brief.technique }] : []),
                   ].map((stat, i) => (
                     <div key={i} className="flex justify-between border-b border-white/5 pb-4 group">
-                      <span className="text-[10px] uppercase tracking-[0.2em] text-gray-500 font-extrabold group-hover:text-[#4A90E2] transition-colors">{stat.label}</span>
+                      <span className="text-[10px] uppercase tracking-[0.2em] text-gray-300 font-extrabold group-hover:text-[#4A90E2] transition-colors">{stat.label}</span>
                       <span className="text-sm text-white font-bold tracking-wider">{stat.val}</span>
                     </div>
                   ))}
@@ -449,7 +449,7 @@ const ProcedureDetail: React.FC = () => {
             )}
 
             <div className="mt-32 p-16 glass border border-[#4A90E2]/10 text-center shadow-inner">
-              <p className="text-[11px] text-gray-500 italic leading-loose max-w-4xl mx-auto uppercase tracking-widest font-light">
+              <p className="text-[11px] text-gray-300 italic leading-loose max-w-4xl mx-auto uppercase tracking-widest font-light">
                 * Note: To preserve patient dignity and ensure the highest clinical standards, specific anatomical outcome data is restricted to secure, in-person clinical review. The imagery provided is illustrative of the surgical mastery and expected anatomical response.
               </p>
             </div>
@@ -461,3 +461,4 @@ const ProcedureDetail: React.FC = () => {
 };
 
 export default ProcedureDetail;
+

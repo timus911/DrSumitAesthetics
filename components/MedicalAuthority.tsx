@@ -63,7 +63,7 @@ const MedicalAuthority: React.FC = () => {
                                         {item.icon}
                                     </div>
                                     <h3 className="text-white text-sm font-bold uppercase tracking-wider">{item.title}</h3>
-                                    <p className="text-gray-500 text-[11px] leading-relaxed">{item.desc}</p>
+                                    <p className="text-gray-300 text-[11px] leading-relaxed">{item.desc}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -105,3 +105,4 @@ const MedicalAuthority: React.FC = () => {
 };
 
 export default MedicalAuthority;
+

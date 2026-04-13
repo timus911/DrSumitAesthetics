@@ -139,7 +139,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] tracking-[0.3em] text-gray-600 uppercase font-bold">
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] tracking-[0.3em] text-gray-400 uppercase font-bold">
           <p>© {new Date().getFullYear()} {BRAND.name}. Surgical Excellence.</p>
           <div className="flex space-x-10 mt-6 md:mt-0">
             <span className="cursor-pointer hover:text-white transition-colors">Privacy Protocols</span>
@@ -204,3 +204,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+

@@ -137,7 +137,7 @@ const SurgiSetPrivacy: React.FC = () => {
 
                 {/* Footer Note */}
                 <div className="mt-20 pt-8 border-t border-white/5 text-center">
-                    <p className="text-xs text-gray-600 uppercase tracking-widest">© 2026 SurgiSet • All Rights Reserved</p>
+                    <p className="text-xs text-gray-400 uppercase tracking-widest">© 2026 SurgiSet • All Rights Reserved</p>
                 </div>
             </div>
         </div>
@@ -145,3 +145,4 @@ const SurgiSetPrivacy: React.FC = () => {
 };
 
 export default SurgiSetPrivacy;
+

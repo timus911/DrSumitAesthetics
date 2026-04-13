@@ -196,14 +196,14 @@ const About: React.FC = () => {
                   <Brush className="text-[#4A90E2]" size={24} />
                   <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Fine Arts Mastery</span>
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed">Integrating the principles of light, shadow, and proportion from art into surgery.</p>
+                <p className="text-gray-300 text-sm leading-relaxed">Integrating the principles of light, shadow, and proportion from art into surgery.</p>
               </div>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <GraduationCap className="text-[#4A90E2]" size={24} />
                   <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Board Certified</span>
                 </div>
-                <p className="text-gray-500 text-sm leading-relaxed">Board-certified background ensuring a comprehensive surgical perspective on form and function.</p>
+                <p className="text-gray-300 text-sm leading-relaxed">Board-certified background ensuring a comprehensive surgical perspective on form and function.</p>
               </div>
             </motion.div>
           </div>
@@ -264,7 +264,7 @@ const About: React.FC = () => {
                     <Instagram size={16} />
                   </div>
                   <span>@snackasketch</span>
-                  <span className="text-[10px] text-gray-500 tracking-wider group-hover:text-[#4A90E2] transition-colors opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transform duration-300">The Artistic Side</span>
+                  <span className="text-[10px] text-gray-300 tracking-wider group-hover:text-[#4A90E2] transition-colors opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transform duration-300">The Artistic Side</span>
                 </a>
               </motion.div>
 
@@ -280,7 +280,7 @@ const About: React.FC = () => {
                     </div>
                     <div className="space-y-2 pt-1">
                       <h4 className="text-white text-sm uppercase tracking-[0.4em] font-black">{item.title}</h4>
-                      <p className="text-gray-500 text-sm leading-relaxed max-w-sm">{item.desc}</p>
+                      <p className="text-gray-300 text-sm leading-relaxed max-w-sm">{item.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -444,3 +444,4 @@ const About: React.FC = () => {
 };
 
 export default About;
+

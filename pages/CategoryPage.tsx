@@ -60,7 +60,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
             ))
           ) : (
             <div className="col-span-full py-32 text-center glass border border-white/5">
-              <p className="text-gray-500 uppercase tracking-[0.4em] text-xs">Exhaustive clinical review required for full database access.</p>
+              <p className="text-gray-300 uppercase tracking-[0.4em] text-xs">Exhaustive clinical review required for full database access.</p>
             </div>
           )}
         </div>
@@ -70,3 +70,4 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
 };
 
 export default CategoryPage;
+

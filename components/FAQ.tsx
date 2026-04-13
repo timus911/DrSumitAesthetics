@@ -85,3 +85,4 @@ const FAQ: React.FC<FAQProps> = ({ items, title = "Frequently Asked Questions" }
 };
 
 export default FAQ;
+

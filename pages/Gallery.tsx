@@ -146,7 +146,7 @@ const Gallery: React.FC = () => {
 
         {/* Consent Disclaimer */}
         <div className="mt-16 text-center">
-          <p className="text-gray-500 text-[10px] font-light tracking-wide opacity-70">
+          <p className="text-gray-300 text-[10px] font-light tracking-wide opacity-70">
             All images have been shared with informed consent of the patient.
           </p>
         </div>
@@ -236,3 +236,4 @@ const Gallery: React.FC = () => {
 };
 
 export default Gallery;
+

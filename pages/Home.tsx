@@ -99,7 +99,7 @@ const Home: React.FC = () => {
         <motion.div
           animate={{ y: [0, -15, 0], opacity: [0.2, 0.5, 0.2] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-16 left-1/2 -translate-x-1/2 text-gray-500 flex flex-col items-center"
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 text-gray-300 flex flex-col items-center"
         >
           <span className="text-[8px] tracking-[0.5em] uppercase mb-4 opacity-50 font-bold">Scroll to Explore</span>
           <div className="w-[1px] h-24 bg-gradient-to-b from-[#4A90E2] via-[#4A90E2]/50 to-transparent" />
@@ -163,20 +163,20 @@ const Home: React.FC = () => {
                     <Microscope size={28} className="text-[#4A90E2]" />
                   </div>
                   <h4 className="text-[12px] uppercase tracking-[0.4em] font-extrabold text-white">Microsurgical Technique</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">Precision restoration of neural and vascular pathways under high-optic magnification protocols.</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">Precision restoration of neural and vascular pathways under high-optic magnification protocols.</p>
                 </div>
                 <div className="space-y-8 group">
                   <div className="w-16 h-16 glass flex items-center justify-center rounded-full border border-[#4A90E2]/20 shadow-2xl group-hover:border-[#4A90E2] transition-colors">
                     <ShieldCheck size={28} className="text-[#4A90E2]" />
                   </div>
                   <h4 className="text-[12px] uppercase tracking-[0.4em] font-extrabold text-white">Artistic Vision</h4>
-                  <p className="text-gray-500 text-sm leading-relaxed">Applying the laws of proportion, light, and shadow from the studio to the operating theater.</p>
+                  <p className="text-gray-300 text-sm leading-relaxed">Applying the laws of proportion, light, and shadow from the studio to the operating theater.</p>
                 </div>
               </div>
 
               <Link to="/about" className="inline-flex items-center space-x-8 mt-16 group">
                 <span className="px-12 py-5 border border-white/10 group-hover:border-[#4A90E2] group-hover:bg-[#4A90E2]/10 transition-all text-[11px] uppercase tracking-[0.5em] font-bold text-gray-300">Biographical Brief</span>
-                <ArrowRight size={18} className="text-gray-600 group-hover:text-[#4A90E2] group-hover:translate-x-6 transition-all duration-500" />
+                <ArrowRight size={18} className="text-gray-400 group-hover:text-[#4A90E2] group-hover:translate-x-6 transition-all duration-500" />
               </Link>
             </motion.div>
           </div>
@@ -191,3 +191,4 @@ const Home: React.FC = () => {
 };
 
 export default Home;
+

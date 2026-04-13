@@ -35,7 +35,7 @@ const PatientJourney: React.FC = () => {
                 <div className="lg:w-5/12 p-10 glass space-y-4">
                   <span className="text-[#D4AF37] font-serif text-3xl">0{idx + 1}</span>
                   <h3 className="text-2xl font-serif text-white">{step.title}</h3>
-                  <p className="text-gray-500 leading-relaxed font-light">{step.desc}</p>
+                  <p className="text-gray-300 leading-relaxed font-light">{step.desc}</p>
                 </div>
 
                 <div className="hidden lg:flex w-2/12 justify-center relative z-10">
@@ -62,3 +62,4 @@ const PatientJourney: React.FC = () => {
 };
 
 export default PatientJourney;
+

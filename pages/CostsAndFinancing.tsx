@@ -62,27 +62,27 @@ const CostsAndFinancing: React.FC = () => {
                         <div className="space-y-6">
                             <div className="space-y-2">
                                 <h3 className="text-white text-sm font-bold uppercase tracking-wider">The Surgeon’s Expertise</h3>
-                                <p className="text-gray-500 text-sm font-light">Is the surgeon a board-certified M.Ch Plastic Surgeon?</p>
-                                <p className="text-gray-500 text-sm font-light mt-2">
+                                <p className="text-gray-300 text-sm font-light">Is the surgeon a board-certified M.Ch Plastic Surgeon?</p>
+                                <p className="text-gray-300 text-sm font-light mt-2">
                                     Is the surgeon an expert in aesthetics? Do they have a Fellowship or other specialized experience in aesthetic surgeries?
                                 </p>
                                 <p className="text-[#D4AF37] text-sm font-light mt-4">
                                     Value of compassion, truth and transparency
                                 </p>
-                                <p className="text-gray-500 text-sm font-light leading-relaxed mt-1">
+                                <p className="text-gray-300 text-sm font-light leading-relaxed mt-1">
                                     Has your surgeon explained about expected results? Possible complications? Roadmap and options if a complication does arise?
                                 </p>
-                                <p className="text-gray-500 text-sm font-light leading-relaxed mt-1">
+                                <p className="text-gray-300 text-sm font-light leading-relaxed mt-1">
                                     Does talking to the surgeon make you feel like they are a partner in your journey?
                                 </p>
                             </div>
                             <div className="space-y-2">
                                 <h3 className="text-white text-sm font-bold uppercase tracking-wider">Hospital Standards</h3>
-                                <p className="text-gray-500 text-sm font-light">Is the surgery in a makeshift clinic or a NABH-accredited facility like Healing Hospital?</p>
+                                <p className="text-gray-300 text-sm font-light">Is the surgery in a makeshift clinic or a NABH-accredited facility like Healing Hospital?</p>
                             </div>
                             <div className="space-y-2">
                                 <h3 className="text-white text-sm font-bold uppercase tracking-wider text-[#D4AF37]">The Hidden Essentials</h3>
-                                <p className="text-gray-500 text-sm font-light mb-2">Does the quote include:</p>
+                                <p className="text-gray-300 text-sm font-light mb-2">Does the quote include:</p>
                                 <ul className="list-disc list-inside text-gray-400 text-sm font-light space-y-1 ml-2">
                                     <li>Anesthesia & Anesthesiologist fees?</li>
                                     <li>Operation Theater (OT) & Consumable charges?</li>
@@ -113,7 +113,7 @@ const CostsAndFinancing: React.FC = () => {
                             ].map((item, i) => (
                                 <div key={i}>
                                     <h4 className="text-[#4A90E2] text-xs uppercase tracking-widest font-bold mb-1">{item.title}</h4>
-                                    <p className="text-gray-500 text-sm font-light">{item.desc}</p>
+                                    <p className="text-gray-300 text-sm font-light">{item.desc}</p>
                                 </div>
                             ))}
                         </div>
@@ -148,7 +148,7 @@ const CostsAndFinancing: React.FC = () => {
                                     <button
                                         key={cat}
                                         onClick={() => setSelectedCategory(cat)}
-                                        className="block w-full text-left px-4 py-3 text-xs uppercase tracking-widest text-gray-500 hover:text-white hover:bg-white/5 border-b border-white/5 last:border-0"
+                                        className="block w-full text-left px-4 py-3 text-xs uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/5 border-b border-white/5 last:border-0"
                                     >
                                         {cat}
                                     </button>
@@ -184,10 +184,10 @@ const CostsAndFinancing: React.FC = () => {
                                                 </div>
                                             </td>
                                             <td className="py-4 px-2 md:py-6 md:px-4 align-top">
-                                                <span className="text-gray-500 text-[11px] md:text-sm font-light block leading-snug">{proc.costFactors || "Complexity-dependent sizing & time"}</span>
+                                                <span className="text-gray-300 text-[11px] md:text-sm font-light block leading-snug">{proc.costFactors || "Complexity-dependent sizing & time"}</span>
                                             </td>
                                             <td className="py-4 px-1 md:py-6 md:px-4 text-right align-middle">
-                                                <ChevronDown size={14} className={`text-gray-600 transition-transform ${openProcedureId === proc.id ? 'rotate-180' : ''}`} />
+                                                <ChevronDown size={14} className={`text-gray-400 transition-transform ${openProcedureId === proc.id ? 'rotate-180' : ''}`} />
                                             </td>
                                         </tr>
 
@@ -224,7 +224,7 @@ const CostsAndFinancing: React.FC = () => {
                             </tbody>
                         </table>
                     </div>
-                    <div className="mt-8 flex items-center justify-between text-xs text-gray-500 border-t border-white/5 pt-4">
+                    <div className="mt-8 flex items-center justify-between text-xs text-gray-300 border-t border-white/5 pt-4">
                         <div className="flex items-center gap-2">
                             <Info size={12} />
                             <span>Estimate only. Final quote provided after clinical assessment.</span>
@@ -268,7 +268,7 @@ const CostsAndFinancing: React.FC = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-serif text-white">Insurance Coverage</h3>
-                                    <p className="text-[10px] uppercase tracking-widest text-gray-500">For Reconstructive Procedures</p>
+                                    <p className="text-[10px] uppercase tracking-widest text-gray-300">For Reconstructive Procedures</p>
                                 </div>
                             </div>
                             <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
@@ -284,7 +284,7 @@ const CostsAndFinancing: React.FC = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-serif text-white">EMI Options</h3>
-                                    <p className="text-[10px] uppercase tracking-widest text-gray-500">Finance Partners</p>
+                                    <p className="text-[10px] uppercase tracking-widest text-gray-300">Finance Partners</p>
                                 </div>
                             </div>
                             <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
@@ -313,3 +313,4 @@ const CostsAndFinancing: React.FC = () => {
 };
 
 export default CostsAndFinancing;
+
