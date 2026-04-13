@@ -20,6 +20,7 @@ import CostsAndFinancing from './pages/CostsAndFinancing.tsx';
 import SurgiSetPrivacy from './pages/SurgiSetPrivacy.tsx';
 import BlogList from './pages/BlogList.tsx';
 import BlogPost from './pages/BlogPost.tsx';
+import FAQ from './pages/FAQ.tsx';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -62,6 +63,7 @@ const AppLayout: React.FC = () => {
             <Route path="/concerns/:region" element={<ConcernDetail />} />
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:id" element={<BlogPost />} />
+            <Route path="/faqs" element={<FAQ />} />
             <Route path="/services" element={<Navigate to="/aesthetic" replace />} />
             <Route path="/:id" element={<ProcedureDetail />} />
           </Routes>

@@ -57,6 +57,7 @@ const Footer: React.FC = () => {
               <li><Link to="/reconstructive" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Reconstructive Surgery</Link></li>
               <li><Link to="/non-surgical" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Non-Surgical Aesthetics</Link></li>
               <li><Link to="/patient-journey" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Patient Journey</Link></li>
+              <li><Link to="/faqs" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Surgery FAQ</Link></li>
               <li><Link to="/blog" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Clinical Journal</Link></li>
             </ul>
           </div>

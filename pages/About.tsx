@@ -100,7 +100,7 @@ const About: React.FC = () => {
         // Removed variants={fadeInUp} to prevent re-triggering animation on hover which causes flickering
         src={image.src}
         className={`rounded-sm shadow-lg cursor-pointer transition-all duration-500 ${isHovered || isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'}`}
-        alt={image.title}
+        alt={${image.title} outcome by Dr. Sumit Singh Gautam in Chandigarh}
         onMouseEnter={() => setHoveredImageIndex(idx)}
         onMouseLeave={() => setHoveredImageIndex(null)}
         onClick={() => handleGalleryImageClick(idx)}

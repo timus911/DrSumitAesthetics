@@ -9,21 +9,23 @@ interface SEOProps {
     image?: string;
     url?: string;
     type?: 'website' | 'article' | 'profile';
-    schemaType?: 'MedicalBusiness' | 'Physician' | 'MedicalProcedure' | 'Article';
+    schemaType?: 'MedicalBusiness' | 'Physician' | 'MedicalProcedure' | 'Article' | 'FAQPage';
     procedureName?: string;
     articleDate?: string;
+    faqs?: { question: string; answer: string[] }[];
 }
 
 const SEO: React.FC<SEOProps> = ({
     title,
     description,
     keywords,
-    image = '/dr-sumit-portrait.jpg',
+    image = '/dr-sumit-portrait.webp',
     url,
     type = 'website',
     schemaType = 'MedicalBusiness',
     procedureName,
-    articleDate
+    articleDate,
+    faqs
 }) => {
     const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34";
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
@@ -31,6 +33,35 @@ const SEO: React.FC<SEOProps> = ({
     const absoluteImage = image.startsWith('http') ? image : `https://drsumitaesthetics.com${image.startsWith('/') ? '' : '/'}${image}`;
 
     const buildSchema = () => {
+        const physicianSchema = {
+            "@context": "https://schema.org",
+            "@type": "Physician",
+            "name": "Dr. Sumit Singh Gautam",
+            "image": "https://drsumitaesthetics.com/dr-sumit-portrait.webp",
+            "medicalSpecialty": "Plastic Surgery",
+            "affiliation": {
+                "@type": "MedicalOrganization",
+                "name": "Healing Hospital",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Chandigarh",
+                    "addressRegion": "Punjab",
+                    "postalCode": "160022"
+                }
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
+                "addressLocality": "Chandigarh",
+                "addressRegion": "Punjab",
+                "postalCode": "160022",
+                "addressCountry": "IN"
+            },
+            "telephone": CONTACT.counselorPhone,
+            "priceRange": "$$$",
+            "url": "https://drsumitaesthetics.com"
+        };
+
         if (schemaType === 'Article') {
             return {
                 "@context": "https://schema.org",
@@ -49,28 +80,47 @@ const SEO: React.FC<SEOProps> = ({
                     "name": "Dr. Sumit Aesthetics",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://drsumitaesthetics.com/dr-sumit-profile.png"
+                        "url": "https://drsumitaesthetics.com/dr-sumit-profile.webp"
                     }
                 },
                 "description": metaDescription
             };
         }
 
+        if (schemaType === 'FAQPage' && faqs) {
+            return {
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqs.map(faq => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": faq.answer.join(' ')
+                    }
+                }))
+            };
+        }
+
+        // Default or procedure-specific schema
         return {
             "@context": "https://schema.org",
+            "@id": siteUrl,
+            "url": siteUrl,
             "@type": schemaType,
             "name": procedureName || "Dr. Sumit Aesthetics",
             "image": absoluteImage,
-            "@id": siteUrl,
-            "url": siteUrl,
-            "logo": "https://drsumitaesthetics.com/dr-sumit-profile.png",
+            "logo": "https://drsumitaesthetics.com/dr-sumit-profile.webp",
+            "medicalSpecialty": "Plastic Surgery",
+            "provider": physicianSchema,
             ...(schemaType !== 'MedicalProcedure' && {
-                "telephone": "+918219816265",
+                "telephone": CONTACT.counselorPhone,
                 "priceRange": "$$$",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
                     "addressLocality": "Chandigarh",
+                    "addressRegion": "Punjab",
                     "postalCode": "160022",
                     "addressCountry": "IN"
                 },
@@ -93,7 +143,8 @@ const SEO: React.FC<SEOProps> = ({
                     "closes": "17:00"
                 },
                 "sameAs": [
-                    "https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/"
+                    "https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/",
+                    "https://www.instagram.com/dr.sumitsgautam/"
                 ]
             })
         };
@@ -140,4 +191,3 @@ const SEO: React.FC<SEOProps> = ({
 };
 
 export default SEO;
-
