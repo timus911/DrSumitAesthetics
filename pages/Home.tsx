@@ -38,7 +38,7 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[110vh] flex items-center justify-center overflow-hidden">
         <motion.div
-          style={{ scale: heroScale, y: heroYShift }}
+          style={{ scale: heroScale, y: heroYShift, willChange: "transform" }}
           className="absolute inset-0 z-0"
         >
           {/* Surgical operation background with balanced fade overlay */}
@@ -118,7 +118,7 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               viewport={{ once: true, margin: "-50px" }}
-              className="relative aspect-[4/5] overflow-hidden glass rounded-sm group shadow-[0_40px_100px_rgba(0,0,0,0.8)] border border-white/5"
+              className="relative aspect-[4/5] overflow-hidden glass rounded-sm group shadow-[0_40px_100px_rgba(0,0,0,0.8)] border border-white/5 will-change-transform"
             >
               {/* Photo 4: Surgical profile */}
               <div ref={philosophyImageRef} className="w-full h-full">

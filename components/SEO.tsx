@@ -2,6 +2,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { BRAND, CONTACT } from '../constants';
 
+interface BreadcrumbItem {
+    name: string;
+    item: string;
+}
+
 interface SEOProps {
     title?: string;
     description?: string;
@@ -9,10 +14,14 @@ interface SEOProps {
     image?: string;
     url?: string;
     type?: 'website' | 'article' | 'profile';
-    schemaType?: 'MedicalBusiness' | 'Physician' | 'MedicalProcedure' | 'Article' | 'FAQPage';
+    schemaType?: 'MedicalBusiness' | 'Physician' | 'MedicalProcedure' | 'Article' | 'FAQPage' | 'Reviews' | 'HowTo';
     procedureName?: string;
     articleDate?: string;
     faqs?: { question: string; answer: string[] }[];
+    ratingValue?: number;
+    reviewCount?: number;
+    breadcrumbs?: BreadcrumbItem[];
+    howToSteps?: { name: string; text: string }[];
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -25,7 +34,11 @@ const SEO: React.FC<SEOProps> = ({
     schemaType = 'MedicalBusiness',
     procedureName,
     articleDate,
-    faqs
+    faqs,
+    ratingValue = 4.9,
+    reviewCount = 524,
+    breadcrumbs,
+    howToSteps
 }) => {
     const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34";
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
@@ -39,6 +52,11 @@ const SEO: React.FC<SEOProps> = ({
             "name": "Dr. Sumit Singh Gautam",
             "image": "https://drsumitaesthetics.com/dr-sumit-portrait.webp",
             "medicalSpecialty": "Plastic Surgery",
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": ratingValue,
+                "reviewCount": reviewCount
+            },
             "affiliation": {
                 "@type": "MedicalOrganization",
                 "name": "Healing Hospital",
@@ -58,9 +76,19 @@ const SEO: React.FC<SEOProps> = ({
                 "addressCountry": "IN"
             },
             "telephone": CONTACT.counselorPhone,
-            "priceRange": "$$$",
             "url": "https://drsumitaesthetics.com"
         };
+
+        const breadcrumbSchema = breadcrumbs ? {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": breadcrumbs.map((crumb, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "name": crumb.name,
+                "item": `https://drsumitaesthetics.com${crumb.item}`
+            }))
+        } : null;
 
         if (schemaType === 'Article') {
             return {
@@ -102,20 +130,38 @@ const SEO: React.FC<SEOProps> = ({
             };
         }
 
-        // Default or procedure-specific schema
-        return {
+        if (schemaType === 'HowTo' && howToSteps) {
+            return {
+                "@context": "https://schema.org",
+                "@type": "HowTo",
+                "name": `Recovery Guide: ${procedureName}`,
+                "step": howToSteps.map((step, index) => ({
+                    "@type": "HowToStep",
+                    "position": index + 1,
+                    "name": step.name,
+                    "text": step.text
+                }))
+            };
+        }
+
+        // Default or complex medical schema
+        const base = {
             "@context": "https://schema.org",
             "@id": siteUrl,
             "url": siteUrl,
-            "@type": schemaType,
+            "@type": schemaType === 'Reviews' ? 'MedicalBusiness' : schemaType,
             "name": procedureName || "Dr. Sumit Aesthetics",
             "image": absoluteImage,
             "logo": "https://drsumitaesthetics.com/dr-sumit-profile.webp",
             "medicalSpecialty": "Plastic Surgery",
             "provider": physicianSchema,
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": ratingValue,
+                "reviewCount": reviewCount
+            },
             ...(schemaType !== 'MedicalProcedure' && {
                 "telephone": CONTACT.counselorPhone,
-                "priceRange": "$$$",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
@@ -129,43 +175,25 @@ const SEO: React.FC<SEOProps> = ({
                     "latitude": 30.7225,
                     "longitude": 76.7681
                 },
-                "openingHoursSpecification": {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": [
-                        "Monday",
-                        "Tuesday",
-                        "Wednesday",
-                        "Thursday",
-                        "Friday",
-                        "Saturday"
-                    ],
-                    "opens": "09:00",
-                    "closes": "17:00"
-                },
                 "sameAs": [
                     "https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/",
                     "https://www.instagram.com/dr.sumitsgautam/"
                 ]
             })
         };
+
+        return breadcrumbSchema ? [base, breadcrumbSchema] : base;
     };
 
     const baseSchema = buildSchema();
 
     return (
         <Helmet>
-            {/* Primary Meta Tags */}
             <title>{siteTitle}</title>
             <meta name="description" content={metaDescription} />
-            <meta name="keywords" content={keywords || "best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india, aesthetic surgery, hair transplant chandigarh, tummy tuck india, breast implant surgeon"} />
+            <meta name="keywords" content={keywords || "best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india"} />
 
-            {/* Local SEO / Geo Tags */}
-            <meta name="geo.region" content="IN-CH" />
-            <meta name="geo.placename" content="Chandigarh" />
-            <meta name="geo.position" content="30.7276;76.7667" />
-            <meta name="ICBM" content="30.7276, 76.7667" />
-
-            {/* Open Graph / Facebook */}
+            {/* Open Graph */}
             <meta property="og:type" content={type} />
             <meta property="og:url" content={siteUrl} />
             <meta property="og:title" content={siteTitle} />
@@ -179,11 +207,9 @@ const SEO: React.FC<SEOProps> = ({
             <meta property="twitter:description" content={metaDescription} />
             <meta property="twitter:image" content={absoluteImage} />
 
-            {/* Canonical */}
             <link rel="canonical" href={siteUrl} />
 
-            {/* Schema.org Structured Data */}
-            <script type="application/ld+json">
+            <script type="application/ld+json" data-rh="true">
                 {JSON.stringify(baseSchema)}
             </script>
         </Helmet>

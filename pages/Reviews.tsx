@@ -246,10 +246,13 @@ const Reviews: React.FC = () => {
 
     return (
         <div className="pt-40 min-h-screen bg-black relative overflow-hidden">
-            <SEO
-                title="Patient Reviews & Stories | Dr. Sumit Singh Gautam"
-                description="Real stories and experiences from our valued patients. See the difference Dr. Sumit makes."
+            <SEO 
+                title="Patient Stories & Results"
+                description="Real patient experiences and clinical outcomes from Dr. Sumit Singh Gautam's practice in Chandigarh. Transparent reviews and surgical journeys."
                 url="/reviews"
+                schemaType="Reviews"
+                ratingValue={4.9}
+                reviewCount={524}
             />
 
             {/* Decorative Background Elements */}

@@ -90,7 +90,7 @@ const MedicalAuthority: React.FC = () => {
 
                             {/* Restored Quote Overlay - Warning: Negative bottom might overlap footer if not careful, but section has padding */}
                             <div className="absolute -bottom-10 left-0 right-0 z-30 px-6">
-                                <div className="glass p-6 border-l-2 border-[#D4AF37] backdrop-blur-xl bg-black/60 shadow-2xl">
+                                <div className="glass p-6 border-l-2 border-[#D4AF37] backdrop-blur-md bg-black/60 shadow-2xl">
                                     <p className="text-gray-300 text-sm italic font-light">"The goal is not to change who you are, but to reveal the version of you that has been hidden by time or genetics."</p>
                                     <p className="text-[#D4AF37] text-[10px] uppercase tracking-widest font-bold mt-4">— Dr. Sumit Singh Gautam</p>
                                 </div>

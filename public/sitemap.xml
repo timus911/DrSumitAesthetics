@@ -1,75 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
   <url>
     <loc>https://drsumitaesthetics.com/</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-04-13</lastmod>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://drsumitaesthetics.com/about</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drsumitaesthetics.com/aesthetic</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drsumitaesthetics.com/reconstructive</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drsumitaesthetics.com/non-surgical</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://drsumitaesthetics.com/vascular</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://drsumitaesthetics.com/gallery</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://drsumitaesthetics.com/reviews</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://drsumitaesthetics.com/patient-journey</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://drsumitaesthetics.com/international</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://drsumitaesthetics.com/contact</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://drsumitaesthetics.com/concerns</loc>
-    <lastmod>2026-01-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/faq</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/contact</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/costs-and-financing</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Category Indexes -->
+  <url>
+    <loc>https://drsumitaesthetics.com/aesthetic</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/reconstructive</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/non-surgical</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/vascular</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Key Procedure Pages -->
+  <url>
+    <loc>https://drsumitaesthetics.com/tummy-tuck-chandigarh</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/liposuction-chandigarh</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/rhinoplasty-nose-job-chandigarh</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/breast-augmentation-chandigarh</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/facelift-chandigarh</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/gynecomastia-surgery-chandigarh</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/hair-transplant-chandigarh</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blepharoplasty-chandigarh</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Surgical Journal (Blog) Posts -->
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/what-to-expect-from-liposuction-recovery</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/liposuction-vs-tummy-tuck-which-is-right-for-you</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/does-liposuction-remove-fat-permanently</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/the-mommy-makeover-journey</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/high-definition-hd-liposuction-sculpting</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/rhinoplasty-recovery-timeline</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/preservation-rhinoplasty-secret-to-natural-noses</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/blepharoplasty-eyelid-surgery-anti-aging</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/traditional-vs-mini-facelift</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/gynecomastia-surgery-india-causes-treatment</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/breast-augmentation-implants-vs-fat-transfer</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/what-to-expect-after-breast-reduction</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/botox-vs-dermal-fillers</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/the-rise-of-prejuvenation</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/how-long-do-dermal-fillers-last</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
+  </url>
+  <url>
+    <loc>https://drsumitaesthetics.com/blog/preparing-for-your-first-aesthetic-consultation</loc>
+    <lastmod>2026-04-13</lastmod>
+    <priority>0.60</priority>
   </url>
 </urlset>

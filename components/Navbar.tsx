@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${(scrolled || isOpen) ? 'py-2 bg-black/80 backdrop-blur-xl border-b border-white/5' : 'py-8'}`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${(scrolled || isOpen) ? 'py-2 bg-black/80 backdrop-blur-md border-b border-white/5' : 'py-8'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center gap-8">
 
         {/* LEFT: Static Logo */}
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[45] bg-black/90 backdrop-blur-3xl flex flex-col items-center justify-start pt-32 pb-32 space-y-4 min-[1600px]:hidden overflow-y-auto overscroll-contain"
+              className="fixed inset-0 z-[45] bg-black/80 backdrop-blur-sm flex flex-col items-center justify-start pt-32 pb-32 space-y-4 min-[1600px]:hidden overflow-y-auto overscroll-contain"
               data-lenis-prevent // Prevents lenis from hijacking scroll inside this container
             >
               {navLinks.map((link) => (

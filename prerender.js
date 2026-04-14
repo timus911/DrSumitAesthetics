@@ -20,8 +20,30 @@ const routes = [
     '/contact',
     '/concerns',
     '/liposuction-chandigarh',
+    '/tummy-tuck-chandigarh',
+    '/rhinoplasty-nose-job-chandigarh',
+    '/breast-augmentation-chandigarh',
+    '/facelift-chandigarh',
+    '/gynecomastia-surgery-chandigarh',
+    '/hair-transplant-chandigarh',
+    '/blepharoplasty-chandigarh',
     '/blog',
-    '/blog/what-to-expect-from-liposuction-recovery'
+    '/blog/what-to-expect-from-liposuction-recovery',
+    '/blog/liposuction-vs-tummy-tuck-which-is-right-for-you',
+    '/blog/does-liposuction-remove-fat-permanently',
+    '/blog/the-mommy-makeover-journey',
+    '/blog/high-definition-hd-liposuction-sculpting',
+    '/blog/rhinoplasty-recovery-timeline',
+    '/blog/preservation-rhinoplasty-secret-to-natural-noses',
+    '/blog/blepharoplasty-eyelid-surgery-anti-aging',
+    '/blog/traditional-vs-mini-facelift',
+    '/blog/gynecomastia-surgery-india-causes-treatment',
+    '/blog/breast-augmentation-implants-vs-fat-transfer',
+    '/blog/what-to-expect-after-breast-reduction',
+    '/blog/botox-vs-dermal-fillers',
+    '/blog/the-rise-of-prejuvenation',
+    '/blog/how-long-do-dermal-fillers-last',
+    '/blog/preparing-for-your-first-aesthetic-consultation'
 ];
 
 async function prerender() {

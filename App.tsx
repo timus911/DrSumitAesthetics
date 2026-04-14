@@ -38,7 +38,7 @@ const AppLayout: React.FC = () => {
   const isStandalone = location.pathname === '/surgiset-privacy';
 
   return (
-    <div className="relative min-h-screen bg-black text-white selection:bg-gold-500/30 overflow-hidden">
+    <div className="relative min-h-screen bg-black text-white selection:bg-gold-500/30 overflow-hidden" style={{ transform: 'translateZ(0)' }}>
       {!isStandalone && <FloatingBackground />}
       {!isStandalone && <Navbar />}
 
@@ -79,13 +79,13 @@ const App: React.FC = () => {
   useEffect(() => {
     // Initialize Lenis for smooth scrolling
     const lenis = new Lenis({
-      duration: 1.2,
+      duration: 0.5,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
-      wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
+      wheelMultiplier: 0.9,
+      touchMultiplier: 1.2,
     });
 
     (window as any).lenis = lenis;

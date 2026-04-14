@@ -913,6 +913,7 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
 `,
     priceRange: "₹60,000 - ₹1,20,000",
     costFactors: "Upper vs Lower Lids, Skin only vs Fat Excision, Canthopexy requirement",
+    gallery: ["/blepharoplasty-result-1.webp"],
     faqs: [
       {
         question: "Who needs Blepharoplasty?",

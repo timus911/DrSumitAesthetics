@@ -128,9 +128,18 @@ const ProcedureDetail: React.FC = () => {
         title={procedure.title}
         description={procedure.description || procedure.longDescription?.slice(0, 160)}
         image={procedure.image}
-        url={`/procedure/${procedure.id}`}
-        schemaType="MedicalProcedure"
+        url={`/${id}`}
+        schemaType="HowTo"
         procedureName={procedure.title}
+        breadcrumbs={[
+          { name: "Clinical Domain", item: `/${procedure.parentCategory}` },
+          { name: procedure.title, item: `/${procedure.id}` }
+        ]}
+        howToSteps={[
+          { name: "Immediate Recovery", text: procedure.details?.functional?.[0] || "Begin early mobilization and follow prescribed post-op care." },
+          { name: "Work Readiness", text: procedure.details?.backToWork?.[0] || "Typical return to light work within 10-14 days." },
+          { name: "Final Refinement", text: procedure.details?.results?.[1] || "Full maturity of results visible at 6-12 months." }
+        ]}
       />
       <div className="container mx-auto px-6">
         <Breadcrumbs

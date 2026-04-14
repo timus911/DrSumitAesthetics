@@ -13,6 +13,15 @@ description: Baseline instructions for any updates or deployments to the Dr. Sum
 ## 2. Image Optimization
 - **Format:** All newly added images MUST be in modern formats like `.webp` or `.avif`, or highly compressed `.jpg`/`.png`.
 - **Dimensions:** Never upload raw, full-resolution camera files. Resize images to a maximum width of 1920px (for heroes) or 800px-1200px (for content).
+- **How to Convert:** Use a Node.js script with the `sharp` library for consistent results. 
+  Example `convert.cjs`:
+  ```javascript
+  const sharp = require('sharp');
+  sharp('Upload/input.png')
+    .resize({ width: 1200, withoutEnlargement: true })
+    .webp({ quality: 80 })
+    .toFile('public/output.webp');
+  ```
 - **Lazy Loading:** Ensure any new `<img>` tags or React image components utilize `loading="lazy"` where appropriate (if below the fold).
 
 ## 3. Schema Markup (Rich Results)
