@@ -1,0 +1,2989 @@
+const BASE = import.meta.env.BASE_URL;
+
+export const BRAND = {
+  name: "Dr. Sumit Singh Gautam",
+  shortName: "Dr. Sumit",
+  specialty: "Plastic Surgeon & Sculptor",
+  fellowship: "The Intersection of Art & Surgery",
+  mentors: "Mentored by Masters of Form & Function",
+  education: [
+    "MBBS - GMCH-32, Chandigarh",
+    "MS General Surgery - GMCH-32, Chandigarh",
+    "MCh Plastic & Reconstructive Surgery - DMC Ludhiana",
+    "Fellowship in Aesthetic Surgery - Belgium"
+  ],
+  artisticBackground: {
+    description: "Dr. Sumit is not just a surgeon; he is a sculptor of the human form. His surgical precision is born from years of mastery in sketching, oil painting, 3D digital sculpting, and wood carving. This multidisciplinary artistic background allows him to visualize and restore anatomical harmony with an artist's eye and a surgeon's hand.",
+    hobbies: ["Fine Art Sketching", "Oil Painting", "3D Digital Sculpting", "Wood Carving"]
+  },
+  tagline: "Precision. Artistry. Mastery.",
+};
+
+export const CONTACT = {
+  phone: "+91 82198 16265",
+  counselorPhone: "+91 85263 43434",
+  email: "sumit.sgautam@gmail.com",
+  location: "Healing Hospital, SCO 18-19, Sector 34-A, Chandigarh, 160022",
+
+  googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Healing+Hospital+Sector+34+Chandigarh",
+  hours: {
+    weekdays: "Mon - Sat 9:00am - 5:00pm",
+    sunday: "Closed", // Defaulting to closed unless specified
+  },
+  social: {
+    instagram: "https://instagram.com",
+    linkedin: "https://linkedin.com",
+  }
+};
+
+export const COLORS = {
+  charcoal: "#070708",
+  titanium: "#111214",
+  pearl: "#F0F4F8",
+  accent: "#4A90E2",
+  accentLight: "#7FB3D5",
+  accentDark: "#1B4F72",
+  glass: "rgba(74, 144, 226, 0.05)",
+};
+
+/**
+ * ASSETS mapping to the user-provided files (photo1.webp - photo6.webp)
+ */
+const RAW_ASSETS = {
+  portraitProfessional: "dr-sumit-portrait.webp",
+  heroAction: "photo3.webp",
+  surgeryProfile: "artistic-anatomy.webp",
+  clinicalInteraction: "photo5.webp",
+  surgeryTheater: "photo6.webp",
+  surgeryHeroBackground: "/surgical-excellence.webp", // Main screen surgical operation background
+  aboutBackground: "about-bg.webp",
+  // Fallbacks for other visual elements
+  anatomicalPlaceholder: "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=2000&auto=format&fit=crop",
+  verpaelePainting: "verpaele-painting.webp",
+  abstractMedical: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2000&auto=format&fit=crop"
+};
+
+export type Procedure = {
+  id: string;
+  title: string;
+  category: string;
+  parentCategory: 'aesthetic' | 'reconstructive' | 'non-surgical' | 'vascular';
+  description: string;
+  longDescription: string;
+  subSections?: string[];
+  image?: string;
+  brief?: {
+    operationTime: string;
+    anesthesia: string;
+    recovery: string;
+    refinement: string;
+    technique?: string;
+  };
+  details?: {
+    whoNeeds?: string[];
+    candidates?: string[];
+    assessment?: string[];
+    functional?: string[];
+    backToWork?: string[];
+    holidays?: string[];
+    results?: string[];
+    recoveryTips?: string[];
+    customFaq?: {
+      question: string;
+      answer: string[];
+    };
+  };
+  regions?: string[];
+  gallery?: string[];
+  priceRange?: string; // New field for Cost & Financing page
+  costFactors?: string; // Key factors influencing cost
+  seoContent?: string; // Rich SEO content for specific procedure pages
+  faqs?: { question: string; answer: string[] }[]; // People Also Ask Data
+};
+
+const RAW_PROCEDURES: Procedure[] = [
+  // AESTHETIC - BODY
+  {
+    id: "tummy-tuck-chandigarh",
+    title: "Tummy Tuck (Abdominoplasty)",
+    category: "Body",
+    parentCategory: "aesthetic",
+    description: "Refining the abdominal wall and contour through structural restoration.",
+    longDescription: "Abdominoplasty removes excess skin and fat and restores weakened or separated muscles to create an abdominal profile that is smoother and firmer.",
+    image: "/tummy-tuck-aesthetic.webp",
+    brief: {
+      operationTime: "3 - 5 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "10 - 14 Days",
+      refinement: "Mature at 6 - 12 months"
+    },
+    details: {
+      whoNeeds: ["Patients with lingering skin laxity after significant weight loss or pregnancy.", "Individuals seeking to repair stomach muscle separation (diastasis recti)."],
+      candidates: ["Ideally non-smokers with a stable weight for at least six months.", "Those with realistic expectations about surgical scarring, which is placed low and discreetly."],
+      assessment: ["We evaluate your abdominal wall integrity and skin elasticity.", "Assessment of internal fat versus subcutaneous fat to determine if Liposuction should be combined."],
+      functional: ["You will be mobile and walking (though slightly hunched) within 24 hours.", "Light independence for basic personal care is expected by day 3."],
+      backToWork: ["Desk jobs typically require 2 weeks of recovery.", "Physically demanding work may require 4-6 weeks for full clearance."],
+      holidays: ["Plan for a 14-day 'quiet window' to allow primary healing.", "Rest is essential during this phase to minimize swelling and optimize scar quality."],
+      results: ["Initial contour improvement is visible immediately despite swelling.", "The final refined shape settles as tissues soften over 6 to 12 months."],
+      recoveryTips: ["Wear your compression garment religiously as it acts as your 'internal skin'.", "Hydration and high-protein nutrition are key to tissue repair."]
+    },
+    regions: ["Abdomen", "Body"],
+    seoContent: `
+### Tummy Tuck (Abdominoplasty) in Chandigarh: Restore Your Core
+**Reclaim Your Pre-Pregnancy or Pre-Weight Loss Figure at Healing Hospital**
+
+A Tummy Tuck is more than just skin removal; it is a restoration of the abdominal core. Dr. Sumit Singh Gautam specializes in **Lipo-Abdominoplasty**, a modern technique that combines liposuction with skin tightening for superior contouring.
+
+**Who is it for?**
+It is the gold standard for mothers with "Diastasis Recti" (muscle separation) or massive weight loss patients with hanging skin folds.
+
+#### The Procedure
+*   **Muscle Repair:** We tighten the abdominal wall muscles like an internal corset.
+*   **Scar Placement:** The incision is placed extremely low, typically hidden within the bikini line.
+*   **Safety:** Performed under general anesthesia with dedicated DVT prophylaxis protocols.
+
+#### Cost of Tummy Tuck in Chandigarh
+Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
+*   **Inclusions:** Hospital stay (typically 2 days), anesthesia, and follow-up care.
+
+#### Recovery
+*   **Walk Tall:** You will walk bent over for a few days to protect the repair.
+*   **Return to Life:** Desk work in 14 days; gym in 6 weeks.
+`,
+    priceRange: "₹1,50,000 - ₹2,50,000",
+    costFactors: "Mini vs Full Tummy Tuck, Muscle Repair complexity, Liposuction extent",
+    gallery: ["/tummy-tuck-result-1.webp", "/tummy-tuck-result-2.webp", "/tummy-tuck-nrf.webp", "/tummy-tuck-nrll.webp", "/tummy-tuck-nrro.webp"],
+    faqs: [
+      {
+        question: "Who needs a Tummy Tuck?",
+        answer: [
+          "Patients with lingering skin laxity after significant weight loss or pregnancy.",
+          "Individuals seeking to repair stomach muscle separation (diastasis recti)."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for abdominoplasty?",
+        answer: [
+          "Ideally non-smokers with a stable weight for at least six months.",
+          "Those with realistic expectations about surgical scarring, which is placed low and discreetly."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "We evaluate your abdominal wall integrity and skin elasticity.",
+          "Assessment of internal fat versus subcutaneous fat to determine if Liposuction should be combined."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after a tummy tuck?",
+        answer: [
+          "You will be mobile and walking (though slightly hunched) within 24 hours.",
+          "Light independence for basic personal care is expected by day 3."
+        ]
+      },
+      {
+        question: "When can I return to work after a tummy tuck?",
+        answer: [
+          "Desk jobs typically require 2 weeks of recovery.",
+          "Physically demanding work may require 4-6 weeks for full clearance."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "Plan for a 14-day 'quiet window' to allow primary healing.",
+          "Rest is essential during this phase to minimize swelling and optimize scar quality."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Initial contour improvement is visible immediately despite swelling.",
+          "The final refined shape settles as tissues soften over 6 to 12 months."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Wear your compression garment religiously as it acts as your 'internal skin'.",
+          "Hydration and high-protein nutrition are key to tissue repair."
+        ]
+      },
+      {
+        question: "What determines the cost of a tummy tuck?",
+        answer: [
+          "Whether a Mini-Tummy Tuck or Full Abdominoplasty is required.",
+          "Muscle Repair complexity, Liposuction extent, hospital stay (typically 2 days), anesthesia, and follow-up care are all included."
+        ]
+      }
+    ]
+  },
+  {
+    id: "liposuction-chandigarh",
+    title: "High Definition Liposuction",
+    category: "Body",
+    parentCategory: "aesthetic",
+    description: "Precision sculpting to reveal underlying muscular definition.",
+    longDescription: "HD Liposuction goes beyond traditional fat removal, meticulously sculpting around muscle groups to highlight natural athletic definition.",
+    image: "/hd-lipo-aesthetic.webp",
+    brief: {
+      operationTime: "2 - 4 Hours",
+      anesthesia: "General / Deep Sedation",
+      recovery: "5 - 7 Days",
+      refinement: "Crisp at 3 months"
+    },
+    details: {
+      whoNeeds: ["Individuals with good muscle tone who have stubborn pockets of fat masking their definition.", "Athletic patients looking for that final 'etched' appearance of the obliques and abdominals."],
+      candidates: ["Patients with high skin elasticity (needed for the skin to shrink-wrap over the new contours).", "Those near their target weight but lacking visible muscle definition."],
+      assessment: ["A detailed 'pinch test' mapping of fat distribution.", "Evaluation of underlying muscle groups to determine the 'etching' lines."],
+      functional: ["Walking is encouraged immediately to minimize stiffness.", "Bruising and mild soreness are managed easily with standard care."],
+      backToWork: ["Most patients return to office roles within 5-7 days.", "Strenuous gym activity usually resumes at 3-4 weeks."],
+      holidays: ["One week of focused recovery is usually sufficient.", "This is a faster recovery than standard body lifting procedures."],
+      results: ["Initial results are often 'wow' at 4 weeks.", "Final etching becomes crisp at 3 months as minor swelling disappears."],
+      recoveryTips: ["Lymphatic drainage massage is highly recommended to smooth out results.", "Constant compression for 4 weeks ensures the skin adheres perfectly to the new muscular form."]
+    },
+
+    regions: ["Abdomen", "Body", "Thighs", "Arms", "Buttock"],
+    seoContent: `
+### Best Liposuction in Chandigarh: The Art of Athletic Sculpting
+
+**Achieve a Chiseled, Athletic Physique with Dr. Sumit Singh Gautam at Healing Hospital, Sector 34**
+
+High Definition (HD) Liposuction is not merely fat removal; it is an architectural reshaping of the human form. Unlike traditional liposuction, which focuses on debulking, HD Liposuction creates shadows and highlights to mimic the underlying musculature of an athlete.
+
+#### Medical Deep Dive: Power-Assisted 4D Sculpting
+Dr. Sumit employs **Power-Assisted Liposuction (PAL)** technology. This advanced method uses rapid vibrations to gently dislodge fat cells while preserving nerves, blood vessels, and connective tissue.
+*   **The "High-Def" effect:** PAL allowing for precise sculpting close to the muscle, creating valid shadows and highlights.
+*   **Fellowship Precision:** Trained in Belgium, Dr. Sumit brings a European sensibility to body contouring—avoiding the "over-etched" or fake look often seen in aggressive surgeries. He sculpts the *Linea Semilunaris* and *Linea Alba* to create a natural "six-pack" shadow that respects your native anatomy.
+
+#### Local Context: Recovery in Chandigarh
+Recovery in Chandigarh's climate is manageable, but we recommend avoiding the peak summer heat for surgery if you are sensitive to compression garments.
+*   **Hospital Proximity:** Our location in Sector 34 (Healing Hospital) puts us at the heart of the city, easily accessible from Mohali and Panchkula.
+*   **Post-Op Care:** We provide specific "Chandigarh Recovery Kits" including breathable compression gear suited for our weather.
+
+[View our Before and After Gallery](/gallery) to see the transformative results of our "Tricity" patients.
+    `,
+    priceRange: "₹80,000 - ₹2,00,000",
+    costFactors: "Number of zones (e.g., Abdomen, Flanks, Back), 360 Lipo vs Spot Lipo",
+    gallery: [
+      "/axillary-breast-reduction-result.webp",
+      "/body-contouring-result-1.webp",
+      "/body-contouring-result-2.webp",
+      "/body-contouring-result-3.webp",
+      "/body-contouring-result-4.webp",
+      "/body-contouring-result-5.webp",
+      "/tummy-tuck-result-1.webp",
+      "/tummy-tuck-result-2.webp",
+      "/tummy-tuck-nrf.webp",
+      "/tummy-tuck-nrll.webp",
+      "/tummy-tuck-nrro.webp"
+    ],
+    faqs: [
+      {
+        question: "Who needs HD Liposuction?",
+        answer: [
+          "Individuals with good muscle tone who have stubborn pockets of fat masking their definition.",
+          "Athletic patients looking for that final 'etched' appearance of the obliques and abdominals."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for liposuction?",
+        answer: [
+          "Patients with high skin elasticity (needed for the skin to shrink-wrap over the new contours).",
+          "Those near their target weight but lacking visible muscle definition."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "A detailed 'pinch test' mapping of fat distribution.",
+          "Evaluation of underlying muscle groups to determine the 'etching' lines."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after liposuction?",
+        answer: [
+          "Walking is encouraged immediately to minimize stiffness.",
+          "Bruising and mild soreness are managed easily with standard care."
+        ]
+      },
+      {
+        question: "When can I return to work after liposuction?",
+        answer: [
+          "Most patients return to office roles within 5-7 days.",
+          "Strenuous gym activity usually resumes at 3-4 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "One week of focused recovery is usually sufficient.",
+          "This is a faster recovery than standard body lifting procedures."
+        ]
+      },
+      {
+        question: "How long does it take to see the final results?",
+        answer: [
+          "Initial results are often 'wow' at 4 weeks.",
+          "Final etching becomes crisp at 3 months as minor swelling disappears."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Lymphatic drainage massage is highly recommended to smooth out results.",
+          "Constant compression for 4 weeks ensures the skin adheres perfectly to the new muscular form."
+        ]
+      },
+      {
+        question: "What determines the cost of liposuction?",
+        answer: [
+          "Number of zones treated (e.g., Abdomen, Flanks, Back), whether it's 360 Lipo vs Spot Lipo.",
+          "Costs vary by zones. We offer transparent packages including hospital stay."
+        ]
+      },
+      {
+        question: "Is liposuction a weight-loss surgery?",
+        answer: [
+          "No. Liposuction is a body contouring procedure, not a weight loss solution. While fat cells are permanently removed, the total weight lost is typically between 2 to 5 kilograms.",
+          "It is best suited for individuals near their ideal body weight who have stubborn pockets of fat that do not respond to diet or exercise."
+        ]
+      },
+      {
+        question: "Will the fat come back after surgery?",
+        answer: [
+          "The fat cells removed during liposuction are permanently gone. However, if you consume excess calories, the remaining fat cells in the body (both in the treated and untreated areas) can still expand.",
+          "Maintaining a stable weight through a healthy diet and lifestyle is essential to preserve your sculpted results."
+        ]
+      },
+      {
+        question: "Is the procedure painful?",
+        answer: [
+          "It is significantly less painful than traditional mechanical liposuction. Most patients manage well with basic oral analgesics for 3-4 days."
+        ]
+      }
+    ]
+  },
+  {
+    id: "body-contouring-chandigarh",
+    title: "Body Contouring",
+    category: "Body",
+    parentCategory: "aesthetic",
+    description: "Comprehensive reshaping of the torso and limbs.",
+    longDescription: "A collection of procedures aimed at eliminating loose skin and excess fat following weight loss or aging to harmonize the silhouette.",
+    image: "/body-contouring-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Body", "Abdomen", "Thighs", "Arms", "Buttock"],
+    gallery: [
+      "/axillary-breast-reduction-result.webp",
+      "/body-contouring-result-1.webp",
+      "/body-contouring-result-2.webp",
+      "/body-contouring-result-3.webp",
+      "/body-contouring-result-4.webp",
+      "/body-contouring-result-5.webp",
+      "/tummy-tuck-result-1.webp",
+      "/tummy-tuck-result-2.webp",
+      "/tummy-tuck-nrf.webp",
+      "/tummy-tuck-nrll.webp",
+      "/tummy-tuck-nrro.webp"
+    ],
+    seoContent: `
+### Body Contouring in Chandigarh: The Complete Transformation
+**Specialized Post-Weight Loss & Body Lift Surgery**
+
+After significant weight loss, loose skin can hide your hard-earned results. Dr. Sumit offers comprehensive body contouring solutions in Tricity, treating the body as a cohesive unit ensuring proportion and balance.
+
+**Procedures Offered:**
+*   **Arm Lift (Brachioplasty):** Reducing "bat wings" for toned arms.
+*   **Thigh Lift:** Reshaping the inner and outer thighs.
+*   **Lower Body Lift:** A 360-degree removal of excess skin from the beltline.
+
+#### Safety & Scarring
+Body contouring involves long incisions. Dr. Sumit's "Visualist" technique ensures these scars are placed in natural shadows or clothing lines to minimize visibility.
+
+#### Recovery
+Every procedure varies, but generally, expect 2-3 weeks of recovery before returning to a sedentary job. Compression garments are essential for 6 weeks.
+`,
+    priceRange: "₹60,000 - ₹2,00,000",
+    costFactors: "Extent of skin removal, Combination of upper/lower body lift, Hospital stay duration",
+    faqs: [
+      {
+        question: "What is body contouring surgery?",
+        answer: [
+          "Body contouring is a collection of procedures aimed at removing loose, excess skin and fat following significant weight loss, pregnancy, or aging.",
+          "It can include arm lifts (brachioplasty), thigh lifts, and lower body lifts (360-degree skin removal)."
+        ]
+      },
+      {
+        question: "Am I a good candidate for body contouring?",
+        answer: [
+          "Ideal candidates have achieved a stable weight for at least 6 months and have excess skin that does not respond to exercise.",
+          "Non-smokers with realistic expectations about scarring and recovery are best suited."
+        ]
+      },
+      {
+        question: "What is the recovery like after body contouring?",
+        answer: [
+          "Expect 2-3 weeks of recovery before returning to a sedentary job.",
+          "Compression garments are essential for 6 weeks. Full activity typically resumes at 6-8 weeks."
+        ]
+      },
+      {
+        question: "Will there be visible scars?",
+        answer: [
+          "Body contouring involves long incisions, but Dr. Sumit's 'Visualist' technique ensures scars are placed in natural shadows or clothing lines to minimize visibility."
+        ]
+      },
+      {
+        question: "What determines the cost of body contouring?",
+        answer: [
+          "Extent of skin removal, combination of upper/lower body lift, and hospital stay duration."
+        ]
+      }
+    ]
+  },
+  {
+    id: "fat-grafting-chandigarh",
+    title: "Fat Grafting",
+    category: "Body",
+    parentCategory: "aesthetic",
+    description: "Using autologous tissue for volume restoration.",
+    longDescription: "Fat grafting is the meticulous process of harvesting your own fat cell—typically from the abdomen or thighs—and precisely re-integrating them into areas requiring volume, contour, or skin rejuvenation. It is the ultimate bio-compatible filler, offering permanent results that age naturally with you.",
+    image: "/fat-grafting-aesthetic.webp", // User-provided aesthetic image
+    brief: {
+      operationTime: "2 - 4 Hours",
+      anesthesia: "General / Deep Sedation",
+      recovery: "7 - 10 Days",
+      refinement: "Mature at 6 months",
+      technique: "Facial – Microfat / Nanofat / SNIF (tailored) | Body – Microfat grafting"
+    },
+    details: {
+      whoNeeds: ["Patients seeking to restore volume lost to aging or weight loss.", "Individuals looking for a natural alternative to synthetic fillers."],
+      candidates: ["Patients with sufficient donor fat in areas like the flanks or abdomen.", "Nonsmokers who understand that a percentage of fat is naturally reabsorbed before stabilizing."],
+      assessment: ["Evaluation of donor site fat quality and recipient zone skin laxity.", "Detailed mapping of volume deficits to ensure a balanced, symmetric restoration."],
+      functional: ["Mild swelling and bruising at both donor and recipient sites for 5-7 days.", "Normal walking and light activities are encouraged within 48 hours."],
+      backToWork: ["Typically 7-10 days for most professional roles.", "Physical impact activities should be paused for 3-4 weeks."],
+      holidays: ["10 days of 'quiet time' helps optimize the survival of the grafted fat.", "Rest and avoiding pressure on the grafted areas are critical during this window."],
+      results: ["Initial volume settles over 3 months as 'permanent' fat integration occurs.", "Final soft, natural contours are reached as tissues fully soften by 6 months."],
+      recoveryTips: ["Avoid direct pressure on the treated areas (sleep elevated for face, special cushions for body).", "Maintain a stable weight to ensure the long-term integrity of the results."],
+      customFaq: {
+        question: "Is fat grafting performed the same way on the face and body?",
+        answer: ["No. Facial tissues and body tissues behave very differently. Facial fat grafting often requires more refined techniques for precision and skin quality, while body fat grafting focuses on stable volume and contour. The technique is selected based on the area treated and the desired outcome."]
+      }
+    },
+    regions: ["Face", "Nose", "Eyes", "Ears", "Lips", "Neck", "Breasts", "Body", "Buttock"],
+    gallery: ["/scar-revision-fat-grafted.webp", "/fat-grafting-result-1.webp", "/fat-grafting-result-2.webp", "/fat-grafting-result-3.webp"],
+    seoContent: `
+### Fat Grafting in Chandigarh: The Natural Filler
+**Restore Volume & Youth with Your Own Tissue**
+
+Fat Grafting (Fat Transfer) is the ultimate organic solution for volume loss. Dr. Sumit harvests fat from areas of excess (like the tummy) and processes it into Microfat or Nanofat for rejuvenation.
+
+**Applications:**
+*   **Face:** Filling sunken cheeks, temples, and tear troughs (dark circles).
+*   **Breast:** Natural augmentation without implants (usually 1 cup size increase).
+*   **Buttock:** Creating a "Brazilian Butt Lift" contour.
+
+#### The Science: Nanofat
+Dr. Sumit uses **Nanofat**—emulsified fat rich in stem cells—to treat skin quality, fine lines, and dark circles. It acts more like a biological skin booster than a filler.
+
+#### Longevity
+Unlike synthetic fillers which dissolve in 12 months, transplanted fat that survives (typically 60-70%) is permanent. It ages naturally with you.
+`,
+    priceRange: "₹40,000 - ₹1,20,000",
+    costFactors: "Volume required (Face vs Breast/Buttock), Nanofat vs Microfat processing",
+    faqs: [
+      {
+        question: "Who needs Fat Grafting?",
+        answer: [
+          "Patients seeking to restore volume lost to aging or weight loss.",
+          "Individuals looking for a natural alternative to synthetic fillers."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for fat transfer?",
+        answer: [
+          "Patients with sufficient donor fat in areas like the flanks or abdomen.",
+          "Nonsmokers who understand that a percentage of fat is naturally reabsorbed before stabilizing."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Evaluation of donor site fat quality and recipient zone skin laxity.",
+          "Detailed mapping of volume deficits to ensure a balanced, symmetric restoration."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after fat grafting?",
+        answer: [
+          "Mild swelling and bruising at both donor and recipient sites for 5-7 days.",
+          "Normal walking and light activities are encouraged within 48 hours."
+        ]
+      },
+      {
+        question: "When can I return to work after fat grafting?",
+        answer: [
+          "Typically 7-10 days for most professional roles.",
+          "Physical impact activities should be paused for 3-4 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "10 days of 'quiet time' helps optimize the survival of the grafted fat.",
+          "Rest and avoiding pressure on the grafted areas are critical during this window."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Initial volume settles over 3 months as 'permanent' fat integration occurs.",
+          "Final soft, natural contours are reached as tissues fully soften by 6 months."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Avoid direct pressure on the treated areas (sleep elevated for face, special cushions for body).",
+          "Maintain a stable weight to ensure the long-term integrity of the results."
+        ]
+      },
+      {
+        question: "Is fat grafting performed the same way on the face and body?",
+        answer: [
+          "No. Facial tissues and body tissues behave very differently. Facial fat grafting often requires more refined techniques for precision and skin quality, while body fat grafting focuses on stable volume and contour.",
+          "The technique is selected based on the area treated and the desired outcome."
+        ]
+      },
+      {
+        question: "What determines the cost of fat grafting?",
+        answer: [
+          "Volume required (Face vs Breast/Buttock), and the type of processing (Nanofat vs Microfat)."
+        ]
+      }
+    ]
+  },
+  {
+    id: "buttock-lift-chandigarh",
+    title: "Buttock Lift",
+    category: "Body",
+    parentCategory: "aesthetic",
+    description: "Elevation and tightening of the posterior contour.",
+    longDescription: "Removing excess skin and lifting the remaining tissue to improve the tone and shape of the buttocks.",
+    image: "/buttock-lift-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Buttock", "Body"],
+    seoContent: `
+### Buttock Lift in Chandigarh: Shape & Lift
+**Enhancing Curves with Safety & Precision**
+
+Whether due to aging, weight loss, or genetics, a flat or sagging buttock can affect your clothing fit and confidence.
+
+**Techniques:**
+*   **Surgical Lift:** Removing excess skin from the upper buttock/lower back region to lift the tissue.
+*   **Auto-Augmentation:** Using your own tissue flaps during a lift to add volume without implants.
+
+#### Safety Note
+This procedure is performed strictly under general anesthesia at Healing Hospital. We prioritize safety above extreme volume, ensuring natural, proportional results.
+
+#### Result Timeline
+Results are visible immediately. You will need to avoid sitting directly on the area for 2 weeks to allow for optimal healing.
+`,
+    priceRange: "₹1,50,000 - ₹3,00,000",
+    costFactors: "Implant needs vs Brazilia Butt Lift (BBL), Liposuction volume harvested",
+    faqs: [
+      {
+        question: "What is a buttock lift?",
+        answer: [
+          "A buttock lift removes excess skin from the upper buttock/lower back region and lifts the tissue to improve shape and tone.",
+          "It can also include auto-augmentation using your own tissue flaps to add volume without implants."
+        ]
+      },
+      {
+        question: "What is the difference between a buttock lift and a BBL?",
+        answer: [
+          "A buttock lift focuses on removing excess skin and lifting, while a Brazilian Butt Lift (BBL) involves fat transfer to add volume.",
+          "Dr. Sumit prioritizes safety above extreme volume, ensuring natural, proportional results."
+        ]
+      },
+      {
+        question: "What is the recovery like?",
+        answer: [
+          "Results are visible immediately. You will need to avoid sitting directly on the area for 2 weeks.",
+          "Full recovery takes 4-6 weeks; compression garments help with healing."
+        ]
+      },
+      {
+        question: "What determines the cost of a buttock lift?",
+        answer: [
+          "Whether implants are needed vs a BBL approach, and the liposuction volume harvested."
+        ]
+      }
+    ]
+  },
+
+  // AESTHETIC - FACE
+  {
+    id: "facelift-chandigarh",
+    title: "Facelift (MACS Lift)",
+    category: "Face",
+    parentCategory: "aesthetic",
+    description: "Minimal Access Cranial Suspension for vertical rejuvenation.",
+    longDescription: "A specialized Belgium-refined technique that lifts deep facial tissues vertically, avoiding the horizontal 'pulled' look of traditional facelifts.",
+    image: "/facelift-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Face"],
+    seoContent: `
+### MACS Facelift in Chandigarh: The Vertical Anti-Aging Revolution
+
+**Minimal Access Cranial Suspension (MACS) Lift: The "Belgium Technique"**
+
+Traditional facelifts often pulled the skin horizontally, leading to an unnatural, "wind-blown" appearance. The MACS Lift, refined by masters in Belgium, is a revolutionary technique that lifts the facial tissues **vertically**—counteracting gravity directly.
+
+**Why Choose a MACS Lift?**
+*   **Natural Results:** By lifting vertically, we restore your features to where they were 10 years ago, rather than stretching them sideways.
+*   **Short Scar:** The incision is limited to the front of the ear, avoiding the hairline behind the ear entirely. This means you can wear your hair up with confidence.
+*   **Safety:** The procedure is less invasive than a deep-plane facelift, offering a powerful rejuvenation with a significantly safer profile.
+
+#### Targeting the "Jowls" & Neck
+This procedure is specifically designed to obliterate the "jowls" (sagging jawline) and tighten the upper neck, restoring a crisp, youthful V-shape to the face.
+
+#### Recovery Timeline
+*   **Downtime:** Most patients are "socially presentable" with makeup within 10-14 days.
+*   **Longevity:** While aging continues, the clock is turned back effectively by 10-15 years.
+    `,
+    priceRange: "₹1,50,000 - ₹3,00,000",
+    costFactors: "Deep Plane vs SMAS Plication, Neck involvement, Anesthesia time",
+    faqs: [
+      {
+        question: "What is a MACS Lift facelift?",
+        answer: [
+          "The MACS Lift (Minimal Access Cranial Suspension) is a refined technique from Belgium that lifts facial tissues vertically—counteracting gravity directly.",
+          "Unlike traditional facelifts that pull skin horizontally, the MACS Lift restores features to a natural, youthful position."
+        ]
+      },
+      {
+        question: "How long do facelift results last?",
+        answer: [
+          "While aging continues, the clock is effectively turned back by 10-15 years.",
+          "Most patients are 'socially presentable' with makeup within 10-14 days."
+        ]
+      },
+      {
+        question: "Will a facelift leave visible scars?",
+        answer: [
+          "The incision is limited to the front of the ear, avoiding the hairline behind the ear entirely.",
+          "This means you can wear your hair up with confidence."
+        ]
+      },
+      {
+        question: "Is a facelift safe?",
+        answer: [
+          "The MACS procedure is less invasive than a deep-plane facelift, offering powerful rejuvenation with a significantly safer profile.",
+          "It is performed under controlled conditions at Healing Hospital."
+        ]
+      },
+      {
+        question: "What determines the cost of a facelift?",
+        answer: [
+          "Deep Plane vs SMAS Plication, neck involvement, and anesthesia time."
+        ]
+      }
+    ]
+  },
+  {
+    id: "neck-lift-chandigarh",
+    title: "Neck Lift (Deep Plane)",
+    category: "Face",
+    parentCategory: "aesthetic",
+    description: "Structural sharpening of the jawline and neck angle.",
+    longDescription: "Addressing the deep platysma and fat layers to resolve neck laxity and redefine a sharp, youthful submental profile.",
+    image: "/neck-lift-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Neck", "Face"],
+    seoContent: `
+### Neck Lift in Chandigarh: Define Your Jawline
+**Deep Plane Neck Contouring for a Sharp Profile**
+
+A heavy or sagging neck can age a face more than wrinkles. Dr. Sumit performs Deep Plane Neck Lifts to address the "Turkey Neck" and restore a crisp, youthful cervico-mental angle (jaw-neck angle).
+
+**The Procedure**
+We tighten the Platysma muscle primarily. In many cases, this is combined with deep liposuction to remove sub-mental fat.
+
+#### Minimal Scars
+In isolated neck lifts, the incision is often hidden entirely under the chin or behind the ears.
+
+#### Recovery
+You will wear a supportive chin strap for 1 week. Bruising typically resolves in 10-12 days.
+`,
+    priceRange: "₹1,20,000 - ₹3,00,000",
+    costFactors: "Isolated Neck Lift vs Combined Facelift, Platysmaplasty complexity, Liposuction needs",
+    faqs: [
+      {
+        question: "What is a deep plane neck lift?",
+        answer: [
+          "A deep plane neck lift addresses the 'Turkey Neck' by tightening the Platysma muscle and removing sub-mental fat.",
+          "It restores a crisp, youthful cervico-mental angle (jaw-neck angle)."
+        ]
+      },
+      {
+        question: "Will there be visible scars from a neck lift?",
+        answer: [
+          "In isolated neck lifts, the incision is often hidden entirely under the chin or behind the ears."
+        ]
+      },
+      {
+        question: "What is the recovery like after a neck lift?",
+        answer: [
+          "You will wear a supportive chin strap for 1 week.",
+          "Bruising typically resolves in 10-12 days."
+        ]
+      },
+      {
+        question: "What determines the cost of a neck lift?",
+        answer: [
+          "Isolated Neck Lift vs Combined Facelift, Platysmaplasty complexity, and Liposuction needs."
+        ]
+      }
+    ]
+  },
+  {
+    id: "lip-lift-chandigarh",
+    title: "Lip Lift / Lip Reduction",
+    category: "Face",
+    parentCategory: "aesthetic",
+    description: "Refining lip proportions and philtrum height.",
+    longDescription: "Shortening the space between the nose and lip or reducing excess volume to achieve balanced facial ratios.",
+    image: "/lip-lift-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Lips", "Face"],
+    seoContent: `
+### Lip Lift in Chandigarh: Sensual Balance
+**Shortening the Philtrum for a Youthful Pout**
+
+A long upper lip (philtrum) can hide your teeth when you smile and make the face look older. A Lip Lift shortens this distance, rolling the red part of the lip outward (vermilion show) for a naturally fuller look without fillers.
+
+**The "Bullhorn" Technique**
+The incision is hidden perfectly in the shadow of the base of the nose. It is virtually undetectable once healed.
+
+#### Lip Reduction
+For clients with genetically overly prominent lips, we perform precision reduction to balance facial harmony, often preserving the natural shape while reducing volume.
+`,
+    priceRange: "₹45,000 - ₹80,000",
+    costFactors: "Procedure type (Lift vs Reduction), Local anesthesia vs Sedation",
+    faqs: [
+      {
+        question: "What is a lip lift?",
+        answer: [
+          "A Lip Lift shortens the distance between the nose and the upper lip (philtrum), rolling the red part of the lip outward for a naturally fuller look without fillers.",
+          "The 'Bullhorn' technique hides the incision in the shadow of the base of the nose."
+        ]
+      },
+      {
+        question: "What is the difference between a lip lift and lip fillers?",
+        answer: [
+          "A lip lift is a permanent surgical solution that shortens the philtrum and shows more of the upper lip.",
+          "Fillers add volume temporarily (9-18 months). A lip lift addresses structural proportion."
+        ]
+      },
+      {
+        question: "What is lip reduction?",
+        answer: [
+          "For clients with genetically overly prominent lips, we perform precision reduction to balance facial harmony.",
+          "The natural shape is preserved while reducing volume."
+        ]
+      },
+      {
+        question: "What determines the cost?",
+        answer: [
+          "Procedure type (Lift vs Reduction) and whether local anesthesia or sedation is used."
+        ]
+      }
+    ]
+  },
+  {
+    id: "hair-transplant-chandigarh",
+    title: "Hair Transplant",
+    category: "Face",
+    parentCategory: "aesthetic",
+    description: "Restoring density and hairline naturally.",
+    longDescription: "Advanced follicular unit extraction and placement for permanent hair restoration with microscopic precision.",
+    image: "/hair-transplant-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Face"],
+    seoContent: `
+### Best Hair Transplant in Chandigarh: Restoring Confidence Permanently
+
+**Advanced FUE & DHT Techniques for Natural Hair Restoration**
+
+Hair loss can significantly impact self-esteem. Dr. Sumit Singh Gautam offers state-of-the-art Hair Transplant services in Chandigarh, utilizing advanced Follicular Unit Extraction (FUE) and Direct Hair Transplantation (DHT) methods to ensure maximum graft survival and density.
+
+#### Medical Deep Dive: The Visualist Approach to Hairlines
+Designing a hairline is art. It requires understanding facial proportions, age-appropriate recession, and natural directionality.
+*   **Technique (FUE/DHT):** We utilize <0.8mm punches to minimize donor scarring. The DHT method involves simultaneous extraction and implantation, reducing the time follicles spend outside the body (ischemia time) and boosting survival rates closer to 100%.
+*   **Surgeon-Led:** Dr. Sumit is personally involved in the slit creation (channeling) phase, determining the angle and density. This prevents the "doll head" look or unnatural straight lines often seen in technician-run clinics.
+
+#### Local Context: Chandigarians & Hair
+Given the water quality and environmental factors in the Tricity, we often see specific patterns of hair loss.
+*   **Water Hardness:** We advise patients on post-transplant washing protocols using filtered water to prevent calcification on the new grafts.
+*   **Follow-up:** Being in Sector 34, we offer easy ongoing PRP sessions to maintain native hair density.
+
+#### Why Choose Us for Hair Transplant in Chandigarh?
+1.  **Surgeon-Led Procedure:** Unlike many clinics where technicians do the work, Dr. Sumit is personally involved in the planning and slit creation phases.
+2.  **Healing Hospital Audit:** We operate within a hospital environment, ensuring sterility and emergency readiness.
+
+[View our Before and After Gallery](/gallery) to see the life-changing density our patients enjoy.
+    `,
+    priceRange: "₹60,000 - ₹1,50,000",
+    costFactors: "Number of Grafts (FUE), Hairline Design complexity",
+    faqs: [
+      {
+        question: "How long does a hair transplant take to grow?",
+        answer: [
+          "Hair transplant growth is a gradual process. The newly transplanted hairs typically shed within the first 2-4 weeks (this is normal).",
+          "New growth begins around month 3-4. At 6 months, you'll see about 50% of the result, and full density is achieved between 12 to 18 months."
+        ]
+      },
+      {
+        question: "Is a hair transplant painful?",
+        answer: [
+          "The only uncomfortable part of the procedure is the initial administration of local anesthesia (the ring block). Once the scalp is numb, the procedure itself is virtually painless.",
+          "Many patients comfortably watch movies on their phones or sleep during the extraction and implantation phases."
+        ]
+      },
+      {
+        question: "Will people know I had a hair transplant?",
+        answer: [
+          "Initially, there will be scabbing and redness for about 7-10 days. Once the scabs fall off, the scalp may look slightly pink.",
+          "With Dr. Sumit's focus on natural hairline design—using single-hair follicles at the very front and avoiding straight 'doll-head' lines—the final result will look completely natural and undetectable."
+        ]
+      },
+      {
+        question: "Can I wear a turban or helmet after a hair transplant?",
+        answer: [
+          "Loose caps can be worn after 3 days. Helmets and turbans should be avoided for 3-4 weeks to avoid traction on the new grafts."
+        ]
+      },
+      {
+        question: "What determines the cost of a hair transplant?",
+        answer: [
+          "We value per-graft viability. Our packages are comprehensive and include the procedure, hospital environment, and follow-up PRP sessions.",
+          "Number of Grafts (FUE) and Hairline Design complexity are the primary factors."
+        ]
+      }
+    ]
+  },
+  {
+    id: "blepharoplasty-chandigarh",
+    title: "Blepharoplasty (Eye Bags)",
+    category: "Face",
+    parentCategory: "aesthetic",
+    description: "Revitalizing the orbital region through lid refinement.",
+    longDescription: "Correcting puffy eye bags and drooping lids to restore a bright, awake, and energetic facial expression.",
+    image: "/blepharoplasty-aesthetic.webp",
+    brief: {
+      operationTime: "1.5 - 2.5 Hours",
+      anesthesia: "General / Local + Sedation",
+      recovery: "7 - 10 Days",
+      refinement: "Settled at 2 months"
+    },
+    details: {
+      whoNeeds: ["Individuals with heavy upper lids or pronounced under-eye bags.", "Patients who feel they look 'tired' even when well-rested."],
+      candidates: ["Good overall health with no serious eye conditions like glaucoma.", "Non-smokers who understand that the goal is refinement, not a 'surprised' look."],
+      assessment: ["Evaluation of skin laxity, fat prolapse, and muscle tone around the eyes.", "Check for dry eye syndrome and vision health."],
+      functional: ["Vision remains clear, but initial swelling and bruising last about 5-7 days.", "You'll be fully mobile immediately, though reading and screens should be limited for 48 hours."],
+      backToWork: ["Patients typically return to work by day 7-10 with light makeup.", "Public social events are best planned after 2 weeks."],
+      holidays: ["A 7-day 'home recovery' is recommended.", "Iced compresses are your best friend during this first week."],
+      results: ["The 'bright-eyed' look is evident within 2-3 weeks.", "Scar lines fade almost into invisibility over 2-4 months."],
+      recoveryTips: ["Keep your head elevated while sleeping for the first 5 days.", "Protect your eyes from sun and wind with dark sunglasses."]
+    },
+    regions: ["Eyes", "Face"],
+    seoContent: `
+### Blepharoplasty (Eyelid Surgery) in Chandigarh: Awake & Refreshed
+**Upper and Lower Eyelid Rejuvenation**
+
+The eyes are the first place to show aging. Hooded upper lids can make you look tired, while lower bags can make you look older. Blepharoplasty is a precise surgical procedure to remove excess skin and fat bags.
+
+**Upper Blepharoplasty**
+*   **Goal:** Open up the eyes and create a crisp eyelid platform.
+*   **Scar:** Hidden in the natural eyelid crease.
+
+**Lower Blepharoplasty**
+*   **Technique:** We often use a trans-conjunctival approach (internal incision) for fat removal, leaving no external scar.
+*   **Tear Troughs:** We frequently combine this with fat grafting to blend the lid-cheek junction.
+
+#### Recovery
+It is a quick recovery procedure. Sutures are removed on Day 5. Most patients return to work in 7-10 days.
+`,
+    priceRange: "₹60,000 - ₹1,20,000",
+    costFactors: "Upper vs Lower Lids, Skin only vs Fat Excision, Canthopexy requirement",
+    gallery: ["/blepharoplasty-result-1.webp"],
+    faqs: [
+      {
+        question: "Who needs Blepharoplasty?",
+        answer: [
+          "Individuals with heavy upper lids or pronounced under-eye bags.",
+          "Patients who feel they look 'tired' even when well-rested."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for eyelid surgery?",
+        answer: [
+          "Good overall health with no serious eye conditions like glaucoma.",
+          "Non-smokers who understand that the goal is refinement, not a 'surprised' look."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Evaluation of skin laxity, fat prolapse, and muscle tone around the eyes.",
+          "Check for dry eye syndrome and vision health."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after blepharoplasty?",
+        answer: [
+          "Vision remains clear, but initial swelling and bruising last about 5-7 days.",
+          "You'll be fully mobile immediately, though reading and screens should be limited for 48 hours."
+        ]
+      },
+      {
+        question: "When can I return to work after eyelid surgery?",
+        answer: [
+          "Patients typically return to work by day 7-10 with light makeup.",
+          "Public social events are best planned after 2 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "A 7-day 'home recovery' is recommended.",
+          "Iced compresses are your best friend during this first week."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "The 'bright-eyed' look is evident within 2-3 weeks.",
+          "Scar lines fade almost into invisibility over 2-4 months."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Keep your head elevated while sleeping for the first 5 days.",
+          "Protect your eyes from sun and wind with dark sunglasses."
+        ]
+      },
+      {
+        question: "What determines the cost of blepharoplasty?",
+        answer: [
+          "Upper vs Lower Lids, Skin only vs Fat Excision, and Canthopexy requirement."
+        ]
+      }
+    ]
+  },
+  {
+    id: "rhinoplasty-nose-job-chandigarh",
+    title: "Rhinoplasty (Nose Job)",
+    category: "Face",
+    parentCategory: "aesthetic",
+    description: "Refining nasal structure for harmony and function.",
+    longDescription: "Reshaping the nose to fit the face while maintaining or improving respiratory airflow.",
+    image: "/rhinoplasty-aesthetic.webp",
+    brief: {
+      operationTime: "2.5 - 4 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "7 - 10 Days",
+      refinement: "Final at 12 months"
+    },
+    details: {
+      whoNeeds: ["Patients seeking to refine a nasal hump, tip width, or overall projection.", "Those needing functional correction for breathing issues (Septoplasty)."],
+      candidates: ["Patients whose facial growth is complete.", "Individuals seeking internal and external nasal harmony."],
+      assessment: ["3D visualization of the proposed new profile.", "Internal examination of the septum and turbinates for airflow optimization."],
+      functional: ["Breathing may be congested for the first few days due to internal swelling.", "Most 'splints' are removed by day 7."],
+      backToWork: ["Typically 7-10 days as bruising under eyes resolves.", "Heavy contact sports must be avoided for 6 weeks."],
+      holidays: ["10 days off is ideal for a stress-free recovery.", "Avoid heavy glasses resting on the nasal bridge for 4 weeks."],
+      results: ["The new profile is visible immediately after splint removal.", "The final refinement of the tip matures over 12 months as fine swelling resolves."],
+      recoveryTips: ["Avoid blowing your nose for at least 2 weeks.", "Use saline sprays as prescribed to keep internal passages clear."]
+    },
+    regions: ["Nose", "Face"],
+    seoContent: `
+### Best Rhinoplasty in Chandigarh: Harmonizing Your Profile
+
+**Expert Nose Reshaping (Nose Job) by Dr. Sumit Singh Gautam**
+
+Rhinoplasty is widely considered the most complex of all cosmetic surgeries. It sits at the exact intersection of form and function. A beautiful nose must also breathe perfectly. In Sector 34, Chandigarh, Dr. Sumit performs both Open and Closed Rhinoplasty to correct structural deformities, dorsal humps, and bulbous tips.
+
+#### Medical Deep Dive: Structural Preservation
+Dr. Sumit champions **Preservation Rhinoplasty** where possible.
+*   **Concept:** Instead of breaking the nasal bridge to lower a hump, we remove cartilage from underneath (dorsal preservation), keeping the natural smooth lines of your nose intact.
+*   **Fellowship Training:** His European training emphasized "finesse" work—producing noses that look like you were born with them, not "operated on."
+
+#### Local Context: Breathing in Northern India
+Allergies and dust in North India can complicate nasal recovery.
+*   **Functional Focus:** We aggressively treat hypertrophied turbinates (which block breathing) during the cosmetic surgery.
+*   **Post-Op:** We do NOT use heavy, painful nasal packing. We use modern internal splints that allow you to breathe immediately after surgery.
+
+#### Functional & Cosmetic Correction
+We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
+*   **Deviated Septum:** Correcting internal blockages.
+*   **Cosmetic:** Refining the bridge, tip, and alar base.
+
+[View our Gallery](/gallery)
+    `,
+    priceRange: "₹1,20,000 - ₹2,50,000",
+    costFactors: "Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, Rib Graft requirement",
+    faqs: [
+      {
+        question: "Who needs a Rhinoplasty?",
+        answer: [
+          "Patients seeking to refine a nasal hump, tip width, or overall projection.",
+          "Those needing functional correction for breathing issues (Septoplasty)."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for a nose job?",
+        answer: [
+          "Patients whose facial growth is complete.",
+          "Individuals seeking internal and external nasal harmony."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "3D visualization of the proposed new profile.",
+          "Internal examination of the septum and turbinates for airflow optimization."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after rhinoplasty?",
+        answer: [
+          "Breathing may be congested for the first few days due to internal swelling.",
+          "Most 'splints' are removed by day 7."
+        ]
+      },
+      {
+        question: "When can I return to work after a nose job?",
+        answer: [
+          "Typically 7-10 days as bruising under eyes resolves.",
+          "Heavy contact sports must be avoided for 6 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "10 days off is ideal for a stress-free recovery.",
+          "Avoid heavy glasses resting on the nasal bridge for 4 weeks."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "The new profile is visible immediately after splint removal.",
+          "The final refinement of the tip matures over 12 months as fine swelling resolves."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "Avoid blowing your nose for at least 2 weeks.",
+          "Use saline sprays as prescribed to keep internal passages clear."
+        ]
+      },
+      {
+        question: "What determines the cost of rhinoplasty?",
+        answer: [
+          "It varies between primary (first time) and revision (corrective) surgeries.",
+          "Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, and Rib Graft requirement are the main factors."
+        ]
+      },
+      {
+        question: "Does a nose job affect breathing?",
+        answer: [
+          "When performed correctly, rhinoplasty should maintain or improve breathing. Dr. Sumit prioritizes functional harmony alongside aesthetics, often combining Aesthetic Rhinoplasty with Septoplasty.",
+          "If you have an existing deviated septum or enlarged turbinates, these are corrected during the procedure to ensure optimal airflow."
+        ]
+      },
+      {
+        question: "What is Preservation Rhinoplasty?",
+        answer: [
+          "Traditional rhinoplasty often involves breaking the nasal bridge to remove a hump. Preservation Rhinoplasty is an advanced technique where cartilage and bone are removed from underneath the bridge (subdorsal).",
+          "This allows the bridge to simply 'drop' down, preserving the natural smooth lines of your native nose and leading to a more natural, less 'operated' look."
+        ]
+      },
+      {
+        question: "Will a nose job change my voice?",
+        answer: [
+          "No, aesthetic rhinoplasty does not affect the vocal chords. It may briefly sound 'nasal' due to swelling but resolves quickly."
+        ]
+      },
+      {
+        question: "Can I wear glasses after rhinoplasty?",
+        answer: [
+          "You must avoid heavy glasses resting on the bridge for 4-6 weeks. We recommend contact lenses or taping glasses to the forehead."
+        ]
+      }
+    ]
+  },
+  {
+    id: "otoplasty-chandigarh",
+    title: "Ear Reshaping (Otoplasty)",
+    category: "Face",
+    parentCategory: "aesthetic",
+    description: "Correction of ear prominence and symmetry.",
+    longDescription: "Pinned-back or reshaped ears to improve position and appearance, often performed to resolve congenital concerns.",
+    image: "/otoplasty-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Ears", "Face"],
+    gallery: ["/otoplasty-result-1.webp", "/otoplasty-result-2.webp", "/otoplasty-result-3.webp", "/otoplasty-result-4.webp", "/otoplasty-result-5.webp"],
+    seoContent: `
+### Otoplasty in Chandigarh: Ear Reshaping
+**Correcting Prominent Ears for Children and Adults**
+
+Prominent or "bat ears" can be a source of social anxiety. Otoplasty (Ear Pinning) reshapes the ear cartilage to bring it closer to the head and create a natural-looking anti-helical fold.
+
+**Timing**
+*   **Children:** Can be done after age 6 (when ear growth is near complete).
+*   **Adults:** Can be done at any age.
+
+#### The Procedure
+Performed under Local Anesthesia for adults and General Anesthesia for children. The scar is hidden completely behind the ear.
+
+#### Recovery
+A head bandage is worn for 3-5 days. Results are permanent and immediate.
+`,
+    priceRange: "₹45,000 - ₹80,000",
+    costFactors: "Unilateral vs Bilateral correction, Local vs General Anesthesia",
+    faqs: [
+      {
+        question: "What is otoplasty?",
+        answer: [
+          "Otoplasty (Ear Pinning) reshapes the ear cartilage to bring prominent ears closer to the head and create a natural-looking anti-helical fold."
+        ]
+      },
+      {
+        question: "At what age can otoplasty be performed?",
+        answer: [
+          "For children, it can be done after age 6 when ear growth is near complete.",
+          "For adults, it can be done at any age."
+        ]
+      },
+      {
+        question: "What is the recovery like after ear reshaping?",
+        answer: [
+          "A head bandage is worn for 3-5 days. Results are permanent and immediate.",
+          "The scar is hidden completely behind the ear."
+        ]
+      },
+      {
+        question: "What determines the cost of otoplasty?",
+        answer: [
+          "Unilateral vs Bilateral correction and Local vs General Anesthesia."
+        ]
+      }
+    ]
+  },
+
+  // BREAST
+  {
+    id: "breast-augmentation-chandigarh",
+    title: "Breast Augmentation",
+    category: "Breast",
+    parentCategory: "aesthetic",
+    description: "Enhancing volume with Fat or Premium Implants.",
+    longDescription: "Customized volume enhancement tailored to the patient's anatomy, utilizing either fat transfer or silicone implants.",
+    subSections: ["With Fat", "With Implants"],
+    image: "/breast-augmentation-aesthetic.webp",
+    brief: {
+      operationTime: "1.5 - 2.5 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "5 - 7 Days",
+      refinement: "Drop & Fluff at 3 months"
+    },
+    details: {
+      whoNeeds: ["Women seeking to restore volume lost after nursing or weight changes.", "Individuals desiring better symmetry and a more balanced silhouette."],
+      candidates: ["Stable breast health and realistic expectations about implant size.", "Understanding the difference between a 'lift' and simple 'augmentation'."],
+      assessment: ["Detailed measurements of chest width and existing breast tissue.", "Discussion of implant profile (High vs Moderate) and placement (Under vs Over muscle)."],
+      functional: ["Arms will feel heavy and chest tight for the first 48-72 hours.", "Walking is essential from day one to aid circulation."],
+      backToWork: ["Desk jobs can resume in 5-7 days.", "Strenuous upper body lifting is restricted for 4-6 weeks."],
+      holidays: ["One full week of 'rebound time' is sufficient.", "Plan for extra help at home if you have small children."],
+      results: ["Shape is visible immediately, though 'drop and fluff' takes 6-12 weeks.", "Implants settle into a natural position progressively."],
+      recoveryTips: ["The surgical support bra is mandatory for the first 6 weeks.", "Manual massage may be recommended depending on the implant type."]
+    },
+    regions: ["Breasts"],
+    gallery: [
+      "/breast-augmentation-result-1.webp",
+      "/breast-augmentation-result-2.webp",
+      "/breast-augmentation-result-3.webp",
+      "/breast-augmentation-result-4.webp",
+      "/breast-augmentation-result-5.webp",
+      "/breast-augmentation-result-6.webp"
+    ],
+    seoContent: `
+### Breast Augmentation in Chandigarh: Enhance Your Silhouette
+**Premium Implants (Motiva / Mentor) & Fat Transfer**
+
+Breast Augmentation is one of the most transformative procedures for confidence. Dr. Sumit offers tailored solutions using US FDA-approved implants or your own fat (Composite Augmentation).
+
+**Implant Choices**
+*   **Ergonomix (Motiva):** Implants that move naturally with gravity, looking round when lying down and teardrop when standing.
+*   **Round vs Drop:** We help you choose based on your upper pole fulness desires.
+
+#### Safety Protocol
+We use a **"No-Touch" Technique** with Keller Funnels to insert implants, minimizing the risk of infection or capsular contracture.
+
+#### Recovery
+Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4 weeks.
+`,
+    priceRange: "₹1,30,000 - ₹2,50,000",
+    costFactors: "Implant Brand (Motiva/Silimed), Implant Type (PU coated vs Nanotexture), Fat Transfer combination",
+    faqs: [
+      {
+        question: "Who needs Breast Augmentation?",
+        answer: [
+          "Women seeking to restore volume lost after nursing or weight changes.",
+          "Individuals desiring better symmetry and a more balanced silhouette."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for breast augmentation?",
+        answer: [
+          "Stable breast health and realistic expectations about implant size.",
+          "Understanding the difference between a 'lift' and simple 'augmentation'."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Detailed measurements of chest width and existing breast tissue.",
+          "Discussion of implant profile (High vs Moderate) and placement (Under vs Over muscle)."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after breast augmentation?",
+        answer: [
+          "Arms will feel heavy and chest tight for the first 48-72 hours.",
+          "Walking is essential from day one to aid circulation."
+        ]
+      },
+      {
+        question: "When can I return to work after breast augmentation?",
+        answer: [
+          "Desk jobs can resume in 5-7 days.",
+          "Strenuous upper body lifting is restricted for 4-6 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "One full week of 'rebound time' is sufficient.",
+          "Plan for extra help at home if you have small children."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Shape is visible immediately, though 'drop and fluff' takes 6-12 weeks.",
+          "Implants settle into a natural position progressively."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "The surgical support bra is mandatory for the first 6 weeks.",
+          "Manual massage may be recommended depending on the implant type."
+        ]
+      },
+      {
+        question: "What determines the cost of breast augmentation?",
+        answer: [
+          "Implant Brand (Motiva/Silimed), Implant Type (PU coated vs Nanotexture), and Fat Transfer combination."
+        ]
+      }
+    ]
+  },
+  {
+    id: "breast-reduction-chandigarh",
+    title: "Breast Reduction",
+    category: "Breast",
+    parentCategory: "aesthetic",
+    description: "Alleviating discomfort while reshaping the profile.",
+    longDescription: "Reduction of excess glandular tissue and skin to create a lighter, more proportionate breast size.",
+    image: "/breast-reduction-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Breasts"],
+    gallery: ["/breast-reduction-result-1.webp", "/axillary-breast-reduction-result.webp"],
+    seoContent: `
+### Breast Reduction in Chandigarh: Relief & Proportion
+**Alleviating Back Pain & Restoring Confidence**
+
+Macromastia (excessively large breasts) can cause chronic neck pain, shoulder grooving, and rashes. Breast Reduction is a functional and aesthetic surgery that removes excess weight and lifts the breast for a youthful, proportionate shape.
+
+**The Technique**
+Dr. Sumit generally uses the **Superomedial Pedicle** technique, which preserves nipple sensation and allows for breastfeeding in many cases.
+
+#### Results
+*   **Physical relief:** Immediate alleviation of shoulder strain.
+*   **Aesthetic:** Lighter, perkier breasts that fit better in clothing.
+
+#### Cost
+The cost varies by size and complexity but includes all hospital and anesthesia fees.
+`,
+    priceRange: "₹1,60,000 - ₹2,80,000",
+    costFactors: "Breast size (Gigantomastia requires more time), Liposuction needs for lateral chest",
+    faqs: [
+      {
+        question: "What is breast reduction surgery?",
+        answer: [
+          "Breast reduction removes excess glandular tissue, fat, and skin to create a lighter, more proportionate breast size.",
+          "It alleviates chronic neck pain, shoulder grooving, and rashes caused by excessively large breasts."
+        ]
+      },
+      {
+        question: "Will I be able to breastfeed after breast reduction?",
+        answer: [
+          "Dr. Sumit uses the Superomedial Pedicle technique, which preserves nipple sensation and allows for breastfeeding in many cases."
+        ]
+      },
+      {
+        question: "What are the results of breast reduction?",
+        answer: [
+          "Immediate physical relief from shoulder strain.",
+          "Lighter, perkier breasts that fit better in clothing."
+        ]
+      },
+      {
+        question: "What determines the cost of breast reduction?",
+        answer: [
+          "Breast size (Gigantomastia requires more time) and Liposuction needs for the lateral chest."
+        ]
+      }
+    ]
+  },
+  {
+    id: "breast-lift-chandigarh",
+    title: "Breast Lift (Mastopexy)",
+    category: "Breast",
+    parentCategory: "aesthetic",
+    description: "Restoring elevation and firmness.",
+    longDescription: "Raising and reshaping sagging breasts by removing excess skin and tightening surrounding tissue.",
+    image: "/breast-lift-aesthetic.webp", // User-provided aesthetic image
+    seoContent: `
+### Breast Lift (Mastopexy) in Chandigarh: defy Gravity
+**Restoring Youthful Position & Firmness**
+
+Pregnancy, breastfeeding, and gravity can cause breasts to sag (ptosis). A Breast Lift raises the nipple-areola complex and removes excess skin to reshape the breast mound.
+
+**Do I need Implants?**
+*   **Lift Only:** If you have enough volume but just need reshaping.
+*   **Lift + Implant:** If you want upper breast fullness along with the lift.
+
+#### Recovery
+Similar to reduction, mobility is good immediately, but high-impact activities are restricted for 4 weeks.
+`,
+    regions: ["Breasts"],
+    priceRange: "₹1,50,000 - ₹2,50,000",
+    costFactors: "Grade of Ptosis (Sagging), Implant requirement for volume, Skin quality",
+    faqs: [
+      {
+        question: "What is a breast lift (mastopexy)?",
+        answer: [
+          "A breast lift raises the nipple-areola complex and removes excess skin to reshape the breast mound.",
+          "Pregnancy, breastfeeding, and gravity can cause breasts to sag (ptosis)."
+        ]
+      },
+      {
+        question: "Do I need implants with a breast lift?",
+        answer: [
+          "Lift Only: If you have enough volume but just need reshaping.",
+          "Lift + Implant: If you want upper breast fullness along with the lift."
+        ]
+      },
+      {
+        question: "What is the recovery like after a breast lift?",
+        answer: [
+          "Similar to reduction, mobility is good immediately, but high-impact activities are restricted for 4 weeks."
+        ]
+      },
+      {
+        question: "What determines the cost of a breast lift?",
+        answer: [
+          "Grade of Ptosis (Sagging), Implant requirement for volume, and Skin quality."
+        ]
+      }
+    ]
+  },
+
+  // MALE
+  {
+    id: "gynecomastia-surgery-chandigarh",
+    title: "Gynecomastia (Male Breast Reduction)",
+    category: "Male",
+    parentCategory: "aesthetic",
+    description: "Correcting overdeveloped male breast tissue.",
+    longDescription: "Surgical removal of glandular tissue or fat to restore a flat, masculine chest contour.",
+    image: "/gynecomastia-aesthetic.webp",
+    brief: {
+      operationTime: "1.5 - 2 Hours",
+      anesthesia: "General / Deep Sedation",
+      recovery: "3 - 5 Days",
+      refinement: "Smooth at 3 months"
+    },
+    details: {
+      whoNeeds: ["Men with enlarged breast tissue that does not respond to diet or exercise.", "Individuals seeking to resolve the 'puffy nipple' appearance."],
+      candidates: ["Men at a stable weight whose hormones have been evaluated.", "Those seeking a permanent solution to glandular overdevelopment."],
+      assessment: ["Ultrasound may be used to determine the ratio of fat to glandular tissue.", "Testing to ensure no underlying medical causes for the enlargement."],
+      functional: ["Soreness is similar to a heavy chest workout.", "Most patients are back to light movements within 48 hours."],
+      backToWork: ["Typically 3-5 days for office work.", "Gym activity (especially chest press) is restricted for 4 weeks."],
+      holidays: ["A 5-day break is usually all that is required.", "Recovery is relatively rapid compared to larger body procedures."],
+      results: ["The chest looks flatter and more masculine immediately.", "Final contour refinement occurs as skin tightens over 3 months."],
+      recoveryTips: ["The compression vest is vital to flatten the area and prevent fluid buildup.", "Lymphatic massage helps ensure a smooth, bump-free result."]
+    },
+    regions: ["Breasts", "Body"],
+    gallery: ["/body-contouring-result-1.webp", "/body-contouring-result-2.webp"],
+    seoContent: `
+### Gynecomastia Surgery in Chandigarh: Masculine Chest Contouring
+
+**Effective Treatment for Male Breast Enlargement (Man Boobs)**
+
+Gynecomastia is a common condition affecting men of all ages, often causing significant embarrassment. It is characterized by the overdevelopment of breast tissue (gland) and/or excess fat.
+
+#### Medical Deep Dive: The Stealth Approach
+Dr. Sumit employs a "Stealth Incision" technique.
+*   **Dual-Modality:** We combine **Power-Assisted Liposuction** (for fatty tissue) with **Direct Glandular Excision** (for the hard lump).
+*   **Puffy Nipple Correction:** Simply removing fat is often not enough. Removing the glandular disc behind the areola is critical to preventing the "puffy" look from returning.
+*   **Minimally Invasive:** The incision is barely 3-4mm, hidden at the border of the areola (Periareolar).
+
+#### Local Context: The "T-Shirt" Confidence
+In Chandigarh's gym-centric culture, this is our #1 requested male procedure.
+*   **Discreet:** We handle male patients with high privacy protocols at Healing Hospital.
+*   **Same Day:** It is a Day Care procedure. You come in the morning and engage in light walking by evening.
+
+#### Cost of Gynecomastia Surgery in Chandigarh
+The procedure is an investment in regained confidence. Costs include OT charges, anesthesia, and post-op care.
+*   **Affordable Quality:** We offer competitive pricing without compromising on the hospital hygiene and safety standards.
+
+#### Recovery Time
+*   **Return to Work:** Most men return to lighter office duties within 3-4 days.
+*   **Gym:** Chest workouts can resume after 4 weeks.
+*   **Results:** Visible immediately, with final skin tightening over 3 months.
+
+See our **Before and After Gallery** for examples of restored masculine contours.
+    `,
+    priceRange: "₹65,000 - ₹1,10,000",
+    costFactors: "Grade 1-3 vs Grade 4, Excess skin excision needs, Lipo extent",
+    faqs: [
+      {
+        question: "Who needs gynecomastia surgery?",
+        answer: [
+          "Men with enlarged breast tissue that does not respond to diet or exercise.",
+          "Individuals seeking to resolve the 'puffy nipple' appearance."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for gynecomastia surgery?",
+        answer: [
+          "Men at a stable weight whose hormones have been evaluated.",
+          "Those seeking a permanent solution to glandular overdevelopment."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Ultrasound may be used to determine the ratio of fat to glandular tissue.",
+          "Testing to ensure no underlying medical causes for the enlargement."
+        ]
+      },
+      {
+        question: "What is the recovery like immediately after gynecomastia surgery?",
+        answer: [
+          "Soreness is similar to a heavy chest workout.",
+          "Most patients are back to light movements within 48 hours."
+        ]
+      },
+      {
+        question: "When can I return to work after gynecomastia surgery?",
+        answer: [
+          "Typically 3-5 days for office work.",
+          "Gym activity (especially chest press) is restricted for 4 weeks."
+        ]
+      },
+      {
+        question: "How long should I take off for recovery?",
+        answer: [
+          "A 5-day break is usually all that is required.",
+          "Recovery is relatively rapid compared to larger body procedures."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "The chest looks flatter and more masculine immediately.",
+          "Final contour refinement occurs as skin tightens over 3 months."
+        ]
+      },
+      {
+        question: "What can I do to optimize my recovery?",
+        answer: [
+          "The compression vest is vital to flatten the area and prevent fluid buildup.",
+          "Lymphatic massage helps ensure a smooth, bump-free result."
+        ]
+      },
+      {
+        question: "When can I go to the gym after gynecomastia surgery?",
+        answer: [
+          "Legs and Cardio after 1 week. Chest and Arms after 4 weeks."
+        ]
+      },
+      {
+        question: "Is gynecomastia hormonal?",
+        answer: [
+          "Often idiopathic (unknown cause), but we rule out hormonal imbalances before surgery."
+        ]
+      },
+      {
+        question: "What determines the cost of gynecomastia surgery?",
+        answer: [
+          "Grade 1-3 vs Grade 4, Excess skin excision needs, and Lipo extent.",
+          "Higher grades require more time and skin work, thus slight variance in cost. Costs include OT charges, anesthesia, and post-op care."
+        ]
+      }
+    ]
+  },
+
+  // INTIMATE
+  {
+    id: "vaginoplasty-chandigarh",
+    title: "Vaginoplasty",
+    category: "Intimate",
+    parentCategory: "aesthetic",
+    description: "Vaginal rejuvenation and tightening.",
+    longDescription: "Restoring muscular tone and vaginal integrity for functional and aesthetic restoration.",
+    image: "/vaginoplasty-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Body"],
+    seoContent: `
+### Vaginoplasty in Chandigarh: Intimate Wellness
+**Vaginal Tightening & Rejuvenation**
+
+Childbirth and aging can stretch vaginal muscles, affecting sensation and confidence. Vaginoplasty tightens the vaginal canal and repairs the perineum.
+
+**Benefits:**
+*   Improved sexual gratification.
+*   Restored pelvic floor strength.
+`,
+    priceRange: "₹80,000 - ₹1,50,000",
+    costFactors: "Muscle tightening extent, Perineoplasty requirement, Mucosal excess",
+    faqs: [
+      {
+        question: "What is vaginoplasty?",
+        answer: [
+          "Vaginoplasty tightens the vaginal canal and repairs the perineum, restoring muscular tone and vaginal integrity."
+        ]
+      },
+      {
+        question: "What are the benefits of vaginoplasty?",
+        answer: [
+          "Improved sexual gratification.",
+          "Restored pelvic floor strength."
+        ]
+      },
+      {
+        question: "What determines the cost of vaginoplasty?",
+        answer: [
+          "Muscle tightening extent, Perineoplasty requirement, and Mucosal excess."
+        ]
+      }
+    ]
+  },
+  {
+    id: "labiaplasty-chandigarh",
+    title: "Labiaplasty",
+    category: "Intimate",
+    parentCategory: "aesthetic",
+    description: "Reshaping and refinement of the labia.",
+    longDescription: "Reducing excess labial tissue for comfort, confidence, and aesthetic improvement.",
+    image: "/labiaplasty-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Body"],
+    seoContent: `
+### Labiaplasty in Chandigarh: Comfort & Aesthetics
+**Correcting Hypertrophy for Daily Comfort**
+
+Enlarged labia minora can cause discomfort during exercise, cycling, or intercourse. Labiaplasty trims the excess tissue to create a neat, streamlined appearance.
+
+**Procedure:**
+It is a 45-minute procedure performed under local anesthesia or sedation. Recovery is quick (3-4 days).
+`,
+    priceRange: "₹50,000 - ₹90,000",
+    costFactors: "Unilateral vs Bilateral, Clitoral hood reduction needs, Edge refinement technique",
+    faqs: [
+      {
+        question: "What is labiaplasty?",
+        answer: [
+          "Labiaplasty trims excess labial tissue to create a neat, streamlined appearance.",
+          "Enlarged labia minora can cause discomfort during exercise, cycling, or intercourse."
+        ]
+      },
+      {
+        question: "What is the recovery like after labiaplasty?",
+        answer: [
+          "It is a 45-minute procedure performed under local anesthesia or sedation.",
+          "Recovery is quick (3-4 days)."
+        ]
+      },
+      {
+        question: "What determines the cost of labiaplasty?",
+        answer: [
+          "Unilateral vs Bilateral, Clitoral hood reduction needs, and Edge refinement technique."
+        ]
+      }
+    ]
+  },
+
+  // AESTHETIC - SCAR REVISION (Moved here)
+  {
+    id: "scar-revision-chandigarh",
+    title: "Scar Revision",
+    category: "Aesthetic",
+    parentCategory: "aesthetic",
+    description: "Improving the appearance of surgical or traumatic scars.",
+    longDescription: "Surgical and non-surgical techniques to minimize scar visibility and blend them with surrounding skin, restoring confidence through refined texture.",
+    image: "/scar-revision-aesthetic.webp", // User-provided aesthetic image
+    regions: ["Body", "Face", "Arms", "Thighs"],
+    gallery: ["/scar-revision-fat-grafted.webp", "/keloid-excision-result.webp", "/scar-revision-result-2.webp"],
+    seoContent: `
+### Scar Revision in Chandigarh: Erasing Trauma
+**Surgical & Laser Solutions for Scars**
+
+Scars from accidents, previous surgeries, or burns can be stigmatizing. While no scar can be removed completely, "Revision" can make them significantly less visible.
+
+**Approaches:**
+*   **Surgical Excision:** Removing a wide/bad scar and closing it with fine plastic surgery techniques (Geometric Broken Line Closure / Z-plasty).
+*   **Fat Grafting:** To improve the color and texture of depressed scars.
+*   **Laser/Microneedling:** For surface texture blending.
+
+#### Keloids
+We have a specialized protocol for Keloids, combining surgical removal with immediate steroid injections to prevent recurrence.
+`,
+    priceRange: "₹20,000 - ₹80,000",
+    costFactors: "Scar length and width, Z-plasty complexity, Laser sessions required",
+    faqs: [
+      {
+        question: "Can scars be completely removed?",
+        answer: [
+          "No scar can be removed completely, but 'Revision' can make them significantly less visible.",
+          "We combine surgical, fat grafting, and laser techniques for the best results."
+        ]
+      },
+      {
+        question: "What approaches are used for scar revision?",
+        answer: [
+          "Surgical Excision: Removing a wide/bad scar and closing it with fine plastic surgery techniques (Geometric Broken Line Closure / Z-plasty).",
+          "Fat Grafting: To improve the color and texture of depressed scars.",
+          "Laser/Microneedling: For surface texture blending."
+        ]
+      },
+      {
+        question: "How are keloids treated?",
+        answer: [
+          "We have a specialized protocol for Keloids, combining surgical removal with immediate steroid injections to prevent recurrence."
+        ]
+      },
+      {
+        question: "What determines the cost of scar revision?",
+        answer: [
+          "Scar length and width, Z-plasty complexity, and Laser sessions required."
+        ]
+      }
+    ]
+  },
+
+  // NON-SURGICAL
+  {
+    id: "botox-chandigarh",
+    title: "Botox & Neuromodulators",
+    category: "Non-Surgical",
+    parentCategory: "non-surgical",
+    description: "Smoothing dynamic wrinkles for a refreshed expression.",
+    longDescription: "Precision application of neuromodulators to soften forehead lines, crow's feet, and frown lines while maintaining natural facial animation.",
+    image: "/botox-procedure.webp",
+    brief: {
+      operationTime: "15 - 30 Minutes",
+      anesthesia: "None / Topical Cooling",
+      recovery: "Immediate",
+      refinement: "Full effect in 7 - 10 days"
+    },
+    details: {
+      whoNeeds: ["Patients seeking to soften dynamic expression lines.", "Individuals looking for a preventative approach to deep wrinkle formation."],
+      candidates: ["Healthy adults with realistic expectations of softening rather than freezing expression."],
+      assessment: ["Evaluation of muscle strength and skin elasticity during active expression."],
+      functional: ["No downtime; you can return to social activities immediately."],
+      backToWork: ["Instant return to work; no physical signs visible usually within 30 minutes."],
+      holidays: ["Perfect 'lunchtime' procedure with zero recovery window."],
+      results: ["Results soften at 3-5 days, peak at 14 days, and last 3-4 months."],
+      recoveryTips: ["Keep upright for 4 hours; avoid strenuous exercise for 24 hours."]
+    },
+    regions: ["Face", "Eyes", "Neck"],
+    priceRange: "₹12,000 - ₹25,000",
+    costFactors: "Number of Units, Area(s) treated (Forehead, Crow's feet, Masseter)",
+    seoContent: `
+### Botox in Chandigarh: The Art of Subtlety
+**Erase Lines, Keep Your Expressions**
+
+Botox (Botulinum Toxin) is the world's most popular non-surgical treatment. In the hands of a Plastic Surgeon, it is a tool for artistic shaping, not just paralyzing. Dr. Sumit ensures you look rested, not "frozen".
+
+**Target Areas:**
+*   **Dynamic Lines:** Forehead furrows, frown lines (11s), and Crow's feet.
+*   **Facial Slimming:** Treating the Masseter muscles to slim a square jawline.
+*   **Excess Sweating:** Hyperhidrosis treatment for underarms and palms.
+
+#### Safety
+We use only authentic Allergan Botox or Dysport, opened in front of you. Results last 3-4 months.
+`
+    ,
+    faqs: [
+      {
+        question: "Who needs Botox?",
+        answer: [
+          "Patients seeking to soften dynamic expression lines.",
+          "Individuals looking for a preventative approach to deep wrinkle formation."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for Botox?",
+        answer: [
+          "Healthy adults with realistic expectations of softening rather than freezing expression."
+        ]
+      },
+      {
+        question: "What does the clinical assessment involve?",
+        answer: [
+          "Evaluation of muscle strength and skin elasticity during active expression."
+        ]
+      },
+      {
+        question: "Is there any downtime after Botox?",
+        answer: [
+          "No downtime; you can return to social activities immediately.",
+          "Instant return to work; no physical signs visible usually within 30 minutes."
+        ]
+      },
+      {
+        question: "How long do Botox results last?",
+        answer: [
+          "Results soften at 3-5 days, peak at 14 days, and last 3-4 months."
+        ]
+      },
+      {
+        question: "What should I do after a Botox treatment?",
+        answer: [
+          "Keep upright for 4 hours; avoid strenuous exercise for 24 hours."
+        ]
+      },
+      {
+        question: "What determines the cost of Botox?",
+        answer: [
+          "Number of Units and Area(s) treated (Forehead, Crow's feet, Masseter)."
+        ]
+      }
+    ]
+  },
+  {
+    id: "microneedling-chandigarh",
+    title: "Microneedling",
+    category: "Non-Surgical",
+    parentCategory: "non-surgical",
+    description: "Collagen induction therapy for skin rejuvenation.",
+    longDescription: "Utilizing medical-grade microneedling to stimulate the body's natural healing response, improving skin texture and reducing fine lines.",
+    image: "/microneedling-non-surgical.webp",
+    brief: {
+      operationTime: "45 - 60 Minutes",
+      anesthesia: "Local Anaesthesia (Topical Cream)",
+      recovery: "1 - 2 Days",
+      refinement: "Progressive over 3 months"
+    },
+    details: {
+      whoNeeds: ["Individuals with acne scars, fine lines, or uneven skin texture.", "Patients seeking to improve overall skin brightness and health."],
+      candidates: ["Nearly all skin types and tones.", "Individuals without active skin infections or severe inflammation."],
+      assessment: ["Analysis of skin thickness and depth of scarring/pigmentation.", "Setting expectations for a series of treatments."],
+      functional: ["Skin will look like a mild sunburn for 24-48 hours.", "Normal activity resumes immediately."],
+      backToWork: ["Typically next day as redness subsides.", "Avoid direct sun exposure for 1 week."],
+      holidays: ["No formal holidays needed.", "Weekends are great for 'social downtime'."],
+      results: ["Initial glow is visible in 1 week.", "Collagen remodelling shows real structural improvement after 3 treatments."],
+      recoveryTips: ["Use a high-quality hyaluronic acid serum during the first 24 hours.", "Strict sun protection is non-negotiable post-treatment."]
+    },
+    regions: ["Face", "Body"],
+    seoContent: `
+### Microneedling in Chandigarh: Collagen Induction
+**Dermapen 4 Treatment for Acne Scars & Texture**
+
+Microneedling creates thousands of microscopic channels in the skin, triggering the body's natural wound-healing response. This generates new collagen and elastin.
+
+**Why Choose It?**
+*   **Acne Scars:** Reduces the depth of boxcar and rolling scars.
+*   **Pores:** Tightens enlarged pores.
+*   **Stem Cell Therapy:** We combine Microneedling with **NANOFAT**. Unlike simple PRP, Nanofat is rich in Adipose-Derived Stem Cells (ADSCs) that essentially "re-program" the skin, offering superior rejuvenation and scar remodelling.
+
+#### Downtime
+Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
+`
+    ,
+    faqs: [
+      {
+        question: "Who needs Microneedling?",
+        answer: [
+          "Individuals with acne scars, fine lines, or uneven skin texture.",
+          "Patients seeking to improve overall skin brightness and health."
+        ]
+      },
+      {
+        question: "Am I a good candidate for microneedling?",
+        answer: [
+          "Nearly all skin types and tones.",
+          "Individuals without active skin infections or severe inflammation."
+        ]
+      },
+      {
+        question: "What does the assessment involve?",
+        answer: [
+          "Analysis of skin thickness and depth of scarring/pigmentation.",
+          "Setting expectations for a series of treatments."
+        ]
+      },
+      {
+        question: "What is the recovery like after microneedling?",
+        answer: [
+          "Skin will look like a mild sunburn for 24-48 hours.",
+          "Normal activity resumes immediately."
+        ]
+      },
+      {
+        question: "When can I return to work after microneedling?",
+        answer: [
+          "Typically next day as redness subsides.",
+          "Avoid direct sun exposure for 1 week."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Initial glow is visible in 1 week.",
+          "Collagen remodelling shows real structural improvement after 3 treatments."
+        ]
+      },
+      {
+        question: "What should I do after microneedling?",
+        answer: [
+          "Use a high-quality hyaluronic acid serum during the first 24 hours.",
+          "Strict sun protection is non-negotiable post-treatment."
+        ]
+      }
+    ]
+  },
+  {
+    id: "chemical-peeling",
+    title: "Chemical Peeling",
+    category: "Non-Surgical",
+    parentCategory: "non-surgical",
+    description: "Advanced skin resurfacing for clarity and tone.",
+    longDescription: "Carefully calibrated chemical solutions to exfoliate the skin's outer layers, addressing uneven pigmentation and refining texture.",
+    image: "/chemical-peel-non-surgical.webp",
+    costFactors: "Type of Peel (Glycolic/TCA/Yellow), Number of sessions, Face/Body area",
+    seoContent: `
+### Chemical Peels in Chandigarh: Reveal New Skin
+**Customized Medical Grade Peels**
+
+Unlike salon facials, medical peels penetrate deeper to remove damaged outer skin layers. Dr. Sumit customizes the acid blend (Glycolic, Salicylic, TCA, or Yellow Peel) based on your skin concern.
+
+**Treatable Conditions:**
+*   **Pigmentation:** Melasma and sun spots.
+*   **Active Acne:** Salicylic peels dry out active breakouts.
+*   **Glow:** Party peels for instant radiance with zero peeling.
+
+#### Safety
+Medical supervision ensures no risk of burns or hyperpigmentation.
+`,
+    brief: {
+      operationTime: "30 - 45 Minutes",
+      anesthesia: "Local Anaesthesia (Topical Cooling)",
+      recovery: "3 - 7 Days",
+      refinement: "Reveals new skin in 10 days"
+    },
+    details: {
+      whoNeeds: ["Patients with sun damage, melasma, or surface-level age spots.", "Anyone seeking to 'reset' their skin's clarity and smoothness."],
+      candidates: ["Varies by peel depth; customized to your specific skin tone.", "Commitment to strict post-peel sun avoidance is essential."],
+      assessment: ["Skin classification and history of pigmentation issues.", "Preparation of skin with a pre-peel home care regimen."],
+      functional: ["Tightness and some peeling of the skin is expected.", "Moisturization is critical during the peeling process."],
+      backToWork: ["Typically 3-5 days depending on the depth of the peel.", "Social downtime varies; light peels have no downtime."],
+      holidays: ["A long weekend is usually sufficient for deep peels.", "Plan to stay indoors away from direct heat."],
+      results: ["Fresh, clearer skin is fully revealed within 10-14 days.", "Significant reduction in pigmentation and finer pores."],
+      recoveryTips: ["Do not pick at the peeling skin; let it fall off naturally.", "Only use the specialized post-procedure kit provided by our team."]
+    },
+    regions: ["Face"],
+    faqs: [
+      {
+        question: "Who needs a Chemical Peel?",
+        answer: [
+          "Patients with sun damage, melasma, or surface-level age spots.",
+          "Anyone seeking to 'reset' their skin's clarity and smoothness."
+        ]
+      },
+      {
+        question: "Am I an ideal candidate for a chemical peel?",
+        answer: [
+          "Varies by peel depth; customized to your specific skin tone.",
+          "Commitment to strict post-peel sun avoidance is essential."
+        ]
+      },
+      {
+        question: "What does the assessment involve?",
+        answer: [
+          "Skin classification and history of pigmentation issues.",
+          "Preparation of skin with a pre-peel home care regimen."
+        ]
+      },
+      {
+        question: "What is the recovery like after a chemical peel?",
+        answer: [
+          "Tightness and some peeling of the skin is expected.",
+          "Moisturization is critical during the peeling process."
+        ]
+      },
+      {
+        question: "When can I return to work after a chemical peel?",
+        answer: [
+          "Typically 3-5 days depending on the depth of the peel.",
+          "Social downtime varies; light peels have no downtime."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Fresh, clearer skin is fully revealed within 10-14 days.",
+          "Significant reduction in pigmentation and finer pores."
+        ]
+      },
+      {
+        question: "What should I do after a chemical peel?",
+        answer: [
+          "Do not pick at the peeling skin; let it fall off naturally.",
+          "Only use the specialized post-procedure kit provided by our team."
+        ]
+      },
+      {
+        question: "What determines the cost of a chemical peel?",
+        answer: [
+          "Type of Peel (Glycolic/TCA/Yellow), Number of sessions, and Face/Body area."
+        ]
+      }
+    ]
+  },
+  {
+    id: "dermal-fillers",
+    title: "Dermal Fillers",
+    category: "Non-Surgical",
+    parentCategory: "non-surgical",
+    description: "Restoring volume and sculpting anatomical contours.",
+    longDescription: "Utilizing premium hyaluronic acid to restore mid-face volume, refine the jawline, and enhance lip definition with artistic precision and anatomical harmony.",
+    image: "/injectables-non-surgical.webp",
+    costFactors: "Volume used (Number of syringes), Product type (Voluma/Volift), Area complexity",
+    brief: {
+      operationTime: "30 - 45 Minutes",
+      anesthesia: "Topical Cream / Local Anesthetic",
+      recovery: "1 - 2 Days",
+      refinement: "Settles at 7 days"
+    },
+    details: {
+      whoNeeds: ["Individuals with volume loss in the cheeks, temples, or under-eyes.", "Patients seeking non-surgical refinement of the nose or jawline."],
+      candidates: ["Healthy patients looking for immediate structural or volume improvement."],
+      assessment: ["3D facial analysis to restore proportions rather than just filling lines."],
+      functional: ["Mild swelling or bruising may occur; social activity remains possible."],
+      backToWork: ["Typically next day as minor swelling stabilizes."],
+      holidays: ["Plan for a 2-day 'buffer' before major social events to ensure any bruising resolves."],
+      results: ["Immediate volume restoration; final integration into tissues at 2 weeks."],
+      recoveryTips: ["Cold compresses help reduce initial swelling; avoid high heat for 24 hours."]
+    },
+    regions: ["Face", "Nose", "Eyes", "Lips", "Neck"],
+    seoContent: `
+### Dermal Fillers in Chandigarh: Liquid Facelift
+**Restoring Volume & Contour Instantly**
+
+Aging is essentially loss of volume (fat and bone). Hyaluronic Acid (HA) fillers replace this lost structure. Dr. Sumit uses fillers like an artist uses clay—to lift, project, and refine.
+
+**Key Areas:**
+*   **Tear Troughs:** Removing the "tired" look under eyes.
+*   **Cheeks:** Restoring the "Og-curve" of youth.
+*   **Lips:** Definition and hydration (Russian Lips or Natural Plump).
+*   **Jawline:** Creating a sharp, defined profile.
+
+#### Longevity
+Depending on the product (Juvederm/Restylane) and area, results last 9-18 months.
+`
+    ,
+    faqs: [
+      {
+        question: "Who needs Dermal Fillers?",
+        answer: [
+          "Individuals with volume loss in the cheeks, temples, or under-eyes.",
+          "Patients seeking non-surgical refinement of the nose or jawline."
+        ]
+      },
+      {
+        question: "Am I a good candidate for fillers?",
+        answer: [
+          "Healthy patients looking for immediate structural or volume improvement."
+        ]
+      },
+      {
+        question: "What does the assessment involve?",
+        answer: [
+          "3D facial analysis to restore proportions rather than just filling lines."
+        ]
+      },
+      {
+        question: "What is the recovery like after fillers?",
+        answer: [
+          "Mild swelling or bruising may occur; social activity remains possible.",
+          "Typically next day as minor swelling stabilizes."
+        ]
+      },
+      {
+        question: "When will I see the final results?",
+        answer: [
+          "Immediate volume restoration; final integration into tissues at 2 weeks."
+        ]
+      },
+      {
+        question: "What should I do after filler treatment?",
+        answer: [
+          "Cold compresses help reduce initial swelling; avoid high heat for 24 hours.",
+          "Plan for a 2-day 'buffer' before major social events to ensure any bruising resolves."
+        ]
+      },
+      {
+        question: "What determines the cost of dermal fillers?",
+        answer: [
+          "Volume used (Number of syringes), Product type (Voluma/Volift), and Area complexity."
+        ]
+      }
+    ]
+  },
+
+  // RECONSTRUCTIVE
+  {
+    id: "microvascular-repair",
+    title: "Microvascular Repair",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Microsurgical reconnection of vessels and nerves.",
+    longDescription: "Critical restoration of blood flow and nerve function using high-magnification surgical techniques.",
+    image: "/microvascular-reconstructive.webp",
+    regions: ["Body", "Arms", "Thighs"],
+    seoContent: `
+### Microvascular Surgery in Chandigarh: Saving Limbs
+**Advanced Reconstructive Microsurgery at Healing Hospital**
+
+Microvascular surgery involves joining blood vessels and nerves as thin as a hair under high-magnification microscopes. This capability allows us to perform free flaps—transplanting tissue from one part of the body to another to cover complex open wounds (after trauma or cancer).
+
+**Critical for:**
+*   Saving crushed limbs.
+*   Reconstucting faces after cancer surgery.
+*   Restoring severed fingers (Replantation).
+`
+    ,
+    faqs: [
+      {
+        question: "What is microvascular surgery?",
+        answer: [
+          "Microvascular surgery involves joining blood vessels and nerves as thin as a hair under high-magnification microscopes.",
+          "It allows us to perform free flaps—transplanting tissue from one part of the body to another to cover complex wounds."
+        ]
+      },
+      {
+        question: "When is microvascular surgery needed?",
+        answer: [
+          "Saving crushed limbs.",
+          "Reconstructing faces after cancer surgery.",
+          "Restoring severed fingers (Replantation)."
+        ]
+      }
+    ]
+  },
+  {
+    id: "traumatic-reconstruction",
+    title: "Traumatic Reconstruction",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Restoring form and function after major injury.",
+    longDescription: "Complex surgical pathways to rebuild tissue and function following severe physical trauma.",
+    image: "/traumatic-reconstructive.webp",
+    seoContent: `
+### Trauma Reconstruction in Chandigarh
+**Restoring Form After Accident or Injury**
+
+Accidents can leave devastating physical and psychological scars. Our Reconstructive unit at Healing Hospital works 24/7 to treat maxillo-facial injuries, soft tissue loss, and compound fractures.
+
+**Goal:**
+Our priority is "Function First, Aesthetics Always." We aim to restore your body to its pre-injury state with minimal scarring.
+`,
+    regions: ["Body", "Face", "Arms", "Thighs"],
+    faqs: [
+      {
+        question: "What types of trauma injuries do you treat?",
+        answer: [
+          "We treat maxillo-facial injuries, soft tissue loss, and compound fractures.",
+          "Our priority is 'Function First, Aesthetics Always.'"
+        ]
+      },
+      {
+        question: "Is emergency reconstruction available?",
+        answer: [
+          "Yes. Our Reconstructive unit at Healing Hospital works 24/7 to handle trauma cases."
+        ]
+      }
+    ]
+  },
+  {
+    id: "facial-fracture-surgery",
+    title: "Facial Fracture Surgery",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Stabilization of the facial skeleton.",
+    longDescription: "Correcting fractures of the jaw, nose, and orbital bones to restore anatomical alignment.",
+    image: "/facial-fracture-reconstructive.webp",
+    regions: ["Face", "Nose", "Eyes"],
+    seoContent: `
+### Facial Fracture Surgery in Chandigarh
+**Maxillofacial Surgery Excellence**
+
+Fractures of the jaw (mandible), cheek (zygoma), or eye socket (orbit) require precise fixation with titanium plates. Malignment can lead to double vision or bite issues.
+
+**Why a Plastic Surgeon?**
+We access these fractures through "hidden" incisions (inside the mouth or eyelid) to ensure no visible scarring on your face.
+`
+    ,
+    faqs: [
+      {
+        question: "Why should a plastic surgeon fix my facial fracture?",
+        answer: [
+          "We access fractures through 'hidden' incisions (inside the mouth or eyelid) to ensure no visible scarring on your face."
+        ]
+      },
+      {
+        question: "What can happen if facial fractures are not treated?",
+        answer: [
+          "Malignment can lead to double vision or bite issues.",
+          "Precise fixation with titanium plates is needed to restore anatomical alignment."
+        ]
+      }
+    ]
+  },
+  {
+    id: "nerve-vessel-tendon-repair",
+    title: "Nerve / Vessel / Tendon Repair",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Immediate and delayed restoration of extremities.",
+    longDescription: "Precise repair of essential structural components to restore function to hands and limbs.",
+    image: "/nerve-repair-reconstructive.webp",
+    seoContent: `
+### Nerve & Tendon Repair in Chandigarh
+**Restoring Hand Function**
+
+Cut tendons or nerves in the hand can lead to permanent paralysis if not repaired immediately. We use microsurgical sutures to reconnect these vital structures.
+
+**Rehabilitation:**
+Surgery is only half the battle. Our dedicated physiotherapy protocol ensures your hand returns to full strength and mobility.
+`,
+    regions: ["Arms", "Thighs"],
+    faqs: [
+      {
+        question: "What happens if a cut tendon or nerve is not repaired?",
+        answer: [
+          "Cut tendons or nerves in the hand can lead to permanent paralysis if not repaired immediately.",
+          "We use microsurgical sutures to reconnect these vital structures."
+        ]
+      },
+      {
+        question: "Is rehabilitation needed after nerve/tendon repair?",
+        answer: [
+          "Surgery is only half the battle. Our dedicated physiotherapy protocol ensures your hand returns to full strength and mobility."
+        ]
+      }
+    ]
+  },
+  {
+    id: "hand-surgery-chandigarh",
+    title: "Fractures of Hand & Foot",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Refining the skeletal integrity of digits and limbs.",
+    longDescription: "Specialized fixation of the small bones of the hand and foot to preserve range of motion.",
+    image: "/hand-fracture-reconstructive.webp",
+    regions: ["Arms", "Thighs"],
+    seoContent: `
+### Hand & Foot Fracture Fixation in Chandigarh
+**Restoring Small Bone Architecture**
+
+Metacarpal (hand) and Metatarsal (foot) fractures require precise alignment to preserve grip strength and walking mechanics. We use low-profile titanium mini-plates to ensure rigid fixation, allowing for early physiotherapy.
+`
+    ,
+    faqs: [
+      {
+        question: "Why are hand and foot fractures treated by a plastic surgeon?",
+        answer: [
+          "Metacarpal (hand) and Metatarsal (foot) fractures require precise alignment to preserve grip strength and walking mechanics.",
+          "We use low-profile titanium mini-plates to ensure rigid fixation, allowing for early physiotherapy."
+        ]
+      }
+    ]
+  },
+  {
+    id: "hand-deformity-chandigarh",
+    title: "Hand Deformities",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Correcting congenital and acquired conditions.",
+    longDescription: "Surgical intervention for conditions like syndactyly or Dupuytren's contracture.",
+    image: "/hand-deformity-reconstructive.webp",
+    regions: ["Arms"],
+    seoContent: `
+### Hand Deformity Correction in Chandigarh
+**Syndactyly, Polydactyly & Contractures**
+
+We treat congenital anomalies like fused fingers (Syndactyly) or extra digits (Polydactyly), as well as acquired conditions like Dupuytren's Contracture.
+
+**Timing:**
+For children, separation of fused fingers is ideally done before school age (1-2 years) to prevent developmental delay.
+`
+    ,
+    faqs: [
+      {
+        question: "What hand deformities can be corrected?",
+        answer: [
+          "Congenital anomalies like fused fingers (Syndactyly) or extra digits (Polydactyly), as well as acquired conditions like Dupuytren's Contracture."
+        ]
+      },
+      {
+        question: "When should children have deformity correction surgery?",
+        answer: [
+          "For children, separation of fused fingers is ideally done before school age (1-2 years) to prevent developmental delay."
+        ]
+      }
+    ]
+  },
+  {
+    id: "cleft-lip-chandigarh",
+    title: "Cleft Lip & Palate Repair",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Pediatric and adult cleft correction.",
+    longDescription: "Restoring facial appearance and speech functionality through specialized cleft pathways.",
+    image: "/cleft-lip-reconstructive.webp",
+    regions: ["Face", "Lips"],
+    seoContent: `
+### Cleft Lip & Palate Surgery in Chandigarh
+**Creating Smiles for Children**
+
+Cleft Lip is one of the most common birth defects. Dr. Sumit is passionate about restoring the smiles of these children.
+
+**Timeline:**
+*   **Cleft Lip:** Repaired at 3-6 months of age.
+*   **Cleft Palate:** Repaired at 9-12 months (before speech develops).
+
+**Technique:**
+We focus on rebuilding the lip muscle loop to ensure normal movement and a symmetrical pout.
+`
+    ,
+    faqs: [
+      {
+        question: "When should cleft lip and palate be repaired?",
+        answer: [
+          "Cleft Lip: Repaired at 3-6 months of age.",
+          "Cleft Palate: Repaired at 9-12 months (before speech develops)."
+        ]
+      },
+      {
+        question: "What technique is used for cleft repair?",
+        answer: [
+          "We focus on rebuilding the lip muscle loop to ensure normal movement and a symmetrical pout."
+        ]
+      }
+    ]
+  },
+  {
+    id: "burn-surgery-chandigarh",
+    title: "Burns & Contracture Release",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Restoring mobility after burn injuries.",
+    longDescription: "Release of tight scar tissue and skin grafting to restore full joint flexibility.",
+    image: "/burns-contracture-reconstructive.webp",
+    seoContent: `
+### Burn Reconstruction in Chandigarh
+**Post-Burn Deformity Correction**
+
+Burns can lead to contractures—tight scars that restrict joint movement. We specialize in releasing these contractures using Z-plasties and skin grafts to restore range of motion.
+
+**Acute Burns:**
+We also manage fresh burns with advanced dressings and early grafting to minimize scarring from the start.
+`,
+    regions: ["Body", "Face", "Arms", "Thighs"],
+    faqs: [
+      {
+        question: "What are burn contractures?",
+        answer: [
+          "Burns can lead to contractures—tight scars that restrict joint movement.",
+          "We specialize in releasing these using Z-plasties and skin grafts to restore range of motion."
+        ]
+      },
+      {
+        question: "Do you treat fresh burns?",
+        answer: [
+          "Yes. We manage fresh burns with advanced dressings and early grafting to minimize scarring from the start."
+        ]
+      }
+    ]
+  },
+  {
+    id: "bed-sore-surgery-chandigarh",
+    title: "Pressure Sores / Bed Sores",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Complex wound care and flap coverage.",
+    longDescription: "Using healthy tissue flaps to close deep, non-healing pressure ulcers.",
+    image: "/pressure-sores-reconstructive.webp",
+    regions: ["Body", "Buttock"],
+    seoContent: `
+### Pressure Sore (Bed Sore) Surgery in Chandigarh
+**Flap Reconstruction for Chronic Ulcers**
+
+For bedridden patients, pressure sores (decubitus ulcers) can reach the bone. Debridement alone is often insufficient. We perform **Rotation or Advancement Flaps** to bring healthy, vascularized muscle and skin over the wound to ensure permanent healing.
+`
+    ,
+    faqs: [
+      {
+        question: "How are pressure sores treated?",
+        answer: [
+          "Debridement alone is often insufficient for severe pressure sores. We perform Rotation or Advancement Flaps to bring healthy, vascularized muscle and skin over the wound for permanent healing."
+        ]
+      }
+    ]
+  },
+  {
+    id: "diabetic-foot-chandigarh",
+    title: "Diabetic Foot",
+    category: "Reconstructive",
+    parentCategory: "reconstructive",
+    description: "Limb salvage and chronic wound management.",
+    longDescription: "Surgical intervention to heal diabetic ulcers and prevent amputation.",
+    image: "/diabetic-foot-reconstructive.webp",
+    seoContent: `
+### Diabetic Foot Management in Chandigarh
+**Preventing Amputation through Reconstruction**
+
+Non-healing diabetic ulcers often put limbs at risk. We work as a team with endocrinologists and vascular surgeons to improve blood flow and cover wounds with hardy flaps.
+
+**Limb Salvage:**
+Our goal is always to save the foot and maintain your mobility.
+`,
+    regions: ["Thighs", "Body"],
+    faqs: [
+      {
+        question: "Can diabetic foot ulcers be healed without amputation?",
+        answer: [
+          "Our goal is always limb salvage. We work as a team with endocrinologists and vascular surgeons to improve blood flow and cover wounds with hardy flaps."
+        ]
+      }
+    ]
+  },
+
+  // VASCULAR
+  {
+    id: "varicose-veins-chandigarh",
+    title: "Varicose Veins",
+    category: "Vascular",
+    parentCategory: "vascular",
+    description: "Treatment of venous insufficiency.",
+    longDescription: "Surgical and minimally invasive management of swollen veins for health and aesthetics.",
+    regions: ["Thighs", "Body"],
+    seoContent: `
+### Varicose Veins Treatment in Chandigarh
+**Endovenous Laser & Surgical Management**
+
+Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. We offer a comprehensive assessment using Color Doppler to plan the right intervention—whether laser ablation (EVLA) or surgical stripping.
+`
+    ,
+    faqs: [
+      {
+        question: "What are varicose veins?",
+        answer: [
+          "Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers."
+        ]
+      },
+      {
+        question: "How are varicose veins treated?",
+        answer: [
+          "We offer comprehensive assessment using Color Doppler and plan the right intervention—whether laser ablation (EVLA) or surgical stripping."
+        ]
+      }
+    ]
+  },
+  {
+    id: "vascular-surgery-chandigarh",
+    title: "Ultrasound-Guided Vascular Procedures",
+    category: "Vascular",
+    parentCategory: "vascular",
+    description: "Precision-guided vascular treatments.",
+    longDescription: "Using real-time ultrasound to ensure the highest accuracy in venous interventions.",
+    regions: ["Body", "Thighs"],
+    seoContent: `
+### Vascular Access & Ultrasound Guidance
+**AV Fistula Creation for Dialysis**
+
+We specialize in creating robust Arteriovenous (AV) Fistulas for renal failure patients requiring long-term dialysis. Microsurgical precision ensures high flow rates and longevity of the fistula.
+`
+    ,
+    faqs: [
+      {
+        question: "What is an AV fistula?",
+        answer: [
+          "An Arteriovenous (AV) Fistula is a connection between an artery and vein, created for renal failure patients requiring long-term dialysis."
+        ]
+      },
+      {
+        question: "Why choose microsurgery for AV fistula creation?",
+        answer: [
+          "Microsurgical precision ensures high flow rates and longevity of the fistula."
+        ]
+      }
+    ]
+  }
+];
+// Helper to fix paths
+const fixPath = (path?: string) => {
+  if (!path) return undefined;
+  if (path.startsWith('http')) return path;
+  // Combine base with path, ensuring no double slash if path starts with /
+  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  return `${BASE}${cleanPath}`;
+};
+
+export const ASSETS = Object.fromEntries(
+  Object.entries(RAW_ASSETS).map(([k, v]) => [k, fixPath(v) || v])
+) as typeof RAW_ASSETS;
+
+export const PROCEDURES = RAW_PROCEDURES.map(p => ({
+  ...p,
+  image: fixPath(p.image),
+  gallery: p.gallery?.map(g => fixPath(g)!)
+}));
+
+export interface BlogPost {
+  id: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  image: string;
+  date: string;
+}
+
+export const BLOG_POSTS: BlogPost[] = [
+  {
+    id: "what-to-expect-from-liposuction-recovery",
+    title: "What to expect from liposuction recovery",
+    excerpt: "A comprehensive guide to the healing process after High Definition Liposuction, including timelines and tips for optimal contouring.",
+    content: `## The Journey to Your New Contour
+
+Liposuction is transformative, but the results you see on the operating table take time to fully mature. Understanding the recovery timeline is crucial for peace of mind.
+
+### Week 1: The Swelling Phase
+Most patients return home the same day. You will experience significant swelling and some bruising. 
+* Wear your prescribed compression garment 24/7.
+* Stay hydrated to flush out remaining tumescent fluid.
+* Short walks are encouraged to prevent deep vein thrombosis (DVT).
+
+### Week 2-4: The Transition
+Swelling starts to rapidly decline around day 14. 
+* You may return to desk work.
+* Bruising typically resolves completely.
+* **Lymphatic massage** is highly beneficial during this phase to prevent fluid pockets and smooth the tissue.
+
+### Month 2-3: The Reveal
+This is when the 'wow' factor begins.
+* You can resume intense exercise.
+* The "shrink wrap" effect of your skin conforming to the new muscular contour becomes highly visible.
+
+## Long-term Maintenance
+Liposuction permanently removes fat cells in the treated area. However, it is not a free pass to ignore diet. Weight gain can cause remaining fat cells—both in treated and untreated areas—to expand. Maintain an active lifestyle to preserve your newly sculpted silhouette.`,
+    image: "/blog-liposuction-recovery.webp",
+    date: "August 15, 2024"
+  }
+  ,
+  {
+    id: "liposuction-vs-tummy-tuck-which-is-right-for-you",
+    title: "Liposuction vs. Tummy Tuck: Which Procedure is Right for You?",
+    excerpt: "Understand the key differences between liposuction and a tummy tuck to make an informed decision for your body contouring goals.",
+    content: `## The Core Difference: Fat vs. Skin
+
+Many patients come to Dr. Sumit Aesthetics seeking a flatter, more contoured abdomen, but they are often unsure whether they need Liposuction, a Tummy Tuck (Abdominoplasty), or both. The primary distinction comes down to what needs to be addressed: excess fat, loose skin, or weakened muscles.
+
+### Liposuction: Targeted Fat Removal
+Liposuction is ideal for patients who are close to their ideal weight but have stubborn pockets of fat that resist diet and exercise. 
+* **Best for:** Good skin elasticity.
+* **What it does:** Permanently removes localized fat cells.
+* **What it doesn't do:** It does not tighten loose skin or repair stretched abdominal muscles. In fact, if your skin lacks elasticity, liposuction alone can leave it looking looser.
+
+### Tummy Tuck: Comprehensive Reshaping
+A Tummy Tuck addresses the structural issues that liposuction cannot fix. It is commonly sought after pregnancy or significant weight loss.
+* **Best for:** Patients with loose, sagging skin and weakened or separated abdominal muscles (diastasis recti).
+* **What it does:** Removes excess skin, tightens the abdominal wall muscles, and repositions the belly button for a firmer, flatter contour.
+* **What it doesn't do:** It is not a weight-loss procedure.
+
+### Can You Have Both?
+Absolutely. In fact, combining both procedures—often called Lipo-Abdominoplasty—is extremely common. Dr. Sumit Frequently uses High-Definition (HD) Liposuction to sculpt the waistline and flanks, followed by a Tummy Tuck to remove the excess skin and tighten the core, resulting in a dramatically transformed silhouette.`,
+    image: "/tummy-tuck-aesthetic.webp",
+    date: "March 15, 2025"
+  }  ,
+  {
+    id: "does-liposuction-remove-fat-permanently",
+    title: "Does Liposuction Remove Fat Permanently? What You Need to Know",
+    excerpt: "The short answer is yes—but maintaining your results requires understanding how your body stores fat after surgery.",
+    content: `## The Science of Fat Cells
+
+One of the most common questions we hear is, "Will the fat just come back?" The answer requires a brief understanding of how fat cells work in the human body.
+
+By the time you reach adulthood, your body has a relatively fixed number of fat cells. When you gain or lose weight, you aren't typically gaining or losing fat cells; rather, the existing cells are expanding or shrinking.
+
+### How Liposuction Changes the Equation
+Liposuction physically removes a significant number of fat cells from the targeted area (such as the abdomen, thighs, or flanks). 
+* **The removed cells are gone forever.** They do not regenerate. 
+* Therefore, the treated area will always have fewer fat cells than it did before the surgery.
+
+### The Catch: Remaining Fat Cells
+While the removed cells are gone, the *remaining* fat cells in the treated area—and the fat cells in untreated areas of your body—can still expand if you consume more calories than you burn.
+
+If a patient gains a small amount of weight (e.g., 5-10 pounds) after liposuction, the weight will likely distribute evenly, and the sculpted contour will still look better than it would have without the surgery. However, significant weight gain (10% or more of your body weight) can alter the surgical results. The remaining fat cells will grow, and you may notice weight gain in areas that weren't treated.
+
+### How to Protect Your Investment
+To ensure lifelong results from your liposuction procedure:
+1. **Maintain a Stable Weight:** Adopt a consistent, healthy diet.
+2. **Stay Active:** Regular cardiovascular and strength-training exercises.
+3. **Follow Post-Op Care:** Wearing your compression garments as directed ensures the skin retracts smoothly over your new contour.`,
+    image: "/body-contouring-aesthetic.webp",
+    date: "April 2, 2025"
+  }  ,
+  {
+    id: "the-mommy-makeover-journey",
+    title: "The Mommy Makeover Journey: Combining Procedures for Best Results",
+    excerpt: "Restore your pre-pregnancy body with a customized Mommy Makeover. Learn how combining procedures provides comprehensive rejuvenation.",
+    content: `## Reclaiming Your Body After Motherhood
+
+Pregnancy and nursing are incredible journeys, but they can leave lasting physical changes that diet and exercise simply cannot reverse. Stretched abdominal muscles, deflated breasts, and stubborn fat pockets are common concerns. This is where the "Mommy Makeover" comes in.
+
+### What is a Mommy Makeover?
+A Mommy Makeover is not a single surgery; it is a personalized combination of body contouring procedures performed during a single operation to restore your pre-pregnancy figure. 
+
+### Common Procedures Included
+Depending on your unique needs, Dr. Sumit may recommend a combination of the following:
+
+**1. Breast Enhancement**
+Pregnancy and breastfeeding can cause breasts to lose volume and sag.
+*   **Breast Augmentation:** Restores lost volume using implants or fat transfer.
+*   **Breast Lift (Mastopexy):** Raises and reshapes drooping breasts for a more youthful profile.
+*   **Combination:** Many women opt for both a lift and an implant.
+
+**2. Abdominal Rejuvenation**
+*   **Tummy Tuck (Abdominoplasty):** The cornerstone of most Mommy Makeovers. It removes excess, sagging skin (often eliminating stretch marks below the belly button) and repairs diastasis recti (separated abdominal muscles).
+
+**3. Body Sculpting**
+*   **High-Definition Liposuction:** Targets localized fat deposits on the flanks, back, or thighs to refine your overall shape and create a seamless transition to your new abdomen.
+
+### Why Combine Surgeries?
+Combining these procedures offers significant advantages:
+*   **Single Recovery Period:** You only go through anesthesia and the initial healing phase once, minimizing total downtime away from your family.
+*   **Cost Efficiency:** Consolidating operating room and anesthesia fees is more cost-effective than staging multiple surgeries.
+*   **Comprehensive Results:** Addressing all areas of concern simultaneously provides a more dramatic and harmonious transformation.`,
+    image: "/tummy-tuck-aesthetic.webp",
+    date: "April 18, 2025"
+  }  ,
+  {
+    id: "high-definition-hd-liposuction-sculpting",
+    title: "High-Definition (HD) Liposuction: Sculpting the Perfect Body Contour",
+    excerpt: "Move beyond simple fat removal. Discover how HD Liposuction creates an athletic, chiseled physique by highlighting underlying musculature.",
+    content: `## The Evolution of Body Contouring
+
+Traditional liposuction revolutionized aesthetic surgery by providing an effective way to remove stubborn fat. However, its primary goal was simply debulking—making an area smaller. Today, patients demand more than just fat reduction; they want an athletic, toned appearance. Enter High-Definition (HD) Liposuction.
+
+### What is HD Liposuction?
+HD Liposuction is an advanced fat-removal and body-sculpting technique. Instead of just removing deep fat, Dr. Sumit meticulously thins out the superficial fat layers immediately beneath the skin. By doing so around specific muscle groups, the natural underlying musculature is revealed and accentuated.
+
+### How It Works
+1.  **Precision Targeting:** The procedure focuses on the natural anatomical landmarks—such as the linea alba (the center line of the abdomen), the lateral borders of the rectus abdominis muscles, and the obliques.
+2.  **Strategic Extraction:** Fat is extracted strategically to create shadows and highlights, mimicking the appearance of a naturally toned body.
+3.  **Advanced Technology:** While technique is paramount, HD Lipo is often assisted by advanced modalities that help emulsify fat and promote skin tightening, ensuring the skin adheres beautifully to the newly revealed muscle contours.
+
+### Who is the Ideal Candidate?
+HD Liposuction is not a weight-loss procedure. The best candidates are:
+*   At or near their ideal body weight.
+*   Have good muscle tone but struggle with persistent superficial fat masking their definition.
+*   Have excellent skin elasticity, as the skin must tighten against the underlying muscle to show off the HD results.
+
+### The Results
+The outcome is a highly sculpted physique. For men, this often means a defined "six-pack" and prominent chest contour. For women, it typically involves a subtle "eleven" line on the abdomen, a tapered waist, and athletic, toned flanks.`,
+    image: "/hd-lipo-aesthetic.webp",
+    date: "May 5, 2025"
+  }  ,
+  {
+    id: "rhinoplasty-recovery-timeline",
+    title: "Rhinoplasty Recovery Timeline: Healing Day by Day",
+    excerpt: "Planning a nose job? Here is an honest, detailed look at the rhinoplasty recovery process, from the first 24 hours to the final result.",
+    content: `## Patience is the Key to Perfection
+
+Rhinoplasty (a nose job) is one of the most transformative facial surgeries, but unlike a haircut, the results aren't instantaneous. The nose is a delicate structure of bone, cartilage, and skin, and it heals at its own pace.
+
+### The First 24-48 Hours
+*   **What you'll experience:** You will wake up with a cast or splint on the outside of your nose and possibly packing inside. You will feel congested, as if you have a severe cold. Bruising around the eyes (the "raccoon" look) and swelling are completely normal.
+*   **What to do:** Keep your head elevated at all times (even while sleeping), apply cold compresses around your eyes (not directly on the nose), and take your prescribed medication.
+
+### 1 Week Post-Op
+*   **The Milestone:** This is usually when you return to the clinic to have the cast and any sutures removed.
+*   **What you'll see:** You will get your first glimpse of your new nose! However, it will still appear swollen, and the tip may feel numb or stiff. Most patients feel comfortable returning to work or social activities with makeup to cover any residual bruising.
+
+### 2 to 4 Weeks Post-Op
+*   **The Progress:** Most of the obvious, visible swelling resolves during this period. Your breathing will improve significantly if structural airway work was done.
+*   **What to avoid:** You can resume light cardiovascular exercise, but you must avoid contact sports, heavy lifting, or wearing glasses resting on the bridge of your nose.
+
+### 3 to 6 Months Post-Op
+*   **The Refinement:** The numbness in the tip of your nose will begin to fade. The nose continues to refine its shape, and the subtle details of the surgery become more apparent. The swelling is mostly completely gone, except perhaps for the very tip of the nose, which holds onto fluid the longest.
+
+### 1 Year Post-Op
+*   **The Final Result:** By the one-year mark, all subtle swelling has dissipated, the tissues have settled, and you are seeing the final, permanent result of your rhinoplasty. For some patients with thicker skin or complex revision surgeries, full tip refinement can take up to 18-24 months.`,
+    image: "/rhinoplasty-aesthetic.webp",
+    date: "May 20, 2025"
+  }  ,
+  {
+    id: "preservation-rhinoplasty-secret-to-natural-noses",
+    title: "Preservation Rhinoplasty: The Secret to Natural-Looking Nose Jobs",
+    excerpt: "Discover why Preservation Rhinoplasty is changing the landscape of facial aesthetics by altering the nose without destroying its natural structure.",
+    content: `## The Modern Paradigm Shift in Nasal Surgery
+
+For decades, traditional rhinoplasty focused on *resection*—cutting, removing, and rebuilding the bone and cartilage of the nose to achieve a desired shape. While effective, this approach sometimes led to structural instability, breathing issues years later, or the dreaded "over-operated" look. 
+
+Today, the aesthetic world is embracing a more elegant philosophy: **Preservation Rhinoplasty**.
+
+### What is Preservation Rhinoplasty?
+Preservation Rhinoplasty is a highly advanced surgical technique where the primary goal is to reshape the nose while preserving as much of the native bone, cartilage, and soft tissue envelope as possible. 
+
+Instead of shaving down a humped nasal bridge from the top (which destroys the natural dorsal lines), the surgeon works fromneath, removing a small strip of bone/cartilage from the *base* and "dropping" the intact bridge down to the desired height.
+
+### The Benefits Over Traditional Rhinoplasty
+
+**1. Natural Results**
+Because the natural anatomy of the nasal bridge (the dorsum) is kept intact, the nose maintains its smooth, native contour. It looks like the nose you were born with, just refined.
+
+**2. Faster Recovery**
+Traditional rhinoplasty involves significant tissue disruption. Preservation techniques require less cutting of the superficial tissues, leading to dramatically less bruising, significantly reduced swelling, and a faster return to normal life.
+
+**3. Better Long-Term Function**
+The internal nasal valves and breathing structures are inherently protected because the native framework isn't dismantled. Consequently, the risk of breathing problems down the road is vastly minimized.
+
+### Is it Right for You?
+While it is the preferred technique for many primary (first-time) rhinoplasties, especially for reducing a dorsal hump, it requires a highly skilled surgeon. Dr. Sumit utilizes these modern preservation techniques to deliver aesthetic refinement without compromising structural integrity.`,
+    image: "/rhinoplasty-aesthetic.webp",
+    date: "June 4, 2025"
+  }  ,
+  {
+    id: "blepharoplasty-eyelid-surgery-anti-aging",
+    title: "Blepharoplasty: How Eyelid Surgery Takes Years Off Your Face",
+    excerpt: "Heavy, drooping eyelids or unyielding eye bags can make you look tired even when you are rested. Eyelid surgery offers a permanent, refreshing solution.",
+    content: `## The Window to Your Youth
+
+People constantly say you look "tired," even after a full eight hours of sleep. You notice that your eyeshadow doesn't sit the way it used to, or worse, heavy upper eyelids are actually obstructing your peripheral vision. Sound familiar?
+
+The skin around our eyes is the thinnest on the body, making it the first place to show signs of aging, stress, and genetics. **Blepharoplasty** (eyelid surgery) is a highly effective, targeted procedure to rejuvenate your gaze.
+
+### Upper Blepharoplasty: Opening the Eyes
+As we age, the skin of the upper eyelid loses elasticity and begins to drape downward (hooding). 
+*   **The Procedure:** A tiny incision is made hidden within the natural crease of the upper lid. Dr. Sumit carefully removes the excess, sagging skin and, if necessary, a small amount of bulging fat. 
+*   **The Result:** A brighter, more alert, and refreshed appearance. Often, patients find their field of vision noticeably improved.
+
+### Lower Blepharoplasty: Banishing the Bags
+"Eye bags" are rarely caused by a lack of sleep; they are usually genetic or age-related protrusions of orbital fat pushing against weakening skin and muscle.
+*   **The Procedure:** For younger patients with good skin elasticity, the procedure is often done completely from the *inside* of the eyelid (transconjunctival), meaning absolutely no visible scar. The fat is either removed or repositioned to fill hollow tear troughs. For older patients, a tiny incision just below the lash line is used to remove a pinch of excess skin as well.
+*   **The Result:** A smooth transition from the lower eyelid to the cheek, eliminating the shadowed, exhausted look.
+
+### The Recovery
+Blepharoplasty is often performed under local anesthesia with sedation and is an outpatient procedure. Recovery is relatively swift. While bruising and swelling peak in the first few days, most patients feel comfortable returning to work and socializing within 7 to 10 days. The incisions heal remarkably well, blending invisibly into the natural contours of the eye.`,
+    image: "/blepharoplasty-aesthetic.webp",
+    date: "June 20, 2025"
+  }  ,
+  {
+    id: "traditional-vs-mini-facelift",
+    title: "Traditional Facelift vs. Mini Facelift: Understanding Your Options",
+    excerpt: "Navigate the world of facial rejuvenation. Learn the differences between a full traditional facelift and a less invasive mini facelift to see which matches your aging concerns.",
+    content: `## Choosing Your Path to Facial Rejuvenation
+
+When non-surgical options like Botox and fillers are no longer enough to address sagging skin and deep folds, a facelift remains the gold standard for turning back the clock. However, not all facelifts are created equal. The two primary approaches we offer are the Traditional (Full) Facelift and the Mini Facelift. 
+
+Understanding the differences is crucial to aligning your expectations with the surgical approach.
+
+### The Mini Facelift: Early Intervention
+Also known as a MACS lift or short-scar facelift, this procedure is ideal for patients in their 40s or 50s who are just beginning to see mild to moderate signs of aging.
+
+*   **The Target:** It focuses primarily on the lower third of the face—specifically, early jowl formation and mild sagging in the cheeks.
+*   **The Incision:** Shorter incisions are made, typically starting at the temple hairline and stopping at the earlobe (without extending behind the ear).
+*   **The Recovery:** Because the tissue dissection is less extensive, recovery is usually faster, often requiring only 1 to 2 weeks of downtime.
+*   **The Catch:** It does not significantly address severe neck sagging (the "turkey neck"). 
+
+### The Traditional Facelift: Comprehensive Restoration
+For severe sagging, deep jowls, and significant neck laxity—typically seen in patients in their late 50s, 60s, and beyond—a traditional facelift (often combined with a neck lift) provides the most profound improvement.
+
+*   **The Target:** It addresses the mid-face, lower face, and the neck simultaneously. It elevates fallen cheek fat, removes severe jowling, and tightens the neck muscles (platysma).
+*   **The Technique (SMAS Lift):** Crucially, a modern traditional facelift doesn't just pull the skin. Dr. Sumit lifts and tightening the underlying muscle layer (the SMAS). This provides a natural-looking, long-lasting result without the "wind-tunnel" pulled look.
+*   **The Incision:** Begins at the temples, travels around the ear, and extends into the hairline behind the ear to allow for deeper tissue repositioning.
+*   **The Recovery:** Expect 2 to 3 weeks of social downtime as the deeper tissues heal.
+
+### Which is Right for You?
+If your primary concern is slight drooping around your mouth and jawline, a Mini Facelift might be the perfect "refresher." If you are frustrated by heavy jowls and loose skin under your chin and neck, a Traditional Facelift will provide the definitive contouring you desire.`,
+    image: "/facelift-aesthetic.webp",
+    date: "July 5, 2025"
+  }  ,
+  {
+    id: "gynecomastia-surgery-india-causes-treatment",
+    title: "Gynecomastia Surgery in India: Causes, Treatment, and Recovery",
+    excerpt: "Gynecomastia (enlarged male breasts) affects millions of men. Discover the causes and how modern surgical techniques provide a permanent, masculine chest contour.",
+    content: `## Restoring Confidence with Chest Contouring
+
+Gynecomastia—the development of enlarged glandular breast tissue in males—is far more common than most realize, affecting up to 30% of men. Despite how common it is, it can cause significant psychological distress, leading men to avoid wearing fitted shirts, going to the beach, or participating in sports.
+
+Fortunately, Gynecomastia surgery (male breast reduction) offers a permanent, highly effective solution.
+
+### What Causes Gynecomastia?
+Gynecomastia is fundamentally caused by an imbalance between testosterone and estrogen hormones. This imbalance can trigger the growth of dense, fibrous breast gland tissue. Common triggers include:
+*   **Puberty:** Hormonal fluctuations during teenage years frequently cause temporary gynecomastia that occasionally does not resolve.
+*   **Medications & Supplements:** Anabolic steroids, certain antidepressants, and exact cardiac medications.
+*   **Genetics & Aging:** Natural drops in testosterone as men age.
+*   *Note:* True gynecomastia (glandular tissue) is different from *pseudogynecomastia* (excess fat tissue accumulated due to weight gain). Many men have a combination of both.
+
+### The Surgical Treatment
+Glandular breast tissue is dense and fibrous; it cannot be exercised or dieted away. Surgery is the only definitive treatment. Dr. Sumit utilizes a combination approach for the best aesthetic result:
+
+1.  **High-Definition Liposuction:** Used first to remove excess peripheral fat and expertly contour the surrounding chest wall, defining the pectoralis muscle edges.
+2.  **Gland Excision:** A tiny, incredibly discreet incision is made at the lower edge of the areola (the dark skin surrounding the nipple). Through this hidden incision, the dense glandular tissue is surgically extracted.
+
+### The Recovery Process
+Male breast reduction is typically performed on an outpatient basis.
+*   **First Few Days:** You will experience soreness (similar to a heavy chest workout) and swelling. You must wear a specialized compression vest to minimize fluid buildup and help the skin adhere to the new, flat contour.
+*   **Return to Work:** Most men with desk jobs return to work within 3 to 5 days.
+*   **Return to Gym:** Lower body cardio can resume in about 2 weeks. Heavy upper body weightlifting (chest presses, pushups) should be avoided for 4 to 6 weeks.
+
+The results are immediate and, barring significant future steroid use or massive weight gain, they are permanent.`,
+    image: "/gynecomastia-aesthetic.webp",
+    date: "July 20, 2025"
+  }  ,
+  {
+    id: "breast-augmentation-implants-vs-fat-transfer",
+    title: "Breast Augmentation: Implants vs. Fat Transfer Explained",
+    excerpt: "Looking to enhance your breast volume? We break down the pros and cons of traditional silicone implants versus autonomic fat transfer.",
+    content: `## Choosing Your Method of Enhancement
+
+When considering breast augmentation, patients today have more refined, natural-looking options than ever before. The two primary methods for increasing breast volume are Silicone Implants and Autologous Fat Transfer. 
+
+While both achieve excellent results, they cater to different patient goals and body types. Let’s compare them.
+
+### Option A: Silicone Implants
+Modern cohesive silicone gel implants (often referred to as "gummy bear" implants) are the gold standard for breast augmentation.
+
+**The Pros:**
+*   **Predictability & Size:** Implants offer precise volume control. Whether you want a modest increase or a significant boost in cup size, implants can deliver predictable, guaranteed volume.
+*   **Shape & Lift:** Implants provide superior upper pole fullness (cleavage) and can slightly lift mildly sagging breasts, providing a firm, youthful perkiness that fat alone cannot.
+*   **Slim Candidates:** You do not need excess body fat to have this procedure.
+
+**The Cons:**
+*   **Foreign Object:** Implants are medical devices. While incredibly safe, they are not lifetime devices and may require replacement or removal in 10-15 years.
+*   **Surgical Incision:** Requires an incision (usually hidden in the breast crease), resulting in a small scar.
+
+### Option B: Autologous Fat Transfer
+This procedure involves performing gentle liposuction on an area of excess fat (like the abdomen or thighs), purifying that fat, and carefully injecting it into the breasts.
+
+**The Pros:**
+*   **100% Natural:** You are using your own living tissue. There is no risk of implant rejection, rupture, or capsular contracture.
+*   **Dual Benefit:** You achieve body contouring (liposuction) and breast enhancement in one procedure. 
+*   **Natural Feel:** The breasts feel completely natural because they are made of your own fat.
+
+**The Cons:**
+*   **Limited Size Increase:** Fat transfer can typically only increase breast size by one cup size per procedure, as the breasts need adequate blood supply to support the newly grafted fat.
+*   **Volume Loss:** Not all the transferred fat survives. The body typically reabsorbs 20-40% of the fat within the first few months before the final volume stabilizes.
+*   **Requires Donor Fat:** Very thin patients are not good candidates because they do not have enough harvestable fat.
+
+### The Verdict
+If you desire a significant increase in size, upper breast fullness, and a highly predictable result, **implants** are the way to go. If you are looking for a subtle, natural, one-cup-size enhancement and want to slim down your waist simultaneously, **fat transfer** is an excellent, natural alternative.`,
+    image: "/breast-augmentation-aesthetic.webp",
+    date: "August 5, 2025"
+  }  ,
+  {
+    id: "what-to-expect-after-breast-reduction",
+    title: "What to Expect After Breast Reduction Surgery",
+    excerpt: "Breast reduction is incredibly liberating, but recovery requires care. Here is a guide to what you will experience in the weeks following surgery.",
+    content: `## The Path to Physical Relief
+
+Of all aesthetic surgical procedures, **Breast Reduction (Reduction Mammaplasty)** consistently ranks among the highest for patient satisfaction. Overly large, disproportionate breasts cause chronic neck and back pain, shoulder grooving from bra straps, skin irritation, and difficulty exercising. 
+
+While the relief from physical burden is almost immediate, the breasts themselves must undergo a healing process.
+
+### The Immediate Aftermath (Days 1-3)
+*   **The Sensation:** You will wake up wrapped in surgical dressings or a specialized surgical bra. The breasts will be swollen, bruised, and feel tight. The pain is generally described as a deep ache rather than sharp pain, and is well-managed with prescribed oral medications.
+*   **The Relief:** Despite the surgical soreness, most patients immediately notice the literal weight lifted off their chest and neck.
+*   **Activity:** Rest is paramount. You will need assistance sitting up in bed, as using your pectoral muscles will be uncomfortable.
+
+### The First Two Weeks
+*   **Incision Care:** Dr. Sumit will provide specific instructions for showering and caring for the incisions. The incisions (typically varying from a 'lollipop' to an 'anchor' shape) will be red and raised.
+*   **Activity Restrictions:** You cannot lift anything heavier than 5 pounds. Pushing, pulling, and raising your arms high above your head must be avoided to prevent stretching the healing incisions.
+*   **Sleep:** You must sleep on your back, slightly elevated, to minimize swelling.
+
+### The "Drop and Fluff" Phase (Months 1-3)
+This is a critical phase of aesthetic healing. 
+*   Initially, the breasts will look very high, tight, and somewhat boxy due to internal swelling and the new surgical support.
+*   Around month 2 to 3, as the deep tissues relax and the swelling subsides, the breasts will undergo the "drop and fluff" process. They settle into a more natural teardrop shape, softening considerably. 
+
+### Scar Management
+Scars are an inevitable trade-off of breast reduction, but they are designed to be hidden under standard bras and swimsuits. After the incisions are fully closed (around 3-4 weeks), you will begin a scar massage protocol and utilize silicone sheeting or gels to help the scars fade from red to a faint, flat white line over the course of 12-18 months.`,
+    image: "/breast-reduction-aesthetic.webp",
+    date: "August 20, 2025"
+  }  ,
+  {
+    id: "botox-vs-dermal-fillers",
+    title: "Botox vs. Dermal Fillers: What’s the Difference?",
+    excerpt: "They are both injectables, but they serve entirely different purposes. Learn whether you need Botox to relax wrinkles or Fillers to restore volume.",
+    content: `## The Injectables Demystified
+
+"I need Botox in my lips." As aesthetic practitioners, we hear this phrase often. It highlights the most common misconception in non-surgical aesthetics: confusing neuromodulators (Botox) with dermal fillers. 
+
+While both are administered via tiny injections, their mechanisms of action and the types of aging they treat are completely different. The easiest way to remember is: **Botox relaxes, Fillers restore.**
+
+### Botox (Neuromodulators)
+Botox, Dysport, and Xeomin belong to a class of drugs that temporarily alter nerve-to-muscle communication.
+
+*   **How it Works:** It temporarily relaxes the specific, targeted facial muscles that cause wrinkles when they contract.
+*   **What it Treats:** "Dynamic" wrinkles—the lines that appear when you make facial expressions. 
+    *   Frown lines (the "11s" between the eyebrows)
+    *   Horizontal forehead lines
+    *   Crow's feet (around the eyes)
+*   **What it DOES NOT do:** It does not plump the lips or fill in hollow cheeks. 
+*   **Result Duration:** Results take 3 to 7 days to appear and last between 3 to 4 months.
+
+### Dermal Fillers
+Dermal fillers (like Juvederm and Restylane) are gel-like substances (most commonly made of Hyaluronic Acid, a naturally occurring sugar in the body) injected beneath the skin.
+
+*   **How it Works:** It physically adds volume beneath the skin, hydrating the tissue from the inside out and plumping up the area.
+*   **What it Treats:** "Static" wrinkles—the folds and hollows present even when your face is completely resting.
+    *   Adding volume to thin lips
+    *   Lifting and contouring flattened cheeks
+    *   Filling deep nasolabial folds (smile lines)
+    *   Smoothing under-eye hollows
+*   **What it DOES NOT do:** It will not stop you from squinting or furrowing your brow.
+*   **Result Duration:** Results are immediate and last anywhere from 6 to 18 months, depending on the product thickness and injection area.
+
+### The Ultimate Combination
+For comprehensive, non-surgical facial rejuvenation, these two treatments are frequently used together—often referred to as a "Liquid Facelift." Botox is used in the upper face to smooth expression lines, while fillers are used in the mid and lower face to restore youthful volume and contour.`,
+    image: "/botox-procedure.webp",
+    date: "September 5, 2025"
+  }  ,
+  {
+    id: "the-rise-of-prejuvenation",
+    title: "The Rise of 'Prejuvenation': Why People in their 20s and 30s are Getting Botox",
+    excerpt: "Discover why millennials are embracing preventative Botox to stop deep wrinkles from forming in the first place, rather than treating them later.",
+    content: `## Stopping Time Before it Starts
+
+Ten years ago, the typical Botox patient was in their 40s or 50s, coming into the clinic to erase deep, etched lines that had accumulated over a lifetime. Today, the demographic has shifted drastically. A massive influx of patients in their mid-20s and 30s are requesting "Baby Botox." 
+
+This trend isn't about looking plastic; it's a paradigm shift known as **Prejuvenation**.
+
+### What is Prejuvenation?
+Prejuvenation is the philosophy of preventing the visible signs of aging before they become permanently etched onto the face, rather than trying to surgically correct them decades later. 
+
+### How Preventative Botox Works
+To understand preventative Botox, you must understand how a wrinkle forms:
+1.  **Dynamic Stage:** When you smile, squint, or frown, the underlying muscle folds the skin. The wrinkle only exists when the muscle is active.
+2.  **Static Stage:** Over years of repetitive folding (like a piece of paper folded thousands of times), the skin eventually loses its collagen and breaks down. The wrinkle becomes "static"—it is etched into the skin even when your face is completely at rest.
+
+Preventative Botox is administered in very small, subtle doses ("Baby Botox") during the Dynamic stage. By gently relaxing the hyperactive muscles (commonly the frown lines and forehead), the skin is never forcefully folded. 
+
+*If the skin doesn't fold, the static wrinkle cannot form.*
+
+### The Benefits of Starting Early
+*   **Less Product Needed:** Treating a muscle that hasn't hypertrophied (grown strong from decades of frowning) requires significantly less Botox than trying to paralyze a heavily entrenched muscle in a 50-year-old.
+*   **Softer, Natural Results:** Because smaller doses are used, you maintain plenty of natural facial expression—you just lose the aggressive scowl lines.
+*   **Financial Efficiency:** Preventing a deep fold with neurotoxins is ultimately less invasive and frequently cheaper over time than requiring deep dermal fillers, laser skin resurfacing, or surgical facelifts to fix the fold later in life.
+
+If you are starting to notice makeup settling into a faint line on your forehead by the end of the day, that line is entering the static phase. That is the ideal time to explore prejuvenation.`,
+    image: "/injectables-non-surgical.webp",
+    date: "September 22, 2025"
+  }  ,
+  {
+    id: "how-long-do-dermal-fillers-last",
+    title: "How Long Do Dermal Fillers Actually Last?",
+    excerpt: "Everything you need to know about the longevity of Hyaluronic Acid fillers, and the factors that cause your body to metabolize them faster.",
+    content: `## Understanding the Lifespan of Your Enhancements
+
+Dermal fillers offer an incredible, immediate transformation—plumping lips, lifting cheeks, and erasing deep laugh lines before you even leave the clinic. However, because the most common fillers are made of Hyaluronic Acid (HA), a substance your body naturally produces and breaks down, the results are temporary.
+
+But "temporary" is a broad term. How long do they *really* last?
+
+### The General Guideline: 6 to 18 Months
+The longevity of a dermal filler is not a single, fixed number. It varies wildly based on three primary factors:
+
+#### 1. The Treatment Area (Mobility is Key)
+The more a part of your face moves, the faster your body metabolizes the filler.
+*   **Lips (6-9 months):** We are constantly talking, chewing, smiling, and kissing. The high muscular activity in the mouth heavily metabolizes lip filler, making it the fastest-fading treatment area.
+*   **Nasolabial Folds / Smile Lines (9-12 months):** Similar to the lips, this area experiences moderate movement during facial expressions.
+*   **Cheeks, Chin & Jawline (12-24 months):** These areas are relatively immobile bone structures. Fillers placed deep on the bone here are less disturbed by muscle movement and last significantly longer.
+*   **Tear Troughs / Under Eyes (12-18+ months):** This area has very little movement and poor blood supply, so fillers here last exceptionally long.
+
+#### 2. The Formulation of the Filler
+Not all HA fillers are identical. They are cross-linked at molecular levels to create different thickness and densities.
+*   **Thin, flexible fillers** (like those used for fine lines around the mouth) break down faster.
+*   **Thick, highly-structured fillers** (like those used to build cheekbones or a strong jawline) take much longer for the body to degrade.
+
+#### 3. Your Individual Metabolism
+Just as some people burn calories faster than others, some metabolize Hyaluronic Acid faster. People with hyper-fast metabolisms or athletes who engage in intense, daily cardiovascular exercise often find their fillers dissipate on the shorter end of the timeline.
+
+### Extending Your Results
+To get the most mileage out of your investment:
+*   Protect your skin from UV damage, which rapidly degrades the skin's natural collagen and hyaluronic acid.
+*   Stay hydrated; HA binds to water to maintain its plumpness.
+*   Keep up with maintenance. It requires less filler to "touch up" an area at 9 months than it does to completely start from scratch at 18 months.`,
+    image: "/fat-grafting-aesthetic.webp",
+    date: "October 8, 2025"
+  }  ,
+  {
+    id: "preparing-for-your-first-aesthetic-consultation",
+    title: "Preparing for Your First Aesthetic Consultation: What to Ask Your Surgeon",
+    excerpt: "A successful aesthetic journey begins with the right questions. Here is how to prepare for your consultation and what to ask your plastic surgeon.",
+    content: `## Empowering Yourself Through Education
+
+Booking your first consultation with a plastic and aesthetic surgeon is an exciting step, but it can also be intimidating. You are entrusting someone with your face, your body, and your confidence. 
+
+To ensure you get the most out of your appointment with Dr. Sumit—and to ensure you feel completely comfortable moving forward—it is crucial to arrive prepared.
+
+### Step 1: The Pre-Consultation Homework
+*   **Define Your Goals:** Be specific. Instead of saying "I want my nose to look better," write down exactly what bothers you (e.g., "I don't like the bump on the bridge from the side," or "The tip feels too wide.")
+*   **Gather Visuals:** Pictures are worth a thousand words. Bring "wish-list" photos representing the results you admire. Just as importantly, bring photos of results you *do not* want. A skilled surgeon will immediately assess if your goals align with your natural anatomy.
+*   **Know Your Medical History:** Be prepared to provide a full list of past surgeries, current medications (including herbal supplements), allergies, and lifestyle habits (especially smoking and alcohol consumption).
+
+### Step 2: Critical Questions to Ask Your Surgeon
+Do not leave the consultation room without asking these fundamental questions:
+
+1.  **"Are you a Board-Certified Plastic Surgeon?"** 
+    Ensure they have legitimate credentials specifically in *Plastic and Reconstructive Surgery*, not just a general medical degree or cosmetic "certifications." Dr. Sumit is a highly trained, specialized Plastic & Aesthetic Surgeon.
+2.  **"How frequently do you perform this specific procedure?"**
+    You want a surgeon who performs the procedure weekly, not once a year.
+3.  **"Can I see before-and-after photos of your actual patients?"**
+    Look for patients who had a similar starting point/body type to yours. Check for consistency and natural-looking results.
+4.  **"What surgical technique do you recommend for my body, and why?"**
+    A great surgeon explains the *why*. (e.g., Why fat transfer over an implant? Why an anchor incision over a lollipop incision?)
+5.  **"What is the realistic recovery timeline for me?"**
+    Ask when you can return to work, drive, and exercise.
+6.  **"Where will the surgery be performed?"**
+    Ensure it is taking place in an accredited hospital or surgical facility equipped to handle emergencies, such as Healing Hospital.
+
+A high-quality consultation is a two-way interview. Dr. Sumit prioritizes patient education, ensuring you have a clear, realistic, and safe surgical plan tailored exclusively to you.`,
+    image: "/dr-sumit-portrait.webp",
+    date: "October 22, 2025"
+  }
+];

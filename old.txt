@@ -1,0 +1,298 @@
+﻿commit 33237ffeabfd6e6694c401a116145d07e82acac0
+Author: timus911 <sumit.sgautam@gmail.com>
+Date:   Wed Mar 11 16:24:29 2026 +0530
+
+    Add fallback static OpenGraph/Twitter tags to index.html to ensure SEO crawling
+
+diff --git a/index.html b/index.html
+index 41676c7..ac3a5ce 100644
+--- a/index.html
++++ b/index.html
+@@ -5,7 +5,12 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34</title>
+-    <script src="https://cdn.tailwindcss.com"></script>
++    
++    <!-- Static Fallback SEO Tags -->
++    <meta property="og:image" content="https://drsumitaesthetics.com/dr-sumit-portrait.jpg">
++    <meta property="twitter:image" content="https://drsumitaesthetics.com/dr-sumit-portrait.jpg">
++    <meta property="og:site_name" content="Dr. Sumit Aesthetics">
++    
+     <link
+         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+         rel="stylesheet">
+
+commit ad30bcd5b28b5b8de580e5131b79151df5ac1716
+Author: timus911 <sumit.sgautam@gmail.com>
+Date:   Wed Mar 11 01:25:07 2026 +0530
+
+    Add Google Analytics 4 tracking script
+
+diff --git a/index.html b/index.html
+index b80fa7d..41676c7 100644
+--- a/index.html
++++ b/index.html
+@@ -77,6 +77,16 @@
+     <link rel="icon" type="image/png" href="/favicon.png">
+     <link rel="manifest" href="/manifest.json">
+     <meta name="theme-color" content="#000000">
++
++    <!-- Google tag (gtag.js) -->
++    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NQ6ENX37P8"></script>
++    <script>
++        window.dataLayer = window.dataLayer || [];
++        function gtag() { dataLayer.push(arguments); }
++        gtag('js', new Date());
++
++        gtag('config', 'G-NQ6ENX37P8');
++    </script>
+ </head>
+ 
+ <body>
+
+commit e940990abf68dbda57b358c3f1d062503c3efd13
+Author: timus911 <sumit.sgautam@gmail.com>
+Date:   Mon Jan 19 05:50:21 2026 +0530
+
+    Standardized blue color to #4A90E2 and refined UI
+
+diff --git a/index.html b/index.html
+index 4596405..b80fa7d 100644
+--- a/index.html
++++ b/index.html
+@@ -74,6 +74,7 @@
+   }
+ </script>
+     <link rel="stylesheet" href="/index.css">
++    <link rel="icon" type="image/png" href="/favicon.png">
+     <link rel="manifest" href="/manifest.json">
+     <meta name="theme-color" content="#000000">
+ </head>
+
+commit 94bdf045eaa8de9a61a709e1e6ca3683fae395c6
+Author: timus911 <sumit.sgautam@gmail.com>
+Date:   Tue Jan 13 10:23:09 2026 +0530
+
+    Final Polish: Footer Social Links, Phone Number Revert, and Title Fix
+
+diff --git a/index.html b/index.html
+index 8e76436..4596405 100644
+--- a/index.html
++++ b/index.html
+@@ -4,7 +4,7 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Best Plastic Surgeon in Chandigarh | Dr. Sumit Aesthetics | Sector 34</title>
++    <title>Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link
+         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+
+commit 34518b09110821866781e2b789224b9c0a503f98
+Author: timus911 <sumit.sgautam@gmail.com>
+Date:   Tue Jan 13 09:46:52 2026 +0530
+
+    SEO Overhaul: Updated metadata, schema, map, and routing structure
+
+diff --git a/index.html b/index.html
+index a2969ca..8e76436 100644
+--- a/index.html
++++ b/index.html
+@@ -4,7 +4,7 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Dr. Sumit | Advanced Plastic & Aesthetic Surgery</title>
++    <title>Best Plastic Surgeon in Chandigarh | Dr. Sumit Aesthetics | Sector 34</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link
+         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+
+commit a6220338192d2d4d9877a163fdd09f47f1f79c90
+Author: timus911 <sumit.sgautam@gmail.com>
+Date:   Sun Jan 11 02:02:36 2026 +0530
+
+    Implement SEO enhancements: Sitemap, Manifest, Geo Tags, Keywords
+
+diff --git a/index.html b/index.html
+index ba48307..a2969ca 100644
+--- a/index.html
++++ b/index.html
+@@ -1,12 +1,14 @@
+-
+ <!DOCTYPE html>
+ <html lang="en">
++
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dr. Sumit | Advanced Plastic & Aesthetic Surgery</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
++    <link
++        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
++        rel="stylesheet">
+     <style>
+         body {
+             font-family: 'Montserrat', sans-serif;
+@@ -14,39 +16,53 @@
+             color: #e5e5e5;
+             overflow-x: hidden;
+         }
+-        h1, h2, h3, .font-serif {
++
++        h1,
++        h2,
++        h3,
++        .font-serif {
+             font-family: 'Cinzel', serif;
+         }
++
+         ::-webkit-scrollbar {
+             width: 8px;
+         }
++
+         ::-webkit-scrollbar-track {
+             background: #0a0a0a;
+         }
++
+         ::-webkit-scrollbar-thumb {
+             background: #333;
+             border-radius: 10px;
+         }
++
+         ::-webkit-scrollbar-thumb:hover {
+             background: #444;
+         }
++
+         .glass {
+             background: rgba(255, 255, 255, 0.03);
+             backdrop-filter: blur(10px);
+             border: 1px solid rgba(255, 255, 255, 0.05);
+         }
++
+         .neon-glow {
+             box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+         }
++
+         .no-scrollbar::-webkit-scrollbar {
+             display: none;
+         }
++
+         .no-scrollbar {
+-            -ms-overflow-style: none; /* IE and Edge */
+-            scrollbar-width: none; /* Firefox */
++            -ms-overflow-style: none;
++            /* IE and Edge */
++            scrollbar-width: none;
++            /* Firefox */
+         }
+     </style>
+-<script type="importmap">
++    <script type="importmap">
+ {
+   "imports": {
+     "react/": "https://esm.sh/react@^19.2.3/",
+@@ -56,12 +72,15 @@
+     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+     "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
+   }
+-}
+ </script>
+-<link rel="stylesheet" href="/index.css">
++    <link rel="stylesheet" href="/index.css">
++    <link rel="manifest" href="/manifest.json">
++    <meta name="theme-color" content="#000000">
+ </head>
++
+ <body>
+     <div id="root"></div>
+-<script type="module" src="/index.tsx"></script>
++    <script type="module" src="/index.tsx"></script>
+ </body>
+-</html>
++
++</html>
+\ No newline at end of file
+
+commit 2bf75427214e88ffef85fd1476c2250fa24f1db2
+Author: timus911 <sumit.sgautam@gmail.com>
+Date:   Fri Jan 9 16:20:26 2026 +0530
+
+    Initial commit
+
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000..ba48307
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,67 @@
++
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
++    <title>Dr. Sumit | Advanced Plastic & Aesthetic Surgery</title>
++    <script src="https://cdn.tailwindcss.com"></script>
++    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
++    <style>
++        body {
++            font-family: 'Montserrat', sans-serif;
++            background-color: #0a0a0a;
++            color: #e5e5e5;
++            overflow-x: hidden;
++        }
++        h1, h2, h3, .font-serif {
++            font-family: 'Cinzel', serif;
++        }
++        ::-webkit-scrollbar {
++            width: 8px;
++        }
++        ::-webkit-scrollbar-track {
++            background: #0a0a0a;
++        }
++        ::-webkit-scrollbar-thumb {
++            background: #333;
++            border-radius: 10px;
++        }
++        ::-webkit-scrollbar-thumb:hover {
++            background: #444;
++        }
++        .glass {
++            background: rgba(255, 255, 255, 0.03);
++            backdrop-filter: blur(10px);
++            border: 1px solid rgba(255, 255, 255, 0.05);
++        }
++        .neon-glow {
++            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
++        }
++        .no-scrollbar::-webkit-scrollbar {
++            display: none;
++        }
++        .no-scrollbar {
++            -ms-overflow-style: none; /* IE and Edge */
++            scrollbar-width: none; /* Firefox */
++        }
++    </style>
++<script type="importmap">
++{
++  "imports": {
++    "react/": "https://esm.sh/react@^19.2.3/",
++    "react": "https://esm.sh/react@^19.2.3",
++    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
++    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
++    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
++    "framer-motion": "https://esm.sh/framer-motion@^12.23.26"
++  }
++}
++</script>
++<link rel="stylesheet" href="/index.css">
++</head>
++<body>
++    <div id="root"></div>
++<script type="module" src="/index.tsx"></script>
++</body>
++</html>

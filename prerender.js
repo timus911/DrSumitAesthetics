@@ -1,0 +1,150 @@
+import puppeteer from 'puppeteer';
+import { exec } from 'child_process';
+import waitOn from 'wait-on';
+import fs from 'fs';
+import path from 'path';
+
+const routes = [
+    '/',
+    '/about',
+    '/aesthetic',
+    '/reconstructive',
+    '/non-surgical',
+    '/vascular',
+    '/gallery',
+    '/reviews',
+    '/patient-journey',
+    '/international',
+    '/plastic-surgery-cost-chandigarh',
+    '/surgiset-privacy',
+    '/contact',
+    '/concerns',
+    '/liposuction-chandigarh',
+    '/tummy-tuck-chandigarh',
+    '/rhinoplasty-nose-job-chandigarh',
+    '/breast-augmentation-chandigarh',
+    '/facelift-chandigarh',
+    '/gynecomastia-surgery-chandigarh',
+    '/hair-transplant-chandigarh',
+    '/blepharoplasty-chandigarh',
+    '/blog',
+    '/blog/what-to-expect-from-liposuction-recovery',
+    '/blog/liposuction-vs-tummy-tuck-which-is-right-for-you',
+    '/blog/does-liposuction-remove-fat-permanently',
+    '/blog/the-mommy-makeover-journey',
+    '/blog/high-definition-hd-liposuction-sculpting',
+    '/blog/rhinoplasty-recovery-timeline',
+    '/blog/preservation-rhinoplasty-secret-to-natural-noses',
+    '/blog/blepharoplasty-eyelid-surgery-anti-aging',
+    '/blog/traditional-vs-mini-facelift',
+    '/blog/gynecomastia-surgery-india-causes-treatment',
+    '/blog/breast-augmentation-implants-vs-fat-transfer',
+    '/blog/what-to-expect-after-breast-reduction',
+    '/blog/botox-vs-dermal-fillers',
+    '/blog/the-rise-of-prejuvenation',
+    '/blog/how-long-do-dermal-fillers-last',
+    '/blog/preparing-for-your-first-aesthetic-consultation'
+];
+
+async function prerender() {
+    console.log('Starting dev server for prerendering...');
+    const server = exec('npm run dev');
+
+    await waitOn({
+        resources: ['http-get://localhost:3000'],
+        timeout: 30000,
+    });
+
+    console.log('Server is ready. Starting Puppeteer...');
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
+    });
+    const page = await browser.newPage();
+
+    // Create base dist directory if it doesn't exist.
+    // We assume `npm run build` runs before this script
+    if (!fs.existsSync('dist')) fs.mkdirSync('dist');
+
+    for (const route of routes) {
+        console.log(`Prerendering ${route}...`);
+        await page.goto(`http://localhost:3000${route}`, { waitUntil: 'networkidle0' });
+
+        let html = await page.content();
+
+        // Remove dev server scripts injected by Vite
+        html = html.replace(/<script type="module" src="\/@vite\/client"><\/script>/, '');
+
+        const routeDir = path.join('dist', route === '/' ? '' : route);
+        if (!fs.existsSync(routeDir)) {
+            fs.mkdirSync(routeDir, { recursive: true });
+        }
+
+        const filePath = path.join(routeDir, 'index.html');
+        // If an index.html exists, inject the app HTML into the root div
+        // We'll scrape the #root innerHTML and inject it.
+        const rootContent = await page.evaluate(() => document.getElementById('root')?.innerHTML || '');
+
+        // Extract dynamically injected SEO head tags from Helmet
+        const headContent = await page.evaluate(() => {
+            let tags = '';
+            const query = [
+                'title',
+                'meta[name="description"]',
+                'meta[name="keywords"]',
+                'meta[property^="og:"]',
+                'meta[property^="twitter:"]',
+                'link[rel="canonical"]',
+                'script[type="application/ld+json"]',
+                'meta[name^="geo."]',
+                'meta[name="ICBM"]'
+            ];
+            query.forEach(q => {
+                document.querySelectorAll(q).forEach(el => {
+                    // Only grab elements that have data-rh attribute (Helmet injections)
+                    // or are title/script blocks to be safe, but helmet adds data-rh to standard meta.
+                    tags += '\t\t' + el.outerHTML + '\n';
+                });
+            });
+            // Let's ensure we are getting unique tags to prevent massive duplication if queried multiple times
+            // but since page evaluates after route loads, we just get current snapshot.
+            return tags;
+        });
+
+        if (fs.existsSync('dist/index.html')) {
+            let baseHtml = fs.readFileSync('dist/index.html', 'utf8');
+            baseHtml = baseHtml.replace('<div id="root"></div>', `<div id="root">${rootContent}</div>`);
+            
+            // Note: because Helmet injects <title> and everything, we can just replace existing static ones.
+            // But doing regex deletion across lines is risky, so we just remove the static title 
+            // and inject our new block right before </head>
+            baseHtml = baseHtml.replace(/<title>.*?<\/title>/s, '');
+            baseHtml = baseHtml.replace(/<meta name="description".*?>/s, '');
+            baseHtml = baseHtml.replace(/<meta name="keywords".*?>/s, '');
+            
+            baseHtml = baseHtml.replace('</head>', `\n${headContent}\n</head>`);
+            
+            fs.writeFileSync(filePath, baseHtml);
+        } else {
+            // Fallback if built dist/index.html isn't there
+            fs.writeFileSync(filePath, html);
+        }
+
+        console.log(`Saved ${filePath}`);
+    }
+
+    if (fs.existsSync('dist/index.html')) {
+        fs.copyFileSync('dist/index.html', 'dist/404.html');
+        console.log('Created dist/404.html for GitHub Pages fallback.');
+    }
+
+    console.log('Done prerendering.');
+    await browser.close();
+    server.kill();
+    process.exit(0);
+}
+
+prerender().catch(err => {
+    console.error(err);
+    process.exit(1);
+});

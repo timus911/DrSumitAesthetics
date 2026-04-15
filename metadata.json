@@ -1,0 +1,7 @@
+{
+  "name": "Dr. Sumit - Advanced Plastic & Aesthetic Surgery",
+  "description": "Premium surgical excellence by Dr. Sumit, featuring international Belgium fellowship expertise in plastic, reconstructive, and aesthetic surgery.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

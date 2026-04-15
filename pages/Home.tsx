@@ -1,0 +1,199 @@
+
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight, ShieldCheck, Microscope, Crosshair } from 'lucide-react';
+import { BRAND, COLORS, ASSETS } from '../constants.ts';
+import SEO from '../components/SEO.tsx';
+import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
+
+import MedicalAuthority from '../components/MedicalAuthority.tsx';
+import TrustSection from '../components/TrustSection.tsx';
+
+const Home: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const philosophyImageRef = useRef<HTMLDivElement>(null);
+  const isPhilosophyFocused = useMobileCenterFocus(philosophyImageRef);
+
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
+
+  // Scroll-driven Hero background animations - Enhanced for fluid feel
+  const heroScale = useTransform(smoothProgress, [0, 0.4], [1, 1.15]);
+  const heroOpacity = useTransform(smoothProgress, [0, 0.3], [1, 0]);
+  const heroYShift = useTransform(smoothProgress, [0, 0.4], [0, 150]);
+  const textYMastery = useTransform(smoothProgress, [0, 0.3], [0, -150]);
+  const philosophyYEnter = useTransform(smoothProgress, [0.1, 0.6], [150, 0]);
+
+  return (
+    <div ref={containerRef} className="w-full">
+      <SEO
+        title="Board Certified Plastic Surgeon in Chandigarh | Dr. Sumit Aesthetics"
+        description="Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon in Chandigarh specializing in HD Liposuction, Rhinoplasty, Facelifts, and Hair Transplants."
+        keywords="plastic surgeon chandigarh, cosmetic surgeon chandigarh, dr sumit singh gautam, best plastic surgeon, aesthetic surgery, reconstructive surgery"
+      />
+
+      {/* Hero Section */}
+      <section className="relative h-[110vh] flex items-center justify-center overflow-hidden">
+        <motion.div
+          style={{ scale: heroScale, y: heroYShift, willChange: "transform" }}
+          className="absolute inset-0 z-0"
+        >
+          {/* Surgical operation background with balanced fade overlay */}
+          <img
+            src={ASSETS.surgeryHeroBackground}
+            className="w-full h-full object-cover opacity-80"
+            alt="Board-certified plastic and aesthetic surgery excellence by Dr. Sumit Singh Gautam in Chandigarh"
+            loading="eager"
+            fetchPriority="high"
+            width={1920}
+            height={1080}
+          />
+          {/* Balanced black fade overlay for visible yet professional background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80" />
+          <div className="absolute inset-0 bg-black/40" />
+        </motion.div>
+
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            style={{ opacity: heroOpacity, y: textYMastery }}
+            initial={{ opacity: 0, y: 80 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="space-y-12 mt-24"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.2 }}
+              className="inline-block px-8 py-3 border border-[#4A90E2]/40 bg-[#4A90E2]/10 rounded-full backdrop-blur-2xl shadow-2xl shadow-[#4A90E2]/10"
+            >
+              <span className="text-[#4A90E2] text-[10px] tracking-[0.6em] uppercase font-bold">Artistry · Precision · Sculpture</span>
+            </motion.div>
+
+            {/* SEO-Optimized H1 with visible keywords */}
+            <h1 className="text-7xl md:text-[10rem] font-serif leading-none tracking-tighter text-white">
+              <span className="block text-[10px] md:text-xs text-white/50 tracking-[0.4em] uppercase font-sans font-bold mb-6">
+                Board Certified Plastic Surgeon in Chandigarh
+              </span>
+              Surgical <br />
+              <span className="text-[#4A90E2]">Mastery</span>
+            </h1>
+
+            <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-xl tracking-wide font-light leading-relaxed">
+              Dr. Sumit Singh Gautam fuses fine art mastery with surgical precision to redefine aesthetic surgery. A sculptor's eye ensuring anatomical harmony.
+            </p>
+
+            <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-16 pt-12">
+              <Link to="/concerns" className="group flex items-center space-x-5 px-12 py-6 bg-white text-black font-bold text-[10px] uppercase tracking-[0.4em] hover:bg-[#4A90E2] hover:text-white transition-all shadow-2xl overflow-hidden relative">
+                <span className="relative z-10">Explore Mastery</span>
+                <ArrowRight size={16} className="relative z-10 group-hover:translate-x-4 transition-transform duration-500" />
+                <motion.div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
+              </Link>
+              <Link to="/contact" className="text-white text-[11px] uppercase tracking-[0.5em] border-b border-white/20 pb-2 hover:border-[#4A90E2] transition-all font-bold">
+                Consultation
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+
+        <motion.div
+          animate={{ y: [0, -15, 0], opacity: [0.2, 0.5, 0.2] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-16 left-1/2 -translate-x-1/2 text-gray-300 flex flex-col items-center"
+        >
+          <span className="text-[8px] tracking-[0.5em] uppercase mb-4 opacity-50 font-bold">Scroll to Explore</span>
+          <div className="w-[1px] h-24 bg-gradient-to-b from-[#4A90E2] via-[#4A90E2]/50 to-transparent" />
+        </motion.div>
+      </section>
+
+      {/* Philosophy Section */}
+      <motion.section
+        style={{ y: philosophyYEnter }}
+        className="py-32 relative z-20"
+      >
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="relative aspect-[4/5] overflow-hidden glass rounded-sm group shadow-[0_40px_100px_rgba(0,0,0,0.8)] border border-white/5 will-change-transform"
+            >
+              {/* Photo 4: Surgical profile */}
+              <div ref={philosophyImageRef} className="w-full h-full">
+                  <img
+                    src={ASSETS.surgeryProfile}
+                    alt="Surgical Profile"
+                    className={`w-full h-full object-cover transition-all duration-700 ${isPhilosophyFocused ? 'grayscale-0' : 'grayscale'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105`}
+                    loading="lazy"
+                    decoding="async"
+                    width={800}
+                    height={1000}
+                  />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+              <div className="absolute bottom-12 left-12 space-y-4">
+                <div className="h-0.5 w-12 bg-[#4A90E2]" />
+                <p className="text-[#4A90E2] font-serif text-4xl">Artistic Anatomy</p>
+                <p className="text-white/40 text-[10px] tracking-[0.5em] uppercase font-bold">Surgical Sculpture Directive</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-50px" }}
+              className="space-y-20"
+            >
+              <div className="space-y-8">
+                <span className="text-[#4A90E2] text-[11px] tracking-[0.6em] uppercase font-extrabold flex items-center gap-4">
+                  <Crosshair size={16} /> Sculpted Precision
+                </span>
+                <h2 className="text-6xl md:text-8xl font-serif leading-[1.1]">Form & <br /> Function</h2>
+              </div>
+
+              <p className="text-gray-400 leading-relaxed text-xl font-light">
+                Every procedure is approached as a living sculpture. By combining the principles of 3D modeling and fine art with advanced surgical techniques, we achieve results that are naturally balanced and artistically refined.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-20">
+                <div className="space-y-8 group">
+                  <div className="w-16 h-16 glass flex items-center justify-center rounded-full border border-[#4A90E2]/20 shadow-2xl group-hover:border-[#4A90E2] transition-colors">
+                    <Microscope size={28} className="text-[#4A90E2]" />
+                  </div>
+                  <h3 className="text-[12px] uppercase tracking-[0.4em] font-extrabold text-white">Microsurgical Technique</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">Precision restoration of neural and vascular pathways under high-optic magnification protocols.</p>
+                </div>
+                <div className="space-y-8 group">
+                  <div className="w-16 h-16 glass flex items-center justify-center rounded-full border border-[#4A90E2]/20 shadow-2xl group-hover:border-[#4A90E2] transition-colors">
+                    <ShieldCheck size={28} className="text-[#4A90E2]" />
+                  </div>
+                  <h3 className="text-[12px] uppercase tracking-[0.4em] font-extrabold text-white">Artistic Vision</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">Applying the laws of proportion, light, and shadow from the studio to the operating theater.</p>
+                </div>
+              </div>
+
+              <Link to="/about" className="inline-flex items-center space-x-8 mt-16 group">
+                <span className="px-12 py-5 border border-white/10 group-hover:border-[#4A90E2] group-hover:bg-[#4A90E2]/10 transition-all text-[11px] uppercase tracking-[0.5em] font-bold text-gray-300">Biographical Brief</span>
+                <ArrowRight size={18} className="text-gray-400 group-hover:text-[#4A90E2] group-hover:translate-x-6 transition-all duration-500" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Trust & Authority Signals */}
+      <MedicalAuthority />
+      <TrustSection />
+    </div>
+  );
+};
+
+export default Home;
