@@ -56,7 +56,10 @@ async function prerender() {
     });
 
     console.log('Server is ready. Starting Puppeteer...');
-    const browser = await puppeteer.launch({ headless: true });
+    const browser = await puppeteer.launch({
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
+    });
     const page = await browser.newPage();
 
     // Create base dist directory if it doesn't exist.
