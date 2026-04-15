@@ -13,9 +13,14 @@
     <meta property="twitter:image" content="https://drsumitaesthetics.com/dr-sumit-portrait.webp">
     <meta property="og:site_name" content="Dr. Sumit Aesthetics">
     
+    <!-- Preconnect to fonts.gstatic.com for faster font loading -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap">
+    </noscript>
     <link rel="preload" as="image" href="/surgical-excellence.webp" fetchpriority="high">
     <style>
         body {
