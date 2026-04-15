@@ -2,7 +2,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ShieldCheck, Microscope, Waves, Crosshair } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Microscope, Crosshair } from 'lucide-react';
 import { BRAND, COLORS, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
@@ -23,19 +23,20 @@ const Home: React.FC = () => {
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30 });
 
   // Scroll-driven Hero background animations - Enhanced for fluid feel
-  const heroScale = useTransform(smoothProgress, [0, 0.4], [1, 1.15]); // Subtler scale
+  const heroScale = useTransform(smoothProgress, [0, 0.4], [1, 1.15]);
   const heroOpacity = useTransform(smoothProgress, [0, 0.3], [1, 0]);
-  const heroYShift = useTransform(smoothProgress, [0, 0.4], [0, 150]); // Deeper parallax
-  const textYMastery = useTransform(smoothProgress, [0, 0.3], [0, -150]); // Faster exit
-  const philosophyYEnter = useTransform(smoothProgress, [0.1, 0.6], [150, 0]); // Smoother entry
+  const heroYShift = useTransform(smoothProgress, [0, 0.4], [0, 150]);
+  const textYMastery = useTransform(smoothProgress, [0, 0.3], [0, -150]);
+  const philosophyYEnter = useTransform(smoothProgress, [0.1, 0.6], [150, 0]);
 
   return (
     <div ref={containerRef} className="w-full">
       <SEO
-        title="Surgical Mastery | Dr. Sumit Aesthetics Chandigarh"
-        description="Dr. Sumit Singh Gautam fuses fine art mastery with surgical precision to redefine aesthetic surgery. A sculptor's eye ensuring anatomical harmony. Board Certified Plastic Surgeon in Chandigarh."
+        title="Board Certified Plastic Surgeon in Chandigarh | Dr. Sumit Aesthetics"
+        description="Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon in Chandigarh specializing in HD Liposuction, Rhinoplasty, Facelifts, and Hair Transplants."
         keywords="plastic surgeon chandigarh, cosmetic surgeon chandigarh, dr sumit singh gautam, best plastic surgeon, aesthetic surgery, reconstructive surgery"
       />
+
       {/* Hero Section */}
       <section className="relative h-[110vh] flex items-center justify-center overflow-hidden">
         <motion.div
@@ -74,7 +75,11 @@ const Home: React.FC = () => {
               <span className="text-[#4A90E2] text-[10px] tracking-[0.6em] uppercase font-bold">Artistry · Precision · Sculpture</span>
             </motion.div>
 
+            {/* SEO-Optimized H1 with visible keywords */}
             <h1 className="text-7xl md:text-[10rem] font-serif leading-none tracking-tighter text-white">
+              <span className="block text-[10px] md:text-xs text-white/50 tracking-[0.4em] uppercase font-sans font-bold mb-6">
+                Board Certified Plastic Surgeon in Chandigarh
+              </span>
               Surgical <br />
               <span className="text-[#4A90E2]">Mastery</span>
             </h1>
@@ -191,4 +196,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
