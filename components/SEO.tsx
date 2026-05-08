@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { BRAND, CONTACT } from '../constants';
 
 interface BreadcrumbItem {
@@ -188,7 +187,7 @@ const SEO: React.FC<SEOProps> = ({
     const baseSchema = buildSchema();
 
     return (
-        <Helmet>
+        <>
             <title>{siteTitle}</title>
             <meta name="description" content={metaDescription} />
             <meta name="keywords" content={keywords || "best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india"} />
@@ -201,18 +200,18 @@ const SEO: React.FC<SEOProps> = ({
             <meta property="og:image" content={absoluteImage} />
 
             {/* Twitter */}
-            <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content={siteUrl} />
-            <meta property="twitter:title" content={siteTitle} />
-            <meta property="twitter:description" content={metaDescription} />
-            <meta property="twitter:image" content={absoluteImage} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:url" content={siteUrl} />
+            <meta name="twitter:title" content={siteTitle} />
+            <meta name="twitter:description" content={metaDescription} />
+            <meta name="twitter:image" content={absoluteImage} />
 
             <link rel="canonical" href={siteUrl} />
 
-            <script type="application/ld+json" data-rh="true">
+            <script type="application/ld+json">
                 {JSON.stringify(baseSchema)}
             </script>
-        </Helmet>
+        </>
     );
 };
 

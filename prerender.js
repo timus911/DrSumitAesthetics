@@ -70,10 +70,19 @@ async function prerender() {
         console.log(`Prerendering ${route}...`);
         await page.goto(`http://localhost:3000${route}`, { waitUntil: 'networkidle0' });
 
+        // Capture the fully-rendered HTML after React + Helmet have mounted.
+        // Using page.content() directly is the correct approach: Puppeteer serialises
+        // the live DOM *after* networkidle0, so react-helmet-async has already injected
+        // all dynamic <title>, <meta>, <link rel="canonical">, og:*, twitter:*, and
+        // JSON-LD <script> tags into <head>. No surgical string-replacement needed.
         let html = await page.content();
 
-        // Remove dev server scripts injected by Vite
-        html = html.replace(/<script type="module" src="\/@vite\/client"><\/script>/, '');
+        // Strip the Vite dev-server HMR client script — not needed in static output.
+        html = html.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
+
+        // Also strip the importmap block that references esm.sh CDN URLs that were
+        // in the dev index.html but are irrelevant for the built, bundled output.
+        html = html.replace(/<script type="importmap">[\s\S]*?<\/script>/g, '');
 
         const routeDir = path.join('dist', route === '/' ? '' : route);
         if (!fs.existsSync(routeDir)) {
@@ -81,54 +90,24 @@ async function prerender() {
         }
 
         const filePath = path.join(routeDir, 'index.html');
-        // If an index.html exists, inject the app HTML into the root div
-        // We'll scrape the #root innerHTML and inject it.
-        const rootContent = await page.evaluate(() => document.getElementById('root')?.innerHTML || '');
 
-        // Extract dynamically injected SEO head tags from Helmet
-        const headContent = await page.evaluate(() => {
-            let tags = '';
-            const query = [
-                'title',
-                'meta[name="description"]',
-                'meta[name="keywords"]',
-                'meta[property^="og:"]',
-                'meta[property^="twitter:"]',
-                'link[rel="canonical"]',
-                'script[type="application/ld+json"]',
-                'meta[name^="geo."]',
-                'meta[name="ICBM"]'
-            ];
-            query.forEach(q => {
-                document.querySelectorAll(q).forEach(el => {
-                    // Only grab elements that have data-rh attribute (Helmet injections)
-                    // or are title/script blocks to be safe, but helmet adds data-rh to standard meta.
-                    tags += '\t\t' + el.outerHTML + '\n';
-                });
-            });
-            // Let's ensure we are getting unique tags to prevent massive duplication if queried multiple times
-            // but since page evaluates after route loads, we just get current snapshot.
-            return tags;
-        });
+        // Remove redundant fallback SEO tags from index.html template
+        // React 19 hoists its own tags, so we want to keep ONLY the ones React injected
+        // specifically for the ones that usually exist only once (title, description)
+        
+        // Remove the original static title (the one without data-rh or the later one)
+        // Actually, since we use page.content(), we might have two <title> tags.
+        // We want to keep the one React put in. 
+        // A simple way is to remove the specific fallback strings.
+        const fallbackTitle = "<title>Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34</title>";
+        const fallbackDesc = '<meta name="description" content="Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.">';
+        const fallbackKeywords = '<meta name="keywords" content="best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india">';
 
-        if (fs.existsSync('dist/index.html')) {
-            let baseHtml = fs.readFileSync('dist/index.html', 'utf8');
-            baseHtml = baseHtml.replace('<div id="root"></div>', `<div id="root">${rootContent}</div>`);
-            
-            // Note: because Helmet injects <title> and everything, we can just replace existing static ones.
-            // But doing regex deletion across lines is risky, so we just remove the static title 
-            // and inject our new block right before </head>
-            baseHtml = baseHtml.replace(/<title>.*?<\/title>/s, '');
-            baseHtml = baseHtml.replace(/<meta name="description".*?>/s, '');
-            baseHtml = baseHtml.replace(/<meta name="keywords".*?>/s, '');
-            
-            baseHtml = baseHtml.replace('</head>', `\n${headContent}\n</head>`);
-            
-            fs.writeFileSync(filePath, baseHtml);
-        } else {
-            // Fallback if built dist/index.html isn't there
-            fs.writeFileSync(filePath, html);
-        }
+        html = html.replace(fallbackTitle, '');
+        html = html.replace(fallbackDesc, '');
+        html = html.replace(fallbackKeywords, '');
+
+        fs.writeFileSync(filePath, html);
 
         console.log(`Saved ${filePath}`);
     }

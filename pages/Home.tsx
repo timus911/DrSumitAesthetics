@@ -75,11 +75,13 @@ const Home: React.FC = () => {
               <span className="text-[#4A90E2] text-[10px] tracking-[0.6em] uppercase font-bold">Artistry · Precision · Sculpture</span>
             </motion.div>
 
-            {/* SEO-Optimized H1 with visible keywords */}
+            {/* SEO-Optimized Pre-Header and H1 */}
+            {/* The tagline is intentionally OUTSIDE the h1 so screen readers
+                don't merge it with "Surgical Mastery" into one long heading. */}
+            <p className="block text-[10px] md:text-xs text-white/50 tracking-[0.4em] uppercase font-sans font-bold mb-6">
+              Board Certified Plastic Surgeon in Chandigarh
+            </p>
             <h1 className="text-7xl md:text-[10rem] font-serif leading-none tracking-tighter text-white">
-              <span className="block text-[10px] md:text-xs text-white/50 tracking-[0.4em] uppercase font-sans font-bold mb-6">
-                Board Certified Plastic Surgeon in Chandigarh
-              </span>
               Surgical <br />
               <span className="text-[#4A90E2]">Mastery</span>
             </h1>
