@@ -47,11 +47,11 @@ const routes = [
 ];
 
 async function prerender() {
-    console.log('Starting dev server for prerendering...');
-    const server = exec('npm run dev');
+    console.log('Starting preview server for prerendering...');
+    const server = exec('npm run preview -- --port 4173');
 
     await waitOn({
-        resources: ['http-get://localhost:3000'],
+        resources: ['http-get://localhost:4173'],
         timeout: 30000,
     });
 
@@ -61,6 +61,9 @@ async function prerender() {
         args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu']
     });
     const page = await browser.newPage();
+    page.on('console', msg => console.log('PAGE LOG:', msg.text()));
+    page.on('pageerror', err => console.log('PAGE ERROR:', err.stack || err.message));
+    page.on('requestfailed', request => console.log('REQUEST FAILED:', request.url(), request.failure().errorText));
 
     // Create base dist directory if it doesn't exist.
     // We assume `npm run build` runs before this script
@@ -68,7 +71,7 @@ async function prerender() {
 
     for (const route of routes) {
         console.log(`Prerendering ${route}...`);
-        await page.goto(`http://localhost:3000${route}`, { waitUntil: 'networkidle0' });
+        await page.goto(`http://localhost:4173${route}`, { waitUntil: 'networkidle0' });
 
         // Capture the fully-rendered HTML after React + Helmet have mounted.
         // Using page.content() directly is the correct approach: Puppeteer serialises

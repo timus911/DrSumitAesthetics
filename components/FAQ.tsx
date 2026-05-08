@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+
 
 export interface FAQItem {
     question: string;
@@ -34,11 +34,9 @@ const FAQ: React.FC<FAQProps> = ({ items, title = "Frequently Asked Questions" }
 
     return (
         <>
-            <Helmet>
                 <script type="application/ld+json">
                     {JSON.stringify(schema)}
                 </script>
-            </Helmet>
 
             <div className="space-y-6 pt-12 border-t border-white/5">
                 <h3 className="text-3xl font-serif text-white">{title}</h3>

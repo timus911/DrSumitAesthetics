@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRight, Home } from 'lucide-react';
-import { Helmet } from 'react-helmet-async';
+
 
 interface Breadcrumb {
     name: string;
@@ -38,11 +38,9 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
 
     return (
         <>
-            <Helmet>
                 <script type="application/ld+json">
                     {JSON.stringify(schemaList)}
                 </script>
-            </Helmet>
 
             <nav aria-label="breadcrumb" className="w-full flex items-center text-sm font-light text-zinc-400 py-3 mb-4 overflow-x-auto whitespace-nowrap">
                 <Link to="/" className="hover:text-gold-500 transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-1 focus:ring-gold-500 rounded">
