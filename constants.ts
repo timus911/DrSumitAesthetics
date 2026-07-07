@@ -1435,7 +1435,37 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
       recoveryTips: ["The compression vest is vital to flatten the area and prevent fluid buildup.", "Lymphatic massage helps ensure a smooth, bump-free result."]
     },
     regions: ["Breasts", "Body"],
-    gallery: ["/body-contouring-result-1.webp", "/body-contouring-result-2.webp"],
+    gallery: [
+      "/gynecomastia-result-1.webp",
+      "/gynecomastia-result-2.webp",
+      "/gynecomastia-result-3.webp",
+      "/gynecomastia-result-4.webp",
+      "/gynecomastia-result-5.webp",
+      "/gynecomastia-result-6.webp",
+      "/gynecomastia-result-7.webp",
+      "/gynecomastia-result-8.webp",
+      "/gynecomastia-result-9.webp",
+      "/gynecomastia-result-10.webp",
+      "/gynecomastia-result-11.webp",
+      "/gynecomastia-result-12.webp",
+      "/gynecomastia-result-13.webp",
+      "/gynecomastia-result-14.webp",
+      "/gynecomastia-result-15.webp",
+      "/gynecomastia-result-16.webp",
+      "/gynecomastia-result-17.webp",
+      "/gynecomastia-result-18.webp",
+      "/gynecomastia-result-19.webp",
+      "/gynecomastia-result-20.webp",
+      "/gynecomastia-result-21.webp",
+      "/gynecomastia-result-22.webp",
+      "/gynecomastia-result-23.webp",
+      "/gynecomastia-result-24.webp",
+      "/gynecomastia-result-25.webp",
+      "/gynecomastia-result-26.webp",
+      "/gynecomastia-result-27.webp",
+      "/gynecomastia-result-28.webp",
+      "/gynecomastia-result-29.webp"
+    ],
     seoContent: `
 ### Gynecomastia Surgery in Chandigarh: Masculine Chest Contouring
 
