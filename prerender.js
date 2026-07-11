@@ -3,48 +3,9 @@ import { exec } from 'child_process';
 import waitOn from 'wait-on';
 import fs from 'fs';
 import path from 'path';
+import { ROUTES } from './routes.config.mjs';
 
-const routes = [
-    '/',
-    '/about',
-    '/aesthetic',
-    '/reconstructive',
-    '/non-surgical',
-    '/vascular',
-    '/gallery',
-    '/reviews',
-    '/patient-journey',
-    '/international',
-    '/plastic-surgery-cost-chandigarh',
-    '/surgiset-privacy',
-    '/contact',
-    '/concerns',
-    '/liposuction-chandigarh',
-    '/tummy-tuck-chandigarh',
-    '/rhinoplasty-nose-job-chandigarh',
-    '/breast-augmentation-chandigarh',
-    '/facelift-chandigarh',
-    '/gynecomastia-surgery-chandigarh',
-    '/hair-transplant-chandigarh',
-    '/blepharoplasty-chandigarh',
-    '/blog',
-    '/blog/what-to-expect-from-liposuction-recovery',
-    '/blog/liposuction-vs-tummy-tuck-which-is-right-for-you',
-    '/blog/does-liposuction-remove-fat-permanently',
-    '/blog/the-mommy-makeover-journey',
-    '/blog/high-definition-hd-liposuction-sculpting',
-    '/blog/rhinoplasty-recovery-timeline',
-    '/blog/preservation-rhinoplasty-secret-to-natural-noses',
-    '/blog/blepharoplasty-eyelid-surgery-anti-aging',
-    '/blog/traditional-vs-mini-facelift',
-    '/blog/gynecomastia-surgery-india-causes-treatment',
-    '/blog/breast-augmentation-implants-vs-fat-transfer',
-    '/blog/what-to-expect-after-breast-reduction',
-    '/blog/botox-vs-dermal-fillers',
-    '/blog/the-rise-of-prejuvenation',
-    '/blog/how-long-do-dermal-fillers-last',
-    '/blog/preparing-for-your-first-aesthetic-consultation'
-];
+const routes = ROUTES.map(r => r.path);
 
 // Static fallback tags from the original index.html template. These are only
 // ever removed by exact content match (entity-tolerant — Puppeteer's

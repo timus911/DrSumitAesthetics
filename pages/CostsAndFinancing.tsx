@@ -23,7 +23,7 @@ const CostsAndFinancing: React.FC = () => {
             <SEO
                 title="Costs & Financing"
                 description="Transparent pricing for plastic surgery in Chandigarh. View cost estimates for Liposuction, Rhinoplasty, Hair Transplant, and more. EMI options available."
-                url="/costs-financing"
+                url="/plastic-surgery-cost-chandigarh"
             />
 
             {/* Trust Header */}
