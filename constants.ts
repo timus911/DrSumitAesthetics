@@ -1836,6 +1836,8 @@ We use only authentic Allergan Botox or Dysport, opened in front of you. Results
   {
     id: "microneedling-chandigarh",
     metaDescription: "Microneedling in Chandigarh at Dr. Sumit Aesthetics — stimulate collagen to improve texture, scars & pores. Book your session today.",
+    priceRange: "On consultation",
+    costFactors: "Session count, treatment area & combination therapies",
     title: "Microneedling",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -1929,6 +1931,8 @@ Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
   {
     id: "chemical-peeling",
     metaDescription: "Chemical peels in Chandigarh at Dr. Sumit Aesthetics — medical-grade peels for glow, pigmentation & acne scars. Book your session today.",
+    priceRange: "On consultation",
+    costFactors: "Peel depth, session count & skin condition",
     title: "Chemical Peeling",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -2028,6 +2032,8 @@ Medical supervision ensures no risk of burns or hyperpigmentation.
   {
     id: "dermal-fillers",
     metaDescription: "Dermal fillers in Chandigarh by plastic surgeon Dr. Sumit — restore volume and contour with a natural finish. Book your session today.",
+    priceRange: "On consultation",
+    costFactors: "Filler type, syringe count & treatment areas",
     title: "Dermal Fillers",
     category: "Non-Surgical",
     parentCategory: "non-surgical",

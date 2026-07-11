@@ -5,6 +5,7 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import FloatingBackground from './components/FloatingBackground.tsx';
+import FloatingWhatsApp from './components/FloatingWhatsApp.tsx';
 import Home from './pages/Home.tsx';
 import About from './pages/About.tsx';
 import CategoryPage from './pages/CategoryPage.tsx';
@@ -71,6 +72,7 @@ const AppLayout: React.FC = () => {
       </main>
 
       {!isStandalone && <Footer />}
+      {!isStandalone && <FloatingWhatsApp />}
     </div>
   );
 };
