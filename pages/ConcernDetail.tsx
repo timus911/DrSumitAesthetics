@@ -83,10 +83,6 @@ const ConcernDetail: React.FC = () => {
                 title={`${region} Procedures`}
                 description={`Explore plastic and aesthetic surgery procedures for the ${region} region, tailored to your aesthetic goals in Chandigarh.`}
                 url={`/concerns/${region}`}
-                breadcrumbs={[
-                    { name: 'Concerns', item: '/concerns' },
-                    { name: region || 'Unknown', item: `/concerns/${region}` }
-                ]}
             />
             <div className="container mx-auto px-6">
                 <Breadcrumbs

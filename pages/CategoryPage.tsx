@@ -35,9 +35,6 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
         title={titles[type]}
         description={descriptions[type]}
         url={`/${type}`}
-        breadcrumbs={[
-          { name: titles[type], item: `/${type}` }
-        ]}
       />
       <div className="container mx-auto px-6">
         <Breadcrumbs
