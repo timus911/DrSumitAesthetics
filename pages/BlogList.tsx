@@ -10,7 +10,7 @@ const BlogList: React.FC = () => {
     return (
         <div className="pt-52 pb-32 min-h-screen bg-black text-white/90">
             <SEO
-                title="Aesthetic Surgery Blog | Dr. Sumit Aesthetics"
+                title="Aesthetic Surgery Blog"
                 description="Expert insights, recovery tips, and clinical updates on plastic and reconstructive surgery from Dr. Sumit."
                 url="/blog"
             />

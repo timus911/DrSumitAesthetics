@@ -21,7 +21,7 @@ const CostsAndFinancing: React.FC = () => {
     return (
         <div className="pt-40 pb-32">
             <SEO
-                title="Costs & Financing | Dr. Sumit Aesthetics Chandigarh"
+                title="Costs & Financing"
                 description="Transparent pricing for plastic surgery in Chandigarh. View cost estimates for Liposuction, Rhinoplasty, Hair Transplant, and more. EMI options available."
                 url="/costs-financing"
             />
