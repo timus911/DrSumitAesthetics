@@ -69,6 +69,7 @@ export type Procedure = {
   category: string;
   parentCategory: 'aesthetic' | 'reconstructive' | 'non-surgical' | 'vascular';
   description: string;
+  metaDescription?: string; // Full-length SERP snippet (130-155 chars, location + CTA); falls back to description if absent
   longDescription: string;
   subSections?: string[];
   image?: string;
@@ -105,6 +106,7 @@ const RAW_PROCEDURES: Procedure[] = [
   // AESTHETIC - BODY
   {
     id: "tummy-tuck-chandigarh",
+    metaDescription: "Tummy tuck (abdominoplasty) in Chandigarh by board-certified plastic surgeon Dr. Sumit — muscle repair & natural contours. Book a consultation.",
     title: "Tummy Tuck (Abdominoplasty)",
     category: "Body",
     parentCategory: "aesthetic",
@@ -221,6 +223,7 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
   },
   {
     id: "liposuction-chandigarh",
+    metaDescription: "HD liposuction in Chandigarh by Dr. Sumit Singh Gautam — precision body sculpting with high-definition results. Book your consultation today.",
     title: "High Definition Liposuction",
     category: "Body",
     parentCategory: "aesthetic",
@@ -367,6 +370,7 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
   },
   {
     id: "body-contouring-chandigarh",
+    metaDescription: "Body contouring surgery in Chandigarh by Dr. Sumit — reshape your silhouette after weight loss with expert surgical planning. Book a consult.",
     title: "Body Contouring",
     category: "Body",
     parentCategory: "aesthetic",
@@ -444,6 +448,7 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
   },
   {
     id: "fat-grafting-chandigarh",
+    metaDescription: "Fat grafting in Chandigarh by Dr. Sumit — restore natural volume to face & body using your own tissue. Book a private consultation today.",
     title: "Fat Grafting",
     category: "Body",
     parentCategory: "aesthetic",
@@ -566,6 +571,7 @@ Unlike synthetic fillers which dissolve in 12 months, transplanted fat that surv
   },
   {
     id: "buttock-lift-chandigarh",
+    metaDescription: "Buttock lift surgery in Chandigarh by Dr. Sumit — lift, tighten and reshape the posterior contour safely. Book your consultation today.",
     title: "Buttock Lift",
     category: "Body",
     parentCategory: "aesthetic",
@@ -625,6 +631,7 @@ Results are visible immediately. You will need to avoid sitting directly on the 
   // AESTHETIC - FACE
   {
     id: "facelift-chandigarh",
+    metaDescription: "MACS facelift in Chandigarh by Dr. Sumit Singh Gautam — natural, scar-conscious facial rejuvenation. Book a private consultation today.",
     title: "Facelift (MACS Lift)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -692,6 +699,7 @@ This procedure is specifically designed to obliterate the "jowls" (sagging jawli
   },
   {
     id: "neck-lift-chandigarh",
+    metaDescription: "Deep plane neck lift in Chandigarh by Dr. Sumit — sharpen the jawline and correct platysmal bands naturally. Book a consultation today.",
     title: "Neck Lift (Deep Plane)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -747,6 +755,7 @@ You will wear a supportive chin strap for 1 week. Bruising typically resolves in
   },
   {
     id: "lip-lift-chandigarh",
+    metaDescription: "Lip lift & lip reduction in Chandigarh by Dr. Sumit — balanced, youthful lip proportions with hidden scars. Book your consultation today.",
     title: "Lip Lift / Lip Reduction",
     category: "Face",
     parentCategory: "aesthetic",
@@ -800,6 +809,7 @@ For clients with genetically overly prominent lips, we perform precision reducti
   },
   {
     id: "hair-transplant-chandigarh",
+    metaDescription: "Hair transplant in Chandigarh by Dr. Sumit — surgeon-designed hairlines with natural density using FUE techniques. Book a consultation today.",
     title: "Hair Transplant",
     category: "Face",
     parentCategory: "aesthetic",
@@ -871,6 +881,7 @@ Given the water quality and environmental factors in the Tricity, we often see s
   },
   {
     id: "blepharoplasty-chandigarh",
+    metaDescription: "Blepharoplasty (eyelid surgery) in Chandigarh by Dr. Sumit — remove eye bags & hooding for a rested, open look. Book your consultation today.",
     title: "Blepharoplasty (Eye Bags)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -981,6 +992,7 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
   },
   {
     id: "rhinoplasty-nose-job-chandigarh",
+    metaDescription: "Rhinoplasty (nose job) in Chandigarh by Dr. Sumit — preservation techniques for natural, balanced results. Book a private consultation today.",
     title: "Rhinoplasty (Nose Job)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -1124,6 +1136,7 @@ We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
   },
   {
     id: "otoplasty-chandigarh",
+    metaDescription: "Otoplasty (ear reshaping) in Chandigarh by Dr. Sumit — correct prominent ears for adults & children safely. Book a consultation today.",
     title: "Ear Reshaping (Otoplasty)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -1183,6 +1196,7 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
   // BREAST
   {
     id: "breast-augmentation-chandigarh",
+    metaDescription: "Breast augmentation in Chandigarh by Dr. Sumit — premium implants or fat transfer for natural results. Book a private consultation today.",
     title: "Breast Augmentation",
     category: "Breast",
     parentCategory: "aesthetic",
@@ -1300,6 +1314,7 @@ Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4
   },
   {
     id: "breast-reduction-chandigarh",
+    metaDescription: "Breast reduction in Chandigarh by Dr. Sumit — relieve pain and reshape with scar-conscious techniques. Book a private consultation today.",
     title: "Breast Reduction",
     category: "Breast",
     parentCategory: "aesthetic",
@@ -1357,6 +1372,7 @@ The cost varies by size and complexity but includes all hospital and anesthesia 
   },
   {
     id: "breast-lift-chandigarh",
+    metaDescription: "Breast lift (mastopexy) in Chandigarh by Dr. Sumit — restore elevation and firmness with a natural shape. Book a private consultation today.",
     title: "Breast Lift (Mastopexy)",
     category: "Breast",
     parentCategory: "aesthetic",
@@ -1412,6 +1428,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
   // MALE
   {
     id: "gynecomastia-surgery-chandigarh",
+    metaDescription: "Gynecomastia surgery in Chandigarh by Dr. Sumit — day-care male breast reduction with hidden scars. Book a confidential consultation today.",
     title: "Gynecomastia (Male Breast Reduction)",
     category: "Male",
     parentCategory: "aesthetic",
@@ -1579,6 +1596,7 @@ See our **Before and After Gallery** for examples of restored masculine contours
   // INTIMATE
   {
     id: "vaginoplasty-chandigarh",
+    metaDescription: "Vaginoplasty in Chandigarh by Dr. Sumit — discreet, expert intimate surgery to restore tone & function. Book a confidential consultation.",
     title: "Vaginoplasty",
     category: "Intimate",
     parentCategory: "aesthetic",
@@ -1622,6 +1640,7 @@ Childbirth and aging can stretch vaginal muscles, affecting sensation and confid
   },
   {
     id: "labiaplasty-chandigarh",
+    metaDescription: "Labiaplasty in Chandigarh by Dr. Sumit — refined intimate contours for comfort and confidence, discreetly. Book a private consultation today.",
     title: "Labiaplasty",
     category: "Intimate",
     parentCategory: "aesthetic",
@@ -1667,6 +1686,7 @@ It is a 45-minute procedure performed under local anesthesia or sedation. Recove
   // AESTHETIC - SCAR REVISION (Moved here)
   {
     id: "scar-revision-chandigarh",
+    metaDescription: "Scar revision in Chandigarh by Dr. Sumit — surgical & non-surgical techniques to soften surgical or trauma scars. Book a consultation today.",
     title: "Scar Revision",
     category: "Aesthetic",
     parentCategory: "aesthetic",
@@ -1725,6 +1745,7 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
   // NON-SURGICAL
   {
     id: "botox-chandigarh",
+    metaDescription: "Botox in Chandigarh by plastic surgeon Dr. Sumit — soften lines naturally with precise, conservative dosing. Book your session today.",
     title: "Botox & Neuromodulators",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -1814,6 +1835,7 @@ We use only authentic Allergan Botox or Dysport, opened in front of you. Results
   },
   {
     id: "microneedling-chandigarh",
+    metaDescription: "Microneedling in Chandigarh at Dr. Sumit Aesthetics — stimulate collagen to improve texture, scars & pores. Book your session today.",
     title: "Microneedling",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -1906,6 +1928,7 @@ Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
   },
   {
     id: "chemical-peeling",
+    metaDescription: "Chemical peels in Chandigarh at Dr. Sumit Aesthetics — medical-grade peels for glow, pigmentation & acne scars. Book your session today.",
     title: "Chemical Peeling",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -2004,6 +2027,7 @@ Medical supervision ensures no risk of burns or hyperpigmentation.
   },
   {
     id: "dermal-fillers",
+    metaDescription: "Dermal fillers in Chandigarh by plastic surgeon Dr. Sumit — restore volume and contour with a natural finish. Book your session today.",
     title: "Dermal Fillers",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -2096,6 +2120,7 @@ Depending on the product (Juvederm/Restylane) and area, results last 9-18 months
   // RECONSTRUCTIVE
   {
     id: "microvascular-repair",
+    metaDescription: "Microvascular repair in Chandigarh by Dr. Sumit — emergency microsurgery for severed vessels and replantation at Healing Hospital. Enquire now.",
     title: "Microvascular Repair",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2135,6 +2160,7 @@ Microvascular surgery involves joining blood vessels and nerves as thin as a hai
   },
   {
     id: "traumatic-reconstruction",
+    metaDescription: "Traumatic reconstruction in Chandigarh by Dr. Sumit — expert surgical repair after accidents and injuries at Healing Hospital. Enquire now.",
     title: "Traumatic Reconstruction",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2169,6 +2195,7 @@ Our priority is "Function First, Aesthetics Always." We aim to restore your body
   },
   {
     id: "facial-fracture-surgery",
+    metaDescription: "Facial fracture surgery in Chandigarh by Dr. Sumit — precise fixation of jaw, cheek & orbital fractures at Healing Hospital. Enquire today.",
     title: "Facial Fracture Surgery",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2204,6 +2231,7 @@ We access these fractures through "hidden" incisions (inside the mouth or eyelid
   },
   {
     id: "nerve-vessel-tendon-repair",
+    metaDescription: "Nerve, vessel & tendon repair in Chandigarh by Dr. Sumit — microsurgical restoration of hand and limb function at Healing Hospital.",
     title: "Nerve / Vessel / Tendon Repair",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2238,6 +2266,7 @@ Surgery is only half the battle. Our dedicated physiotherapy protocol ensures yo
   },
   {
     id: "hand-surgery-chandigarh",
+    metaDescription: "Hand & foot fracture surgery in Chandigarh by Dr. Sumit — precise fixation and early mobilisation protocols. Enquire at Healing Hospital.",
     title: "Fractures of Hand & Foot",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2264,6 +2293,7 @@ Metacarpal (hand) and Metatarsal (foot) fractures require precise alignment to p
   },
   {
     id: "hand-deformity-chandigarh",
+    metaDescription: "Hand deformity correction in Chandigarh by Dr. Sumit — congenital & acquired conditions treated with surgical precision. Enquire today.",
     title: "Hand Deformities",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2298,6 +2328,7 @@ For children, separation of fused fingers is ideally done before school age (1-2
   },
   {
     id: "cleft-lip-chandigarh",
+    metaDescription: "Cleft lip & palate repair in Chandigarh by Dr. Sumit — timely, compassionate correction for infants and children. Book a consultation today.",
     title: "Cleft Lip & Palate Repair",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2337,6 +2368,7 @@ We focus on rebuilding the lip muscle loop to ensure normal movement and a symme
   },
   {
     id: "burn-surgery-chandigarh",
+    metaDescription: "Burn & contracture release surgery in Chandigarh by Dr. Sumit — restore movement and appearance after burns. Enquire at Healing Hospital.",
     title: "Burns & Contracture Release",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2371,6 +2403,7 @@ We also manage fresh burns with advanced dressings and early grafting to minimiz
   },
   {
     id: "bed-sore-surgery-chandigarh",
+    metaDescription: "Pressure sore (bed sore) surgery in Chandigarh by Dr. Sumit — flap-based closure and wound care for lasting healing. Enquire today.",
     title: "Pressure Sores / Bed Sores",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2396,6 +2429,7 @@ For bedridden patients, pressure sores (decubitus ulcers) can reach the bone. De
   },
   {
     id: "diabetic-foot-chandigarh",
+    metaDescription: "Diabetic foot treatment in Chandigarh by Dr. Sumit — limb-saving wound care and reconstructive surgery. Enquire at Healing Hospital today.",
     title: "Diabetic Foot",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2425,6 +2459,7 @@ Our goal is always to save the foot and maintain your mobility.
   // VASCULAR
   {
     id: "varicose-veins-chandigarh",
+    metaDescription: "Varicose vein treatment in Chandigarh by Dr. Sumit — minimally invasive care for healthier, lighter legs. Book a consultation today.",
     title: "Varicose Veins",
     category: "Vascular",
     parentCategory: "vascular",
@@ -2455,6 +2490,7 @@ Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. 
   },
   {
     id: "vascular-surgery-chandigarh",
+    metaDescription: "Ultrasound-guided vascular procedures in Chandigarh by Dr. Sumit — precise access and vein care at Healing Hospital. Book a consultation.",
     title: "Ultrasound-Guided Vascular Procedures",
     category: "Vascular",
     parentCategory: "vascular",

@@ -126,7 +126,7 @@ const ProcedureDetail: React.FC = () => {
     <div className="pt-52 pb-32">
       <SEO
         title={procedure.title}
-        description={procedure.description || procedure.longDescription?.slice(0, 160)}
+        description={procedure.metaDescription || procedure.description || procedure.longDescription?.slice(0, 160)}
         image={procedure.image}
         url={`/${id}`}
         schemaType="HowTo"
@@ -232,7 +232,7 @@ const ProcedureDetail: React.FC = () => {
               )}
             </div>
 
-            {procedure.id === 'fat-grafting' && (
+            {procedure.id === 'fat-grafting-chandigarh' && (
               <div className="space-y-16 pt-12 border-t border-white/5">
                 <div className="space-y-6">
                   <h2 className="text-3xl md:text-5xl font-serif text-white">Fat grafting, tailored to the face and body</h2>

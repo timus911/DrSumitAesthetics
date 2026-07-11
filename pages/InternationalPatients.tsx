@@ -9,7 +9,7 @@ const InternationalPatients: React.FC = () => {
     <div className="pt-52 pb-32">
       <SEO
         title="International Patients"
-        description="Dr. Sumit welcomes patients from across the globe with a seamless fly-in for surgery experience, offering elite European-standard plastic and aesthetic surgery in Chandigarh."
+        description="Fly-in plastic surgery in Chandigarh for international patients — seamless planning and elite European-standard care by Dr. Sumit Singh Gautam."
         url="/international"
       />
       <div className="container mx-auto px-6">

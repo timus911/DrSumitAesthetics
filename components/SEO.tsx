@@ -50,7 +50,7 @@ const SEO: React.FC<SEOProps> = ({
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Chandigarh",
-                    "addressRegion": "Punjab",
+                    "addressRegion": "Chandigarh",
                     "postalCode": "160022"
                 }
             },
@@ -58,7 +58,7 @@ const SEO: React.FC<SEOProps> = ({
                 "@type": "PostalAddress",
                 "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
                 "addressLocality": "Chandigarh",
-                "addressRegion": "Punjab",
+                "addressRegion": "Chandigarh",
                 "postalCode": "160022",
                 "addressCountry": "IN"
             },
@@ -144,7 +144,7 @@ const SEO: React.FC<SEOProps> = ({
                     "@type": "PostalAddress",
                     "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
                     "addressLocality": "Chandigarh",
-                    "addressRegion": "Punjab",
+                    "addressRegion": "Chandigarh",
                     "postalCode": "160022",
                     "addressCountry": "IN"
                 },
