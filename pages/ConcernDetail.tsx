@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { PROCEDURES } from '../constants.ts';
 import ProcedureCard from '../components/ProcedureCard.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
+import SEO from '../components/SEO.tsx';
 
 // Default hints for all procedures to ensure no gaps
 const DEFAULT_HINTS: Record<string, string> = {
@@ -78,6 +79,11 @@ const ConcernDetail: React.FC = () => {
 
     return (
         <div className="pt-52 pb-32">
+            <SEO
+                title={`${region} Procedures`}
+                description={`Explore plastic and aesthetic surgery procedures for the ${region} region, tailored to your aesthetic goals in Chandigarh.`}
+                url={`/concerns/${region}`}
+            />
             <div className="container mx-auto px-6">
                 <Breadcrumbs
                     items={[

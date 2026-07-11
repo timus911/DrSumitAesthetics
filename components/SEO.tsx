@@ -1,11 +1,6 @@
 import React from 'react';
 import { BRAND, CONTACT } from '../constants';
 
-interface BreadcrumbItem {
-    name: string;
-    item: string;
-}
-
 interface SEOProps {
     title?: string;
     description?: string;
@@ -19,7 +14,6 @@ interface SEOProps {
     faqs?: { question: string; answer: string[] }[];
     ratingValue?: number;
     reviewCount?: number;
-    breadcrumbs?: BreadcrumbItem[];
     howToSteps?: { name: string; text: string }[];
 }
 
@@ -36,7 +30,6 @@ const SEO: React.FC<SEOProps> = ({
     faqs,
     ratingValue = 4.9,
     reviewCount = 524,
-    breadcrumbs,
     howToSteps
 }) => {
     const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34";
@@ -51,11 +44,6 @@ const SEO: React.FC<SEOProps> = ({
             "name": "Dr. Sumit Singh Gautam",
             "image": "https://drsumitaesthetics.com/dr-sumit-portrait.webp",
             "medicalSpecialty": "Plastic Surgery",
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": ratingValue,
-                "reviewCount": reviewCount
-            },
             "affiliation": {
                 "@type": "MedicalOrganization",
                 "name": "Healing Hospital",
@@ -78,17 +66,6 @@ const SEO: React.FC<SEOProps> = ({
             "url": "https://drsumitaesthetics.com"
         };
 
-        const breadcrumbSchema = breadcrumbs ? {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": breadcrumbs.map((crumb, index) => ({
-                "@type": "ListItem",
-                "position": index + 1,
-                "name": crumb.name,
-                "item": `https://drsumitaesthetics.com${crumb.item}`
-            }))
-        } : null;
-
         if (schemaType === 'Article') {
             return {
                 "@context": "https://schema.org",
@@ -107,7 +84,7 @@ const SEO: React.FC<SEOProps> = ({
                     "name": "Dr. Sumit Aesthetics",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://drsumitaesthetics.com/dr-sumit-profile.webp"
+                        "url": "https://drsumitaesthetics.com/logo-512.png"
                     }
                 },
                 "description": metaDescription
@@ -151,14 +128,16 @@ const SEO: React.FC<SEOProps> = ({
             "@type": schemaType === 'Reviews' ? 'MedicalBusiness' : schemaType,
             "name": procedureName || "Dr. Sumit Aesthetics",
             "image": absoluteImage,
-            "logo": "https://drsumitaesthetics.com/dr-sumit-profile.webp",
+            "logo": "https://drsumitaesthetics.com/logo-512.png",
             "medicalSpecialty": "Plastic Surgery",
             "provider": physicianSchema,
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": ratingValue,
-                "reviewCount": reviewCount
-            },
+            ...(schemaType === 'Reviews' && {
+                "aggregateRating": {
+                    "@type": "AggregateRating",
+                    "ratingValue": ratingValue,
+                    "reviewCount": reviewCount
+                }
+            }),
             ...(schemaType !== 'MedicalProcedure' && {
                 "telephone": CONTACT.counselorPhone,
                 "address": {
@@ -181,7 +160,7 @@ const SEO: React.FC<SEOProps> = ({
             })
         };
 
-        return breadcrumbSchema ? [base, breadcrumbSchema] : base;
+        return base;
     };
 
     const baseSchema = buildSchema();

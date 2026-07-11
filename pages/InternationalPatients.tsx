@@ -2,10 +2,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Globe, Plane, Hotel, MessageCircle } from 'lucide-react';
+import SEO from '../components/SEO.tsx';
 
 const InternationalPatients: React.FC = () => {
   return (
     <div className="pt-52 pb-32">
+      <SEO
+        title="International Patients"
+        description="Dr. Sumit welcomes patients from across the globe with a seamless fly-in for surgery experience, offering elite European-standard plastic and aesthetic surgery in Chandigarh."
+        url="/international"
+      />
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <motion.div

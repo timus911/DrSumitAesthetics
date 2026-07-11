@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO.tsx';
 
 const PatientJourney: React.FC = () => {
   const steps = [
@@ -12,6 +13,11 @@ const PatientJourney: React.FC = () => {
 
   return (
     <div className="pt-52 pb-32">
+      <SEO
+        title="Patient Journey"
+        description="From consultation to recovery — a look at Dr. Sumit's structured, four-stage patient journey for plastic and aesthetic surgery in Chandigarh."
+        url="/patient-journey"
+      />
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mb-32 space-y-6">
           <span className="text-[#D4AF37] text-[10px] tracking-widest uppercase">The Experience</span>

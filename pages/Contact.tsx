@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
   return (
     <div className="pt-52 pb-32">
       <SEO
-        title="Contact Dr. Sumit Aesthetics | Book Consultation in Chandigarh"
+        title="Book a Consultation in Chandigarh"
         description="Schedule a private consultation with Dr. Sumit Singh Gautam. Located at Healing Hospital, Chandigarh. WhatsApp and Phone support available."
         url="/contact"
       />

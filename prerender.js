@@ -3,48 +3,35 @@ import { exec } from 'child_process';
 import waitOn from 'wait-on';
 import fs from 'fs';
 import path from 'path';
+import { ROUTES } from './routes.config.mjs';
 
-const routes = [
-    '/',
-    '/about',
-    '/aesthetic',
-    '/reconstructive',
-    '/non-surgical',
-    '/vascular',
-    '/gallery',
-    '/reviews',
-    '/patient-journey',
-    '/international',
-    '/plastic-surgery-cost-chandigarh',
-    '/surgiset-privacy',
-    '/contact',
-    '/concerns',
-    '/liposuction-chandigarh',
-    '/tummy-tuck-chandigarh',
-    '/rhinoplasty-nose-job-chandigarh',
-    '/breast-augmentation-chandigarh',
-    '/facelift-chandigarh',
-    '/gynecomastia-surgery-chandigarh',
-    '/hair-transplant-chandigarh',
-    '/blepharoplasty-chandigarh',
-    '/blog',
-    '/blog/what-to-expect-from-liposuction-recovery',
-    '/blog/liposuction-vs-tummy-tuck-which-is-right-for-you',
-    '/blog/does-liposuction-remove-fat-permanently',
-    '/blog/the-mommy-makeover-journey',
-    '/blog/high-definition-hd-liposuction-sculpting',
-    '/blog/rhinoplasty-recovery-timeline',
-    '/blog/preservation-rhinoplasty-secret-to-natural-noses',
-    '/blog/blepharoplasty-eyelid-surgery-anti-aging',
-    '/blog/traditional-vs-mini-facelift',
-    '/blog/gynecomastia-surgery-india-causes-treatment',
-    '/blog/breast-augmentation-implants-vs-fat-transfer',
-    '/blog/what-to-expect-after-breast-reduction',
-    '/blog/botox-vs-dermal-fillers',
-    '/blog/the-rise-of-prejuvenation',
-    '/blog/how-long-do-dermal-fillers-last',
-    '/blog/preparing-for-your-first-aesthetic-consultation'
+const routes = ROUTES.map(r => r.path);
+
+// Static fallback tags from the original index.html template. These are only
+// ever removed by exact content match (entity-tolerant — Puppeteer's
+// page.content() re-serialises "&" as "&amp;", which a plain literal-string
+// match would silently miss), never by position — head-tag insertion order
+// varies by tag type (React's own tag sometimes lands before the static one,
+// sometimes after), so matching on known content is the only reliable way to
+// identify which occurrence is the static leftover.
+const STATIC_HEAD_TAGS = [
+    '<title>Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34</title>',
+    '<meta name="description" content="Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.">',
+    '<meta name="keywords" content="best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india">',
+    '<meta property="og:image" content="https://drsumitaesthetics.com/dr-sumit-portrait.webp">',
+    '<meta property="twitter:image" content="https://drsumitaesthetics.com/dr-sumit-portrait.webp">',
 ];
+
+function dedupeHeadTags(html) {
+    let out = html;
+    for (const tag of STATIC_HEAD_TAGS) {
+        const pattern = tag
+            .replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // escape regex metachars
+            .replace(/&/g, '(?:&|&amp;)'); // tolerate entity re-encoding
+        out = out.replace(new RegExp(pattern), '');
+    }
+    return out;
+}
 
 async function prerender() {
     console.log('Starting preview server for prerendering...');
@@ -69,15 +56,16 @@ async function prerender() {
     // We assume `npm run build` runs before this script
     if (!fs.existsSync('dist')) fs.mkdirSync('dist');
 
+    // Captured {filePath, html} pairs are held in memory and only written to
+    // disk after every route has been crawled (see below for why).
+    const captured = [];
+
     for (const route of routes) {
         console.log(`Prerendering ${route}...`);
         await page.goto(`http://localhost:4173${route}`, { waitUntil: 'networkidle0' });
 
-        // Capture the fully-rendered HTML after React + Helmet have mounted.
-        // Using page.content() directly is the correct approach: Puppeteer serialises
-        // the live DOM *after* networkidle0, so react-helmet-async has already injected
-        // all dynamic <title>, <meta>, <link rel="canonical">, og:*, twitter:*, and
-        // JSON-LD <script> tags into <head>. No surgical string-replacement needed.
+        // Capture the fully-rendered HTML after React has mounted and hoisted
+        // its <title>/<meta>/<link>/JSON-LD tags into <head>.
         let html = await page.content();
 
         // Strip the Vite dev-server HMR client script — not needed in static output.
@@ -87,31 +75,26 @@ async function prerender() {
         // in the dev index.html but are irrelevant for the built, bundled output.
         html = html.replace(/<script type="importmap">[\s\S]*?<\/script>/g, '');
 
+        html = dedupeHeadTags(html);
+
         const routeDir = path.join('dist', route === '/' ? '' : route);
+        const filePath = path.join(routeDir, 'index.html');
+        captured.push({ routeDir, filePath, html });
+    }
+
+    // Only now write everything to disk. Writing during the crawl loop above
+    // would overwrite dist/index.html with the homepage's own rendered output
+    // partway through — and since vite preview's SPA fallback serves whatever
+    // is currently on disk at dist/index.html for any route not yet written,
+    // every route crawled afterwards would inherit the homepage's already-
+    // rendered <title>/<meta> tags baked into its fallback shell, on top of
+    // its own. Deferring all writes until the crawl is fully done keeps the
+    // fallback shell pristine (the original vite-build output) for every route.
+    for (const { routeDir, filePath, html } of captured) {
         if (!fs.existsSync(routeDir)) {
             fs.mkdirSync(routeDir, { recursive: true });
         }
-
-        const filePath = path.join(routeDir, 'index.html');
-
-        // Remove redundant fallback SEO tags from index.html template
-        // React 19 hoists its own tags, so we want to keep ONLY the ones React injected
-        // specifically for the ones that usually exist only once (title, description)
-        
-        // Remove the original static title (the one without data-rh or the later one)
-        // Actually, since we use page.content(), we might have two <title> tags.
-        // We want to keep the one React put in. 
-        // A simple way is to remove the specific fallback strings.
-        const fallbackTitle = "<title>Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34</title>";
-        const fallbackDesc = '<meta name="description" content="Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.">';
-        const fallbackKeywords = '<meta name="keywords" content="best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india">';
-
-        html = html.replace(fallbackTitle, '');
-        html = html.replace(fallbackDesc, '');
-        html = html.replace(fallbackKeywords, '');
-
         fs.writeFileSync(filePath, html);
-
         console.log(`Saved ${filePath}`);
     }
 

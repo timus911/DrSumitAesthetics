@@ -32,12 +32,9 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
   return (
     <div className="pt-52 pb-32">
       <SEO
-        title={`${titles[type]} | Dr. Sumit Aesthetics`}
+        title={titles[type]}
         description={descriptions[type]}
         url={`/${type}`}
-        breadcrumbs={[
-          { name: titles[type], item: `/${type}` }
-        ]}
       />
       <div className="container mx-auto px-6">
         <Breadcrumbs

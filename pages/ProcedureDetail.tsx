@@ -131,10 +131,6 @@ const ProcedureDetail: React.FC = () => {
         url={`/${id}`}
         schemaType="HowTo"
         procedureName={procedure.title}
-        breadcrumbs={[
-          { name: "Clinical Domain", item: `/${procedure.parentCategory}` },
-          { name: procedure.title, item: `/${procedure.id}` }
-        ]}
         howToSteps={[
           { name: "Immediate Recovery", text: procedure.details?.functional?.[0] || "Begin early mobilization and follow prescribed post-op care." },
           { name: "Work Readiness", text: procedure.details?.backToWork?.[0] || "Typical return to light work within 10-14 days." },

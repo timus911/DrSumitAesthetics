@@ -71,7 +71,7 @@ const Concerns: React.FC = () => {
     return (
         <div className="pt-52 pb-32">
             <SEO
-                title="Aesthetics by Concern | Dr. Sumit Aesthetics"
+                title="Aesthetics by Concern"
                 description="Explore cosmetic plastic surgery procedures categorized by the area of concern, including Face, Nose, Breast, Body, & Thighs."
                 url="/concerns"
             />
