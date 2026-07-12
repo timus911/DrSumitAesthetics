@@ -5,7 +5,6 @@ import Lenis from 'lenis';
 import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import FloatingBackground from './components/FloatingBackground.tsx';
-import FloatingWhatsApp from './components/FloatingWhatsApp.tsx';
 // Home stays statically imported: it's the most-hit entry point and the LCP
 // route, so deferring it would trade first-paint for nothing. Everything else
 // is split per route so e.g. a blog-post visit doesn't download the whole app.
@@ -78,7 +77,6 @@ const AppLayout: React.FC = () => {
       </main>
 
       {!isStandalone && <Footer />}
-      {!isStandalone && <FloatingWhatsApp />}
     </div>
   );
 };
