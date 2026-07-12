@@ -8,6 +8,7 @@ import SEO from '../components/SEO.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
 import FAQ from '../components/FAQ.tsx';
 import ProcedureCard from '../components/ProcedureCard.tsx';
+import CredentialsStrip from '../components/CredentialsStrip.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img, onClick }) => {
@@ -395,6 +396,8 @@ const ProcedureDetail: React.FC = () => {
                 </p>
               </div>
             </div>
+
+            <CredentialsStrip />
 
             {/* Removed duplicate CTA link */}
           </motion.div>
