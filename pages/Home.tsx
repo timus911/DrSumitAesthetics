@@ -8,7 +8,6 @@ import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 import MedicalAuthority from '../components/MedicalAuthority.tsx';
-import TrustSection from '../components/TrustSection.tsx';
 
 const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -192,7 +191,6 @@ const Home: React.FC = () => {
 
       {/* Trust & Authority Signals */}
       <MedicalAuthority />
-      <TrustSection />
     </div>
   );
 };
