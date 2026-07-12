@@ -7,6 +7,7 @@ import { PROCEDURES, ASSETS, CONTACT } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
 import FAQ from '../components/FAQ.tsx';
+import ProcedureCard from '../components/ProcedureCard.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img, onClick }) => {
@@ -69,6 +70,20 @@ const ProcedureDetail: React.FC = () => {
   const isMainImageFocused = useMobileCenterFocus(mainImageRef);
 
   const galleryImages = procedure.gallery || [];
+
+  // Procedures a visitor is most likely to consider alongside this one:
+  // shared body regions first, then same category, capped at 3.
+  const relatedProcedures = [
+    ...PROCEDURES.filter(p =>
+      p.id !== procedure.id &&
+      p.regions?.some(r => procedure.regions?.includes(r))
+    ),
+    ...PROCEDURES.filter(p =>
+      p.id !== procedure.id &&
+      p.category === procedure.category &&
+      !p.regions?.some(r => procedure.regions?.includes(r))
+    ),
+  ].slice(0, 3);
 
   useEffect(() => {
     galleryImages.forEach(src => {
@@ -300,6 +315,18 @@ const ProcedureDetail: React.FC = () => {
 
             {procedure.faqs && procedure.faqs.length > 0 && (
               <FAQ items={procedure.faqs} />
+            )}
+
+            {relatedProcedures.length > 0 && (
+              <div className="space-y-8 pt-12 border-t border-white/5">
+                <h2 className="text-3xl font-serif text-white">Related Procedures</h2>
+                <p className="text-gray-400 text-sm font-light">Treatments often considered alongside {procedure.title}:</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {relatedProcedures.map((rel, idx) => (
+                    <ProcedureCard key={rel.id} proc={rel} index={idx} hideDescription />
+                  ))}
+                </div>
+              </div>
             )}
           </motion.div>
 
