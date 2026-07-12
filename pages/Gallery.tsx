@@ -45,6 +45,7 @@ const GalleryCard = ({ image, idx, onClick }: any) => {
         className={`w-full h-full object-cover transition-all duration-300 ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-70'} group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110`}
         // SEO: Adding deep context for Chandigarh medical search and branding
         alt={`${image.title} surgery results showing natural-looking aesthetic refinement by Dr. Sumit Singh Gautam in Chandigarh`}
+        loading="lazy"
       />
       <div className={`absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-opacity duration-300 ${isFocused ? 'opacity-100' : 'opacity-0'} group-hover:opacity-100`}>
         <div className="absolute bottom-8 left-8 right-8">

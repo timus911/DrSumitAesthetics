@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
@@ -6,22 +6,26 @@ import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
 import FloatingBackground from './components/FloatingBackground.tsx';
 import FloatingWhatsApp from './components/FloatingWhatsApp.tsx';
+// Home stays statically imported: it's the most-hit entry point and the LCP
+// route, so deferring it would trade first-paint for nothing. Everything else
+// is split per route so e.g. a blog-post visit doesn't download the whole app.
 import Home from './pages/Home.tsx';
-import About from './pages/About.tsx';
-import CategoryPage from './pages/CategoryPage.tsx';
-import Gallery from './pages/Gallery.tsx';
-import PatientJourney from './pages/PatientJourney.tsx';
-import InternationalPatients from './pages/InternationalPatients.tsx';
-import Contact from './pages/Contact.tsx';
-import ProcedureDetail from './pages/ProcedureDetail.tsx';
-import Concerns from './pages/Concerns.tsx';
-import ConcernDetail from './pages/ConcernDetail.tsx';
-import Reviews from './pages/Reviews.tsx';
-import CostsAndFinancing from './pages/CostsAndFinancing.tsx';
-import SurgiSetPrivacy from './pages/SurgiSetPrivacy.tsx';
-import BlogList from './pages/BlogList.tsx';
-import BlogPost from './pages/BlogPost.tsx';
-import FAQ from './pages/FAQ.tsx';
+
+const About = lazy(() => import('./pages/About.tsx'));
+const CategoryPage = lazy(() => import('./pages/CategoryPage.tsx'));
+const Gallery = lazy(() => import('./pages/Gallery.tsx'));
+const PatientJourney = lazy(() => import('./pages/PatientJourney.tsx'));
+const InternationalPatients = lazy(() => import('./pages/InternationalPatients.tsx'));
+const Contact = lazy(() => import('./pages/Contact.tsx'));
+const ProcedureDetail = lazy(() => import('./pages/ProcedureDetail.tsx'));
+const Concerns = lazy(() => import('./pages/Concerns.tsx'));
+const ConcernDetail = lazy(() => import('./pages/ConcernDetail.tsx'));
+const Reviews = lazy(() => import('./pages/Reviews.tsx'));
+const CostsAndFinancing = lazy(() => import('./pages/CostsAndFinancing.tsx'));
+const SurgiSetPrivacy = lazy(() => import('./pages/SurgiSetPrivacy.tsx'));
+const BlogList = lazy(() => import('./pages/BlogList.tsx'));
+const BlogPost = lazy(() => import('./pages/BlogPost.tsx'));
+const FAQ = lazy(() => import('./pages/FAQ.tsx'));
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -45,6 +49,7 @@ const AppLayout: React.FC = () => {
 
       <main className="relative z-10">
         <AnimatePresence mode="wait">
+          <Suspense fallback={<div className="min-h-screen bg-black" aria-hidden="true" />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -68,6 +73,7 @@ const AppLayout: React.FC = () => {
             <Route path="/services" element={<Navigate to="/aesthetic" replace />} />
             <Route path="/:id" element={<ProcedureDetail />} />
           </Routes>
+          </Suspense>
         </AnimatePresence>
       </main>
 
