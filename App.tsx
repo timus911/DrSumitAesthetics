@@ -41,12 +41,16 @@ const AppLayout: React.FC = () => {
   const location = useLocation();
   const isStandalone = location.pathname === '/surgiset-privacy';
 
+  // The translateZ(0) GPU hint must NOT wrap the Navbar: a CSS transform on an
+  // ancestor re-anchors position:fixed descendants to that ancestor instead of
+  // the viewport, which froze the "fixed" header in place. It now lives on
+  // <main> only, keeping the compositing hint for the scroll-heavy content.
   return (
-    <div className="relative min-h-screen bg-black text-white selection:bg-gold-500/30 overflow-hidden" style={{ transform: 'translateZ(0)' }}>
+    <div className="relative min-h-screen bg-black text-white selection:bg-gold-500/30 overflow-hidden">
       {!isStandalone && <FloatingBackground />}
       {!isStandalone && <Navbar />}
 
-      <main className="relative z-10">
+      <main className="relative z-10" style={{ transform: 'translateZ(0)' }}>
         <AnimatePresence mode="wait">
           <Suspense fallback={<div className="min-h-screen bg-black" aria-hidden="true" />}>
           <Routes>
