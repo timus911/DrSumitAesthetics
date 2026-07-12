@@ -6,6 +6,25 @@ import { BLOG_POSTS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
 
+// Renders **bold** and [text](/path) tokens inside a line of post content.
+// Internal links here are what connects blog traffic to procedure pages —
+// the previous renderer displayed markdown links as literal bracket text.
+const renderInline = (text: string) =>
+    text.split(/(\*\*.*?\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={index} className="text-white font-bold">{part.slice(2, -2)}</strong>;
+        }
+        const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        if (link) {
+            return (
+                <Link key={index} to={link[2]} className="text-[#4A90E2] hover:underline font-semibold">
+                    {link[1]}
+                </Link>
+            );
+        }
+        return part;
+    });
+
 const BlogPost: React.FC = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -92,33 +111,17 @@ const BlogPost: React.FC = () => {
                             }
                             if (trimmed.startsWith('* ')) {
                                 const listText = trimmed.replace('* ', '');
-                                const listParts = listText.split(/(\*\*.*?\*\*)/g);
                                 return (
                                     <div key={i} className="flex items-start space-x-3 ml-4 mb-2">
                                         <div className="w-1.5 h-1.5 rounded-full bg-[#4A90E2] mt-2.5 shrink-0" />
-                                        <span className="text-gray-400">
-                                            {listParts.map((part, index) => {
-                                                if (part.startsWith('**') && part.endsWith('**')) {
-                                                    return <strong key={index} className="text-white font-bold">{part.slice(2, -2)}</strong>;
-                                                }
-                                                return part;
-                                            })}
-                                        </span>
+                                        <span className="text-gray-400">{renderInline(listText)}</span>
                                     </div>
                                 );
                             }
 
-                            // Simple bold text replacement
-                            const parts = trimmed.split(/(\*\*.*?\*\*)/g);
+                            // Bold + internal-link rendering
                             return (
-                                <p key={i} className="mb-6">
-                                    {parts.map((part, index) => {
-                                        if (part.startsWith('**') && part.endsWith('**')) {
-                                            return <strong key={index} className="text-white font-bold">{part.slice(2, -2)}</strong>;
-                                        }
-                                        return part;
-                                    })}
-                                </p>
+                                <p key={i} className="mb-6">{renderInline(trimmed)}</p>
                             );
                         })}
                     </div>

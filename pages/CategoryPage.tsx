@@ -53,6 +53,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
           <p className="text-gray-400 text-xl md:text-2xl font-light leading-relaxed max-w-3xl">{descriptions[type]}</p>
         </motion.div>
 
+        <h2 className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold mb-10">Procedures in this Domain</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProcedures.length > 0 ? (
             filteredProcedures.map((proc, idx) => (

@@ -344,7 +344,7 @@ const Reviews: React.FC = () => {
                                     <div className="group relative select-none">
                                         <img
                                             src={review.src}
-                                            alt={review.alt}
+                                            alt={`Google review from a verified patient of Dr. Sumit Singh Gautam, plastic surgeon in Chandigarh — screenshot ${review.id} of ${GOOGLE_REVIEWS.length}`}
                                             loading="lazy"
                                             draggable={false}
                                             className="w-full h-auto object-contain rounded-lg shadow-2xl shadow-black/50"

@@ -89,6 +89,7 @@ const Concerns: React.FC = () => {
                     </p>
                 </motion.div>
 
+                <h2 className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold mb-10">Browse by Body Area</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {CONCERN_ZONES.map((zone, idx) => (
                         <ConcernCard key={zone.id} zone={zone} idx={idx} />

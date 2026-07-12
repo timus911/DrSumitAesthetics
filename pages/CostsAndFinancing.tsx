@@ -208,7 +208,7 @@ const CostsAndFinancing: React.FC = () => {
                                                                 </div>
 
                                                                 <div>
-                                                                    <Link to={`/procedure/${proc.id}`} className="inline-flex items-center space-x-2 text-white border border-white/20 px-6 py-3 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all font-bold">
+                                                                    <Link to={`/${proc.id}`} className="inline-flex items-center space-x-2 text-white border border-white/20 px-6 py-3 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all font-bold">
                                                                         <span>View Full Procedure</span>
                                                                         <ArrowRight size={12} />
                                                                     </Link>

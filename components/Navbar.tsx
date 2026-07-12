@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Scissors, Activity, Zap, MessageCircle } from 'lucide-react';
-import { BRAND } from '../constants.ts';
+import { BRAND, CONTACT } from '../constants.ts';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,20 +94,29 @@ const Navbar: React.FC = () => {
 
         {/* RIGHT: Static Icon (Desktop) & Mobile Toggle */}
         <div className="flex items-center gap-4 shrink-0 z-10">
-          {/* Desktop Request Button - Now just an Icon */}
-          <Link
-            to="/contact"
+          {/* Desktop WhatsApp Icon — direct chat, always reachable from the sticky header */}
+          <a
+            href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hi Dr. Sumit, I would like to book a consultation.')}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden min-[1600px]:flex w-10 h-10 items-center justify-center rounded-full bg-[#4A90E2] text-white shadow-lg shadow-[#4A90E2]/20 active:scale-95 transition-transform hover:bg-[#357ABD]"
-            title="Request Consultation"
-            aria-label="Request Consultation"
+            title="Chat on WhatsApp"
+            aria-label="Chat on WhatsApp"
           >
             <MessageCircle size={20} className="-mr-0.5 mt-0.5" />
-          </Link>
+          </a>
 
-          {/* Mobile Request Consultation Icon */}
-          <Link to="/contact" aria-label="Request Consultation" className="min-[1600px]:hidden w-10 h-10 flex items-center justify-center rounded-full bg-[#4A90E2] text-white shadow-lg shadow-[#4A90E2]/20 active:scale-95 transition-transform hover:bg-[#357ABD]">
+          {/* Mobile WhatsApp Icon — direct chat */}
+          <a
+            href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hi Dr. Sumit, I would like to book a consultation.')}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            title="Chat on WhatsApp"
+            className="min-[1600px]:hidden w-10 h-10 flex items-center justify-center rounded-full bg-[#4A90E2] text-white shadow-lg shadow-[#4A90E2]/20 active:scale-95 transition-transform hover:bg-[#357ABD]"
+          >
             <MessageCircle size={20} className="-mr-0.5 mt-0.5" />
-          </Link>
+          </a>
 
           {/* Mobile Toggle */}
           <button onClick={() => setIsOpen(!isOpen)} aria-label="Toggle Navigation Menu" className="text-white shrink-0 min-[1600px]:hidden">

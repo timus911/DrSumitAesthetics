@@ -28,8 +28,8 @@ const DEFAULT_HINTS: Record<string, string> = {
     'labiaplasty-chandigarh': "Refining intimate contours for comfort and aesthetics.",
     'botox-chandigarh': "Softening dynamic lines and wrinkles for a refreshed, rested look.",
     'microneedling-chandigarh': "Stimulating natural collagen production to improve texture and scars.",
-    'chemical-peeling': "Exfoliating damaged skin layers to reveal a brighter, smoother complexion.",
-    'dermal-fillers': "Instantly restoring lost volume and contouring facial features.",
+    'chemical-peeling-chandigarh': "Exfoliating damaged skin layers to reveal a brighter, smoother complexion.",
+    'dermal-fillers-chandigarh': "Instantly restoring lost volume and contouring facial features.",
     'varicose-veins-chandigarh': "Treating visible veins for improved leg health and aesthetics.",
     'vascular-surgery-chandigarh': "Specialized vascular access and care.",
     'scar-revision-chandigarh': "Improving the appearance of surgical or traumatic scars for smoother texture."
@@ -68,6 +68,23 @@ const REGION_SPECIFIC_HINTS: Record<string, Record<string, string>> = {
     }
 };
 
+// Unique meta description per body region, so the 12 concern pages don't
+// share one near-identical templated snippet in search results.
+const REGION_META: Record<string, string> = {
+    Face: "Facial plastic surgery in Chandigarh — facelift, rhinoplasty, blepharoplasty & more by Dr. Sumit. Explore treatments by concern & book a consult.",
+    Nose: "Nose reshaping in Chandigarh — rhinoplasty and refinement options by plastic surgeon Dr. Sumit. Compare procedures and book your consultation.",
+    Eyes: "Eye rejuvenation in Chandigarh — blepharoplasty, dark circle & hollow correction by Dr. Sumit. Explore your options and book a consultation.",
+    Ears: "Ear reshaping in Chandigarh — otoplasty for prominent ears in adults & children by Dr. Sumit. See treatment options and book a consultation.",
+    Lips: "Lip enhancement in Chandigarh — lip lift, reduction and filler options by plastic surgeon Dr. Sumit. Compare treatments & book a consultation.",
+    Neck: "Neck rejuvenation in Chandigarh — deep plane neck lift, jawline definition & more by Dr. Sumit. Explore procedures and book your consultation.",
+    Breasts: "Breast surgery in Chandigarh — augmentation, lift, reduction & gynecomastia by Dr. Sumit. Compare procedures and book a private consultation.",
+    Abdomen: "Abdomen contouring in Chandigarh — tummy tuck, liposuction & body sculpting by Dr. Sumit. Compare procedures and book your consultation today.",
+    Body: "Body contouring in Chandigarh — HD liposuction, tummy tuck, post-weight-loss surgery by Dr. Sumit. Explore procedures & book a consultation.",
+    Buttock: "Buttock enhancement in Chandigarh — lift and contouring procedures by plastic surgeon Dr. Sumit. See your options and book a consultation.",
+    Thighs: "Thigh contouring in Chandigarh — liposuction and lift options for shapelier legs by Dr. Sumit. Compare treatments and book your consultation.",
+    Arms: "Arm contouring in Chandigarh — liposuction and arm lift options by plastic surgeon Dr. Sumit. Explore treatments and book your consultation.",
+};
+
 const ConcernDetail: React.FC = () => {
     const { region } = useParams<{ region: string }>();
 
@@ -81,7 +98,7 @@ const ConcernDetail: React.FC = () => {
         <div className="pt-52 pb-32">
             <SEO
                 title={`${region} Procedures`}
-                description={`Explore plastic and aesthetic surgery procedures for the ${region} region, tailored to your aesthetic goals in Chandigarh.`}
+                description={REGION_META[region || ''] || `Explore plastic and aesthetic surgery procedures for the ${region} region, tailored to your aesthetic goals in Chandigarh.`}
                 url={`/concerns/${region}`}
             />
             <div className="container mx-auto px-6">
@@ -100,6 +117,7 @@ const ConcernDetail: React.FC = () => {
                     <h1 className="text-5xl md:text-8xl font-serif leading-none text-white">{region}</h1>
                 </motion.div>
 
+                <h2 className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold mb-10">{region} Procedures in Chandigarh</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10">
                     {filteredProcedures.length > 0 ? (
                         filteredProcedures.map((proc, idx) => {

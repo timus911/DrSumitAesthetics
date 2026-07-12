@@ -15,6 +15,7 @@ interface SEOProps {
     ratingValue?: number;
     reviewCount?: number;
     howToSteps?: { name: string; text: string }[];
+    priceRange?: string; // e.g. "₹1,50,000 - ₹2,50,000" — emitted as MedicalProcedure offers when numeric
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -30,7 +31,8 @@ const SEO: React.FC<SEOProps> = ({
     faqs,
     ratingValue = 4.9,
     reviewCount = 524,
-    howToSteps
+    howToSteps,
+    priceRange
 }) => {
     const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34";
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
@@ -50,7 +52,7 @@ const SEO: React.FC<SEOProps> = ({
                 "address": {
                     "@type": "PostalAddress",
                     "addressLocality": "Chandigarh",
-                    "addressRegion": "Punjab",
+                    "addressRegion": "Chandigarh",
                     "postalCode": "160022"
                 }
             },
@@ -58,7 +60,7 @@ const SEO: React.FC<SEOProps> = ({
                 "@type": "PostalAddress",
                 "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
                 "addressLocality": "Chandigarh",
-                "addressRegion": "Punjab",
+                "addressRegion": "Chandigarh",
                 "postalCode": "160022",
                 "addressCountry": "IN"
             },
@@ -106,8 +108,29 @@ const SEO: React.FC<SEOProps> = ({
             };
         }
 
+        // Procedure pricing: parse a numeric "₹X - ₹Y" range into a
+        // MedicalProcedure offers block. Non-numeric values ("On consultation")
+        // deliberately emit nothing — no invented prices in structured data.
+        const priceMatch = priceRange?.replace(/[₹,\s]/g, '').match(/^(\d+)-(\d+)$/);
+        const pricingSchema = priceMatch ? {
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": procedureName,
+            "url": siteUrl,
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "INR",
+                "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": Number(priceMatch[1]),
+                    "maxPrice": Number(priceMatch[2]),
+                    "priceCurrency": "INR"
+                }
+            }
+        } : null;
+
         if (schemaType === 'HowTo' && howToSteps) {
-            return {
+            const howToSchema = {
                 "@context": "https://schema.org",
                 "@type": "HowTo",
                 "name": `Recovery Guide: ${procedureName}`,
@@ -118,6 +141,7 @@ const SEO: React.FC<SEOProps> = ({
                     "text": step.text
                 }))
             };
+            return pricingSchema ? [howToSchema, pricingSchema] : howToSchema;
         }
 
         // Default or complex medical schema
@@ -144,7 +168,7 @@ const SEO: React.FC<SEOProps> = ({
                     "@type": "PostalAddress",
                     "streetAddress": "Healing Hospital, SCO 18-19, Sector 34-A",
                     "addressLocality": "Chandigarh",
-                    "addressRegion": "Punjab",
+                    "addressRegion": "Chandigarh",
                     "postalCode": "160022",
                     "addressCountry": "IN"
                 },

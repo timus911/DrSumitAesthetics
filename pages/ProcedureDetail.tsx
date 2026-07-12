@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, CheckCircle, Info, Image as ImageIcon, Crosshair, ChevronDown, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { PROCEDURES, ASSETS } from '../constants.ts';
+import { ArrowLeft, CheckCircle, Info, Image as ImageIcon, Crosshair, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { PROCEDURES, ASSETS, CONTACT } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
 import FAQ from '../components/FAQ.tsx';
+import ProcedureCard from '../components/ProcedureCard.tsx';
+import CredentialsStrip from '../components/CredentialsStrip.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img, onClick }) => {
@@ -70,6 +72,20 @@ const ProcedureDetail: React.FC = () => {
 
   const galleryImages = procedure.gallery || [];
 
+  // Procedures a visitor is most likely to consider alongside this one:
+  // shared body regions first, then same category, capped at 3.
+  const relatedProcedures = [
+    ...PROCEDURES.filter(p =>
+      p.id !== procedure.id &&
+      p.regions?.some(r => procedure.regions?.includes(r))
+    ),
+    ...PROCEDURES.filter(p =>
+      p.id !== procedure.id &&
+      p.category === procedure.category &&
+      !p.regions?.some(r => procedure.regions?.includes(r))
+    ),
+  ].slice(0, 3);
+
   useEffect(() => {
     galleryImages.forEach(src => {
       const img = new Image();
@@ -126,11 +142,12 @@ const ProcedureDetail: React.FC = () => {
     <div className="pt-52 pb-32">
       <SEO
         title={procedure.title}
-        description={procedure.description || procedure.longDescription?.slice(0, 160)}
+        description={procedure.metaDescription || procedure.description || procedure.longDescription?.slice(0, 160)}
         image={procedure.image}
         url={`/${id}`}
         schemaType="HowTo"
         procedureName={procedure.title}
+        priceRange={procedure.priceRange}
         howToSteps={[
           { name: "Immediate Recovery", text: procedure.details?.functional?.[0] || "Begin early mobilization and follow prescribed post-op care." },
           { name: "Work Readiness", text: procedure.details?.backToWork?.[0] || "Typical return to light work within 10-14 days." },
@@ -232,7 +249,7 @@ const ProcedureDetail: React.FC = () => {
               )}
             </div>
 
-            {procedure.id === 'fat-grafting' && (
+            {procedure.id === 'fat-grafting-chandigarh' && (
               <div className="space-y-16 pt-12 border-t border-white/5">
                 <div className="space-y-6">
                   <h2 className="text-3xl md:text-5xl font-serif text-white">Fat grafting, tailored to the face and body</h2>
@@ -300,6 +317,18 @@ const ProcedureDetail: React.FC = () => {
             {procedure.faqs && procedure.faqs.length > 0 && (
               <FAQ items={procedure.faqs} />
             )}
+
+            {relatedProcedures.length > 0 && (
+              <div className="space-y-8 pt-12 border-t border-white/5">
+                <h2 className="text-3xl font-serif text-white">Related Procedures</h2>
+                <p className="text-gray-400 text-sm font-light">Treatments often considered alongside {procedure.title}:</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {relatedProcedures.map((rel, idx) => (
+                    <ProcedureCard key={rel.id} proc={rel} index={idx} hideDescription />
+                  ))}
+                </div>
+              </div>
+            )}
           </motion.div>
 
           <motion.div
@@ -320,11 +349,20 @@ const ProcedureDetail: React.FC = () => {
             </div>
 
             <div className="glass p-12 space-y-12 border border-[#4A90E2]/10 shadow-2xl backdrop-blur-3xl">
-              <div className="pt-0 border-b border-white/5 pb-8">
+              <div className="pt-0 border-b border-white/5 pb-8 space-y-4">
                 <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-6">Discuss your transformation</p>
                 <Link to="/contact" className="w-full text-center px-8 py-4 bg-[#4A90E2] text-white font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all inline-block shadow-lg">
                   Request Specialized Consultation
                 </Link>
+                <a
+                  href={`https://wa.me/${CONTACT.counselorPhone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(`Hi Dr. Sumit, I would like to know more about ${procedure.title}.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center px-8 py-4 border border-[#25D366]/40 text-[#25D366] font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-[#25D366] hover:text-black transition-all inline-flex items-center justify-center gap-3"
+                >
+                  <MessageCircle size={14} />
+                  <span>Ask on WhatsApp</span>
+                </a>
               </div>
 
               <div className="pt-4">
@@ -336,6 +374,7 @@ const ProcedureDetail: React.FC = () => {
                     { label: "Clinical Recovery", val: procedure.brief?.recovery || "10 - 14 Days" },
                     { label: "Refinement Window", val: procedure.brief?.refinement || "Matures at 6 - 9 months" },
                     ...(procedure.brief?.technique ? [{ label: "Technique", val: procedure.brief.technique }] : []),
+                    ...(procedure.priceRange ? [{ label: "Investment Range", val: procedure.priceRange }] : []),
                   ].map((stat, i) => (
                     <div key={i} className="flex justify-between border-b border-white/5 pb-4 group">
                       <span className="text-[10px] uppercase tracking-[0.2em] text-gray-300 font-extrabold group-hover:text-[#4A90E2] transition-colors">{stat.label}</span>
@@ -343,6 +382,11 @@ const ProcedureDetail: React.FC = () => {
                     </div>
                   ))}
                 </div>
+                {procedure.priceRange && (
+                  <Link to="/plastic-surgery-cost-chandigarh" className="inline-block mt-6 text-[10px] uppercase tracking-[0.2em] text-[#4A90E2] font-bold hover:text-white transition-colors">
+                    View Full Price Guide &rarr;
+                  </Link>
+                )}
               </div>
 
               <div className="bg-[#4A90E2]/5 border border-[#4A90E2]/20 p-8 flex items-start space-x-5 shadow-inner">
@@ -352,6 +396,8 @@ const ProcedureDetail: React.FC = () => {
                 </p>
               </div>
             </div>
+
+            <CredentialsStrip />
 
             {/* Removed duplicate CTA link */}
           </motion.div>
