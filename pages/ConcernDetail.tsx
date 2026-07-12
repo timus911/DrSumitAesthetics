@@ -28,8 +28,8 @@ const DEFAULT_HINTS: Record<string, string> = {
     'labiaplasty-chandigarh': "Refining intimate contours for comfort and aesthetics.",
     'botox-chandigarh': "Softening dynamic lines and wrinkles for a refreshed, rested look.",
     'microneedling-chandigarh': "Stimulating natural collagen production to improve texture and scars.",
-    'chemical-peeling': "Exfoliating damaged skin layers to reveal a brighter, smoother complexion.",
-    'dermal-fillers': "Instantly restoring lost volume and contouring facial features.",
+    'chemical-peeling-chandigarh': "Exfoliating damaged skin layers to reveal a brighter, smoother complexion.",
+    'dermal-fillers-chandigarh': "Instantly restoring lost volume and contouring facial features.",
     'varicose-veins-chandigarh': "Treating visible veins for improved leg health and aesthetics.",
     'vascular-surgery-chandigarh': "Specialized vascular access and care.",
     'scar-revision-chandigarh': "Improving the appearance of surgical or traumatic scars for smoother texture."
@@ -117,6 +117,7 @@ const ConcernDetail: React.FC = () => {
                     <h1 className="text-5xl md:text-8xl font-serif leading-none text-white">{region}</h1>
                 </motion.div>
 
+                <h2 className="text-[#5DA9E9] text-[10px] tracking-[0.4em] uppercase font-bold mb-10">{region} Procedures in Chandigarh</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-10">
                     {filteredProcedures.length > 0 ? (
                         filteredProcedures.map((proc, idx) => {

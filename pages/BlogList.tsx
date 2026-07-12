@@ -22,6 +22,7 @@ const BlogList: React.FC = () => {
                     <h1 className="text-5xl md:text-8xl font-serif leading-none tracking-tighter">The Journal</h1>
                 </div>
 
+                <h2 className="text-[#4A90E2] text-[10px] tracking-[0.4em] uppercase font-bold mb-10">Latest Articles</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     {BLOG_POSTS.map((post, idx) => (
                         <motion.div

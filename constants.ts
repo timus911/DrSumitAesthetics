@@ -222,6 +222,87 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
     ]
   },
   {
+    id: "mommy-makeover-chandigarh",
+    metaDescription: "Mommy makeover in Chandigarh by Dr. Sumit — tummy tuck, breast lift or augmentation & liposuction in one surgery. Book a private consultation.",
+    title: "Mommy Makeover",
+    category: "Body",
+    parentCategory: "aesthetic",
+    description: "A personalized combination of procedures to restore your pre-pregnancy figure in a single operation.",
+    longDescription: "A Mommy Makeover combines abdominal repair, breast enhancement, and targeted liposuction into one surgical plan and one recovery — addressing the changes pregnancy and nursing leave behind that diet and exercise cannot reverse.",
+    image: "/tummy-tuck-aesthetic.webp",
+    brief: {
+      operationTime: "4 - 6 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "14 - 21 Days",
+      refinement: "Matures at 6 - 12 months"
+    },
+    details: {
+      whoNeeds: ["Mothers with stretched abdominal muscles (diastasis recti), loose skin, deflated or sagging breasts, and stubborn fat pockets after pregnancy.", "Patients seeking comprehensive restoration rather than staged, separate surgeries."],
+      candidates: ["Ideally finished with childbearing and breastfeeding, at a stable weight for six months.", "Non-smokers in good general health with realistic expectations and support at home for the recovery period."],
+      assessment: ["We evaluate the abdominal wall, breast tissue quality, skin elasticity, and fat distribution to design your personal combination.", "The plan may include a Tummy Tuck, Breast Augmentation or Lift, and HD Liposuction — only what your anatomy actually needs."],
+      functional: ["Walking within 24 hours is encouraged; expect to move carefully for the first week.", "Assistance with childcare and lifting is essential for the first 10-14 days."],
+      backToWork: ["Desk jobs typically require 2-3 weeks of recovery.", "Physically demanding roles may need 4-6 weeks for full clearance."],
+      results: ["A single recovery period instead of multiple staged surgeries.", "The final silhouette settles as swelling resolves over 6 to 12 months."],
+      recoveryTips: ["Arrange help at home in advance — no heavy lifting, including children, for the first two weeks.", "Wear compression garments and the surgical bra exactly as directed."]
+    },
+    regions: ["Abdomen", "Breasts", "Body"],
+    seoContent: `
+### Mommy Makeover in Chandigarh: Reclaim Your Body After Motherhood
+**One Surgery. One Recovery. Comprehensive Restoration at Healing Hospital.**
+
+Pregnancy and nursing can leave lasting changes that diet and exercise simply cannot reverse — stretched abdominal muscles, deflated breasts, and stubborn fat pockets. A Mommy Makeover is not a single procedure; it is a personalized combination of body contouring procedures performed during one operation.
+
+#### What Can Be Combined?
+*   **Tummy Tuck (Abdominoplasty):** The cornerstone — removes sagging skin, often eliminating stretch marks below the belly button, and repairs separated abdominal muscles.
+*   **Breast Enhancement:** An augmentation to restore lost volume, a lift (mastopexy) to correct sagging, or both together.
+*   **HD Liposuction:** Refines the flanks, back, or thighs for a seamless transition to the new abdomen.
+
+[Explore Tummy Tuck in detail](/tummy-tuck-chandigarh)
+
+[Compare Breast Augmentation options](/breast-augmentation-chandigarh)
+
+#### Why Combine Procedures?
+*   **Single Recovery:** One anesthesia event and one healing phase — less total downtime away from your family.
+*   **Cost Efficiency:** Consolidated operating room and anesthesia fees versus staging multiple surgeries.
+*   **Harmonious Results:** All areas addressed together for a balanced, proportionate transformation.
+
+#### Cost of a Mommy Makeover in Chandigarh
+Because every makeover is a custom combination, pricing is finalized after a physical consultation — the selected procedures, implant choices, and liposuction extent all factor in.
+`,
+    priceRange: "On consultation",
+    costFactors: "Combination of procedures selected, implant choice & liposuction extent",
+    faqs: [
+      {
+        question: "What procedures are included in a Mommy Makeover?",
+        answer: [
+          "It is a personalized combination — most commonly a Tummy Tuck, Breast Augmentation and/or Breast Lift, and HD Liposuction of the flanks or thighs.",
+          "Dr. Sumit designs the combination around your anatomy and goals; you only undergo what you actually need."
+        ]
+      },
+      {
+        question: "Is it safe to combine multiple surgeries in one operation?",
+        answer: [
+          "For healthy candidates, combining procedures under one anesthesia event in an accredited hospital is a well-established, safe approach.",
+          "Pre-operative assessment, surgical time limits, and DVT-prophylaxis protocols at Healing Hospital govern every combination plan."
+        ]
+      },
+      {
+        question: "When is the right time after pregnancy?",
+        answer: [
+          "Ideally once you have finished childbearing and breastfeeding, and your weight has been stable for at least six months.",
+          "Operating on a stable baseline protects your investment and your result."
+        ]
+      },
+      {
+        question: "How long is Mommy Makeover recovery?",
+        answer: [
+          "Most patients need 2-3 weeks before returning to desk work, with lifting restrictions (including picking up children) for the first two weeks.",
+          "The combined recovery is still significantly shorter than recovering from two or three separate staged surgeries."
+        ]
+      }
+    ]
+  },
+  {
     id: "liposuction-chandigarh",
     metaDescription: "HD liposuction in Chandigarh by Dr. Sumit Singh Gautam — precision body sculpting with high-definition results. Book your consultation today.",
     title: "High Definition Liposuction",
@@ -1929,7 +2010,7 @@ Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
     ]
   },
   {
-    id: "chemical-peeling",
+    id: "chemical-peeling-chandigarh",
     metaDescription: "Chemical peels in Chandigarh at Dr. Sumit Aesthetics — medical-grade peels for glow, pigmentation & acne scars. Book your session today.",
     priceRange: "On consultation",
     costFactors: "Peel depth, session count & skin condition",
@@ -2030,7 +2111,7 @@ Medical supervision ensures no risk of burns or hyperpigmentation.
     ]
   },
   {
-    id: "dermal-fillers",
+    id: "dermal-fillers-chandigarh",
     metaDescription: "Dermal fillers in Chandigarh by plastic surgeon Dr. Sumit — restore volume and contour with a natural finish. Book your session today.",
     priceRange: "On consultation",
     costFactors: "Filler type, syringe count & treatment areas",
@@ -2648,7 +2729,7 @@ To ensure lifelong results from your liposuction procedure:
 Pregnancy and nursing are incredible journeys, but they can leave lasting physical changes that diet and exercise simply cannot reverse. Stretched abdominal muscles, deflated breasts, and stubborn fat pockets are common concerns. This is where the "Mommy Makeover" comes in.
 
 ### What is a Mommy Makeover?
-A Mommy Makeover is not a single surgery; it is a personalized combination of body contouring procedures performed during a single operation to restore your pre-pregnancy figure. 
+A Mommy Makeover is not a single surgery; it is a personalized combination of body contouring procedures performed during a single operation to restore your pre-pregnancy figure. Read the full details on our [Mommy Makeover in Chandigarh](/mommy-makeover-chandigarh) page.
 
 ### Common Procedures Included
 Depending on your unique needs, Dr. Sumit may recommend a combination of the following:
@@ -2792,7 +2873,7 @@ Blepharoplasty is often performed under local anesthesia with sedation and is an
     excerpt: "Navigate the world of facial rejuvenation. Learn the differences between a full traditional facelift and a less invasive mini facelift to see which matches your aging concerns.",
     content: `## Choosing Your Path to Facial Rejuvenation
 
-When non-surgical options like [Botox](/botox-chandigarh) and [fillers](/dermal-fillers) are no longer enough to address sagging skin and deep folds, a [facelift](/facelift-chandigarh) remains the gold standard for turning back the clock. However, not all facelifts are created equal. The two primary approaches we offer are the Traditional (Full) Facelift and the Mini Facelift. 
+When non-surgical options like [Botox](/botox-chandigarh) and [fillers](/dermal-fillers-chandigarh) are no longer enough to address sagging skin and deep folds, a [facelift](/facelift-chandigarh) remains the gold standard for turning back the clock. However, not all facelifts are created equal. The two primary approaches we offer are the Traditional (Full) Facelift and the Mini Facelift. 
 
 Understanding the differences is crucial to aligning your expectations with the surgical approach.
 
@@ -2942,7 +3023,7 @@ While both are administered via tiny injections, their mechanisms of action and 
 *   **Result Duration:** Results take 3 to 7 days to appear and last between 3 to 4 months.
 
 ### Dermal Fillers
-[Dermal fillers](/dermal-fillers) (like Juvederm and Restylane) are gel-like substances (most commonly made of Hyaluronic Acid, a naturally occurring sugar in the body) injected beneath the skin.
+[Dermal fillers](/dermal-fillers-chandigarh) (like Juvederm and Restylane) are gel-like substances (most commonly made of Hyaluronic Acid, a naturally occurring sugar in the body) injected beneath the skin.
 
 *   **How it Works:** It physically adds volume beneath the skin, hydrating the tissue from the inside out and plumping up the area.
 *   **What it Treats:** "Static" wrinkles—the folds and hollows present even when your face is completely resting.
@@ -2983,7 +3064,7 @@ Preventative Botox is administered in very small, subtle doses ("Baby Botox") du
 ### The Benefits of Starting Early
 *   **Less Product Needed:** Treating a muscle that hasn't hypertrophied (grown strong from decades of frowning) requires significantly less Botox than trying to paralyze a heavily entrenched muscle in a 50-year-old.
 *   **Softer, Natural Results:** Because smaller doses are used, you maintain plenty of natural facial expression—you just lose the aggressive scowl lines.
-*   **Financial Efficiency:** Preventing a deep fold with neurotoxins is ultimately less invasive and frequently cheaper over time than requiring deep [dermal fillers](/dermal-fillers), laser skin resurfacing, or [surgical facelifts](/facelift-chandigarh) to fix the fold later in life.
+*   **Financial Efficiency:** Preventing a deep fold with neurotoxins is ultimately less invasive and frequently cheaper over time than requiring deep [dermal fillers](/dermal-fillers-chandigarh), laser skin resurfacing, or [surgical facelifts](/facelift-chandigarh) to fix the fold later in life.
 
 If you are starting to notice makeup settling into a faint line on your forehead by the end of the day, that line is entering the static phase. That is the ideal time to explore prejuvenation.`,
     image: "/injectables-non-surgical.webp",
@@ -2995,7 +3076,7 @@ If you are starting to notice makeup settling into a faint line on your forehead
     excerpt: "Everything you need to know about the longevity of Hyaluronic Acid fillers, and the factors that cause your body to metabolize them faster.",
     content: `## Understanding the Lifespan of Your Enhancements
 
-[Dermal fillers](/dermal-fillers) offer an incredible, immediate transformation—plumping [lips](/concerns/Lips), lifting cheeks, and erasing deep laugh lines before you even leave the clinic. However, because the most common fillers are made of Hyaluronic Acid (HA), a substance your body naturally produces and breaks down, the results are temporary.
+[Dermal fillers](/dermal-fillers-chandigarh) offer an incredible, immediate transformation—plumping [lips](/concerns/Lips), lifting cheeks, and erasing deep laugh lines before you even leave the clinic. However, because the most common fillers are made of Hyaluronic Acid (HA), a substance your body naturally produces and breaks down, the results are temporary.
 
 But "temporary" is a broad term. How long do they *really* last?
 

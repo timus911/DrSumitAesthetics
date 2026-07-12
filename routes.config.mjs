@@ -36,6 +36,7 @@ const CATEGORY_PAGES = [
 // (rather than imported from constants.ts) because prerender.js runs as
 // plain Node and can't load a .ts module without a transpile step.
 const PROCEDURE_IDS = [
+    'mommy-makeover-chandigarh',
     'tummy-tuck-chandigarh',
     'liposuction-chandigarh',
     'body-contouring-chandigarh',
@@ -57,8 +58,8 @@ const PROCEDURE_IDS = [
     'scar-revision-chandigarh',
     'botox-chandigarh',
     'microneedling-chandigarh',
-    'chemical-peeling',
-    'dermal-fillers',
+    'chemical-peeling-chandigarh',
+    'dermal-fillers-chandigarh',
     'microvascular-repair',
     'traumatic-reconstruction',
     'facial-fracture-surgery',
