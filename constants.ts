@@ -100,6 +100,7 @@ export type Procedure = {
   priceRange?: string; // New field for Cost & Financing page
   costFactors?: string; // Key factors influencing cost
   seoContent?: string; // Rich SEO content for specific procedure pages
+  fellowshipAnchor?: boolean; // Renders the Tonnard & Verpaele fellowship provenance block. Only for the techniques he trained in directly under them.
   faqs?: { question: string; answer: string[] }[]; // People Also Ask Data
 };
 
@@ -460,6 +461,18 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
     longDescription: "A collection of procedures aimed at eliminating loose skin and excess fat following weight loss or aging to harmonize the silhouette.",
     image: "/body-contouring-aesthetic.webp", // User-provided aesthetic image
     regions: ["Body", "Abdomen", "Thighs", "Arms", "Buttock"],
+    brief: {
+      operationTime: "2 - 4 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "14 - 21 Days",
+      refinement: "Settles at 6 - 12 months"
+    },
+    details: {
+      functional: ["Hospital stay depends on which procedure is performed.", "A compression garment is worn from the outset and stays on for 6 weeks."],
+      backToWork: ["Around 2 to 3 weeks before returning to a sedentary job.", "Full activity typically resumes at 6 to 8 weeks."],
+      results: ["The final contour settles at 6 to 12 months as swelling resolves and tissues soften."],
+      recoveryTips: ["Compression garments are essential for the full 6 weeks.", "Maintaining baseline muscle through strength training keeps you in a healthy state and fit for healing."]
+    },
     gallery: [
       "/axillary-breast-reduction-result.webp",
       "/body-contouring-result-1.webp",
@@ -525,17 +538,33 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
         answer: [
           "Extent of skin removal, combination of upper/lower body lift, and hospital stay duration."
         ]
-      }
+      },
+      {
+        question: "Can body contouring be done in one operation, or is it staged?",
+        answer: ["If you are at a stable weight, a single stage is usually enough.", "Where a staged plan is needed, there is a minimum gap of 6 months before the second procedure is considered."]
+      },
+      {
+        question: "What weight do I need to be at before body contouring?",
+        answer: ["This is deliberately not a single number. No one figure applies across patients.", "Dr. Sumit takes a targeted approach to body contouring rather than treating it as a weight loss treatment - the question is which areas need addressing, not what the scale reads."]
+      },
+      {
+        question: "What should I be doing before surgery to heal well?",
+        answer: ["Strength training to maintain a baseline of muscle is very important.", "It also ensures you are in a healthy state and fit for healing, which matters more for wound healing than weight alone."]
+      },
+      {
+        question: "Which body contouring operations do you perform?",
+        answer: ["Arm lift (brachioplasty), thigh lift, lower body lift (360 degree), upper body or bra line lift, back roll excision, and panniculectomy.", "Which of these you need, and whether they are combined, is decided at consultation based on where the excess skin actually sits."]
+      },
     ]
   },
   {
     id: "fat-grafting-chandigarh",
-    metaDescription: "Fat grafting in Chandigarh by Dr. Sumit — restore natural volume to face & body using your own tissue. Book a private consultation today.",
+    metaDescription: "Microfat & nanofat grafting in Chandigarh by Dr. Sumit, fellowship-trained under Tonnard & Verpaele who originated the technique. Book a consultation.",
     title: "Fat Grafting",
     category: "Body",
     parentCategory: "aesthetic",
     description: "Using autologous tissue for volume restoration.",
-    longDescription: "Fat grafting is the meticulous process of harvesting your own fat cell—typically from the abdomen or thighs—and precisely re-integrating them into areas requiring volume, contour, or skin rejuvenation. It is the ultimate bio-compatible filler, offering permanent results that age naturally with you.",
+    longDescription: "Fat grafting is a technique-dependent operation. How the fat is harvested, how it is processed, and the size of each parcel placed decide whether it survives. Dr. Sumit trained in microfat and nanofat grafting in Ghent under Dr. Patrick Tonnard and Dr. Alexis Verpaele, the surgeons who developed both techniques.",
     image: "/fat-grafting-aesthetic.webp", // User-provided aesthetic image
     brief: {
       operationTime: "2 - 4 Hours",
@@ -558,24 +587,43 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
         answer: ["No. Facial tissues and body tissues behave very differently. Facial fat grafting often requires more refined techniques for precision and skin quality, while body fat grafting focuses on stable volume and contour. The technique is selected based on the area treated and the desired outcome."]
       }
     },
+    fellowshipAnchor: true,
     regions: ["Face", "Nose", "Eyes", "Ears", "Lips", "Neck", "Breasts", "Body", "Buttock"],
     gallery: ["/scar-revision-fat-grafted.webp", "/fat-grafting-result-1.webp", "/fat-grafting-result-2.webp", "/fat-grafting-result-3.webp"],
     seoContent: `
-### Fat Grafting in Chandigarh: The Natural Filler
-**Restore Volume & Youth with Your Own Tissue**
+### Microfat & Nanofat Grafting in Chandigarh
+**Trained under the surgeons who originated the technique**
 
-Fat Grafting (Fat Transfer) is the ultimate organic solution for volume loss. Dr. Sumit harvests fat from areas of excess (like the tummy) and processes it into Microfat or Nanofat for rejuvenation.
+Fat grafting is not a single operation performed to a single standard. Outcomes turn on technique - specifically on how large each transferred fat parcel is, because that decides whether it can establish a blood supply before it dies.
 
-**Applications:**
-*   **Face:** Filling sunken cheeks, temples, and tear troughs (dark circles).
-*   **Breast:** Natural augmentation without implants (usually 1 cup size increase).
-*   **Buttock:** Creating a "Brazilian Butt Lift" contour.
+Dr. Sumit completed his Fellowship in Aesthetic Surgery in Ghent, Belgium under **Dr. Patrick Tonnard** and **Dr. Alexis Verpaele**, who developed microfat and nanofat grafting. The techniques are used worldwide; he learned them at their origin.
 
-#### The Science: Nanofat
-Dr. Sumit uses **Nanofat**—emulsified fat rich in stem cells—to treat skin quality, fine lines, and dark circles. It acts more like a biological skin booster than a filler.
+#### Why parcel size decides survival - in the face
+
+Older bulk-transfer methods moved large parcels of fat. The centre of a large parcel sits too far from surrounding tissue for new blood vessels to reach it in time, so a substantial share never survives - historically around 70%.
+
+**Microfat** is harvested and injected in far smaller parcels, each thin enough to draw a blood supply immediately. Viability rises accordingly. The consistency is almost fluid, but it remains viable living tissue rather than processed filler.
+
+#### Microfat and nanofat are different tools
+
+*   **Microfat** restores volume - cheeks, temples, tear troughs, jawline - with living fat that integrates and stays.
+*   **Nanofat** is emulsified further until it holds no meaningful volume at all. What remains is a fluid rich in regenerative cells, used to treat skin quality: dull or crepey texture, fine lines, under-eye darkening and acne scarring.
+
+Fillers add volume. Nanofat renews the tissue. They are not substitutes for one another, and a patient with significant volume loss is not well served by nanofat alone.
+
+#### Nanofat with microneedling
+
+Delivered through micro-channels created by microneedling, nanofat reaches the dermis directly. Skin brightens and texture softens over the first month, fine lines and scars improve by weeks six to eight, and collagen continues building through months three to six. A typical course is one to two sessions spaced a few months apart.
 
 #### Longevity
-Unlike synthetic fillers which dissolve in 12 months, transplanted fat that survives (typically 60-70%) is permanent. It ages naturally with you.
+
+Once a graft has integrated and established its own blood supply, it behaves as your own living tissue - because it is. It ages naturally alongside the rest of your face, rather than dissolving on a synthetic filler's twelve-month schedule.
+
+#### Body volumes are a different question
+
+The viability advantage of microfat is established for the face. For larger-volume grafting to the buttock, microfat has not been shown to carry a proven advantage - the volumes involved are different in kind, and the evidence does not transfer automatically.
+
+The same viability principles should still favour better survival, but that is a reasonable expectation rather than a demonstrated one. Around 70% graft survival at one year remains the honest figure to plan around for body volumes, and Dr. Sumit will quote you that rather than a facial number.
 `,
     priceRange: "₹40,000 - ₹1,20,000",
     costFactors: "Volume required (Face vs Breast/Buttock), Nanofat vs Microfat processing",
@@ -648,7 +696,31 @@ Unlike synthetic fillers which dissolve in 12 months, transplanted fat that surv
         answer: [
           "Volume required (Face vs Breast/Buttock), and the type of processing (Nanofat vs Microfat)."
         ]
-      }
+      },
+      {
+        question: "Doesn't most of the transferred fat just disappear?",
+        answer: ["That was true of older bulk-transfer techniques. Large fat parcels could not establish a blood supply quickly enough at their centre, leaving roughly 70% long-term viability.", "For the face, microfat grafting harvests and injects far smaller parcels, each thin enough to draw blood supply immediately, and viability is substantially higher as a result. For larger body volumes such as the buttock, that advantage has not been demonstrated, and around 70% at one year remains the figure to plan around."]
+      },
+      {
+        question: "What is the difference between microfat and nanofat?",
+        answer: ["Microfat restores volume - cheeks, temples, tear troughs - using small parcels of living fat that integrate permanently.", "Nanofat is emulsified until it carries no real volume. What is left is a fluid rich in regenerative cells, used to improve skin quality: texture, fine lines, dark circles and acne scarring. Fillers add volume; nanofat renews tissue."]
+      },
+      {
+        question: "Where did Dr. Sumit train in microfat and nanofat grafting?",
+        answer: ["In Ghent, Belgium, under Dr. Patrick Tonnard and Dr. Alexis Verpaele - the surgeons who originated both techniques.", "Fat grafting results depend heavily on harvesting and processing technique, which is why training directly under the originators matters more here than in most operations."]
+      },
+      {
+        question: "How long do fat grafting results last?",
+        answer: ["Once a graft has integrated and established its own blood supply, it behaves like your own permanent living tissue, ageing naturally with the rest of your face.", "This is the fundamental difference from synthetic fillers, which dissolve within about twelve months regardless of technique."]
+      },
+      {
+        question: "What is nanofat microneedling?",
+        answer: ["A small amount of your own fat is harvested and mechanically emulsified into a fluid rich in regenerative cells. Microneedling opens micro-channels through which the nanofat is driven into the dermis.", "Redness settles within the first week, skin brightens and texture softens over weeks two to four, fine lines and scars visibly improve by weeks six to eight, and the full regenerative effect builds through months three to six."]
+      },
+      {
+        question: "When is nanofat the wrong treatment?",
+        answer: ["Where there is significant volume loss, structural fat grafting or fillers are the appropriate answer.", "Where the problem is sagging that needs lifting, surgery is. Nanofat rebuilds tissue quality - it does not inflate, and it will not satisfy anyone wanting an instant dramatic change."]
+      },
     ]
   },
   {
@@ -661,6 +733,19 @@ Unlike synthetic fillers which dissolve in 12 months, transplanted fat that surv
     longDescription: "Removing excess skin and lifting the remaining tissue to improve the tone and shape of the buttocks.",
     image: "/buttock-lift-aesthetic.webp", // User-provided aesthetic image
     regions: ["Buttock", "Body"],
+    brief: {
+      operationTime: "2 - 3 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "5 - 7 Days",
+      refinement: "Matures at 6 - 12 months"
+    },
+    details: {
+      candidates: ["Non-smokers, or those willing to stop before surgery.", "Weight stable, with sufficient donor fat for the volume being discussed.", "Accepting of a safe volume rather than an extreme one."],
+      functional: ["Day care - home the same day.", "Sitting is possible from day 3 to 4, but prolonged sitting should be avoided."],
+      backToWork: ["Back to desk work in 5 to 7 days.", "Gym from 4 to 6 weeks."],
+      results: ["Around 70% graft survival at 1 year is a realistic result for the buttock region.", "The final shape matures at 6 to 12 months."],
+      recoveryTips: ["Avoid prolonged sitting in the early weeks even once sitting is comfortable.", "Maintain a stable weight to protect the grafted volume."]
+    },
     seoContent: `
 ### Buttock Lift in Chandigarh: Shape & Lift
 **Enhancing Curves with Safety & Precision**
@@ -706,7 +791,27 @@ Results are visible immediately. You will need to avoid sitting directly on the 
         answer: [
           "Whether implants are needed vs a BBL approach, and the liposuction volume harvested."
         ]
-      }
+      },
+      {
+        question: "How do you keep buttock fat transfer safe?",
+        answer: ["A safe volume for your body is finalised before surgery. Under no circumstance is that volume increased during the operation.", "This is discussed openly beforehand so expectations are realistic. Safety sets the ceiling, not the request."]
+      },
+      {
+        question: "Where in the tissue is the fat injected?",
+        answer: ["Fat injection is safest in the deep subcutaneous plane.", "This protects safety and also prevents the contour irregularities that come from grafting too superficially."]
+      },
+      {
+        question: "How much of the transferred fat survives?",
+        answer: ["Realistically, around 70% graft survival at 1 year is a reasonable result for the buttock region.", "This is why the final shape is judged at 6 to 12 months rather than in the first weeks, when swelling still exaggerates the volume."]
+      },
+      {
+        question: "When can I sit normally after a buttock lift?",
+        answer: ["Sitting is possible from day 3 to 4, though prolonged sitting should still be avoided.", "Back to desk work in 5 to 7 days, and the gym from 4 to 6 weeks."]
+      },
+      {
+        question: "Who is not a candidate for a buttock lift?",
+        answer: ["Active smokers who will not stop, patients whose weight is not yet stable, uncontrolled diabetes, or those without sufficient donor fat for the volume requested.", "Also anyone asking for extreme volume that cannot be delivered safely, or with unrealistic expectations about scarring."]
+      },
     ]
   },
 
@@ -822,6 +927,19 @@ This procedure is specifically designed to obliterate the "jowls" (sagging jawli
     longDescription: "Addressing the deep platysma and fat layers to resolve neck laxity and redefine a sharp, youthful submental profile.",
     image: "/neck-lift-aesthetic.webp", // User-provided aesthetic image
     regions: ["Neck", "Face"],
+    brief: {
+      operationTime: "2 - 3 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "5 Days",
+      refinement: "Settles at 3 - 6 months"
+    },
+    details: {
+      candidates: ["Non-smokers, or those willing to stop well before surgery.", "Blood pressure and diabetes controlled before the date is fixed.", "Weight stable, with skin quality good enough for lifting to hold."],
+      functional: ["No drains are used.", "Blood pressure is monitored for the first 12 hours, so one overnight stay is required.", "A supportive chin strap is worn for the first week."],
+      backToWork: ["Desk work within 5 days.", "Moderate gym activity from 2 weeks."],
+      results: ["Bruising typically resolves in 10-12 days.", "The jaw and neck angle settle into their final look at 3 to 6 months."],
+      recoveryTips: ["Keep the chin strap on as directed through the first week.", "Strenuous exercise only after 1 month."]
+    },
     seoContent: `
 ### Neck Lift in Chandigarh: Define Your Jawline
 **Deep Plane Neck Contouring for a Sharp Profile**
@@ -865,7 +983,27 @@ You will wear a supportive chin strap for 1 week. Bruising typically resolves in
         answer: [
           "Isolated Neck Lift vs Combined Facelift, Platysmaplasty complexity, and Liposuction needs."
         ]
-      }
+      },
+      {
+        question: "Do I need a facelift as well as a neck lift?",
+        answer: ["Almost always, the facelift and neck lift go hand in hand. Lower face jowling alongside a lax neck is the tell-tale sign that both are needed.", "Even in pure lower face jowling, doing the facelift together with the neck lift gives a better result."]
+      },
+      {
+        question: "How is a deep plane neck lift different from neck liposuction?",
+        answer: ["Deep plane means the deeper structures pulling the skin down are addressed. It is not purely subcutaneous fat - it may involve the underlying muscle and the submandibular glands.", "Liposuction alone only removes fat, which is why it cannot correct a neck where the platysma muscle or glandular position is the real problem."]
+      },
+      {
+        question: "Do you use drains after a neck lift?",
+        answer: ["No drains are used.", "As with the facelift, blood pressure is monitored for the first 12 hours after surgery, so one overnight stay is required."]
+      },
+      {
+        question: "When can I return to work after a neck lift?",
+        answer: ["Desk work within 5 days.", "Moderate gym activity from 2 weeks, and strenuous exercise after 1 month."]
+      },
+      {
+        question: "Who is not a candidate for a neck lift?",
+        answer: ["Active smokers who will not stop before surgery, and patients with uncontrolled hypertension, uncontrolled diabetes, or a bleeding risk that cannot be paused.", "Also those whose weight is not yet stable, those whose skin quality means a lift will not hold, and patients asking for a neck lift when the real problem is the lower face."]
+      },
     ]
   },
   {
@@ -878,6 +1016,19 @@ You will wear a supportive chin strap for 1 week. Bruising typically resolves in
     longDescription: "Shortening the space between the nose and lip or reducing excess volume to achieve balanced facial ratios.",
     image: "/lip-lift-aesthetic.webp", // User-provided aesthetic image
     regions: ["Lips", "Face"],
+    brief: {
+      operationTime: "30 - 45 Minutes",
+      anesthesia: "Local Anaesthesia",
+      recovery: "5 - 7 Days",
+      refinement: "Settles at 3 months"
+    },
+    details: {
+      candidates: ["Upper lip length, philtral length and incisor show suited to a lift rather than volume.", "No keloid tendency or history of poor scarring.", "Non-smokers, or those willing to stop before surgery."],
+      functional: ["Performed under local anaesthesia in 30 to 45 minutes.", "Sutures are removed on day 5."],
+      backToWork: ["Back to work wearing a mask from day 2.", "Comfortable without a mask after 1 week."],
+      results: ["The scar is presentable after 3 weeks.", "The result settles at 3 months, while scar remodelling continues for up to a full year."],
+      recoveryTips: ["Scar management is especially important in Indian skin.", "Regular follow-up as the scar settles is part of the treatment, not an optional extra."]
+    },
     seoContent: `
 ### Lip Lift in Chandigarh: Sensual Balance
 **Shortening the Philtrum for a Youthful Pout**
@@ -919,7 +1070,23 @@ For clients with genetically overly prominent lips, we perform precision reducti
         answer: [
           "Procedure type (Lift vs Reduction) and whether local anesthesia or sedation is used."
         ]
-      }
+      },
+      {
+        question: "Should I have a lip lift or fillers?",
+        answer: ["Upper lip length, philtral length and incisor show are what decide it.", "Where those measurements point to a proportion problem, a lift is the answer. Where the issue is volume rather than proportion, lip rejuvenation with filler is the better route."]
+      },
+      {
+        question: "How visible is the lip lift scar?",
+        answer: ["The scar is well hidden up into the nostril.", "Scar management, especially in Indian skin, is of utmost importance, and regular follow-up as the scar settles is required. It is presentable at 3 weeks, and remodelling continues for up to a year."]
+      },
+      {
+        question: "When can I go back to work after a lip lift?",
+        answer: ["From day 2 wearing a mask, and comfortably without one after 1 week.", "Sutures come out on day 5."]
+      },
+      {
+        question: "Who is not a candidate for a lip lift?",
+        answer: ["Anyone whose philtrum is already short, where a lift would look unnatural, and those wanting volume rather than corrected proportion - fillers are the better answer there.", "Also patients with a keloid tendency or poor scarring history, active smokers who will not stop, and anyone with unrealistic expectations about the scar."]
+      },
     ]
   },
   {
@@ -1289,6 +1456,19 @@ We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
     longDescription: "Pinned-back or reshaped ears to improve position and appearance, often performed to resolve congenital concerns.",
     image: "/otoplasty-aesthetic.webp", // User-provided aesthetic image
     regions: ["Ears", "Face"],
+    brief: {
+      operationTime: "1 - 2 Hours",
+      anesthesia: "Local (Adults) / Sedation (Children)",
+      recovery: "10 - 12 Days",
+      refinement: "Immediate and permanent"
+    },
+    details: {
+      candidates: ["Children from age 6, once ear growth is essentially complete.", "No active ear infection or skin problem, and no keloid tendency.", "The child wants it too - not only the parent."],
+      functional: ["The dressing is removed once and for all at day 5.", "Sutures are removed at day 10 to 12."],
+      backToWork: ["Free to swim once the sutures are out, at day 10 to 12.", "Contact sport after 1 month."],
+      results: ["The result is immediate and permanent."],
+      recoveryTips: ["Keep the dressing dry and undisturbed until it is removed at day 5.", "Hold off on swimming until sutures are out, and contact sport for a full month."]
+    },
     gallery: ["/otoplasty-result-1.webp", "/otoplasty-result-2.webp", "/otoplasty-result-3.webp", "/otoplasty-result-4.webp", "/otoplasty-result-5.webp"],
     seoContent: `
 ### Otoplasty in Chandigarh: Ear Reshaping
@@ -1334,7 +1514,27 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
         answer: [
           "Unilateral vs Bilateral correction and Local vs General Anesthesia."
         ]
-      }
+      },
+      {
+        question: "Can the ears drift back after otoplasty?",
+        answer: ["Dr. Sumit concentrates on changing the shape of the cartilage itself. That is the only sure way to contour the ear for the long term.", "Procedures focused on pulling the skin only, or just pulling the cartilage, are the ones that can lead to recurrence."]
+      },
+      {
+        question: "When can my child swim or play sport again?",
+        answer: ["The dressing comes off once and for all at day 5, and sutures are removed at day 10 to 12. Swimming is fine after that.", "Contact sport should wait until 1 month after surgery."]
+      },
+      {
+        question: "Does otoplasty need general anaesthesia?",
+        answer: ["For children, Dr. Sumit uses sedation with local anaesthesia.", "For adults, local anaesthesia alone is usually sufficient."]
+      },
+      {
+        question: "We are considering otoplasty for our child. How should we decide?",
+        answer: ["This is never an emergency. Educating yourself thoroughly, to release as much anxiety as possible, is the key.", "Ask all the questions. Make sure you understand what the procedure involves and what to expect from it before going ahead."]
+      },
+      {
+        question: "Who is not suitable for otoplasty?",
+        answer: ["Children under 6, where ear growth is not yet complete, anyone with an active ear infection or skin problem, and those with a keloid tendency.", "Also where the child does not want the surgery and only the parent does, or where expectations about perfect symmetry are unrealistic."]
+      },
     ]
   },
 
@@ -1795,6 +1995,19 @@ See our **Before and After Gallery** for examples of restored masculine contours
     longDescription: "Restoring muscular tone and vaginal integrity for functional and aesthetic restoration.",
     image: "/vaginoplasty-aesthetic.webp", // User-provided aesthetic image
     regions: ["Body"],
+    brief: {
+      operationTime: "Under 1 Hour",
+      anesthesia: "Local with Sedation",
+      recovery: "2 Days",
+      refinement: "Settles at 3 months"
+    },
+    details: {
+      candidates: ["Adults who have completed their family and are not planning further pregnancies.", "At least a year on from childbirth, with no active infection.", "The decision is your own, not driven by a partner."],
+      functional: ["Day care - home the same day.", "Performed under local anaesthesia with sedation, and usually completed in under an hour."],
+      backToWork: ["Desk work from day 2.", "Exercise from 2 weeks."],
+      results: ["The final result is settled at 3 months."],
+      recoveryTips: ["Intercourse after 6 to 8 weeks.", "Where prolapse is significant, gynaecological repair is addressed first."]
+    },
     seoContent: `
 ### Vaginoplasty in Chandigarh: Intimate Wellness
 **Vaginal Tightening & Rejuvenation**
@@ -1826,7 +2039,23 @@ Childbirth and aging can stretch vaginal muscles, affecting sensation and confid
         answer: [
           "Muscle tightening extent, Perineoplasty requirement, and Mucosal excess."
         ]
-      }
+      },
+      {
+        question: "Can pelvic floor exercises achieve the same result?",
+        answer: ["This can only be judged on clinical examination. Slight laxity can improve with exercise.", "Where the laxity is more than slight, surgical correction is the most appropriate way forward - exercises will not reach it."]
+      },
+      {
+        question: "Does vaginoplasty help with urinary leakage?",
+        answer: ["No. Vaginoplasty repairs the loose vaginal wall.", "Urinary leakage is a separate problem and needs to be assessed on its own terms rather than treated as part of this operation."]
+      },
+      {
+        question: "When can I return to work, exercise and intercourse?",
+        answer: ["Desk work from day 2, and exercise from 2 weeks.", "Intercourse after 6 to 8 weeks."]
+      },
+      {
+        question: "Who is not a candidate for vaginoplasty?",
+        answer: ["Women planning further pregnancies, those within the first year after childbirth, and anyone with an active infection.", "Where there is significant prolapse, gynaecological repair comes first. Dr. Sumit will also decline where the request comes from a partner rather than the patient, or where symptoms would be better managed with pelvic floor physiotherapy."]
+      },
     ]
   },
   {
@@ -1839,6 +2068,19 @@ Childbirth and aging can stretch vaginal muscles, affecting sensation and confid
     longDescription: "Reducing excess labial tissue for comfort, confidence, and aesthetic improvement.",
     image: "/labiaplasty-aesthetic.webp", // User-provided aesthetic image
     regions: ["Body"],
+    brief: {
+      operationTime: "45 Minutes",
+      anesthesia: "Local with Sedation",
+      recovery: "2 - 4 Days",
+      refinement: "Settles at 6 weeks"
+    },
+    details: {
+      candidates: ["Adults, where the anatomy has finished developing.", "Symptoms or anatomical concern present, rather than anatomy already within normal range.", "The decision is your own, not driven by a partner."],
+      functional: ["Day care - home the same day.", "Performed under local anaesthesia with sedation."],
+      backToWork: ["Desk work from day 2.", "Exercise from 10 to 14 days."],
+      results: ["The final result is settled at 6 weeks."],
+      recoveryTips: ["Tampons after 2 weeks.", "Intercourse after 4 weeks."]
+    },
     seoContent: `
 ### Labiaplasty in Chandigarh: Comfort & Aesthetics
 **Correcting Hypertrophy for Daily Comfort**
@@ -1870,7 +2112,23 @@ It is a 45-minute procedure performed under local anesthesia or sedation. Recove
         answer: [
           "Unilateral vs Bilateral, Clitoral hood reduction needs, and Edge refinement technique."
         ]
-      }
+      },
+      {
+        question: "Does labiaplasty affect sensation?",
+        answer: ["No, not at all.", "On the contrary, where a clitoral hood reduction is involved, that reduction enhances sensation."]
+      },
+      {
+        question: "When can I exercise, use tampons, or resume intercourse?",
+        answer: ["Desk work from day 2 and exercise from 10 to 14 days.", "Tampons after 2 weeks, and intercourse after 4 weeks."]
+      },
+      {
+        question: "I feel embarrassed even asking about this. Is that normal?",
+        answer: ["This is an anatomical structure needing anatomical correction. It has nothing to do with lifestyle or practices.", "Many women delay asking for years for exactly this reason. The consultation is a clinical assessment, nothing more."]
+      },
+      {
+        question: "Who is not a candidate for labiaplasty?",
+        answer: ["Anyone under 18, where the anatomy is still developing, those with an active infection or skin condition, and those planning pregnancy in the near future.", "Dr. Sumit will also decline where the anatomy is already within normal range with no symptoms present, or where the request is driven by body dysmorphic concerns or pressure from a partner."]
+      },
     ]
   },
 
@@ -1885,6 +2143,19 @@ It is a 45-minute procedure performed under local anesthesia or sedation. Recove
     longDescription: "Surgical and non-surgical techniques to minimize scar visibility and blend them with surrounding skin, restoring confidence through refined texture.",
     image: "/scar-revision-aesthetic.webp", // User-provided aesthetic image
     regions: ["Body", "Face", "Arms", "Thighs"],
+    brief: {
+      operationTime: "30 - 60 Minutes",
+      anesthesia: "Depends on Size and Site",
+      recovery: "5 - 7 Days",
+      refinement: "Matures at 1 year"
+    },
+    details: {
+      candidates: ["The scar has matured, usually 9 to 12 months on from the original injury or surgery.", "Any active keloid has been stabilised medically first.", "Realistic expectations - the aim is a less visible scar, not no scar."],
+      functional: ["Sutures are usually removed in 5 to 7 days.", "Back to work on day 2."],
+      backToWork: ["Day 2 for most work.", "Sun protection at the site for a minimum of 3 months."],
+      results: ["The revised scar reaches its final appearance at about 1 year.", "Improvement is subjective and can range from astonishing to subtle, depending on the scar."],
+      recoveryTips: ["Sun protection for a minimum of 3 months.", "Silicone-based scar management for a minimum of 3 months."]
+    },
     gallery: ["/scar-revision-fat-grafted.webp", "/keloid-excision-result.webp", "/scar-revision-result-2.webp"],
     seoContent: `
 ### Scar Revision in Chandigarh: Erasing Trauma
@@ -1929,7 +2200,27 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
         answer: [
           "Scar length and width, Z-plasty complexity, and Laser sessions required."
         ]
-      }
+      },
+      {
+        question: "How long should I wait before revising a scar?",
+        answer: ["Usually 9 to 12 months, so the scar has matured before anything is done to it.", "Operating on an immature scar risks a worse result than leaving it alone."]
+      },
+      {
+        question: "Can a keloid be revised surgically?",
+        answer: ["First Dr. Sumit assesses whether the keloid is stable, and whether intralesional steroid can soften it.", "Once it has been softened and stabilised medically, a scar revision can then be planned. Going straight to surgery on an active keloid is what drives recurrence."]
+      },
+      {
+        question: "How much improvement can I realistically expect?",
+        answer: ["Improvement is subjective and can range from astonishing to subtle, depending on the scar, its site and your skin.", "No scar can be removed completely. The honest goal is to make it significantly less noticeable."]
+      },
+      {
+        question: "What aftercare does a revised scar need?",
+        answer: ["Sun protection at the site for a minimum of 3 months.", "Silicone-based scar management, also for a minimum of 3 months. The aftercare does as much work as the surgery."]
+      },
+      {
+        question: "Who is not a candidate for scar revision?",
+        answer: ["Anyone whose scar is still immature, those with an active keloid that needs medical treatment first, and anyone with ongoing skin disease at the site.", "Also active smokers who will not stop, and anyone expecting the scar to disappear completely."]
+      },
     ]
   },
 
