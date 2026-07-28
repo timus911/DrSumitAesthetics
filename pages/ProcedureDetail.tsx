@@ -8,6 +8,7 @@ import SEO from '../components/SEO.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
 import FAQ from '../components/FAQ.tsx';
 import ProcedureCard from '../components/ProcedureCard.tsx';
+import FellowshipProvenance from '../components/FellowshipProvenance.tsx';
 import CredentialsStrip from '../components/CredentialsStrip.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
@@ -313,6 +314,8 @@ const ProcedureDetail: React.FC = () => {
                 </div>
               </div>
             )}
+
+            {procedure.fellowshipAnchor && <FellowshipProvenance />}
 
             {procedure.faqs && procedure.faqs.length > 0 && (
               <FAQ items={procedure.faqs} />
