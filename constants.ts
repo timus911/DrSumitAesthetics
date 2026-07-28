@@ -63,6 +63,17 @@ const RAW_ASSETS = {
   abstractMedical: "https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2000&auto=format&fit=crop"
 };
 
+// Videos hosted on Dr. Sumit's own YouTube channel. Deliberately not used for
+// third-party channels: we would be building someone else's channel authority,
+// the embeds could vanish without warning, and the schema is weaker without a
+// contentUrl we control.
+export type ProcedureVideo = {
+  youtubeId: string;
+  title: string;
+  description?: string;
+  uploadDate?: string; // ISO 8601, e.g. "2026-08-14". Required for VideoObject rich results.
+};
+
 export type Procedure = {
   id: string;
   title: string;
@@ -100,6 +111,8 @@ export type Procedure = {
   priceRange?: string; // New field for Cost & Financing page
   costFactors?: string; // Key factors influencing cost
   seoContent?: string; // Rich SEO content for specific procedure pages
+  h1?: string; // Display heading. Falls back to "<title minus parenthetical> in Chandigarh". Set manually where that reads badly at large serif sizes.
+  videos?: ProcedureVideo[];
   fellowshipAnchor?: boolean; // Renders the Tonnard & Verpaele fellowship provenance block. Only for the techniques he trained in directly under them.
   faqs?: { question: string; answer: string[] }[]; // People Also Ask Data
 };
@@ -306,6 +319,7 @@ Because every makeover is a custom combination, pricing is finalized after a phy
   },
   {
     id: "liposuction-chandigarh",
+    h1: "HD Liposuction in Chandigarh",
     metaDescription: "HD liposuction in Chandigarh by Dr. Sumit Singh Gautam — precision body sculpting with high-definition results. Book your consultation today.",
     title: "High Definition Liposuction",
     category: "Body",
@@ -1008,6 +1022,7 @@ You will wear a supportive chin strap for 1 week. Bruising typically resolves in
   },
   {
     id: "lip-lift-chandigarh",
+    h1: "Lip Lift in Chandigarh",
     metaDescription: "Lip lift & lip reduction in Chandigarh by Dr. Sumit — balanced, youthful lip proportions with hidden scars. Book your consultation today.",
     title: "Lip Lift / Lip Reduction",
     category: "Face",
@@ -2227,6 +2242,7 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
   // NON-SURGICAL
   {
     id: "botox-chandigarh",
+    h1: "Botox in Chandigarh",
     metaDescription: "Botox in Chandigarh by plastic surgeon Dr. Sumit — soften lines naturally with precise, conservative dosing. Book your session today.",
     title: "Botox & Neuromodulators",
     category: "Non-Surgical",
@@ -2646,6 +2662,7 @@ Microvascular surgery involves joining blood vessels and nerves as thin as a hai
   },
   {
     id: "traumatic-reconstruction",
+    h1: "Trauma Reconstruction in Chandigarh",
     metaDescription: "Traumatic reconstruction in Chandigarh by Dr. Sumit — expert surgical repair after accidents and injuries at Healing Hospital. Enquire now.",
     title: "Traumatic Reconstruction",
     category: "Reconstructive",
@@ -2681,6 +2698,7 @@ Our priority is "Function First, Aesthetics Always." We aim to restore your body
   },
   {
     id: "facial-fracture-surgery",
+    h1: "Facial Fractures in Chandigarh",
     metaDescription: "Facial fracture surgery in Chandigarh by Dr. Sumit — precise fixation of jaw, cheek & orbital fractures at Healing Hospital. Enquire today.",
     title: "Facial Fracture Surgery",
     category: "Reconstructive",
@@ -2717,6 +2735,7 @@ We access these fractures through "hidden" incisions (inside the mouth or eyelid
   },
   {
     id: "nerve-vessel-tendon-repair",
+    h1: "Nerve & Tendon Repair in Chandigarh",
     metaDescription: "Nerve, vessel & tendon repair in Chandigarh by Dr. Sumit — microsurgical restoration of hand and limb function at Healing Hospital.",
     title: "Nerve / Vessel / Tendon Repair",
     category: "Reconstructive",
@@ -2752,6 +2771,7 @@ Surgery is only half the battle. Our dedicated physiotherapy protocol ensures yo
   },
   {
     id: "hand-surgery-chandigarh",
+    h1: "Hand & Foot Fractures in Chandigarh",
     metaDescription: "Hand & foot fracture surgery in Chandigarh by Dr. Sumit — precise fixation and early mobilisation protocols. Enquire at Healing Hospital.",
     title: "Fractures of Hand & Foot",
     category: "Reconstructive",
@@ -2814,6 +2834,7 @@ For children, separation of fused fingers is ideally done before school age (1-2
   },
   {
     id: "cleft-lip-chandigarh",
+    h1: "Cleft Lip Repair in Chandigarh",
     metaDescription: "Cleft lip & palate repair in Chandigarh by Dr. Sumit — timely, compassionate correction for infants and children. Book a consultation today.",
     title: "Cleft Lip & Palate Repair",
     category: "Reconstructive",
@@ -2854,6 +2875,7 @@ We focus on rebuilding the lip muscle loop to ensure normal movement and a symme
   },
   {
     id: "burn-surgery-chandigarh",
+    h1: "Burn Surgery in Chandigarh",
     metaDescription: "Burn & contracture release surgery in Chandigarh by Dr. Sumit — restore movement and appearance after burns. Enquire at Healing Hospital.",
     title: "Burns & Contracture Release",
     category: "Reconstructive",
@@ -2889,6 +2911,7 @@ We also manage fresh burns with advanced dressings and early grafting to minimiz
   },
   {
     id: "bed-sore-surgery-chandigarh",
+    h1: "Bed Sore Surgery in Chandigarh",
     metaDescription: "Pressure sore (bed sore) surgery in Chandigarh by Dr. Sumit — flap-based closure and wound care for lasting healing. Enquire today.",
     title: "Pressure Sores / Bed Sores",
     category: "Reconstructive",
@@ -2976,6 +2999,7 @@ Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. 
   },
   {
     id: "vascular-surgery-chandigarh",
+    h1: "Vascular Surgery in Chandigarh",
     seoTitle: "Vascular Procedures in Chandigarh | Dr. Sumit",
     metaDescription: "Ultrasound-guided vascular procedures in Chandigarh by Dr. Sumit — precise access and vein care at Healing Hospital. Book a consultation.",
     title: "Ultrasound-Guided Vascular Procedures",
@@ -2985,7 +3009,7 @@ Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. 
     longDescription: "Using real-time ultrasound to ensure the highest accuracy in venous interventions.",
     regions: ["Body", "Thighs"],
     seoContent: `
-### Vascular Access & Ultrasound Guidance
+### Vascular Surgery in Chandigarh: Access & Ultrasound Guidance
 **AV Fistula Creation for Dialysis**
 
 We specialize in creating robust Arteriovenous (AV) Fistulas for renal failure patients requiring long-term dialysis. Microsurgical precision ensures high flow rates and longevity of the fistula.
