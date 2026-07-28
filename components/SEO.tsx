@@ -3,6 +3,9 @@ import { BRAND, CONTACT } from '../constants';
 
 interface SEOProps {
     title?: string;
+    // Full <title> used verbatim, bypassing the "| Dr. Sumit Aesthetics" suffix.
+    // Lets procedure/blog pages carry the city inside a 60-char SERP budget.
+    titleOverride?: string;
     description?: string;
     keywords?: string;
     image?: string;
@@ -12,14 +15,13 @@ interface SEOProps {
     procedureName?: string;
     articleDate?: string;
     faqs?: { question: string; answer: string[] }[];
-    ratingValue?: number;
-    reviewCount?: number;
     howToSteps?: { name: string; text: string }[];
     priceRange?: string; // e.g. "₹1,50,000 - ₹2,50,000" — emitted as MedicalProcedure offers when numeric
 }
 
 const SEO: React.FC<SEOProps> = ({
     title,
+    titleOverride,
     description,
     keywords,
     image = '/dr-sumit-portrait.webp',
@@ -29,12 +31,10 @@ const SEO: React.FC<SEOProps> = ({
     procedureName,
     articleDate,
     faqs,
-    ratingValue = 4.9,
-    reviewCount = 524,
     howToSteps,
     priceRange
 }) => {
-    const siteTitle = title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34";
+    const siteTitle = titleOverride || (title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34");
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
     const siteUrl = url ? `https://drsumitaesthetics.com${url}` : 'https://drsumitaesthetics.com';
     const absoluteImage = image.startsWith('http') ? image : `https://drsumitaesthetics.com${image.startsWith('/') ? '' : '/'}${image}`;
@@ -155,13 +155,9 @@ const SEO: React.FC<SEOProps> = ({
             "logo": "https://drsumitaesthetics.com/logo-512.png",
             "medicalSpecialty": "Plastic Surgery",
             "provider": physicianSchema,
-            ...(schemaType === 'Reviews' && {
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": ratingValue,
-                    "reviewCount": reviewCount
-                }
-            }),
+            // No aggregateRating: Google's structured-data policy disallows
+            // self-serving ratings a business publishes about itself. Visible
+            // testimonials stay on the page; only the markup is withheld.
             ...(schemaType !== 'MedicalProcedure' && {
                 "telephone": CONTACT.counselorPhone,
                 "address": {

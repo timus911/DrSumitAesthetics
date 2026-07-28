@@ -251,8 +251,6 @@ const Reviews: React.FC = () => {
                 description="Real patient experiences and clinical outcomes from Dr. Sumit Singh Gautam's practice in Chandigarh. Transparent reviews and surgical journeys."
                 url="/reviews"
                 schemaType="Reviews"
-                ratingValue={4.9}
-                reviewCount={524}
             />
 
             {/* Decorative Background Elements */}

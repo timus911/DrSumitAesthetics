@@ -44,6 +44,7 @@ const BlogPost: React.FC = () => {
     return (
         <div className="pt-52 pb-32 bg-black min-h-screen">
             <SEO
+                titleOverride={post.seoTitle}
                 title={post.title}
                 description={post.excerpt}
                 url={`/blog/${post.id}`}

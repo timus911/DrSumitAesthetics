@@ -3,11 +3,31 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ShieldCheck, Microscope, Crosshair } from 'lucide-react';
-import { BRAND, COLORS, ASSETS } from '../constants.ts';
+import { BRAND, COLORS, ASSETS, PROCEDURES } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 import MedicalAuthority from '../components/MedicalAuthority.tsx';
+
+// Curated set surfaced on the homepage: the highest-intent procedures, linked
+// directly so they inherit internal link equity from the strongest page.
+const HOMEPAGE_PROCEDURE_IDS = [
+  "liposuction-chandigarh",
+  "tummy-tuck-chandigarh",
+  "rhinoplasty-nose-job-chandigarh",
+  "gynecomastia-surgery-chandigarh",
+  "breast-augmentation-chandigarh",
+  "mommy-makeover-chandigarh",
+  "hair-transplant-chandigarh",
+  "facelift-chandigarh",
+  "blepharoplasty-chandigarh",
+  "body-contouring-chandigarh",
+  "fat-grafting-chandigarh",
+  "breast-reduction-chandigarh",
+];
+const HOMEPAGE_PROCEDURES = HOMEPAGE_PROCEDURE_IDS
+  .map(id => PROCEDURES.find(p => p.id === id))
+  .filter((p): p is NonNullable<typeof p> => Boolean(p));
 
 const Home: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -188,6 +208,32 @@ const Home: React.FC = () => {
           </div>
         </div>
       </motion.section>
+
+      {/* Direct links to the most-searched procedures. The homepage previously
+          linked only to category hubs, leaving every money page two clicks deep
+          with no internal link equity from the site's strongest page. */}
+      <section className="py-32 bg-black border-t border-white/5">
+        <div className="container mx-auto px-6">
+          <span className="text-[#4A90E2] text-[10px] tracking-widest uppercase font-extrabold">Clinical Focus</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-white mt-6 mb-16">Most Requested Procedures in Chandigarh</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-6">
+            {HOMEPAGE_PROCEDURES.map(proc => (
+              <Link
+                key={proc.id}
+                to={`/${proc.id}`}
+                className="group flex items-baseline justify-between border-b border-white/10 py-4 hover:border-[#4A90E2] transition-colors"
+              >
+                <span className="text-gray-300 group-hover:text-white transition-colors text-sm">{proc.title}</span>
+                <ArrowRight size={14} className="text-gray-600 group-hover:text-[#4A90E2] group-hover:translate-x-1 transition-all flex-shrink-0 ml-4" />
+              </Link>
+            ))}
+          </div>
+          <Link to="/aesthetic" className="inline-flex items-center space-x-4 mt-16 text-[10px] uppercase tracking-[0.4em] text-white border-b border-white/20 pb-2 hover:border-[#4A90E2] transition-all font-bold">
+            <span>View All Procedures</span>
+            <ArrowRight size={14} />
+          </Link>
+        </div>
+      </section>
 
       {/* Trust & Authority Signals */}
       <MedicalAuthority />

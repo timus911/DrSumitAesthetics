@@ -66,6 +66,7 @@ const RAW_ASSETS = {
 export type Procedure = {
   id: string;
   title: string;
+  seoTitle?: string; // Verbatim <title> override; auto-built as "<title> in Chandigarh | Dr. Sumit" when absent. Set manually only where that would blow the ~60-char SERP budget.
   category: string;
   parentCategory: 'aesthetic' | 'reconstructive' | 'non-surgical' | 'vascular';
   description: string;
@@ -1509,6 +1510,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
   // MALE
   {
     id: "gynecomastia-surgery-chandigarh",
+    seoTitle: "Gynecomastia Surgery in Chandigarh | Dr. Sumit",
     metaDescription: "Gynecomastia surgery in Chandigarh by Dr. Sumit — day-care male breast reduction with hidden scars. Book a confidential consultation today.",
     title: "Gynecomastia (Male Breast Reduction)",
     category: "Male",
@@ -2575,6 +2577,7 @@ Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. 
   },
   {
     id: "vascular-surgery-chandigarh",
+    seoTitle: "Vascular Procedures in Chandigarh | Dr. Sumit",
     metaDescription: "Ultrasound-guided vascular procedures in Chandigarh by Dr. Sumit — precise access and vein care at Healing Hospital. Book a consultation.",
     title: "Ultrasound-Guided Vascular Procedures",
     category: "Vascular",
@@ -2627,6 +2630,7 @@ export const PROCEDURES = RAW_PROCEDURES.map(p => ({
 export interface BlogPost {
   id: string;
   title: string;
+  seoTitle?: string; // Verbatim <title> override, kept <=60 chars so Google doesn't truncate it. Display title stays untouched.
   excerpt: string;
   content: string;
   image: string;
@@ -2636,6 +2640,7 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     id: "what-to-expect-from-liposuction-recovery",
+    seoTitle: "What to Expect From Liposuction Recovery",
     title: "What to expect from liposuction recovery",
     excerpt: "A comprehensive guide to the healing process after High Definition Liposuction, including timelines and tips for optimal contouring.",
     content: `## The Journey to Your New Contour
@@ -2667,6 +2672,7 @@ Liposuction permanently removes fat cells in the treated area. However, it is no
   ,
   {
     id: "liposuction-vs-tummy-tuck-which-is-right-for-you",
+    seoTitle: "Liposuction vs. Tummy Tuck: Which Is Right for You?",
     title: "Liposuction vs. Tummy Tuck: Which Procedure is Right for You?",
     excerpt: "Understand the key differences between liposuction and a tummy tuck to make an informed decision for your body contouring goals.",
     content: `## The Core Difference: Fat vs. Skin
@@ -2692,8 +2698,9 @@ Absolutely. In fact, combining both procedures—often called Lipo-Abdominoplast
   }  ,
   {
     id: "does-liposuction-remove-fat-permanently",
+    seoTitle: "Does Liposuction Remove Fat Permanently?",
     title: "Does Liposuction Remove Fat Permanently? What You Need to Know",
-    excerpt: "The short answer is yes—but maintaining your results requires understanding how your body stores fat after surgery.",
+    excerpt: "The short answer is yes — but keeping your results depends on understanding how your body stores fat after surgery. Dr. Sumit explains what changes.",
     content: `## The Science of Fat Cells
 
 One of the most common questions we hear is, "Will the fat just come back?" The answer requires a brief understanding of how fat cells work in the human body.
@@ -2720,6 +2727,7 @@ To ensure lifelong results from your liposuction procedure:
   }  ,
   {
     id: "the-mommy-makeover-journey",
+    seoTitle: "The Mommy Makeover: Combining Procedures",
     title: "The Mommy Makeover Journey: Combining Procedures for Best Results",
     excerpt: "Restore your pre-pregnancy body with a customized Mommy Makeover. Learn how combining procedures provides comprehensive rejuvenation.",
     content: `## Reclaiming Your Body After Motherhood
@@ -2756,6 +2764,7 @@ Explore the individual procedures in detail: [Tummy Tuck](/tummy-tuck-chandigarh
   }  ,
   {
     id: "high-definition-hd-liposuction-sculpting",
+    seoTitle: "HD Liposuction: Sculpting the Body Contour",
     title: "High-Definition (HD) Liposuction: Sculpting the Perfect Body Contour",
     excerpt: "Move beyond simple fat removal. Discover how HD Liposuction creates an athletic, chiseled physique by highlighting underlying musculature.",
     content: `## The Evolution of Body Contouring
@@ -2783,6 +2792,7 @@ The outcome is a highly sculpted physique. For men, this often means a defined "
   }  ,
   {
     id: "rhinoplasty-recovery-timeline",
+    seoTitle: "Rhinoplasty Recovery Timeline: Healing Day by Day",
     title: "Rhinoplasty Recovery Timeline: Healing Day by Day",
     excerpt: "Planning a nose job? Here is an honest, detailed look at the rhinoplasty recovery process, from the first 24 hours to the final result.",
     content: `## Patience is the Key to Perfection
@@ -2811,6 +2821,7 @@ The outcome is a highly sculpted physique. For men, this often means a defined "
   }  ,
   {
     id: "preservation-rhinoplasty-secret-to-natural-noses",
+    seoTitle: "Preservation Rhinoplasty: Natural-Looking Nose Jobs",
     title: "Preservation Rhinoplasty: The Secret to Natural-Looking Nose Jobs",
     excerpt: "Discover why Preservation Rhinoplasty is changing the landscape of facial aesthetics by altering the nose without destroying its natural structure.",
     content: `## The Modern Paradigm Shift in Nasal Surgery
@@ -2842,6 +2853,7 @@ While it is the preferred technique for many primary (first-time) rhinoplasties,
   }  ,
   {
     id: "blepharoplasty-eyelid-surgery-anti-aging",
+    seoTitle: "Blepharoplasty: How Eyelid Surgery Takes Years Off",
     title: "Blepharoplasty: How Eyelid Surgery Takes Years Off Your Face",
     excerpt: "Heavy, drooping eyelids or unyielding eye bags can make you look tired even when you are rested. Eyelid surgery offers a permanent, refreshing solution.",
     content: `## The Window to Your Youth
@@ -2867,8 +2879,9 @@ Blepharoplasty is often performed under local anesthesia with sedation and is an
   }  ,
   {
     id: "traditional-vs-mini-facelift",
+    seoTitle: "Traditional vs. Mini Facelift: Your Options",
     title: "Traditional Facelift vs. Mini Facelift: Understanding Your Options",
-    excerpt: "Navigate the world of facial rejuvenation. Learn the differences between a full traditional facelift and a less invasive mini facelift to see which matches your aging concerns.",
+    excerpt: "Learn the differences between a full traditional facelift and a less invasive mini facelift, and see which one matches your facial aging concerns.",
     content: `## Choosing Your Path to Facial Rejuvenation
 
 When non-surgical options like [Botox](/botox-chandigarh) and [fillers](/dermal-fillers-chandigarh) are no longer enough to address sagging skin and deep folds, a [facelift](/facelift-chandigarh) remains the gold standard for turning back the clock. However, not all facelifts are created equal. The two primary approaches we offer are the Traditional (Full) Facelift and the Mini Facelift. 
@@ -2898,8 +2911,9 @@ If your primary concern is slight drooping around your mouth and jawline, a Mini
   }  ,
   {
     id: "gynecomastia-surgery-india-causes-treatment",
+    seoTitle: "Gynecomastia Surgery: Causes, Treatment, Recovery",
     title: "Gynecomastia Surgery in India: Causes, Treatment, and Recovery",
-    excerpt: "Gynecomastia (enlarged male breasts) affects millions of men. Discover the causes and how modern surgical techniques provide a permanent, masculine chest contour.",
+    excerpt: "Gynecomastia affects millions of men. Discover the causes and how modern surgical technique delivers a permanent, masculine chest contour.",
     content: `## Restoring Confidence with Chest Contouring
 
 Gynecomastia—the development of enlarged glandular breast tissue in males—is far more common than most realize, affecting up to 30% of men. Despite how common it is, it can cause significant psychological distress, leading men to avoid wearing fitted shirts, going to the beach, or participating in sports.
@@ -2931,6 +2945,7 @@ The results are immediate and, barring significant future steroid use or massive
   }  ,
   {
     id: "breast-augmentation-implants-vs-fat-transfer",
+    seoTitle: "Breast Implants vs. Fat Transfer Explained",
     title: "Breast Augmentation: Implants vs. Fat Transfer Explained",
     excerpt: "Looking to enhance your breast volume? We break down the pros and cons of traditional silicone implants versus autonomic fat transfer.",
     content: `## Choosing Your Method of Enhancement
@@ -2971,6 +2986,7 @@ If you desire a significant increase in size, upper breast fullness, and a highl
   }  ,
   {
     id: "what-to-expect-after-breast-reduction",
+    seoTitle: "What to Expect After Breast Reduction Surgery",
     title: "What to Expect After Breast Reduction Surgery",
     excerpt: "Breast reduction is incredibly liberating, but recovery requires care. Here is a guide to what you will experience in the weeks following surgery.",
     content: `## The Path to Physical Relief
@@ -3001,6 +3017,7 @@ Scars are an inevitable trade-off of breast reduction, but they are designed to 
   }  ,
   {
     id: "botox-vs-dermal-fillers",
+    seoTitle: "Botox vs. Dermal Fillers: What's the Difference?",
     title: "Botox vs. Dermal Fillers: What’s the Difference?",
     excerpt: "They are both injectables, but they serve entirely different purposes. Learn whether you need Botox to relax wrinkles or Fillers to restore volume.",
     content: `## The Injectables Demystified
@@ -3039,6 +3056,7 @@ For comprehensive, non-surgical facial rejuvenation, these two treatments are fr
   }  ,
   {
     id: "the-rise-of-prejuvenation",
+    seoTitle: "Prejuvenation: Why Your 20s and 30s Mean Botox",
     title: "The Rise of 'Prejuvenation': Why People in their 20s and 30s are Getting Botox",
     excerpt: "Discover why millennials are embracing preventative Botox to stop deep wrinkles from forming in the first place, rather than treating them later.",
     content: `## Stopping Time Before it Starts
@@ -3070,6 +3088,7 @@ If you are starting to notice makeup settling into a faint line on your forehead
   }  ,
   {
     id: "how-long-do-dermal-fillers-last",
+    seoTitle: "How Long Do Dermal Fillers Actually Last?",
     title: "How Long Do Dermal Fillers Actually Last?",
     excerpt: "Everything you need to know about the longevity of Hyaluronic Acid fillers, and the factors that cause your body to metabolize them faster.",
     content: `## Understanding the Lifespan of Your Enhancements
@@ -3106,6 +3125,7 @@ To get the most mileage out of your investment:
   }  ,
   {
     id: "preparing-for-your-first-aesthetic-consultation",
+    seoTitle: "Preparing for Your First Aesthetic Consultation",
     title: "Preparing for Your First Aesthetic Consultation: What to Ask Your Surgeon",
     excerpt: "A successful aesthetic journey begins with the right questions. Here is how to prepare for your consultation and what to ask your plastic surgeon.",
     content: `## Empowering Yourself Through Education

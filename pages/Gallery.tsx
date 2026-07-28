@@ -122,7 +122,7 @@ const Gallery: React.FC = () => {
     <div className="pt-52 pb-32">
       <SEO
         title="Surgical Outcomes & Gallery"
-        description="View real patient transformations and surgical outcomes by Dr. Sumit Singh Gautam in Chandigarh."
+        description="View real patient transformations and surgical outcomes by board-certified plastic surgeon Dr. Sumit Singh Gautam in Chandigarh. Before and after."
         url="/gallery"
       />
       <div className="container mx-auto px-6">

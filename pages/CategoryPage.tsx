@@ -25,7 +25,7 @@ const CategoryPage: React.FC<CategoryPageProps> = ({ type }) => {
   const descriptions = {
     aesthetic: "Expert plastic surgery in Chandigarh by Board-Certified Surgeon Dr. Sumit Singh Gautam. Specialized in Liposuction, Rhinoplasty, and Breast Augmentation.",
     reconstructive: "Advanced reconstructive surgery in Chandigarh for trauma, congenital issues, and functional restoration by expert Dr. Sumit Singh Gautam.",
-    "non-surgical": "Minimally invasive facial rejuvenation and skin treatments in Chandigarh including Botox, Fillers, and Laser therapies.",
+    "non-surgical": "Minimally invasive facial rejuvenation and skin treatments in Chandigarh — Botox, dermal fillers, microneedling and chemical peels by Dr. Sumit.",
     vascular: "Precision treatment for vascular issues and varicose veins in Chandigarh using advanced ultrasound-guided surgical techniques."
   };
 

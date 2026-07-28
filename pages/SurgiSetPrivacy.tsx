@@ -6,7 +6,7 @@ const SurgiSetPrivacy: React.FC = () => {
     return (
         <div className="pt-24 pb-24 min-h-screen">
             <SEO
-                description="Privacy Policy for SurgiSet (Instrument Tracker). Learn how we collect, use, and protect your data."
+                description="Privacy Policy for SurgiSet, the surgical instrument tracking app. Learn what data we collect, how it is used and stored, and your rights over it."
                 keywords="SurgiSet, Privacy Policy, Instrument Tracker, Medical App Privacy"
                 title="Privacy Policy | SurgiSet"
             />
