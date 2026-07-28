@@ -158,7 +158,7 @@ const ProcedureDetail: React.FC = () => {
         <Breadcrumbs
           items={[
             { name: procedure.parentCategory, path: `/${procedure.parentCategory}` },
-            { name: procedure.title, path: `/procedure/${procedure.id}` }
+            { name: procedure.title, path: `/${procedure.id}` }
           ]}
         />
         <div className="mb-12 mt-8">

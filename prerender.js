@@ -3,7 +3,7 @@ import { exec } from 'child_process';
 import waitOn from 'wait-on';
 import fs from 'fs';
 import path from 'path';
-import { ROUTES } from './routes.config.mjs';
+import { ROUTES, PROCEDURE_IDS } from './routes.config.mjs';
 
 const routes = ROUTES.map(r => r.path);
 
@@ -102,6 +102,33 @@ async function prerender() {
         fs.copyFileSync('dist/index.html', 'dist/404.html');
         console.log('Created dist/404.html for GitHub Pages fallback.');
     }
+
+    // Legacy URL scheme: procedure pages once lived under /procedure/<id>,
+    // and breadcrumb JSON-LD advertised those URLs to Google long after the
+    // routes moved to /<id> — producing 404s in Search Console. GitHub Pages
+    // cannot issue real 301s, so write a redirect stub for every procedure:
+    // an instant meta refresh plus a canonical to the new URL is treated by
+    // Google as a permanent-redirect signal. Deliberately excluded from
+    // sitemap.xml (generate-sitemap.mjs only reads ROUTES).
+    for (const id of PROCEDURE_IDS) {
+        const stubDir = path.join('dist', 'procedure', id);
+        fs.mkdirSync(stubDir, { recursive: true });
+        const target = `https://drsumitaesthetics.com/${id}`;
+        fs.writeFileSync(path.join(stubDir, 'index.html'),
+`<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Redirecting to ${target}</title>
+<link rel="canonical" href="${target}">
+<meta http-equiv="refresh" content="0;url=/${id}">
+<script>location.replace('/${id}');</script>
+</head>
+<body><p>This page has moved to <a href="/${id}">${target}</a>.</p></body>
+</html>
+`);
+    }
+    console.log(`Wrote ${PROCEDURE_IDS.length} legacy /procedure/ redirect stubs.`);
 
     console.log('Done prerendering.');
     await browser.close();

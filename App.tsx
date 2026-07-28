@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, Navigate, useParams } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar.tsx';
@@ -9,6 +9,15 @@ import FloatingBackground from './components/FloatingBackground.tsx';
 // route, so deferring it would trade first-paint for nothing. Everything else
 // is split per route so e.g. a blog-post visit doesn't download the whole app.
 import Home from './pages/Home.tsx';
+
+// Legacy URL scheme: procedure pages once lived under /procedure/<id> and the
+// breadcrumb JSON-LD kept advertising those URLs to Google long after the
+// routes moved to /<id>, producing 404s in Search Console. Client-side safety
+// net; prerender.js writes the static redirect stubs GitHub Pages needs.
+const LegacyProcedureRedirect = () => {
+    const { id } = useParams();
+    return <Navigate to={`/${id}`} replace />;
+};
 
 const About = lazy(() => import('./pages/About.tsx'));
 const CategoryPage = lazy(() => import('./pages/CategoryPage.tsx'));
@@ -67,7 +76,7 @@ const AppLayout: React.FC = () => {
             <Route path="/plastic-surgery-cost-chandigarh" element={<CostsAndFinancing />} />
             <Route path="/surgiset-privacy" element={<SurgiSetPrivacy />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/procedure/:id" element={<ProcedureDetail />} />
+            <Route path="/procedure/:id" element={<LegacyProcedureRedirect />} />
             <Route path="/concerns" element={<Concerns />} />
             <Route path="/concerns/:region" element={<ConcernDetail />} />
             <Route path="/blog" element={<BlogList />} />

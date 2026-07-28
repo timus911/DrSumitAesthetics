@@ -35,7 +35,7 @@ const CATEGORY_PAGES = [
 // Mirrors constants.ts's PROCEDURES array ids. Kept as a flat list here
 // (rather than imported from constants.ts) because prerender.js runs as
 // plain Node and can't load a .ts module without a transpile step.
-const PROCEDURE_IDS = [
+export const PROCEDURE_IDS = [
     'mommy-makeover-chandigarh',
     'tummy-tuck-chandigarh',
     'liposuction-chandigarh',
