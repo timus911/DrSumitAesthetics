@@ -9,6 +9,7 @@ import Breadcrumbs from '../components/Breadcrumbs.tsx';
 import FAQ from '../components/FAQ.tsx';
 import ProcedureCard from '../components/ProcedureCard.tsx';
 import FellowshipProvenance from '../components/FellowshipProvenance.tsx';
+import ProcedureVideos from '../components/ProcedureVideos.tsx';
 import CredentialsStrip from '../components/CredentialsStrip.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
@@ -179,7 +180,7 @@ const ProcedureDetail: React.FC = () => {
               <span className="text-[#4A90E2] text-[10px] tracking-widest uppercase font-extrabold flex items-center gap-2">
                 <Crosshair size={12} /> {procedure.category} Mastery
               </span>
-              <h1 className="text-5xl md:text-8xl font-serif leading-none text-white">{procedure.title}</h1>
+              <h1 className="text-5xl md:text-8xl font-serif leading-none text-white">{procedure.h1 || `${procedure.title.replace(/\s*\([^)]*\)/g, '').trim()} in Chandigarh`}</h1>
             </div>
 
             <div className="prose prose-invert max-w-none text-gray-400 text-lg font-light leading-relaxed space-y-6">
@@ -313,6 +314,10 @@ const ProcedureDetail: React.FC = () => {
                   ))}
                 </div>
               </div>
+            )}
+
+            {procedure.videos && procedure.videos.length > 0 && (
+              <ProcedureVideos videos={procedure.videos} procedureTitle={procedure.title} />
             )}
 
             {procedure.fellowshipAnchor && <FellowshipProvenance />}
