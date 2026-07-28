@@ -721,6 +721,19 @@ Results are visible immediately. You will need to avoid sitting directly on the 
     longDescription: "A specialized Belgium-refined technique that lifts deep facial tissues vertically, avoiding the horizontal 'pulled' look of traditional facelifts.",
     image: "/facelift-aesthetic.webp", // User-provided aesthetic image
     regions: ["Face"],
+    brief: {
+      operationTime: "4 - 5 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "7 - 10 Days",
+      refinement: "Matures at 6 - 12 months"
+    },
+    details: {
+      candidates: ["Non-smokers, or those willing to stop well before surgery.", "Blood pressure and diabetes controlled before the date is fixed.", "Weight stable, with any ongoing weight loss completed first."],
+      functional: ["No drains are used.", "Blood pressure is monitored closely for the first 12 hours, which is why one overnight stay is mandatory."],
+      backToWork: ["Desk work from day 7 to 10.", "Socially presentable with makeup within 10-14 days."],
+      results: ["Swelling settles and tissue remodelling continues, giving the final stable look at 6-12 months.", "Grafted microfat matures into its final picture at 3-6 months."],
+      recoveryTips: ["Moderate gym activity from around day 14.", "Strenuous workouts only after 4 weeks."]
+    },
     seoContent: `
 ### MACS Facelift in Chandigarh: The Vertical Anti-Aging Revolution
 
@@ -776,7 +789,27 @@ This procedure is specifically designed to obliterate the "jowls" (sagging jawli
         answer: [
           "Deep Plane vs SMAS Plication, neck involvement, and anesthesia time."
         ]
-      }
+      },
+      {
+        question: "Do you use drains after a facelift?",
+        answer: ["No. Dr. Sumit does not use drains for the MACS Lift.", "An overnight stay is still mandatory so blood pressure can be monitored closely for the first 12 hours, which is the window where complications are prevented."]
+      },
+      {
+        question: "How long does a MACS Lift take?",
+        answer: ["Four to five hours for the facelift itself.", "A combined neck lift adds around 1.5 hours. Fat grafting adds only about 30 minutes, because the fat is processed alongside the main procedure rather than afterwards."]
+      },
+      {
+        question: "When is a deep plane facelift better than a MACS Lift?",
+        answer: ["Only in patients with really thin and traumatised skin is a deep plane facelift the optimal operation.", "For everyone else Dr. Sumit uses the MACS Lift: less dissection and lower risk, a vertical lift vector that counters gravity better than a lateral pull, a shorter scar with no incision behind the ear, faster recovery, and a more natural, less operated result."]
+      },
+      {
+        question: "Can a facelift be done without general anaesthesia?",
+        answer: ["It is possible under deep sedation with local anaesthesia.", "Dr. Sumit still prefers general anaesthesia, as it is more comfortable for a procedure of this length."]
+      },
+      {
+        question: "Who is not a candidate for a facelift?",
+        answer: ["Active smokers who will not stop before surgery, and patients with uncontrolled hypertension, uncontrolled diabetes, or a bleeding risk that cannot be paused.", "Also those still losing weight, those with unrealistic expectations, and younger patients whose real issue is volume loss or skin quality rather than laxity."]
+      },
     ]
   },
   {
@@ -899,6 +932,20 @@ For clients with genetically overly prominent lips, we perform precision reducti
     longDescription: "Advanced follicular unit extraction and placement for permanent hair restoration with microscopic precision.",
     image: "/hair-transplant-aesthetic.webp", // User-provided aesthetic image
     regions: ["Face"],
+    brief: {
+      operationTime: "4 - 6 Hours",
+      anesthesia: "Local Anaesthesia",
+      recovery: "Day Care - Home Same Day",
+      refinement: "Final density at 9 - 12 months",
+      technique: "FUE - Follicular Unit Extraction"
+    },
+    details: {
+      candidates: ["Adequate donor density in the safe zone.", "No active scalp disease or infection.", "Realistic expectations about achievable density and hairline position."],
+      functional: ["Home the same day; this is a day-care procedure under local anaesthesia.", "Back to work on day 2 wearing a loose scrub cap."],
+      backToWork: ["Day 2, with a loose scrub cap.", "Helmets and turbans avoided for 3-4 weeks to protect the grafts."],
+      results: ["Scabs are removed around day 10 to 15, after which the scalp starts looking clean.", "Final density is visible at 9 to 12 months."],
+      recoveryTips: ["First hair wash on day 4 to 5.", "Let the scabs come away on their own between day 10 and 15."]
+    },
     seoContent: `
 ### Best Hair Transplant in Chandigarh: Restoring Confidence Permanently
 
@@ -958,7 +1005,23 @@ Given the water quality and environmental factors in the Tricity, we often see s
           "We value per-graft viability. Our packages are comprehensive and include the procedure, hospital environment, and follow-up PRP sessions.",
           "Number of Grafts (FUE) and Hairline Design complexity are the primary factors."
         ]
-      }
+      },
+      {
+        question: "How many grafts will I need?",
+        answer: ["An average session is around 4000 grafts. Note that a graft is not the same as a hair - a single graft can carry two or three hairs, so counts quoted in hairs will always look larger.", "The maximum in one sitting is around 6000 grafts, including double and triple hair grafts."]
+      },
+      {
+        question: "When can I go back to work after a hair transplant?",
+        answer: ["Most patients return to work on day 2, wearing a loose scrub cap.", "The first hair wash is on day 4 to 5, and scabs are removed around day 10 to 15 - after which the scalp starts looking clean."]
+      },
+      {
+        question: "Who is not suitable for a hair transplant?",
+        answer: ["Patients with insufficient donor density, active scalp disease or infection, or autoimmune hair loss such as alopecia areata.", "Also anyone with unrealistic expectations about the density or hairline position that can be achieved."]
+      },
+      {
+        question: "Do you perform FUT or strip surgery?",
+        answer: ["Dr. Sumit performs FUE - follicular unit extraction - which leaves no linear donor scar."]
+      },
     ]
   },
   {
@@ -1404,6 +1467,19 @@ Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4
     longDescription: "Reduction of excess glandular tissue and skin to create a lighter, more proportionate breast size.",
     image: "/breast-reduction-aesthetic.webp", // User-provided aesthetic image
     regions: ["Breasts"],
+    brief: {
+      operationTime: "3 - 4 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "3 - 5 Days",
+      refinement: "Final shape at 3 - 6 months"
+    },
+    details: {
+      candidates: ["Non-smokers, or those willing to stop before surgery.", "Weight stable, and not planning pregnancy or breastfeeding in the near future.", "Breast screening up to date, with any lump investigated first."],
+      functional: ["One night in hospital.", "A compression garment and a light dressing along the suture line are worn from the outset."],
+      backToWork: ["Desk work from day 3, with the compression garment in place.", "Moderate gym around day 15, strenuous exercise after 4 weeks."],
+      results: ["The final shape settles at 3 to 6 months.", "Scar remodelling continues for a full year after surgery."],
+      recoveryTips: ["Wear the compression garment as directed.", "Laser resurfacing can soften the vertical scar, but only from 3 months after surgery."]
+    },
     gallery: ["/breast-reduction-result-1.webp", "/axillary-breast-reduction-result.webp"],
     seoContent: `
 ### Breast Reduction in Chandigarh: Relief & Proportion
@@ -1449,7 +1525,19 @@ The cost varies by size and complexity but includes all hospital and anesthesia 
         answer: [
           "Breast size (Gigantomastia requires more time) and Liposuction needs for the lateral chest."
         ]
-      }
+      },
+      {
+        question: "Can breast reduction be claimed on insurance?",
+        answer: ["If the presenting complaint is shoulder pain and/or recurrent skin infections in the fold beneath the breast, the procedure may be considered non-cosmetic.", "Whether a particular policy accepts the claim depends on your insurer and documentation. Bring your symptom history to the consultation and this can be assessed."]
+      },
+      {
+        question: "Will I have a vertical scar, and can it be avoided?",
+        answer: ["In patients with breast ptosis there is no way to reshape the breast without a vertical scar running down from the nipple region.", "That incision is what allows the internal breast tissue to be reshaped for a long-lasting result. The scar fades over time, remodelling for about a year, and can be softened further with laser resurfacing from 3 months onward."]
+      },
+      {
+        question: "How soon can I return to work after breast reduction?",
+        answer: ["Desk work can resume on day 3, with the compression garment and a light dressing along the suture line.", "Moderate gym activity from around day 15, and strenuous exercise after 4 weeks."]
+      },
     ]
   },
   {
@@ -1475,6 +1563,18 @@ Pregnancy, breastfeeding, and gravity can cause breasts to sag (ptosis). A Breas
 Similar to reduction, mobility is good immediately, but high-impact activities are restricted for 4 weeks.
 `,
     regions: ["Breasts"],
+    brief: {
+      operationTime: "2 - 3 Hours",
+      anesthesia: "General Anaesthesia",
+      recovery: "3 - 5 Days",
+      refinement: "Final shape at 3 - 6 months"
+    },
+    details: {
+      candidates: ["Non-smokers, or those willing to stop before surgery.", "Weight stable, and not planning pregnancy or breastfeeding in the near future.", "Willing to accept the scar that reshaping requires."],
+      functional: ["One night in hospital.", "A compression garment and light dressing along the suture line from the outset."],
+      backToWork: ["Desk work from day 3, with the compression garment in place.", "Moderate gym around day 15, strenuous exercise after 4 weeks."],
+      results: ["The final shape settles at 3 to 6 months."]
+    },
     priceRange: "₹1,50,000 - ₹2,50,000",
     costFactors: "Grade of Ptosis (Sagging), Implant requirement for volume, Skin quality",
     faqs: [
@@ -1503,7 +1603,15 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
         answer: [
           "Grade of Ptosis (Sagging), Implant requirement for volume, and Skin quality."
         ]
-      }
+      },
+      {
+        question: "Do I need a lift, an implant, or both?",
+        answer: ["It starts with what you actually want. Dr. Sumit lays out every option and the final plan is curated for your goals and your anatomy.", "As a rule: grade 1 ptosis can be improved with an implant alone. Anything beyond that needs a proper vertical scar mastopexy, combined with auto-augmentation, fat augmentation or an implant depending on the volume you want."]
+      },
+      {
+        question: "Who is not a candidate for a breast lift?",
+        answer: ["Active smokers who will not stop, patients whose weight is not yet stable, those planning pregnancy or breastfeeding soon, uncontrolled diabetes, or an unscreened breast lump.", "Also anyone wanting more volume but unwilling to accept the scar a lift requires."]
+      },
     ]
   },
 
