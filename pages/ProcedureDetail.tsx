@@ -359,7 +359,7 @@ const ProcedureDetail: React.FC = () => {
             <div className="glass p-12 space-y-12 border border-[#4A90E2]/10 shadow-2xl backdrop-blur-3xl">
               <div className="pt-0 border-b border-white/5 pb-8 space-y-4">
                 <p className="text-gray-400 text-[10px] uppercase tracking-widest mb-6">Discuss your transformation</p>
-                <Link to="/contact" className="w-full text-center px-8 py-4 bg-[#4A90E2] text-white font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all inline-block shadow-lg">
+                <Link to="/contact/" className="w-full text-center px-8 py-4 bg-[#4A90E2] text-white font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all inline-block shadow-lg">
                   Request Specialized Consultation
                 </Link>
                 <a
@@ -391,7 +391,7 @@ const ProcedureDetail: React.FC = () => {
                   ))}
                 </div>
                 {procedure.priceRange && (
-                  <Link to="/plastic-surgery-cost-chandigarh" className="inline-block mt-6 text-[10px] uppercase tracking-[0.2em] text-[#4A90E2] font-bold hover:text-white transition-colors">
+                  <Link to="/plastic-surgery-cost-chandigarh/" className="inline-block mt-6 text-[10px] uppercase tracking-[0.2em] text-[#4A90E2] font-bold hover:text-white transition-colors">
                     View Full Price Guide &rarr;
                   </Link>
                 )}

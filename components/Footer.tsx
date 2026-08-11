@@ -53,22 +53,22 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-white font-bold mb-10">Clinical Domains</h4>
             <ul className="space-y-5">
-              <li><Link to="/aesthetic" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Aesthetic Procedures</Link></li>
-              <li><Link to="/reconstructive" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Reconstructive Surgery</Link></li>
-              <li><Link to="/non-surgical" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Non-Surgical Aesthetics</Link></li>
-              <li><Link to="/patient-journey" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Patient Journey</Link></li>
-              <li><Link to="/faqs" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Surgery FAQ</Link></li>
-              <li><Link to="/blog" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Clinical Journal</Link></li>
+              <li><Link to="/aesthetic/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Aesthetic Procedures</Link></li>
+              <li><Link to="/reconstructive/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Reconstructive Surgery</Link></li>
+              <li><Link to="/non-surgical/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Non-Surgical Aesthetics</Link></li>
+              <li><Link to="/patient-journey/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Patient Journey</Link></li>
+              <li><Link to="/faqs/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Surgery FAQ</Link></li>
+              <li><Link to="/blog/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Clinical Journal</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-[10px] uppercase tracking-[0.4em] text-white font-bold mb-10">Institutional</h4>
             <ul className="space-y-5">
-              <li><Link to="/about" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">About Dr. Sumit</Link></li>
-              <li><Link to="/international" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">International Concierge</Link></li>
-              <li><Link to="/gallery" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Results Gallery</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Book Consultation</Link></li>
+              <li><Link to="/about/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">About Dr. Sumit</Link></li>
+              <li><Link to="/international/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">International Concierge</Link></li>
+              <li><Link to="/gallery/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Results Gallery</Link></li>
+              <li><Link to="/contact/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Book Consultation</Link></li>
             </ul>
           </div>
 

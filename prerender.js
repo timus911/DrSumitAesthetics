@@ -113,7 +113,7 @@ async function prerender() {
     for (const id of PROCEDURE_IDS) {
         const stubDir = path.join('dist', 'procedure', id);
         fs.mkdirSync(stubDir, { recursive: true });
-        const target = `https://drsumitaesthetics.com/${id}`;
+        const target = `https://drsumitaesthetics.com/${id}/`;
         fs.writeFileSync(path.join(stubDir, 'index.html'),
 `<!doctype html>
 <html lang="en">
@@ -121,10 +121,10 @@ async function prerender() {
 <meta charset="utf-8">
 <title>Redirecting to ${target}</title>
 <link rel="canonical" href="${target}">
-<meta http-equiv="refresh" content="0;url=/${id}">
-<script>location.replace('/${id}');</script>
+<meta http-equiv="refresh" content="0;url=/${id}/">
+<script>location.replace('/${id}/');</script>
 </head>
-<body><p>This page has moved to <a href="/${id}">${target}</a>.</p></body>
+<body><p>This page has moved to <a href="/${id}/">${target}</a>.</p></body>
 </html>
 `);
     }

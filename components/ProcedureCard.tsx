@@ -56,7 +56,7 @@ const ProcedureCard: React.FC<ProcedureCardProps> = ({ proc, index = 0, hint, hi
             )}
 
             <Link
-                to={`/${proc.id}`}
+                to={`/${proc.id}/`}
                 className={`relative z-10 block h-full border-b-2 border-transparent hover:border-[#5DA9E9] transition-all duration-300 ${hint ? 'pt-24 pb-12 px-12' : 'p-12'}`}
             >
                 <div className="space-y-8 flex flex-col h-full justify-end md:justify-start">

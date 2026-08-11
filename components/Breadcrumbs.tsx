@@ -16,6 +16,10 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
     const location = useLocation();
     const domain = "https://drsumitaesthetics.com"; // Adjust if needed
 
+    // Trailing-slash form, same reason as SEO.tsx: these feed both the visible
+    // <a href> and the BreadcrumbList schema on every page that has crumbs.
+    const slashed = (path: string) => path === '/' ? '/' : `${path.replace(/\/+$/, '')}/`;
+
     // Schema.org BreadcrumbList payload
     const schemaList = {
         "@context": "https://schema.org",
@@ -31,7 +35,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
                 "@type": "ListItem",
                 "position": idx + 2,
                 "name": item.name,
-                "item": `${domain}${item.path}`
+                "item": `${domain}${slashed(item.path)}`
             }))
         ]
     };
@@ -60,7 +64,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
                                 </span>
                             ) : (
                                 <Link
-                                    to={item.path}
+                                    to={slashed(item.path)}
                                     className="hover:text-gold-500 transition-colors capitalize focus:outline-none focus:ring-1 focus:ring-gold-500 rounded"
                                 >
                                     {item.name}

@@ -72,7 +72,7 @@ const FellowshipProvenance: React.FC = () => {
       </div>
 
       <Link
-        to="/about"
+        to="/about/"
         className="inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.35em] text-white border-b border-white/20 pb-2 hover:border-[#4A90E2] transition-all font-bold"
       >
         <span>More on Dr. Sumit's training</span>

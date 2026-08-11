@@ -36,7 +36,15 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
     const siteTitle = titleOverride || (title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34");
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
-    const siteUrl = url ? `https://drsumitaesthetics.com${url}` : 'https://drsumitaesthetics.com';
+    // GitHub Pages serves every prerendered route from <route>/index.html, so it
+    // 301-redirects /slug to /slug/. The trailing-slash form is the only one that
+    // answers 200, and must therefore be the canonical we advertise. Advertising
+    // the bare /slug form made every page name a redirecting URL as its own
+    // canonical - the source of the "Page with redirect" bucket in Search
+    // Console (Aug 2026). Normalised here, centrally, so the 17 <SEO> call sites
+    // can keep passing plain paths.
+    const canonicalPath = url && url !== '/' ? `${url.replace(/\/+$/, '')}/` : '/';
+    const siteUrl = `https://drsumitaesthetics.com${canonicalPath}`;
     const absoluteImage = image.startsWith('http') ? image : `https://drsumitaesthetics.com${image.startsWith('/') ? '' : '/'}${image}`;
 
     const buildSchema = () => {
@@ -79,7 +87,7 @@ const SEO: React.FC<SEOProps> = ({
                 "author": {
                     "@type": "Person",
                     "name": "Dr. Sumit Singh Gautam",
-                    "url": "https://drsumitaesthetics.com/about"
+                    "url": "https://drsumitaesthetics.com/about/"
                 },
                 "publisher": {
                     "@type": "Organization",

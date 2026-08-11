@@ -16,8 +16,11 @@ const renderInline = (text: string) =>
         }
         const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
         if (link) {
+            // Trailing-slash form, same reason as SEO.tsx: the 41 markdown links
+            // in the post bodies prerender into <a href> that Google crawls.
+            const href = link[2].startsWith('/') ? `${link[2].replace(/\/+$/, '')}/` : link[2];
             return (
-                <Link key={index} to={link[2]} className="text-[#4A90E2] hover:underline font-semibold">
+                <Link key={index} to={href} className="text-[#4A90E2] hover:underline font-semibold">
                     {link[1]}
                 </Link>
             );
@@ -64,7 +67,7 @@ const BlogPost: React.FC = () => {
                 />
 
                 <div className="mb-12 mt-8">
-                    <Link to="/blog" className="inline-flex items-center space-x-3 text-gray-300 hover:text-[#4A90E2] transition-colors group uppercase tracking-widest text-[10px] font-bold">
+                    <Link to="/blog/" className="inline-flex items-center space-x-3 text-gray-300 hover:text-[#4A90E2] transition-colors group uppercase tracking-widest text-[10px] font-bold">
                         <ArrowLeft size={14} className="group-hover:-translate-x-2 transition-transform" />
                         <span>Back to Journal</span>
                     </Link>
@@ -131,7 +134,7 @@ const BlogPost: React.FC = () => {
                         <div className="glass p-12 text-center space-y-6 shadow-2xl">
                             <h3 className="text-2xl font-serif text-white">Have Questions?</h3>
                             <p className="text-gray-400 font-light max-w-lg mx-auto">Discuss your specific needs and expected outcomes with Dr. Sumit directly.</p>
-                            <Link to="/contact" className="inline-block px-8 py-4 bg-[#4A90E2] text-white font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all">
+                            <Link to="/contact/" className="inline-block px-8 py-4 bg-[#4A90E2] text-white font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all">
                                 Request Consultation
                             </Link>
                         </div>
