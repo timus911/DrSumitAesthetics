@@ -152,7 +152,7 @@ const FAQ: React.FC = () => {
                             The best way to understand your clinical options is a personalized consultation.
                         </p>
                         <a 
-                            href="/contact" 
+                            href="/contact/" 
                             className="inline-block px-10 py-4 bg-[#4A90E2] text-black text-[10px] uppercase tracking-[0.4em] font-black rounded-sm active:scale-95 transition-transform"
                         >
                             Book a Consultation

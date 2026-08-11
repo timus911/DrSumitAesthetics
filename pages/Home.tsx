@@ -110,12 +110,12 @@ const Home: React.FC = () => {
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-16 pt-12">
-              <Link to="/concerns" className="group flex items-center space-x-5 px-12 py-6 bg-white text-black font-bold text-[10px] uppercase tracking-[0.4em] hover:bg-[#4A90E2] hover:text-white transition-all shadow-2xl overflow-hidden relative">
+              <Link to="/concerns/" className="group flex items-center space-x-5 px-12 py-6 bg-white text-black font-bold text-[10px] uppercase tracking-[0.4em] hover:bg-[#4A90E2] hover:text-white transition-all shadow-2xl overflow-hidden relative">
                 <span className="relative z-10">Explore Mastery</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-4 transition-transform duration-500" />
                 <motion.div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
               </Link>
-              <Link to="/contact" className="text-white text-[11px] uppercase tracking-[0.5em] border-b border-white/20 pb-2 hover:border-[#4A90E2] transition-all font-bold">
+              <Link to="/contact/" className="text-white text-[11px] uppercase tracking-[0.5em] border-b border-white/20 pb-2 hover:border-[#4A90E2] transition-all font-bold">
                 Consultation
               </Link>
             </div>
@@ -200,7 +200,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
 
-              <Link to="/about" className="inline-flex items-center space-x-8 mt-16 group">
+              <Link to="/about/" className="inline-flex items-center space-x-8 mt-16 group">
                 <span className="px-12 py-5 border border-white/10 group-hover:border-[#4A90E2] group-hover:bg-[#4A90E2]/10 transition-all text-[11px] uppercase tracking-[0.5em] font-bold text-gray-300">Biographical Brief</span>
                 <ArrowRight size={18} className="text-gray-400 group-hover:text-[#4A90E2] group-hover:translate-x-6 transition-all duration-500" />
               </Link>
@@ -220,7 +220,7 @@ const Home: React.FC = () => {
             {HOMEPAGE_PROCEDURES.map(proc => (
               <Link
                 key={proc.id}
-                to={`/${proc.id}`}
+                to={`/${proc.id}/`}
                 className="group flex items-baseline justify-between border-b border-white/10 py-4 hover:border-[#4A90E2] transition-colors"
               >
                 <span className="text-gray-300 group-hover:text-white transition-colors text-sm">{proc.title}</span>
@@ -228,7 +228,7 @@ const Home: React.FC = () => {
               </Link>
             ))}
           </div>
-          <Link to="/aesthetic" className="inline-flex items-center space-x-4 mt-16 text-[10px] uppercase tracking-[0.4em] text-white border-b border-white/20 pb-2 hover:border-[#4A90E2] transition-all font-bold">
+          <Link to="/aesthetic/" className="inline-flex items-center space-x-4 mt-16 text-[10px] uppercase tracking-[0.4em] text-white border-b border-white/20 pb-2 hover:border-[#4A90E2] transition-all font-bold">
             <span>View All Procedures</span>
             <ArrowRight size={14} />
           </Link>

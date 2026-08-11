@@ -33,7 +33,7 @@ const BlogList: React.FC = () => {
                             viewport={{ once: true }}
                             className="group glass border border-white/5 rounded-sm overflow-hidden hover:border-[#4A90E2]/30 transition-colors"
                         >
-                            <Link to={`/blog/${post.id}`} className="flex flex-col h-full w-full cursor-pointer">
+                            <Link to={`/blog/${post.id}/`} className="flex flex-col h-full w-full cursor-pointer">
                                 <div className="aspect-video overflow-hidden">
                                     <img
                                         src={post.image}

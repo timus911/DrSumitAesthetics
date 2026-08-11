@@ -148,7 +148,7 @@ const Navbar: React.FC = () => {
               ))}
 
               <Link
-                to="/contact"
+                to="/contact/"
                 onClick={() => setIsOpen(false)}
                 className="mt-8 px-10 py-4 bg-[#4A90E2] text-black text-[10px] uppercase tracking-[0.3em] font-bold rounded-sm"
               >

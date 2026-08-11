@@ -208,7 +208,7 @@ const CostsAndFinancing: React.FC = () => {
                                                                 </div>
 
                                                                 <div>
-                                                                    <Link to={`/${proc.id}`} className="inline-flex items-center space-x-2 text-white border border-white/20 px-6 py-3 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all font-bold">
+                                                                    <Link to={`/${proc.id}/`} className="inline-flex items-center space-x-2 text-white border border-white/20 px-6 py-3 text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all font-bold">
                                                                         <span>View Full Procedure</span>
                                                                         <ArrowRight size={12} />
                                                                     </Link>
@@ -274,7 +274,7 @@ const CostsAndFinancing: React.FC = () => {
                             <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
                                 Purely cosmetic surgeries are generally not covered. However, <strong>Functional Surgeries</strong> (e.g., Reconstructive Rhinoplasty for breathing, Trauma Repair, Burn Surgery, or severe Gynecomastia with pain) may be eligible for partial insurance claims.
                             </p>
-                            <Link to="/contact" className="text-[#D4AF37] text-xs uppercase tracking-widest underline hover:text-white transition-colors">Check your eligibility →</Link>
+                            <Link to="/contact/" className="text-[#D4AF37] text-xs uppercase tracking-widest underline hover:text-white transition-colors">Check your eligibility →</Link>
                         </div>
 
                         <div className="glass p-8 border border-white/5">

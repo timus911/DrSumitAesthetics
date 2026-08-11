@@ -35,7 +35,7 @@ const ConcernCard = ({ zone, idx }: { zone: any, idx: number, key?: string }) =>
             transition={{ duration: 0.2 }}
             className="group relative h-[400px] overflow-hidden rounded-sm glass border border-white/5 cursor-pointer"
         >
-            <Link to={`/concerns/${zone.id}`} className="block h-full w-full">
+            <Link to={`/concerns/${zone.id}/`} className="block h-full w-full">
                 {/* Background Image */}
                 <motion.div
                     className="absolute inset-0 z-0 overflow-hidden"

@@ -16,7 +16,7 @@ import Home from './pages/Home.tsx';
 // net; prerender.js writes the static redirect stubs GitHub Pages needs.
 const LegacyProcedureRedirect = () => {
     const { id } = useParams();
-    return <Navigate to={`/${id}`} replace />;
+    return <Navigate to={`/${id}/`} replace />;
 };
 
 const About = lazy(() => import('./pages/About.tsx'));
@@ -82,7 +82,7 @@ const AppLayout: React.FC = () => {
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog/:id" element={<BlogPost />} />
             <Route path="/faqs" element={<FAQ />} />
-            <Route path="/services" element={<Navigate to="/aesthetic" replace />} />
+            <Route path="/services" element={<Navigate to="/aesthetic/" replace />} />
             <Route path="/:id" element={<ProcedureDetail />} />
           </Routes>
           </Suspense>

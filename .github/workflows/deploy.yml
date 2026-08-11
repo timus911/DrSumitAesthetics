@@ -38,6 +38,17 @@ jobs:
           test -f dist/procedure/microvascular-repair/index.html
           echo "pages built: $(find dist -name index.html | wc -l)"
 
+          # Trailing-slash guard. GitHub Pages 301s /slug to /slug/, so every
+          # URL we advertise must already carry the slash - otherwise we point
+          # Google at a redirect on every page (Search Console "Page with
+          # redirect", Aug 2026). Fail the build if a bare <loc> reappears.
+          if grep -o '<loc>[^<]*</loc>' dist/sitemap.xml | grep -v '/</loc>'; then
+            echo "::error::sitemap.xml contains URLs without a trailing slash (see above)"
+            exit 1
+          fi
+          grep -q '<loc>https://drsumitaesthetics.com/liposuction-chandigarh/</loc>' dist/sitemap.xml
+          echo "trailing-slash check: OK ($(grep -o '<loc>' dist/sitemap.xml | wc -l) URLs)"
+
       - name: Publish to gh-pages
         run: |
           git config --global user.name "GitHub Actions"
