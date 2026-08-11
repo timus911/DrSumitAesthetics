@@ -228,7 +228,7 @@ const ProcedureDetail: React.FC = () => {
                     const linkMatch = trimmed.match(/\[(.*?)\]\((.*?)\)/);
                     if (linkMatch) {
                       return (
-                        <Link key={i} to={linkMatch[2]} className="text-[#4A90E2] hover:underline font-bold inline-block mt-2">
+                        <Link key={i} to={linkMatch[2].startsWith('/') ? `${linkMatch[2].replace(/\/+$/, '')}/` : linkMatch[2]} className="text-[#4A90E2] hover:underline font-bold inline-block mt-2">
                           {linkMatch[1]}
                         </Link>
                       );
