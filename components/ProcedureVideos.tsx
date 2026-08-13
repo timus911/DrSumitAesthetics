@@ -19,10 +19,13 @@ import type { ProcedureVideo } from '../constants.ts';
 
 interface ProcedureVideosProps {
   videos: ProcedureVideo[];
-  procedureTitle: string;
+  procedureTitle?: string;
+  // Blog posts embed the same videos but their titles are sentence-length, so
+  // "<title>, explained" reads badly there. They pass a heading instead.
+  heading?: string;
 }
 
-const ProcedureVideos: React.FC<ProcedureVideosProps> = ({ videos, procedureTitle }) => {
+const ProcedureVideos: React.FC<ProcedureVideosProps> = ({ videos, procedureTitle, heading }) => {
   const [playing, setPlaying] = useState<string | null>(null);
   if (!videos || videos.length === 0) return null;
 
@@ -55,11 +58,13 @@ const ProcedureVideos: React.FC<ProcedureVideosProps> = ({ videos, procedureTitl
           On video
         </span>
         <h2 className="text-3xl md:text-4xl font-serif text-white leading-tight">
-          {procedureTitle}, explained
+          {heading || `${procedureTitle}, explained`}
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* A lone video reads as the section's centrepiece, so it gets the full
+          column rather than sitting in a half-width cell with dead space. */}
+      <div className={`grid gap-6 ${videos.length === 1 ? 'grid-cols-1' : 'grid-cols-1 md:grid-cols-2'}`}>
         {videos.map((v, idx) => (
           <motion.div
             key={v.youtubeId}
