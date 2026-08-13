@@ -84,7 +84,9 @@ export const GYNECOMASTIA_VIDEO: ProcedureVideo = {
   youtubeId: "Ukfv12uhmn4",
   title: "Gynecomastia: Gland or Fat? The Cost of Waiting",
   description: "Dr. Sumit Singh Gautam explains the difference between glandular gynecomastia and chest fat, and what waiting costs.",
-  uploadDate: "2026-08-13T12:00:00+05:30"
+  // Exact publish time, read from YouTube's own <meta itemprop="uploadDate">
+  // on the watch page: 2026-08-13T02:10:26-07:00 (PT), the same instant as IST.
+  uploadDate: "2026-08-13T14:40:26+05:30"
 };
 
 export type Procedure = {
