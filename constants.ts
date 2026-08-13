@@ -71,7 +71,10 @@ export type ProcedureVideo = {
   youtubeId: string;
   title: string;
   description?: string;
-  uploadDate?: string; // ISO 8601, e.g. "2026-08-14". Required for VideoObject rich results.
+  // Full ISO 8601 datetime WITH a timezone offset, e.g. "2026-08-14T12:00:00+05:30".
+  // A bare date ("2026-08-14") parses but Google's Rich Results Test flags it twice:
+  // "Invalid datetime value" and "missing a timezone". Required for video rich results.
+  uploadDate?: string;
 };
 
 // Declared once and referenced from both the procedure page and the blog post,
@@ -81,7 +84,7 @@ export const GYNECOMASTIA_VIDEO: ProcedureVideo = {
   youtubeId: "Ukfv12uhmn4",
   title: "Gynecomastia: Gland or Fat? The Cost of Waiting",
   description: "Dr. Sumit Singh Gautam explains the difference between glandular gynecomastia and chest fat, and what waiting costs.",
-  uploadDate: "2026-08-13"
+  uploadDate: "2026-08-13T12:00:00+05:30"
 };
 
 export type Procedure = {
