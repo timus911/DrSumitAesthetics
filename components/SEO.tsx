@@ -24,7 +24,7 @@ const SEO: React.FC<SEOProps> = ({
     titleOverride,
     description,
     keywords,
-    image = '/dr-sumit-portrait.webp',
+    image,
     url,
     type = 'website',
     schemaType = 'MedicalBusiness',
@@ -45,7 +45,14 @@ const SEO: React.FC<SEOProps> = ({
     // can keep passing plain paths.
     const canonicalPath = url && url !== '/' ? `${url.replace(/\/+$/, '')}/` : '/';
     const siteUrl = `https://drsumitaesthetics.com${canonicalPath}`;
-    const absoluteImage = image.startsWith('http') ? image : `https://drsumitaesthetics.com${image.startsWith('/') ? '' : '/'}${image}`;
+    const abs = (p: string) => p.startsWith('http') ? p : `https://drsumitaesthetics.com${p.startsWith('/') ? '' : '/'}${p}`;
+    // Two different jobs, two different defaults. Structured data wants a real
+    // photograph of the practice, so schema keeps the portrait. Link previews
+    // (WhatsApp, LinkedIn, Slack, iMessage) get the 1200x630 branded card, which
+    // fills the landscape frame the portrait was being cropped into. Pages that
+    // pass their own image - blog posts, procedures - still use it for both.
+    const absoluteImage = abs(image || '/dr-sumit-portrait.webp');
+    const absoluteSocialImage = abs(image || '/og-preview.jpg');
 
     const buildSchema = () => {
         const physicianSchema = {
@@ -220,14 +227,16 @@ const SEO: React.FC<SEOProps> = ({
             <meta property="og:url" content={siteUrl} />
             <meta property="og:title" content={siteTitle} />
             <meta property="og:description" content={metaDescription} />
-            <meta property="og:image" content={absoluteImage} />
+            <meta property="og:image" content={absoluteSocialImage} />
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:url" content={siteUrl} />
             <meta name="twitter:title" content={siteTitle} />
             <meta name="twitter:description" content={metaDescription} />
-            <meta name="twitter:image" content={absoluteImage} />
+            <meta name="twitter:image" content={absoluteSocialImage} />
 
             <link rel="canonical" href={siteUrl} />
 
