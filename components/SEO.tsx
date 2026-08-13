@@ -188,6 +188,22 @@ const SEO: React.FC<SEOProps> = ({
             })
         };
 
+        // Site name for Google results. Without WebSite structured data on the
+        // home page, Google falls back to the bare domain ("drsumitaesthetics.com")
+        // in the line above the title. og:site_name alone does not drive this -
+        // Google's site-names docs name WebSite markup as the preferred signal,
+        // and it belongs on the home page only, exactly once per domain.
+        if (canonicalPath === '/') {
+            const webSiteSchema = {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Dr. Sumit Plastic & Aesthetic Surgeon",
+                "alternateName": "Dr. Sumit Aesthetics",
+                "url": "https://drsumitaesthetics.com/"
+            };
+            return [base, webSiteSchema];
+        }
+
         return base;
     };
 
