@@ -77,13 +77,11 @@ export type ProcedureVideo = {
 // Declared once and referenced from both the procedure page and the blog post,
 // so the title/description in the VideoObject schema can't drift between the
 // two pages that embed it.
-// TODO: uploadDate is deliberately absent rather than guessed - Google reads it
-// as fact in VideoObject. Fill in the real publish date to qualify for video
-// rich results.
 export const GYNECOMASTIA_VIDEO: ProcedureVideo = {
   youtubeId: "Ukfv12uhmn4",
-  title: "Gynecomastia explained: causes, grades and surgical treatment",
-  description: "Dr. Sumit Singh Gautam explains what causes gynecomastia (male breast enlargement), how severity is graded, and what male breast reduction surgery involves."
+  title: "Gynecomastia: Gland or Fat? The Cost of Waiting",
+  description: "Dr. Sumit Singh Gautam explains the difference between glandular gynecomastia and chest fat, and what waiting costs.",
+  uploadDate: "2026-08-13"
 };
 
 export type Procedure = {
