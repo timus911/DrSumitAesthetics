@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, User } from 'lucide-react';
 import { BLOG_POSTS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
+import ProcedureVideos from '../components/ProcedureVideos.tsx';
 
 // Renders **bold** and [text](/path) tokens inside a line of post content.
 // Internal links here are what connects blog traffic to procedure pages —
@@ -129,6 +130,10 @@ const BlogPost: React.FC = () => {
                             );
                         })}
                     </div>
+
+                    {post.videos && post.videos.length > 0 && (
+                        <ProcedureVideos videos={post.videos} heading="Watch the full explainer" />
+                    )}
 
                     <div className="pt-16 border-t border-white/5 mt-20">
                         <div className="glass p-12 text-center space-y-6 shadow-2xl">

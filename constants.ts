@@ -74,6 +74,18 @@ export type ProcedureVideo = {
   uploadDate?: string; // ISO 8601, e.g. "2026-08-14". Required for VideoObject rich results.
 };
 
+// Declared once and referenced from both the procedure page and the blog post,
+// so the title/description in the VideoObject schema can't drift between the
+// two pages that embed it.
+// TODO: uploadDate is deliberately absent rather than guessed - Google reads it
+// as fact in VideoObject. Fill in the real publish date to qualify for video
+// rich results.
+export const GYNECOMASTIA_VIDEO: ProcedureVideo = {
+  youtubeId: "Ukfv12uhmn4",
+  title: "Gynecomastia explained: causes, grades and surgical treatment",
+  description: "Dr. Sumit Singh Gautam explains what causes gynecomastia (male breast enlargement), how severity is graded, and what male breast reduction surgery involves."
+};
+
 export type Procedure = {
   id: string;
   title: string;
@@ -1982,6 +1994,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
       recoveryTips: ["The compression vest is vital to flatten the area and prevent fluid buildup - 7 days minimum, longer in higher grades.", "Lymphatic massage and icing 4 to 5 times a day for at least 6 weeks helps ensure a smooth, bump-free result."]
     },
     regions: ["Breasts", "Body"],
+    videos: [GYNECOMASTIA_VIDEO],
     gallery: [
       "/gynecomastia-result-1.webp",
       "/gynecomastia-result-2.webp",
@@ -3222,6 +3235,7 @@ export interface BlogPost {
   content: string;
   image: string;
   date: string;
+  videos?: ProcedureVideo[];
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -3501,6 +3515,7 @@ If your primary concern is slight drooping around your mouth and jawline, a Mini
     seoTitle: "Gynecomastia Surgery: Causes, Treatment, Recovery",
     title: "Gynecomastia Surgery in India: Causes, Treatment, and Recovery",
     excerpt: "Gynecomastia affects millions of men. Discover the causes and how modern surgical technique delivers a permanent, masculine chest contour.",
+    videos: [GYNECOMASTIA_VIDEO],
     content: `## Restoring Confidence with Chest Contouring
 
 Gynecomastia—the development of enlarged glandular breast tissue in males—is far more common than most realize, affecting up to 30% of men. Despite how common it is, it can cause significant psychological distress, leading men to avoid wearing fitted shirts, going to the beach, or participating in sports.
