@@ -143,7 +143,7 @@ const ProcedureDetail: React.FC = () => {
   return (
     <div className="pt-52 pb-32">
       <SEO
-        titleOverride={procedure.seoTitle || `${procedure.title} in Chandigarh | Dr. Sumit`}
+        titleOverride={procedure.seoTitle || `${procedure.title} in Chandigarh | Dr. Sumit Plastic Surgeon`}
         description={procedure.metaDescription || procedure.description || procedure.longDescription?.slice(0, 160)}
         image={procedure.image}
         url={`/${id}`}

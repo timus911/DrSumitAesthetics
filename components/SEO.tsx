@@ -34,7 +34,14 @@ const SEO: React.FC<SEOProps> = ({
     howToSteps,
     priceRange
 }) => {
-    const siteTitle = titleOverride || (title ? `${title} | Dr. Sumit Aesthetics` : "Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34");
+    // Brand suffix. "Plastic surgeon" is the term patients search - 590/mo in
+    // India against 210 for "aesthetic surgeon" - so it leads the brand rather
+    // than "Aesthetics". The city is dropped when the page title already carries
+    // it, so nothing reads "... in Chandigarh | Dr. Sumit Plastic Surgeon Chandigarh".
+    const brandSuffix = title && /chandigarh/i.test(title)
+        ? 'Dr. Sumit Plastic Surgeon'
+        : 'Dr. Sumit Plastic Surgeon Chandigarh';
+    const siteTitle = titleOverride || (title ? `${title} | ${brandSuffix}` : "Dr. Sumit Plastic Surgeon Chandigarh | Board Certified");
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
     // GitHub Pages serves every prerendered route from <route>/index.html, so it
     // 301-redirects /slug to /slug/. The trailing-slash form is the only one that

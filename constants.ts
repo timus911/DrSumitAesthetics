@@ -94,7 +94,7 @@ export const GYNECOMASTIA_VIDEO: ProcedureVideo = {
 export type Procedure = {
   id: string;
   title: string;
-  seoTitle?: string; // Verbatim <title> override; auto-built as "<title> in Chandigarh | Dr. Sumit" when absent. Set manually only where that would blow the ~60-char SERP budget.
+  seoTitle?: string; // Verbatim <title> override; auto-built as "<title> in Chandigarh | Dr. Sumit Plastic Surgeon" when absent. Set manually only where that would blow the ~60-char SERP budget.
   category: string;
   parentCategory: 'aesthetic' | 'reconstructive' | 'non-surgical' | 'vascular';
   description: string;
@@ -1974,7 +1974,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
   // MALE
   {
     id: "gynecomastia-surgery-chandigarh",
-    seoTitle: "Gynecomastia Surgery in Chandigarh | Dr. Sumit",
+    seoTitle: "Gynecomastia Surgery in Chandigarh | Dr. Sumit Plastic Surgeon",
     metaDescription: "Gynecomastia surgery in Chandigarh by Dr. Sumit — day-care male breast reduction with hidden scars. Book a confidential consultation today.",
     title: "Gynecomastia (Male Breast Reduction)",
     category: "Male",
@@ -3182,7 +3182,7 @@ Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. 
   {
     id: "vascular-surgery-chandigarh",
     h1: "Vascular Surgery in Chandigarh",
-    seoTitle: "Vascular Procedures in Chandigarh | Dr. Sumit",
+    seoTitle: "Vascular Procedures in Chandigarh | Dr. Sumit Plastic Surgeon",
     metaDescription: "Ultrasound-guided vascular procedures in Chandigarh by Dr. Sumit — precise access and vein care at Healing Hospital. Book a consultation.",
     title: "Ultrasound-Guided Vascular Procedures",
     category: "Vascular",
