@@ -217,7 +217,9 @@ const SEO: React.FC<SEOProps> = ({
             const webSiteSchema = {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "Dr. Sumit Plastic & Aesthetic Surgeon",
+                "name": "Dr. Sumit Plastic Surgeon Chandigarh",
+                // Kept as the fallback Google may pick if it judges the primary
+                // name too descriptive to adopt.
                 "alternateName": "Dr. Sumit Aesthetics",
                 "url": "https://drsumitaesthetics.com/"
             };
