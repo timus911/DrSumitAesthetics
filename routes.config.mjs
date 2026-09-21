@@ -91,6 +91,8 @@ const CONCERN_PAGES = CONCERN_ZONES.map(zone => ({
 }));
 
 const BLOG_POST_IDS = [
+    'why-some-surgical-scars-almost-disappear',
+    'why-is-the-surgical-cut-longer-than-the-lump',
     'what-to-expect-from-liposuction-recovery',
     'liposuction-vs-tummy-tuck-which-is-right-for-you',
     'does-liposuction-remove-fat-permanently',
