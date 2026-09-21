@@ -3243,6 +3243,477 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "five-questions-before-i-agree-to-operate",
+    seoTitle: "5 Questions Before I Agree to Operate",
+    title: "Five things I check before I agree to operate",
+    excerpt: "Not what you want changed, but whether surgery is the right tool at all. The fifth question is the one that decides whether a consultation was honest.",
+    content: `## The consultation is an assessment, not a sales meeting
+
+Most people arrive at a consultation expecting to describe what they want changed. That conversation matters, but it is not the first one I am having in my head.
+
+Before agreeing to operate on anyone, there are five things I need answered. They are worth knowing about in advance - partly so the hour is more useful, and partly because **you can ask them of any surgeon you see.**
+
+## 1. Why now?
+
+Not what you want changed. **Why this month**, after years of living with it.
+
+The answer is genuinely diagnostic. A wedding in six weeks, a divorce, a photograph someone saw - these are not disqualifying, but they tell me whether surgery is the right tool for what is actually going on, and whether the timeline is realistic.
+
+Someone who has considered a procedure steadily for two years is in a different position from someone who decided on Tuesday. Neither is wrong. They need different conversations.
+
+## 2. Has your weight held?
+
+Stable within roughly five kilograms for three months.
+
+This is not a gatekeeping exercise. Operating on a moving target wastes the operation and wastes your money. Body contouring performed during active weight change produces a result that is obsolete by the time the swelling settles - and [swelling takes months](/blog/why-does-swelling-get-worse-on-day-three/).
+
+For [liposuction](/liposuction-chandigarh/) and [abdominoplasty](/tummy-tuck-chandigarh/) especially, a stable starting point is most of what makes a plan meaningful.
+
+## 3. Does what you expect match what the operation does?
+
+Every procedure has a defined envelope of what it can change. Every patient arrives with a picture in their head.
+
+Where those two overlap, surgery works. Where they do not, **no technique closes the gap** - and the failure is not technical, it is a mismatch that was there before anyone booked a theatre.
+
+Most disappointment after aesthetic surgery traces back to this question being skipped rather than to anything that happened in the operating room.
+
+## 4. What are you taking?
+
+Blood thinners, supplements, GLP-1 medications, steroids, hormonal treatment, recreational drugs.
+
+Half of what patients forget to mention changes the anaesthetic plan, the bleeding risk, or the healing. Herbal supplements are the most commonly omitted and among the more relevant - several affect clotting.
+
+There is no version of this where being incomplete helps you. Bring the actual list, including the things you would rather not mention.
+
+## 5. Would I say no?
+
+This is the one that matters, and it is the one I apply to myself.
+
+If I cannot picture myself declining a case, then I am not assessing it. I am selling it.
+
+Every honest consultation has **"not yet"** on the table as a real option - and sometimes "not at all," or "this is not the operation for that problem." A surgeon who has never turned down the thing you are asking for is not offering you an assessment.
+
+## Ask these of anyone
+
+If you are consulting a surgeon and none of these comes up, that is information.
+
+You are entitled to ask directly: what would make you decline this? What does this operation not fix? What happens if my weight changes afterwards? A good answer will be specific and slightly uncomfortable.
+
+The most useful hour you can spend before surgery is the one where somebody tells you what it cannot do. [Preparing for that consultation properly](/blog/preparing-for-your-first-aesthetic-consultation/) makes the difference between an hour of reassurance and an hour of information.
+
+**Five questions. Ask them of anyone.**`,
+    image: "/about-bg.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "why-every-breast-implant-gets-an-antiseptic-bath",
+    seoTitle: "Why Every Breast Implant Gets a Bath First",
+    title: "Why every breast implant gets a bath before it goes in",
+    excerpt: "The gold liquid is antiseptic, and the enemy it targets is a film too thin to see. The steps you never hear about are the ones that decide whether a result lasts.",
+    content: `## That gold liquid is antiseptic
+
+If you have seen footage from a breast augmentation, you may have noticed the implant sitting in a bath of golden-brown fluid before it is used.
+
+That is povidone-iodine. The implant is soaked, the pocket it will sit in is irrigated with the same thing, and gloves are changed **before it is touched again.**
+
+It adds a few minutes to the operation and costs almost nothing. It is also one of the steps that most affects whether the result is still good in ten years.
+
+## The enemy is a film, not an infection
+
+The thing being guarded against is not the dramatic post-operative infection people imagine - the red, hot, obviously unwell scenario.
+
+It is far quieter. Ordinary skin bacteria settle on the implant shell in numbers far too small to make anyone ill, and build a **biofilm**: a thin, structured layer of bacteria in a protective matrix. Too thin to see. Stubborn enough that antibiotics struggle to penetrate it.
+
+That film is the leading suspect behind **capsular contracture** - the hardening and tightening of the scar capsule around an implant that can distort the shape and, in significant cases, require further surgery.
+
+The research literature describes capsular contracture induced by chronic subclinical infection as a major cause of poor outcomes and reoperation in implant surgery, which is precisely why pocket irrigation with antiseptic is standard practice rather than a personal preference.
+
+## The shell holds a static charge
+
+Here is the detail almost nobody outside theatre knows.
+
+Peeling open a sterile implant pouch generates static electricity on the silicone surface. That charge actively **pulls loose particles onto the shell** - lint from drapes, glove powder, shed skin cells. Every one of those is a potential raft for bacteria.
+
+The antiseptic bath drains that charge before the implant is handled, as well as treating the surface. It solves two problems at once, which is part of why it has stuck.
+
+## So we build a no-touch chain
+
+No single step here is decisive. The point is that they compound.
+
+* **Antiseptic soak** for the implant.
+* **Pocket irrigation**, so the space it enters is treated too.
+* **A funnel**, so the implant is delivered into the pocket without ever meeting skin.
+* **Fresh gloves** before handling.
+* **Minimal handling** generally - every additional touch is an additional opportunity.
+
+Each step removes one chance for contamination. None of them is heroic. Together they change the odds meaningfully.
+
+## You will never see this part
+
+No patient watches their own operation, and nobody can look at a good result at five years and identify which of these steps produced it. There is no visible difference on the day between an implant placed carefully and one placed casually.
+
+Which is exactly why it is the sort of thing that gets skipped, and exactly why it is worth asking about.
+
+If you are considering [breast augmentation](/breast-augmentation-chandigarh/), it is a reasonable question at consultation: what is your pocket irrigation protocol, and do you use a no-touch technique? A surgeon who does this properly will have a specific answer ready.
+
+It is a better question than most of the ones patients are told to ask, because it is about the part of the operation that decides longevity rather than appearance.
+
+**The quiet steps decide the loud outcomes.**`,
+    image: "/breast-augmentation-aesthetic.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "how-breast-implant-size-is-actually-chosen",
+    seoTitle: "How Breast Implant Size Is Actually Chosen",
+    title: "Four numbers choose your implant. You pick two of them.",
+    excerpt: "Cup size is not one of the four, and volume is the last number rather than the first. Here is what actually determines which implant fits your body.",
+    content: `## Cup size is a result, not a request
+
+The most common way a consultation about [breast augmentation](/breast-augmentation-chandigarh/) starts is with a cup size, or a number of cc's someone read online.
+
+Both are downstream of measurements that have not been taken yet. Four numbers actually determine which implant suits your body, and **two of them are not yours to choose.**
+
+## 1. Chest circumference — fixed
+
+Measured around the ribcage, beneath the breast.
+
+This sets a rough ceiling on the volume your frame can carry - a **bracket rather than a number**. It is skeletal, and no amount of preference changes it.
+
+## 2. Base width of each breast — fixed
+
+Measured breast by breast, across the base.
+
+This one does most of the work, and it is the least intuitive part of the whole process: the width of your breast base fixes the width of the implant, and in careful planning **the width then decides the volume** rather than the other way round.
+
+An implant wider than your breast base does not look larger. It looks wrong - the edges become visible or palpable at the sides, and the result reads as artificial from the first day.
+
+Note that the two sides are measured separately, because most people are not symmetrical. Different base widths on each side is normal, and it is one reason the two implants chosen are sometimes not identical.
+
+## 3. Projection — your first real choice
+
+Having fixed the width, you now have options.
+
+Projection is how far the implant stands off the chest wall from the same base. Take one base width and hold it constant, and a low-projection implant, a moderate one and a high one will each carry a different volume on that same footprint.
+
+This is where preference legitimately enters. More projection gives a fuller, more forward result on the same base; less gives a flatter, more gradual slope.
+
+## 4. Volume — the last number, not the first
+
+The cc figure falls out of the three above.
+
+Ask for a volume before the measurements are taken, and you are **guessing the answer before doing the working.** It is not that the number does not matter - it is that it is an output.
+
+This is why a surgeon who responds to "I want 350cc" by reaching for a tape measure is doing the right thing, and why two women who both end up with 350cc implants can have completely different base widths, projections and results.
+
+## Why cup size never appears
+
+Cup sizing is not standardised between manufacturers, changes with the bra, and describes a volume relative to a chest measurement rather than an absolute quantity. It is a shopping convenience, not a surgical unit.
+
+You will very likely end up describing your result in cup sizes afterwards. It simply cannot be the input.
+
+## What this means for your consultation
+
+* Expect to be **measured** before any number is discussed.
+* Expect the two sides to differ, and expect that to be treated as normal.
+* Expect **projection** to be where your preference is genuinely exercised.
+* Be suspicious of any process that starts with a volume and works backwards.
+
+Implant choice is also only part of the planning. Whether you need a [lift](/breast-lift-chandigarh/) alongside augmentation depends on where the nipple sits relative to the fold, and that assessment is separate from sizing entirely.
+
+**Cup size is a result, not a request.**`,
+    image: "/breast-lift-aesthetic.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "the-lines-are-the-operation-tummy-tuck-marking",
+    seoTitle: "The 20 Minutes That Decide a Tummy Tuck",
+    title: "The operation is decided before you lie down",
+    excerpt: "Twenty minutes with a marker, standing up. It is the least glamorous part of the day and the part that decides your result.",
+    content: `## Twenty minutes with a marker
+
+Before an [abdominoplasty](/tummy-tuck-chandigarh/), there is a stretch of about twenty minutes that patients tend to remember as an odd formality: standing in a gown while somebody draws on you.
+
+It is not a formality. It is the operation being decided. What happens later in theatre is largely the execution of choices made during those twenty minutes.
+
+## Standing, not lying
+
+**Gravity is the whole point.**
+
+Lying down, skin redistributes. Loose tissue falls back, the excess seems to vanish, and the abdomen reads as flatter than it is when you are upright and living in it.
+
+Since you will spend your life standing, the planning is done standing. Every line is drawn upright, with the tissue hanging the way it actually hangs.
+
+Marking a patient on the table is quicker, and it is how you end up removing the wrong amount.
+
+## The scar is placed first
+
+Before anything else is decided, the final scar position is set.
+
+Low enough to sit beneath underwear, level on both sides, planned against **your own hip bones** rather than a standard height. Everything else in the operation is then built around that line.
+
+This ordering matters. A scar placed after the resection is planned ends up wherever the tissue dictates. A scar placed first constrains the plan to produce something you can live with in the clothes you actually wear.
+
+It is worth bringing a garment you care about to that appointment. It is a reasonable thing to plan around and surgeons are used to the request.
+
+## The midline check
+
+One of the marks is not about skin at all.
+
+The midline is checked for **diastasis** - separation of the abdominal muscles, common after pregnancy, and the gap no amount of exercise closes because it is not a muscle strength problem.
+
+If it is present, the operation includes repairing it. That is a substantial part of why an abdominoplasty produces a flatness that liposuction alone cannot: [liposuction removes fat](/blog/why-does-bad-liposuction-look-wavy/), but it does nothing to a separated muscle wall.
+
+## Then the zones
+
+The rest of the marking divides the abdomen into zones: where fat is removed, where it is feathered to blend, and where nothing is touched at all.
+
+**The untouched zones matter as much as the treated ones.** They are what preserve blood supply to the skin flap, and they are what stop the result looking like a series of discrete patches.
+
+A surgeon who marks only what is coming out is planning half the operation.
+
+## Why this is the part that decides your result
+
+Surgery rewards decisions made with time, standing up, with the patient awake and able to say "that scar is too high for what I wear."
+
+None of that is available once you are under anaesthetic and horizontal. By then the scope for judgement has narrowed to execution.
+
+So if the marking session feels slow, or you find yourself standing while someone steps back and looks at you from several angles - that is the part working correctly.
+
+**The lines are the operation.**`,
+    image: "/tummy-tuck-aesthetic.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "why-does-bad-liposuction-look-wavy",
+    seoTitle: "Why Does Bad Liposuction Look Wavy?",
+    title: "Why does bad liposuction look wavy?",
+    excerpt: "It is rarely how much fat came out. It is where it came from, and whether it came out evenly - and most of that is decided before the first pass.",
+    content: `## It is rarely about how much came out
+
+The assumption behind almost every question about wavy or irregular liposuction results is that too much fat was removed.
+
+That is usually not the problem. Waviness is a problem of **evenness and layer**, not volume - and a great deal of it is decided before any instrument is used.
+
+## It goes wrong before the first pass
+
+Watch a standard liposuction marking and you will see circles drawn wherever there is fat. For ordinary debulking liposuction, that is perfectly reasonable.
+
+For high-definition work it is not enough. The marking instead identifies the muscle prominences and the natural contours between them, **with the patient standing** - for the same reason [abdominoplasty marking is done standing](/blog/the-lines-are-the-operation-tummy-tuck-marking/).
+
+The distinction is simple: fat is wherever you find it. Contour only exists where the muscle already is. A map of fat and a map of shape are different maps, and only one of them produces definition.
+
+## A cannula genuinely does suck
+
+A wide cannula with large holes pulls hard, and it pulls from whichever layer it happens to be in.
+
+In a layer that needed a subtle touch, **one pass can take what four should have.** That is the mechanical origin of most irregularity - not excess overall, but excess in one spot relative to its neighbour.
+
+## Deep layer: you can be firm, but you must be equal
+
+[The abdomen has three fat layers](/blog/the-three-fat-layers-in-your-abdomen/), and they behave differently.
+
+The deep layer is where volume comes from, and it is comparatively forgiving of a heavy hand. What it does not forgive is **one zone giving up more than the next.** Volume is therefore counted zone by zone, deliberately, rather than worked until an area looks done.
+
+Waviness is a difference between neighbours. Equal removal across zones is what prevents it.
+
+## Pinch, reassess, pinch again
+
+Every few passes, the skin is pinched and its thickness compared against the adjacent zone.
+
+This sounds crude and it is the single most reliable check available. You can only catch a developing difference while you are still inside and able to correct it - once the patient is closed and swollen, nobody can assess contour for months.
+
+## Superficial layer is not for volume
+
+Above the fascia, almost nothing should be removed. That layer is a **contouring tool, not a volume source**, and it is worked only along the lines marked before surgery.
+
+Dr Sumit's own instrument discipline: 4 and 5 mm cannulas in the deep layer, stepping down to 3 mm at the transition, and nothing wider than 3 mm ever goes superficial.
+
+That last rule is where the irregularity risk concentrates. A large cannula in the superficial layer takes tissue directly beneath the skin, and there is nothing left to smooth the difference.
+
+## What this means if you are choosing a surgeon
+
+Ask how the marking is done, and whether it is done standing. Ask whether volume is recorded by zone. Ask what cannula sizes are used superficially.
+
+These are not gotcha questions. They are the actual variables, and anyone doing [high-definition liposuction](/liposuction-chandigarh/) properly will answer them without hesitation.
+
+**Even is deep work. Sharp is superficial work. Wavy is neither.**`,
+    image: "/body-contouring-aesthetic.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "the-three-fat-layers-in-your-abdomen",
+    seoTitle: "Your Belly Has Three Fat Layers",
+    title: "Your belly has three fat layers. Only one makes you sharper.",
+    excerpt: "Remove the wrong one and you get smaller, not more defined. The difference between debulking and sculpting is which layer the surgeon is working in.",
+    content: `## Three layers, three different jobs
+
+Abdominal fat is not one substance in one place. It sits in three distinct compartments, and they behave so differently that the same operation performed in different layers produces entirely different results.
+
+This single piece of anatomy explains why some flat stomachs still look soft, and why two people can have the same procedure by name and nothing alike by outcome.
+
+## Layer 1 — deep fat
+
+Sits beneath a sheet of fascia, close to the muscle.
+
+This is the volume layer. Removing it makes you **smaller, not more defined.** Take out a large amount and the silhouette shrinks, but the surface stays as smooth and featureless as it was - just closer in.
+
+Most conventional liposuction works here, and for many patients that is exactly the right goal.
+
+## Layer 2 — superficial fat
+
+Just beneath the skin, above the fascia.
+
+This is where definition lives. Sculpting here - specifically along the lines where muscle already sits and shadow naturally falls - is **where shape is made** rather than merely reduced.
+
+It is also the riskier layer, because it is directly under the skin. Anything removed unevenly here shows immediately and permanently, which is why [irregular results almost always originate in this layer](/blog/why-does-bad-liposuction-look-wavy/).
+
+## Layer 3 — visceral fat
+
+Inside the abdominal wall, packed around your organs.
+
+**No surgeon can reach it, and no cannula should try.** It is on the other side of the muscle wall, and instruments do not belong there.
+
+This is the layer that responds to diet and exercise, and it is the one with genuine metabolic significance. A patient whose abdomen is firm and round rather than soft and pinchable is usually carrying visceral fat, and surgery is not the tool for it - a fact that has to be established before anything is planned.
+
+## Which is why some flat stomachs still look soft
+
+Volume was removed. **Shape was never made.**
+
+Traditional liposuction works the deep layer only. High-definition work moves deliberately between the deep and superficial layers, taking volume from one and creating contour in the other.
+
+Same operation name. Entirely different plan, different instruments, different marking, different result.
+
+## What to ask about
+
+If definition rather than reduction is what you want, the question to put to a surgeon is not how much they will remove. It is **which layers they work in, and how they mark.**
+
+The honest answer sometimes is that you are not a candidate for the sharper version - because your fat distribution is predominantly visceral, or your skin quality will not retract onto a sculpted surface. That answer is worth more than a plan that cannot deliver.
+
+For the broader picture of what [liposuction](/liposuction-chandigarh/) and [body contouring](/body-contouring-chandigarh/) can and cannot change, the layer you are in is the whole story.
+
+**Debulking and sculpting are not the same operation.**`,
+    image: "/hd-lipo-aesthetic.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "how-liposuction-was-invented",
+    seoTitle: "How Liposuction Was Actually Invented",
+    title: "How much of early liposuction was blood?",
+    excerpt: "Nearly half of what came out. The history of liposuction is not a story of design - it is a chain of corrections, each fixing the damage of the last.",
+    content: `## Nearly half of what came out
+
+Modern [liposuction](/liposuction-chandigarh/) is a routine, well-tolerated operation. It did not begin that way, and the path from there to here is worth knowing - partly because it explains why certain steps in the modern procedure exist at all.
+
+## It started with an amputation
+
+In the 1920s, in Paris, a dancer asked a surgeon to slim her legs. He operated. The blood supply failed, gangrene set in, and **the leg was amputated.**
+
+The case became notorious and set the field back considerably.
+
+A note on why this account is vague: there are two irreconcilable published versions of this case in the literature. They disagree on the year, on the anatomy involved, on the instrument used, and on the mechanism of the disaster. Rather than pick the more dramatic one, the story is told here only to the level that both versions support.
+
+## Then half a century with little real progress
+
+When surgeons returned to fat removal in the 1960s, the method was still a curette scraping through a small incision, and it still bled heavily, with haematoma and seroma as routine complications.
+
+If you wanted fat reliably gone, the alternative was to **cut it out in blocks** - and accept the long scar that came with it.
+
+## 1976: stop cutting, start pushing
+
+The breakthrough came from a father and son in Rome, both gynaecologists, who put suction on a hollow tube.
+
+Their first instrument still carried a cutting blade. **The one that worked was blunt.** A blunt cannula pushes past nerves and vessels rather than dividing them - which is the entire reason liposuction became survivable as a routine operation rather than a gamble.
+
+That single design decision, blunt rather than sharp, is still the governing principle of every cannula used today.
+
+## It did not solve the bleeding
+
+Even with a blunt cannula, **twenty to forty-five per cent of what came out was the patient's own blood.**
+
+That is the number that makes the rest of the history make sense. At that ratio, the volume you can safely remove is limited not by the fat but by the blood loss.
+
+A surgeon in Paris tried wetting the tissue first - injecting fluid into the fat before suctioning it. The bleeding dropped substantially. This step, the wet technique, is frequently left out of potted histories, and it is the hinge the next advance swings on.
+
+## Then the fluid did the work
+
+In the 1980s the approach was taken considerably further: flood the entire layer with a large volume of dilute local anaesthetic and adrenaline, and operate with the patient awake.
+
+Blood as a proportion of what came out fell from twenty to forty-five per cent to around **one per cent.**
+
+That is the tumescent technique, and it is why liposuction today is a day-case procedure with a recovery measured in days rather than a major operation with transfusion on standby. The fluid you are told about before surgery is not a minor preparatory detail. It is the innovation that made the operation what it is.
+
+## None of this was designed. It got corrected.
+
+That is the honest shape of the story. Nobody sat down and designed liposuction. Each version caused a specific problem, and the next version existed to fix it - sharp to blunt, dry to wet, wet to tumescent.
+
+It is a useful frame for surgery generally, and a useful corrective to the idea that techniques arrive finished.
+
+It is also why the apparently boring parts of a modern operation - the infiltration, the cannula gauge, [the layer discipline](/blog/the-three-fat-layers-in-your-abdomen/) - are not fussiness. Each one is a scar left by something that went wrong for somebody else.
+
+**None of this was designed. It got corrected.**`,
+    image: "/surgical-excellence.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "how-to-spot-a-misleading-before-and-after",
+    seoTitle: "How to Spot a Misleading Before-and-After",
+    title: "How do you spot a before-and-after that's lying?",
+    excerpt: "Four things to check, and none of them is the result. Lighting, distance and posture can manufacture an outcome that no operation produced.",
+    content: `## Four things to check, none of them the result
+
+Before-and-after photographs are the main evidence patients use to choose a surgeon, and they are among the easiest things in medicine to make misleading - often without any deliberate dishonesty.
+
+You do not need clinical training to audit them. You need to check four things, and none of them is the outcome itself.
+
+## 1. Did the light move?
+
+Overhead lighting in the before, soft frontal lighting in the after.
+
+**Shadow alone can add or erase a fold.** The same face, photographed on the same day under two lighting setups, will show a different jawline, different nasolabial folds, different under-eye hollows.
+
+What to look for: the direction and hardness of shadows under the nose, the chin and the brow. If they differ between the two images, the lighting changed, and you cannot compare the results.
+
+## 2. Did the camera distance change?
+
+This one is the most powerful and the least known.
+
+A camera moved closer **widens the nose and narrows the face.** Photographing the same person from two distances can manufacture something that looks like a rhinoplasty result without anyone touching the patient.
+
+The effect is substantial: at close range the nasal base projects markedly wider than it does from a normal portrait distance. Close range also pulls the ears out of frame, which makes the face read narrower.
+
+What to look for: are the ears visible in both images? Does the head occupy the same proportion of the frame?
+
+If you are evaluating a [rhinoplasty](/rhinoplasty-nose-job-chandigarh/) result specifically, this is the check that matters most.
+
+## 3. Did the posture change?
+
+Chin lifted, shoulders back, jaw pushed slightly forward. Every one of those tightens a neckline.
+
+**Look at the ears and the hairline.** If their position relative to the frame shifted, the head moved - and a changed neck contour may be posture rather than surgery.
+
+This is the one that most often happens innocently. Patients stand differently when they are pleased.
+
+## 4. Is it one pair, or twenty?
+
+Any surgeon has a best case.
+
+One spectacular pair is the **least informative** thing you can be shown, because it tells you about the ceiling rather than the average. Consistency across many cases is the honest signal - including cases with modest results.
+
+A gallery of twenty ordinary-looking good results is a stronger claim than one transformation.
+
+## The standard, stated plainly
+
+Same light, same lens, same distance, same posture, same background. Or it proves nothing.
+
+This applies to every gallery, including ours. If you are looking at [results on this site](/gallery/) or anywhere else, hold them to it - and ask to see more than the highlights at consultation.
+
+There is a reason to say this out loud rather than quietly maintain good practice: a standard stated in public is one the person stating it can be held to.
+
+**Same light, same lens, same distance, same posture. Or it proves nothing.**`,
+    image: "/rhinoplasty-aesthetic.webp",
+    date: "September 21, 2026"
+  },
+  {
     id: "what-worries-a-surgeon-after-an-operation",
     seoTitle: "What Worries a Surgeon After an Operation",
     title: "What actually worries a surgeon after an operation",

@@ -91,6 +91,14 @@ const CONCERN_PAGES = CONCERN_ZONES.map(zone => ({
 }));
 
 const BLOG_POST_IDS = [
+    'five-questions-before-i-agree-to-operate',
+    'why-every-breast-implant-gets-an-antiseptic-bath',
+    'how-breast-implant-size-is-actually-chosen',
+    'the-lines-are-the-operation-tummy-tuck-marking',
+    'why-does-bad-liposuction-look-wavy',
+    'the-three-fat-layers-in-your-abdomen',
+    'how-liposuction-was-invented',
+    'how-to-spot-a-misleading-before-and-after',
     'what-worries-a-surgeon-after-an-operation',
     'why-is-it-still-numb-months-after-surgery',
     'why-does-swelling-get-worse-on-day-three',
