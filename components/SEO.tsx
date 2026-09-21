@@ -45,6 +45,19 @@ const SEO: React.FC<SEOProps> = ({
     // can keep passing plain paths.
     const canonicalPath = url && url !== '/' ? `${url.replace(/\/+$/, '')}/` : '/';
     const siteUrl = `https://drsumitaesthetics.com${canonicalPath}`;
+    // Article dates are authored for humans ("September 21, 2026"). schema.org
+    // and Google's Article spec both want ISO 8601, and the raw display string
+    // was being emitted verbatim on every blog post. Parsed from local date
+    // parts rather than toISOString() so a build in a timezone ahead of UTC
+    // cannot shift the date back a day.
+    const isoDate = (d?: string) => {
+        if (!d) return undefined;
+        const parsed = new Date(d);
+        if (isNaN(parsed.getTime())) return undefined;
+        const mm = String(parsed.getMonth() + 1).padStart(2, '0');
+        const dd = String(parsed.getDate()).padStart(2, '0');
+        return `${parsed.getFullYear()}-${mm}-${dd}`;
+    };
     const abs = (p: string) => p.startsWith('http') ? p : `https://drsumitaesthetics.com${p.startsWith('/') ? '' : '/'}${p}`;
     // Two different jobs, two different defaults. Structured data wants a real
     // photograph of the practice, so schema keeps the portrait. Link previews
@@ -90,7 +103,7 @@ const SEO: React.FC<SEOProps> = ({
                 "headline": procedureName || title || "Dr. Sumit Aesthetics",
                 "image": absoluteImage,
                 "url": siteUrl,
-                "datePublished": articleDate || new Date().toISOString(),
+                "datePublished": isoDate(articleDate) || new Date().toISOString().slice(0, 10),
                 "author": {
                     "@type": "Person",
                     "name": "Dr. Sumit Singh Gautam",

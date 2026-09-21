@@ -31,7 +31,9 @@ export const CONTACT = {
     sunday: "Closed", // Defaulting to closed unless specified
   },
   social: {
-    instagram: "https://instagram.com",
+    // The account the carousels and reels are published from.
+    instagram: "https://www.instagram.com/dr.sumitsgautam/",
+    instagramHandle: "@dr.sumitsgautam",
     linkedin: "https://linkedin.com",
   }
 };

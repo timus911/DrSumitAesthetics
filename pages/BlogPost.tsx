@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, User } from 'lucide-react';
-import { BLOG_POSTS } from '../constants.ts';
+import { ArrowLeft, Calendar, User, Instagram } from 'lucide-react';
+import { BLOG_POSTS, CONTACT } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
 import ProcedureVideos from '../components/ProcedureVideos.tsx';
@@ -134,6 +134,26 @@ const BlogPost: React.FC = () => {
                     {post.videos && post.videos.length > 0 && (
                         <ProcedureVideos videos={post.videos} heading="Watch the full explainer" />
                     )}
+
+                    {/* Every post ends here: the writing came out of the Instagram
+                        carousels, so the post points back at the account it came from. */}
+                    <div className="pt-12 mt-16 border-t border-white/5">
+                        <a
+                            href={CONTACT.social.instagram}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group inline-flex items-center gap-5"
+                            aria-label={`Follow Dr. Sumit on Instagram, ${CONTACT.social.instagramHandle}`}
+                        >
+                            <span className="w-12 h-12 shrink-0 flex items-center justify-center rounded-full border border-white/10 group-hover:border-[#4A90E2] group-hover:bg-[#4A90E2]/10 transition-all duration-300">
+                                <Instagram size={19} className="text-[#4A90E2]" />
+                            </span>
+                            <span>
+                                <span className="block text-[10px] uppercase tracking-[0.3em] text-gray-500 font-bold mb-1.5">More like this on Instagram</span>
+                                <span className="block text-sm text-gray-300 group-hover:text-white transition-colors">{CONTACT.social.instagramHandle}</span>
+                            </span>
+                        </a>
+                    </div>
 
                     <div className="pt-16 border-t border-white/5 mt-20">
                         <div className="glass p-12 text-center space-y-6 shadow-2xl">
