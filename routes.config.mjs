@@ -91,6 +91,11 @@ const CONCERN_PAGES = CONCERN_ZONES.map(zone => ({
 }));
 
 const BLOG_POST_IDS = [
+    'what-worries-a-surgeon-after-an-operation',
+    'why-is-it-still-numb-months-after-surgery',
+    'why-does-swelling-get-worse-on-day-three',
+    'why-does-a-bruise-change-colour-and-move',
+    'is-your-wound-infected-or-just-healing',
     'why-some-surgical-scars-almost-disappear',
     'why-is-the-surgical-cut-longer-than-the-lump',
     'what-to-expect-from-liposuction-recovery',

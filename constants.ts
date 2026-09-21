@@ -3243,6 +3243,305 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "what-worries-a-surgeon-after-an-operation",
+    seoTitle: "What Worries a Surgeon After an Operation",
+    title: "What actually worries a surgeon after an operation",
+    excerpt: "It is almost never the result. The complication surgeons genuinely lose sleep over is silent, and the treatment for it is the most boring instruction you will be given.",
+    content: `## It is almost never the result
+
+Ask a patient what they worry about after surgery and you will hear about the scar, or whether the shape will be right. Ask a surgeon and you get a different answer entirely.
+
+Here is what does **not** keep us awake.
+
+## Not the scar
+
+Scars take about a year and follow rules we already understand. If the closure was right on the day, and the line was placed and offloaded properly, [the scar is largely decided](/blog/why-some-surgical-scars-almost-disappear/). It will pass through red, pink and pale on its own schedule.
+
+Nobody lies awake over a scar.
+
+## Not bleeding, usually
+
+Bleeding announces itself. It happens early, in the first hours, while everyone is still watching closely. It is a problem you find, and then a problem you fix.
+
+The dangerous things are the quiet ones.
+
+## The one that is actually worrying
+
+A clot forming in a deep vein of the leg. Silent where it forms. Dangerous where it travels.
+
+It produces no drama at the site. There may be nothing at all to feel. The risk is that a fragment travels to the lungs, and that event is sudden and serious in a way nothing else on this list is.
+
+**This is the complication that shapes post-operative instructions far more than most patients realise.**
+
+## Surgery stacks the risk, three ways
+
+What makes this worth taking seriously is that an operation does not raise one risk factor. It raises three at once.
+
+* **An operation makes blood more likely to clot.** That is part of the body's normal response to injury; it simply happens to be unhelpful here.
+* **Anaesthesia stops you moving.** The calf muscles are a pump. Under anaesthesia the pump is switched off.
+* **Then you go home and rest** — because resting is what feels responsible after an operation.
+
+Each of those alone is manageable. Together they compound.
+
+## Which is why you get made to walk
+
+Short walks, the same day. Then every few hours. It feels absurdly minor next to what you have just been through, and patients often assume it is the nursing staff being fussy.
+
+It is the opposite. The stockings, the calf pumps and the walking are the parts of your after-care with the most at stake.
+
+The calf muscles squeezing as you walk are what moves blood out of the deep veins. Nothing else you do in the first days substitutes for it.
+
+## Why we come back in the evening
+
+Evening rounds are not a formality, and they are not just checking the dressing.
+
+Somebody gets you sitting. Then standing. Then a few steps to the door and back. That first walk is not a milestone being recorded — **it is the treatment being given**.
+
+If you have had surgery and someone is gently insisting you get up when you would much rather not, that is not indifference to your comfort. It is the single most evidence-driven thing happening in the room.
+
+## What you should actually do
+
+* **Walk the same day**, as soon as you are allowed, and then regularly.
+* **Wear the stockings** and use the calf pumps for as long as you are told.
+* **Do not interpret "rest" as "lie still."** Rest means not straining the wound. It does not mean immobility.
+* **Report one-sided calf pain or swelling, or any breathlessness or chest pain, immediately.** These are not "wait and see" symptoms.
+
+If you have a personal or family history of clots, or you are on hormone treatment, or you have had a long-haul flight planned close to your surgery date, say so **before** the operation. It changes the plan. Bring it up at [your consultation](/blog/preparing-for-your-first-aesthetic-consultation/), not on the ward.
+
+Risk varies enormously between operations and between patients, which is why this article gives you no numbers. What does not vary is the instruction.
+
+**The most important thing you do after surgery is walk.**`,
+    image: "/surgical-excellence.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "why-is-it-still-numb-months-after-surgery",
+    seoTitle: "Why Is It Still Numb Months After Surgery?",
+    title: "Why is it still numb, four months later?",
+    excerpt: "Numbness after surgery alarms people far more than pain does. Usually nothing is wrong - nerves simply regrow at a speed that has nothing to do with how you feel.",
+    content: `## Usually nothing is wrong. Nerves are just slow.
+
+Pain after surgery is expected, so people tolerate it. Numbness is not, so it worries them - and it tends to worry them most at the point when everything else has settled and this one thing has not.
+
+In the large majority of cases, numbness is not a sign that something was damaged beyond repair. It is a sign that repair is happening at the speed nerves happen to work at, which is far slower than the rest of you.
+
+## Pins and needles are a good sign
+
+New nerve endings are twitchy before they settle. Tingling, small electric zings, an odd itch when the skin is touched, a patch that feels strange rather than absent - **that is arrival, not damage.**
+
+One exception worth knowing: a single sharp spot that keeps getting worse, rather than a broad area gradually waking up, is a different thing. Show that one to your surgeon rather than waiting it out.
+
+## How long depends on what happened to the pipe
+
+This is the part that explains everything else. Think of a nerve fibre as a wire running inside a pipe. What happens to the wire matters less than what happens to the pipe.
+
+**The pipe survived — weeks.** Liposuction mostly bruises nerves rather than dividing them. The wire is stunned, the pipe is intact, and function returns comparatively quickly. Objective testing after liposuction found sensation back to normal at around six weeks for suction-assisted technique, and about ten weeks after ultrasound-assisted, with roughly nine in ten patients recovered by the ten-week mark.
+
+**The wire was cut but the pipe remains — months.** A cut nerve regrows down the empty pipe it left behind, at roughly a millimetre a day. To put that in something you own: fingernails grow about 0.1 mm per day, so a regenerating nerve is moving at about ten times fingernail speed. Over a distance of several centimetres, that is months.
+
+**The pipe is gone — years, and possibly permanently in a patch.** Where tissue is removed or skin is lifted widely, as in a [tummy tuck](/tummy-tuck-chandigarh/), there is no pipe left to follow. The only route back is neighbouring nerves branching sideways into the area, which happens dramatically more slowly - and it fills in from the edges, so the centre of the patch is last.
+
+How slowly? A randomised trial following abdominoplasty patients for a mean of nearly four years found **two-thirds still had altered sensation below the umbilicus at three and a half years.** That is not a complication. That is the expected course, and it is why the consent conversation for abdominoplasty should always include it.
+
+## Numb skin cannot warn you
+
+This is the one genuinely important safety point, and it is easy to underestimate.
+
+Skin you cannot feel will not tell you it is being burned. A hot water bottle, a heating pad, a laptop resting on your lap, an ice pack left on too long - normally your skin pulls you away long before damage occurs. Numb skin does not.
+
+**Keep heat and ice off any area you cannot feel properly.** Not "be careful with" - off.
+
+This applies for as long as the numbness lasts, which after some operations means months.
+
+## What to expect, and when to ask
+
+* **Tingling, zinging, itching, odd sensation:** normal, and usually a sign of recovery.
+* **A broad numb patch slowly shrinking from the edges inward:** normal.
+* **A small permanently numb area, particularly below an abdominoplasty scar:** common, and worth knowing about beforehand.
+* **One sharp, localised point that worsens over time:** ask.
+* **New numbness appearing weeks after surgery, having not been there before:** ask.
+
+Numbness after [liposuction](/liposuction-chandigarh/) resolves on a timescale of weeks. After wide undermining it can take years, and a patch may simply stay. Neither means something went wrong.
+
+**A millimetre a day in a pipe. Far slower without one.**`,
+    image: "/nerve-repair-reconstructive.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "why-does-swelling-get-worse-on-day-three",
+    seoTitle: "Why Does Swelling Get Worse on Day Three?",
+    title: "Why does swelling get worse on day three?",
+    excerpt: "Everyone expects a straight line down after surgery. It is not one - swelling climbs for two to three days first, and that climb is the repair arriving.",
+    content: `## Day one is not the peak
+
+People wake from surgery, look in a mirror, find themselves acceptable, and quietly file that away as the baseline. Then it gets worse for two days, and they conclude something has gone wrong.
+
+Nothing has gone wrong. **Swelling peaks at around 48 to 72 hours**, not on day one. The rise is expected, it is part of the normal course, and being told about it afterwards is far less reassuring than knowing it beforehand.
+
+## The swelling is the repair arriving
+
+Here is the part that reframes it.
+
+After injury, blood vessels near the wound widen deliberately and become more permeable. That is not a malfunction - it is how fluid, immune cells, clotting proteins and raw building material get out of the bloodstream and into the tissue that needs them.
+
+Swelling is mostly **the delivery, not the damage.**
+
+Cut lymphatic channels contribute as well, which is why the word is "mostly" rather than "entirely." But the bulk of what you are seeing in the first days is the repair process being supplied.
+
+## Which is why cold helps early and not late
+
+This explains something patients often get wrong by carrying on too long.
+
+In roughly the first 48 hours, cooling narrows those widened vessels and slows the leak, which is why ice is recommended early. The benefit is real but modest.
+
+After that window, what remains is fluid sitting in the tissue waiting to be cleared by the lymphatic system. Cold does not speed lymphatic clearance. Continuing to ice a swollen area at day six is not doing much except making you cold - and on skin that is [still numb](/blog/why-is-it-still-numb-months-after-surgery/), it carries a genuine burn risk.
+
+Compression, elevation and movement are what matter in the later phase.
+
+## The last of it takes the longest
+
+Most swelling settles over weeks. What surprises people is the tail.
+
+The final fraction - the part **only the patient can see**, long after friends and family have stopped noticing anything - can take months. After rhinoplasty, three-dimensional measurement has shown roughly two-thirds of swelling gone at one month, about 95 per cent at six months, and around 97.5 per cent at a year.
+
+Read those numbers carefully, because they are the whole point: at six months, when a patient is quite certain the result is final, five per cent is still there. Nobody photographs that phase, and no before-and-after gallery shows it.
+
+This is also why judging a result early is unfair to the result. Swelling and [scar maturation](/blog/why-some-surgical-scars-almost-disappear/) both run on timescales measured in months to a year.
+
+## What you can actually do about it
+
+* **Expect the climb.** Days two and three are the peak, not a setback.
+* **Ice early, not late.** First 48 hours or so, and never directly on numb skin.
+* **Elevate** the operated area where practical.
+* **Wear the compression garment** for as long as you were told, not as long as it stays comfortable.
+* **Walk.** Movement helps clearance, and it matters for [other reasons too](/blog/what-worries-a-surgeon-after-an-operation/).
+* **Ask** if swelling is one-sided, suddenly increasing after it had started settling, tense and hard rather than soft, or accompanied by increasing pain.
+
+That last list is the one to take seriously. Ordinary swelling is symmetrical, soft, and follows the curve. Swelling that breaks the pattern is worth a phone call.
+
+**Up for three days, down for three months.**`,
+    image: "/blog-liposuction-recovery.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "why-does-a-bruise-change-colour-and-move",
+    seoTitle: "Why Does a Bruise Change Colour and Move?",
+    title: "Why does a bruise change colour and slide down your face?",
+    excerpt: "A bruise is blood in the wrong place, and your body dismantles it in stages. Each stage has its own colour - and gravity decides where it ends up.",
+    content: `## A bruise is blood in the wrong place
+
+Tiny vessels break under the skin and blood leaks into the tissue around them. Your body then breaks that blood down and clears it - and **each stage of the breakdown has its own colour.**
+
+That is the whole explanation for the colour sequence. It is not the bruise "healing" in some vague sense; it is haemoglobin being chemically dismantled into products that happen to be different colours.
+
+Haemoglobin becomes biliverdin, which becomes bilirubin. Red, then purple, then green, then yellow, then gone.
+
+## The timeline is uneven, and that matters
+
+The usual diagram shows five equal blocks, which teaches something false: that each colour lasts roughly as long as the next.
+
+It does not. The red phase is gone within a couple of days. The yellow-brown drags on for a week or more at the end. A typical course runs something like red at day nothing, purple by day two, green around day five to seven, yellow through the second week, and clear by around day fourteen.
+
+Treat that as a **typical course, not a schedule.** Individual bruises vary widely, and a bruise that is slightly behind that pattern is not a problem.
+
+One thing worth being precise about, because it comes up: colour cannot reliably date a bruise. A yellow bruise is more than about eighteen hours old, and that is close to the limit of what can honestly be inferred. Studies of clinicians attempting to age bruises from appearance found them correct within 24 hours well under half the time.
+
+## Why it moves downward
+
+Leaked blood follows gravity, slipping along the natural planes between tissue layers.
+
+This is why a knock on the forehead can produce two black eyes a couple of days later, and why after [eyelid surgery](/blepharoplasty-chandigarh/) the bruise frequently turns up on the cheeks. The blood did not spread because something went wrong. It ran downhill, through spaces that were always there.
+
+It is a reliably alarming thing to watch, and a reliably harmless one.
+
+## Why a black eye goes so dark
+
+Eyelid skin is **the thinnest on the body** - roughly a third of a millimetre at the lid margin, with almost no fat beneath it. Under that sits loose areolar tissue that accepts a large volume of blood and conceals essentially none of it.
+
+Thin skin, nothing to hide behind, and plenty of room to fill. That combination is why eyelid bruising looks disproportionately dramatic compared with the same volume of blood almost anywhere else on the body.
+
+## When a bruise needs a doctor
+
+Most bruising after surgery is uneventful. These are the exceptions:
+
+* It **keeps growing** after the first day or two.
+* It feels **tense or hard** rather than soft.
+* It **hurts more each day** instead of less.
+* The skin over it becomes tight, shiny, or unusually pale or dark.
+
+Blood may be collecting in a pocket rather than dispersing through tissue. After surgery, that warrants a call the same day rather than waiting for the next scheduled appointment.
+
+Bruising also interacts with [swelling](/blog/why-does-swelling-get-worse-on-day-three/), which follows its own curve and peaks later than most people expect. The two together account for almost everything that alarms patients in the first post-operative week.
+
+**Purple, then green, then yellow. That is healing on schedule.**`,
+    image: "/blepharoplasty-aesthetic.webp",
+    date: "September 21, 2026"
+  },
+  {
+    id: "is-your-wound-infected-or-just-healing",
+    seoTitle: "Is Your Wound Infected, or Just Healing?",
+    title: "Is your wound infected, or is it just healing?",
+    excerpt: "Two of the three signs you were taught to watch for are supposed to be there. Here is what a trained eye actually looks at, and the one test you can do at home.",
+    content: `## Your wound is supposed to be inflamed
+
+Everyone is taught the same three warning signs: redness, warmth, tenderness. The problem is that two of them are meant to be present.
+
+Warmth and tenderness are phase one of healing. They are not a complication - they are the mechanism. As surgeons we depend on that inflammatory response; a wound that mounts none of it does not knit together.
+
+Which means neither sign, on its own, tells you anything.
+
+A trained eye is not looking for inflammation. It is looking for **more inflammation than the wound explains** - and then for which direction it is moving.
+
+## The test you can actually do
+
+This is the single most useful thing in this article, and it requires a pen.
+
+**Trace the edge of the redness tonight.** Draw a line on the skin at the border. Look again tomorrow.
+
+* Redness **inside the line**: it is settling. This is the normal course.
+* Redness **across the line**: call your surgeon.
+
+A thin border of pink around a fresh incision is normal. Redness that is spreading, out of proportion to the wound, and not retreating over a day is a different matter. The pen turns a subjective judgement into an objective one, and it works whether or not you have any medical knowledge.
+
+## Call the same day if
+
+* The redness keeps crossing the line.
+* Pain climbs instead of easing, particularly after it had started to improve.
+* Discharge turns thick, cloudy or foul-smelling.
+* Fever above 100°F / 38°C.
+* The wound edges begin to separate.
+
+None of these is a "see how it goes overnight" symptom.
+
+## The one whisper worth knowing about
+
+Everything above concerns infection above the deep fascia, where it can be seen. Below that layer, an infection has no easy route to the skin - so it produces little pain, little redness, and surfaces late.
+
+Its early tell is **fluid out of proportion.** Not pus, necessarily. Plain serous fluid, in a volume the wound has no obvious reason to produce.
+
+That disproportion is inflammation walled around a collection that has not found an exit. It is subtle, it is easy to dismiss, and it is worth mentioning at a follow-up appointment even when nothing else seems wrong.
+
+## Whitish fluid is a different question
+
+Cloudy white fluid almost always means pus.
+
+It can also be fat necrosis that has liquefied, and at the bedside the two are genuinely hard to tell apart. Neither is reassuring - dead fat is food for bacteria too. And if the fat beneath the skin has died, the skin above it can follow.
+
+This is one to show someone rather than photograph and worry about.
+
+## The honest limit of an article like this
+
+You will probably not catch the deep one from reading this. That is not a failure of the article; it is the nature of the problem. Infections that declare themselves are the ones you can act on, and the pen test handles those well. The quiet ones are what follow-up appointments exist for.
+
+Which is the real answer to "should I bother going to my follow-up when I feel fine": yes, because feeling fine is compatible with the specific problem that is hardest to see.
+
+If you are in the first weeks after an operation, this sits alongside the other two things that alarm people and usually should not - [swelling that peaks on day three](/blog/why-does-swelling-get-worse-on-day-three/) and [bruising that travels downward](/blog/why-does-a-bruise-change-colour-and-move/).
+
+**Warmth and tenderness are the mechanism. Direction is the signal.**`,
+    image: "/scar-revision-fat-grafted.webp",
+    date: "September 21, 2026"
+  },
+  {
     id: "why-some-surgical-scars-almost-disappear",
     seoTitle: "What Decides How a Surgical Scar Heals",
     title: "What actually decides how a surgical scar heals",
