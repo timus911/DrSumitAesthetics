@@ -34,14 +34,24 @@ const SEO: React.FC<SEOProps> = ({
     howToSteps,
     priceRange
 }) => {
-    // Brand suffix. "Plastic surgeon" is the term patients search - 590/mo in
-    // India against 210 for "aesthetic surgeon" - so it leads the brand rather
-    // than "Aesthetics". The city is dropped when the page title already carries
-    // it, so nothing reads "... in Chandigarh | Dr. Sumit Plastic Surgeon Chandigarh".
-    const brandSuffix = title && /chandigarh/i.test(title)
-        ? 'Dr. Sumit Plastic Surgeon'
-        : 'Dr. Sumit Plastic Surgeon Chandigarh';
-    const siteTitle = titleOverride || (title ? `${title} | ${brandSuffix}` : "Dr. Sumit Plastic Surgeon Chandigarh | Board Certified");
+    // Brand suffix, budget-aware. "Plastic surgeon" is the term patients search
+    // (590/mo in India against 210 for "aesthetic surgeon"), so it leads the
+    // brand. But Google truncates titles around 60 characters and the brand sits
+    // at the end, so a brand that does not fit is a brand that gets cut off.
+    // Candidates run longest-first and the first that fits wins; the city is
+    // skipped entirely when the page title already carries it. Google now prints
+    // the site name on its own line above the title, so a page that can afford no
+    // brand at all still shows one.
+    const TITLE_BUDGET = 60;
+    const brandCandidates = title && /chandigarh/i.test(title)
+        ? ['Dr. Sumit Plastic Surgeon', 'Dr. Sumit']
+        : ['Dr. Sumit Plastic Surgeon Chandigarh', 'Dr. Sumit Plastic Surgeon', 'Dr. Sumit'];
+    const fitted = title
+        ? brandCandidates
+              .map(b => `${title} | ${b}`)
+              .find(t => t.length <= TITLE_BUDGET) ?? title
+        : undefined;
+    const siteTitle = titleOverride || fitted || "Dr. Sumit Plastic Surgeon Chandigarh | Board Certified";
     const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
     // GitHub Pages serves every prerendered route from <route>/index.html, so it
     // 301-redirects /slug to /slug/. The trailing-slash form is the only one that
