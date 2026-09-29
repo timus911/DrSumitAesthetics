@@ -29,6 +29,48 @@ const renderInline = (text: string) =>
         return part;
     });
 
+// A carousel's animated slide, embedded in a post as ![alt](/path.mp4).
+// Plays muted and looped like a GIF, only while on screen; the .webp of the
+// same name is its poster and is all a reduced-motion reader sees. A VP9
+// .webm of the same name is offered first, with the H.264 .mp4 as fallback.
+// `muted` is set on the element directly: React only sets it as a property,
+// and without the attribute browsers refuse to autoplay.
+const SlideClip: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
+    const ref = React.useRef<HTMLVideoElement>(null);
+
+    React.useEffect(() => {
+        const video = ref.current;
+        if (!video) return;
+        video.muted = true;
+        video.setAttribute('muted', '');
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) video.play().catch(() => {});
+            else video.pause();
+        }, { threshold: 0.4 });
+        observer.observe(video);
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <figure className="my-10 overflow-hidden rounded-sm">
+            <video
+                ref={ref}
+                poster={src.replace(/\.mp4$/, '.webp')}
+                aria-label={alt}
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-auto block"
+            >
+                <source src={src.replace(/\.mp4$/, '.webm')} type="video/webm" />
+                <source src={src} type="video/mp4" />
+            </video>
+        </figure>
+    );
+};
+
 const BlogPost: React.FC = () => {
     const { id } = useParams();
     const navigate = useNavigate();
@@ -108,6 +150,10 @@ const BlogPost: React.FC = () => {
                             const trimmed = line.trim();
                             if (!trimmed) return <br key={i} className="hidden" />;
 
+                            const clip = trimmed.match(/^!\[([^\]]*)\]\(([^)]+\.mp4)\)$/);
+                            if (clip) {
+                                return <SlideClip key={i} alt={clip[1]} src={clip[2]} />;
+                            }
                             if (trimmed.startsWith('## ')) {
                                 return <h2 key={i} className="text-3xl text-[#4A90E2] mt-12 mb-6 border-b border-white/5 pb-4">{trimmed.replace('## ', '')}</h2>;
                             }

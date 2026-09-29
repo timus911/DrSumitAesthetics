@@ -3245,6 +3245,101 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "child-cut-face-what-to-check-first",
+    seoTitle: "Child Cut Their Face? What to Check First",
+    title: "Your child splits their face open. What's the first thing to check?",
+    excerpt: "It isn't stitches or glue. It's how deep the cut goes - and there is a simple test for that, which decides everything that follows.",
+    content: `## The first thing I check is how deep it goes
+
+When a child comes in with a cut face, parents usually want to know one thing: stitches or glue? That is the second question. The first one is depth.
+
+Skin has two layers that matter here. The surface layer is thin. Beneath it is the **dermis** - thick, white and tough. It gives skin its strength, and it supplies the surface layers with their cells.
+
+**Whether the dermis survived decides everything next.** So how do I tell?
+
+## I pull gently on both sides of the cut
+
+With the wound clean, I put light traction on the skin either side of it and watch what the edges do.
+
+* If the white layer **stretches and holds the edges together**, the dermis has survived.
+* If the edges **spring apart**, it has been cut through.
+
+![Gentle traction either side of a cut: an intact dermis holds the edges together, a cut dermis lets them spring apart](/blog/face-cut/slide-3.mp4)
+
+It takes a few seconds, it does not hurt, and it is the single most useful thing that happens at the first assessment.
+
+## If it holds, I wash it out and tape it
+
+First the wound is syringed out thoroughly. Irrigation matters more than anything that follows it - contamination, not time, is what drives infection.
+
+Then sterile adhesive strips bring the surface layer together. **No needle is needed.** The intact dermis is already doing the structural work; the tapes only keep the top layer aligned while it knits.
+
+![A shallow cut irrigated with a syringe, then closed with sterile tapes over an intact dermis](/blog/face-cut/slide-4.mp4)
+
+## If it gapes, I stitch it in layers
+
+On hair-bearing scalp, a single layer is enough. The scalp heals well and the hair covers the line.
+
+**Anywhere on the face**, I close the deep dermis first, with buried stitches, and then the surface on top of it. The deep layer takes the tension, so the surface edges rest together instead of being dragged - and tension, far more than length, is [what decides how a scar heals](/blog/why-some-surgical-scars-almost-disappear/).
+
+![A cut through the dermis closed in layers: a buried deep stitch first, then the surface](/blog/face-cut/slide-5.mp4)
+
+## If the muscle is cut, I repair it too
+
+Some facial cuts go deeper still, into the muscle underneath - around the lips, the eyebrows and the chin especially.
+
+Stitch only the skin and it looks fine for weeks. Then it heals with nothing underneath it, and **it sinks into a dent.** The muscle has to be brought back together as its own layer, so the skin has something to lie on.
+
+![Skin closed alone over a cut muscle sinks into a dent; repairing the muscle first keeps the surface level](/blog/face-cut/slide-6.mp4)
+
+## Glue or stitches?
+
+Tissue glue is quick and painless, and early on the wound can look excellent. Over the longer run the evidence is thinner than either side usually admits.
+
+A 2023 meta-analysis of 18 randomised trials (1,020 patients, face and neck wounds) found:
+
+* **At one month or less**, glue scored better in the one trial that measured it.
+* **At one to three months**, the two were level (six to seven trials).
+* **At three to twelve months**, stitches scored better in the one trial that followed patients that long - and that trial used a particular barbed suture, which the authors suspect explains the gap.
+* Infection and wound breakdown were not significantly different.
+
+So the honest summary is: no clear winner on the numbers, and very little long-term data.
+
+My own practice is not to use glue on the face. It holds almost no tension, so it only suits wounds where the dermis has already survived - and those close perfectly well with tapes. It is also a foreign body on the skin, and Indian skin is more prone to scarring after inflammation, so any reaction to it tends to show in the final scar. That is clinical judgement rather than a trial result, and I say so.
+
+## On arms and legs, I look underneath
+
+The face has a generous layer of tissue between the skin and anything critical. Limbs, particularly the hands, wrists, forearms and shins, often do not.
+
+Nerves, tendons and blood vessels sit just under the deep fascia, frequently with very little fat over them. **Even a hint of a breach in the fascia means I explore**, to check that each structure is alive and intact. A cut tendon or nerve closed over as a skin wound is found weeks later, when it is much harder to fix - this is the work of [nerve, vessel and tendon repair](/nerve-vessel-tendon-repair/).
+
+![On a limb, a cut through the deep fascia is opened to check the nerve, artery and tendon lying beneath it](/blog/face-cut/slide-8.mp4)
+
+## You usually have time
+
+For a clean facial cut, **it is better to reach the right expert than to have it closed quickly and wrongly.** In my practice, a clean facial wound can almost always wait 48 to 72 hours for a proper layered closure.
+
+The evidence supports the principle, if not an exact number. The old teaching of a six-hour "golden period" has not held up: in a study of 2,663 patients with traumatic cuts, infection was no more common in wounds closed after 12 hours than before. The face, with its rich blood supply, is the most forgiving site of all. Published data mostly stop around 24 hours, so the longer window is my own clinical position rather than a trial finding.
+
+While you wait: rinse the wound gently under clean running water, cover it with a clean dressing, and keep it covered.
+
+**Only heavy bleeding is urgent.** Press firmly, right on it, with a clean cloth, and keep pressing without peeking until you reach a surgeon.
+
+## Go to an emergency department straight away if
+
+* Bleeding does not slow after 10 minutes of firm, continuous pressure.
+* Your child was knocked out, vomits, is unusually drowsy or confused - the head injury matters more than the cut.
+* The eye itself may be injured, or the cut goes through the eyelid margin.
+* It is an animal or human bite, or the wound is heavily contaminated with soil or rust.
+* Your child's tetanus vaccination is not up to date.
+
+For everything else, the face deserves the right hands more than the fastest ones. Facial wounds are a large part of [traumatic reconstruction](/traumatic-reconstruction/), and a scar that did not heal well can often be improved later with [scar revision](/scar-revision-chandigarh/) - but the best time to get it right is the first closure.
+
+**If it's the face, take your child to a plastic surgeon. You have time.**`,
+    image: "/blog/face-cut/hero.webp",
+    date: "September 29, 2026"
+  },
+  {
     id: "five-questions-before-i-agree-to-operate",
     seoTitle: "5 Questions Before I Agree to Operate",
     title: "Five things I check before I agree to operate",
