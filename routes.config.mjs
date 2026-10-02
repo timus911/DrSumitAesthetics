@@ -91,6 +91,7 @@ const CONCERN_PAGES = CONCERN_ZONES.map(zone => ({
 }));
 
 const BLOG_POST_IDS = [
+    'young-skin-vs-scar-collagen-weave',
     'child-cut-face-what-to-check-first',
     'five-questions-before-i-agree-to-operate',
     'why-every-breast-implant-gets-an-antiseptic-bath',
