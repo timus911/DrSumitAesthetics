@@ -54,7 +54,7 @@ const SlideClip: React.FC<{ src: string; alt: string }> = ({ src, alt }) => {
     }, []);
 
     return (
-        <figure className="my-10 overflow-hidden rounded-sm">
+        <figure className="my-10 mx-auto max-w-2xl overflow-hidden rounded-sm">
             <video
                 ref={ref}
                 poster={src.replace(/\.mp4$/, '.webp')}
@@ -153,6 +153,15 @@ const BlogPost: React.FC = () => {
                             const clip = trimmed.match(/^!\[([^\]]*)\]\(([^)]+\.mp4)\)$/);
                             if (clip) {
                                 return <SlideClip key={i} alt={clip[1]} src={clip[2]} />;
+                            }
+                            // A carousel's still drawing, embedded as ![alt](/path.webp).
+                            const figure = trimmed.match(/^!\[([^\]]*)\]\(([^)]+\.(?:webp|jpg|png))\)$/);
+                            if (figure) {
+                                return (
+                                    <figure key={i} className="my-10 mx-auto max-w-2xl overflow-hidden rounded-sm">
+                                        <img src={figure[2]} alt={figure[1]} loading="lazy" decoding="async" className="w-full h-auto block" />
+                                    </figure>
+                                );
                             }
                             if (trimmed.startsWith('## ')) {
                                 return <h2 key={i} className="text-3xl text-[#4A90E2] mt-12 mb-6 border-b border-white/5 pb-4">{trimmed.replace('## ', '')}</h2>;

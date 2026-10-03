@@ -91,6 +91,8 @@ const CONCERN_PAGES = CONCERN_ZONES.map(zone => ({
 }));
 
 const BLOG_POST_IDS = [
+    'stem-cell-machine-or-two-syringes-nanofat',
+    'can-your-face-predict-how-long-you-will-live',
     'young-skin-vs-scar-collagen-weave',
     'child-cut-face-what-to-check-first',
     'five-questions-before-i-agree-to-operate',

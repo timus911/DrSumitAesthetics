@@ -3245,6 +3245,121 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: "stem-cell-machine-or-two-syringes-nanofat",
+    seoTitle: "Stem Cell Machine or Two Syringes? Nanofat Explained",
+    title: "The expensive stem cell machine, or two syringes. Which would you pick?",
+    excerpt: "Most people choose by the number of cells. The number that matters is how many survive - and on that, the cheaper method has the better biology.",
+    content: `## Your fat is full of repair cells
+
+Fat is not just padding. Among the fat cells sit stem cells and other repair cells - together called the stromal vascular fraction, or SVF - living in a microscopic scaffold of collagen.
+
+That is why fat injected into the face can improve **skin and scars**, not just fill volume. But to get at those cells, the fat has to be broken down first. There are two ways to do it.
+
+## Way one: an enzyme
+
+An enzyme called collagenase digests the collagen scaffold that holds fat together. The fat cells float off and are discarded, and what is left is pure SVF: **lots and lots** of stem cells, floating free as single cells.
+
+That is what the expensive machine does.
+
+## Way two: two syringes
+
+The other way is done by hand. Fat is pushed rapidly back and forth between two syringes joined by a small connector, until the shear force breaks it open. This is nanofat.
+
+You get **fewer stem cells** this way. But the ones you get stay attached to fragments of the scaffold they live in.
+
+![Two methods side by side: fat sheared between two syringes into small fragments of scaffold, and an enzyme dissolving fat into free single cells](/blog/new-is-not-better/slide-5.webp)
+
+So the enzyme wins on count. Which would you pick now?
+
+## Count the survivors
+
+Here is the catch. Stem cells cut loose from the scaffold they are anchored to tend to die off - a process biologists call **anoikis**, literally "homelessness". A cell count at the moment of injection says little about how many are still alive a week later.
+
+In mouse studies, the same cells survived better when delivered as an intact sheet than when injected as a loose suspension. And when researchers tried the comparison with fat itself, two-syringe fat that **kept its scaffold** healed wounds in mice better than the loose-cell version.
+
+Both of those are animal studies, and I say so. Evidence for nanofat in human skin is still graded as low. But the biology points one way: more cells is not the same as more surviving cells.
+
+## Nanofat has been around since 2013
+
+Dr. Tonnard and Dr. Verpaele published the technique from Ghent, where I trained, in 2013. It spread slowly - partly because **only a surgeon can harvest fat**, while anyone can inject what arrives in a labelled syringe.
+
+There is also a regulatory difference worth knowing. In the United States, the FDA treats enzyme-isolated SVF as more than minimally manipulated tissue, which puts it under far stricter rules. Mechanically processed fat stays much closer to simply being your own tissue moved to a new place.
+
+In practice, I use nanofat as part of [fat grafting](/fat-grafting-chandigarh/): fat placed where volume has been lost, and nanofat needled into the skin above it. It is also one of the tools in [scar revision](/scar-revision-chandigarh/).
+
+## Three questions before anything "new"
+
+The machine is not the villain here. The pattern is: a newer, more expensive option sold on a bigger number. You can test any of them with three questions.
+
+* **Who paid for the study?** A funded study is not wrong, but it is a reason to read harder.
+* **Did anyone independent repeat it?**
+* **How long has it been around?**
+
+If the answers are the seller, no, and not long: wait. The same three questions take apart a lot of skincare marketing too - see [why "more collagen" is the wrong goal](/blog/young-skin-vs-scar-collagen-weave/).
+
+**Treat new as new.**`,
+    image: "/blog/new-is-not-better/hero.webp",
+    date: "October 3, 2026"
+  },
+  {
+    id: "can-your-face-predict-how-long-you-will-live",
+    seoTitle: "Can Your Face Predict How Long You'll Live?",
+    title: "Can your face predict how long you'll live?",
+    excerpt: "Researchers photographed 1,826 twins to find out. The answer changes what is worth doing for your face - and most of it is not sold in a jar.",
+    content: `## It can
+
+Researchers in Denmark photographed 1,826 twins over the age of 70 and asked people to guess how old each one looked. Then they followed them.
+
+Within each pair, **the twin who looked older was more likely to die first** - and the bigger the difference in how old they looked, the stronger the effect.
+
+Your face ages with your whole body. It is reading out what is happening everywhere else. So why are we trying to fix it with a cream?
+
+## Your face ages in four layers
+
+Skin. The fat pads under it. The ligaments that hold those pads in place. And the bone underneath it all.
+
+All four change with age - skin thins, fat pads shrink and slide, ligaments loosen, bone is resorbed. Guess how many of them your serum reaches.
+
+## One
+
+Whatever you rub on stops at the **skin.** The fat, the ligaments and the bone never see it.
+
+![A cream applied to the surface spreads only within the skin layer, above the fat pads, ligaments and bone](/blog/skincare-stops-at-skin/slide-4.mp4)
+
+That does not make skincare useless - sunscreen and a retinoid genuinely change the skin. It means skincare can only ever work on one of the four layers.
+
+## Some treatments reach too far
+
+The opposite problem exists too. In October 2025 the US FDA issued a safety communication about radiofrequency microneedling, a device sold to tighten skin, after reports of burns, scarring, nerve damage and **loss of facial fat** - the fat that keeps a face full.
+
+These are reports, not a rate, and the devices are safe in trained hands at the right settings. But it is a reminder that a treatment aimed at the top layer can harm the deeper ones without you knowing - and it is the deeper layers that shape how your face ages.
+
+And the collagen powder you bought?
+
+## Collagen powder: 23 trials
+
+A 2025 meta-analysis pooled 23 randomised trials of collagen supplements, with 1,474 participants. Taken together, they seemed to improve skin hydration, elasticity and wrinkles.
+
+Then the authors split the trials by who paid for them. The benefit showed up only in trials **the sellers funded.** In the independent, higher-quality trials it disappeared.
+
+Collagen you swallow is digested into amino acids like any other protein. You are better off eating the protein you can sustain - financially, logistically and practically.
+
+So what does reach the deep layers?
+
+## Nothing sold for your face
+
+* **Don't smoke.** In studies of identical twins, the twin who smoked was more often judged to look older.
+* **Keep your teeth.** The jawbone shrinks where teeth are lost, and the face above it follows.
+* **Keep your weight steady after 40.** In identical twins, the heavier twin looked older before 40 - and younger after it.
+* **Treat menopause as a medical conversation.** Skin collagen falls fastest in the first years after menopause. That deserves a doctor, not a serum.
+
+None of these is marketed for the face. All of them protect it, because they protect the rest of you - and that is the point of the twin study. Where volume has already gone, your own [fat](/fat-grafting-chandigarh/) is the one treatment that reaches the deep layer and stays your own tissue.
+
+**The best anti-ageing habits aren't sold for your face.**`,
+    image: "/blog/skincare-stops-at-skin/hero.webp",
+    date: "October 3, 2026"
+  },
+  {
     id: "young-skin-vs-scar-collagen-weave",
     seoTitle: "Young Skin vs Scar: Why More Collagen Isn't the Goal",
     title: "One of these is young skin. The other is a scar. Guess which.",
@@ -3343,7 +3458,7 @@ And it does two jobs at once.
 
 ## I fix volume and skin in one sitting
 
-In one session I place your fat where volume has been lost - [fat grafting](/fat-grafting-chandigarh/) - and then process the rest into **nanofat** and needle it into the skin itself.
+In one session I place your fat where volume has been lost - [fat grafting](/fat-grafting-chandigarh/) - and then process the rest into [nanofat](/blog/stem-cell-machine-or-two-syringes-nanofat/) and needle it into the skin itself.
 
 **Nothing foreign stays behind.** There is no product for collagen to wall off, because the material is your own tissue.
 
@@ -3501,6 +3616,8 @@ Where those two overlap, surgery works. Where they do not, **no technique closes
 
 Most disappointment after aesthetic surgery traces back to this question being skipped rather than to anything that happened in the operating room.
 
+![A balance with what the operation can do on one pan and what you expect on the other](/blog/five-questions/slide-4.webp)
+
 ## 4. What are you taking?
 
 Blood thinners, supplements, GLP-1 medications, steroids, hormonal treatment, recreational drugs.
@@ -3526,7 +3643,7 @@ You are entitled to ask directly: what would make you decline this? What does th
 The most useful hour you can spend before surgery is the one where somebody tells you what it cannot do. [Preparing for that consultation properly](/blog/preparing-for-your-first-aesthetic-consultation/) makes the difference between an hour of reassurance and an hour of information.
 
 **Five questions. Ask them of anyone.**`,
-    image: "/about-bg.webp",
+    image: "/blog/five-questions/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -3551,6 +3668,8 @@ It is far quieter. Ordinary skin bacteria settle on the implant shell in numbers
 That film is the leading suspect behind **capsular contracture** - the hardening and tightening of the scar capsule around an implant that can distort the shape and, in significant cases, require further surgery.
 
 The research literature describes capsular contracture induced by chronic subclinical infection as a major cause of poor outcomes and reoperation in implant surgery, which is precisely why pocket irrigation with antiseptic is standard practice rather than a personal preference.
+
+![Cross-section of the capsule, a thin bacterial film, and the implant shell beneath it](/blog/implant-bath/slide-5.webp)
 
 ## The shell holds a static charge
 
@@ -3583,7 +3702,7 @@ If you are considering [breast augmentation](/breast-augmentation-chandigarh/), 
 It is a better question than most of the ones patients are told to ask, because it is about the part of the operation that decides longevity rather than appearance.
 
 **The quiet steps decide the loud outcomes.**`,
-    image: "/breast-augmentation-aesthetic.webp",
+    image: "/blog/implant-bath/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -3621,6 +3740,8 @@ Projection is how far the implant stands off the chest wall from the same base. 
 
 This is where preference legitimately enters. More projection gives a fuller, more forward result on the same base; less gives a flatter, more gradual slope.
 
+![One base width held fixed, drawn at low, moderate and high projection: 245, 290 and 345 cc](/blog/four-numbers/slide-5.webp)
+
 ## 4. Volume — the last number, not the first
 
 The cc figure falls out of the three above.
@@ -3645,7 +3766,7 @@ You will very likely end up describing your result in cup sizes afterwards. It s
 Implant choice is also only part of the planning. Whether you need a [lift](/breast-lift-chandigarh/) alongside augmentation depends on where the nipple sits relative to the fold, and that assessment is separate from sizing entirely.
 
 **Cup size is a result, not a request.**`,
-    image: "/breast-lift-aesthetic.webp",
+    image: "/blog/four-numbers/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -3687,6 +3808,8 @@ The midline is checked for **diastasis** - separation of the abdominal muscles, 
 
 If it is present, the operation includes repairing it. That is a substantial part of why an abdominoplasty produces a flatness that liposuction alone cannot: [liposuction removes fat](/blog/why-does-bad-liposuction-look-wavy/), but it does nothing to a separated muscle wall.
 
+![Abdomen marked standing: the midline, the diastasis check and the planned incision](/blog/marking-day/slide-4.webp)
+
 ## Then the zones
 
 The rest of the marking divides the abdomen into zones: where fat is removed, where it is feathered to blend, and where nothing is touched at all.
@@ -3704,7 +3827,7 @@ None of that is available once you are under anaesthetic and horizontal. By then
 So if the marking session feels slow, or you find yourself standing while someone steps back and looks at you from several angles - that is the part working correctly.
 
 **The lines are the operation.**`,
-    image: "/tummy-tuck-aesthetic.webp",
+    image: "/blog/marking-day/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -3725,6 +3848,8 @@ Watch a standard liposuction marking and you will see circles drawn wherever the
 For high-definition work it is not enough. The marking instead identifies the muscle prominences and the natural contours between them, **with the patient standing** - for the same reason [abdominoplasty marking is done standing](/blog/the-lines-are-the-operation-tummy-tuck-marking/).
 
 The distinction is simple: fat is wherever you find it. Contour only exists where the muscle already is. A map of fat and a map of shape are different maps, and only one of them produces definition.
+
+![The same abdomen marked twice: circles over fat, and contours marked standing](/blog/wavy-liposuction/slide-3.webp)
 
 ## A cannula genuinely does suck
 
@@ -3754,6 +3879,8 @@ Dr Sumit's own instrument discipline: 4 and 5 mm cannulas in the deep layer, ste
 
 That last rule is where the irregularity risk concentrates. A large cannula in the superficial layer takes tissue directly beneath the skin, and there is nothing left to smooth the difference.
 
+![Two layers, two jobs: the same depth removed from every zone in the deep fat, and the superficial fat worked only under the pre-operative lines](/blog/wavy-liposuction/slide-7.webp)
+
 ## What this means if you are choosing a surgeon
 
 Ask how the marking is done, and whether it is done standing. Ask whether volume is recorded by zone. Ask what cannula sizes are used superficially.
@@ -3761,7 +3888,7 @@ Ask how the marking is done, and whether it is done standing. Ask whether volume
 These are not gotcha questions. They are the actual variables, and anyone doing [high-definition liposuction](/liposuction-chandigarh/) properly will answer them without hesitation.
 
 **Even is deep work. Sharp is superficial work. Wavy is neither.**`,
-    image: "/body-contouring-aesthetic.webp",
+    image: "/blog/wavy-liposuction/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -3791,6 +3918,8 @@ This is where definition lives. Sculpting here - specifically along the lines wh
 
 It is also the riskier layer, because it is directly under the skin. Anything removed unevenly here shows immediately and permanently, which is why [irregular results almost always originate in this layer](/blog/why-does-bad-liposuction-look-wavy/).
 
+![The abdominal wall in layers: skin, superficial fat, fascia, deep fat and muscle](/blog/fat-layers/slide-4.webp)
+
 ## Layer 3 — visceral fat
 
 Inside the abdominal wall, packed around your organs.
@@ -3816,7 +3945,7 @@ The honest answer sometimes is that you are not a candidate for the sharper vers
 For the broader picture of what [liposuction](/liposuction-chandigarh/) and [body contouring](/body-contouring-chandigarh/) can and cannot change, the layer you are in is the whole story.
 
 **Debulking and sculpting are not the same operation.**`,
-    image: "/hd-lipo-aesthetic.webp",
+    image: "/blog/fat-layers/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -3866,6 +3995,8 @@ Blood as a proportion of what came out fell from twenty to forty-five per cent t
 
 That is the tumescent technique, and it is why liposuction today is a day-case procedure with a recovery measured in days rather than a major operation with transfusion on standby. The fluid you are told about before surgery is not a minor preparatory detail. It is the innovation that made the operation what it is.
 
+![Bar chart of how much of the aspirate was blood: 20 to 45 per cent with the dry technique, about 1 per cent with tumescent](/blog/blood-in-the-aspirate/slide-6.webp)
+
 ## None of this was designed. It got corrected.
 
 That is the honest shape of the story. Nobody sat down and designed liposuction. Each version caused a specific problem, and the next version existed to fix it - sharp to blunt, dry to wet, wet to tumescent.
@@ -3875,7 +4006,7 @@ It is a useful frame for surgery generally, and a useful corrective to the idea 
 It is also why the apparently boring parts of a modern operation - the infiltration, the cannula gauge, [the layer discipline](/blog/the-three-fat-layers-in-your-abdomen/) - are not fussiness. Each one is a scar left by something that went wrong for somebody else.
 
 **None of this was designed. It got corrected.**`,
-    image: "/surgical-excellence.webp",
+    image: "/blog/blood-in-the-aspirate/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -3896,6 +4027,8 @@ Overhead lighting in the before, soft frontal lighting in the after.
 **Shadow alone can add or erase a fold.** The same face, photographed on the same day under two lighting setups, will show a different jawline, different nasolabial folds, different under-eye hollows.
 
 What to look for: the direction and hardness of shadows under the nose, the chin and the brow. If they differ between the two images, the lighting changed, and you cannot compare the results.
+
+![The same profile as the lamp moves from overhead to the front: nothing changes except where the light is](/blog/honest-before-after/slide-3.mp4)
 
 ## 2. Did the camera distance change?
 
@@ -3934,7 +4067,7 @@ This applies to every gallery, including ours. If you are looking at [results on
 There is a reason to say this out loud rather than quietly maintain good practice: a standard stated in public is one the person stating it can be held to.
 
 **Same light, same lens, same distance, same posture. Or it proves nothing.**`,
-    image: "/rhinoplasty-aesthetic.webp",
+    image: "/blog/honest-before-after/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -3968,6 +4101,8 @@ It produces no drama at the site. There may be nothing at all to feel. The risk 
 
 **This is the complication that shapes post-operative instructions far more than most patients realise.**
 
+![A clot forming in a deep vein of the calf, and the route it can travel to the heart and lung](/blog/walk-after-surgery/slide-4.webp)
+
 ## Surgery stacks the risk, three ways
 
 What makes this worth taking seriously is that an operation does not raise one risk factor. It raises three at once.
@@ -3986,6 +4121,8 @@ It is the opposite. The stockings, the calf pumps and the walking are the parts 
 
 The calf muscles squeezing as you walk are what moves blood out of the deep veins. Nothing else you do in the first days substitutes for it.
 
+![Legs in compression sleeves on a hospital bed](/blog/walk-after-surgery/slide-6.webp)
+
 ## Why we come back in the evening
 
 Evening rounds are not a formality, and they are not just checking the dressing.
@@ -3993,6 +4130,8 @@ Evening rounds are not a formality, and they are not just checking the dressing.
 Somebody gets you sitting. Then standing. Then a few steps to the door and back. That first walk is not a milestone being recorded — **it is the treatment being given**.
 
 If you have had surgery and someone is gently insisting you get up when you would much rather not, that is not indifference to your comfort. It is the single most evidence-driven thing happening in the room.
+
+![A surgeon helping a patient stand from the bed for the first walk](/blog/walk-after-surgery/slide-7.webp)
 
 ## What you should actually do
 
@@ -4006,7 +4145,7 @@ If you have a personal or family history of clots, or you are on hormone treatme
 Risk varies enormously between operations and between patients, which is why this article gives you no numbers. What does not vary is the instruction.
 
 **The most important thing you do after surgery is walk.**`,
-    image: "/surgical-excellence.webp",
+    image: "/blog/walk-after-surgery/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -4020,15 +4159,39 @@ Pain after surgery is expected, so people tolerate it. Numbness is not, so it wo
 
 In the large majority of cases, numbness is not a sign that something was damaged beyond repair. It is a sign that repair is happening at the speed nerves happen to work at, which is far slower than the rest of you.
 
+## Every cut goes through nerves
+
+Not the big ones with names. A fine net of nerve threads runs just under your skin, and **no incision can avoid it.** Whatever the operation, the skin beside the scar has lost some of its wiring for a while.
+
+![A fine net of nerve threads under the skin, and an incision passing through it](/blog/still-numb/slide-2.mp4)
+
+## A nerve is a wire inside a pipe
+
+Each nerve fibre is a living wire running inside a thin tube. Cut it, and the wire beyond the cut dies back - but **the empty pipe stays.** That pipe decides how the feeling comes back.
+
+![A nerve fibre drawn as a wire inside a pipe; after a cut, the wire beyond it dies but the pipe remains](/blog/still-numb/slide-3.mp4)
+
+## Two roads back
+
+**Road 1: back down the pipe, about a millimetre a day.** A new wire grows from the cut end and slides down the old pipe. Fingernails grow about 0.1 mm a day, so this is roughly ten times fingernail speed.
+
+![A new nerve wire regrowing down its old pipe, compared with a fingernail's growth](/blog/still-numb/slide-4.mp4)
+
+**Road 2: no pipe, about 0.02 mm a day.** Where there is no pipe to follow, healthy nerves at the edge of the numb patch branch sideways into it. Measured in human skin, that is around five times slower than a fingernail and about fifty times slower than Road 1 - which is why the centre of a numb patch is always the last part to wake up.
+
+![Healthy nerves at the edge branching slowly into a numb patch that fills in from the outside](/blog/still-numb/slide-5.mp4)
+
 ## Pins and needles are a good sign
 
 New nerve endings are twitchy before they settle. Tingling, small electric zings, an odd itch when the skin is touched, a patch that feels strange rather than absent - **that is arrival, not damage.**
 
 One exception worth knowing: a single sharp spot that keeps getting worse, rather than a broad area gradually waking up, is a different thing. Show that one to your surgeon rather than waiting it out.
 
+![New nerve endings arriving at the skin surface, twitchy before they settle](/blog/still-numb/slide-6.webp)
+
 ## How long depends on what happened to the pipe
 
-This is the part that explains everything else. Think of a nerve fibre as a wire running inside a pipe. What happens to the wire matters less than what happens to the pipe.
+This is where the pipe pays off. What happens to the wire matters less than what happens to the pipe.
 
 **The pipe survived — weeks.** Liposuction mostly bruises nerves rather than dividing them. The wire is stunned, the pipe is intact, and function returns comparatively quickly. Objective testing after liposuction found sensation back to normal at around six weeks for suction-assisted technique, and about ten weeks after ultrasound-assisted, with roughly nine in ten patients recovered by the ten-week mark.
 
@@ -4037,6 +4200,8 @@ This is the part that explains everything else. Think of a nerve fibre as a wire
 **The pipe is gone — years, and possibly permanently in a patch.** Where tissue is removed or skin is lifted widely, as in a [tummy tuck](/tummy-tuck-chandigarh/), there is no pipe left to follow. The only route back is neighbouring nerves branching sideways into the area, which happens dramatically more slowly - and it fills in from the edges, so the centre of the patch is last.
 
 How slowly? A randomised trial following abdominoplasty patients for a mean of nearly four years found **two-thirds still had altered sensation below the umbilicus at three and a half years.** That is not a complication. That is the expected course, and it is why the consent conversation for abdominoplasty should always include it.
+
+![Three nerves: one bruised with its pipe intact, one cut and regrowing down its pipe, one with no pipe left](/blog/still-numb/slide-7.webp)
 
 ## Numb skin cannot warn you
 
@@ -4047,6 +4212,8 @@ Skin you cannot feel will not tell you it is being burned. A hot water bottle, a
 **Keep heat and ice off any area you cannot feel properly.** Not "be careful with" - off.
 
 This applies for as long as the numbness lasts, which after some operations means months.
+
+![A hot water bottle resting on a numb patch of skin](/blog/still-numb/slide-8.webp)
 
 ## What to expect, and when to ask
 
@@ -4059,7 +4226,7 @@ This applies for as long as the numbness lasts, which after some operations mean
 Numbness after [liposuction](/liposuction-chandigarh/) resolves on a timescale of weeks. After wide undermining it can take years, and a patch may simply stay. Neither means something went wrong.
 
 **A millimetre a day in a pipe. Far slower without one.**`,
-    image: "/nerve-repair-reconstructive.webp",
+    image: "/blog/still-numb/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -4072,6 +4239,8 @@ Numbness after [liposuction](/liposuction-chandigarh/) resolves on a timescale o
 People wake from surgery, look in a mirror, find themselves acceptable, and quietly file that away as the baseline. Then it gets worse for two days, and they conclude something has gone wrong.
 
 Nothing has gone wrong. **Swelling peaks at around 48 to 72 hours**, not on day one. The rise is expected, it is part of the normal course, and being told about it afterwards is far less reassuring than knowing it beforehand.
+
+![Swelling plotted against time: a peak at 48 to 72 hours, then a long tail over months](/blog/day-three-swelling/slide-3.webp)
 
 ## The swelling is the repair arriving
 
@@ -4115,7 +4284,7 @@ This is also why judging a result early is unfair to the result. Swelling and [s
 That last list is the one to take seriously. Ordinary swelling is symmetrical, soft, and follows the curve. Swelling that breaks the pattern is worth a phone call.
 
 **Up for three days, down for three months.**`,
-    image: "/blog-liposuction-recovery.webp",
+    image: "/blog/day-three-swelling/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -4140,6 +4309,8 @@ It does not. The red phase is gone within a couple of days. The yellow-brown dra
 Treat that as a **typical course, not a schedule.** Individual bruises vary widely, and a bruise that is slightly behind that pattern is not a problem.
 
 One thing worth being precise about, because it comes up: colour cannot reliably date a bruise. A yellow bruise is more than about eighteen hours old, and that is close to the limit of what can honestly be inferred. Studies of clinicians attempting to age bruises from appearance found them correct within 24 hours well under half the time.
+
+![A typical bruise drawn to scale over two weeks: red, purple, green, yellow, gone](/blog/bruise-colour-clock/slide-3.webp)
 
 ## Why it moves downward
 
@@ -4169,7 +4340,7 @@ Blood may be collecting in a pocket rather than dispersing through tissue. After
 Bruising also interacts with [swelling](/blog/why-does-swelling-get-worse-on-day-three/), which follows its own curve and peaks later than most people expect. The two together account for almost everything that alarms patients in the first post-operative week.
 
 **Purple, then green, then yellow. That is healing on schedule.**`,
-    image: "/blepharoplasty-aesthetic.webp",
+    image: "/blog/bruise-colour-clock/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -4187,6 +4358,8 @@ Which means neither sign, on its own, tells you anything.
 
 A trained eye is not looking for inflammation. It is looking for **more inflammation than the wound explains** - and then for which direction it is moving.
 
+![A thin pink border along a healing stitch line, beside redness out of proportion to the wound](/blog/wound-infected-or-healing/slide-3.mp4)
+
 ## The test you can actually do
 
 This is the single most useful thing in this article, and it requires a pen.
@@ -4197,6 +4370,8 @@ This is the single most useful thing in this article, and it requires a pen.
 * Redness **across the line**: call your surgeon.
 
 A thin border of pink around a fresh incision is normal. Redness that is spreading, out of proportion to the wound, and not retreating over a day is a different matter. The pen turns a subjective judgement into an objective one, and it works whether or not you have any medical knowledge.
+
+![Redness around a wound on days 1, 2, 4 and 6: settling in one row, spreading in the other](/blog/wound-infected-or-healing/slide-4.mp4)
 
 ## Call the same day if
 
@@ -4216,6 +4391,8 @@ Its early tell is **fluid out of proportion.** Not pus, necessarily. Plain serou
 
 That disproportion is inflammation walled around a collection that has not found an exit. It is subtle, it is easy to dismiss, and it is worth mentioning at a follow-up appointment even when nothing else seems wrong.
 
+![Below the deep fascia, a collection builds up with no route to the skin](/blog/wound-infected-or-healing/slide-8.mp4)
+
 ## Whitish fluid is a different question
 
 Cloudy white fluid almost always means pus.
@@ -4223,6 +4400,8 @@ Cloudy white fluid almost always means pus.
 It can also be fat necrosis that has liquefied, and at the bedside the two are genuinely hard to tell apart. Neither is reassuring - dead fat is food for bacteria too. And if the fat beneath the skin has died, the skin above it can follow.
 
 This is one to show someone rather than photograph and worry about.
+
+![Where bacteria find food: a stitch, a patch of dead fat, and an edge that never got enough blood](/blog/wound-infected-or-healing/slide-6.mp4)
 
 ## The honest limit of an article like this
 
@@ -4233,7 +4412,7 @@ Which is the real answer to "should I bother going to my follow-up when I feel f
 If you are in the first weeks after an operation, this sits alongside the other two things that alarm people and usually should not - [swelling that peaks on day three](/blog/why-does-swelling-get-worse-on-day-three/) and [bruising that travels downward](/blog/why-does-a-bruise-change-colour-and-move/).
 
 **Warmth and tenderness are the mechanism. Direction is the signal.**`,
-    image: "/scar-revision-fat-grafted.webp",
+    image: "/blog/wound-infected-or-healing/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -4257,6 +4436,8 @@ This is why location predicts scarring so reliably. The chest, shoulders and bac
 
 It is also why a scar can look good when the stitches come out and disappoint six months later. The spreading happens after everyone has stopped looking.
 
+![The same cut closed twice: at the skin only, held open by tension, and in layers, resting together](/blog/tension-writes-the-scar/slide-3.webp)
+
 ## The stitches that matter are the ones you cannot see
 
 If tension writes the scar, the job during closure is not to hold the skin together. It is to make sure the skin never has to hold anything at all.
@@ -4279,6 +4460,8 @@ This has a name, **atraumatic tissue handling**, and it is not a modern refineme
 
 It is also completely invisible. No patient watches their own operation, and nobody can look at a finished scar and say which forceps made it - which is precisely why it is the kind of thing that gets skipped.
 
+![Smooth forceps and toothed forceps holding a wound edge](/blog/toothed-forceps/slide-3.webp)
+
 ## How fine does the thread get? And why it is not the answer
 
 Surgical suture runs on a scale that goes backwards: 3-0 is thick, 6-0 is fine, 8-0 finer still. More zeros, less thread.
@@ -4290,6 +4473,8 @@ Thread is matched to site. Thick skin under tension - a back, an abdomen - needs
 All of which is real craft, and none of which decides your scar.
 
 **Tension does.** A wound closed under tension heals wide whatever it is stitched with. Fine thread only starts to matter once the tension has been dealt with somewhere deeper. It is the last refinement on a result that was settled before the skin was reached.
+
+![Suture gauges 3-0, 5-0, 6-0 and 8-0 drawn at true relative width beside a human hair](/blog/suture-scale/slide-3.webp)
 
 ## Your stitches are not holding you together
 
@@ -4305,6 +4490,8 @@ This explains two things patients find alarming.
 
 If you take one practical thing from this: the restrictions you are given after surgery are not about pain, and they are not caution for its own sake. They track a strength curve you cannot see.
 
+![Wound strength over a year: a small fraction at day 14, still short of uninjured skin at twelve months](/blog/wound-strength/slide-3.webp)
+
 ## A scar is not an event, it is a year
 
 A scar does not form and then sit there. It **remodels** continuously for roughly a year - red, then pink, then pale, then quiet. The angry phase is not a bad outcome. It is a stage, and it is the stage during which most patients form their opinion of the result.
@@ -4312,6 +4499,8 @@ A scar does not form and then sit there. It **remodels** continuously for roughl
 Judge a scar at twelve months. Not at two weeks, and not at three months either.
 
 That single reframe prevents a great deal of unnecessary distress, and occasionally prevents someone seeking revision of something that was going to settle perfectly well on its own.
+
+![A scar maturing: red, then pink, then pale, then quiet](/blog/wound-strength/slide-6.webp)
 
 ## What you can actually influence
 
@@ -4335,7 +4524,7 @@ Timing matters. Revising too early means operating on tissue that has not finish
 If you are planning surgery where the scar is part of the decision - an [abdominoplasty](/tummy-tuck-chandigarh/), a [breast reduction](/breast-reduction-chandigarh/), an [eyelid procedure](/blepharoplasty-chandigarh/) - that conversation belongs in the consultation, before anything is booked. [Preparing properly for that first consultation](/blog/preparing-for-your-first-aesthetic-consultation/) makes it a far more useful hour.
 
 **Most of surgery is what you do not do to the tissue.** The scar you end up with was largely decided by things that happened where you could not see them: how the edges were held, where the load was carried, and whether the skin was ever asked to do work that was not its job.`,
-    image: "/scar-revision-aesthetic.webp",
+    image: "/blog/tension-writes-the-scar/hero.webp",
     date: "September 21, 2026"
   },
   {
@@ -4354,6 +4543,8 @@ It is not generosity. The length is not really chosen at all - it follows from g
 Cut a circle out of skin and pull it shut, and **the ends bunch**. Two small mounds rise, one at each end of the closure. They have a name - most patients simply describe them as puckers - and nobody wants them.
 
 That bunching is not a technical error. It is what happens when you try to close a round defect in a flat sheet.
+
+![A circular defect closed on a grid bunches into mounds at each end; an ellipse with 30-degree corners closes flat](/blog/three-times-longer/slide-3.mp4)
 
 ## Perfect closure would need parallel edges
 
@@ -4393,7 +4584,7 @@ None of this is separate from the wider principle that [tension is what actually
 If you are dealing with a scar that healed badly, or a lesion you want removed with the best possible result, [scar revision and lesion excision](/scar-revision-chandigarh/) both start from the same geometry.
 
 **Length is chosen so the line can lie flat.**`,
-    image: "/scar-revision-fat-grafted.webp",
+    image: "/blog/three-times-longer/hero.webp",
     date: "September 21, 2026"
   },
   {
