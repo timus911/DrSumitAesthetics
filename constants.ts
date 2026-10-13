@@ -4873,7 +4873,7 @@ If your primary concern is slight drooping around your mouth and jawline, a Mini
     seoTitle: "Gynecomastia Surgery: Causes, Treatment, Recovery",
     title: "Gynecomastia Surgery in India: Causes, Treatment, and Recovery",
     excerpt: "Gynecomastia affects millions of men. Discover the causes and how modern surgical technique delivers a permanent, masculine chest contour.",
-    videos: [GYNECOMASTIA_VIDEO],
+    videos: [GYNECOMASTIA_JOURNEY_VIDEO, GYNECOMASTIA_VIDEO],
     content: `## Restoring Confidence with Chest Contouring
 
 Gynecomastia—the development of enlarged glandular breast tissue in males—is far more common than most realize, affecting up to 30% of men. Despite how common it is, it can cause significant psychological distress, leading men to avoid wearing fitted shirts, going to the beach, or participating in sports.

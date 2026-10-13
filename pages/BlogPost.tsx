@@ -187,7 +187,7 @@ const BlogPost: React.FC = () => {
                     </div>
 
                     {post.videos && post.videos.length > 0 && (
-                        <ProcedureVideos videos={post.videos} heading="Watch the full explainer" />
+                        <ProcedureVideos videos={post.videos} heading={post.videos.length > 1 ? "Watch the videos" : "Watch the full explainer"} />
                     )}
 
                     {/* Every post ends here: the writing came out of the Instagram
