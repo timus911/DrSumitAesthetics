@@ -91,6 +91,16 @@ export const GYNECOMASTIA_VIDEO: ProcedureVideo = {
   uploadDate: "2026-08-13T14:40:26+05:30"
 };
 
+// The patient-journey film: one real patient from consult to day-2 result.
+export const GYNECOMASTIA_JOURNEY_VIDEO: ProcedureVideo = {
+  youtubeId: "L9bDPVNrYeQ",
+  title: "Is this Breast tissue gland or fat?",
+  description: "One patient's gynecomastia journey with Dr. Sumit Singh Gautam: he lost 19 kg, but not from his chest. The consult, the chest marking, liposuction and gland excision, nanofat, and his result on day 2. Shared with the patient's consent.",
+  // Exact publish time, read from YouTube's own <meta itemprop="uploadDate">
+  // on the watch page: 2026-10-13T12:42:59-07:00 (PT), the same instant as IST.
+  uploadDate: "2026-10-14T01:12:59+05:30"
+};
+
 export type Procedure = {
   id: string;
   title: string;
@@ -1999,7 +2009,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
       recoveryTips: ["The compression vest is vital to flatten the area and prevent fluid buildup - 7 days minimum, longer in higher grades.", "Lymphatic massage and icing 4 to 5 times a day for at least 6 weeks helps ensure a smooth, bump-free result."]
     },
     regions: ["Breasts", "Body"],
-    videos: [GYNECOMASTIA_VIDEO],
+    videos: [GYNECOMASTIA_JOURNEY_VIDEO, GYNECOMASTIA_VIDEO],
     gallery: [
       "/gynecomastia-result-1.webp",
       "/gynecomastia-result-2.webp",
