@@ -17,6 +17,7 @@ interface SEOProps {
     faqs?: { question: string; answer: string[] }[];
     howToSteps?: { name: string; text: string }[];
     priceRange?: string; // e.g. "₹1,50,000 - ₹2,50,000" — emitted as MedicalProcedure offers when numeric
+    lastReviewed?: string; // ISO date; adds a MedicalWebPage reviewed by the Physician
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -32,7 +33,8 @@ const SEO: React.FC<SEOProps> = ({
     articleDate,
     faqs,
     howToSteps,
-    priceRange
+    priceRange,
+    lastReviewed
 }) => {
     // Brand suffix, budget-aware. "Plastic surgeon" is the term patients search
     // (590/mo in India against 210 for "aesthetic surgeon"), so it leads the
@@ -246,7 +248,31 @@ const SEO: React.FC<SEOProps> = ({
         return base;
     };
 
-    const baseSchema = buildSchema();
+    // Medically reviewed pages also declare themselves a MedicalWebPage, with
+    // the review date and the reviewing physician (name, qualifications and
+    // registration), alongside whatever the page's main schema is.
+    const builtSchema = buildSchema();
+    const baseSchema = lastReviewed ? [
+        ...(Array.isArray(builtSchema) ? builtSchema : [builtSchema]),
+        {
+            "@context": "https://schema.org",
+            "@type": "MedicalWebPage",
+            "url": siteUrl,
+            "name": siteTitle,
+            "description": metaDescription,
+            "inLanguage": "en-IN",
+            "lastReviewed": lastReviewed,
+            ...(procedureName && { "about": { "@type": "MedicalProcedure", "name": procedureName } }),
+            "reviewedBy": {
+                "@type": "Physician",
+                "name": BRAND.name,
+                "url": "https://drsumitaesthetics.com/about/",
+                "medicalSpecialty": "PlasticSurgery",
+                "description": `${BRAND.qualifications}. Registered medical practitioner, Reg. No. ${BRAND.registration}.`,
+                "identifier": { "@type": "PropertyValue", "name": "Medical registration number", "value": BRAND.registration }
+            }
+        }
+    ] : builtSchema;
 
     return (
         <>

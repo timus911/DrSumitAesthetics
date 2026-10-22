@@ -11,6 +11,7 @@ import ProcedureCard from '../components/ProcedureCard.tsx';
 import FellowshipProvenance from '../components/FellowshipProvenance.tsx';
 import ProcedureVideos from '../components/ProcedureVideos.tsx';
 import CredentialsStrip from '../components/CredentialsStrip.tsx';
+import ReviewedBy from '../components/ReviewedBy.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
 const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img, onClick }) => {
@@ -151,6 +152,7 @@ const ProcedureDetail: React.FC = () => {
         schemaType="HowTo"
         procedureName={procedure.title}
         priceRange={procedure.priceRange}
+        lastReviewed={procedure.reviewedOn}
         howToSteps={[
           { name: "Immediate Recovery", text: procedure.details?.functional?.[0] || "Begin early mobilization and follow prescribed post-op care." },
           { name: "Work Readiness", text: procedure.details?.backToWork?.[0] || "Typical return to light work within 10-14 days." },
@@ -229,7 +231,7 @@ const ProcedureDetail: React.FC = () => {
                     const linkMatch = trimmed.match(/\[(.*?)\]\((.*?)\)/);
                     if (linkMatch) {
                       return (
-                        <Link key={i} to={linkMatch[2].startsWith('/') ? `${linkMatch[2].replace(/\/+$/, '')}/` : linkMatch[2]} className="text-[#4A90E2] hover:underline font-bold inline-block mt-2">
+                        <Link key={i} to={linkMatch[2].startsWith('/') ? `${linkMatch[2].replace(/\/+$/, '')}/` : linkMatch[2]} className="text-[#4A90E2] hover:underline font-bold block w-fit mt-2">
                           {linkMatch[1]}
                         </Link>
                       );
@@ -325,6 +327,10 @@ const ProcedureDetail: React.FC = () => {
 
             {procedure.faqs && procedure.faqs.length > 0 && (
               <FAQ items={procedure.faqs} />
+            )}
+
+            {procedure.reviewedOn && (
+              <ReviewedBy reviewedOn={procedure.reviewedOn} references={procedure.references} />
             )}
 
             {relatedProcedures.length > 0 && (

@@ -17,6 +17,10 @@ export const BRAND = {
     hobbies: ["Fine Art Sketching", "Oil Painting", "3D Digital Sculpting", "Wood Carving"]
   },
   tagline: "Precision. Artistry. Mastery.",
+  // NMC advertising guidelines (6 Oct 2026), 3.2 Explanation III: every public
+  // communication shows name, qualifications, registration status and number.
+  qualifications: "MBBS, MS, MCh (Plastic Surgery), Fellowship in Aesthetic Surgery (Belgium)",
+  registration: "HN9607",
 };
 
 export const CONTACT = {
@@ -142,6 +146,8 @@ export type Procedure = {
   videos?: ProcedureVideo[];
   fellowshipAnchor?: boolean; // Renders the Tonnard & Verpaele fellowship provenance block. Only for the techniques he trained in directly under them.
   faqs?: { question: string; answer: string[] }[]; // People Also Ask Data
+  reviewedOn?: string; // ISO date of the last medical review. Renders the author/registration box and MedicalWebPage schema.
+  references?: { citation: string; url: string }[]; // Sources for the clinical figures on the page, listed under the author box.
 };
 
 const RAW_PROCEDURES: Procedure[] = [
@@ -1430,12 +1436,13 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
   },
   {
     id: "rhinoplasty-nose-job-chandigarh",
-    metaDescription: "Rhinoplasty (nose job) in Chandigarh by Dr. Sumit — preservation techniques for natural, balanced results. Book a private consultation today.",
+    metaDescription: "Rhinoplasty (nose job) in Chandigarh by Dr. Sumit Singh Gautam, MCh plastic surgeon. Fee range ₹1,20,000 to ₹2,50,000, with recovery and risks from published studies.",
     title: "Rhinoplasty (Nose Job)",
+    seoTitle: "Rhinoplasty in Chandigarh: Cost, Recovery, Risks | Dr. Sumit",
     category: "Face",
     parentCategory: "aesthetic",
     description: "Refining nasal structure for harmony and function.",
-    longDescription: "Reshaping the nose to fit the face while maintaining or improving respiratory airflow.",
+    longDescription: "The fee for rhinoplasty in Chandigarh with Dr. Sumit Singh Gautam ranges from ₹1,20,000 to ₹2,50,000, depending on whether it is a first or revision operation and whether grafts are needed. Surgery takes 2.5 to 4 hours under general anaesthesia. Most people return to work in 7 to 10 days, and the final shape settles over about 12 months.",
     image: "/rhinoplasty-aesthetic.webp",
     brief: {
       operationTime: "2.5 - 4 Hours",
@@ -1455,28 +1462,43 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
     },
     regions: ["Nose", "Face"],
     seoContent: `
-### Best Rhinoplasty in Chandigarh: Harmonizing Your Profile
+### Rhinoplasty in Chandigarh: Harmonizing Your Profile
 
-**Expert Nose Reshaping (Nose Job) by Dr. Sumit Singh Gautam**
+**Nose Reshaping (Nose Job) by Dr. Sumit Singh Gautam**
 
-Rhinoplasty is widely considered the most complex of all cosmetic surgeries. It sits at the exact intersection of form and function. A beautiful nose must also breathe perfectly. In Sector 34, Chandigarh, Dr. Sumit performs both Open and Closed Rhinoplasty to correct structural deformities, dorsal humps, and bulbous tips.
+Rhinoplasty is widely considered the most complex of all cosmetic surgeries. It sits at the exact intersection of form and function. A beautiful nose must also breathe well. In Sector 34, Chandigarh, Dr. Sumit performs both Open and Closed Rhinoplasty to correct structural deformities, dorsal humps, and bulbous tips.
 
 #### Medical Deep Dive: Structural Preservation
-Dr. Sumit champions **Preservation Rhinoplasty** where possible.
-*   **Concept:** Instead of breaking the nasal bridge to lower a hump, we remove cartilage from underneath (dorsal preservation), keeping the natural smooth lines of your nose intact.
-*   **Fellowship Training:** His European training emphasized "finesse" work—producing noses that look like you were born with them, not "operated on."
+Dr. Sumit uses the principles of **Preservation Rhinoplasty** where the anatomy suits them.
+*   **Concept:** Instead of breaking the nasal bridge to lower a hump, cartilage and bone are removed from underneath (dorsal preservation), keeping the natural smooth lines of your nose intact.
+*   **Fellowship Training:** His European fellowship emphasized "finesse" work, aiming for a nose that looks like the one you were born with.
 
 #### Local Context: Breathing in Northern India
 Allergies and dust in North India can complicate nasal recovery.
-*   **Functional Focus:** We aggressively treat hypertrophied turbinates (which block breathing) during the cosmetic surgery.
-*   **Post-Op:** We do NOT use heavy, painful nasal packing. We use modern internal splints that allow you to breathe immediately after surgery.
+*   **Functional Focus:** Enlarged (hypertrophied) turbinates, which block breathing, are treated during the cosmetic surgery.
+*   **Post-Op:** We do NOT use heavy, painful nasal packing. Internal splints keep an airway open, so you can breathe through the nose while it heals, though swelling makes it feel blocked for the first few days.
 
 #### Functional & Cosmetic Correction
 We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
 *   **Deviated Septum:** Correcting internal blockages.
 *   **Cosmetic:** Refining the bridge, tip, and alar base.
 
-[View our Gallery](/gallery)
+### Rhinoplasty Cost in Chandigarh
+Dr. Sumit's fee range for rhinoplasty is ₹1,20,000 to ₹2,50,000. A first (primary) operation usually sits lower in that range than a revision, where scarring and depleted cartilage make the work longer. Septoplasty for breathing and cartilage taken from the ear or rib also move the figure up.
+[See the full price guide](/plastic-surgery-cost-chandigarh)
+
+### Risks of Rhinoplasty and How Often They Happen
+Every rhinoplasty carries risk. The figures below come from published studies, and your own risk depends on your health and on whether your nose has been operated on before.
+*   **Revision surgery:** Across 117 published studies of at least 100 patients each, 5.3% of patients had a revision [2]. A US group practice reviewing 369 cosmetic rhinoplasties found 9.8%, with a previous nose operation or facial fracture raising the chance [3].
+*   **Unhappy with the result:** 5.0% of patients across the same 117 studies [2], and 15.4% in the 369-patient series [3].
+*   **Major complications:** Of 4,978 rhinoplasty patients in a US cosmetic surgery insurance database, 0.7% needed an emergency visit, a hospital admission or a second operation within 30 days. Bleeding under the skin (haematoma) and infection each occurred in 0.2% [1].
+*   **Age and combined operations:** That major complication rate was 0.58% for rhinoplasty alone. It rose to 1.02% when one other body area was operated on in the same sitting and to 2.09% with two. Patients aged 40 or over had about twice the risk [1].
+*   **Numbness and skin changes:** Numbness of the nasal skin was reported in 16.7% of patients, and skin problems such as acne in 18.3% [2].
+*   **Voice:** The nose works as a resonating chamber. Studies that measured sound before and after rhinoplasty found small, variable changes in resonance, and the evidence is of low certainty [4].
+
+#### Further Reading
+[Rhinoplasty recovery timeline](/blog/rhinoplasty-recovery-timeline)
+[Preservation rhinoplasty explained](/blog/preservation-rhinoplasty-secret-to-natural-noses)
     `,
     priceRange: "₹1,20,000 - ₹2,50,000",
     costFactors: "Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, Rib Graft requirement",
@@ -1538,10 +1560,36 @@ We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
         ]
       },
       {
-        question: "What determines the cost of rhinoplasty?",
+        question: "How much does rhinoplasty cost in Chandigarh?",
         answer: [
-          "It varies between primary (first time) and revision (corrective) surgeries.",
-          "Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, and Rib Graft requirement are the main factors."
+          "Dr. Sumit's fee range for rhinoplasty is ₹1,20,000 to ₹2,50,000.",
+          "It varies between primary (first time) and revision (corrective) surgeries. Primary vs Revision Rhinoplasty, Septoplasty (Functional) needs, and Rib Graft requirement are the main factors."
+        ]
+      },
+      {
+        question: "Is rhinoplasty safe?",
+        answer: [
+          "Serious complications are uncommon. In a study of 4,978 rhinoplasty patients, 0.7% had a major complication within 30 days, such as bleeding or infection that needed hospital care.",
+          "The risk was higher in patients aged 40 and over, and when rhinoplasty was combined with other cosmetic operations in the same sitting. The risks section on this page lists the published figures."
+        ]
+      },
+      {
+        question: "What are the side effects of rhinoplasty?",
+        answer: [
+          "Swelling and bruising around the eyes are expected in the first week or two, and the nose feels blocked for the first few days.",
+          "Across 117 published studies, about 1 in 6 patients (16.7%) reported numbness of the nasal skin, and about 1 in 20 (5.3%) had a revision operation."
+        ]
+      },
+      {
+        question: "Where is rhinoplasty done in Chandigarh?",
+        answer: [
+          "Dr. Sumit operates at Healing Hospital, SCO 18-19, Sector 34-A, Chandigarh. It is a short drive from Mohali and Panchkula."
+        ]
+      },
+      {
+        question: "Can I travel to Chandigarh for rhinoplasty from another city or country?",
+        answer: [
+          "Yes. Plan to stay in or near Chandigarh until the splints come out, which for most patients is by day 7."
         ]
       },
       {
@@ -1561,7 +1609,8 @@ We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
       {
         question: "Will a nose job change my voice?",
         answer: [
-          "No, aesthetic rhinoplasty does not affect the vocal chords. It may briefly sound 'nasal' due to swelling but resolves quickly."
+          "Rhinoplasty does not touch the vocal cords. It may briefly sound 'nasal' due to swelling but resolves quickly.",
+          "The nose does act as a resonating chamber. Studies measuring sound before and after rhinoplasty have found small, variable changes in resonance, and their clinical effect is uncertain. Professional voice users seem more sensitive to them, so mention it at consultation if your voice is your work."
         ]
       },
       {
@@ -1590,6 +1639,13 @@ We frequently combine **Septoplasty** (for breathing) with Rhinoplasty.
         question: "Is a non-surgical nose job a good alternative?",
         answer: ["Liquid rhinoplasty suits patients who are comfortable with repeated treatment. Filler may last six to twelve months, and may not.", "It is simple, done in the OPD with no admission, and useful as a quick fix. What it is not is a long-term result - so it comes down to whether you want to keep returning or want the shape settled once."]
       },
+    ],
+    reviewedOn: "2026-10-22",
+    references: [
+      { citation: "Layliev J, Gupta V, Kaoutzanis C, et al. Incidence and preoperative risk factors for major complications in aesthetic rhinoplasty: analysis of 4978 patients. Aesthet Surg J. 2017;37(7):757-767.", url: "https://doi.org/10.1093/asj/sjx023" },
+      { citation: "Heilbronn C, Cragun D, Wong BJF. Complications in rhinoplasty: a literature review and comparison with a survey of consent forms. Facial Plast Surg Aesthet Med. 2020;22(1):50-56.", url: "https://doi.org/10.1089/fpsam.2019.29007.won" },
+      { citation: "Neaman KC, Boettcher AK, Do VH, et al. Cosmetic rhinoplasty: revision rates revisited. Aesthet Surg J. 2013;33(1):31-37.", url: "https://doi.org/10.1177/1090820X12469221" },
+      { citation: "Karagoz T, Bennett W. Does nasal surgery alter vocal resonance? The acoustic impact of rhinoplasty, septoplasty, and turbinoplasty: a systematic review and meta-analysis. Eur Arch Otorhinolaryngol. 2026, online ahead of print.", url: "https://doi.org/10.1007/s00405-026-10609-x" }
     ]
   },
   {
