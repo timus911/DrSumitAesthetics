@@ -1453,7 +1453,7 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
     details: {
       whoNeeds: ["Patients seeking to refine a nasal hump, tip width, or overall projection.", "Those needing functional correction for breathing issues (Septoplasty)."],
       candidates: ["Patients whose facial growth is complete.", "Individuals seeking internal and external nasal harmony."],
-      assessment: ["3D visualization of the proposed new profile.", "Internal examination of the septum and turbinates for airflow optimization."],
+      assessment: ["Internal examination of the septum and turbinates for airflow optimization."],
       functional: ["Breathing may be congested for the first few days due to internal swelling.", "Most 'splints' are removed by day 7."],
       backToWork: ["Typically 7-10 days as bruising under eyes resolves.", "Heavy contact sports must be avoided for 6 weeks."],
       holidays: ["10 days off is ideal for a stress-free recovery.", "Avoid heavy glasses resting on the nasal bridge for 4 weeks."],
@@ -1520,7 +1520,6 @@ Every rhinoplasty carries risk. The figures below come from published studies, a
       {
         question: "What does the clinical assessment involve?",
         answer: [
-          "3D visualization of the proposed new profile.",
           "Internal examination of the septum and turbinates for airflow optimization."
         ]
       },
