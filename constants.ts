@@ -3547,7 +3547,58 @@ Not "does it make collagen?" Almost everything does, including a scar.
 
 Ask what the new collagen looks like under a microscope, and whether anyone has shown it woven like young skin rather than packed like a scar. If the answer is a brochure rather than a biopsy, that is your answer. (If it is a scar you want improved rather than ageing skin, [what decides how a surgical scar heals](/blog/why-some-surgical-scars-almost-disappear/) is the place to start.)
 
-**Young skin isn't more collagen. It's the right weave.**`,
+**Young skin isn't more collagen. It's the right weave.**
+
+## References
+
+Every claim in this post comes from a published study. They are listed here in the order they appear, each linked to its PubMed record.
+
+### The tidy one is the scar
+
+* Verhaegen PD et al. Differences in collagen architecture between keloid, hypertrophic scar, normotrophic scar, and normal skin. Wound Repair Regen, 2009. [PubMed](https://pubmed.ncbi.nlm.nih.gov/19769718/)
+
+### Ropes and rubber bands
+
+* Kielty CM et al. Elastic fibres. J Cell Sci, 2002. [PubMed](https://pubmed.ncbi.nlm.nih.gov/12082143/)
+* Verzijl N et al. Effect of collagen turnover on the accumulation of advanced glycation end products. J Biol Chem, 2000. [PubMed](https://pubmed.ncbi.nlm.nih.gov/10976109/)
+* Heinz A. Elastic fibers during aging and disease. Ageing Res Rev, 2021. [PubMed](https://pubmed.ncbi.nlm.nih.gov/33434682/)
+* Shapiro SD et al. Marked longevity of human lung parenchymal elastic fibers deduced from prevalence of D-aspartate and nuclear weapons-related radiocarbon. J Clin Invest, 1991. [PubMed](https://pubmed.ncbi.nlm.nih.gov/2022748/)
+* Hwang JM et al. Comparison of the effects of fractional microneedle radiofrequency and microneedling on modulating the senescent fibroblast milieu in aged skin. Sci Rep, 2025. [PubMed](https://pubmed.ncbi.nlm.nih.gov/40419589/)
+* González N, Goldberg DJ. Evaluating the effects of injected calcium hydroxylapatite on changes in human skin elastin and proteoglycan formation. Dermatol Surg, 2019. [PubMed](https://pubmed.ncbi.nlm.nih.gov/30893178/)
+
+### The sun cuts both
+
+* Fisher GJ et al. Molecular basis of sun-induced premature skin ageing and retinoid antagonism. Nature, 1996. [PubMed](https://pubmed.ncbi.nlm.nih.gov/8552187/)
+
+### Fillers and biostimulators
+
+* Wang F et al. Implications for cumulative and prolonged clinical improvement induced by cross-linked hyaluronic acid: an in vivo biochemical/microscopic study in humans. Exp Dermatol, 2024. [PubMed](https://pubmed.ncbi.nlm.nih.gov/38284186/)
+* Stein P et al. The biological basis for poly-L-lactic acid-induced augmentation. J Dermatol Sci, 2015. [PubMed](https://pubmed.ncbi.nlm.nih.gov/25703057/)
+* Zerbinati N et al. Microscopic and ultrastructural evidences in human skin following calcium hydroxylapatite filler treatment. Arch Dermatol Res, 2017. [PubMed](https://pubmed.ncbi.nlm.nih.gov/28324170/)
+* Ronan SJ et al. Histologic characterization of polymethylmethacrylate dermal filler biostimulatory properties in human skin. Dermatol Surg, 2019. [PubMed](https://pubmed.ncbi.nlm.nih.gov/31765337/)
+
+### No study I found shows the weave return
+
+* Cui Y et al. Rejuvenation of aged human skin by injection of cross-linked hyaluronic acid. Plast Reconstr Surg, 2021. [PubMed](https://pubmed.ncbi.nlm.nih.gov/33347074/)
+* Gonçalves PIRO et al. Pilot histomorphometric study of combined use of poly-L-lactic acid and calcium hydroxyapatite to improve dermis remodeling. J Biomed Mater Res B Appl Biomater, 2026. [PubMed](https://pubmed.ncbi.nlm.nih.gov/42504042/)
+* Motta MM et al. Effects of the lower energy and pulse stacking in carbon dioxide laser skin treatment: an objective analysis using second harmonic generation. Acta Cir Bras, 2021. [PubMed](https://pubmed.ncbi.nlm.nih.gov/33978061/)
+* Carruthers J et al. Synchronous parallel ultrasound induces long-term extracellular matrix remodeling of human skin. Dermatol Surg, 2025. [PubMed](https://pubmed.ncbi.nlm.nih.gov/41405933/)
+* Ozog DM et al. Evaluation of clinical results, histological architecture, and collagen expression following treatment of mature burn scars with a fractional carbon dioxide laser. JAMA Dermatol, 2013. [PubMed](https://pubmed.ncbi.nlm.nih.gov/23069917/)
+
+### A controlled burn
+
+* Kligman AM et al. Long-term histologic follow-up of phenol face peels. Plast Reconstr Surg, 1985. [PubMed](https://pubmed.ncbi.nlm.nih.gov/3983273/)
+
+### Your own fat
+
+* Charles-de-Sá L et al. Antiaging treatment of the facial skin by fat graft and adipose-derived stem cells. Plast Reconstr Surg, 2015. [PubMed](https://pubmed.ncbi.nlm.nih.gov/25811565/)
+* Tran VVT et al. Effects of nanofat in plastic and reconstructive surgery: a systematic review. Plast Reconstr Surg, 2024. [PubMed](https://pubmed.ncbi.nlm.nih.gov/37400953/)
+
+### Stop the cutting
+
+* Hughes MC et al. Sunscreen and prevention of skin aging: a randomized trial. Ann Intern Med, 2013. [PubMed](https://pubmed.ncbi.nlm.nih.gov/23732711/)
+* Griffiths CE et al. Restoration of collagen formation in photodamaged human skin by tretinoin (retinoic acid). N Engl J Med, 1993. [PubMed](https://pubmed.ncbi.nlm.nih.gov/8336752/)
+* Humbert PG et al. Topical ascorbic acid on photoaged skin: double-blind study vs. placebo. Exp Dermatol, 2003. [PubMed](https://pubmed.ncbi.nlm.nih.gov/12823436/)`,
     image: "/blog/young-skin/hero.webp",
     date: "October 2, 2026"
   },

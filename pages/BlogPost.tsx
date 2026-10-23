@@ -16,6 +16,14 @@ const renderInline = (text: string) =>
             return <strong key={index} className="text-white font-bold">{part.slice(2, -2)}</strong>;
         }
         const link = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+        // Outside links (a post's references) open in a new tab, off the router.
+        if (link && /^https?:\/\//.test(link[2])) {
+            return (
+                <a key={index} href={link[2]} target="_blank" rel="noopener noreferrer" className="text-[#4A90E2] hover:underline font-semibold">
+                    {link[1]}
+                </a>
+            );
+        }
         if (link) {
             // Trailing-slash form, same reason as SEO.tsx: the 41 markdown links
             // in the post bodies prerender into <a href> that Google crawls.
