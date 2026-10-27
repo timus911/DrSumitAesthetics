@@ -14,13 +14,22 @@ const routes = ROUTES.map(r => r.path);
 // varies by tag type (React's own tag sometimes lands before the static one,
 // sometimes after), so matching on known content is the only reliable way to
 // identify which occurrence is the static leftover.
+//
+// The tags are read from index.html itself rather than copied here: a
+// hardcoded copy went stale when index.html's wording changed (6 Oct 2026),
+// and every page then shipped two descriptions and two keyword tags.
+const INDEX_HTML = fs.readFileSync('index.html', 'utf8');
 const STATIC_HEAD_TAGS = [
-    '<title>Dr. Sumit - Plastic & Aesthetic Surgeon in Chandigarh | Sector 34</title>',
-    '<meta name="description" content="Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.">',
-    '<meta name="keywords" content="best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india">',
-    '<meta property="og:image" content="https://drsumitaesthetics.com/dr-sumit-portrait.webp">',
-    '<meta property="twitter:image" content="https://drsumitaesthetics.com/dr-sumit-portrait.webp">',
-];
+    /<title>[^<]*<\/title>/,
+    /<meta name="description"[^>]*>/,
+    /<meta name="keywords"[^>]*>/,
+    /<meta property="og:image"[^>]*>/,
+    /<meta property="twitter:image"[^>]*>/,
+].map(re => {
+    const match = INDEX_HTML.match(re);
+    if (!match) throw new Error(`prerender: index.html has no tag matching ${re}`);
+    return match[0];
+});
 
 function dedupeHeadTags(html) {
     let out = html;
