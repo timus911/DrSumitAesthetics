@@ -29,6 +29,7 @@ const ProcedureDetail = lazy(() => import('./pages/ProcedureDetail.tsx'));
 const Concerns = lazy(() => import('./pages/Concerns.tsx'));
 const ConcernDetail = lazy(() => import('./pages/ConcernDetail.tsx'));
 const Reviews = lazy(() => import('./pages/Reviews.tsx'));
+const Privacy = lazy(() => import('./pages/Privacy.tsx'));
 const CostsAndFinancing = lazy(() => import('./pages/CostsAndFinancing.tsx'));
 const SurgiSetPrivacy = lazy(() => import('./pages/SurgiSetPrivacy.tsx'));
 const BlogList = lazy(() => import('./pages/BlogList.tsx'));
@@ -74,6 +75,7 @@ const AppLayout: React.FC = () => {
             <Route path="/patient-journey" element={<PatientJourney />} />
             <Route path="/international" element={<InternationalPatients />} />
             <Route path="/plastic-surgery-cost-chandigarh" element={<CostsAndFinancing />} />
+            <Route path="/privacy" element={<Privacy />} />
             <Route path="/surgiset-privacy" element={<SurgiSetPrivacy />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/procedure/:id" element={<LegacyProcedureRedirect />} />

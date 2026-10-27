@@ -71,18 +71,18 @@ const REGION_SPECIFIC_HINTS: Record<string, Record<string, string>> = {
 // Unique meta description per body region, so the 12 concern pages don't
 // share one near-identical templated snippet in search results.
 const REGION_META: Record<string, string> = {
-    Face: "Facial plastic surgery in Chandigarh — facelift, rhinoplasty, blepharoplasty & more by Dr. Sumit. Explore treatments by concern & book a consult.",
-    Nose: "Nose reshaping in Chandigarh — rhinoplasty and refinement options by plastic surgeon Dr. Sumit. Compare procedures and book your consultation.",
-    Eyes: "Eye rejuvenation in Chandigarh — blepharoplasty, dark circle & hollow correction by Dr. Sumit. Explore your options and book a consultation.",
-    Ears: "Ear reshaping in Chandigarh — otoplasty for prominent ears in adults & children by Dr. Sumit. See treatment options and book a consultation.",
-    Lips: "Lip enhancement in Chandigarh — lip lift, reduction and filler options by plastic surgeon Dr. Sumit. Compare treatments & book a consultation.",
-    Neck: "Neck rejuvenation in Chandigarh — deep plane neck lift, jawline definition & more by Dr. Sumit. Explore procedures and book your consultation.",
-    Breasts: "Breast surgery in Chandigarh — augmentation, lift, reduction & gynecomastia by Dr. Sumit. Compare procedures and book a private consultation.",
-    Abdomen: "Abdomen contouring in Chandigarh — tummy tuck, liposuction & body sculpting by Dr. Sumit. Compare procedures and book your consultation today.",
-    Body: "Body contouring in Chandigarh — HD liposuction, tummy tuck, post-weight-loss surgery by Dr. Sumit. Explore procedures & book a consultation.",
-    Buttock: "Buttock enhancement in Chandigarh — lift and contouring procedures by plastic surgeon Dr. Sumit. See your options and book a consultation.",
-    Thighs: "Thigh contouring in Chandigarh — liposuction and lift options for shapelier legs by Dr. Sumit. Compare treatments and book your consultation.",
-    Arms: "Arm contouring in Chandigarh — liposuction and arm lift options by plastic surgeon Dr. Sumit. Explore treatments and book your consultation.",
+    Face: "Facial plastic surgery in Chandigarh — facelift, rhinoplasty, blepharoplasty & more by Dr. Sumit.",
+    Nose: "Nose reshaping in Chandigarh — rhinoplasty and refinement options by plastic surgeon Dr. Sumit.",
+    Eyes: "Eye rejuvenation in Chandigarh — blepharoplasty, dark circle & hollow correction by Dr. Sumit.",
+    Ears: "Ear reshaping in Chandigarh — otoplasty for prominent ears in adults & children by Dr. Sumit.",
+    Lips: "Lip enhancement in Chandigarh — lip lift, reduction and filler options by plastic surgeon Dr. Sumit.",
+    Neck: "Neck rejuvenation in Chandigarh — deep plane neck lift, jawline definition & more by Dr. Sumit.",
+    Breasts: "Breast surgery in Chandigarh — augmentation, lift, reduction & gynecomastia by Dr. Sumit.",
+    Abdomen: "Abdomen contouring in Chandigarh — tummy tuck, liposuction & body sculpting by Dr. Sumit.",
+    Body: "Body contouring in Chandigarh — HD liposuction, tummy tuck, post-weight-loss surgery by Dr. Sumit.",
+    Buttock: "Buttock enhancement in Chandigarh — lift and contouring procedures by plastic surgeon Dr. Sumit.",
+    Thighs: "Thigh contouring in Chandigarh — liposuction and lift options for shapelier legs by Dr. Sumit.",
+    Arms: "Arm contouring in Chandigarh — liposuction and arm lift options by plastic surgeon Dr. Sumit.",
 };
 
 const ConcernDetail: React.FC = () => {

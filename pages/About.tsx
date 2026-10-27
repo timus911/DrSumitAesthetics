@@ -2,45 +2,11 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, useMotionValue, useSpring, useTransform, Variants, AnimatePresence } from 'framer-motion';
 import { Award, GraduationCap, Globe, Box, Scissors, Brush, Instagram } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { BRAND, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
-// Gallery images array
-const galleryImages = [
-  { src: `${import.meta.env.BASE_URL}gallery-1.webp`, title: 'Axillary Breast' },
-  { src: `${import.meta.env.BASE_URL}gallery-2.webp`, title: 'Breast Augmentation with Implant' },
-  { src: `${import.meta.env.BASE_URL}gallery-3.webp`, title: 'Breast Augmentation with Implant' },
-  { src: `${import.meta.env.BASE_URL}gallery-4.webp`, title: 'Axillary Breast' },
-  { src: `${import.meta.env.BASE_URL}gallery-5.webp`, title: 'Breast Reduction' },
-  { src: `${import.meta.env.BASE_URL}gallery-6.webp`, title: 'Keloid Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-7.webp`, title: 'Ear Lobe Repair' },
-  { src: `${import.meta.env.BASE_URL}gallery-8.webp`, title: 'Gynecomastia' },
-  { src: `${import.meta.env.BASE_URL}gallery-9.webp`, title: 'Gynecomastia' },
-  { src: `${import.meta.env.BASE_URL}gallery-10.webp`, title: 'Hair Transplant' },
-  { src: `${import.meta.env.BASE_URL}gallery-11.webp`, title: 'Lip Fat Grafting' },
-  { src: `${import.meta.env.BASE_URL}gallery-12.webp`, title: 'Mole Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-13.webp`, title: 'Lipo-Sculpting' },
-  { src: `${import.meta.env.BASE_URL}gallery-14.webp`, title: 'Tummy Tuck' },
-  { src: `${import.meta.env.BASE_URL}gallery-15.webp`, title: 'Ear Reshaping' },
-  { src: `${import.meta.env.BASE_URL}gallery-16.webp`, title: 'Xanthelasma Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-17.webp`, title: 'Tummy Tuck' }
-];
-
 const About: React.FC = () => {
-  const navigate = useNavigate();
-
-  // Randomize and shuffle gallery images for the vertical scroll effect
-  const shuffledImages = React.useMemo(() => {
-    const images = [...galleryImages];
-    for (let i = images.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [images[i], images[j]] = [images[j], images[i]];
-    }
-    return images;
-  }, []);
-
   // Mouse hover tilt effect for the main portrait
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
@@ -63,11 +29,6 @@ const About: React.FC = () => {
   };
 
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(null);
-
-  const handleGalleryImageClick = (index: number) => {
-    navigate(`/gallery#image-${index}`);
-  };
 
 
 
@@ -87,25 +48,6 @@ const About: React.FC = () => {
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } }
-  };
-
-  const AboutThumbnail = ({ image, idx, hoveredImageIndex, setHoveredImageIndex, handleGalleryImageClick }: any) => {
-    const ref = React.useRef<HTMLImageElement>(null);
-    const isFocused = useMobileCenterFocus(ref);
-    const isHovered = hoveredImageIndex === idx;
-
-    return (
-      <motion.img
-        ref={ref}
-        // Removed variants={fadeInUp} to prevent re-triggering animation on hover which causes flickering
-        src={image.src}
-        className={`rounded-sm shadow-lg cursor-pointer transition-all duration-500 ${isHovered || isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'}`}
-        alt={`${image.title} outcome by Dr. Sumit Singh Gautam in Chandigarh`}
-        onMouseEnter={() => setHoveredImageIndex(idx)}
-        onMouseLeave={() => setHoveredImageIndex(null)}
-        onClick={() => handleGalleryImageClick(idx)}
-      />
-    );
   };
 
   const MomentThumbnail = ({ num }: { num: number }) => {
@@ -170,23 +112,23 @@ const About: React.FC = () => {
         >
           <div className="space-y-12">
             <motion.div variants={fadeInUp} className="space-y-8">
-              <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black">Board Certified Plastic and Aesthetic Surgeon</span>
+              <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black">Plastic and Aesthetic Surgeon</span>
               <h1 className="text-6xl md:text-9xl font-serif leading-[0.9] text-white tracking-tighter">{BRAND.name}</h1>
               <p className="text-[#4A90E2] tracking-[0.5em] uppercase text-[12px] font-bold">{BRAND.specialty}</p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="prose prose-invert text-gray-400 max-w-none space-y-10 text-xl leading-relaxed font-light">
               <p>
-                Dr. Sumit Singh Gautam is a board-certified Plastic Surgeon who bridges the gap between surgical science and fine art.
+                Dr. Sumit Singh Gautam is a plastic surgeon (MCh) whose practice draws on both surgical science and fine art.
               </p>
               <p>
                 His academic journey began at <strong>GMCH-32, Chandigarh</strong> (MBBS and MS), followed by a specialization in Plastic & Reconstructive Surgery from <strong>DMC Ludhiana</strong> (MCh).
               </p>
               <p>
-                He further honed his expertise with an <strong>International Fellowship in Aesthetic Surgery</strong> under the pioneers of facial rejuvenation, <strong>Dr. Patrick Tonnard and Dr. Alexis Verpaele</strong>. Imbibing a world-renowned standard of surgical precision, he has mastered advanced techniques that prioritize minimal invasiveness with maximum impact.
+                He then completed an <strong>International Fellowship in Aesthetic Surgery</strong> in Belgium under <strong>Dr. Patrick Tonnard and Dr. Alexis Verpaele</strong>, who developed the MACS lift and nanofat grafting, training in techniques that keep surgery as limited as the problem allows.
               </p>
               <p>
-                However, his true distinction lies in his dual identity as an artist. Years of discipline in <strong>sketching, painting, sculpting</strong> have gifted him a unique spatial awareness, allowing him to see the human form not just as tissues to be repaired, but as a masterpiece to be restored.
+                He is also an artist. Years of <strong>sketching, painting and sculpting</strong> shape how he looks at the human form: as proportion, light and contour, not just tissue to be repaired.
               </p>
             </motion.div>
 
@@ -194,16 +136,16 @@ const About: React.FC = () => {
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <Brush className="text-[#4A90E2]" size={24} />
-                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Fine Arts Mastery</span>
+                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Fine Arts Practice</span>
                 </div>
                 <p className="text-gray-300 text-sm leading-relaxed">Integrating the principles of light, shadow, and proportion from art into surgery.</p>
               </div>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <GraduationCap className="text-[#4A90E2]" size={24} />
-                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Board Certified</span>
+                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">MCh Plastic Surgery</span>
                 </div>
-                <p className="text-gray-300 text-sm leading-relaxed">Board-certified background ensuring a comprehensive surgical perspective on form and function.</p>
+                <p className="text-gray-300 text-sm leading-relaxed">Superspecialty training in plastic and reconstructive surgery, covering both form and function.</p>
               </div>
             </motion.div>
           </div>
@@ -270,7 +212,7 @@ const About: React.FC = () => {
 
               <div className="space-y-12">
                 {[
-                  { icon: <Brush className="text-[#4A90E2]" size={28} />, title: "Painting & Illustration", desc: "Mastery of lighting, depth, and anatomical contours translated into surgical precision." },
+                  { icon: <Brush className="text-[#4A90E2]" size={28} />, title: "Painting & Illustration", desc: "Study of lighting, depth, and anatomical contours translated into surgical precision." },
                   { icon: <Box className="text-[#4A90E2]" size={28} />, title: "3D Digital Design", desc: "Pre-modeling complex structural corrections in virtual space before the first incision." },
                   { icon: <Scissors className="text-[#4A90E2]" size={28} />, title: "Sculpture", desc: "Developing the tactile awareness and hand-eye coordination required for micro-surgery." }
                 ].map((item, idx) => (
@@ -288,24 +230,13 @@ const About: React.FC = () => {
             </div>
 
             <div className="order-2 lg:order-1 relative h-[700px] overflow-hidden rounded-sm glass border border-[#4A90E2]/10 shadow-2xl">
-              <motion.div
-                animate={{ y: [0, -300, 0] }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" as const }}
-                className="grid grid-cols-2 gap-8 p-8"
-              >
-                {/* Real Gallery Images with Individual Hover Effects */}
-                {shuffledImages.map((image, idx) => (
-                  <AboutThumbnail
-                    key={idx}
-                    image={image}
-                    idx={idx}
-                    hoveredImageIndex={hoveredImageIndex}
-                    setHoveredImageIndex={setHoveredImageIndex}
-                    handleGalleryImageClick={handleGalleryImageClick}
-                  />
-                ))}
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none" />
+              <img
+                src={ASSETS.surgeryProfile}
+                alt="Dr. Sumit Singh Gautam in the operating theatre"
+                className="w-full h-full object-cover grayscale opacity-80"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
             </div>
           </motion.div>
         </section>

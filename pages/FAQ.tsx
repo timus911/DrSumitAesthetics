@@ -43,7 +43,7 @@ const FAQ: React.FC = () => {
             <div className="container mx-auto px-6">
                 <div className="max-w-4xl mx-auto space-y-12">
                     <div className="text-center space-y-4">
-                        <span className="text-[#4A90E2] text-xs font-black uppercase tracking-[0.4em]">Expert Answers</span>
+                        <span className="text-[#4A90E2] text-xs font-black uppercase tracking-[0.4em]">Answers</span>
                         <h1 className="text-5xl md:text-7xl font-serif text-white">Clinical FAQ Hub</h1>
                         <p className="text-gray-400 text-lg font-light leading-relaxed">
                             Filter by procedure or search for specific surgical concerns.
@@ -149,13 +149,13 @@ const FAQ: React.FC = () => {
                         <MessageSquare className="mx-auto text-[#4A90E2]" size={32} />
                         <h2 className="text-2xl font-serif text-white">Still have questions?</h2>
                         <p className="text-gray-400 font-light max-w-md mx-auto">
-                            The best way to understand your clinical options is a personalized consultation.
+                            Your own options depend on an examination, which needs a consultation.
                         </p>
                         <a 
                             href="/contact/" 
                             className="inline-block px-10 py-4 bg-[#4A90E2] text-black text-[10px] uppercase tracking-[0.4em] font-black rounded-sm active:scale-95 transition-transform"
                         >
-                            Book a Consultation
+                            Contact
                         </a>
                     </div>
                 </div>

@@ -13,8 +13,11 @@
 const CORE_PAGES = [
     { path: '/', priority: 1.0, changefreq: 'weekly' },
     { path: '/about', priority: 0.6, changefreq: 'monthly' },
-    { path: '/gallery', priority: 0.6, changefreq: 'monthly' },
-    { path: '/reviews', priority: 0.6, changefreq: 'monthly' },
+    // Gallery and reviews now only explain why results photos and patient
+    // reviews are not published (NMC guidelines, 6 Oct 2026). Prerendered so
+    // old links land on that notice, but no longer offered to search engines.
+    { path: '/gallery', priority: 0.3, changefreq: 'yearly', sitemap: false },
+    { path: '/reviews', priority: 0.3, changefreq: 'yearly', sitemap: false },
     { path: '/patient-journey', priority: 0.6, changefreq: 'monthly' },
     { path: '/international', priority: 0.6, changefreq: 'monthly' },
     { path: '/plastic-surgery-cost-chandigarh', priority: 0.6, changefreq: 'monthly' },
@@ -22,6 +25,7 @@ const CORE_PAGES = [
     { path: '/concerns', priority: 0.6, changefreq: 'monthly' },
     { path: '/blog', priority: 0.6, changefreq: 'monthly' },
     { path: '/faqs', priority: 0.6, changefreq: 'monthly' },
+    { path: '/privacy', priority: 0.3, changefreq: 'yearly' },
     { path: '/surgiset-privacy', priority: 0.3, changefreq: 'yearly', sitemap: false },
 ];
 

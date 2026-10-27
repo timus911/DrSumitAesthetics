@@ -32,7 +32,14 @@ description: Baseline instructions for any updates or deployments to the Dr. Sum
 - **Verification:** The GA4 snippet (`G-NQ6ENX37P8`) is hardcoded in the `<head>` of `index.html`. 
   - *Rule:* Do not remove or alter the `gtag` script in `index.html`. It ensures tracking across the entire SPA and all pre-rendered static pages.
 
-## 5. Deployment Process
+## 5. NMC Advertising Compliance
+The site follows the NMC's *Guidelines on Ethical Advertising and Public Communication* (Public Notice R-13014/01/2024-Ethics, 6 October 2026, https://www.nmc.org.in/whats-new/download/1874).
+- **Never publish:** before-and-after or result photographs, patient reviews or testimonials, patient videos, "best"/"No.1"/"top"/"leading" or other superiority claims, "board certified", "guaranteed", "painless", success rates or patient counts, discounts or 0% EMI offers, "Book a consultation" style calls to action.
+- **Always keep:** name, qualifications, State Medical Council and registration number in the footer of every page (`BRAND` in `constants.ts`).
+- **Fees** may be shown if factual and not misleading.
+- `npm run build` runs `scripts/check-nmc-compliance.mjs` first and fails on banned wording or image file names. Fix the content; only loosen a pattern for a genuine false match.
+
+## 6. Deployment Process
 To publish changes to the live website:
 1. Ensure your local server is stopped.
 2. Run `npm run build` to compile the app and trigger the `prerender.js` script.

@@ -5,7 +5,7 @@ export const BRAND = {
   shortName: "Dr. Sumit",
   specialty: "Plastic Surgeon & Sculptor",
   fellowship: "The Intersection of Art & Surgery",
-  mentors: "Mentored by Masters of Form & Function",
+  mentors: "Fellowship under Dr. Patrick Tonnard and Dr. Alexis Verpaele",
   education: [
     "MBBS - GMCH-32, Chandigarh",
     "MS General Surgery - GMCH-32, Chandigarh",
@@ -13,14 +13,24 @@ export const BRAND = {
     "Fellowship in Aesthetic Surgery - Belgium"
   ],
   artisticBackground: {
-    description: "Dr. Sumit is not just a surgeon; he is a sculptor of the human form. His surgical precision is born from years of mastery in sketching, oil painting, 3D digital sculpting, and wood carving. This multidisciplinary artistic background allows him to visualize and restore anatomical harmony with an artist's eye and a surgeon's hand.",
+    description: "Dr. Sumit is not just a surgeon; he is a sculptor of the human form. His surgical precision draws on years of practice in sketching, oil painting, 3D digital sculpting, and wood carving. This multidisciplinary artistic background allows him to visualize and restore anatomical harmony with an artist's eye and a surgeon's hand.",
     hobbies: ["Fine Art Sketching", "Oil Painting", "3D Digital Sculpting", "Wood Carving"]
   },
-  tagline: "Precision. Artistry. Mastery.",
+  tagline: "Precision. Artistry. Anatomy.",
   // NMC advertising guidelines (6 Oct 2026), 3.2 Explanation III: every public
   // communication shows name, qualifications, registration status and number.
   qualifications: "MBBS, MS, MCh (Plastic Surgery), Fellowship in Aesthetic Surgery (Belgium)",
   registration: "HN9607",
+  registrationCouncil: "Haryana Medical Council",
+};
+
+// The NMC notice the site's advertising rules come from. Cited on the pages
+// that explain why something (results photos, reviews) is not published.
+export const NMC_GUIDELINES = {
+  title: "Guidelines on Ethical Advertising and Public Communication by Hospitals/Medical Institutions and Registered Medical Practitioners",
+  notice: "National Medical Commission, Public Notice No. R-13014/01/2024-Ethics",
+  date: "6 October 2026",
+  url: "https://www.nmc.org.in/whats-new/download/1874",
 };
 
 export const CONTACT = {
@@ -95,15 +105,6 @@ export const GYNECOMASTIA_VIDEO: ProcedureVideo = {
   uploadDate: "2026-08-13T14:40:26+05:30"
 };
 
-// The patient-journey film: one real patient from consult to day-2 result.
-export const GYNECOMASTIA_JOURNEY_VIDEO: ProcedureVideo = {
-  youtubeId: "L9bDPVNrYeQ",
-  title: "Is this Breast tissue gland or fat?",
-  description: "One patient's gynecomastia journey with Dr. Sumit Singh Gautam: he lost 19 kg, but not from his chest. The consult, the chest marking, liposuction and gland excision, nanofat, and his result on day 2. Shared with the patient's consent.",
-  // Exact publish time, read from YouTube's own <meta itemprop="uploadDate">
-  // on the watch page: 2026-10-13T12:42:59-07:00 (PT), the same instant as IST.
-  uploadDate: "2026-10-14T01:12:59+05:30"
-};
 
 export type Procedure = {
   id: string;
@@ -138,7 +139,6 @@ export type Procedure = {
     };
   };
   regions?: string[];
-  gallery?: string[];
   priceRange?: string; // New field for Cost & Financing page
   costFactors?: string; // Key factors influencing cost
   seoContent?: string; // Rich SEO content for specific procedure pages
@@ -154,7 +154,7 @@ const RAW_PROCEDURES: Procedure[] = [
   // AESTHETIC - BODY
   {
     id: "tummy-tuck-chandigarh",
-    metaDescription: "Tummy tuck (abdominoplasty) in Chandigarh by board-certified plastic surgeon Dr. Sumit — muscle repair & natural contours. Book a consultation.",
+    metaDescription: "Tummy tuck (abdominoplasty) in Chandigarh by MCh plastic surgeon Dr. Sumit — muscle repair & natural contours.",
     title: "Tummy Tuck (Abdominoplasty)",
     category: "Body",
     parentCategory: "aesthetic",
@@ -185,7 +185,7 @@ const RAW_PROCEDURES: Procedure[] = [
 A Tummy Tuck is more than just skin removal; it is a restoration of the abdominal core. Dr. Sumit Singh Gautam specializes in **Lipo-Abdominoplasty**, a modern technique that combines liposuction with skin tightening for superior contouring.
 
 **Who is it for?**
-It is the gold standard for mothers with "Diastasis Recti" (muscle separation) or massive weight loss patients with hanging skin folds.
+It is the standard surgical treatment for mothers with "Diastasis Recti" (muscle separation) or massive weight loss patients with hanging skin folds.
 
 #### The Procedure
 *   **Muscle Repair:** We tighten the abdominal wall muscles like an internal corset.
@@ -202,7 +202,6 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
 `,
     priceRange: "₹1,50,000 - ₹2,50,000",
     costFactors: "Mini vs Full Tummy Tuck, Muscle Repair complexity, Liposuction extent",
-    gallery: ["/tummy-tuck-result-1.webp", "/tummy-tuck-result-2.webp", "/tummy-tuck-nrf.webp", "/tummy-tuck-nrll.webp", "/tummy-tuck-nrro.webp"],
     faqs: [
       {
         question: "Who needs a Tummy Tuck?",
@@ -299,7 +298,7 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
   },
   {
     id: "mommy-makeover-chandigarh",
-    metaDescription: "Mommy makeover in Chandigarh by Dr. Sumit — tummy tuck, breast lift or augmentation & liposuction in one surgery. Book a private consultation.",
+    metaDescription: "Mommy makeover in Chandigarh by Dr. Sumit — tummy tuck, breast lift or augmentation & liposuction in one surgery.",
     title: "Mommy Makeover",
     category: "Body",
     parentCategory: "aesthetic",
@@ -340,7 +339,7 @@ Pregnancy and nursing can leave lasting changes that diet and exercise simply ca
 #### Why Combine Procedures?
 *   **Single Recovery:** One anesthesia event and one healing phase — less total downtime away from your family.
 *   **Cost Efficiency:** Consolidated operating room and anesthesia fees versus staging multiple surgeries.
-*   **Harmonious Results:** All areas addressed together for a balanced, proportionate transformation.
+*   **Harmonious Results:** All areas addressed together for a balanced, proportionate result.
 
 #### Cost of a Mommy Makeover in Chandigarh
 Because every makeover is a custom combination, pricing is finalized after a physical consultation — the selected procedures, implant choices, and liposuction extent all factor in.
@@ -381,7 +380,7 @@ Because every makeover is a custom combination, pricing is finalized after a phy
   {
     id: "liposuction-chandigarh",
     h1: "HD Liposuction in Chandigarh",
-    metaDescription: "HD liposuction in Chandigarh by Dr. Sumit Singh Gautam — precision body sculpting with high-definition results. Book your consultation today.",
+    metaDescription: "HD liposuction in Chandigarh by Dr. Sumit Singh Gautam — precision body sculpting with high-definition results.",
     title: "High Definition Liposuction",
     category: "Body",
     parentCategory: "aesthetic",
@@ -407,7 +406,7 @@ Because every makeover is a custom combination, pricing is finalized after a phy
 
     regions: ["Abdomen", "Body", "Thighs", "Arms", "Buttock"],
     seoContent: `
-### Best Liposuction in Chandigarh: The Art of Athletic Sculpting
+### Liposuction in Chandigarh: The Art of Athletic Sculpting
 
 **Achieve a Chiseled, Athletic Physique with Dr. Sumit Singh Gautam at Healing Hospital, Sector 34**
 
@@ -423,23 +422,9 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
 *   **Hospital Proximity:** Our location in Sector 34 (Healing Hospital) puts us at the heart of the city, easily accessible from Mohali and Panchkula.
 *   **Post-Op Care:** We provide specific "Chandigarh Recovery Kits" including breathable compression gear suited for our weather.
 
-[View our Before and After Gallery](/gallery) to see the transformative results of our "Tricity" patients.
     `,
     priceRange: "₹80,000 - ₹2,00,000",
     costFactors: "Number of zones (e.g., Abdomen, Flanks, Back), 360 Lipo vs Spot Lipo",
-    gallery: [
-      "/axillary-breast-reduction-result.webp",
-      "/body-contouring-result-1.webp",
-      "/body-contouring-result-2.webp",
-      "/body-contouring-result-3.webp",
-      "/body-contouring-result-4.webp",
-      "/body-contouring-result-5.webp",
-      "/tummy-tuck-result-1.webp",
-      "/tummy-tuck-result-2.webp",
-      "/tummy-tuck-nrf.webp",
-      "/tummy-tuck-nrll.webp",
-      "/tummy-tuck-nrro.webp"
-    ],
     faqs: [
       {
         question: "Who needs HD Liposuction?",
@@ -560,7 +545,7 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
   },
   {
     id: "body-contouring-chandigarh",
-    metaDescription: "Body contouring surgery in Chandigarh by Dr. Sumit — reshape your silhouette after weight loss with expert surgical planning. Book a consult.",
+    metaDescription: "Body contouring surgery in Chandigarh by Dr. Sumit — reshape your silhouette after weight loss with surgical planning.",
     title: "Body Contouring",
     category: "Body",
     parentCategory: "aesthetic",
@@ -580,21 +565,8 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
       results: ["The final contour settles at 6 to 12 months as swelling resolves and tissues soften."],
       recoveryTips: ["Compression garments are essential for the full 6 weeks.", "Maintaining baseline muscle through strength training keeps you in a healthy state and fit for healing."]
     },
-    gallery: [
-      "/axillary-breast-reduction-result.webp",
-      "/body-contouring-result-1.webp",
-      "/body-contouring-result-2.webp",
-      "/body-contouring-result-3.webp",
-      "/body-contouring-result-4.webp",
-      "/body-contouring-result-5.webp",
-      "/tummy-tuck-result-1.webp",
-      "/tummy-tuck-result-2.webp",
-      "/tummy-tuck-nrf.webp",
-      "/tummy-tuck-nrll.webp",
-      "/tummy-tuck-nrro.webp"
-    ],
     seoContent: `
-### Body Contouring in Chandigarh: The Complete Transformation
+### Body Contouring in Chandigarh: Treating Several Areas Together
 **Specialized Post-Weight Loss & Body Lift Surgery**
 
 After significant weight loss, loose skin can hide your hard-earned results. Dr. Sumit offers comprehensive body contouring solutions in Tricity, treating the body as a cohesive unit ensuring proportion and balance.
@@ -666,7 +638,7 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
   },
   {
     id: "fat-grafting-chandigarh",
-    metaDescription: "Microfat & nanofat grafting in Chandigarh by Dr. Sumit, fellowship-trained under Tonnard & Verpaele who originated the technique. Book a consultation.",
+    metaDescription: "Microfat & nanofat grafting in Chandigarh by Dr. Sumit, fellowship-trained under Tonnard & Verpaele who originated the technique.",
     title: "Fat Grafting",
     category: "Body",
     parentCategory: "aesthetic",
@@ -696,7 +668,6 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
     },
     fellowshipAnchor: true,
     regions: ["Face", "Nose", "Eyes", "Ears", "Lips", "Neck", "Breasts", "Body", "Buttock"],
-    gallery: ["/scar-revision-fat-grafted.webp", "/fat-grafting-result-1.webp", "/fat-grafting-result-2.webp", "/fat-grafting-result-3.webp"],
     seoContent: `
 ### Microfat & Nanofat Grafting in Chandigarh
 **Trained under the surgeons who originated the technique**
@@ -832,7 +803,7 @@ The same viability principles should still favour better survival, but that is a
   },
   {
     id: "buttock-lift-chandigarh",
-    metaDescription: "Buttock lift surgery in Chandigarh by Dr. Sumit — lift, tighten and reshape the posterior contour safely. Book your consultation today.",
+    metaDescription: "Buttock lift surgery in Chandigarh by Dr. Sumit — lift, tighten and reshape the posterior contour safely.",
     title: "Buttock Lift",
     category: "Body",
     parentCategory: "aesthetic",
@@ -925,7 +896,7 @@ Results are visible immediately. You will need to avoid sitting directly on the 
   // AESTHETIC - FACE
   {
     id: "facelift-chandigarh",
-    metaDescription: "MACS facelift in Chandigarh by Dr. Sumit Singh Gautam — natural, scar-conscious facial rejuvenation. Book a private consultation today.",
+    metaDescription: "MACS facelift in Chandigarh by Dr. Sumit Singh Gautam — natural, scar-conscious facial rejuvenation.",
     title: "Facelift (MACS Lift)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -951,7 +922,7 @@ Results are visible immediately. You will need to avoid sitting directly on the 
 
 **Minimal Access Cranial Suspension (MACS) Lift: The "Belgium Technique"**
 
-Traditional facelifts often pulled the skin horizontally, leading to an unnatural, "wind-blown" appearance. The MACS Lift, refined by masters in Belgium, is a revolutionary technique that lifts the facial tissues **vertically**—counteracting gravity directly.
+Traditional facelifts often pulled the skin horizontally, leading to an unnatural, "wind-blown" appearance. The MACS Lift, developed by Tonnard and Verpaele in Belgium, is a technique that lifts the facial tissues **vertically**—counteracting gravity directly.
 
 **Why Choose a MACS Lift?**
 *   **Natural Results:** By lifting vertically, we restore your features to where they were 10 years ago, rather than stretching them sideways.
@@ -1026,7 +997,7 @@ This procedure is specifically designed to obliterate the "jowls" (sagging jawli
   },
   {
     id: "neck-lift-chandigarh",
-    metaDescription: "Deep plane neck lift in Chandigarh by Dr. Sumit — sharpen the jawline and correct platysmal bands naturally. Book a consultation today.",
+    metaDescription: "Deep plane neck lift in Chandigarh by Dr. Sumit — sharpen the jawline and correct platysmal bands naturally.",
     title: "Neck Lift (Deep Plane)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -1116,7 +1087,7 @@ You will wear a supportive chin strap for 1 week. Bruising typically resolves in
   {
     id: "lip-lift-chandigarh",
     h1: "Lip Lift in Chandigarh",
-    metaDescription: "Lip lift & lip reduction in Chandigarh by Dr. Sumit — balanced, youthful lip proportions with hidden scars. Book your consultation today.",
+    metaDescription: "Lip lift & lip reduction in Chandigarh by Dr. Sumit — balanced, youthful lip proportions with hidden scars.",
     title: "Lip Lift / Lip Reduction",
     category: "Face",
     parentCategory: "aesthetic",
@@ -1144,7 +1115,7 @@ You will wear a supportive chin strap for 1 week. Bruising typically resolves in
 A long upper lip (philtrum) can hide your teeth when you smile and make the face look older. A Lip Lift shortens this distance, rolling the red part of the lip outward (vermilion show) for a naturally fuller look without fillers.
 
 **The "Bullhorn" Technique**
-The incision is hidden perfectly in the shadow of the base of the nose. It is virtually undetectable once healed.
+The incision is placed in the shadow of the base of the nose, where it is usually hard to see once healed.
 
 #### Lip Reduction
 For clients with genetically overly prominent lips, we perform precision reduction to balance facial harmony, often preserving the natural shape while reducing volume.
@@ -1199,7 +1170,7 @@ For clients with genetically overly prominent lips, we perform precision reducti
   },
   {
     id: "hair-transplant-chandigarh",
-    metaDescription: "Hair transplant in Chandigarh by Dr. Sumit — surgeon-designed hairlines with natural density using FUE techniques. Book a consultation today.",
+    metaDescription: "Hair transplant in Chandigarh by Dr. Sumit — surgeon-designed hairlines with natural density using FUE techniques.",
     title: "Hair Transplant",
     category: "Face",
     parentCategory: "aesthetic",
@@ -1222,15 +1193,15 @@ For clients with genetically overly prominent lips, we perform precision reducti
       recoveryTips: ["First hair wash on day 4 to 5.", "Let the scabs come away on their own between day 10 and 15."]
     },
     seoContent: `
-### Best Hair Transplant in Chandigarh: Restoring Confidence Permanently
+### Hair Transplant in Chandigarh
 
 **Advanced FUE & DHT Techniques for Natural Hair Restoration**
 
-Hair loss can significantly impact self-esteem. Dr. Sumit Singh Gautam offers state-of-the-art Hair Transplant services in Chandigarh, utilizing advanced Follicular Unit Extraction (FUE) and Direct Hair Transplantation (DHT) methods to ensure maximum graft survival and density.
+Hair loss can significantly impact self-esteem. Dr. Sumit Singh Gautam performs hair transplants in Chandigarh using Follicular Unit Extraction (FUE) and Direct Hair Transplantation (DHT), with the aim of good graft survival and density.
 
 #### Medical Deep Dive: The Visualist Approach to Hairlines
 Designing a hairline is art. It requires understanding facial proportions, age-appropriate recession, and natural directionality.
-*   **Technique (FUE/DHT):** We utilize <0.8mm punches to minimize donor scarring. The DHT method involves simultaneous extraction and implantation, reducing the time follicles spend outside the body (ischemia time) and boosting survival rates closer to 100%.
+*   **Technique (FUE/DHT):** We utilize <0.8mm punches to minimize donor scarring. The DHT method involves simultaneous extraction and implantation, reducing the time follicles spend outside the body (ischemia time), which helps graft survival.
 *   **Surgeon-Led:** Dr. Sumit is personally involved in the slit creation (channeling) phase, determining the angle and density. This prevents the "doll head" look or unnatural straight lines often seen in technician-run clinics.
 
 #### Local Context: Chandigarians & Hair
@@ -1242,7 +1213,6 @@ Given the water quality and environmental factors in the Tricity, we often see s
 1.  **Surgeon-Led Procedure:** Unlike many clinics where technicians do the work, Dr. Sumit is personally involved in the planning and slit creation phases.
 2.  **Healing Hospital Audit:** We operate within a hospital environment, ensuring sterility and emergency readiness.
 
-[View our Before and After Gallery](/gallery) to see the life-changing density our patients enjoy.
     `,
     priceRange: "₹60,000 - ₹1,50,000",
     costFactors: "Number of Grafts (FUE), Hairline Design complexity",
@@ -1257,7 +1227,7 @@ Given the water quality and environmental factors in the Tricity, we often see s
       {
         question: "Is a hair transplant painful?",
         answer: [
-          "The only uncomfortable part of the procedure is the initial administration of local anesthesia (the ring block). Once the scalp is numb, the procedure itself is virtually painless.",
+          "The only uncomfortable part of the procedure is the initial administration of local anesthesia (the ring block). Once the scalp is numb, most patients feel pressure and movement during the procedure rather than sharp pain.",
           "Many patients comfortably watch movies on their phones or sleep during the extraction and implantation phases."
         ]
       },
@@ -1325,7 +1295,7 @@ Given the water quality and environmental factors in the Tricity, we often see s
   },
   {
     id: "blepharoplasty-chandigarh",
-    metaDescription: "Blepharoplasty (eyelid surgery) in Chandigarh by Dr. Sumit — remove eye bags & hooding for a rested, open look. Book your consultation today.",
+    metaDescription: "Blepharoplasty (eyelid surgery) in Chandigarh by Dr. Sumit — remove eye bags & hooding for a rested, open look.",
     title: "Blepharoplasty (Eye Bags)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -1368,7 +1338,6 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
 `,
     priceRange: "₹60,000 - ₹1,20,000",
     costFactors: "Upper vs Lower Lids, Skin only vs Fat Excision, Canthopexy requirement",
-    gallery: ["/blepharoplasty-result-1.webp"],
     faqs: [
       {
         question: "Who needs Blepharoplasty?",
@@ -1649,7 +1618,7 @@ Every rhinoplasty carries risk. The figures below come from published studies, a
   },
   {
     id: "otoplasty-chandigarh",
-    metaDescription: "Otoplasty (ear reshaping) in Chandigarh by Dr. Sumit — correct prominent ears for adults & children safely. Book a consultation today.",
+    metaDescription: "Otoplasty (ear reshaping) in Chandigarh by Dr. Sumit — correct prominent ears for adults & children safely.",
     title: "Ear Reshaping (Otoplasty)",
     category: "Face",
     parentCategory: "aesthetic",
@@ -1670,7 +1639,6 @@ Every rhinoplasty carries risk. The figures below come from published studies, a
       results: ["The result is immediate and permanent."],
       recoveryTips: ["Keep the dressing dry and undisturbed until it is removed at day 5.", "Hold off on swimming until sutures are out, and contact sport for a full month."]
     },
-    gallery: ["/otoplasty-result-1.webp", "/otoplasty-result-2.webp", "/otoplasty-result-3.webp", "/otoplasty-result-4.webp", "/otoplasty-result-5.webp"],
     seoContent: `
 ### Otoplasty in Chandigarh: Ear Reshaping
 **Correcting Prominent Ears for Children and Adults**
@@ -1742,7 +1710,7 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
   // BREAST
   {
     id: "breast-augmentation-chandigarh",
-    metaDescription: "Breast augmentation in Chandigarh by Dr. Sumit — premium implants or fat transfer for natural results. Book a private consultation today.",
+    metaDescription: "Breast augmentation in Chandigarh by Dr. Sumit — silicone implants or fat transfer.",
     title: "Breast Augmentation",
     category: "Breast",
     parentCategory: "aesthetic",
@@ -1767,19 +1735,11 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
       recoveryTips: ["The surgical support bra is mandatory for the first 6 weeks.", "Manual massage may be recommended depending on the implant type."]
     },
     regions: ["Breasts"],
-    gallery: [
-      "/breast-augmentation-result-1.webp",
-      "/breast-augmentation-result-2.webp",
-      "/breast-augmentation-result-3.webp",
-      "/breast-augmentation-result-4.webp",
-      "/breast-augmentation-result-5.webp",
-      "/breast-augmentation-result-6.webp"
-    ],
     seoContent: `
 ### Breast Augmentation in Chandigarh: Enhance Your Silhouette
 **Premium Implants (Motiva / Mentor) & Fat Transfer**
 
-Breast Augmentation is one of the most transformative procedures for confidence. Dr. Sumit offers tailored solutions using US FDA-approved implants or your own fat (Composite Augmentation).
+For breast augmentation, Dr. Sumit offers tailored solutions using US FDA-approved implants or your own fat (Composite Augmentation).
 
 **Implant Choices**
 *   **Ergonomix (Motiva):** Implants that move naturally with gravity, looking round when lying down and teardrop when standing.
@@ -1880,7 +1840,7 @@ Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4
   },
   {
     id: "breast-reduction-chandigarh",
-    metaDescription: "Breast reduction in Chandigarh by Dr. Sumit — relieve pain and reshape with scar-conscious techniques. Book a private consultation today.",
+    metaDescription: "Breast reduction in Chandigarh by Dr. Sumit — relieve pain and reshape with scar-conscious techniques.",
     title: "Breast Reduction",
     category: "Breast",
     parentCategory: "aesthetic",
@@ -1901,7 +1861,6 @@ Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4
       results: ["The final shape settles at 3 to 6 months.", "Scar remodelling continues for a full year after surgery."],
       recoveryTips: ["Wear the compression garment as directed.", "Laser resurfacing can soften the vertical scar, but only from 3 months after surgery."]
     },
-    gallery: ["/breast-reduction-result-1.webp", "/axillary-breast-reduction-result.webp"],
     seoContent: `
 ### Breast Reduction in Chandigarh: Relief & Proportion
 **Alleviating Back Pain & Restoring Confidence**
@@ -1963,7 +1922,7 @@ The cost varies by size and complexity but includes all hospital and anesthesia 
   },
   {
     id: "breast-lift-chandigarh",
-    metaDescription: "Breast lift (mastopexy) in Chandigarh by Dr. Sumit — restore elevation and firmness with a natural shape. Book a private consultation today.",
+    metaDescription: "Breast lift (mastopexy) in Chandigarh by Dr. Sumit — restore elevation and firmness with a natural shape.",
     title: "Breast Lift (Mastopexy)",
     category: "Breast",
     parentCategory: "aesthetic",
@@ -2040,7 +1999,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
   {
     id: "gynecomastia-surgery-chandigarh",
     seoTitle: "Gynecomastia Surgery in Chandigarh | Dr. Sumit",
-    metaDescription: "Gynecomastia surgery in Chandigarh by Dr. Sumit — day-care male breast reduction with hidden scars. Book a confidential consultation today.",
+    metaDescription: "Gynecomastia surgery in Chandigarh by Dr. Sumit — day-care male breast reduction with hidden scars.",
     title: "Gynecomastia (Male Breast Reduction)",
     category: "Male",
     parentCategory: "aesthetic",
@@ -2064,38 +2023,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
       recoveryTips: ["The compression vest is vital to flatten the area and prevent fluid buildup - 7 days minimum, longer in higher grades.", "Lymphatic massage and icing 4 to 5 times a day for at least 6 weeks helps ensure a smooth, bump-free result."]
     },
     regions: ["Breasts", "Body"],
-    videos: [GYNECOMASTIA_JOURNEY_VIDEO, GYNECOMASTIA_VIDEO],
-    gallery: [
-      "/gynecomastia-result-1.webp",
-      "/gynecomastia-result-2.webp",
-      "/gynecomastia-result-3.webp",
-      "/gynecomastia-result-4.webp",
-      "/gynecomastia-result-5.webp",
-      "/gynecomastia-result-6.webp",
-      "/gynecomastia-result-7.webp",
-      "/gynecomastia-result-8.webp",
-      "/gynecomastia-result-9.webp",
-      "/gynecomastia-result-10.webp",
-      "/gynecomastia-result-11.webp",
-      "/gynecomastia-result-12.webp",
-      "/gynecomastia-result-13.webp",
-      "/gynecomastia-result-14.webp",
-      "/gynecomastia-result-15.webp",
-      "/gynecomastia-result-16.webp",
-      "/gynecomastia-result-17.webp",
-      "/gynecomastia-result-18.webp",
-      "/gynecomastia-result-19.webp",
-      "/gynecomastia-result-20.webp",
-      "/gynecomastia-result-21.webp",
-      "/gynecomastia-result-22.webp",
-      "/gynecomastia-result-23.webp",
-      "/gynecomastia-result-24.webp",
-      "/gynecomastia-result-25.webp",
-      "/gynecomastia-result-26.webp",
-      "/gynecomastia-result-27.webp",
-      "/gynecomastia-result-28.webp",
-      "/gynecomastia-result-29.webp"
-    ],
+    videos: [GYNECOMASTIA_VIDEO],
     seoContent: `
 ### Gynecomastia Surgery in Chandigarh: Masculine Chest Contouring
 
@@ -2118,13 +2046,13 @@ The aim is not simply to remove gynecomastia. It is to produce a masculine chest
 Crater deformity under the nipple is prevented by leaving adequate fat beneath the nipple, along with a thin layer of breast tissue immediately under the skin - enough to keep the contour smooth rather than dished.
 
 #### Local Context: The "T-Shirt" Confidence
-In Chandigarh's gym-centric culture, this is our #1 requested male procedure.
+In Chandigarh's gym-centric culture, it is a common reason men see a plastic surgeon.
 *   **Discreet:** We handle male patients with high privacy protocols at Healing Hospital.
 *   **Same Day:** It is a Day Care procedure. You come in the morning and engage in light walking by evening.
 
 #### Cost of Gynecomastia Surgery in Chandigarh
 The procedure is an investment in regained confidence. Costs include OT charges, anesthesia, and post-op care.
-*   **Affordable Quality:** We offer competitive pricing without compromising on the hospital hygiene and safety standards.
+*   **What the fee covers:** OT charges, anaesthesia and post-operative care at Healing Hospital are included in the quoted fee.
 
 #### Recovery Time
 *   **Return to Work:** Most men return to lighter office duties within 3-4 days.
@@ -2249,7 +2177,7 @@ See our **Before and After Gallery** for examples of restored masculine contours
   // INTIMATE
   {
     id: "vaginoplasty-chandigarh",
-    metaDescription: "Vaginoplasty in Chandigarh by Dr. Sumit — discreet, expert intimate surgery to restore tone & function. Book a confidential consultation.",
+    metaDescription: "Vaginoplasty in Chandigarh by Dr. Sumit — discreet intimate surgery to restore tone & function.",
     title: "Vaginoplasty",
     category: "Intimate",
     parentCategory: "aesthetic",
@@ -2322,7 +2250,7 @@ Childbirth and aging can stretch vaginal muscles, affecting sensation and confid
   },
   {
     id: "labiaplasty-chandigarh",
-    metaDescription: "Labiaplasty in Chandigarh by Dr. Sumit — refined intimate contours for comfort and confidence, discreetly. Book a private consultation today.",
+    metaDescription: "Labiaplasty in Chandigarh by Dr. Sumit — refined intimate contours for comfort and confidence, discreetly.",
     title: "Labiaplasty",
     category: "Intimate",
     parentCategory: "aesthetic",
@@ -2397,7 +2325,7 @@ It is a 45-minute procedure performed under local anesthesia or sedation. Recove
   // AESTHETIC - SCAR REVISION (Moved here)
   {
     id: "scar-revision-chandigarh",
-    metaDescription: "Scar revision in Chandigarh by Dr. Sumit — surgical & non-surgical techniques to soften surgical or trauma scars. Book a consultation today.",
+    metaDescription: "Scar revision in Chandigarh by Dr. Sumit — surgical & non-surgical techniques to soften surgical or trauma scars.",
     title: "Scar Revision",
     category: "Aesthetic",
     parentCategory: "aesthetic",
@@ -2418,7 +2346,6 @@ It is a 45-minute procedure performed under local anesthesia or sedation. Recove
       results: ["The revised scar reaches its final appearance at about 1 year.", "Improvement is subjective and can range from astonishing to subtle, depending on the scar."],
       recoveryTips: ["Sun protection for a minimum of 3 months.", "Silicone-based scar management for a minimum of 3 months."]
     },
-    gallery: ["/scar-revision-fat-grafted.webp", "/keloid-excision-result.webp", "/scar-revision-result-2.webp"],
     seoContent: `
 ### Scar Revision in Chandigarh: Erasing Trauma
 **Surgical & Laser Solutions for Scars**
@@ -2440,7 +2367,7 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
         question: "Can scars be completely removed?",
         answer: [
           "No scar can be removed completely, but 'Revision' can make them significantly less visible.",
-          "We combine surgical, fat grafting, and laser techniques for the best results."
+          "Surgical, fat grafting, and laser techniques are combined as the scar requires."
         ]
       },
       {
@@ -2490,7 +2417,7 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
   {
     id: "botox-chandigarh",
     h1: "Botox in Chandigarh",
-    metaDescription: "Botox in Chandigarh by plastic surgeon Dr. Sumit — soften lines naturally with precise, conservative dosing. Book your session today.",
+    metaDescription: "Botox in Chandigarh by plastic surgeon Dr. Sumit — soften lines naturally with precise, conservative dosing.",
     title: "Botox & Neuromodulators",
     category: "Non-Surgical",
     parentCategory: "non-surgical",
@@ -2509,7 +2436,7 @@ We have a specialized protocol for Keloids, combining surgical removal with imme
       assessment: ["Evaluation of muscle strength and skin elasticity during active expression."],
       functional: ["No downtime; you can return to social activities immediately."],
       backToWork: ["Instant return to work; no physical signs visible usually within 30 minutes."],
-      holidays: ["Perfect 'lunchtime' procedure with zero recovery window."],
+      holidays: ["Often done as a 'lunchtime' procedure, with little or no downtime."],
       results: ["Results soften at 3-5 days, peak at 14 days, and last 3-4 months."],
       recoveryTips: ["Keep upright for 4 hours; avoid strenuous exercise for 24 hours."]
     },
@@ -2580,7 +2507,7 @@ We use only authentic Allergan Botox or Dysport, opened in front of you. Results
   },
   {
     id: "microneedling-chandigarh",
-    metaDescription: "Microneedling in Chandigarh at Dr. Sumit Aesthetics — stimulate collagen to improve texture, scars & pores. Book your session today.",
+    metaDescription: "Microneedling in Chandigarh at Dr. Sumit Aesthetics — stimulate collagen to improve texture, scars & pores.",
     priceRange: "On consultation",
     costFactors: "Session count, treatment area & combination therapies",
     title: "Microneedling",
@@ -2675,7 +2602,7 @@ Redness lasts 24-48 hours, similar to a sunburn. It is safe for all skin types.
   },
   {
     id: "chemical-peeling-chandigarh",
-    metaDescription: "Chemical peels in Chandigarh at Dr. Sumit Aesthetics — medical-grade peels for glow, pigmentation & acne scars. Book your session today.",
+    metaDescription: "Chemical peels in Chandigarh at Dr. Sumit Aesthetics — medical-grade peels for glow, pigmentation & acne scars.",
     priceRange: "On consultation",
     title: "Chemical Peeling",
     category: "Non-Surgical",
@@ -2775,7 +2702,7 @@ Medical supervision ensures no risk of burns or hyperpigmentation.
   },
   {
     id: "dermal-fillers-chandigarh",
-    metaDescription: "Dermal fillers in Chandigarh by plastic surgeon Dr. Sumit — restore volume and contour with a natural finish. Book your session today.",
+    metaDescription: "Dermal fillers in Chandigarh by plastic surgeon Dr. Sumit — restore volume and contour with a natural finish.",
     priceRange: "On consultation",
     title: "Dermal Fillers",
     category: "Non-Surgical",
@@ -2869,7 +2796,7 @@ Depending on the product (Juvederm/Restylane) and area, results last 9-18 months
   // RECONSTRUCTIVE
   {
     id: "microvascular-repair",
-    metaDescription: "Microvascular repair in Chandigarh by Dr. Sumit — emergency microsurgery for severed vessels and replantation at Healing Hospital. Enquire now.",
+    metaDescription: "Microvascular repair in Chandigarh by Dr. Sumit — emergency microsurgery for severed vessels and replantation at Healing Hospital.",
     title: "Microvascular Repair",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2910,7 +2837,7 @@ Microvascular surgery involves joining blood vessels and nerves as thin as a hai
   {
     id: "traumatic-reconstruction",
     h1: "Trauma Reconstruction in Chandigarh",
-    metaDescription: "Traumatic reconstruction in Chandigarh by Dr. Sumit — expert surgical repair after accidents and injuries at Healing Hospital. Enquire now.",
+    metaDescription: "Traumatic reconstruction in Chandigarh by Dr. Sumit — surgical repair after accidents and injuries at Healing Hospital.",
     title: "Traumatic Reconstruction",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2946,7 +2873,7 @@ Our priority is "Function First, Aesthetics Always." We aim to restore your body
   {
     id: "facial-fracture-surgery",
     h1: "Facial Fractures in Chandigarh",
-    metaDescription: "Facial fracture surgery in Chandigarh by Dr. Sumit — precise fixation of jaw, cheek & orbital fractures at Healing Hospital. Enquire today.",
+    metaDescription: "Facial fracture surgery in Chandigarh by Dr. Sumit — precise fixation of jaw, cheek & orbital fractures at Healing Hospital.",
     title: "Facial Fracture Surgery",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -2956,7 +2883,7 @@ Our priority is "Function First, Aesthetics Always." We aim to restore your body
     regions: ["Face", "Nose", "Eyes"],
     seoContent: `
 ### Facial Fracture Surgery in Chandigarh
-**Maxillofacial Surgery Excellence**
+**Maxillofacial Surgery**
 
 Fractures of the jaw (mandible), cheek (zygoma), or eye socket (orbit) require precise fixation with titanium plates. Malignment can lead to double vision or bite issues.
 
@@ -3019,7 +2946,7 @@ Surgery is only half the battle. Our dedicated physiotherapy protocol ensures yo
   {
     id: "hand-surgery-chandigarh",
     h1: "Hand & Foot Fractures in Chandigarh",
-    metaDescription: "Hand & foot fracture surgery in Chandigarh by Dr. Sumit — precise fixation and early mobilisation protocols. Enquire at Healing Hospital.",
+    metaDescription: "Hand & foot fracture surgery in Chandigarh by Dr. Sumit — precise fixation and early mobilisation protocols.",
     title: "Fractures of Hand & Foot",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -3046,7 +2973,7 @@ Metacarpal (hand) and Metatarsal (foot) fractures require precise alignment to p
   },
   {
     id: "hand-deformity-chandigarh",
-    metaDescription: "Hand deformity correction in Chandigarh by Dr. Sumit — congenital & acquired conditions treated with surgical precision. Enquire today.",
+    metaDescription: "Hand deformity correction in Chandigarh by Dr. Sumit — congenital & acquired conditions treated with surgical precision.",
     title: "Hand Deformities",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -3082,7 +3009,7 @@ For children, separation of fused fingers is ideally done before school age (1-2
   {
     id: "cleft-lip-chandigarh",
     h1: "Cleft Lip Repair in Chandigarh",
-    metaDescription: "Cleft lip & palate repair in Chandigarh by Dr. Sumit — timely, compassionate correction for infants and children. Book a consultation today.",
+    metaDescription: "Cleft lip & palate repair in Chandigarh by Dr. Sumit — timely, compassionate correction for infants and children.",
     title: "Cleft Lip & Palate Repair",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -3123,7 +3050,7 @@ We focus on rebuilding the lip muscle loop to ensure normal movement and a symme
   {
     id: "burn-surgery-chandigarh",
     h1: "Burn Surgery in Chandigarh",
-    metaDescription: "Burn & contracture release surgery in Chandigarh by Dr. Sumit — restore movement and appearance after burns. Enquire at Healing Hospital.",
+    metaDescription: "Burn & contracture release surgery in Chandigarh by Dr. Sumit — restore movement and appearance after burns.",
     title: "Burns & Contracture Release",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -3159,7 +3086,7 @@ We also manage fresh burns with advanced dressings and early grafting to minimiz
   {
     id: "bed-sore-surgery-chandigarh",
     h1: "Bed Sore Surgery in Chandigarh",
-    metaDescription: "Pressure sore (bed sore) surgery in Chandigarh by Dr. Sumit — flap-based closure and wound care for lasting healing. Enquire today.",
+    metaDescription: "Pressure sore (bed sore) surgery in Chandigarh by Dr. Sumit — flap-based closure and wound care for lasting healing.",
     title: "Pressure Sores / Bed Sores",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -3185,7 +3112,7 @@ For bedridden patients, pressure sores (decubitus ulcers) can reach the bone. De
   },
   {
     id: "diabetic-foot-chandigarh",
-    metaDescription: "Diabetic foot treatment in Chandigarh by Dr. Sumit — limb-saving wound care and reconstructive surgery. Enquire at Healing Hospital today.",
+    metaDescription: "Diabetic foot treatment in Chandigarh by Dr. Sumit — limb-saving wound care and reconstructive surgery.",
     title: "Diabetic Foot",
     category: "Reconstructive",
     parentCategory: "reconstructive",
@@ -3215,7 +3142,7 @@ Our goal is always to save the foot and maintain your mobility.
   // VASCULAR
   {
     id: "varicose-veins-chandigarh",
-    metaDescription: "Varicose vein treatment in Chandigarh by Dr. Sumit — minimally invasive care for healthier, lighter legs. Book a consultation today.",
+    metaDescription: "Varicose vein treatment in Chandigarh by Dr. Sumit — minimally invasive care for healthier, lighter legs.",
     title: "Varicose Veins",
     category: "Vascular",
     parentCategory: "vascular",
@@ -3248,7 +3175,7 @@ Varicose veins are dilated, tortuous veins that can cause pain and skin ulcers. 
     id: "vascular-surgery-chandigarh",
     h1: "Vascular Surgery in Chandigarh",
     seoTitle: "Vascular Procedures in Chandigarh | Dr. Sumit",
-    metaDescription: "Ultrasound-guided vascular procedures in Chandigarh by Dr. Sumit — precise access and vein care at Healing Hospital. Book a consultation.",
+    metaDescription: "Ultrasound-guided vascular procedures in Chandigarh by Dr. Sumit — precise access and vein care at Healing Hospital.",
     title: "Ultrasound-Guided Vascular Procedures",
     category: "Vascular",
     parentCategory: "vascular",
@@ -3294,7 +3221,6 @@ export const ASSETS = Object.fromEntries(
 export const PROCEDURES = RAW_PROCEDURES.map(p => ({
   ...p,
   image: fixPath(p.image),
-  gallery: p.gallery?.map(g => fixPath(g)!)
 }));
 
 export interface BlogPost {
@@ -3652,7 +3578,7 @@ Stitch only the skin and it looks fine for weeks. Then it heals with nothing und
 
 ## Glue or stitches?
 
-Tissue glue is quick and painless, and early on the wound can look excellent. Over the longer run the evidence is thinner than either side usually admits.
+Tissue glue is quick and needs no needle, and early on the wound can look excellent. Over the longer run the evidence is thinner than either side usually admits.
 
 A 2023 meta-analysis of 18 randomised trials (1,020 patients, face and neck wounds) found:
 
@@ -4178,7 +4104,7 @@ A gallery of twenty ordinary-looking good results is a stronger claim than one t
 
 Same light, same lens, same distance, same posture, same background. Or it proves nothing.
 
-This applies to every gallery, including ours. If you are looking at [results on this site](/gallery/) or anywhere else, hold them to it - and ask to see more than the highlights at consultation.
+This applies to every before-and-after you are shown, anywhere. Hold it to that standard - and ask to see more than the highlights.
 
 There is a reason to say this out loud rather than quietly maintain good practice: a standard stated in public is one the person stating it can be held to.
 
@@ -4710,7 +4636,7 @@ If you are dealing with a scar that healed badly, or a lesion you want removed w
     excerpt: "A comprehensive guide to the healing process after High Definition Liposuction, including timelines and tips for optimal contouring.",
     content: `## The Journey to Your New Contour
 
-[High Definition Liposuction](/liposuction-chandigarh) is transformative, but the results you see on the operating table take time to fully mature. Understanding the recovery timeline is crucial for peace of mind.
+[High Definition Liposuction](/liposuction-chandigarh) can change body contour markedly, but the results you see on the operating table take time to fully mature. Understanding the recovery timeline is crucial for peace of mind.
 
 ### Week 1: The Swelling Phase
 Most patients return home the same day. You will experience significant swelling and some bruising. 
@@ -4793,7 +4719,7 @@ To ensure lifelong results from your liposuction procedure:
   {
     id: "the-mommy-makeover-journey",
     seoTitle: "The Mommy Makeover: Combining Procedures",
-    title: "The Mommy Makeover Journey: Combining Procedures for Best Results",
+    title: "The Mommy Makeover Journey: Combining Procedures in One Operation",
     excerpt: "Restore your pre-pregnancy body with a customized Mommy Makeover. Learn how combining procedures provides comprehensive rejuvenation.",
     content: `## Reclaiming Your Body After Motherhood
 
@@ -4821,7 +4747,7 @@ Pregnancy and breastfeeding can cause breasts to lose volume and sag.
 Combining these procedures offers significant advantages:
 *   **Single Recovery Period:** You only go through anesthesia and the initial healing phase once, minimizing total downtime away from your family.
 *   **Cost Efficiency:** Consolidating operating room and anesthesia fees is more cost-effective than staging multiple surgeries.
-*   **Comprehensive Results:** Addressing all areas of concern simultaneously provides a more dramatic and harmonious transformation.
+*   **Comprehensive Results:** Addressing all areas of concern at once can give a more balanced overall result.
 
 Explore the individual procedures in detail: [Tummy Tuck](/tummy-tuck-chandigarh), [Breast Augmentation](/breast-augmentation-chandigarh), [Breast Lift](/breast-lift-chandigarh), and [HD Liposuction](/liposuction-chandigarh).`,
     image: "/tummy-tuck-aesthetic.webp",
@@ -4830,7 +4756,7 @@ Explore the individual procedures in detail: [Tummy Tuck](/tummy-tuck-chandigarh
   {
     id: "high-definition-hd-liposuction-sculpting",
     seoTitle: "HD Liposuction: Sculpting the Body Contour",
-    title: "High-Definition (HD) Liposuction: Sculpting the Perfect Body Contour",
+    title: "High-Definition (HD) Liposuction: Sculpting Body Contour",
     excerpt: "Move beyond simple fat removal. Discover how HD Liposuction creates an athletic, chiseled physique by highlighting underlying musculature.",
     content: `## The Evolution of Body Contouring
 
@@ -4860,9 +4786,9 @@ The outcome is a highly sculpted physique. For men, this often means a defined "
     seoTitle: "Rhinoplasty Recovery Timeline: Healing Day by Day",
     title: "Rhinoplasty Recovery Timeline: Healing Day by Day",
     excerpt: "Planning a nose job? Here is an honest, detailed look at the rhinoplasty recovery process, from the first 24 hours to the final result.",
-    content: `## Patience is the Key to Perfection
+    content: `## Why Patience Matters
 
-[Rhinoplasty (a nose job)](/rhinoplasty-nose-job-chandigarh) is one of the most transformative facial surgeries, but unlike a haircut, the results aren't instantaneous. The nose is a delicate structure of bone, cartilage, and skin, and it heals at its own pace.
+[Rhinoplasty (a nose job)](/rhinoplasty-nose-job-chandigarh) changes the face more than most facial operations, but unlike a haircut, the results aren't instantaneous. The nose is a delicate structure of bone, cartilage, and skin, and it heals at its own pace.
 
 ### The First 24-48 Hours
 *   **What you'll experience:** You will wake up with a cast or splint on the outside of your nose and possibly packing inside. You will feel congested, as if you have a severe cold. Bruising around the eyes (the "raccoon" look) and swelling are completely normal.
@@ -4920,7 +4846,7 @@ While it is the preferred technique for many primary (first-time) rhinoplasties,
     id: "blepharoplasty-eyelid-surgery-anti-aging",
     seoTitle: "Blepharoplasty: How Eyelid Surgery Takes Years Off",
     title: "Blepharoplasty: How Eyelid Surgery Takes Years Off Your Face",
-    excerpt: "Heavy, drooping eyelids or unyielding eye bags can make you look tired even when you are rested. Eyelid surgery offers a permanent, refreshing solution.",
+    excerpt: "Heavy, drooping eyelids or unyielding eye bags can make you look tired even when you are rested. Eyelid surgery offers a long-lasting correction.",
     content: `## The Window to Your Youth
 
 People constantly say you look "tired," even after a full eight hours of sleep. You notice that your eyeshadow doesn't sit the way it used to, or worse, heavy upper eyelids are actually obstructing your peripheral vision. Sound familiar?
@@ -4949,7 +4875,7 @@ Blepharoplasty is often performed under local anesthesia with sedation and is an
     excerpt: "Learn the differences between a full traditional facelift and a less invasive mini facelift, and see which one matches your facial aging concerns.",
     content: `## Choosing Your Path to Facial Rejuvenation
 
-When non-surgical options like [Botox](/botox-chandigarh) and [fillers](/dermal-fillers-chandigarh) are no longer enough to address sagging skin and deep folds, a [facelift](/facelift-chandigarh) remains the gold standard for turning back the clock. However, not all facelifts are created equal. The two primary approaches we offer are the Traditional (Full) Facelift and the Mini Facelift. 
+When non-surgical options like [Botox](/botox-chandigarh) and [fillers](/dermal-fillers-chandigarh) are no longer enough to address sagging skin and deep folds, a [facelift](/facelift-chandigarh) remains the standard surgical treatment. However, not all facelifts are created equal. The two primary approaches we offer are the Traditional (Full) Facelift and the Mini Facelift. 
 
 Understanding the differences is crucial to aligning your expectations with the surgical approach.
 
@@ -4970,7 +4896,7 @@ For severe sagging, deep jowls, and significant neck laxity—typically seen in 
 *   **The Recovery:** Expect 2 to 3 weeks of social downtime as the deeper tissues heal.
 
 ### Which is Right for You?
-If your primary concern is slight drooping around your mouth and jawline, a Mini Facelift might be the perfect "refresher." If you are frustrated by heavy jowls and loose skin under your chin and neck, a Traditional Facelift will provide the definitive contouring you desire.`,
+If your primary concern is slight drooping around your mouth and jawline, a Mini Facelift may be enough. If you are frustrated by heavy jowls and loose skin under your chin and neck, a Traditional Facelift addresses the jowls and neck more fully.`,
     image: "/facelift-aesthetic.webp",
     date: "July 5, 2025"
   }  ,
@@ -4978,13 +4904,13 @@ If your primary concern is slight drooping around your mouth and jawline, a Mini
     id: "gynecomastia-surgery-india-causes-treatment",
     seoTitle: "Gynecomastia Surgery: Causes, Treatment, Recovery",
     title: "Gynecomastia Surgery in India: Causes, Treatment, and Recovery",
-    excerpt: "Gynecomastia affects millions of men. Discover the causes and how modern surgical technique delivers a permanent, masculine chest contour.",
-    videos: [GYNECOMASTIA_JOURNEY_VIDEO, GYNECOMASTIA_VIDEO],
+    excerpt: "Gynecomastia affects millions of men. The causes, and how surgery treats it.",
+    videos: [GYNECOMASTIA_VIDEO],
     content: `## Restoring Confidence with Chest Contouring
 
 Gynecomastia—the development of enlarged glandular breast tissue in males—is far more common than most realize, affecting up to 30% of men. Despite how common it is, it can cause significant psychological distress, leading men to avoid wearing fitted shirts, going to the beach, or participating in sports.
 
-Fortunately, [Gynecomastia surgery](/gynecomastia-surgery-chandigarh) (male breast reduction) offers a permanent, highly effective solution.
+Fortunately, [Gynecomastia surgery](/gynecomastia-surgery-chandigarh) (male breast reduction) removes the gland and excess fat. The result lasts unless weight or hormones change significantly.
 
 ### What Causes Gynecomastia?
 Gynecomastia is fundamentally caused by an imbalance between testosterone and estrogen hormones. This imbalance can trigger the growth of dense, fibrous breast gland tissue. Common triggers include:
@@ -4994,9 +4920,9 @@ Gynecomastia is fundamentally caused by an imbalance between testosterone and es
 *   *Note:* True gynecomastia (glandular tissue) is different from *pseudogynecomastia* (excess fat tissue accumulated due to weight gain). Many men have a combination of both.
 
 ### The Surgical Treatment
-Glandular breast tissue is dense and fibrous; it cannot be exercised or dieted away. Surgery is the only definitive treatment. Dr. Sumit utilizes a combination approach for the best aesthetic result:
+Glandular breast tissue is dense and fibrous; it cannot be exercised or dieted away. Surgery is the only definitive treatment. Dr. Sumit usually combines two techniques:
 
-1.  **High-Definition Liposuction:** Used first to remove excess peripheral fat and expertly contour the surrounding chest wall, defining the pectoralis muscle edges.
+1.  **High-Definition Liposuction:** Used first to remove excess peripheral fat and contour the surrounding chest wall, defining the pectoralis muscle edges.
 2.  **Gland Excision:** A tiny, incredibly discreet incision is made at the lower edge of the areola (the dark skin surrounding the nipple). Through this hidden incision, the dense glandular tissue is surgically extracted.
 
 ### The Recovery Process
@@ -5005,7 +4931,7 @@ Male breast reduction is typically performed on an outpatient basis.
 *   **Return to Work:** Most men with desk jobs return to work within 3 to 5 days.
 *   **Return to Gym:** Lower body cardio can resume in about 2 weeks. Heavy upper body weightlifting (chest presses, pushups) should be avoided for 4 to 6 weeks.
 
-The results are immediate and, barring significant future steroid use or massive weight gain, they are permanent. See real outcomes in our [results gallery](/gallery).`,
+The results are immediate and, barring significant future steroid use or massive weight gain, they are permanent.`,
     image: "/gynecomastia-aesthetic.webp",
     date: "July 20, 2025"
   }  ,
@@ -5021,10 +4947,10 @@ When considering [breast augmentation](/breast-augmentation-chandigarh), patient
 While both achieve excellent results, they cater to different patient goals and body types. Let’s compare them.
 
 ### Option A: Silicone Implants
-Modern cohesive silicone gel implants (often referred to as "gummy bear" implants) are the gold standard for breast augmentation.
+Modern cohesive silicone gel implants (often referred to as "gummy bear" implants) are the implants most commonly used for breast augmentation.
 
 **The Pros:**
-*   **Predictability & Size:** Implants offer precise volume control. Whether you want a modest increase or a significant boost in cup size, implants can deliver predictable, guaranteed volume.
+*   **Predictability & Size:** Implants offer precise volume control. Whether you want a modest increase or a significant boost in cup size, implants give a predictable volume.
 *   **Shape & Lift:** Implants provide superior upper pole fullness (cleavage) and can slightly lift mildly sagging breasts, providing a firm, youthful perkiness that fat alone cannot.
 *   **Slim Candidates:** You do not need excess body fat to have this procedure.
 
@@ -5036,7 +4962,7 @@ Modern cohesive silicone gel implants (often referred to as "gummy bear" implant
 This procedure involves performing gentle [liposuction](/liposuction-chandigarh) on an area of excess fat (like the abdomen or thighs), purifying that fat, and carefully injecting it into the breasts.
 
 **The Pros:**
-*   **100% Natural:** You are using your own living tissue. There is no risk of implant rejection, rupture, or capsular contracture.
+*   **Your Own Tissue:** You are using your own living tissue, so there is no implant to rupture or to form a capsular contracture. Some of the transferred fat is reabsorbed.
 *   **Dual Benefit:** You achieve body contouring (liposuction) and breast enhancement in one procedure. 
 *   **Natural Feel:** The breasts feel completely natural because they are made of your own fat.
 
@@ -5159,7 +5085,7 @@ If you are starting to notice makeup settling into a faint line on your forehead
     excerpt: "Everything you need to know about the longevity of Hyaluronic Acid fillers, and the factors that cause your body to metabolize them faster.",
     content: `## Understanding the Lifespan of Your Enhancements
 
-[Dermal fillers](/dermal-fillers-chandigarh) offer an incredible, immediate transformation—plumping [lips](/concerns/Lips), lifting cheeks, and erasing deep laugh lines before you even leave the clinic. However, because the most common fillers are made of Hyaluronic Acid (HA), a substance your body naturally produces and breaks down, the results are temporary.
+[Dermal fillers](/dermal-fillers-chandigarh) give an immediate change—plumping [lips](/concerns/Lips), lifting cheeks, and erasing deep laugh lines before you even leave the clinic. However, because the most common fillers are made of Hyaluronic Acid (HA), a substance your body naturally produces and breaks down, the results are temporary.
 
 But "temporary" is a broad term. How long do they *really* last?
 
@@ -5208,8 +5134,8 @@ To ensure you get the most out of your appointment with Dr. Sumit—and to ensur
 ### Step 2: Critical Questions to Ask Your Surgeon
 Do not leave the consultation room without asking these fundamental questions:
 
-1.  **"Are you a Board-Certified Plastic Surgeon?"** 
-    Ensure they have legitimate credentials specifically in *Plastic and Reconstructive Surgery*, not just a general medical degree or cosmetic "certifications." Dr. Sumit is a highly trained, specialized Plastic & Aesthetic Surgeon.
+1.  **"What is your qualification in plastic surgery, and what is your medical registration number?"** 
+    In India, the specialist qualification is an MCh (or DNB) in *Plastic and Reconstructive Surgery*, not a general medical degree or a cosmetic "certificate". Every doctor's registration can be checked on the National Medical Commission's Indian Medical Register. Dr. Sumit holds an MCh in Plastic Surgery and is registered with the Haryana Medical Council (Reg. No. HN9607).
 2.  **"How frequently do you perform this specific procedure?"**
     You want a surgeon who performs the procedure weekly, not once a year.
 3.  **"Can I see before-and-after photos of your actual patients?"**
