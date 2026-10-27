@@ -51,10 +51,10 @@ const Home: React.FC = () => {
   return (
     <div ref={containerRef} className="w-full">
       <SEO
-        titleOverride="Dr. Sumit Plastic Surgeon Chandigarh | Board Certified"
-        title="Board Certified Plastic Surgeon in Chandigarh"
-        description="Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon in Chandigarh specializing in HD Liposuction, Rhinoplasty, Facelifts, and Hair Transplants."
-        keywords="plastic surgeon chandigarh, cosmetic surgeon chandigarh, dr sumit singh gautam, best plastic surgeon, aesthetic surgery, reconstructive surgery"
+        titleOverride="Dr. Sumit Singh Gautam, MCh Plastic Surgeon, Chandigarh"
+        title="MCh Plastic Surgeon in Chandigarh"
+        description="Dr. Sumit Singh Gautam, MCh (Plastic Surgery), is a plastic and aesthetic surgeon at Healing Hospital, Chandigarh. Liposuction, rhinoplasty, facelift and reconstructive surgery."
+        keywords="plastic surgeon chandigarh, cosmetic surgeon chandigarh, dr sumit singh gautam, aesthetic surgery, reconstructive surgery"
       />
 
       {/* Hero Section */}
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
           <img
             src={ASSETS.surgeryHeroBackground}
             className="w-full h-full object-cover opacity-80"
-            alt="Board-certified plastic and aesthetic surgery excellence by Dr. Sumit Singh Gautam in Chandigarh"
+            alt="Surgeons at work in an operating theatre"
             loading="eager"
             fetchPriority="high"
             width={1920}
@@ -97,27 +97,27 @@ const Home: React.FC = () => {
 
             {/* SEO-Optimized Pre-Header and H1 */}
             {/* The tagline is intentionally OUTSIDE the h1 so screen readers
-                don't merge it with "Surgical Mastery" into one long heading. */}
+                don't merge it with "Surgical Artistry" into one long heading. */}
             <p className="block text-[10px] md:text-xs text-white/50 tracking-[0.4em] uppercase font-sans font-bold mb-6">
-              Board Certified Plastic Surgeon in Chandigarh
+              MCh Plastic Surgeon in Chandigarh
             </p>
             <h1 className="text-7xl md:text-[10rem] font-serif leading-none tracking-tighter text-white">
               Surgical <br />
-              <span className="text-[#4A90E2]">Mastery</span>
+              <span className="text-[#4A90E2]">Artistry</span>
             </h1>
 
             <p className="max-w-2xl mx-auto text-gray-400 text-sm md:text-xl tracking-wide font-light leading-relaxed">
-              Dr. Sumit Singh Gautam fuses fine art mastery with surgical precision to redefine aesthetic surgery. A sculptor's eye ensuring anatomical harmony.
+              Dr. Sumit Singh Gautam brings a lifelong practice of drawing, painting and sculpture to plastic surgery, with anatomical harmony as the aim.
             </p>
 
             <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-16 pt-12">
               <Link to="/concerns/" className="group flex items-center space-x-5 px-12 py-6 bg-white text-black font-bold text-[10px] uppercase tracking-[0.4em] hover:bg-[#4A90E2] hover:text-white transition-all shadow-2xl overflow-hidden relative">
-                <span className="relative z-10">Explore Mastery</span>
+                <span className="relative z-10">Explore by Concern</span>
                 <ArrowRight size={16} className="relative z-10 group-hover:translate-x-4 transition-transform duration-500" />
                 <motion.div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity" />
               </Link>
               <Link to="/contact/" className="text-white text-[11px] uppercase tracking-[0.5em] border-b border-white/20 pb-2 hover:border-[#4A90E2] transition-all font-bold">
-                Consultation
+                Contact
               </Link>
             </div>
           </motion.div>

@@ -19,9 +19,7 @@ const Footer: React.FC = () => {
             </Link>
             <div className="space-y-4">
               <p className="text-gray-300 text-sm leading-relaxed font-light">
-                International surgical expertise.
-                <br /><br />
-                <a href="https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/" target="_blank" rel="noopener noreferrer" className="text-[#4A90E2] font-bold hover:underline">
+                <a href="https://healinghospital.co.in/" target="_blank" rel="noopener noreferrer" className="text-[#4A90E2] font-bold hover:underline">
                   Lead Consultant at Healing Hospital, Sector 34, Chandigarh
                 </a>
               </p>
@@ -44,7 +42,7 @@ const Footer: React.FC = () => {
                   className="flex items-center space-x-2 text-gray-300 hover:text-[#E1306C] transition-colors group"
                 >
                   <Instagram size={14} className="group-hover:scale-110 transition-transform" />
-                  <span className="text-[10px] uppercase tracking-widest font-bold">Dr. Sumit's Surgical Portfolio</span>
+                  <span className="text-[10px] uppercase tracking-widest font-bold">Dr. Sumit on Instagram</span>
                 </a>
               </div>
             </div>
@@ -67,7 +65,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-5">
               <li><Link to="/about/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">About Dr. Sumit</Link></li>
               <li><Link to="/international/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">International Concierge</Link></li>
-              <li><Link to="/contact/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Book Consultation</Link></li>
+              <li><Link to="/contact/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -98,7 +96,7 @@ const Footer: React.FC = () => {
               <li className="space-y-4">
                 <div className="flex items-center space-x-4">
                   <Phone size={14} className="text-[#4A90E2] shrink-0" />
-                  <span className="text-[10px] uppercase tracking-widest text-gray-300 font-bold">Consultation Support</span>
+                  <span className="text-[10px] uppercase tracking-widest text-gray-300 font-bold">Appointments &amp; Enquiries</span>
                 </div>
                 <div className="flex items-center space-x-4 pl-7">
                   <a href={`tel:${CONTACT.counselorPhone.replace(/\s/g, '')}`} className="text-gray-300 text-xs tracking-widest font-bold uppercase hover:text-[#4A90E2] transition-colors">Phone: {CONTACT.counselorPhone}</a>
@@ -107,7 +105,7 @@ const Footer: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-500/50 hover:text-green-400 transition-colors"
-                    aria-label="Chat with Consultation Support on WhatsApp"
+                    aria-label="Message appointments and enquiries on WhatsApp"
                   >
                     <MessageCircle size={14} />
                   </a>
@@ -146,11 +144,9 @@ const Footer: React.FC = () => {
         </p>
 
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] tracking-[0.3em] text-gray-400 uppercase font-bold">
-          <p>© {new Date().getFullYear()} {BRAND.name}. Surgical Excellence.</p>
+          <p>© {new Date().getFullYear()} {BRAND.name}</p>
           <div className="flex space-x-10 mt-6 md:mt-0">
-            <span className="cursor-pointer hover:text-white transition-colors">Privacy Protocols</span>
-            <span className="cursor-pointer hover:text-white transition-colors">Terms of Care</span>
-            <span className="cursor-pointer hover:text-white transition-colors">Medical Disclosure</span>
+            <Link to="/privacy/" className="hover:text-white transition-colors">Privacy Notice</Link>
           </div>
         </div>
       </div>

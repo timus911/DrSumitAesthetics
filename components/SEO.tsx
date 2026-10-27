@@ -55,8 +55,8 @@ const SEO: React.FC<SEOProps> = ({
               .map(b => `${title} | ${b}`)
               .find(t => t.length <= TITLE_BUDGET) ?? title
         : undefined;
-    const siteTitle = titleOverride || fitted || "Dr. Sumit Plastic Surgeon Chandigarh | Board Certified";
-    const metaDescription = description || "Dr. Sumit Singh Gautam is a Board Certified Plastic Surgeon specializing in high-definition body sculpting, facial aesthetic surgery, and reconstructive procedures in Chandigarh.";
+    const siteTitle = titleOverride || fitted || "Dr. Sumit Singh Gautam, MCh Plastic Surgeon, Chandigarh";
+    const metaDescription = description || "Dr. Sumit Singh Gautam, MCh (Plastic Surgery), plastic and aesthetic surgeon at Healing Hospital, Chandigarh: body contouring, facial aesthetic surgery and reconstructive procedures.";
     // GitHub Pages serves every prerendered route from <route>/index.html, so it
     // 301-redirects /slug to /slug/. The trailing-slash form is the only one that
     // answers 200, and must therefore be the canonical we advertise. Advertising
@@ -226,7 +226,7 @@ const SEO: React.FC<SEOProps> = ({
                     "longitude": 76.7681
                 },
                 "sameAs": [
-                    "https://healinghospital.co.in/best-plastic-cosmetic-surgeon-chandigarh/",
+                    "https://healinghospital.co.in/",
                     "https://www.instagram.com/dr.sumitsgautam/"
                 ]
             })
@@ -283,7 +283,7 @@ const SEO: React.FC<SEOProps> = ({
         <>
             <title>{siteTitle}</title>
             <meta name="description" content={metaDescription} />
-            <meta name="keywords" content={keywords || "best plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india"} />
+            <meta name="keywords" content={keywords || "plastic surgeon chandigarh, cosmetic surgeon india, dr sumit singh gautam, liposuction chandigarh, rhinoplasty india"} />
 
             {/* Open Graph */}
             <meta property="og:type" content={type} />

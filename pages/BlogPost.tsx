@@ -221,9 +221,9 @@ const BlogPost: React.FC = () => {
                     <div className="pt-16 border-t border-white/5 mt-20">
                         <div className="glass p-12 text-center space-y-6 shadow-2xl">
                             <h3 className="text-2xl font-serif text-white">Have Questions?</h3>
-                            <p className="text-gray-400 font-light max-w-lg mx-auto">Discuss your specific needs and expected outcomes with Dr. Sumit directly.</p>
+                            <p className="text-gray-400 font-light max-w-lg mx-auto">For questions about your own situation, contact the clinic.</p>
                             <Link to="/contact/" className="inline-block px-8 py-4 bg-[#4A90E2] text-white font-bold uppercase tracking-[0.3em] text-[10px] hover:bg-white hover:text-black transition-all">
-                                Request Consultation
+                                Contact
                             </Link>
                         </div>
                     </div>

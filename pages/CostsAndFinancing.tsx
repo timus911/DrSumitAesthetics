@@ -22,7 +22,7 @@ const CostsAndFinancing: React.FC = () => {
         <div className="pt-40 pb-32">
             <SEO
                 title="Costs & Financing"
-                description="Transparent pricing for plastic surgery in Chandigarh. View cost estimates for Liposuction, Rhinoplasty, Hair Transplant, and more. EMI options available."
+                description="Transparent pricing for plastic surgery in Chandigarh. View fee ranges for liposuction, rhinoplasty, hair transplant and other procedures, and what each quote includes."
                 url="/plastic-surgery-cost-chandigarh"
             />
 
@@ -33,14 +33,14 @@ const CostsAndFinancing: React.FC = () => {
                         <ShieldCheck size={14} /> Transparency & Trust
                     </span>
                     <h1 className="text-4xl md:text-6xl font-serif text-white leading-tight">
-                        Investing in Your Confidence
+                        Fees for Plastic Surgery in Chandigarh
                     </h1>
                     <p className="text-gray-400 text-lg leading-relaxed font-light">
                         We believe in honest, transparent conversations about cost. Every body is unique, and safe surgery requires a personalized approach. While final quotes are provided after a physical examination, this guide offers realistic estimates for our patients.
                     </p>
                     <div className="inline-block px-6 py-2 bg-[#4A90E2]/10 border border-[#4A90E2]/20 rounded-full">
                         <p className="text-[#4A90E2] text-xs uppercase tracking-widest font-bold">
-                            Safety & Hygiene at Healing Hospital is our #1 Priority
+                            Surgery at Healing Hospital, Sector 34-A
                         </p>
                     </div>
                 </div>
@@ -56,15 +56,15 @@ const CostsAndFinancing: React.FC = () => {
 
                         <h2 className="text-2xl md:text-3xl font-serif text-white mb-8">Understanding Your Quote: How to Compare Options</h2>
                         <p className="text-gray-400 text-sm leading-relaxed font-light mb-8">
-                            When comparing quotes for plastic surgery in Chandigarh, it is vital to ensure you are comparing "apples to apples." A lower initial price often hides missing essentials. At our clinic, we believe in <strong>All-Inclusive Transparency</strong>.
+                            When comparing quotes for plastic surgery in Chandigarh, it is vital to ensure you are comparing "apples to apples." Check that each quote covers the same items before comparing the totals.
                         </p>
 
                         <div className="space-y-6">
                             <div className="space-y-2">
-                                <h3 className="text-white text-sm font-bold uppercase tracking-wider">The Surgeon’s Expertise</h3>
-                                <p className="text-gray-300 text-sm font-light">Is the surgeon a board-certified M.Ch Plastic Surgeon?</p>
+                                <h3 className="text-white text-sm font-bold uppercase tracking-wider">The Surgeon’s Training</h3>
+                                <p className="text-gray-300 text-sm font-light">Does the surgeon hold an MCh (or DNB) in Plastic Surgery, and are they registered with a State Medical Council?</p>
                                 <p className="text-gray-300 text-sm font-light mt-2">
-                                    Is the surgeon an expert in aesthetics? Do they have a Fellowship or other specialized experience in aesthetic surgeries?
+                                    Do they have a fellowship or other specialised training in aesthetic surgery?
                                 </p>
                                 <p className="text-[#D4AF37] text-sm font-light mt-4">
                                     Value of compassion, truth and transparency
@@ -78,7 +78,7 @@ const CostsAndFinancing: React.FC = () => {
                             </div>
                             <div className="space-y-2">
                                 <h3 className="text-white text-sm font-bold uppercase tracking-wider">Hospital Standards</h3>
-                                <p className="text-gray-300 text-sm font-light">Is the surgery in a makeshift clinic or a NABH-accredited facility like Healing Hospital?</p>
+                                <p className="text-gray-300 text-sm font-light">Is the surgery done in a registered hospital with an ICU, and is the hospital accredited (for example, by NABH)?</p>
                             </div>
                             <div className="space-y-2">
                                 <h3 className="text-white text-sm font-bold uppercase tracking-wider text-[#D4AF37]">The Hidden Essentials</h3>
@@ -93,14 +93,14 @@ const CostsAndFinancing: React.FC = () => {
                         </div>
                         <div className="mt-8 pt-8 border-t border-white/10">
                             <p className="text-gray-300 text-sm font-light">
-                                At Dr. Sumit Aesthetics, our quotes are comprehensive. We don't believe in "surprise" bills during your recovery.
+                                Dr. Sumit's quotes list what is included, so they can be compared line by line.
                             </p>
                         </div>
                     </div>
 
                     {/* Value of Consult */}
                     <div className="space-y-8">
-                        <h2 className="text-2xl md:text-3xl font-serif text-white">Your Consultation: The Blueprint for Success</h2>
+                        <h2 className="text-2xl md:text-3xl font-serif text-white">What Happens at the Consultation</h2>
                         <p className="text-gray-400 text-sm leading-relaxed font-light">
                             A consultation at Dr. Sumit Aesthetics is more than a conversation; it is a comprehensive medical evaluation. During your 45-minute session in Sector 34, Dr. Sumit performs:
                         </p>
@@ -109,7 +109,7 @@ const CostsAndFinancing: React.FC = () => {
                                 { title: "Anatomical Mapping", desc: "Assessing your skin elasticity, fat distribution, and bone structure." },
                                 { title: "Surgical Planning", desc: "Selecting the specific technique (e.g., PAL vs. Manual Liposuction) that fits your body type." },
                                 { title: "Safety Screening", desc: "Reviewing your medical history to ensure you are a fit for anesthesia at Healing Hospital." },
-                                { title: "Goal Alignment", desc: "Using reference photos and measurements to set realistic, beautiful expectations." }
+                                { title: "Goal Alignment", desc: "Using reference photos and measurements to set realistic expectations." }
                             ].map((item, i) => (
                                 <div key={i}>
                                     <h4 className="text-[#4A90E2] text-xs uppercase tracking-widest font-bold mb-1">{item.title}</h4>
@@ -125,14 +125,14 @@ const CostsAndFinancing: React.FC = () => {
                 </div>
             </div>
 
-            {/* Master Price Table Section */}
+            {/* Fee Table Section */}
             <div className="container mx-auto px-2 md:px-6 mb-32 relative z-10">
                 <div className="glass p-3 md:p-8 md:p-12 border border-white/5 shadow-2xl relative overflow-hidden">
                     {/* Decorative Glow */}
                     <div className="absolute top-0 right-0 w-96 h-96 bg-[#4A90E2]/5 rounded-full blur-3xl -z-10" />
 
                     <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
-                        <h2 className="text-2xl font-serif text-white">Master Price Guide</h2>
+                        <h2 className="text-2xl font-serif text-white">Fee Guide</h2>
 
                         {/* Category Filter */}
                         <div className="relative group">
@@ -242,10 +242,10 @@ const CostsAndFinancing: React.FC = () => {
                         <h3 className="text-2xl font-serif text-white mb-8">What's Included in Your Quote?</h3>
                         <div className="space-y-6">
                             {[
-                                { title: "Surgeon's Fee", desc: "Dr. Sumit's expertise and surgical planning." },
+                                { title: "Surgeon's Fee", desc: "Dr. Sumit's fee for the operation and its planning." },
                                 { title: "Hospital Stay", desc: "Private room at Healing Hospital (Sector 34) with nursing care." },
-                                { title: "OT Charges", desc: "State-of-the-art operation theater usage." },
-                                { title: "Consumables & Implants", desc: "Standard medical supplies. (Premium implants charged at MRP)." },
+                                { title: "OT Charges", desc: "Use of the operation theatre." },
+                                { title: "Consumables & Implants", desc: "Standard medical supplies. (Implants charged at MRP)." },
                                 { title: "Follow-up Care", desc: "No service charges for dressings or consult for the first 1-2 weeks depending on the expected recovery period." }
                             ].map((item, i) => (
                                 <div key={i} className="flex items-start space-x-4 group">
@@ -274,7 +274,7 @@ const CostsAndFinancing: React.FC = () => {
                             <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
                                 Purely cosmetic surgeries are generally not covered. However, <strong>Functional Surgeries</strong> (e.g., Reconstructive Rhinoplasty for breathing, Trauma Repair, Burn Surgery, or severe Gynecomastia with pain) may be eligible for partial insurance claims.
                             </p>
-                            <Link to="/contact/" className="text-[#D4AF37] text-xs uppercase tracking-widest underline hover:text-white transition-colors">Check your eligibility →</Link>
+                            <Link to="/contact/" className="text-[#D4AF37] text-xs uppercase tracking-widest underline hover:text-white transition-colors">Ask about insurance →</Link>
                         </div>
 
                         <div className="glass p-8 border border-white/5">
@@ -283,12 +283,12 @@ const CostsAndFinancing: React.FC = () => {
                                     <CreditCard size={24} />
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-serif text-white">EMI Options</h3>
+                                    <h3 className="text-xl font-serif text-white">Payment in Instalments</h3>
                                     <p className="text-[10px] uppercase tracking-widest text-gray-300">Finance Partners</p>
                                 </div>
                             </div>
                             <p className="text-gray-400 text-sm font-light leading-relaxed mb-6">
-                                We partner with leading medical finance providers (like Bajaj Finserv and others) to offer <strong>0% Interest EMI</strong> options for eligible patients, making your transformation more accessible.
+                                Payment in monthly instalments (EMI) may be available through third-party medical finance providers such as Bajaj Finserv, subject to their eligibility checks. Interest and terms are set by the lender.
                             </p>
                         </div>
                     </div>
@@ -296,15 +296,15 @@ const CostsAndFinancing: React.FC = () => {
 
                 {/* CTA */}
                 <div className="mt-32 text-center">
-                    <p className="text-white font-serif text-2xl mb-8">Ready to get an exact quote?</p>
+                    <p className="text-white font-serif text-2xl mb-8">Questions about fees?</p>
                     <a
-                        href={`https://wa.me/${CONTACT.counselorPhone.replace(/[^0-9]/g, '')}?text=Hi Dr. Sumit, I would like to get a quote for...`}
+                        href={`https://wa.me/${CONTACT.counselorPhone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello, I have a question about the fee for ')}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center space-x-3 px-10 py-5 bg-green-600 text-white font-bold uppercase tracking-[0.2em] text-xs hover:bg-green-500 transition-all shadow-xl shadow-green-900/20 rounded-sm"
                     >
                         <MessageCircle size={18} />
-                        <span>Get Quote via WhatsApp</span>
+                        <span>Message the clinic on WhatsApp</span>
                     </a>
                 </div>
             </div>

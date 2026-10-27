@@ -7,7 +7,7 @@ const PatientJourney: React.FC = () => {
   const steps = [
     { title: "Consultation", desc: "A comprehensive anatomical assessment where we discuss goals, safety, and customized surgical plans." },
     { title: "Preparation", desc: "Detailed preoperative guidelines, medical clearances, and lifestyle optimization for peak recovery." },
-    { title: "Surgery", desc: "Performed in state-of-the-art facilities with board-certified anesthesiologists and elite nursing staff." },
+    { title: "Surgery", desc: "Performed at Healing Hospital, Chandigarh, with an anaesthesiologist and trained nursing staff." },
     { title: "Recovery", desc: "Continuous monitoring and professional scar management to ensure seamless healing and longevity of results." }
   ];
 

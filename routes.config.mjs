@@ -25,6 +25,7 @@ const CORE_PAGES = [
     { path: '/concerns', priority: 0.6, changefreq: 'monthly' },
     { path: '/blog', priority: 0.6, changefreq: 'monthly' },
     { path: '/faqs', priority: 0.6, changefreq: 'monthly' },
+    { path: '/privacy', priority: 0.3, changefreq: 'yearly' },
     { path: '/surgiset-privacy', priority: 0.3, changefreq: 'yearly', sitemap: false },
 ];
 

@@ -112,23 +112,23 @@ const About: React.FC = () => {
         >
           <div className="space-y-12">
             <motion.div variants={fadeInUp} className="space-y-8">
-              <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black">Board Certified Plastic and Aesthetic Surgeon</span>
+              <span className="text-[#4A90E2] text-[12px] tracking-[0.6em] uppercase font-black">Plastic and Aesthetic Surgeon</span>
               <h1 className="text-6xl md:text-9xl font-serif leading-[0.9] text-white tracking-tighter">{BRAND.name}</h1>
               <p className="text-[#4A90E2] tracking-[0.5em] uppercase text-[12px] font-bold">{BRAND.specialty}</p>
             </motion.div>
 
             <motion.div variants={fadeInUp} className="prose prose-invert text-gray-400 max-w-none space-y-10 text-xl leading-relaxed font-light">
               <p>
-                Dr. Sumit Singh Gautam is a board-certified Plastic Surgeon who bridges the gap between surgical science and fine art.
+                Dr. Sumit Singh Gautam is a plastic surgeon (MCh) whose practice draws on both surgical science and fine art.
               </p>
               <p>
                 His academic journey began at <strong>GMCH-32, Chandigarh</strong> (MBBS and MS), followed by a specialization in Plastic & Reconstructive Surgery from <strong>DMC Ludhiana</strong> (MCh).
               </p>
               <p>
-                He further honed his expertise with an <strong>International Fellowship in Aesthetic Surgery</strong> under the pioneers of facial rejuvenation, <strong>Dr. Patrick Tonnard and Dr. Alexis Verpaele</strong>. Imbibing a world-renowned standard of surgical precision, he has mastered advanced techniques that prioritize minimal invasiveness with maximum impact.
+                He then completed an <strong>International Fellowship in Aesthetic Surgery</strong> in Belgium under <strong>Dr. Patrick Tonnard and Dr. Alexis Verpaele</strong>, who developed the MACS lift and nanofat grafting, training in techniques that keep surgery as limited as the problem allows.
               </p>
               <p>
-                However, his true distinction lies in his dual identity as an artist. Years of discipline in <strong>sketching, painting, sculpting</strong> have gifted him a unique spatial awareness, allowing him to see the human form not just as tissues to be repaired, but as a masterpiece to be restored.
+                He is also an artist. Years of <strong>sketching, painting and sculpting</strong> shape how he looks at the human form: as proportion, light and contour, not just tissue to be repaired.
               </p>
             </motion.div>
 
@@ -136,16 +136,16 @@ const About: React.FC = () => {
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <Brush className="text-[#4A90E2]" size={24} />
-                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Fine Arts Mastery</span>
+                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Fine Arts Practice</span>
                 </div>
                 <p className="text-gray-300 text-sm leading-relaxed">Integrating the principles of light, shadow, and proportion from art into surgery.</p>
               </div>
               <div className="space-y-6">
                 <div className="flex items-center space-x-4">
                   <GraduationCap className="text-[#4A90E2]" size={24} />
-                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">Board Certified</span>
+                  <span className="text-xs font-black uppercase tracking-[0.4em] text-white">MCh Plastic Surgery</span>
                 </div>
-                <p className="text-gray-300 text-sm leading-relaxed">Board-certified background ensuring a comprehensive surgical perspective on form and function.</p>
+                <p className="text-gray-300 text-sm leading-relaxed">Superspecialty training in plastic and reconstructive surgery, covering both form and function.</p>
               </div>
             </motion.div>
           </div>
@@ -212,7 +212,7 @@ const About: React.FC = () => {
 
               <div className="space-y-12">
                 {[
-                  { icon: <Brush className="text-[#4A90E2]" size={28} />, title: "Painting & Illustration", desc: "Mastery of lighting, depth, and anatomical contours translated into surgical precision." },
+                  { icon: <Brush className="text-[#4A90E2]" size={28} />, title: "Painting & Illustration", desc: "Study of lighting, depth, and anatomical contours translated into surgical precision." },
                   { icon: <Box className="text-[#4A90E2]" size={28} />, title: "3D Digital Design", desc: "Pre-modeling complex structural corrections in virtual space before the first incision." },
                   { icon: <Scissors className="text-[#4A90E2]" size={28} />, title: "Sculpture", desc: "Developing the tactile awareness and hand-eye coordination required for micro-surgery." }
                 ].map((item, idx) => (

@@ -4,7 +4,7 @@ import { Award, Stethoscope, Building2 } from 'lucide-react';
 // Quiet credentials box for procedure-page sidebars. No heading, no sell —
 // the facts carry the trust. Mirrors MedicalAuthority.tsx / BRAND.education.
 const CREDENTIALS = [
-    { icon: Award, text: 'Board Certified — MCh Plastic & Reconstructive Surgery' },
+    { icon: Award, text: 'MCh Plastic & Reconstructive Surgery' },
     { icon: Stethoscope, text: 'Fellowship in Aesthetic Surgery — Belgium' },
     { icon: Building2, text: 'Healing Hospital, Sector 34-A, Chandigarh' },
 ];

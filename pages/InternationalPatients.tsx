@@ -9,7 +9,7 @@ const InternationalPatients: React.FC = () => {
     <div className="pt-52 pb-32">
       <SEO
         title="International Patients"
-        description="Fly-in plastic surgery in Chandigarh for international patients — seamless planning and elite European-standard care by Dr. Sumit Singh Gautam."
+        description="Fly-in plastic surgery in Chandigarh for international patients — planning, virtual consultation and recovery arrangements with Dr. Sumit Singh Gautam."
         url="/international"
       />
       <div className="container mx-auto px-6">
@@ -20,12 +20,12 @@ const InternationalPatients: React.FC = () => {
             className="space-y-10"
           >
             <div className="space-y-4">
-              <span className="text-[#D4AF37] text-[10px] tracking-widest uppercase">Global Excellence</span>
+              <span className="text-[#D4AF37] text-[10px] tracking-widest uppercase">International Patients</span>
               <h1 className="text-5xl md:text-7xl font-serif">Traveling for Surgery</h1>
             </div>
 
             <p className="text-gray-400 text-lg font-light leading-relaxed">
-              Dr. Sumit welcomes patients from across the globe. We provide a seamless "Fly-In for Surgery" experience, ensuring international guests receive the same Belgian-standard excellence found in elite European clinics.
+              Dr. Sumit sees patients who travel to Chandigarh from other cities and countries. This page explains how assessment, travel timing and recovery are planned for them.
             </p>
 
             <div className="space-y-8">
@@ -44,7 +44,7 @@ const InternationalPatients: React.FC = () => {
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-white uppercase tracking-widest text-xs font-bold">Concierge Recovery</h4>
-                  <p className="text-gray-300 text-sm">Partnerships with premium luxury hotels for comfortable post-operative care.</p>
+                  <p className="text-gray-300 text-sm">Help finding a hotel near the hospital for the recovery period.</p>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@ const InternationalPatients: React.FC = () => {
             <div className="absolute top-10 right-10 flex flex-col items-end space-y-4">
               <div className="flex items-center space-x-2 glass px-4 py-2">
                 <Globe size={14} className="text-[#D4AF37]" />
-                <span className="text-[10px] uppercase tracking-widest">Global Standards</span>
+                <span className="text-[10px] uppercase tracking-widest">Planning Ahead</span>
               </div>
               <div className="flex items-center space-x-2 glass px-4 py-2">
                 <Plane size={14} className="text-[#D4AF37]" />

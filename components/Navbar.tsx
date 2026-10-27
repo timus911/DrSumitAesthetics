@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-4 shrink-0 z-10">
           {/* Desktop WhatsApp Icon — direct chat, always reachable from the sticky header */}
           <a
-            href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hi Dr. Sumit, I would like to book a consultation.')}`}
+            href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello, I have a query.')}`}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden min-[1600px]:flex w-10 h-10 items-center justify-center rounded-full bg-[#4A90E2] text-white shadow-lg shadow-[#4A90E2]/20 active:scale-95 transition-transform hover:bg-[#357ABD]"
@@ -106,7 +106,7 @@ const Navbar: React.FC = () => {
 
           {/* Mobile WhatsApp Icon — direct chat */}
           <a
-            href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hi Dr. Sumit, I would like to book a consultation.')}`}
+            href={`https://wa.me/${CONTACT.phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Hello, I have a query.')}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat on WhatsApp"
@@ -150,7 +150,7 @@ const Navbar: React.FC = () => {
                 onClick={() => setIsOpen(false)}
                 className="mt-8 px-10 py-4 bg-[#4A90E2] text-black text-[10px] uppercase tracking-[0.3em] font-bold rounded-sm"
               >
-                Request a consultation
+                Contact
               </Link>
             </motion.div>
           )}

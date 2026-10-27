@@ -2,6 +2,7 @@ import React from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { CONTACT } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 
@@ -36,8 +37,8 @@ const Contact: React.FC = () => {
   return (
     <div className="pt-52 pb-32">
       <SEO
-        title="Book a Consultation in Chandigarh"
-        description="Schedule a private consultation with Dr. Sumit Singh Gautam. Located at Healing Hospital, Chandigarh. WhatsApp and Phone support available."
+        title="Contact Dr. Sumit Singh Gautam, Chandigarh"
+        description="Contact details for Dr. Sumit Singh Gautam at Healing Hospital, SCO 18-19, Sector 34-A, Chandigarh: phone, WhatsApp, email and map."
         url="/contact"
       />
       <div className="container mx-auto px-6">
@@ -49,15 +50,15 @@ const Contact: React.FC = () => {
           >
             <div className="space-y-4">
               <span className="text-[#D4AF37] text-[10px] tracking-widest uppercase">Contact</span>
-              <h1 className="text-5xl md:text-7xl font-serif">Discuss your options</h1>
-              <p className="text-gray-400 text-lg font-light">Begin your transformation by scheduling a private consultation with Dr. Sumit.</p>
+              <h1 className="text-5xl md:text-7xl font-serif">Contact</h1>
+              <p className="text-gray-400 text-lg font-light">Appointments and enquiries for Dr. Sumit Singh Gautam at Healing Hospital, Sector 34-A, Chandigarh.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
               <div className="space-y-4">
                 <div className="flex items-center space-x-3 text-[#D4AF37]">
                   <Phone size={18} />
-                  <span className="text-xs uppercase tracking-widest font-bold">Consultation Support</span>
+                  <span className="text-xs uppercase tracking-widest font-bold">Appointments &amp; Enquiries</span>
                 </div>
                 <p className="text-[10px] text-gray-300 uppercase tracking-wider font-light mb-1">Guidance, questions, and appointment planning</p>
                 <div className="flex items-center space-x-4">
@@ -221,6 +222,9 @@ const Contact: React.FC = () => {
                 <MessageCircle size={18} />
                 <span>Send via WhatsApp</span>
               </button>
+              <p className="text-[11px] text-gray-400 leading-relaxed">
+                This form is not stored on this website. It opens WhatsApp with your details in a message that you choose whether to send. See the <Link to="/privacy/" className="text-[#4A90E2] hover:underline">privacy notice</Link>.
+              </p>
             </form>
           </motion.div>
         </div>

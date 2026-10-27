@@ -24,7 +24,7 @@ const MedicalAuthority: React.FC = () => {
                                 Combining Safety <br /> with <span className="text-[#4A90E2] italic opacity-80">Surgical Artistry</span>
                             </h2>
                             <p className="text-gray-400 text-lg font-light leading-relaxed max-w-xl">
-                                Dr. Sumit Singh Gautam is a <strong className="text-white">Board Certified Plastic Surgeon</strong> committed to the highest standards of safety, ethics, and transparency.
+                                Dr. Sumit Singh Gautam is a <strong className="text-white">plastic surgeon with an MCh in Plastic Surgery</strong>, committed to safety, ethics and transparency.
                             </p>
                         </motion.div>
 
@@ -32,8 +32,8 @@ const MedicalAuthority: React.FC = () => {
                             {[
                                 {
                                     icon: <Award size={24} />,
-                                    title: "Board Certified",
-                                    desc: "MCh Plastic Surgery - The highest qualification in the field."
+                                    title: "MCh Plastic Surgery",
+                                    desc: "Superspecialty degree in Plastic & Reconstructive Surgery, DMC Ludhiana."
                                 },
                                 {
                                     icon: <Stethoscope size={24} />,
@@ -43,11 +43,11 @@ const MedicalAuthority: React.FC = () => {
                                 {
                                     icon: <UserCheck size={24} />,
                                     title: "Patient Safety",
-                                    desc: "Operating exclusively at fully accredited hospitals with advanced ICU backup."
+                                    desc: "Surgery is performed at Healing Hospital, Sector 34-A, Chandigarh, with ICU backup."
                                 },
                                 {
                                     icon: <BookOpen size={24} />,
-                                    title: "Academic Excellence",
+                                    title: "Academic Work",
                                     desc: "Published author in international journals and faculty at national conferences."
                                 }
                             ].map((item, i) => (
@@ -78,7 +78,7 @@ const MedicalAuthority: React.FC = () => {
                         <div className="relative group w-full max-w-md">
                             <motion.img
                                 src={`${import.meta.env.BASE_URL}dr-sumit-transparent.webp`}
-                                alt="Dr. Sumit Singh Gautam - Board Certified Plastic Surgeon Chandigarh"
+                                alt="Dr. Sumit Singh Gautam, plastic surgeon, Chandigarh"
                                 className="w-full h-auto object-contain drop-shadow-2xl relative z-10"
                                 initial={{ scale: 1 }}
                                 whileInView={{ scale: 1.05 }}
