@@ -50,8 +50,6 @@ const Navbar: React.FC = () => {
     { name: 'Aesthetic', path: '/aesthetic', icon: <Scissors size={14} /> },
     { name: 'Reconstructive', path: '/reconstructive', icon: <Activity size={14} /> },
     { name: 'Non-Surgical', path: '/non-surgical', icon: <Zap size={14} /> },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Reviews', path: '/reviews' },
     { name: 'About', path: '/about' },
     { name: 'Blog', path: '/blog' },
   ];

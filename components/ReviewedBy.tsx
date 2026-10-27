@@ -21,7 +21,7 @@ const ReviewedBy: React.FC<ReviewedByProps> = ({ reviewedOn, references }) => (
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#4A90E2] font-bold">Written and medically reviewed by</p>
             <p className="text-white font-serif text-2xl">{BRAND.name}</p>
             <p className="text-gray-400 text-sm leading-relaxed">{BRAND.qualifications}</p>
-            <p className="text-gray-400 text-sm leading-relaxed">Registered medical practitioner, Reg. No. {BRAND.registration}</p>
+            <p className="text-gray-400 text-sm leading-relaxed">Registered with the {BRAND.registrationCouncil}, Reg. No. {BRAND.registration}</p>
             <p className="text-gray-300 text-xs pt-2">
                 Reviewed on <time dateTime={reviewedOn}>{formatDate(reviewedOn)}</time>
             </p>

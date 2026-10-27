@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, CheckCircle, Info, Image as ImageIcon, Crosshair, ChevronDown, X, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowLeft, CheckCircle, Info, Crosshair, MessageCircle } from 'lucide-react';
 import { PROCEDURES, ASSETS, CONTACT } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import Breadcrumbs from '../components/Breadcrumbs.tsx';
@@ -13,40 +12,6 @@ import ProcedureVideos from '../components/ProcedureVideos.tsx';
 import CredentialsStrip from '../components/CredentialsStrip.tsx';
 import ReviewedBy from '../components/ReviewedBy.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
-
-const GalleryThumbnail: React.FC<{ img: string, onClick: () => void }> = ({ img, onClick }) => {
-  const ref = React.useRef<HTMLDivElement>(null);
-  const isFocused = useMobileCenterFocus(ref);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.2 }}
-      whileHover={{ y: -10 }}
-      className="group relative glass overflow-hidden rounded-sm cursor-pointer shadow-2xl border border-white/5 w-full md:w-[calc(50%-3rem)] lg:w-[calc(33.333%-4rem)] max-w-[450px]"
-      onClick={onClick}
-    >
-      <img
-        src={img}
-        alt={`Clinical transformer gallery - ${img.split('/').pop()?.split('.')[0]} surgical outcome by Dr. Sumit Singh Gautam in Chandigarh`}
-        className={`w-full h-auto transition-all duration-300 block ${isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'} group-hover:grayscale-0 group-hover:opacity-100`}
-        loading="lazy"
-        width={800}
-        height={600}
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-      <div className={`absolute bottom-6 left-6 transition-all translate-y-4 group-hover:translate-y-0 ${isFocused ? 'opacity-100 translate-y-0' : 'opacity-0'} group-hover:opacity-100`}>
-        <span className="text-[10px] uppercase tracking-[0.3em] text-[#4A90E2] font-extrabold flex items-center gap-2">
-          <ImageIcon size={14} /> View Transformation
-        </span>
-      </div>
-    </motion.div>
-  );
-};
-
 
 const ProcedureDetail: React.FC = () => {
   const { id } = useParams();
@@ -65,15 +30,8 @@ const ProcedureDetail: React.FC = () => {
     );
   }
 
-
-
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
-  const [orientations, setOrientations] = useState<Record<string, 'h' | 'v'>>({});
-
   const mainImageRef = React.useRef<HTMLDivElement>(null);
   const isMainImageFocused = useMobileCenterFocus(mainImageRef);
-
-  const galleryImages = procedure.gallery || [];
 
   // Procedures a visitor is most likely to consider alongside this one:
   // shared body regions first, then same category, capped at 3.
@@ -88,58 +46,6 @@ const ProcedureDetail: React.FC = () => {
       !p.regions?.some(r => procedure.regions?.includes(r))
     ),
   ].slice(0, 3);
-
-  useEffect(() => {
-    galleryImages.forEach(src => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        setOrientations(prev => ({
-          ...prev,
-          [src]: img.width >= img.height ? 'h' : 'v'
-        }));
-      };
-      img.onerror = () => {
-        setOrientations(prev => ({
-          ...prev,
-          [src]: 'h'
-        }));
-      };
-    });
-  }, [galleryImages]);
-
-  const sortedGallery = [
-    ...galleryImages.filter(img => orientations[img] === 'h'),
-    ...galleryImages.filter(img => orientations[img] === 'v'),
-    ...galleryImages.filter(img => !orientations[img])
-  ];
-
-  const horizontalImages = galleryImages.filter(img => orientations[img] === 'h');
-  const verticalImages = galleryImages.filter(img => orientations[img] === 'v');
-  const pendingImages = galleryImages.filter(img => !orientations[img]);
-
-  const goToPrevious = () => {
-    if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex - 1 + sortedGallery.length) % sortedGallery.length);
-    }
-  };
-
-  const goToNext = () => {
-    if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex + 1) % sortedGallery.length);
-    }
-  };
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (lightboxIndex === null) return;
-      if (e.key === 'ArrowLeft') goToPrevious();
-      if (e.key === 'ArrowRight') goToNext();
-      if (e.key === 'Escape') setLightboxIndex(null);
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [lightboxIndex, sortedGallery.length]);
 
   return (
     <div className="pt-52 pb-32">
@@ -417,110 +323,6 @@ const ProcedureDetail: React.FC = () => {
             {/* Removed duplicate CTA link */}
           </motion.div>
         </div>
-
-        {/* Clinical Results Section - Only shown if gallery images exist */}
-        {procedure.gallery && procedure.gallery.length > 0 && (
-          <motion.section
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="mt-40 border-t border-white/5 pt-32"
-          >
-            <div className="text-center mb-24 space-y-6">
-              <div className="inline-block px-5 py-2 bg-[#4A90E2]/10 border border-[#4A90E2]/20 rounded-full shadow-lg shadow-[#4A90E2]/5">
-                <span className="text-[#4A90E2] text-[10px] tracking-[0.4em] uppercase font-bold">Clinical Masterclass</span>
-              </div>
-            </div>
-
-            <div className="space-y-24">
-              {/* Horizontal Group */}
-              {horizontalImages.length > 0 && (
-                <div className="flex flex-wrap justify-center gap-12">
-                  {horizontalImages.map((img) => {
-                    const fullIdx = sortedGallery.indexOf(img);
-                    return (
-                      <GalleryThumbnail key={img} img={img} onClick={() => setLightboxIndex(fullIdx)} />
-                    );
-                  })}
-                </div>
-              )}
-
-              {/* Vertical Group */}
-              {verticalImages.length > 0 && (
-                <div className="flex flex-wrap justify-center gap-12">
-                  {verticalImages.map((img) => {
-                    const fullIdx = sortedGallery.indexOf(img);
-                    return (
-                      <GalleryThumbnail key={img} img={img} onClick={() => setLightboxIndex(fullIdx)} />
-                    );
-                  })}
-                </div>
-              )}
-
-              {/* Pending Load Group */}
-              {pendingImages.length > 0 && (
-                <div className="flex justify-center py-20">
-                  <div className="w-8 h-8 border-2 border-[#4A90E2]/20 border-t-[#4A90E2] rounded-full animate-spin" />
-                </div>
-              )}
-            </div>
-
-            {/* Lightbox Rendering */}
-            {lightboxIndex !== null && createPortal(
-              <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-xl">
-                <button
-                  onClick={() => setLightboxIndex(null)}
-                  className="absolute top-10 right-10 text-white/50 hover:text-white transition-colors z-[110]"
-                >
-                  <X size={32} />
-                </button>
-
-                <button
-                  onClick={goToPrevious}
-                  className="absolute left-10 text-white/50 hover:text-white transition-colors z-[110] p-4"
-                >
-                  <ChevronLeft size={48} strokeWidth={1} />
-                </button>
-
-                <button
-                  onClick={goToNext}
-                  className="absolute right-10 text-white/50 hover:text-white transition-colors z-[110] p-4"
-                >
-                  <ChevronRight size={48} strokeWidth={1} />
-                </button>
-
-                <div className="relative max-w-[90vw] max-h-[85vh] flex flex-col items-center">
-                  <AnimatePresence mode="wait">
-                    <motion.img
-                      key={lightboxIndex}
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.2 }}
-                      src={sortedGallery[lightboxIndex]}
-                      alt="Clinical Result"
-                      className="max-w-full max-h-[80vh] object-contain shadow-2xl"
-                    />
-                  </AnimatePresence>
-
-                  <div className="mt-8 flex items-center space-x-12">
-                    <span className="text-[10px] text-white/40 tracking-[0.4em] uppercase font-bold">
-                      {String(lightboxIndex + 1).padStart(2, '0')} <span className="mx-4 text-white/10">|</span> {String(sortedGallery.length).padStart(2, '0')}
-                    </span>
-                  </div>
-                </div>
-              </div>,
-              document.body
-            )}
-
-            <div className="mt-32 p-16 glass border border-[#4A90E2]/10 text-center shadow-inner">
-              <p className="text-[11px] text-gray-300 italic leading-loose max-w-4xl mx-auto uppercase tracking-widest font-light">
-                * Note: To preserve patient dignity and ensure the highest clinical standards, specific anatomical outcome data is restricted to secure, in-person clinical review. The imagery provided is illustrative of the surgical mastery and expected anatomical response.
-              </p>
-            </div>
-          </motion.section>
-        )}
       </div>
     </div>
   );

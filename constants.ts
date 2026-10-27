@@ -21,6 +21,16 @@ export const BRAND = {
   // communication shows name, qualifications, registration status and number.
   qualifications: "MBBS, MS, MCh (Plastic Surgery), Fellowship in Aesthetic Surgery (Belgium)",
   registration: "HN9607",
+  registrationCouncil: "Haryana Medical Council",
+};
+
+// The NMC notice the site's advertising rules come from. Cited on the pages
+// that explain why something (results photos, reviews) is not published.
+export const NMC_GUIDELINES = {
+  title: "Guidelines on Ethical Advertising and Public Communication by Hospitals/Medical Institutions and Registered Medical Practitioners",
+  notice: "National Medical Commission, Public Notice No. R-13014/01/2024-Ethics",
+  date: "6 October 2026",
+  url: "https://www.nmc.org.in/whats-new/download/1874",
 };
 
 export const CONTACT = {
@@ -95,15 +105,6 @@ export const GYNECOMASTIA_VIDEO: ProcedureVideo = {
   uploadDate: "2026-08-13T14:40:26+05:30"
 };
 
-// The patient-journey film: one real patient from consult to day-2 result.
-export const GYNECOMASTIA_JOURNEY_VIDEO: ProcedureVideo = {
-  youtubeId: "L9bDPVNrYeQ",
-  title: "Is this Breast tissue gland or fat?",
-  description: "One patient's gynecomastia journey with Dr. Sumit Singh Gautam: he lost 19 kg, but not from his chest. The consult, the chest marking, liposuction and gland excision, nanofat, and his result on day 2. Shared with the patient's consent.",
-  // Exact publish time, read from YouTube's own <meta itemprop="uploadDate">
-  // on the watch page: 2026-10-13T12:42:59-07:00 (PT), the same instant as IST.
-  uploadDate: "2026-10-14T01:12:59+05:30"
-};
 
 export type Procedure = {
   id: string;
@@ -138,7 +139,6 @@ export type Procedure = {
     };
   };
   regions?: string[];
-  gallery?: string[];
   priceRange?: string; // New field for Cost & Financing page
   costFactors?: string; // Key factors influencing cost
   seoContent?: string; // Rich SEO content for specific procedure pages
@@ -202,7 +202,6 @@ Pricing depends on whether a Mini-Tummy Tuck or Full Abdominoplasty is required.
 `,
     priceRange: "₹1,50,000 - ₹2,50,000",
     costFactors: "Mini vs Full Tummy Tuck, Muscle Repair complexity, Liposuction extent",
-    gallery: ["/tummy-tuck-result-1.webp", "/tummy-tuck-result-2.webp", "/tummy-tuck-nrf.webp", "/tummy-tuck-nrll.webp", "/tummy-tuck-nrro.webp"],
     faqs: [
       {
         question: "Who needs a Tummy Tuck?",
@@ -423,23 +422,9 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
 *   **Hospital Proximity:** Our location in Sector 34 (Healing Hospital) puts us at the heart of the city, easily accessible from Mohali and Panchkula.
 *   **Post-Op Care:** We provide specific "Chandigarh Recovery Kits" including breathable compression gear suited for our weather.
 
-[View our Before and After Gallery](/gallery) to see the transformative results of our "Tricity" patients.
     `,
     priceRange: "₹80,000 - ₹2,00,000",
     costFactors: "Number of zones (e.g., Abdomen, Flanks, Back), 360 Lipo vs Spot Lipo",
-    gallery: [
-      "/axillary-breast-reduction-result.webp",
-      "/body-contouring-result-1.webp",
-      "/body-contouring-result-2.webp",
-      "/body-contouring-result-3.webp",
-      "/body-contouring-result-4.webp",
-      "/body-contouring-result-5.webp",
-      "/tummy-tuck-result-1.webp",
-      "/tummy-tuck-result-2.webp",
-      "/tummy-tuck-nrf.webp",
-      "/tummy-tuck-nrll.webp",
-      "/tummy-tuck-nrro.webp"
-    ],
     faqs: [
       {
         question: "Who needs HD Liposuction?",
@@ -580,19 +565,6 @@ Recovery in Chandigarh's climate is manageable, but we recommend avoiding the pe
       results: ["The final contour settles at 6 to 12 months as swelling resolves and tissues soften."],
       recoveryTips: ["Compression garments are essential for the full 6 weeks.", "Maintaining baseline muscle through strength training keeps you in a healthy state and fit for healing."]
     },
-    gallery: [
-      "/axillary-breast-reduction-result.webp",
-      "/body-contouring-result-1.webp",
-      "/body-contouring-result-2.webp",
-      "/body-contouring-result-3.webp",
-      "/body-contouring-result-4.webp",
-      "/body-contouring-result-5.webp",
-      "/tummy-tuck-result-1.webp",
-      "/tummy-tuck-result-2.webp",
-      "/tummy-tuck-nrf.webp",
-      "/tummy-tuck-nrll.webp",
-      "/tummy-tuck-nrro.webp"
-    ],
     seoContent: `
 ### Body Contouring in Chandigarh: The Complete Transformation
 **Specialized Post-Weight Loss & Body Lift Surgery**
@@ -696,7 +668,6 @@ Every procedure varies, but generally, expect 2-3 weeks of recovery before retur
     },
     fellowshipAnchor: true,
     regions: ["Face", "Nose", "Eyes", "Ears", "Lips", "Neck", "Breasts", "Body", "Buttock"],
-    gallery: ["/scar-revision-fat-grafted.webp", "/fat-grafting-result-1.webp", "/fat-grafting-result-2.webp", "/fat-grafting-result-3.webp"],
     seoContent: `
 ### Microfat & Nanofat Grafting in Chandigarh
 **Trained under the surgeons who originated the technique**
@@ -1242,7 +1213,6 @@ Given the water quality and environmental factors in the Tricity, we often see s
 1.  **Surgeon-Led Procedure:** Unlike many clinics where technicians do the work, Dr. Sumit is personally involved in the planning and slit creation phases.
 2.  **Healing Hospital Audit:** We operate within a hospital environment, ensuring sterility and emergency readiness.
 
-[View our Before and After Gallery](/gallery) to see the life-changing density our patients enjoy.
     `,
     priceRange: "₹60,000 - ₹1,50,000",
     costFactors: "Number of Grafts (FUE), Hairline Design complexity",
@@ -1368,7 +1338,6 @@ It is a quick recovery procedure. Sutures are removed on Day 5. Most patients re
 `,
     priceRange: "₹60,000 - ₹1,20,000",
     costFactors: "Upper vs Lower Lids, Skin only vs Fat Excision, Canthopexy requirement",
-    gallery: ["/blepharoplasty-result-1.webp"],
     faqs: [
       {
         question: "Who needs Blepharoplasty?",
@@ -1670,7 +1639,6 @@ Every rhinoplasty carries risk. The figures below come from published studies, a
       results: ["The result is immediate and permanent."],
       recoveryTips: ["Keep the dressing dry and undisturbed until it is removed at day 5.", "Hold off on swimming until sutures are out, and contact sport for a full month."]
     },
-    gallery: ["/otoplasty-result-1.webp", "/otoplasty-result-2.webp", "/otoplasty-result-3.webp", "/otoplasty-result-4.webp", "/otoplasty-result-5.webp"],
     seoContent: `
 ### Otoplasty in Chandigarh: Ear Reshaping
 **Correcting Prominent Ears for Children and Adults**
@@ -1767,14 +1735,6 @@ A head bandage is worn for 3-5 days. Results are permanent and immediate.
       recoveryTips: ["The surgical support bra is mandatory for the first 6 weeks.", "Manual massage may be recommended depending on the implant type."]
     },
     regions: ["Breasts"],
-    gallery: [
-      "/breast-augmentation-result-1.webp",
-      "/breast-augmentation-result-2.webp",
-      "/breast-augmentation-result-3.webp",
-      "/breast-augmentation-result-4.webp",
-      "/breast-augmentation-result-5.webp",
-      "/breast-augmentation-result-6.webp"
-    ],
     seoContent: `
 ### Breast Augmentation in Chandigarh: Enhance Your Silhouette
 **Premium Implants (Motiva / Mentor) & Fat Transfer**
@@ -1901,7 +1861,6 @@ Most patients are back to desk jobs in 5 days. Heavy lifting is restricted for 4
       results: ["The final shape settles at 3 to 6 months.", "Scar remodelling continues for a full year after surgery."],
       recoveryTips: ["Wear the compression garment as directed.", "Laser resurfacing can soften the vertical scar, but only from 3 months after surgery."]
     },
-    gallery: ["/breast-reduction-result-1.webp", "/axillary-breast-reduction-result.webp"],
     seoContent: `
 ### Breast Reduction in Chandigarh: Relief & Proportion
 **Alleviating Back Pain & Restoring Confidence**
@@ -2064,38 +2023,7 @@ Similar to reduction, mobility is good immediately, but high-impact activities a
       recoveryTips: ["The compression vest is vital to flatten the area and prevent fluid buildup - 7 days minimum, longer in higher grades.", "Lymphatic massage and icing 4 to 5 times a day for at least 6 weeks helps ensure a smooth, bump-free result."]
     },
     regions: ["Breasts", "Body"],
-    videos: [GYNECOMASTIA_JOURNEY_VIDEO, GYNECOMASTIA_VIDEO],
-    gallery: [
-      "/gynecomastia-result-1.webp",
-      "/gynecomastia-result-2.webp",
-      "/gynecomastia-result-3.webp",
-      "/gynecomastia-result-4.webp",
-      "/gynecomastia-result-5.webp",
-      "/gynecomastia-result-6.webp",
-      "/gynecomastia-result-7.webp",
-      "/gynecomastia-result-8.webp",
-      "/gynecomastia-result-9.webp",
-      "/gynecomastia-result-10.webp",
-      "/gynecomastia-result-11.webp",
-      "/gynecomastia-result-12.webp",
-      "/gynecomastia-result-13.webp",
-      "/gynecomastia-result-14.webp",
-      "/gynecomastia-result-15.webp",
-      "/gynecomastia-result-16.webp",
-      "/gynecomastia-result-17.webp",
-      "/gynecomastia-result-18.webp",
-      "/gynecomastia-result-19.webp",
-      "/gynecomastia-result-20.webp",
-      "/gynecomastia-result-21.webp",
-      "/gynecomastia-result-22.webp",
-      "/gynecomastia-result-23.webp",
-      "/gynecomastia-result-24.webp",
-      "/gynecomastia-result-25.webp",
-      "/gynecomastia-result-26.webp",
-      "/gynecomastia-result-27.webp",
-      "/gynecomastia-result-28.webp",
-      "/gynecomastia-result-29.webp"
-    ],
+    videos: [GYNECOMASTIA_VIDEO],
     seoContent: `
 ### Gynecomastia Surgery in Chandigarh: Masculine Chest Contouring
 
@@ -2418,7 +2346,6 @@ It is a 45-minute procedure performed under local anesthesia or sedation. Recove
       results: ["The revised scar reaches its final appearance at about 1 year.", "Improvement is subjective and can range from astonishing to subtle, depending on the scar."],
       recoveryTips: ["Sun protection for a minimum of 3 months.", "Silicone-based scar management for a minimum of 3 months."]
     },
-    gallery: ["/scar-revision-fat-grafted.webp", "/keloid-excision-result.webp", "/scar-revision-result-2.webp"],
     seoContent: `
 ### Scar Revision in Chandigarh: Erasing Trauma
 **Surgical & Laser Solutions for Scars**
@@ -3294,7 +3221,6 @@ export const ASSETS = Object.fromEntries(
 export const PROCEDURES = RAW_PROCEDURES.map(p => ({
   ...p,
   image: fixPath(p.image),
-  gallery: p.gallery?.map(g => fixPath(g)!)
 }));
 
 export interface BlogPost {
@@ -4178,7 +4104,7 @@ A gallery of twenty ordinary-looking good results is a stronger claim than one t
 
 Same light, same lens, same distance, same posture, same background. Or it proves nothing.
 
-This applies to every gallery, including ours. If you are looking at [results on this site](/gallery/) or anywhere else, hold them to it - and ask to see more than the highlights at consultation.
+This applies to every before-and-after you are shown, anywhere. Hold it to that standard - and ask to see more than the highlights.
 
 There is a reason to say this out loud rather than quietly maintain good practice: a standard stated in public is one the person stating it can be held to.
 
@@ -4979,7 +4905,7 @@ If your primary concern is slight drooping around your mouth and jawline, a Mini
     seoTitle: "Gynecomastia Surgery: Causes, Treatment, Recovery",
     title: "Gynecomastia Surgery in India: Causes, Treatment, and Recovery",
     excerpt: "Gynecomastia affects millions of men. Discover the causes and how modern surgical technique delivers a permanent, masculine chest contour.",
-    videos: [GYNECOMASTIA_JOURNEY_VIDEO, GYNECOMASTIA_VIDEO],
+    videos: [GYNECOMASTIA_VIDEO],
     content: `## Restoring Confidence with Chest Contouring
 
 Gynecomastia—the development of enlarged glandular breast tissue in males—is far more common than most realize, affecting up to 30% of men. Despite how common it is, it can cause significant psychological distress, leading men to avoid wearing fitted shirts, going to the beach, or participating in sports.
@@ -5005,7 +4931,7 @@ Male breast reduction is typically performed on an outpatient basis.
 *   **Return to Work:** Most men with desk jobs return to work within 3 to 5 days.
 *   **Return to Gym:** Lower body cardio can resume in about 2 weeks. Heavy upper body weightlifting (chest presses, pushups) should be avoided for 4 to 6 weeks.
 
-The results are immediate and, barring significant future steroid use or massive weight gain, they are permanent. See real outcomes in our [results gallery](/gallery).`,
+The results are immediate and, barring significant future steroid use or massive weight gain, they are permanent.`,
     image: "/gynecomastia-aesthetic.webp",
     date: "July 20, 2025"
   }  ,

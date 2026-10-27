@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           <div className="space-y-8">
             <Link to="/" className="flex flex-col">
               <span className="text-2xl font-serif tracking-[0.2em] text-white">{BRAND.name}</span>
-              <span className="text-[9px] tracking-[0.4em] text-[#4A90E2] font-bold uppercase mt-1">BOARD CERTIFIED PLASTIC SURGEON</span>
+              <span className="text-[9px] tracking-[0.4em] text-[#4A90E2] font-bold uppercase mt-1">Plastic &amp; Aesthetic Surgeon</span>
             </Link>
             <div className="space-y-4">
               <p className="text-gray-300 text-sm leading-relaxed font-light">
@@ -67,7 +67,6 @@ const Footer: React.FC = () => {
             <ul className="space-y-5">
               <li><Link to="/about/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">About Dr. Sumit</Link></li>
               <li><Link to="/international/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">International Concierge</Link></li>
-              <li><Link to="/gallery/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Results Gallery</Link></li>
               <li><Link to="/contact/" className="text-gray-300 hover:text-[#4A90E2] text-xs tracking-widest transition-colors">Book Consultation</Link></li>
             </ul>
           </div>
@@ -140,7 +139,13 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] tracking-[0.3em] text-gray-400 uppercase font-bold">
+        {/* NMC advertising guidelines (6 Oct 2026), 3.2 Explanation III: name,
+            qualifications, registration status and number on every page. */}
+        <p className="pt-12 pb-8 border-t border-white/5 text-gray-400 text-xs leading-relaxed text-center md:text-left">
+          {BRAND.name}, {BRAND.qualifications}. Registered with the {BRAND.registrationCouncil}, Reg. No. {BRAND.registration}.
+        </p>
+
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[9px] tracking-[0.3em] text-gray-400 uppercase font-bold">
           <p>© {new Date().getFullYear()} {BRAND.name}. Surgical Excellence.</p>
           <div className="flex space-x-10 mt-6 md:mt-0">
             <span className="cursor-pointer hover:text-white transition-colors">Privacy Protocols</span>

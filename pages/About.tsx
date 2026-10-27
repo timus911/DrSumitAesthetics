@@ -2,45 +2,11 @@ import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, useMotionValue, useSpring, useTransform, Variants, AnimatePresence } from 'framer-motion';
 import { Award, GraduationCap, Globe, Box, Scissors, Brush, Instagram } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import { BRAND, ASSETS } from '../constants.ts';
 import SEO from '../components/SEO.tsx';
 import { useMobileCenterFocus } from '../hooks/useMobileCenterFocus.ts';
 
-// Gallery images array
-const galleryImages = [
-  { src: `${import.meta.env.BASE_URL}gallery-1.webp`, title: 'Axillary Breast' },
-  { src: `${import.meta.env.BASE_URL}gallery-2.webp`, title: 'Breast Augmentation with Implant' },
-  { src: `${import.meta.env.BASE_URL}gallery-3.webp`, title: 'Breast Augmentation with Implant' },
-  { src: `${import.meta.env.BASE_URL}gallery-4.webp`, title: 'Axillary Breast' },
-  { src: `${import.meta.env.BASE_URL}gallery-5.webp`, title: 'Breast Reduction' },
-  { src: `${import.meta.env.BASE_URL}gallery-6.webp`, title: 'Keloid Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-7.webp`, title: 'Ear Lobe Repair' },
-  { src: `${import.meta.env.BASE_URL}gallery-8.webp`, title: 'Gynecomastia' },
-  { src: `${import.meta.env.BASE_URL}gallery-9.webp`, title: 'Gynecomastia' },
-  { src: `${import.meta.env.BASE_URL}gallery-10.webp`, title: 'Hair Transplant' },
-  { src: `${import.meta.env.BASE_URL}gallery-11.webp`, title: 'Lip Fat Grafting' },
-  { src: `${import.meta.env.BASE_URL}gallery-12.webp`, title: 'Mole Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-13.webp`, title: 'Lipo-Sculpting' },
-  { src: `${import.meta.env.BASE_URL}gallery-14.webp`, title: 'Tummy Tuck' },
-  { src: `${import.meta.env.BASE_URL}gallery-15.webp`, title: 'Ear Reshaping' },
-  { src: `${import.meta.env.BASE_URL}gallery-16.webp`, title: 'Xanthelasma Excision' },
-  { src: `${import.meta.env.BASE_URL}gallery-17.webp`, title: 'Tummy Tuck' }
-];
-
 const About: React.FC = () => {
-  const navigate = useNavigate();
-
-  // Randomize and shuffle gallery images for the vertical scroll effect
-  const shuffledImages = React.useMemo(() => {
-    const images = [...galleryImages];
-    for (let i = images.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [images[i], images[j]] = [images[j], images[i]];
-    }
-    return images;
-  }, []);
-
   // Mouse hover tilt effect for the main portrait
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
@@ -63,11 +29,6 @@ const About: React.FC = () => {
   };
 
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(null);
-
-  const handleGalleryImageClick = (index: number) => {
-    navigate(`/gallery#image-${index}`);
-  };
 
 
 
@@ -87,25 +48,6 @@ const About: React.FC = () => {
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0, transition: { duration: 0.2, ease: "easeOut" } }
-  };
-
-  const AboutThumbnail = ({ image, idx, hoveredImageIndex, setHoveredImageIndex, handleGalleryImageClick }: any) => {
-    const ref = React.useRef<HTMLImageElement>(null);
-    const isFocused = useMobileCenterFocus(ref);
-    const isHovered = hoveredImageIndex === idx;
-
-    return (
-      <motion.img
-        ref={ref}
-        // Removed variants={fadeInUp} to prevent re-triggering animation on hover which causes flickering
-        src={image.src}
-        className={`rounded-sm shadow-lg cursor-pointer transition-all duration-500 ${isHovered || isFocused ? 'grayscale-0 opacity-100' : 'grayscale opacity-60'}`}
-        alt={`${image.title} outcome by Dr. Sumit Singh Gautam in Chandigarh`}
-        onMouseEnter={() => setHoveredImageIndex(idx)}
-        onMouseLeave={() => setHoveredImageIndex(null)}
-        onClick={() => handleGalleryImageClick(idx)}
-      />
-    );
   };
 
   const MomentThumbnail = ({ num }: { num: number }) => {
@@ -288,24 +230,13 @@ const About: React.FC = () => {
             </div>
 
             <div className="order-2 lg:order-1 relative h-[700px] overflow-hidden rounded-sm glass border border-[#4A90E2]/10 shadow-2xl">
-              <motion.div
-                animate={{ y: [0, -300, 0] }}
-                transition={{ duration: 40, repeat: Infinity, ease: "linear" as const }}
-                className="grid grid-cols-2 gap-8 p-8"
-              >
-                {/* Real Gallery Images with Individual Hover Effects */}
-                {shuffledImages.map((image, idx) => (
-                  <AboutThumbnail
-                    key={idx}
-                    image={image}
-                    idx={idx}
-                    hoveredImageIndex={hoveredImageIndex}
-                    setHoveredImageIndex={setHoveredImageIndex}
-                    handleGalleryImageClick={handleGalleryImageClick}
-                  />
-                ))}
-              </motion.div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black pointer-events-none" />
+              <img
+                src={ASSETS.surgeryProfile}
+                alt="Dr. Sumit Singh Gautam in the operating theatre"
+                className="w-full h-full object-cover grayscale opacity-80"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
             </div>
           </motion.div>
         </section>

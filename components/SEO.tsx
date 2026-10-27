@@ -18,6 +18,7 @@ interface SEOProps {
     howToSteps?: { name: string; text: string }[];
     priceRange?: string; // e.g. "₹1,50,000 - ₹2,50,000" — emitted as MedicalProcedure offers when numeric
     lastReviewed?: string; // ISO date; adds a MedicalWebPage reviewed by the Physician
+    noindex?: boolean; // Keeps the page out of search results; links on it are still followed
 }
 
 const SEO: React.FC<SEOProps> = ({
@@ -34,7 +35,8 @@ const SEO: React.FC<SEOProps> = ({
     faqs,
     howToSteps,
     priceRange,
-    lastReviewed
+    lastReviewed,
+    noindex
 }) => {
     // Brand suffix, budget-aware. "Plastic surgeon" is the term patients search
     // (590/mo in India against 210 for "aesthetic surgeon"), so it leads the
@@ -112,6 +114,8 @@ const SEO: React.FC<SEOProps> = ({
                 "addressCountry": "IN"
             },
             "telephone": CONTACT.counselorPhone,
+            "description": `${BRAND.qualifications}. Registered with the ${BRAND.registrationCouncil}, Reg. No. ${BRAND.registration}.`,
+            "identifier": { "@type": "PropertyValue", "name": `${BRAND.registrationCouncil} registration number`, "value": BRAND.registration },
             "url": "https://drsumitaesthetics.com"
         };
 
@@ -203,8 +207,9 @@ const SEO: React.FC<SEOProps> = ({
             "medicalSpecialty": "Plastic Surgery",
             "provider": physicianSchema,
             // No aggregateRating: Google's structured-data policy disallows
-            // self-serving ratings a business publishes about itself. Visible
-            // testimonials stay on the page; only the markup is withheld.
+            // self-serving ratings a business publishes about itself, and the
+            // NMC guidelines (6 Oct 2026, 3.2 Explanation V) bar publishing
+            // patient reviews or testimonials at all.
             ...(schemaType !== 'MedicalProcedure' && {
                 "telephone": CONTACT.counselorPhone,
                 "address": {
@@ -268,8 +273,8 @@ const SEO: React.FC<SEOProps> = ({
                 "name": BRAND.name,
                 "url": "https://drsumitaesthetics.com/about/",
                 "medicalSpecialty": "PlasticSurgery",
-                "description": `${BRAND.qualifications}. Registered medical practitioner, Reg. No. ${BRAND.registration}.`,
-                "identifier": { "@type": "PropertyValue", "name": "Medical registration number", "value": BRAND.registration }
+                "description": `${BRAND.qualifications}. Registered with the ${BRAND.registrationCouncil}, Reg. No. ${BRAND.registration}.`,
+                "identifier": { "@type": "PropertyValue", "name": `${BRAND.registrationCouncil} registration number`, "value": BRAND.registration }
             }
         }
     ] : builtSchema;
@@ -297,6 +302,7 @@ const SEO: React.FC<SEOProps> = ({
             <meta name="twitter:image" content={absoluteSocialImage} />
 
             <link rel="canonical" href={siteUrl} />
+            {noindex && <meta name="robots" content="noindex, follow" />}
 
             <script type="application/ld+json">
                 {JSON.stringify(baseSchema)}
